@@ -1,0 +1,43 @@
+# Traceability Audit: F-007
+# Function: ScoreDocumentQuality
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-007"
+  function_name: "ScoreDocumentQuality"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/domain/document_processing/entities/document.py"
+    supporting_files:
+      - "src/contextsafe/domain/document_processing/aggregates/document_aggregate.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/domain/document_processing/test_document.py"
+        tests:
+          - "test_quality_score_calculation"
+          - "test_low_quality_warning"
+        status: "not_created"
+    integration_tests: []
+    pbt_properties:
+      - "PBT-013: Quality score is between 0.0 and 1.0"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-002"  # PII detection recall on scanned documents
+    risk_refs:
+      - "R-002"    # OCR quality degrades PII detection
+    adr_refs: []
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Quality scoring for extracted text.
+    Based on OCR confidence, text length, character distribution.
+    Low quality triggers user warning in UI.

@@ -1,0 +1,17 @@
+# Requirements for NER training
+# Install: pip install -r scripts/train/requirements_train.txt
+
+# Core
+transformers>=4.36.0
+datasets>=2.14.0
+torch>=2.0.0
+
+# Evaluation
+evaluate>=0.4.0
+seqeval>=1.2.2
+
+# Optimization
+accelerate>=0.25.0
+
+# Optional: for mixed precision training
+# bitsandbytes>=0.41.0  # Uncomment for QLoRA

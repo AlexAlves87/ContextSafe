@@ -1,0 +1,49 @@
+# Traceability Audit: F-UI-004
+# Function: NavigateToDocumentDetail
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-UI-004"
+  function_name: "NavigateToDocumentDetail"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/presentation/components/document_table.tsx"
+    supporting_files:
+      - "src/contextsafe/presentation/components/breadcrumbs.tsx"
+      - "src/contextsafe/presentation/utils/navigation.ts"
+      - "src/contextsafe/presentation/services/router.ts"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/presentation/test_navigation.tsx"
+        tests:
+          - "test_navigate_to_document_detail"
+          - "test_breadcrumb_updates"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/e2e/test_navigation_flow.spec.ts"
+        tests:
+          - "test_end_to_end_navigation"
+        status: "not_created"
+    pbt_properties: []
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-UX-001"  # UI response time for interactive operations
+    risk_refs: []
+    adr_refs:
+      - "ADR-006"  # React with TypeScript, Tailwind, and Zustand
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Navigation to document detail view.
+    Click on document row in table navigates to detail.
+    Breadcrumbs show navigation path: Project > Document.
+    Uses React Router for SPA navigation.

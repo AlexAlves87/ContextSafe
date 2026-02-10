@@ -1,0 +1,44 @@
+# Traceability Audit: F-015
+# Function: ManageProjectDocuments
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-015"
+  function_name: "ManageProjectDocuments"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/domain/project_management/aggregates/project.py"
+    supporting_files:
+      - "src/contextsafe/application/ports/document_repository.py"
+      - "src/contextsafe/domain/shared/value_objects/document_id.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/domain/project_management/test_project.py"
+        tests:
+          - "test_add_document"
+          - "test_remove_document"
+          - "test_list_documents"
+        status: "not_created"
+    integration_tests: []
+    pbt_properties:
+      - "PBT-030: Document list always reflects current state"
+
+  traceability_chain:
+    qas_refs: []
+    risk_refs: []
+    adr_refs:
+      - "ADR-001"  # Hexagonal architecture
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Project aggregate manages document references.
+    Documents belong to exactly one project.
+    Supports listing, adding, removing documents.

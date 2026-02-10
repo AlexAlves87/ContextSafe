@@ -1,0 +1,109 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Environment variables
+.env
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build output
+frontend/dist/
+frontend/html/
+
+# Data & databases
+data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Models (download separately)
+models/
+ml/models/
+ml/data/
+ml/logs/
+ml/.venv/
+
+# ML model weights
+*.gguf
+*.bin
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.safetensors
+
+# Logs
+*.log
+logs/
+
+# PyInstaller
+*.spec
+
+# Docker volumes
+docker/data/
+
+# Windows WSL metadata
+*:Zone.Identifier
+
+.claude/
+CLAUDE.md
+
+# Testing
+.hypothesis/
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+# Translate tool outputs
+translate/benchmark_results/
+translate/test_results/
+translate/__pycache__/
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+
+# Temporary
+tmp/
+.tmp/
+ip
+
+# Worktrees
+.worktrees/

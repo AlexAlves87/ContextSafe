@@ -1,0 +1,70 @@
+# ContextSafe Backend - Dell 5810
+# ================================
+
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: docker/Dockerfile
+    container_name: contextsafe-api
+    ports:
+      - "8001:8000"
+    environment:
+      - TZ=Europe/Madrid
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - CORS_ORIGINS=https://${DOMAIN}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - DEV_MODE=false
+      - SPACY_MODEL=es_core_news_lg
+      - TESSERACT_LANG=spa
+    volumes:
+      - contextsafe-data:/app/data
+      - contextsafe-logs:/app/logs
+    depends_on:
+      ollama:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: contextsafe-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    restart: unless-stopped
+    # GPU NVIDIA (descomentar si tienes GPU)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+volumes:
+  contextsafe-data:
+  contextsafe-logs:
+  ollama-models:

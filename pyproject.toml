@@ -1,0 +1,264 @@
+# ContextSafe - Document Anonymization System
+# ============================================
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "contextsafe"
+version = "0.1.0"
+description = "Sistema 100% local de anonimizacion inteligente de documentos sensibles"
+authors = ["ContextSafe Team"]
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+packages = [{ include = "contextsafe", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+# Core - Design by Contract
+icontract = "^2.6.0"
+
+# Data Validation
+pydantic = "^2.0.0"
+pydantic-settings = "^2.0.0"
+
+# Structured Logging
+structlog = "^23.0.0"
+
+# HTTP Client
+httpx = "^0.24.0"
+
+# Web Framework
+fastapi = "^0.100.0"
+uvicorn = { version = "^0.23.0", extras = ["standard"] }
+
+# Database - SQLite with encryption
+sqlalchemy = { version = "^2.0.0", extras = ["asyncio"] }
+aiosqlite = "^0.19.0"
+sqlcipher3-binary = "^0.5.0"
+
+# Document Processing
+pdfplumber = "^0.10.0"
+python-docx = "^0.8.11"
+chardet = "^5.0.0"
+reportlab = "^4.0.0"
+
+# OCR
+pytesseract = "^0.3.10"
+Pillow = "^10.0.0"
+opencv-python-headless = "^4.8.0"
+
+# NLP / NER
+spacy = "^3.7.0"
+transformers = "^4.36.0"
+torch = "^2.1.0"
+
+# Fuzzy String Matching (for entity normalization)
+thefuzz = "^0.22.1"
+
+# LLM Runtime (legacy - puede eliminarse si no se usa)
+# llama-cpp-python = "^0.2.50"
+
+# Embeddings (optional, for semantic alias)
+sentence-transformers = "^2.2.0"
+
+# Metrics
+prometheus-client = "^0.17.0"
+
+# WebSocket
+websockets = "^12.0"
+
+# CLI
+click = "^8.1.0"
+
+# PII Detection (Presidio)
+presidio-analyzer = "^2.2.0"
+presidio-anonymizer = "^2.2.0"
+
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+# Testing
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+pytest-cov = "^4.1.0"
+hypothesis = "^6.82.0"
+icontract-hypothesis = "^1.1.0"
+
+# Type Checking
+mypy = "^1.5.0"
+
+# Linting & Formatting
+ruff = "^0.1.0"
+
+# Security Scanning
+bandit = "^1.7.0"
+
+# Mutation Testing
+mutmut = "^2.4.0"
+
+# E2E Testing (Web)
+pytest-playwright = "^0.4.0"
+
+# Test Utilities
+factory-boy = "^3.3.0"
+faker = "^19.0.0"
+testcontainers = "^3.7.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.0"
+mkdocs-material = "^9.0.0"
+mkdocstrings = { version = "^0.23.0", extras = ["python"] }
+
+[tool.poetry.scripts]
+contextsafe = "contextsafe.api.main:run"
+
+# ============================================
+# TOOL CONFIGURATIONS
+# ============================================
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "C",      # flake8-comprehensions
+    "B",      # flake8-bugbear
+    "UP",     # pyupgrade
+    "S",      # flake8-bandit
+    "A",      # flake8-builtins
+    "C4",     # flake8-comprehensions
+    "DTZ",    # flake8-datetimez
+    "T10",    # flake8-debugger
+    "EXE",    # flake8-executable
+    "ISC",    # flake8-implicit-str-concat
+    "ICN",    # flake8-import-conventions
+    "G",      # flake8-logging-format
+    "INP",    # flake8-no-pep420
+    "PIE",    # flake8-pie
+    "PYI",    # flake8-pyi
+    "PT",     # flake8-pytest-style
+    "Q",      # flake8-quotes
+    "RSE",    # flake8-raise
+    "RET",    # flake8-return
+    "SLF",    # flake8-self
+    "SLOT",   # flake8-slots
+    "SIM",    # flake8-simplify
+    "TID",    # flake8-tidy-imports
+    "TCH",    # flake8-type-checking
+    "ARG",    # flake8-unused-arguments
+    "PTH",    # flake8-use-pathlib
+    "PL",     # Pylint
+    "TRY",    # tryceratops
+    "FLY",    # flynt
+    "PERF",   # Perflint
+    "RUF",    # Ruff-specific rules
+]
+ignore = [
+    "S101",   # Use of assert (needed for icontract)
+    "S104",   # Possible binding to all interfaces
+    "B008",   # Do not perform function calls in argument defaults (FastAPI Depends)
+    "PLR0913", # Too many arguments to function call
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "S101",   # asserts allowed in tests
+    "ARG",    # Unused function args (fixtures)
+    "S105",   # Possible hardcoded password
+    "S106",   # Possible hardcoded password
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["contextsafe"]
+force-single-line = false
+lines-after-imports = 2
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+    "pdfplumber.*",
+    "docx.*",
+    "pytesseract.*",
+    "cv2.*",
+    "spacy.*",
+    "llama_cpp.*",
+    "sentence_transformers.*",
+    "sqlcipher3.*",
+    "prometheus_client.*",
+    "icontract.*",
+    "icontract_hypothesis.*",
+    "hypothesis.*",
+    "factory.*",
+    "faker.*",
+    "testcontainers.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "-ra",
+]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "contract: Contract tests",
+    "pbt: Property-based tests",
+    "e2e: End-to-end tests",
+    "slow: Slow tests",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["src/contextsafe"]
+branch = true
+omit = [
+    "*/tests/*",
+    "*/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "@abstractmethod",
+    "Protocol",
+]
+fail_under = 80
+show_missing = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "scripts"]
+skips = ["B101"]  # assert_used - needed for icontract

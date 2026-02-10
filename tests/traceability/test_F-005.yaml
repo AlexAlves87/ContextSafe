@@ -1,0 +1,51 @@
+# Traceability Audit: F-005
+# Function: ExtractTextFromImage
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-005"
+  function_name: "ExtractTextFromImage"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/ports/text_extractor.py"
+    supporting_files:
+      - "src/contextsafe/infrastructure/adapters/text_extraction/tesseract_extractor.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/infrastructure/test_tesseract_extractor.py"
+        tests:
+          - "test_extract_png_image"
+          - "test_extract_jpg_image"
+          - "test_extract_low_quality_image"
+          - "test_extract_unsupported_format"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_ocr_extraction.py"
+        tests:
+          - "test_end_to_end_image_extraction"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-009: OCR fallback always triggered for images"
+      - "PBT-010: Quality score correlates with text confidence"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-002"  # PII detection recall on scanned documents
+    risk_refs:
+      - "R-002"    # OCR quality degrades PII detection
+    adr_refs: []
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    OCR extraction using Tesseract.
+    Preprocessing pipeline: grayscale, binarization, deskew, noise removal.
+    Supports spa (Spanish) and eng (English) languages.
+    Quality scoring based on OCR confidence metrics.

@@ -1,0 +1,57 @@
+# Traceability Audit: F-012
+# Function: GenerateAnonymizedDocument
+# Bounded Context: BC-003 (Anonymization)
+
+traceability_audit:
+  function_id: "F-012"
+  function_name: "GenerateAnonymizedDocument"
+  bounded_context: "BC-003"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/generate_anonymized/generate_anonymized.py"
+    supporting_files:
+      - "src/contextsafe/domain/anonymization/aggregates/glossary.py"
+      - "src/contextsafe/domain/document_processing/aggregates/document_aggregate.py"
+      - "src/contextsafe/infrastructure/adapters/document_reconstruction/reconstructor.py"
+      - "src/contextsafe/domain/shared/events/document_anonymized.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_generate_anonymized.py"
+        tests:
+          - "test_generate_anonymized_document"
+          - "test_preserve_format_pdf"
+          - "test_preserve_format_docx"
+          - "test_alias_replacement"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_anonymization_integration.py"
+        tests:
+          - "test_end_to_end_anonymization"
+          - "test_multi_document_consistency"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-023: All detected PII is replaced with aliases"
+      - "PBT-024: Same PII across docs gets same alias"
+      - "PBT-025: Original format is preserved"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-003"  # Alias consistency across all documents
+    risk_refs:
+      - "R-003"    # Semantic aliases reveal protected information
+    adr_refs:
+      - "ADR-002"  # SQLite with SQLCipher for storage
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Core use case for document anonymization.
+    Applies glossary aliases to detected PII.
+    Preserves original document format (PDF, DOCX, TXT).
+    Publishes DocumentAnonymized event.

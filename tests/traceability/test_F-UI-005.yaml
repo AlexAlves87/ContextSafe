@@ -1,0 +1,53 @@
+# Traceability Audit: F-UI-005
+# Function: RenderEntityHighlights
+# Bounded Context: BC-002 (Entity Detection)
+
+traceability_audit:
+  function_id: "F-UI-005"
+  function_name: "RenderEntityHighlights"
+  bounded_context: "BC-002"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/presentation/components/entity_highlighter.tsx"
+    supporting_files:
+      - "src/contextsafe/presentation/renderers/text_renderer.tsx"
+      - "src/contextsafe/presentation/utils/highlight_utils.ts"
+      - "src/contextsafe/presentation/services/entity_service.ts"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/presentation/test_entity_highlighter.tsx"
+        tests:
+          - "test_render_person_name_highlight"
+          - "test_render_dni_highlight"
+          - "test_render_overlapping_entities"
+          - "test_color_coding_by_category"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/e2e/test_entity_highlighting.spec.ts"
+        tests:
+          - "test_end_to_end_entity_highlighting"
+        status: "not_created"
+    pbt_properties: []
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-001"  # PII detection recall on structured text
+      - "QAS-UX-002"  # WCAG-A accessibility compliance
+    risk_refs:
+      - "R-001"  # NER detection fails to identify PII entities
+    adr_refs:
+      - "ADR-006"  # React with TypeScript, Tailwind, and Zustand
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Entity highlighting component.
+    Color-codes detected PII by category.
+    Shows tooltips with entity details on hover.
+    Accessible color scheme (WCAG-A compliant).

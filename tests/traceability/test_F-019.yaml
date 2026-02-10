@@ -1,0 +1,51 @@
+# Traceability Audit: F-019
+# Function: ExportAnonymizedDocument
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-019"
+  function_name: "ExportAnonymizedDocument"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/export_document/export_document.py"
+    supporting_files:
+      - "src/contextsafe/infrastructure/adapters/document_export/pdf_exporter.py"
+      - "src/contextsafe/infrastructure/adapters/document_export/docx_exporter.py"
+      - "src/contextsafe/infrastructure/adapters/document_export/txt_exporter.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_export_document.py"
+        tests:
+          - "test_export_pdf"
+          - "test_export_docx"
+          - "test_export_txt"
+          - "test_export_format_preservation"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_document_export.py"
+        tests:
+          - "test_end_to_end_export"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-037: Exported document contains no original PII"
+      - "PBT-038: Export format matches original format"
+
+  traceability_chain:
+    qas_refs: []
+    risk_refs: []
+    adr_refs: []
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Document export use case.
+    Supports PDF, DOCX, TXT formats.
+    Preserves original formatting.
+    Exports anonymized version only.

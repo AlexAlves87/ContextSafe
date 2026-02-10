@@ -1,0 +1,44 @@
+# Traceability Audit: F-006
+# Function: PreprocessDocument
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-006"
+  function_name: "PreprocessDocument"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/ports/text_extractor.py"
+    supporting_files:
+      - "src/contextsafe/infrastructure/adapters/text_extraction/preprocessing.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/infrastructure/test_preprocessing.py"
+        tests:
+          - "test_normalize_whitespace"
+          - "test_remove_noise"
+          - "test_detect_encoding"
+        status: "not_created"
+    integration_tests: []
+    pbt_properties:
+      - "PBT-011: Preprocessing preserves text semantics"
+      - "PBT-012: Normalized text is always valid UTF-8"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-001"  # PII detection recall on structured text
+    risk_refs: []
+    adr_refs: []
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Text preprocessing before PII detection.
+    Normalizes whitespace, handles encoding, removes artifacts.
+    Improves NER accuracy by cleaning input.

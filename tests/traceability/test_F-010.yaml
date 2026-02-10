@@ -1,0 +1,55 @@
+# Traceability Audit: F-010
+# Function: AssignEntityAlias
+# Bounded Context: BC-003 (Anonymization)
+
+traceability_audit:
+  function_id: "F-010"
+  function_name: "AssignEntityAlias"
+  bounded_context: "BC-003"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/assign_alias/assign_alias.py"
+    supporting_files:
+      - "src/contextsafe/domain/anonymization/aggregates/glossary.py"
+      - "src/contextsafe/domain/anonymization/entities/alias_mapping.py"
+      - "src/contextsafe/domain/shared/value_objects/alias.py"
+      - "src/contextsafe/domain/shared/events/alias_assigned.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_assign_alias.py"
+        tests:
+          - "test_assign_new_alias"
+          - "test_reuse_existing_alias"
+          - "test_semantic_alias_generation"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_alias_assignment.py"
+        tests:
+          - "test_end_to_end_alias_assignment"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-018: Same entity always gets same alias (consistency)"
+      - "PBT-019: Different entities never get same alias (uniqueness)"
+      - "PBT-020: Alias assignment is idempotent"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-003"  # Alias consistency across all documents
+    risk_refs:
+      - "R-003"    # Semantic aliases reveal protected information
+    adr_refs:
+      - "ADR-005"  # Use llama.cpp for local LLM inference
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Core anonymization function.
+    Glossary aggregate ensures alias consistency.
+    Supports semantic (LLM-generated) and standard aliases.
+    Publishes AliasAssigned event for traceability.

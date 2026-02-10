@@ -1,0 +1,6124 @@
+{
+  "source": "Synthetic - Spanish Organizations for Legal Documents",
+  "description": "Organizaciones españolas sintéticas para documentos legales",
+  "stats": {
+    "empresas_privadas": 400,
+    "instituciones_publicas": 300,
+    "entidades_financieras": 100,
+    "organizaciones_religiosas": 100,
+    "sin_animo_lucro": 100
+  },
+  "total": 1000,
+  "datos": {
+    "empresas_privadas": [
+      {
+        "texto": "Hermanos Marín S.L.U.",
+        "nombre": "Hermanos Marín",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Iglesias, S.C.",
+        "nombre": "Hermanos Iglesias",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Trading Mediterránea, Agrupación de Interés Económico",
+        "nombre": "Trading Mediterránea",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroSol, Sociedad Comanditaria",
+        "nombre": "AgroSol",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Producciones Española S.L.L.",
+        "nombre": "Producciones Española",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gutiérrez y Gómez, Sociedad Comanditaria",
+        "nombre": "Gutiérrez y Gómez",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez Financiera S.Coop.",
+        "nombre": "Vázquez Financiera",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Fernández, Sociedad Cooperativa",
+        "nombre": "Hermanos Fernández",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Jiménez y Ruiz, Sociedad Limitada Laboral",
+        "nombre": "Jiménez y Ruiz",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gómez",
+        "nombre": "Hermanos Gómez",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Torres",
+        "nombre": "Hermanos Torres",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoSol",
+        "nombre": "AutoSol",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BHCMR, Sociedad Limitada Laboral",
+        "nombre": "BHCMR",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Morales",
+        "nombre": "Hermanos Morales",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Andaluza Fabricaciones S.Com.",
+        "nombre": "Andaluza Fabricaciones",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Internacional Gestiones, Sociedad Limitada",
+        "nombre": "Internacional Gestiones",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Romero Petróleo S.Com.",
+        "nombre": "Romero Petróleo",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ruiz Digital",
+        "nombre": "Ruiz Digital",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hispana Tecnología S.A.",
+        "nombre": "Hispana Tecnología",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Fernández, Sociedad Cooperativa",
+        "nombre": "Hijos de Fernández",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Europea Comunicaciones, Sociedad Cooperativa",
+        "nombre": "Europea Comunicaciones",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "EuroGroup, Sociedad Colectiva",
+        "nombre": "EuroGroup",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Ramos, S.A.U.",
+        "nombre": "Hermanos Ramos",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gil, Sociedad Limitada Unipersonal",
+        "nombre": "Hijos de Gil",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Andaluza Farmacéutica, Sociedad Colectiva",
+        "nombre": "Andaluza Farmacéutica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TransCorp, S.Com.",
+        "nombre": "TransCorp",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hernández y Blanco",
+        "nombre": "Hernández y Blanco",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ingeniería Plus, Comunidad de Bienes",
+        "nombre": "Ingeniería Plus",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alimentación Capital A.I.E.",
+        "nombre": "Alimentación Capital",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "VOMZ S.A.",
+        "nombre": "VOMZ",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Moreno y Serrano C.B.",
+        "nombre": "Moreno y Serrano",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Pérez",
+        "nombre": "Hermanos Pérez",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de García, Sociedad Limitada Laboral",
+        "nombre": "Hijos de García",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alimentación Clásica, Sociedad Anónima Laboral",
+        "nombre": "Alimentación Clásica",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoGroup, S.L.",
+        "nombre": "AutoGroup",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "OOD, Sociedad Cooperativa",
+        "nombre": "OOD",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Navarro y Romero, Sociedad Limitada",
+        "nombre": "Navarro y Romero",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "ZQWUC, A.I.E.",
+        "nombre": "ZQWUC",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "EuroSur, Sociedad Anónima",
+        "nombre": "EuroSur",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Martínez Ingeniería, Agrupación de Interés Económico",
+        "nombre": "Martínez Ingeniería",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroPlus, Sociedad Anónima Laboral",
+        "nombre": "AgroPlus",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Blanco y Blanco S.L.U.",
+        "nombre": "Blanco y Blanco",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sanz y Moreno S.L.L.",
+        "nombre": "Sanz y Moreno",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Cantábrica Arquitectura, S.L.",
+        "nombre": "Cantábrica Arquitectura",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "MultiMar, Sociedad Comanditaria",
+        "nombre": "MultiMar",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de García, Sociedad Limitada Unipersonal",
+        "nombre": "Hijos de García",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos García, S.Coop.",
+        "nombre": "Hermanos García",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Jiménez Ingeniería, S.A.",
+        "nombre": "Jiménez Ingeniería",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Nacional Clínica",
+        "nombre": "Nacional Clínica",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Rodríguez S.L.",
+        "nombre": "Hermanos Rodríguez",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Andaluza Restauración, Sociedad Limitada Laboral",
+        "nombre": "Andaluza Restauración",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroTech",
+        "nombre": "AgroTech",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Morales, Sociedad Limitada Unipersonal",
+        "nombre": "Hijos de Morales",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoNorte",
+        "nombre": "AutoNorte",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "MultiNova, Sociedad Comanditaria",
+        "nombre": "MultiNova",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Martínez Banca, C.B.",
+        "nombre": "Martínez Banca",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Delgado Diseño S.A.L.",
+        "nombre": "Delgado Diseño",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "JROCG S.L.L.",
+        "nombre": "JROCG",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de López S.A.L.",
+        "nombre": "Hijos de López",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Agrícola Europea S.A.U.",
+        "nombre": "Agrícola Europea",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Castro, Sociedad Limitada",
+        "nombre": "Hermanos Castro",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Molina y Martínez",
+        "nombre": "Molina y Martínez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gil, S.A.L.",
+        "nombre": "Hijos de Gil",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BioPlus",
+        "nombre": "BioPlus",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramos Petróleo, S.L.L.",
+        "nombre": "Ramos Petróleo",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Consultoría Atlántica, S.A.L.",
+        "nombre": "Consultoría Atlántica",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TeleNet",
+        "nombre": "TeleNet",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ortega Alimentación",
+        "nombre": "Ortega Alimentación",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Muñoz S.A.L.",
+        "nombre": "Hijos de Muñoz",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramos y Alonso",
+        "nombre": "Ramos y Alonso",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alimentación Castilla, Sociedad Limitada",
+        "nombre": "Alimentación Castilla",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Industrias Europea",
+        "nombre": "Industrias Europea",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gutiérrez Textil",
+        "nombre": "Gutiérrez Textil",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HJX A.I.E.",
+        "nombre": "HJX",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Atlántica Eléctrica S.A.U.",
+        "nombre": "Atlántica Eléctrica",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gutiérrez",
+        "nombre": "Hermanos Gutiérrez",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Sánchez S.Coop.",
+        "nombre": "Hermanos Sánchez",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "OTQ, Sociedad Comanditaria",
+        "nombre": "OTQ",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "CIBXV",
+        "nombre": "CIBXV",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Díaz y García, Sociedad Limitada",
+        "nombre": "Díaz y García",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Peninsular Inmobiliaria S.Com.",
+        "nombre": "Peninsular Inmobiliaria",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Torres C.B.",
+        "nombre": "Hermanos Torres",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gil Manufacturas C.B.",
+        "nombre": "Gil Manufacturas",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Ortega, Sociedad Anónima",
+        "nombre": "Hermanos Ortega",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Delgado, S.C.",
+        "nombre": "Hijos de Delgado",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Financiera Cantábrica, Sociedad Anónima Laboral",
+        "nombre": "Financiera Cantábrica",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Ruiz",
+        "nombre": "Hermanos Ruiz",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sanz Comercial",
+        "nombre": "Sanz Comercial",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Muñoz Farmacéutica S.C.",
+        "nombre": "Muñoz Farmacéutica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Transportes Tradicional, S.L.",
+        "nombre": "Transportes Tradicional",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "KYES",
+        "nombre": "KYES",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Dental Europea, Sociedad Anónima Unipersonal",
+        "nombre": "Dental Europea",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Cantábrica Hotelera S.C.",
+        "nombre": "Cantábrica Hotelera",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Romero",
+        "nombre": "Hermanos Romero",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Martínez Banca, Comunidad de Bienes",
+        "nombre": "Martínez Banca",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Fernández",
+        "nombre": "Hermanos Fernández",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramírez Eléctrica S.C.",
+        "nombre": "Ramírez Eléctrica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "InterSur",
+        "nombre": "InterSur",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramos Solar, Sociedad Comanditaria",
+        "nombre": "Ramos Solar",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Iglesias, Agrupación de Interés Económico",
+        "nombre": "Hermanos Iglesias",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez Tecnología, Sociedad Cooperativa",
+        "nombre": "Vázquez Tecnología",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ibérica Hostelería",
+        "nombre": "Ibérica Hostelería",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Delgado",
+        "nombre": "Hijos de Delgado",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Primera Alimentación",
+        "nombre": "Primera Alimentación",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Domínguez S.A.",
+        "nombre": "Hermanos Domínguez",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Fernández Inmobiliaria, Sociedad Limitada Laboral",
+        "nombre": "Fernández Inmobiliaria",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "EWGB, S.Coop.",
+        "nombre": "EWGB",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "InterMar, S.A.L.",
+        "nombre": "InterMar",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Navarro",
+        "nombre": "Hijos de Navarro",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Blanco Renovables",
+        "nombre": "Blanco Renovables",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaNova, S.L.U.",
+        "nombre": "HispaNova",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Marín y Gómez, S.A.U.",
+        "nombre": "Marín y Gómez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Serrano Logística S.C.",
+        "nombre": "Serrano Logística",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Minorista Nueva, C.B.",
+        "nombre": "Minorista Nueva",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gil Médica",
+        "nombre": "Gil Médica",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "GTTQN",
+        "nombre": "GTTQN",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Ruiz, Sociedad Anónima",
+        "nombre": "Hijos de Ruiz",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "RKB, A.I.E.",
+        "nombre": "RKB",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Cantábrica Transportes",
+        "nombre": "Cantábrica Transportes",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Álvarez y Morales, Sociedad Anónima",
+        "nombre": "Álvarez y Morales",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ocio Europea",
+        "nombre": "Ocio Europea",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "UJZB, Sociedad Cooperativa",
+        "nombre": "UJZB",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hotelera Internacional",
+        "nombre": "Hotelera Internacional",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "QCFS",
+        "nombre": "QCFS",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TFI S.Coop.",
+        "nombre": "TFI",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Torres, Sociedad Colectiva",
+        "nombre": "Hermanos Torres",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Suárez Transportes S.A.",
+        "nombre": "Suárez Transportes",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Domínguez y Sánchez, Sociedad Anónima Laboral",
+        "nombre": "Domínguez y Sánchez",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Crédito Nueva, S.C.",
+        "nombre": "Crédito Nueva",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramírez Gestiones, Sociedad Anónima Unipersonal",
+        "nombre": "Ramírez Gestiones",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio Alimentación",
+        "nombre": "Rubio Alimentación",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Universal Software",
+        "nombre": "Universal Software",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sánchez y Suárez, Sociedad Colectiva",
+        "nombre": "Sánchez y Suárez",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Blanco Restauración",
+        "nombre": "Blanco Restauración",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Renovables Nacional",
+        "nombre": "Renovables Nacional",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TeleTech S.C.",
+        "nombre": "TeleTech",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Nacional Manufacturas, S.Coop.",
+        "nombre": "Nacional Manufacturas",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ortega Energía",
+        "nombre": "Ortega Energía",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Médica Atlántica, Sociedad Anónima",
+        "nombre": "Médica Atlántica",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Torres y Hernández",
+        "nombre": "Torres y Hernández",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "López y Rodríguez",
+        "nombre": "López y Rodríguez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Software Universal S.L.",
+        "nombre": "Software Universal",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IberPlus, Sociedad Limitada",
+        "nombre": "IberPlus",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Marín y Martín S.Com.",
+        "nombre": "Marín y Martín",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Hernández S.L.U.",
+        "nombre": "Hermanos Hernández",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gómez, Comunidad de Bienes",
+        "nombre": "Hermanos Gómez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Morales y Gutiérrez",
+        "nombre": "Morales y Gutiérrez",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Martínez, Sociedad Limitada Unipersonal",
+        "nombre": "Hijos de Martínez",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "KHPLC A.I.E.",
+        "nombre": "KHPLC",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sanz Crédito",
+        "nombre": "Sanz Crédito",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "PHOX",
+        "nombre": "PHOX",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gutiérrez S.C.",
+        "nombre": "Hermanos Gutiérrez",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "MultiMar",
+        "nombre": "MultiMar",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Castro Logística",
+        "nombre": "Castro Logística",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IberPlus, S.L.U.",
+        "nombre": "IberPlus",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BHQ",
+        "nombre": "BHQ",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Martínez, C.B.",
+        "nombre": "Hermanos Martínez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Delgado Seguros, S.A.L.",
+        "nombre": "Delgado Seguros",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Europea Energía, Sociedad Limitada Unipersonal",
+        "nombre": "Europea Energía",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "UTPY",
+        "nombre": "UTPY",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Iglesias Seguros, A.I.E.",
+        "nombre": "Iglesias Seguros",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Española Digital, S.A.U.",
+        "nombre": "Española Digital",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Minorista Plus",
+        "nombre": "Minorista Plus",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alonso y Martín, S.A.U.",
+        "nombre": "Alonso y Martín",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Romero, S.L.L.",
+        "nombre": "Hermanos Romero",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Martín y Rubio, S.Com.",
+        "nombre": "Martín y Rubio",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Renovables Tradicional",
+        "nombre": "Renovables Tradicional",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gutiérrez y Marín S.L.L.",
+        "nombre": "Gutiérrez y Marín",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IberCorp",
+        "nombre": "IberCorp",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoPlus",
+        "nombre": "AutoPlus",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "QIQKZ, Sociedad Limitada Unipersonal",
+        "nombre": "QIQKZ",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Serrano",
+        "nombre": "Hermanos Serrano",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alonso Textil, S.C.",
+        "nombre": "Alonso Textil",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Inversiones Castilla",
+        "nombre": "Inversiones Castilla",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Torres, Sociedad Comanditaria",
+        "nombre": "Hijos de Torres",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoPlus",
+        "nombre": "AutoPlus",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gutiérrez, C.B.",
+        "nombre": "Hermanos Gutiérrez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gestiones Española, Sociedad Limitada Laboral",
+        "nombre": "Gestiones Española",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TransNorte, S.A.",
+        "nombre": "TransNorte",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Premium Ganadera",
+        "nombre": "Premium Ganadera",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Peninsular Servicios, S.Coop.",
+        "nombre": "Peninsular Servicios",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Atlántica Eléctrica S.A.U.",
+        "nombre": "Atlántica Eléctrica",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TelePlus, S.A.U.",
+        "nombre": "TelePlus",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Álvarez Inmobiliaria, Sociedad Cooperativa",
+        "nombre": "Álvarez Inmobiliaria",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Romero, Sociedad Anónima Laboral",
+        "nombre": "Hijos de Romero",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hernández y Blanco S.Coop.",
+        "nombre": "Hernández y Blanco",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio Fabricaciones S.A.L.",
+        "nombre": "Rubio Fabricaciones",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Serrano Asesoría S.L.L.",
+        "nombre": "Serrano Asesoría",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Morales y Martínez S.L.L.",
+        "nombre": "Morales y Martínez",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Muñoz y Rubio S.Coop.",
+        "nombre": "Muñoz y Rubio",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "García Pesquera, S.L.",
+        "nombre": "García Pesquera",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "FTQY, Sociedad Limitada Unipersonal",
+        "nombre": "FTQY",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gutiérrez, Sociedad Comanditaria",
+        "nombre": "Hijos de Gutiérrez",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ahorro Global",
+        "nombre": "Ahorro Global",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Ramírez S.A.L.",
+        "nombre": "Hijos de Ramírez",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Díaz A.I.E.",
+        "nombre": "Hermanos Díaz",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Continental Producciones",
+        "nombre": "Continental Producciones",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaPlus, Sociedad Anónima",
+        "nombre": "HispaPlus",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez Diseño, Sociedad Anónima Unipersonal",
+        "nombre": "Vázquez Diseño",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Crédito Global, Sociedad Limitada",
+        "nombre": "Crédito Global",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Muñoz y Domínguez, Sociedad Anónima Unipersonal",
+        "nombre": "Muñoz y Domínguez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gutiérrez Ganadera, Sociedad Colectiva",
+        "nombre": "Gutiérrez Ganadera",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Peninsular Pesquera, S.A.U.",
+        "nombre": "Peninsular Pesquera",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Internacional Industrias, Sociedad Anónima Unipersonal",
+        "nombre": "Internacional Industrias",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Jiménez",
+        "nombre": "Hermanos Jiménez",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Delgado y Navarro",
+        "nombre": "Delgado y Navarro",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Martínez C.B.",
+        "nombre": "Hermanos Martínez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TeleGroup",
+        "nombre": "TeleGroup",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Levante Textil S.C.",
+        "nombre": "Levante Textil",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Moreno",
+        "nombre": "Hermanos Moreno",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rodríguez Arquitectura S.Coop.",
+        "nombre": "Rodríguez Arquitectura",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaMar A.I.E.",
+        "nombre": "HispaMar",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoGroup",
+        "nombre": "AutoGroup",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Industrias Mediterránea S.A.L.",
+        "nombre": "Industrias Mediterránea",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Marín",
+        "nombre": "Hijos de Marín",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de González, Sociedad Anónima",
+        "nombre": "Hijos de González",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Clínica Universal, Sociedad Comanditaria",
+        "nombre": "Clínica Universal",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Pérez Eléctrica, S.Com.",
+        "nombre": "Pérez Eléctrica",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Cantábrica Comercial, A.I.E.",
+        "nombre": "Cantábrica Comercial",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Marín S.C.",
+        "nombre": "Hermanos Marín",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TeleNet, Comunidad de Bienes",
+        "nombre": "TeleNet",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Moreno Banca, Sociedad Cooperativa",
+        "nombre": "Moreno Banca",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ruiz y Gómez",
+        "nombre": "Ruiz y Gómez",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "APXT, Sociedad Colectiva",
+        "nombre": "APXT",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Renovables Cantábrica, Agrupación de Interés Económico",
+        "nombre": "Renovables Cantábrica",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "García y González, Sociedad Limitada Laboral",
+        "nombre": "García y González",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Producciones Andaluza, Sociedad Anónima Unipersonal",
+        "nombre": "Producciones Andaluza",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Navarro y Muñoz, S.L.L.",
+        "nombre": "Navarro y Muñoz",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Vázquez",
+        "nombre": "Hijos de Vázquez",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Torres, S.A.",
+        "nombre": "Hermanos Torres",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "González y Iglesias, S.A.U.",
+        "nombre": "González y Iglesias",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Hernández",
+        "nombre": "Hijos de Hernández",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "EuroMar, Sociedad Comanditaria",
+        "nombre": "EuroMar",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Fernández, A.I.E.",
+        "nombre": "Hermanos Fernández",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Transportes Internacional S.Com.",
+        "nombre": "Transportes Internacional",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "WUEI",
+        "nombre": "WUEI",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Marín, S.A.U.",
+        "nombre": "Hijos de Marín",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BioPlus S.L.L.",
+        "nombre": "BioPlus",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Serrano, S.A.U.",
+        "nombre": "Hijos de Serrano",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Muñoz S.L.U.",
+        "nombre": "Hermanos Muñoz",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Europea Hostelería",
+        "nombre": "Europea Hostelería",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Ramírez",
+        "nombre": "Hijos de Ramírez",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Torres",
+        "nombre": "Hijos de Torres",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "QRZO, Agrupación de Interés Económico",
+        "nombre": "QRZO",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Suárez",
+        "nombre": "Hijos de Suárez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Marín, A.I.E.",
+        "nombre": "Hijos de Marín",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Moderna Diseño, S.L.U.",
+        "nombre": "Moderna Diseño",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramírez Minorista S.Com.",
+        "nombre": "Ramírez Minorista",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Serrano y Hernández, S.A.L.",
+        "nombre": "Serrano y Hernández",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "DTQ, C.B.",
+        "nombre": "DTQ",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hotelera Ibérica S.L.",
+        "nombre": "Hotelera Ibérica",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroMar, S.A.",
+        "nombre": "AgroMar",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Rubio, Sociedad Colectiva",
+        "nombre": "Hijos de Rubio",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Fernández, S.L.U.",
+        "nombre": "Hermanos Fernández",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Agrícola Mediterránea, A.I.E.",
+        "nombre": "Agrícola Mediterránea",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "InterSol, S.Coop.",
+        "nombre": "InterSol",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaNova S.L.L.",
+        "nombre": "HispaNova",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "VMRVW",
+        "nombre": "VMRVW",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Banca Clásica, Sociedad Colectiva",
+        "nombre": "Banca Clásica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaSol, A.I.E.",
+        "nombre": "HispaSol",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ganadera Levante S.Coop.",
+        "nombre": "Ganadera Levante",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoSol",
+        "nombre": "AutoSol",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Pérez y Rubio S.L.U.",
+        "nombre": "Pérez y Rubio",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ahorro Global, Agrupación de Interés Económico",
+        "nombre": "Ahorro Global",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Muñoz",
+        "nombre": "Hijos de Muñoz",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Atlántica Gestiones",
+        "nombre": "Atlántica Gestiones",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroMar, S.Coop.",
+        "nombre": "AgroMar",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "YBH, C.B.",
+        "nombre": "YBH",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Marín S.A.L.",
+        "nombre": "Hijos de Marín",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gutiérrez C.B.",
+        "nombre": "Hijos de Gutiérrez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alonso y Ortega, S.A.",
+        "nombre": "Alonso y Ortega",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Iglesias Pesquera",
+        "nombre": "Iglesias Pesquera",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sur Renovables S.L.L.",
+        "nombre": "Sur Renovables",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BioNova",
+        "nombre": "BioNova",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alimentación Capital S.L.",
+        "nombre": "Alimentación Capital",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Comunicaciones Norte, Sociedad Anónima Unipersonal",
+        "nombre": "Comunicaciones Norte",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sanz Ocio, Sociedad Anónima Laboral",
+        "nombre": "Sanz Ocio",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Álvarez Logística, Comunidad de Bienes",
+        "nombre": "Álvarez Logística",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Romero, A.I.E.",
+        "nombre": "Hermanos Romero",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Tecnología Atlántica S.C.",
+        "nombre": "Tecnología Atlántica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Moderna Asesoría, Sociedad Limitada Laboral",
+        "nombre": "Moderna Asesoría",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ortega Construcciones",
+        "nombre": "Ortega Construcciones",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gutiérrez, Comunidad de Bienes",
+        "nombre": "Hijos de Gutiérrez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Suárez, S.Com.",
+        "nombre": "Hijos de Suárez",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "López Ocio S.A.L.",
+        "nombre": "López Ocio",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio y Moreno, Agrupación de Interés Económico",
+        "nombre": "Rubio y Moreno",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "General Energía, S.L.",
+        "nombre": "General Energía",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "EuroGroup, Agrupación de Interés Económico",
+        "nombre": "EuroGroup",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gutiérrez, S.A.U.",
+        "nombre": "Hermanos Gutiérrez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "FUKBX, S.L.",
+        "nombre": "FUKBX",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Serrano y Martín, S.L.",
+        "nombre": "Serrano y Martín",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "DKAL, S.A.U.",
+        "nombre": "DKAL",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Nacional Forestal, S.L.L.",
+        "nombre": "Nacional Forestal",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Álvarez, C.B.",
+        "nombre": "Hermanos Álvarez",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Sánchez S.L.L.",
+        "nombre": "Hijos de Sánchez",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Restauración Mediterránea",
+        "nombre": "Restauración Mediterránea",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "NYN S.C.",
+        "nombre": "NYN",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Rodríguez, Agrupación de Interés Económico",
+        "nombre": "Hijos de Rodríguez",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Informática Ibérica, Sociedad Comanditaria",
+        "nombre": "Informática Ibérica",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IFNL S.L.",
+        "nombre": "IFNL",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "KREN",
+        "nombre": "KREN",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio y Delgado",
+        "nombre": "Rubio y Delgado",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Marín",
+        "nombre": "Hermanos Marín",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Torres, Sociedad Colectiva",
+        "nombre": "Hijos de Torres",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "XDBER",
+        "nombre": "XDBER",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Blanco y Ortega, Sociedad Limitada Unipersonal",
+        "nombre": "Blanco y Ortega",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Seguros Pro, S.Com.",
+        "nombre": "Seguros Pro",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Alonso",
+        "nombre": "Hijos de Alonso",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Molina",
+        "nombre": "Hermanos Molina",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Castro y Molina",
+        "nombre": "Castro y Molina",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Muñoz Hotelera, Sociedad Limitada Unipersonal",
+        "nombre": "Muñoz Hotelera",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "YHOL",
+        "nombre": "YHOL",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Gómez, S.A.",
+        "nombre": "Hijos de Gómez",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Blanco Farmacéutica, Sociedad Colectiva",
+        "nombre": "Blanco Farmacéutica",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "VSKP",
+        "nombre": "VSKP",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "WED, A.I.E.",
+        "nombre": "WED",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Andaluza Logística S.A.",
+        "nombre": "Andaluza Logística",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Europea Turismo, Sociedad Anónima",
+        "nombre": "Europea Turismo",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Sanitaria Primera S.L.L.",
+        "nombre": "Sanitaria Primera",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Ruiz, Sociedad Limitada Laboral",
+        "nombre": "Hijos de Ruiz",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Atlántica Promociones, C.B.",
+        "nombre": "Atlántica Promociones",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hostelería Peninsular, Sociedad Limitada Unipersonal",
+        "nombre": "Hostelería Peninsular",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "MWX",
+        "nombre": "MWX",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Serrano A.I.E.",
+        "nombre": "Hermanos Serrano",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Sanz",
+        "nombre": "Hermanos Sanz",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TransCorp, S.Coop.",
+        "nombre": "TransCorp",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez Médica S.A.U.",
+        "nombre": "Vázquez Médica",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Gil S.A.U.",
+        "nombre": "Hermanos Gil",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio y Vázquez",
+        "nombre": "Rubio y Vázquez",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramírez Ocio, S.A.L.",
+        "nombre": "Ramírez Ocio",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Importación Norte",
+        "nombre": "Importación Norte",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "TeleMar S.Com.",
+        "nombre": "TeleMar",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Fernández Gestiones",
+        "nombre": "Fernández Gestiones",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "García Seguros, S.Com.",
+        "nombre": "García Seguros",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Servicios Clásica",
+        "nombre": "Servicios Clásica",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez Hotelera, Sociedad Comanditaria",
+        "nombre": "Vázquez Hotelera",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "ZVB, Sociedad Cooperativa",
+        "nombre": "ZVB",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Comunicaciones General",
+        "nombre": "Comunicaciones General",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Alonso y Ortega",
+        "nombre": "Alonso y Ortega",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "General Energía S.A.U.",
+        "nombre": "General Energía",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AutoCorp S.L.L.",
+        "nombre": "AutoCorp",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Jiménez, S.A.",
+        "nombre": "Hermanos Jiménez",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Solar Mediterránea",
+        "nombre": "Solar Mediterránea",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Álvarez Promociones",
+        "nombre": "Álvarez Promociones",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Iglesias Agrícola S.Com.",
+        "nombre": "Iglesias Agrícola",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Rubio y Delgado, Sociedad Anónima Laboral",
+        "nombre": "Rubio y Delgado",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Crédito General, Sociedad Cooperativa",
+        "nombre": "Crédito General",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Capital Consultoría",
+        "nombre": "Capital Consultoría",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Española Fabricaciones, S.C.",
+        "nombre": "Española Fabricaciones",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Tradicional Fabricaciones",
+        "nombre": "Tradicional Fabricaciones",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "LOLEE, Sociedad Anónima",
+        "nombre": "LOLEE",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaNorte, S.L.U.",
+        "nombre": "HispaNorte",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Turismo Mediterránea, S.A.",
+        "nombre": "Turismo Mediterránea",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IberSur",
+        "nombre": "IberSur",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "InterTech, Sociedad Anónima",
+        "nombre": "InterTech",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Castro",
+        "nombre": "Hijos de Castro",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Marín S.A.L.",
+        "nombre": "Hijos de Marín",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BVZLP, Sociedad Limitada Laboral",
+        "nombre": "BVZLP",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "CTKDY, S.A.",
+        "nombre": "CTKDY",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Pérez y Martínez",
+        "nombre": "Pérez y Martínez",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BioMar, C.B.",
+        "nombre": "BioMar",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "GZXJC, C.B.",
+        "nombre": "GZXJC",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Rubio S.L.",
+        "nombre": "Hermanos Rubio",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "IWA, S.L.U.",
+        "nombre": "IWA",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaPlus",
+        "nombre": "HispaPlus",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Rodríguez, S.L.U.",
+        "nombre": "Hermanos Rodríguez",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ramos y Suárez",
+        "nombre": "Ramos y Suárez",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Domínguez y Domínguez",
+        "nombre": "Domínguez y Domínguez",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BioNova, Sociedad Limitada",
+        "nombre": "BioNova",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Molina, Sociedad Colectiva",
+        "nombre": "Hijos de Molina",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Minorista Primera",
+        "nombre": "Minorista Primera",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "WQOUF S.Coop.",
+        "nombre": "WQOUF",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Construcciones Nacional A.I.E.",
+        "nombre": "Construcciones Nacional",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Gutiérrez y Moreno",
+        "nombre": "Gutiérrez y Moreno",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "QTDL, Comunidad de Bienes",
+        "nombre": "QTDL",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Marín Ocio, Sociedad Cooperativa",
+        "nombre": "Marín Ocio",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "HispaCorp S.A.",
+        "nombre": "HispaCorp",
+        "forma_juridica": "S.A.",
+        "forma_juridica_completa": "Sociedad Anónima",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "NFQI S.L.L.",
+        "nombre": "NFQI",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ortega Trading, Sociedad Anónima Laboral",
+        "nombre": "Ortega Trading",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "AgroPlus, A.I.E.",
+        "nombre": "AgroPlus",
+        "forma_juridica": "A.I.E.",
+        "forma_juridica_completa": "Agrupación de Interés Económico",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Mediterránea Inversiones S.A.L.",
+        "nombre": "Mediterránea Inversiones",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Tecnología Premium, C.B.",
+        "nombre": "Tecnología Premium",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Global Arquitectura, S.L.U.",
+        "nombre": "Global Arquitectura",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Castro S.Com.",
+        "nombre": "Hermanos Castro",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Molina y Suárez, S.Coop.",
+        "nombre": "Molina y Suárez",
+        "forma_juridica": "S.Coop.",
+        "forma_juridica_completa": "Sociedad Cooperativa",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hijos de Fernández",
+        "nombre": "Hijos de Fernández",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "MultiNorte S.L.L.",
+        "nombre": "MultiNorte",
+        "forma_juridica": "S.L.L.",
+        "forma_juridica_completa": "Sociedad Limitada Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Inmobiliaria Andaluza",
+        "nombre": "Inmobiliaria Andaluza",
+        "forma_juridica": "S.C.",
+        "forma_juridica_completa": "Sociedad Colectiva",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Suárez, Sociedad Anónima Unipersonal",
+        "nombre": "Hermanos Suárez",
+        "forma_juridica": "S.A.U.",
+        "forma_juridica_completa": "Sociedad Anónima Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Domínguez y Rodríguez, S.Com.",
+        "nombre": "Domínguez y Rodríguez",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Sánchez S.A.L.",
+        "nombre": "Hermanos Sánchez",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "BUDRD",
+        "nombre": "BUDRD",
+        "forma_juridica": "S.L.U.",
+        "forma_juridica_completa": "Sociedad Limitada Unipersonal",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Hermanos Iglesias, S.A.L.",
+        "nombre": "Hermanos Iglesias",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Construcciones Excellence, Sociedad Anónima Laboral",
+        "nombre": "Construcciones Excellence",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ingeniería Española",
+        "nombre": "Ingeniería Española",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "OOVQ",
+        "nombre": "OOVQ",
+        "forma_juridica": "S.A.L.",
+        "forma_juridica_completa": "Sociedad Anónima Laboral",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Pérez Crédito",
+        "nombre": "Pérez Crédito",
+        "forma_juridica": "S.Com.",
+        "forma_juridica_completa": "Sociedad Comanditaria",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Ahorro Moderna, Comunidad de Bienes",
+        "nombre": "Ahorro Moderna",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Primera Informática",
+        "nombre": "Primera Informática",
+        "forma_juridica": "S.L.",
+        "forma_juridica_completa": "Sociedad Limitada",
+        "tipo": "EMPRESA_PRIVADA"
+      },
+      {
+        "texto": "Vázquez y García",
+        "nombre": "Vázquez y García",
+        "forma_juridica": "C.B.",
+        "forma_juridica_completa": "Comunidad de Bienes",
+        "tipo": "EMPRESA_PRIVADA"
+      }
+    ],
+    "instituciones_publicas": [
+      {
+        "texto": "Audiencia Provincial de Vilches",
+        "ciudad": "Vilches",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "A Coruña",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deSan Sebastián nº 3",
+        "ciudad": "San Sebastián",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Penal nº 7 de Barcelona",
+        "ciudad": "Barcelona",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deSevilla",
+        "ciudad": "Sevilla",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Supremo",
+        "ciudad": "Carbajo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deElche",
+        "ciudad": "Elche",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deMonleón",
+        "ciudad": "Monleón",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deMuñana nº 2",
+        "ciudad": "Muñana",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deAller nº 1",
+        "ciudad": "Aller",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deElche nº 5",
+        "ciudad": "Elche",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deFortanete",
+        "ciudad": "Fortanete",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deBilbao",
+        "ciudad": "Bilbao",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Vigo",
+        "ciudad": "Vigo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 13 de Coruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 12 de San Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deMoraleja del Vino",
+        "ciudad": "Moraleja del Vino",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Superior de Justicia",
+        "ciudad": "Arahuetes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deAller",
+        "ciudad": "Aller",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deSalas",
+        "ciudad": "Salas",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Superior de Justicia",
+        "ciudad": "San Sebastián",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Puigcerdà",
+        "ciudad": "Puigcerdà",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 12 de Espinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Penal nº 8 de Elche",
+        "ciudad": "Elche",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deValladolid",
+        "ciudad": "Valladolid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deSan Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 13 de Truchas",
+        "ciudad": "Truchas",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deVillabuena del Puente nº 5",
+        "ciudad": "Villabuena del Puente",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 12 de Unciti",
+        "ciudad": "Unciti",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deEspinar, El nº 2",
+        "ciudad": "Espinar, El",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Penal nº 2 de Monleón",
+        "ciudad": "Monleón",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 15 de Palma",
+        "ciudad": "Palma",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deSan Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 10 de Córdoba",
+        "ciudad": "Córdoba",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Paradas",
+        "ciudad": "Paradas",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBurgos nº 5",
+        "ciudad": "Burgos",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deSanta Cruz de Tenerife",
+        "ciudad": "Santa Cruz de Tenerife",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Aller",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 6 de Monleón",
+        "ciudad": "Monleón",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Menores nº 3 de Carbajo",
+        "ciudad": "Carbajo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deAlba de Yeltes nº 5",
+        "ciudad": "Alba de Yeltes",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMurcia nº 2",
+        "ciudad": "Murcia",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deValladolid nº 2",
+        "ciudad": "Valladolid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Palma",
+        "ciudad": "Palma",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 15 de Artà",
+        "ciudad": "Artà",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deMadrid nº 5",
+        "ciudad": "Madrid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Supremo",
+        "ciudad": "Salamanca",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Coruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 4 de Vigo",
+        "ciudad": "Vigo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 8 de Chodes",
+        "ciudad": "Chodes",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deFuente de Cantos",
+        "ciudad": "Fuente de Cantos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deTruchas nº 5",
+        "ciudad": "Truchas",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 11 de San Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Solanillos del Extremo",
+        "ciudad": "Solanillos del Extremo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deAmusquillo",
+        "ciudad": "Amusquillo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Llanes",
+        "ciudad": "Llanes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Matanza de Acentejo, La",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Llanes",
+        "ciudad": "Llanes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deChodes",
+        "ciudad": "Chodes",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deSantander",
+        "ciudad": "Santander",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deCarbajosa de la Sagrada nº 5",
+        "ciudad": "Carbajosa de la Sagrada",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deSevilla",
+        "ciudad": "Sevilla",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deAyamonte nº 1",
+        "ciudad": "Ayamonte",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deBilbao",
+        "ciudad": "Bilbao",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deBarcelona",
+        "ciudad": "Barcelona",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deMonasterio de Rodilla",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMonasterio de Rodilla nº 4",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 12 de Hoya-Gonzalo",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Villerías de Campos",
+        "ciudad": "Villerías de Campos",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 4 de Santa Cilia",
+        "ciudad": "Santa Cilia",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Pamplona",
+        "ciudad": "Pamplona",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 6 de Fortanete",
+        "ciudad": "Fortanete",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Monleón",
+        "ciudad": "Monleón",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deBilbao",
+        "ciudad": "Bilbao",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Sevilla",
+        "ciudad": "Sevilla",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deSantander",
+        "ciudad": "Santander",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deSalamanca",
+        "ciudad": "Salamanca",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 1 de Oviedo",
+        "ciudad": "Oviedo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Nacional",
+        "ciudad": "Arahuetes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Huertahernando",
+        "ciudad": "Huertahernando",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Monleón",
+        "ciudad": "Monleón",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Alba de Yeltes",
+        "ciudad": "Alba de Yeltes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Economistas deCarbajosa de la Sagrada",
+        "ciudad": "Carbajosa de la Sagrada",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deCoruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 11 de Ventas de San Julián, Las",
+        "ciudad": "Ventas de San Julián, Las",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Menores nº 1 de Truchas",
+        "ciudad": "Truchas",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 2 de Benejúzar",
+        "ciudad": "Benejúzar",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Alicante",
+        "ciudad": "Alicante",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 10 de Ventas de San Julián, Las",
+        "ciudad": "Ventas de San Julián, Las",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deLupión nº 4",
+        "ciudad": "Lupión",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Burgos",
+        "ciudad": "Burgos",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Ventas de San Julián, Las",
+        "ciudad": "Ventas de San Julián, Las",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 14 de Alicante",
+        "ciudad": "Alicante",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 8 de Vitoria",
+        "ciudad": "Vitoria",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 15 de Fuente de Cantos",
+        "ciudad": "Fuente de Cantos",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 10 de Marchagaz",
+        "ciudad": "Marchagaz",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 14 de Solanillos del Extremo",
+        "ciudad": "Solanillos del Extremo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Monasterio de Rodilla",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deTruchas",
+        "ciudad": "Truchas",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deBurgos",
+        "ciudad": "Burgos",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Muñana",
+        "ciudad": "Muñana",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBilbao nº 2",
+        "ciudad": "Bilbao",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deAller nº 3",
+        "ciudad": "Aller",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de San Pedro de la Nave-Almendra",
+        "ciudad": "San Pedro de la Nave-Almendra",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Villabuena del Puente",
+        "ciudad": "Villabuena del Puente",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros dePuigcerdà",
+        "ciudad": "Puigcerdà",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deSan Pedro de la Nave-Almendra",
+        "ciudad": "San Pedro de la Nave-Almendra",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deSolanillos del Extremo",
+        "ciudad": "Solanillos del Extremo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deSan Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deVigo",
+        "ciudad": "Vigo",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBurgos nº 3",
+        "ciudad": "Burgos",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deNavares de Enmedio",
+        "ciudad": "Navares de Enmedio",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Granada",
+        "ciudad": "Granada",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deCarbajosa de la Sagrada",
+        "ciudad": "Carbajosa de la Sagrada",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deCoruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Santander",
+        "ciudad": "Santander",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 7 de Ayamonte",
+        "ciudad": "Ayamonte",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Huelva",
+        "ciudad": "Huelva",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deTinieblas de la Sierra",
+        "ciudad": "Tinieblas de la Sierra",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deEspinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia e Instrucción nº 9 de Alba de Yeltes",
+        "ciudad": "Alba de Yeltes",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deLlanes",
+        "ciudad": "Llanes",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deA Coruña",
+        "ciudad": "A Coruña",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deFuente de Cantos",
+        "ciudad": "Fuente de Cantos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 11 de Huertahernando",
+        "ciudad": "Huertahernando",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 7 de Albacete",
+        "ciudad": "Albacete",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deVigo",
+        "ciudad": "Vigo",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Bilbao",
+        "ciudad": "Bilbao",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deA Coruña",
+        "ciudad": "A Coruña",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Fabara",
+        "ciudad": "Fabara",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 8 de Badajoz",
+        "ciudad": "Badajoz",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Social nº 12 de Zaragoza",
+        "ciudad": "Zaragoza",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 8 de Herrería",
+        "ciudad": "Herrería",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deArahuetes",
+        "ciudad": "Arahuetes",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 4 de Navares de Enmedio",
+        "ciudad": "Navares de Enmedio",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deLlanes",
+        "ciudad": "Llanes",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBenejúzar nº 5",
+        "ciudad": "Benejúzar",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deMarbella",
+        "ciudad": "Marbella",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deMarbella",
+        "ciudad": "Marbella",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deOviedo",
+        "ciudad": "Oviedo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Santa Cilia",
+        "ciudad": "Santa Cilia",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Logroño",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deBenadalid",
+        "ciudad": "Benadalid",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 2 de Hoya-Gonzalo",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deEspinar, El nº 5",
+        "ciudad": "Espinar, El",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deHoya-Gonzalo",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deElche",
+        "ciudad": "Elche",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deSan Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deFortanete",
+        "ciudad": "Fortanete",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deVitoria nº 3",
+        "ciudad": "Vitoria",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Palma",
+        "ciudad": "Palma",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deMadrid",
+        "ciudad": "Madrid",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 8 de Espinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deSan Pedro de la Nave-Almendra",
+        "ciudad": "San Pedro de la Nave-Almendra",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 13 de Muñana",
+        "ciudad": "Muñana",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deValencia nº 5",
+        "ciudad": "Valencia",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deSolanillos del Extremo nº 2",
+        "ciudad": "Solanillos del Extremo",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 4 de Albacete",
+        "ciudad": "Albacete",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 5 de Truchas",
+        "ciudad": "Truchas",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deGranada",
+        "ciudad": "Granada",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Santa María del Val",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Nacional",
+        "ciudad": "Navares de Enmedio",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 12 de San Pedro de la Nave-Almendra",
+        "ciudad": "San Pedro de la Nave-Almendra",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deAller nº 3",
+        "ciudad": "Aller",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Villabuena del Puente",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Social nº 10 de Muñana",
+        "ciudad": "Muñana",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros deSalamanca",
+        "ciudad": "Salamanca",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deAller",
+        "ciudad": "Aller",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deVitoria nº 2",
+        "ciudad": "Vitoria",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deEspinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deSanta Cilia nº 2",
+        "ciudad": "Santa Cilia",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deVitoria nº 1",
+        "ciudad": "Vitoria",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBilbao nº 4",
+        "ciudad": "Bilbao",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial",
+        "ciudad": "Puigcerdà",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMadrid nº 2",
+        "ciudad": "Madrid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deMonleón nº 5",
+        "ciudad": "Monleón",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deSan Pedro de la Nave-Almendra",
+        "ciudad": "San Pedro de la Nave-Almendra",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 5 de San Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deBilbao",
+        "ciudad": "Bilbao",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deVilanova de Bellpuig",
+        "ciudad": "Vilanova de Bellpuig",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deArtà nº 1",
+        "ciudad": "Artà",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Unciti",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deAlba de Yeltes nº 2",
+        "ciudad": "Alba de Yeltes",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 12 de Valencia",
+        "ciudad": "Valencia",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Social nº 8 de Santander",
+        "ciudad": "Santander",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deOjos-Albos nº 2",
+        "ciudad": "Ojos-Albos",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Superior de Justicia",
+        "ciudad": "Espinar, El",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deHuelva nº 4",
+        "ciudad": "Huelva",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMonasterio de Rodilla nº 3",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Mercantil nº 11 de Matanza de Acentejo, La",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deVilches",
+        "ciudad": "Vilches",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Pontós",
+        "ciudad": "Pontós",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deVillabuena del Puente",
+        "ciudad": "Villabuena del Puente",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Espinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deBenadalid nº 2",
+        "ciudad": "Benadalid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Menores nº 4 de Fabara",
+        "ciudad": "Fabara",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Matanza de Acentejo, La",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deHoya-Gonzalo",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deHerrería nº 5",
+        "ciudad": "Herrería",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deParadas nº 4",
+        "ciudad": "Paradas",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deLlanes",
+        "ciudad": "Llanes",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deSanta María del Val",
+        "ciudad": "Santa María del Val",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de San Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deCarbajo",
+        "ciudad": "Carbajo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deFuente de Cantos",
+        "ciudad": "Fuente de Cantos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Puigcerdà",
+        "ciudad": "Puigcerdà",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 8 de Elche",
+        "ciudad": "Elche",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 15 de Matanza de Acentejo, La",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deMuñana",
+        "ciudad": "Muñana",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deMoraleja del Vino nº 5",
+        "ciudad": "Moraleja del Vino",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Menores nº 4 de Amusquillo",
+        "ciudad": "Amusquillo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deCarbajosa de la Sagrada nº 5",
+        "ciudad": "Carbajosa de la Sagrada",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Muñana",
+        "ciudad": "Muñana",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Mercantil nº 9 de Ayamonte",
+        "ciudad": "Ayamonte",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Moraleja del Vino",
+        "ciudad": "Moraleja del Vino",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Alba de Yeltes",
+        "ciudad": "Alba de Yeltes",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros deUnciti",
+        "ciudad": "Unciti",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Fortanete",
+        "ciudad": "Fortanete",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial",
+        "ciudad": "Oviedo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deLogroño nº 3",
+        "ciudad": "Logroño",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deSan Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deAller",
+        "ciudad": "Aller",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos dePontós",
+        "ciudad": "Pontós",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 5 de Villerías de Campos",
+        "ciudad": "Villerías de Campos",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deBadajoz",
+        "ciudad": "Badajoz",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deMassalfassar",
+        "ciudad": "Massalfassar",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros deBarcelona",
+        "ciudad": "Barcelona",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deMadrid",
+        "ciudad": "Madrid",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deBadajoz",
+        "ciudad": "Badajoz",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Coruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deSalas",
+        "ciudad": "Salas",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deSevilla nº 5",
+        "ciudad": "Sevilla",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 8 de Ayamonte",
+        "ciudad": "Ayamonte",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deSan Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deMuñana",
+        "ciudad": "Muñana",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Nacional",
+        "ciudad": "Palma",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBadajoz nº 3",
+        "ciudad": "Badajoz",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil dePontós nº 3",
+        "ciudad": "Pontós",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Granada",
+        "ciudad": "Granada",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Menores nº 8 de Villanueva del Ariscal",
+        "ciudad": "Villanueva del Ariscal",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Superior de Justicia",
+        "ciudad": "Marbella",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Nacional",
+        "ciudad": "Elche",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Supremo",
+        "ciudad": "Santa María del Val",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deTarragona",
+        "ciudad": "Tarragona",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deMarbella",
+        "ciudad": "Marbella",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Arquitectos deMassalfassar",
+        "ciudad": "Massalfassar",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros deBadajoz",
+        "ciudad": "Badajoz",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Vigo",
+        "ciudad": "Vigo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 5 de Coruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deCoruña del Conde",
+        "ciudad": "Coruña del Conde",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de A Coruña",
+        "ciudad": "A Coruña",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Instrucción nº 3 de Pontós",
+        "ciudad": "Pontós",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Supremo",
+        "ciudad": "Pamplona",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deZaragoza nº 2",
+        "ciudad": "Zaragoza",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Penal nº 13 de Marbella",
+        "ciudad": "Marbella",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de San Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 1 de Espinar, El",
+        "ciudad": "Espinar, El",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deBadajoz nº 2",
+        "ciudad": "Badajoz",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia e Instrucción nº 11 de Moraleja del Vino",
+        "ciudad": "Moraleja del Vino",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deMálaga nº 2",
+        "ciudad": "Málaga",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deMonleón",
+        "ciudad": "Monleón",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Ingenieros deBenejúzar",
+        "ciudad": "Benejúzar",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deBurgos",
+        "ciudad": "Burgos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Fortanete",
+        "ciudad": "Fortanete",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deSan Juan de Gredos",
+        "ciudad": "San Juan de Gredos",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Mercantil nº 13 de Hoya-Gonzalo",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Familia nº 14 de Tinieblas de la Sierra",
+        "ciudad": "Tinieblas de la Sierra",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deBenadalid nº 3",
+        "ciudad": "Benadalid",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deBurgos nº 1",
+        "ciudad": "Burgos",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deSanta Cilia nº 1",
+        "ciudad": "Santa Cilia",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Benadalid",
+        "ciudad": "Benadalid",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMatanza de Acentejo, La nº 5",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de lo Contencioso-Administrativo nº 14 de Santa Cilia",
+        "ciudad": "Santa Cilia",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 4 de Oviedo",
+        "ciudad": "Oviedo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Amusquillo",
+        "ciudad": "Amusquillo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Córdoba",
+        "ciudad": "Córdoba",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Registradores deValencia",
+        "ciudad": "Valencia",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deMarbella",
+        "ciudad": "Marbella",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría dePontós nº 1",
+        "ciudad": "Pontós",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Farmacéuticos deHuertahernando",
+        "ciudad": "Huertahernando",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Médicos deSolanillos del Extremo",
+        "ciudad": "Solanillos del Extremo",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Audiencia Provincial de Marchagaz",
+        "ciudad": "Marchagaz",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deAyamonte",
+        "ciudad": "Ayamonte",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 4 de Logroño",
+        "ciudad": "Logroño",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deZaragoza nº 1",
+        "ciudad": "Zaragoza",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deAller nº 1",
+        "ciudad": "Aller",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Vigilancia Penitenciaria nº 14 de Amusquillo",
+        "ciudad": "Amusquillo",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Notarios deNavares de Enmedio",
+        "ciudad": "Navares de Enmedio",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Violencia sobre la Mujer nº 9 de Fornalutx",
+        "ciudad": "Fornalutx",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deLupión nº 5",
+        "ciudad": "Lupión",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Notaría deBenejúzar nº 5",
+        "ciudad": "Benejúzar",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro de la Propiedad deArahuetes nº 1",
+        "ciudad": "Arahuetes",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deNavares de Enmedio",
+        "ciudad": "Navares de Enmedio",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio Oficial de Psicólogos deSan Sebastián",
+        "ciudad": "San Sebastián",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Juzgado de Primera Instancia nº 1 de Marchagaz",
+        "ciudad": "Marchagaz",
+        "subtipo": "juzgado",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Mercantil deMatanza de Acentejo, La",
+        "ciudad": "Matanza de Acentejo, La",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Ilustre Colegio de Abogados deMonasterio de Rodilla",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Registro Civil deMonasterio de Rodilla nº 5",
+        "ciudad": "Monasterio de Rodilla",
+        "subtipo": "registro",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Colegio de Procuradores deMassalfassar",
+        "ciudad": "Massalfassar",
+        "subtipo": "colegio_profesional",
+        "tipo": "INSTITUCION_PUBLICA"
+      },
+      {
+        "texto": "Tribunal Constitucional",
+        "ciudad": "Hoya-Gonzalo",
+        "subtipo": "tribunal",
+        "tipo": "INSTITUCION_PUBLICA"
+      }
+    ],
+    "entidades_financieras": [
+      {
+        "texto": "entidad bancaria Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Allianz Seguros",
+        "nombre": "Allianz Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Kutxabank",
+        "nombre": "Kutxabank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Ibercaja",
+        "nombre": "Ibercaja",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Zurich España",
+        "nombre": "Zurich España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Openbank",
+        "nombre": "Openbank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Bankinter",
+        "nombre": "Bankinter",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria AXA España",
+        "nombre": "AXA España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad ING España",
+        "nombre": "ING España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Openbank",
+        "nombre": "Openbank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Bankinter",
+        "nombre": "Bankinter",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Reale Seguros",
+        "nombre": "Reale Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Generali Seguros",
+        "nombre": "Generali Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad ING España",
+        "nombre": "ING España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria AXA España",
+        "nombre": "AXA España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Zurich España",
+        "nombre": "Zurich España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "AXA España",
+        "nombre": "AXA España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Openbank",
+        "nombre": "Openbank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Caser",
+        "nombre": "Caser",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Bankinter",
+        "nombre": "Bankinter",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Zurich España",
+        "nombre": "Zurich España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Pelayo",
+        "nombre": "Pelayo",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Kutxabank",
+        "nombre": "Kutxabank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Bankinter",
+        "nombre": "Bankinter",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Asisa",
+        "nombre": "Asisa",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Asisa",
+        "nombre": "Asisa",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Triodos Bank",
+        "nombre": "Triodos Bank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Openbank",
+        "nombre": "Openbank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Liberty Seguros",
+        "nombre": "Liberty Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "AXA España",
+        "nombre": "AXA España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Línea Directa",
+        "nombre": "Línea Directa",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria ING España",
+        "nombre": "ING España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "DKV Seguros",
+        "nombre": "DKV Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Kutxabank",
+        "nombre": "Kutxabank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "BBVA",
+        "nombre": "BBVA",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Santa Lucía",
+        "nombre": "Santa Lucía",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Bankinter",
+        "nombre": "Bankinter",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Liberty Seguros",
+        "nombre": "Liberty Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Mutua Madrileña",
+        "nombre": "Mutua Madrileña",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Reale Seguros",
+        "nombre": "Reale Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Pelayo",
+        "nombre": "Pelayo",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Kutxabank",
+        "nombre": "Kutxabank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Caser",
+        "nombre": "Caser",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Abanca",
+        "nombre": "Abanca",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Ibercaja",
+        "nombre": "Ibercaja",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Ibercaja",
+        "nombre": "Ibercaja",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria AXA España",
+        "nombre": "AXA España",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Openbank",
+        "nombre": "Openbank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria CaixaBank",
+        "nombre": "CaixaBank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Mapfre",
+        "nombre": "Mapfre",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "EVO Banco",
+        "nombre": "EVO Banco",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Triodos Bank",
+        "nombre": "Triodos Bank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "ING España",
+        "nombre": "ING España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Línea Directa",
+        "nombre": "Línea Directa",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Santander",
+        "nombre": "Banco Santander",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "ING España",
+        "nombre": "ING España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Pelayo",
+        "nombre": "Pelayo",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Triodos Bank",
+        "nombre": "Triodos Bank",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Caja Rural",
+        "nombre": "Caja Rural",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Cajamar",
+        "nombre": "Cajamar",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Banco Sabadell",
+        "nombre": "Banco Sabadell",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Pelayo",
+        "nombre": "Pelayo",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "entidad bancaria Liberty Seguros",
+        "nombre": "Liberty Seguros",
+        "subtipo": "aseguradora",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "Abanca",
+        "nombre": "Abanca",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      },
+      {
+        "texto": "la entidad Deutsche Bank España",
+        "nombre": "Deutsche Bank España",
+        "subtipo": "banco",
+        "tipo": "ENTIDAD_FINANCIERA"
+      }
+    ],
+    "organizaciones_religiosas": [
+      {
+        "texto": "Iglesia deSan Juan de Amusquillo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deAller",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deVillabuena del Puente",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Archidiócesis deA Coruña",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSantiago",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Juan",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Sebastián de Herrería",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Sebastián de Santa Cruz de Tenerife",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Francisco",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deNuestra Señora del Pilar de Moraleja del Vino",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deSanta Cruz de Tenerife",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deFornalutx",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deNuestra Señora del Carmen de Moraleja del Vino",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSanta Teresa de Huelva",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSan Antonio",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSan Martín",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deGranada",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSan José",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Juan",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSantiago",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deNuestra Señora del Pilar",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Archidiócesis dePalma",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deNuestra Señora de la Asunción de Málaga",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSan Juan",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSanta María de Logroño",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan José de Tarragona",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deHoya-Gonzalo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSan Pedro",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Juan de Madrid",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSan Juan",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Pablo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deMurcia",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSan Pedro de Arahuetes",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Antonio de Logroño",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Pablo de Marbella",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Lorenzo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSanta María",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Antonio",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deNuestra Señora del Pilar",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deMoraleja del Vino",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Miguel",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deNuestra Señora del Pilar",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Francisco",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Sebastián de Badajoz",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSanta Ana de Palma",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deNuestra Señora de Fátima",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deSan Sebastián",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSanta Teresa de Navares de Enmedio",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSan Pablo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deCarbajo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Isidro",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Archidiócesis deHoya-Gonzalo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSan Isidro",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Martín de Badajoz",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deMoraleja del Vino",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Sebastián",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Lorenzo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Martín de Sevilla",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Antonio",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSantiago",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Sebastián de Truchas",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Archidiócesis deVillabuena del Puente",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deTinieblas de la Sierra",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deNuestra Señora de Fátima",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deMonleón",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deNuestra Señora del Pilar",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deNuestra Señora del Carmen",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Sebastián",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Martín de Valencia",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Miguel",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Archidiócesis deGranada",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSan Sebastián de Unciti",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan José",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSan Isidro de Amusquillo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Lorenzo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Juan de Valladolid",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Basílica deSan Isidro de Benadalid",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Francisco",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deValencia",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSanta María de Málaga",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Martín",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deAlba de Yeltes",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan José",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSanta María",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Parroquia deSan Miguel de Paradas",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado dePuigcerdà",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Diócesis deValencia",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deNuestra Señora del Carmen",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deFabara",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Juan",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Iglesia deSan Lorenzo de San Juan de Gredos",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Sebastián",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSanta Ana",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Obispado deCarbajo",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Martín",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Convento deSan Miguel",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Cofradía deSan Francisco",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Monasterio deSan José",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Hermandad deSan José",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      },
+      {
+        "texto": "Catedral deSan Miguel",
+        "tipo": "ORGANIZACION_RELIGIOSA"
+      }
+    ],
+    "sin_animo_lucro": [
+      {
+        "texto": "Federación de Consumidores y Usuarios",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Familias Numerosas",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación para la Investigación del Cáncer",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Cooperación Internacional",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación Cultural",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Enfermedades Raras",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Consumidores y Usuarios",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Consumidores y Usuarios",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Enfermedades Raras",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación para el Desarrollo Sostenible",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Derechos Humanos",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Apoyo a la Infancia",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Vecinos",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Consumidores y Usuarios",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación para la Investigación del Cáncer",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Derechos Humanos",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Derechos Humanos",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Derechos Humanos",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Acción Social",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación para la Protección del Medio Ambiente",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación para la Protección del Medio Ambiente",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Cooperación Internacional",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Vecinos",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja para la Investigación del Cáncer",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Derechos Humanos",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Familias Numerosas",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Ayuda Humanitaria",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas Deportiva",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Familias Numerosas",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas para la Protección del Medio Ambiente",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación Cultural",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas Deportiva",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Víctimas del Terrorismo",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Apoyo a la Infancia",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Víctimas del Terrorismo",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Derechos Humanos",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Acción Social",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas para la Protección del Medio Ambiente",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación para la Protección del Medio Ambiente",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Acción Social",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Víctimas del Terrorismo",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación para el Desarrollo Sostenible",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Familias Numerosas",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Familias Numerosas",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas para la Protección del Medio Ambiente",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Consumidores y Usuarios",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Enfermedades Raras",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación Cultural",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación Cultural",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG Cultural",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Consumidores y Usuarios",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Apoyo a la Infancia",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Ayuda Humanitaria",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Ayuda Humanitaria",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Ayuda Humanitaria",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas contra el Hambre",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación contra el Hambre",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Vecinos",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Apoyo a la Infancia",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Apoyo a la Infancia",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Enfermedades Raras",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas para la Protección del Medio Ambiente",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Ayuda Humanitaria",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG para la Investigación del Cáncer",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación contra el Hambre",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Acción Social",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación de Ayuda Humanitaria",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Vecinos",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Apoyo a la Infancia",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Consumidores y Usuarios",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Víctimas del Terrorismo",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Familias Numerosas",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Consumidores y Usuarios",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja Deportiva",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Consumidores y Usuarios",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Acción Social",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas Cultural",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación Deportiva",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Vecinos",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Víctimas del Terrorismo",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación contra el Hambre",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Enfermedades Raras",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Ayuda Humanitaria",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación Cultural",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación de Apoyo a la Infancia",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Víctimas del Terrorismo",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación contra el Hambre",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación para el Desarrollo Sostenible",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas de Apoyo a la Infancia",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Confederación de Vecinos",
+        "prefijo": "Confederación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación de Enfermedades Raras",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Federación para el Desarrollo Sostenible",
+        "prefijo": "Federación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Asociación Deportiva",
+        "prefijo": "Asociación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Derechos Humanos",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Ayuda Humanitaria",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cruz Roja de Ayuda Humanitaria",
+        "prefijo": "Cruz Roja",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Apoyo a la Infancia",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Cáritas para el Desarrollo Sostenible",
+        "prefijo": "Cáritas",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "ONG de Apoyo a la Infancia",
+        "prefijo": "ONG",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      },
+      {
+        "texto": "Fundación Deportiva",
+        "prefijo": "Fundación",
+        "tipo": "ORGANIZACION_SIN_ANIMO_LUCRO"
+      }
+    ]
+  }
+}

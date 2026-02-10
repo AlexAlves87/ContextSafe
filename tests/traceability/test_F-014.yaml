@@ -1,0 +1,51 @@
+# Traceability Audit: F-014
+# Function: CreateProject
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-014"
+  function_name: "CreateProject"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/create_project/create_project.py"
+    supporting_files:
+      - "src/contextsafe/domain/project_management/aggregates/project.py"
+      - "src/contextsafe/application/ports/project_repository.py"
+      - "src/contextsafe/domain/shared/value_objects/project_id.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_create_project.py"
+        tests:
+          - "test_create_project_success"
+          - "test_create_project_validation"
+          - "test_create_project_duplicate_name"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_project_creation.py"
+        tests:
+          - "test_end_to_end_project_creation"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-028: Project ID is always unique"
+      - "PBT-029: Project creation is idempotent"
+
+  traceability_chain:
+    qas_refs: []
+    risk_refs: []
+    adr_refs:
+      - "ADR-001"  # Hexagonal architecture
+      - "ADR-002"  # SQLite with SQLCipher
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Use case for creating new projects.
+    Project aggregate is the root for project context.
+    Each project has isolated glossary and documents.

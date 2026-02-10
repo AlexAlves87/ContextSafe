@@ -1,0 +1,5268 @@
+{
+  "source": "Synthetic - Spanish Textual Dates for Legal Documents",
+  "description": "Fechas textuales en español para documentos legales",
+  "stats": {
+    "fechas_aleatorias": 600,
+    "fechas_historicas": 45,
+    "total": 645,
+    "patrones_disponibles": 41
+  },
+  "patrones": {
+    "estandar": [
+      "{dia} de {mes} de {anio}",
+      "el {dia} de {mes} de {anio}",
+      "día {dia} de {mes} de {anio}",
+      "el día {dia} de {mes} de {anio}",
+      "a {dia} de {mes} de {anio}",
+      "{dia} de {mes} del año {anio}",
+      "el {dia} de {mes} del año {anio}",
+      "día {dia} de {mes} del año {anio}",
+      "el día {dia} de {mes} del año {anio}",
+      "el día {dia_ordinal} de {mes} de {anio}",
+      "día {dia_ordinal} del mes de {mes} de {anio}",
+      "el {dia_ordinal} día del mes de {mes} de {anio}",
+      "a los {dia} días del mes de {mes} de {anio}",
+      "a los {dia} días del mes de {mes} del año {anio}",
+      "en el día {dia} del mes de {mes} del año {anio}",
+      "siendo el día {dia} de {mes} de {anio}",
+      "en fecha {dia} de {mes} de {anio}",
+      "con fecha {dia} de {mes} de {anio}",
+      "fechado el {dia} de {mes} de {anio}",
+      "fechado a {dia} de {mes} de {anio}",
+      "otorgado el {dia} de {mes} de {anio}",
+      "extendido el día {dia} de {mes} de {anio}",
+      "firmado el {dia} de {mes} de {anio}",
+      "suscrito el día {dia} de {mes} de {anio}",
+      "celebrado el {dia} de {mes} de {anio}",
+      "dictado el {dia} de {mes} de {anio}",
+      "notificado el {dia} de {mes} de {anio}",
+      "pronunciado el {dia} de {mes} de {anio}",
+      "emitido el {dia} de {mes} de {anio}",
+      "nacido el {dia} de {mes} de {anio}",
+      "nacida el {dia} de {mes} de {anio}",
+      "fallecido el {dia} de {mes} de {anio}",
+      "fallecida el {dia} de {mes} de {anio}",
+      "{dia} de {mes} de {anio_num}",
+      "el {dia} de {mes} de {anio_num}",
+      "día {dia} de {mes} de {anio_num}"
+    ],
+    "primero": [
+      "el primero de {mes} de {anio}",
+      "día primero de {mes} de {anio}",
+      "el día primero de {mes} de {anio}",
+      "a primero de {mes} de {anio}",
+      "el primero de {mes} del año {anio}"
+    ]
+  },
+  "fechas": {
+    "aleatorias": [
+      {
+        "texto": "once de abril del año mil ochocientos setenta y cinco",
+        "dia": 11,
+        "mes": 4,
+        "anio": 1875,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1875-04-11"
+      },
+      {
+        "texto": "veintitrés de mayo de mil ochocientos ochenta y cuatro",
+        "dia": 23,
+        "mes": 5,
+        "anio": 1884,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1884-05-23"
+      },
+      {
+        "texto": "el día tercero de noviembre de mil ochocientos setenta y cuatro",
+        "dia": 3,
+        "mes": 11,
+        "anio": 1874,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1874-11-03"
+      },
+      {
+        "texto": "día veintiuno de junio del año mil ochocientos setenta y cinco",
+        "dia": 21,
+        "mes": 6,
+        "anio": 1875,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1875-06-21"
+      },
+      {
+        "texto": "nacido el veintitrés de diciembre de mil novecientos",
+        "dia": 23,
+        "mes": 12,
+        "anio": 1900,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1900-12-23"
+      },
+      {
+        "texto": "el treinta de agosto de mil ochocientos ochenta y ocho",
+        "dia": 30,
+        "mes": 8,
+        "anio": 1888,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1888-08-30"
+      },
+      {
+        "texto": "el día octavo de febrero de mil ochocientos ochenta y uno",
+        "dia": 8,
+        "mes": 2,
+        "anio": 1881,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1881-02-08"
+      },
+      {
+        "texto": "nacida el veinte de febrero de mil ochocientos noventa",
+        "dia": 20,
+        "mes": 2,
+        "anio": 1890,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1890-02-20"
+      },
+      {
+        "texto": "otorgado el veintinueve de septiembre de mil ochocientos sesenta y tres",
+        "dia": 29,
+        "mes": 9,
+        "anio": 1863,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1863-09-29"
+      },
+      {
+        "texto": "el treinta de noviembre de 1870",
+        "dia": 30,
+        "mes": 11,
+        "anio": 1870,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1870-11-30"
+      },
+      {
+        "texto": "extendido el día veintiuno de noviembre de mil ochocientos setenta y nueve",
+        "dia": 21,
+        "mes": 11,
+        "anio": 1879,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1879-11-21"
+      },
+      {
+        "texto": "en el día veintitrés del mes de septiembre del año mil ochocientos noventa y seis",
+        "dia": 23,
+        "mes": 9,
+        "anio": 1896,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1896-09-23"
+      },
+      {
+        "texto": "firmado el dieciséis de junio de mil ochocientos cincuenta y uno",
+        "dia": 16,
+        "mes": 6,
+        "anio": 1851,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1851-06-16"
+      },
+      {
+        "texto": "el dos de junio del año mil ochocientos setenta y uno",
+        "dia": 2,
+        "mes": 6,
+        "anio": 1871,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1871-06-02"
+      },
+      {
+        "texto": "el diecinueve de octubre de mil novecientos",
+        "dia": 19,
+        "mes": 10,
+        "anio": 1900,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1900-10-19"
+      },
+      {
+        "texto": "veintisiete de septiembre del año mil ochocientos cincuenta y nueve",
+        "dia": 27,
+        "mes": 9,
+        "anio": 1859,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1859-09-27"
+      },
+      {
+        "texto": "veintidós de junio de mil ochocientos cincuenta y cinco",
+        "dia": 22,
+        "mes": 6,
+        "anio": 1855,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1855-06-22"
+      },
+      {
+        "texto": "notificado el trece de agosto de mil ochocientos setenta y nueve",
+        "dia": 13,
+        "mes": 8,
+        "anio": 1879,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1879-08-13"
+      },
+      {
+        "texto": "trece de agosto de 1852",
+        "dia": 13,
+        "mes": 8,
+        "anio": 1852,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1852-08-13"
+      },
+      {
+        "texto": "el día veinticinco de marzo del año mil ochocientos sesenta y ocho",
+        "dia": 25,
+        "mes": 3,
+        "anio": 1868,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1868-03-25"
+      },
+      {
+        "texto": "el vigésimo cuarto día del mes de febrero de mil ochocientos sesenta",
+        "dia": 24,
+        "mes": 2,
+        "anio": 1860,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1860-02-24"
+      },
+      {
+        "texto": "firmado el cinco de abril de mil ochocientos sesenta y cuatro",
+        "dia": 5,
+        "mes": 4,
+        "anio": 1864,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1864-04-05"
+      },
+      {
+        "texto": "el día decimoctavo de diciembre de mil ochocientos ochenta",
+        "dia": 18,
+        "mes": 12,
+        "anio": 1880,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1880-12-18"
+      },
+      {
+        "texto": "veintitrés de enero de 1870",
+        "dia": 23,
+        "mes": 1,
+        "anio": 1870,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1870-01-23"
+      },
+      {
+        "texto": "el catorce de agosto de 1861",
+        "dia": 14,
+        "mes": 8,
+        "anio": 1861,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1861-08-14"
+      },
+      {
+        "texto": "día primero de julio de mil ochocientos ochenta y cuatro",
+        "dia": 1,
+        "mes": 7,
+        "anio": 1884,
+        "patron": "día primero de {mes} de {anio}",
+        "fecha_iso": "1884-07-01"
+      },
+      {
+        "texto": "a los veinticinco días del mes de septiembre de mil ochocientos sesenta y uno",
+        "dia": 25,
+        "mes": 9,
+        "anio": 1861,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1861-09-25"
+      },
+      {
+        "texto": "celebrado el diecisiete de enero de mil ochocientos setenta y tres",
+        "dia": 17,
+        "mes": 1,
+        "anio": 1873,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1873-01-17"
+      },
+      {
+        "texto": "día vigésimo sexto del mes de mayo de mil ochocientos cincuenta y ocho",
+        "dia": 26,
+        "mes": 5,
+        "anio": 1858,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1858-05-26"
+      },
+      {
+        "texto": "día tres de noviembre del año mil ochocientos cincuenta y tres",
+        "dia": 3,
+        "mes": 11,
+        "anio": 1853,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1853-11-03"
+      },
+      {
+        "texto": "emitido el trece de abril de mil ochocientos setenta y nueve",
+        "dia": 13,
+        "mes": 4,
+        "anio": 1879,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1879-04-13"
+      },
+      {
+        "texto": "nueve de noviembre del año mil ochocientos setenta y seis",
+        "dia": 9,
+        "mes": 11,
+        "anio": 1876,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1876-11-09"
+      },
+      {
+        "texto": "en el día trece del mes de marzo del año mil ochocientos ochenta y seis",
+        "dia": 13,
+        "mes": 3,
+        "anio": 1886,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1886-03-13"
+      },
+      {
+        "texto": "otorgado el veinticuatro de abril de mil ochocientos sesenta y siete",
+        "dia": 24,
+        "mes": 4,
+        "anio": 1867,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1867-04-24"
+      },
+      {
+        "texto": "celebrado el catorce de mayo de mil ochocientos cincuenta y cinco",
+        "dia": 14,
+        "mes": 5,
+        "anio": 1855,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1855-05-14"
+      },
+      {
+        "texto": "el día doce de abril del año mil ochocientos ochenta y cinco",
+        "dia": 12,
+        "mes": 4,
+        "anio": 1885,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1885-04-12"
+      },
+      {
+        "texto": "día decimocuarto del mes de febrero de mil ochocientos sesenta y nueve",
+        "dia": 14,
+        "mes": 2,
+        "anio": 1869,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1869-02-14"
+      },
+      {
+        "texto": "veintiséis de junio de mil ochocientos setenta y dos",
+        "dia": 26,
+        "mes": 6,
+        "anio": 1872,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1872-06-26"
+      },
+      {
+        "texto": "el día diecinueve de septiembre de mil ochocientos cincuenta y tres",
+        "dia": 19,
+        "mes": 9,
+        "anio": 1853,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1853-09-19"
+      },
+      {
+        "texto": "fallecida el veintiocho de marzo de mil ochocientos setenta y siete",
+        "dia": 28,
+        "mes": 3,
+        "anio": 1877,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1877-03-28"
+      },
+      {
+        "texto": "el vigésimo séptimo día del mes de septiembre de mil ochocientos cincuenta y dos",
+        "dia": 27,
+        "mes": 9,
+        "anio": 1852,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1852-09-27"
+      },
+      {
+        "texto": "firmado el treinta de abril de mil ochocientos cincuenta y siete",
+        "dia": 30,
+        "mes": 4,
+        "anio": 1857,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1857-04-30"
+      },
+      {
+        "texto": "en el día quince del mes de junio del año mil ochocientos setenta y cinco",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1875,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1875-06-15"
+      },
+      {
+        "texto": "fallecido el trece de enero de mil ochocientos ochenta y dos",
+        "dia": 13,
+        "mes": 1,
+        "anio": 1882,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1882-01-13"
+      },
+      {
+        "texto": "el séptimo día del mes de noviembre de mil ochocientos setenta y nueve",
+        "dia": 7,
+        "mes": 11,
+        "anio": 1879,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1879-11-07"
+      },
+      {
+        "texto": "día once de agosto de 1870",
+        "dia": 11,
+        "mes": 8,
+        "anio": 1870,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1870-08-11"
+      },
+      {
+        "texto": "tres de mayo del año mil ochocientos noventa y tres",
+        "dia": 3,
+        "mes": 5,
+        "anio": 1893,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1893-05-03"
+      },
+      {
+        "texto": "el dos de octubre del año mil ochocientos cincuenta y ocho",
+        "dia": 2,
+        "mes": 10,
+        "anio": 1858,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1858-10-02"
+      },
+      {
+        "texto": "en el día dieciséis del mes de agosto del año mil ochocientos noventa y uno",
+        "dia": 16,
+        "mes": 8,
+        "anio": 1891,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1891-08-16"
+      },
+      {
+        "texto": "el primero de abril del año mil ochocientos sesenta y uno",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1861,
+        "patron": "el primero de {mes} del año {anio}",
+        "fecha_iso": "1861-04-01"
+      },
+      {
+        "texto": "celebrado el treinta de enero de mil novecientos veintitrés",
+        "dia": 30,
+        "mes": 1,
+        "anio": 1923,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1923-01-30"
+      },
+      {
+        "texto": "el día diecisiete de mayo del año mil novecientos quince",
+        "dia": 17,
+        "mes": 5,
+        "anio": 1915,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1915-05-17"
+      },
+      {
+        "texto": "el siete de enero de 1932",
+        "dia": 7,
+        "mes": 1,
+        "anio": 1932,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1932-01-07"
+      },
+      {
+        "texto": "notificado el once de julio de mil novecientos siete",
+        "dia": 11,
+        "mes": 7,
+        "anio": 1907,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1907-07-11"
+      },
+      {
+        "texto": "celebrado el doce de junio de mil novecientos dos",
+        "dia": 12,
+        "mes": 6,
+        "anio": 1902,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1902-06-12"
+      },
+      {
+        "texto": "en el día veintiuno del mes de junio del año mil novecientos dos",
+        "dia": 21,
+        "mes": 6,
+        "anio": 1902,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1902-06-21"
+      },
+      {
+        "texto": "día veinticinco de marzo de mil novecientos veintiuno",
+        "dia": 25,
+        "mes": 3,
+        "anio": 1921,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1921-03-25"
+      },
+      {
+        "texto": "dictado el veinticuatro de noviembre de mil novecientos treinta y nueve",
+        "dia": 24,
+        "mes": 11,
+        "anio": 1939,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-11-24"
+      },
+      {
+        "texto": "otorgado el siete de abril de mil novecientos uno",
+        "dia": 7,
+        "mes": 4,
+        "anio": 1901,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1901-04-07"
+      },
+      {
+        "texto": "dictado el veintiséis de julio de mil novecientos veintitrés",
+        "dia": 26,
+        "mes": 7,
+        "anio": 1923,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1923-07-26"
+      },
+      {
+        "texto": "el día veintinueve de noviembre del año mil novecientos treinta",
+        "dia": 29,
+        "mes": 11,
+        "anio": 1930,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1930-11-29"
+      },
+      {
+        "texto": "a los quince días del mes de julio de mil novecientos uno",
+        "dia": 15,
+        "mes": 7,
+        "anio": 1901,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1901-07-15"
+      },
+      {
+        "texto": "fallecida el dieciocho de junio de mil novecientos cuarenta",
+        "dia": 18,
+        "mes": 6,
+        "anio": 1940,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1940-06-18"
+      },
+      {
+        "texto": "día vigésimo del mes de junio de mil novecientos veintidós",
+        "dia": 20,
+        "mes": 6,
+        "anio": 1922,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1922-06-20"
+      },
+      {
+        "texto": "suscrito el día veintiséis de mayo de mil novecientos treinta y cinco",
+        "dia": 26,
+        "mes": 5,
+        "anio": 1935,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1935-05-26"
+      },
+      {
+        "texto": "día veinticinco de noviembre de mil novecientos treinta y siete",
+        "dia": 25,
+        "mes": 11,
+        "anio": 1937,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1937-11-25"
+      },
+      {
+        "texto": "dictado el veintitrés de octubre de mil novecientos treinta y tres",
+        "dia": 23,
+        "mes": 10,
+        "anio": 1933,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1933-10-23"
+      },
+      {
+        "texto": "pronunciado el ocho de octubre de mil novecientos quince",
+        "dia": 8,
+        "mes": 10,
+        "anio": 1915,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1915-10-08"
+      },
+      {
+        "texto": "pronunciado el ocho de enero de mil novecientos seis",
+        "dia": 8,
+        "mes": 1,
+        "anio": 1906,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1906-01-08"
+      },
+      {
+        "texto": "el día veintiuno de febrero de mil novecientos veintiocho",
+        "dia": 21,
+        "mes": 2,
+        "anio": 1928,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1928-02-21"
+      },
+      {
+        "texto": "día veintiuno de marzo del año mil novecientos cuarenta",
+        "dia": 21,
+        "mes": 3,
+        "anio": 1940,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1940-03-21"
+      },
+      {
+        "texto": "fechado a cinco de agosto de mil novecientos cuatro",
+        "dia": 5,
+        "mes": 8,
+        "anio": 1904,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1904-08-05"
+      },
+      {
+        "texto": "nacido el veinticuatro de mayo de mil novecientos cinco",
+        "dia": 24,
+        "mes": 5,
+        "anio": 1905,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1905-05-24"
+      },
+      {
+        "texto": "fechado el siete de junio de mil novecientos catorce",
+        "dia": 7,
+        "mes": 6,
+        "anio": 1914,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1914-06-07"
+      },
+      {
+        "texto": "día vigésimo séptimo del mes de julio de mil novecientos veintiuno",
+        "dia": 27,
+        "mes": 7,
+        "anio": 1921,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1921-07-27"
+      },
+      {
+        "texto": "en fecha treinta de septiembre de mil novecientos veintiuno",
+        "dia": 30,
+        "mes": 9,
+        "anio": 1921,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1921-09-30"
+      },
+      {
+        "texto": "nacido el diez de febrero de mil novecientos dieciocho",
+        "dia": 10,
+        "mes": 2,
+        "anio": 1918,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1918-02-10"
+      },
+      {
+        "texto": "el día veintinueve de noviembre de mil novecientos treinta y cuatro",
+        "dia": 29,
+        "mes": 11,
+        "anio": 1934,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1934-11-29"
+      },
+      {
+        "texto": "el trigésimo día del mes de julio de mil novecientos dieciocho",
+        "dia": 30,
+        "mes": 7,
+        "anio": 1918,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1918-07-30"
+      },
+      {
+        "texto": "el veintiséis de noviembre de mil novecientos veintisiete",
+        "dia": 26,
+        "mes": 11,
+        "anio": 1927,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1927-11-26"
+      },
+      {
+        "texto": "catorce de mayo del año mil novecientos seis",
+        "dia": 14,
+        "mes": 5,
+        "anio": 1906,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1906-05-14"
+      },
+      {
+        "texto": "el tres de febrero de mil novecientos dieciséis",
+        "dia": 3,
+        "mes": 2,
+        "anio": 1916,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1916-02-03"
+      },
+      {
+        "texto": "fallecida el veinticinco de octubre de mil novecientos treinta",
+        "dia": 25,
+        "mes": 10,
+        "anio": 1930,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1930-10-25"
+      },
+      {
+        "texto": "extendido el día catorce de marzo de mil novecientos",
+        "dia": 14,
+        "mes": 3,
+        "anio": 1900,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1900-03-14"
+      },
+      {
+        "texto": "emitido el veinticuatro de agosto de mil novecientos treinta",
+        "dia": 24,
+        "mes": 8,
+        "anio": 1930,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1930-08-24"
+      },
+      {
+        "texto": "en fecha veintinueve de enero de mil novecientos treinta y tres",
+        "dia": 29,
+        "mes": 1,
+        "anio": 1933,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1933-01-29"
+      },
+      {
+        "texto": "día treinta de enero de 1938",
+        "dia": 30,
+        "mes": 1,
+        "anio": 1938,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1938-01-30"
+      },
+      {
+        "texto": "a los veinticinco días del mes de abril del año mil novecientos dieciséis",
+        "dia": 25,
+        "mes": 4,
+        "anio": 1916,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1916-04-25"
+      },
+      {
+        "texto": "pronunciado el diecisiete de julio de mil novecientos veinticinco",
+        "dia": 17,
+        "mes": 7,
+        "anio": 1925,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1925-07-17"
+      },
+      {
+        "texto": "el día tres de marzo del año mil novecientos cuatro",
+        "dia": 3,
+        "mes": 3,
+        "anio": 1904,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1904-03-03"
+      },
+      {
+        "texto": "pronunciado el veintinueve de mayo de mil novecientos treinta y seis",
+        "dia": 29,
+        "mes": 5,
+        "anio": 1936,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1936-05-29"
+      },
+      {
+        "texto": "a los once días del mes de septiembre de mil novecientos veinticinco",
+        "dia": 11,
+        "mes": 9,
+        "anio": 1925,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1925-09-11"
+      },
+      {
+        "texto": "a los diecisiete días del mes de agosto del año mil novecientos diez",
+        "dia": 17,
+        "mes": 8,
+        "anio": 1910,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1910-08-17"
+      },
+      {
+        "texto": "otorgado el dieciocho de abril de mil novecientos veintinueve",
+        "dia": 18,
+        "mes": 4,
+        "anio": 1929,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1929-04-18"
+      },
+      {
+        "texto": "día cinco de mayo de mil novecientos treinta y siete",
+        "dia": 5,
+        "mes": 5,
+        "anio": 1937,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1937-05-05"
+      },
+      {
+        "texto": "a los veintiocho días del mes de mayo de mil novecientos dos",
+        "dia": 28,
+        "mes": 5,
+        "anio": 1902,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1902-05-28"
+      },
+      {
+        "texto": "el veinticinco de julio del año mil novecientos treinta y siete",
+        "dia": 25,
+        "mes": 7,
+        "anio": 1937,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1937-07-25"
+      },
+      {
+        "texto": "treinta de julio de mil novecientos veintisiete",
+        "dia": 30,
+        "mes": 7,
+        "anio": 1927,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1927-07-30"
+      },
+      {
+        "texto": "firmado el treinta y uno de agosto de mil novecientos tres",
+        "dia": 31,
+        "mes": 8,
+        "anio": 1903,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1903-08-31"
+      },
+      {
+        "texto": "fallecida el once de julio de mil novecientos dieciséis",
+        "dia": 11,
+        "mes": 7,
+        "anio": 1916,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1916-07-11"
+      },
+      {
+        "texto": "día quince de enero del año mil novecientos treinta y tres",
+        "dia": 15,
+        "mes": 1,
+        "anio": 1933,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1933-01-15"
+      },
+      {
+        "texto": "con fecha uno de febrero de mil novecientos treinta y cuatro",
+        "dia": 1,
+        "mes": 2,
+        "anio": 1934,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1934-02-01"
+      },
+      {
+        "texto": "el día seis de julio del año mil novecientos treinta y seis",
+        "dia": 6,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1936-07-06"
+      },
+      {
+        "texto": "día veintiséis de enero de mil novecientos dieciocho",
+        "dia": 26,
+        "mes": 1,
+        "anio": 1918,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1918-01-26"
+      },
+      {
+        "texto": "trece de agosto del año mil novecientos dieciséis",
+        "dia": 13,
+        "mes": 8,
+        "anio": 1916,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1916-08-13"
+      },
+      {
+        "texto": "con fecha veintiuno de julio de mil novecientos treinta y nueve",
+        "dia": 21,
+        "mes": 7,
+        "anio": 1939,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-07-21"
+      },
+      {
+        "texto": "fallecido el quince de febrero de mil novecientos treinta y siete",
+        "dia": 15,
+        "mes": 2,
+        "anio": 1937,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1937-02-15"
+      },
+      {
+        "texto": "fallecida el siete de agosto de mil novecientos diez",
+        "dia": 7,
+        "mes": 8,
+        "anio": 1910,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1910-08-07"
+      },
+      {
+        "texto": "a los veintitrés días del mes de noviembre de mil novecientos dos",
+        "dia": 23,
+        "mes": 11,
+        "anio": 1902,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1902-11-23"
+      },
+      {
+        "texto": "el día decimosexto de diciembre de mil novecientos",
+        "dia": 16,
+        "mes": 12,
+        "anio": 1900,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1900-12-16"
+      },
+      {
+        "texto": "nacida el catorce de agosto de mil novecientos diez",
+        "dia": 14,
+        "mes": 8,
+        "anio": 1910,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1910-08-14"
+      },
+      {
+        "texto": "celebrado el diecisiete de febrero de mil novecientos veintidós",
+        "dia": 17,
+        "mes": 2,
+        "anio": 1922,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1922-02-17"
+      },
+      {
+        "texto": "extendido el día diez de junio de mil novecientos veintisiete",
+        "dia": 10,
+        "mes": 6,
+        "anio": 1927,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1927-06-10"
+      },
+      {
+        "texto": "en fecha cinco de diciembre de mil novecientos veinticuatro",
+        "dia": 5,
+        "mes": 12,
+        "anio": 1924,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1924-12-05"
+      },
+      {
+        "texto": "el día veintidós de marzo del año mil novecientos quince",
+        "dia": 22,
+        "mes": 3,
+        "anio": 1915,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1915-03-22"
+      },
+      {
+        "texto": "extendido el día once de enero de mil novecientos doce",
+        "dia": 11,
+        "mes": 1,
+        "anio": 1912,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1912-01-11"
+      },
+      {
+        "texto": "firmado el veintiséis de febrero de mil novecientos catorce",
+        "dia": 26,
+        "mes": 2,
+        "anio": 1914,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1914-02-26"
+      },
+      {
+        "texto": "el día diecinueve de enero de mil novecientos",
+        "dia": 19,
+        "mes": 1,
+        "anio": 1900,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1900-01-19"
+      },
+      {
+        "texto": "trece de diciembre de mil novecientos treinta y seis",
+        "dia": 13,
+        "mes": 12,
+        "anio": 1936,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1936-12-13"
+      },
+      {
+        "texto": "a los veinte días del mes de enero del año mil novecientos dos",
+        "dia": 20,
+        "mes": 1,
+        "anio": 1902,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1902-01-20"
+      },
+      {
+        "texto": "cuatro de diciembre de 1912",
+        "dia": 4,
+        "mes": 12,
+        "anio": 1912,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1912-12-04"
+      },
+      {
+        "texto": "fechado el veinticuatro de julio de mil novecientos ocho",
+        "dia": 24,
+        "mes": 7,
+        "anio": 1908,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1908-07-24"
+      },
+      {
+        "texto": "el día treinta de abril del año mil novecientos veinticuatro",
+        "dia": 30,
+        "mes": 4,
+        "anio": 1924,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1924-04-30"
+      },
+      {
+        "texto": "día tercero del mes de abril de mil novecientos veinticuatro",
+        "dia": 3,
+        "mes": 4,
+        "anio": 1924,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1924-04-03"
+      },
+      {
+        "texto": "a dieciséis de abril de mil novecientos veintidós",
+        "dia": 16,
+        "mes": 4,
+        "anio": 1922,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1922-04-16"
+      },
+      {
+        "texto": "fallecida el treinta y uno de octubre de mil novecientos treinta y uno",
+        "dia": 31,
+        "mes": 10,
+        "anio": 1931,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1931-10-31"
+      },
+      {
+        "texto": "en fecha treinta y uno de agosto de mil novecientos veinte",
+        "dia": 31,
+        "mes": 8,
+        "anio": 1920,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1920-08-31"
+      },
+      {
+        "texto": "el primero día del mes de abril de mil novecientos uno",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1901,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1901-04-01"
+      },
+      {
+        "texto": "en fecha diecisiete de marzo de mil novecientos dieciocho",
+        "dia": 17,
+        "mes": 3,
+        "anio": 1918,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1918-03-17"
+      },
+      {
+        "texto": "fechado a veintiocho de julio de mil novecientos trece",
+        "dia": 28,
+        "mes": 7,
+        "anio": 1913,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1913-07-28"
+      },
+      {
+        "texto": "tres de agosto de mil novecientos veintiocho",
+        "dia": 3,
+        "mes": 8,
+        "anio": 1928,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1928-08-03"
+      },
+      {
+        "texto": "a los cuatro días del mes de febrero del año mil novecientos cuatro",
+        "dia": 4,
+        "mes": 2,
+        "anio": 1904,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1904-02-04"
+      },
+      {
+        "texto": "pronunciado el veinticuatro de junio de mil novecientos veintiuno",
+        "dia": 24,
+        "mes": 6,
+        "anio": 1921,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1921-06-24"
+      },
+      {
+        "texto": "el veintinueve de agosto del año mil novecientos siete",
+        "dia": 29,
+        "mes": 8,
+        "anio": 1907,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1907-08-29"
+      },
+      {
+        "texto": "ocho de septiembre de 1913",
+        "dia": 8,
+        "mes": 9,
+        "anio": 1913,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1913-09-08"
+      },
+      {
+        "texto": "siete de enero del año mil novecientos uno",
+        "dia": 7,
+        "mes": 1,
+        "anio": 1901,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1901-01-07"
+      },
+      {
+        "texto": "el día cuatro de junio de mil novecientos veinticinco",
+        "dia": 4,
+        "mes": 6,
+        "anio": 1925,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1925-06-04"
+      },
+      {
+        "texto": "el tres de diciembre del año mil novecientos veintiuno",
+        "dia": 3,
+        "mes": 12,
+        "anio": 1921,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1921-12-03"
+      },
+      {
+        "texto": "con fecha treinta de diciembre de mil novecientos veintisiete",
+        "dia": 30,
+        "mes": 12,
+        "anio": 1927,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1927-12-30"
+      },
+      {
+        "texto": "en fecha dieciséis de marzo de mil novecientos treinta",
+        "dia": 16,
+        "mes": 3,
+        "anio": 1930,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1930-03-16"
+      },
+      {
+        "texto": "fechado el siete de diciembre de mil novecientos quince",
+        "dia": 7,
+        "mes": 12,
+        "anio": 1915,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1915-12-07"
+      },
+      {
+        "texto": "día vigésimo octavo del mes de julio de mil novecientos treinta y cinco",
+        "dia": 28,
+        "mes": 7,
+        "anio": 1935,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1935-07-28"
+      },
+      {
+        "texto": "fechado a veintitrés de abril de mil novecientos siete",
+        "dia": 23,
+        "mes": 4,
+        "anio": 1907,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1907-04-23"
+      },
+      {
+        "texto": "veintiocho de noviembre de mil novecientos veintisiete",
+        "dia": 28,
+        "mes": 11,
+        "anio": 1927,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1927-11-28"
+      },
+      {
+        "texto": "fechado el veintiséis de noviembre de mil novecientos veinticuatro",
+        "dia": 26,
+        "mes": 11,
+        "anio": 1924,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1924-11-26"
+      },
+      {
+        "texto": "emitido el dos de febrero de mil novecientos veintiséis",
+        "dia": 2,
+        "mes": 2,
+        "anio": 1926,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1926-02-02"
+      },
+      {
+        "texto": "dieciocho de marzo del año mil novecientos once",
+        "dia": 18,
+        "mes": 3,
+        "anio": 1911,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1911-03-18"
+      },
+      {
+        "texto": "diecisiete de agosto de mil novecientos cuatro",
+        "dia": 17,
+        "mes": 8,
+        "anio": 1904,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1904-08-17"
+      },
+      {
+        "texto": "catorce de julio de 1928",
+        "dia": 14,
+        "mes": 7,
+        "anio": 1928,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1928-07-14"
+      },
+      {
+        "texto": "pronunciado el cinco de enero de mil novecientos treinta y seis",
+        "dia": 5,
+        "mes": 1,
+        "anio": 1936,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1936-01-05"
+      },
+      {
+        "texto": "el nueve de diciembre de 1975",
+        "dia": 9,
+        "mes": 12,
+        "anio": 1975,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1975-12-09"
+      },
+      {
+        "texto": "en fecha trece de junio de mil novecientos setenta y cuatro",
+        "dia": 13,
+        "mes": 6,
+        "anio": 1974,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1974-06-13"
+      },
+      {
+        "texto": "dictado el trece de agosto de mil novecientos cincuenta y nueve",
+        "dia": 13,
+        "mes": 8,
+        "anio": 1959,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1959-08-13"
+      },
+      {
+        "texto": "veintinueve de marzo de mil novecientos cuarenta y tres",
+        "dia": 29,
+        "mes": 3,
+        "anio": 1943,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1943-03-29"
+      },
+      {
+        "texto": "fechado el ocho de febrero de mil novecientos setenta y tres",
+        "dia": 8,
+        "mes": 2,
+        "anio": 1973,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1973-02-08"
+      },
+      {
+        "texto": "en el día siete del mes de julio del año mil novecientos setenta y ocho",
+        "dia": 7,
+        "mes": 7,
+        "anio": 1978,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1978-07-07"
+      },
+      {
+        "texto": "el veintinueve de abril del año mil novecientos sesenta y ocho",
+        "dia": 29,
+        "mes": 4,
+        "anio": 1968,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1968-04-29"
+      },
+      {
+        "texto": "día trece de abril de 1940",
+        "dia": 13,
+        "mes": 4,
+        "anio": 1940,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1940-04-13"
+      },
+      {
+        "texto": "a catorce de octubre de mil novecientos cuarenta y tres",
+        "dia": 14,
+        "mes": 10,
+        "anio": 1943,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1943-10-14"
+      },
+      {
+        "texto": "el decimoquinto día del mes de mayo de mil novecientos cincuenta y seis",
+        "dia": 15,
+        "mes": 5,
+        "anio": 1956,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1956-05-15"
+      },
+      {
+        "texto": "suscrito el día quince de noviembre de mil novecientos sesenta y ocho",
+        "dia": 15,
+        "mes": 11,
+        "anio": 1968,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1968-11-15"
+      },
+      {
+        "texto": "día veinticinco de diciembre de 1976",
+        "dia": 25,
+        "mes": 12,
+        "anio": 1976,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1976-12-25"
+      },
+      {
+        "texto": "otorgado el veintinueve de marzo de mil novecientos sesenta y tres",
+        "dia": 29,
+        "mes": 3,
+        "anio": 1963,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1963-03-29"
+      },
+      {
+        "texto": "emitido el veinte de febrero de mil novecientos sesenta y uno",
+        "dia": 20,
+        "mes": 2,
+        "anio": 1961,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1961-02-20"
+      },
+      {
+        "texto": "fechado el doce de junio de mil novecientos cuarenta y dos",
+        "dia": 12,
+        "mes": 6,
+        "anio": 1942,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1942-06-12"
+      },
+      {
+        "texto": "veinticinco de septiembre de 1968",
+        "dia": 25,
+        "mes": 9,
+        "anio": 1968,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1968-09-25"
+      },
+      {
+        "texto": "con fecha veintinueve de junio de mil novecientos sesenta y dos",
+        "dia": 29,
+        "mes": 6,
+        "anio": 1962,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1962-06-29"
+      },
+      {
+        "texto": "día diecisiete de marzo de 1964",
+        "dia": 17,
+        "mes": 3,
+        "anio": 1964,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1964-03-17"
+      },
+      {
+        "texto": "a los diecinueve días del mes de noviembre de mil novecientos cincuenta y cuatro",
+        "dia": 19,
+        "mes": 11,
+        "anio": 1954,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1954-11-19"
+      },
+      {
+        "texto": "día cinco de octubre de 1956",
+        "dia": 5,
+        "mes": 10,
+        "anio": 1956,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1956-10-05"
+      },
+      {
+        "texto": "el día cinco de marzo del año mil novecientos cincuenta y dos",
+        "dia": 5,
+        "mes": 3,
+        "anio": 1952,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1952-03-05"
+      },
+      {
+        "texto": "fechado a dieciséis de julio de mil novecientos cuarenta y uno",
+        "dia": 16,
+        "mes": 7,
+        "anio": 1941,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1941-07-16"
+      },
+      {
+        "texto": "a los nueve días del mes de febrero de mil novecientos sesenta",
+        "dia": 9,
+        "mes": 2,
+        "anio": 1960,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1960-02-09"
+      },
+      {
+        "texto": "día vigésimo tercero del mes de agosto de mil novecientos setenta y siete",
+        "dia": 23,
+        "mes": 8,
+        "anio": 1977,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1977-08-23"
+      },
+      {
+        "texto": "siendo el día dos de enero de mil novecientos setenta y tres",
+        "dia": 2,
+        "mes": 1,
+        "anio": 1973,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1973-01-02"
+      },
+      {
+        "texto": "en fecha seis de noviembre de mil novecientos cincuenta y dos",
+        "dia": 6,
+        "mes": 11,
+        "anio": 1952,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1952-11-06"
+      },
+      {
+        "texto": "celebrado el cuatro de julio de mil novecientos cuarenta y ocho",
+        "dia": 4,
+        "mes": 7,
+        "anio": 1948,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1948-07-04"
+      },
+      {
+        "texto": "a los dieciséis días del mes de marzo de mil novecientos cuarenta y ocho",
+        "dia": 16,
+        "mes": 3,
+        "anio": 1948,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1948-03-16"
+      },
+      {
+        "texto": "el trece de mayo de 1980",
+        "dia": 13,
+        "mes": 5,
+        "anio": 1980,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1980-05-13"
+      },
+      {
+        "texto": "día trigésimo del mes de septiembre de mil novecientos sesenta y dos",
+        "dia": 30,
+        "mes": 9,
+        "anio": 1962,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1962-09-30"
+      },
+      {
+        "texto": "día siete de abril del año mil novecientos cuarenta y cuatro",
+        "dia": 7,
+        "mes": 4,
+        "anio": 1944,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1944-04-07"
+      },
+      {
+        "texto": "el octavo día del mes de agosto de mil novecientos cuarenta y tres",
+        "dia": 8,
+        "mes": 8,
+        "anio": 1943,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1943-08-08"
+      },
+      {
+        "texto": "a los veintitrés días del mes de octubre de mil novecientos sesenta y nueve",
+        "dia": 23,
+        "mes": 10,
+        "anio": 1969,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1969-10-23"
+      },
+      {
+        "texto": "a seis de mayo de mil novecientos sesenta y dos",
+        "dia": 6,
+        "mes": 5,
+        "anio": 1962,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1962-05-06"
+      },
+      {
+        "texto": "suscrito el día once de mayo de mil novecientos cuarenta y cinco",
+        "dia": 11,
+        "mes": 5,
+        "anio": 1945,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1945-05-11"
+      },
+      {
+        "texto": "el trigésimo día del mes de noviembre de mil novecientos setenta y nueve",
+        "dia": 30,
+        "mes": 11,
+        "anio": 1979,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1979-11-30"
+      },
+      {
+        "texto": "día dieciocho de abril de 1959",
+        "dia": 18,
+        "mes": 4,
+        "anio": 1959,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1959-04-18"
+      },
+      {
+        "texto": "firmado el veintisiete de marzo de mil novecientos cuarenta y seis",
+        "dia": 27,
+        "mes": 3,
+        "anio": 1946,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1946-03-27"
+      },
+      {
+        "texto": "fallecida el trece de agosto de mil novecientos cincuenta y siete",
+        "dia": 13,
+        "mes": 8,
+        "anio": 1957,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1957-08-13"
+      },
+      {
+        "texto": "pronunciado el diez de mayo de mil novecientos cincuenta y cuatro",
+        "dia": 10,
+        "mes": 5,
+        "anio": 1954,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1954-05-10"
+      },
+      {
+        "texto": "el día nueve de mayo de mil novecientos setenta y dos",
+        "dia": 9,
+        "mes": 5,
+        "anio": 1972,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1972-05-09"
+      },
+      {
+        "texto": "el veintitrés de junio del año mil novecientos sesenta y dos",
+        "dia": 23,
+        "mes": 6,
+        "anio": 1962,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1962-06-23"
+      },
+      {
+        "texto": "el día veinticuatro de agosto del año mil novecientos setenta y seis",
+        "dia": 24,
+        "mes": 8,
+        "anio": 1976,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1976-08-24"
+      },
+      {
+        "texto": "el día veintiocho de septiembre del año mil novecientos sesenta",
+        "dia": 28,
+        "mes": 9,
+        "anio": 1960,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1960-09-28"
+      },
+      {
+        "texto": "notificado el trece de enero de mil novecientos sesenta y tres",
+        "dia": 13,
+        "mes": 1,
+        "anio": 1963,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1963-01-13"
+      },
+      {
+        "texto": "el primero de enero del año mil novecientos setenta",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1970,
+        "patron": "el primero de {mes} del año {anio}",
+        "fecha_iso": "1970-01-01"
+      },
+      {
+        "texto": "fechado el veintisiete de mayo de mil novecientos cincuenta y nueve",
+        "dia": 27,
+        "mes": 5,
+        "anio": 1959,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1959-05-27"
+      },
+      {
+        "texto": "día vigésimo del mes de octubre de mil novecientos cincuenta y siete",
+        "dia": 20,
+        "mes": 10,
+        "anio": 1957,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1957-10-20"
+      },
+      {
+        "texto": "pronunciado el quince de febrero de mil novecientos cuarenta y siete",
+        "dia": 15,
+        "mes": 2,
+        "anio": 1947,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1947-02-15"
+      },
+      {
+        "texto": "fechado el doce de septiembre de mil novecientos cincuenta y seis",
+        "dia": 12,
+        "mes": 9,
+        "anio": 1956,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1956-09-12"
+      },
+      {
+        "texto": "siendo el día once de enero de mil novecientos sesenta y nueve",
+        "dia": 11,
+        "mes": 1,
+        "anio": 1969,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1969-01-11"
+      },
+      {
+        "texto": "a los quince días del mes de diciembre del año mil novecientos cincuenta",
+        "dia": 15,
+        "mes": 12,
+        "anio": 1950,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1950-12-15"
+      },
+      {
+        "texto": "fechado el cinco de agosto de mil novecientos sesenta y ocho",
+        "dia": 5,
+        "mes": 8,
+        "anio": 1968,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1968-08-05"
+      },
+      {
+        "texto": "pronunciado el veintisiete de agosto de mil novecientos ochenta",
+        "dia": 27,
+        "mes": 8,
+        "anio": 1980,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-08-27"
+      },
+      {
+        "texto": "día dos de noviembre de mil novecientos cuarenta y cuatro",
+        "dia": 2,
+        "mes": 11,
+        "anio": 1944,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1944-11-02"
+      },
+      {
+        "texto": "día sexto del mes de abril de mil novecientos cuarenta y dos",
+        "dia": 6,
+        "mes": 4,
+        "anio": 1942,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "1942-04-06"
+      },
+      {
+        "texto": "fallecida el veintinueve de febrero de mil novecientos sesenta y cuatro",
+        "dia": 29,
+        "mes": 2,
+        "anio": 1964,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1964-02-29"
+      },
+      {
+        "texto": "nacida el once de julio de mil novecientos setenta y uno",
+        "dia": 11,
+        "mes": 7,
+        "anio": 1971,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1971-07-11"
+      },
+      {
+        "texto": "con fecha diecisiete de febrero de mil novecientos sesenta y nueve",
+        "dia": 17,
+        "mes": 2,
+        "anio": 1969,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1969-02-17"
+      },
+      {
+        "texto": "siendo el día nueve de septiembre de mil novecientos cincuenta y siete",
+        "dia": 9,
+        "mes": 9,
+        "anio": 1957,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1957-09-09"
+      },
+      {
+        "texto": "a los veintiuno días del mes de mayo del año mil novecientos cuarenta y cuatro",
+        "dia": 21,
+        "mes": 5,
+        "anio": 1944,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1944-05-21"
+      },
+      {
+        "texto": "nacida el veintisiete de abril de mil novecientos setenta y siete",
+        "dia": 27,
+        "mes": 4,
+        "anio": 1977,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-04-27"
+      },
+      {
+        "texto": "pronunciado el quince de marzo de mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 3,
+        "anio": 1977,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-03-15"
+      },
+      {
+        "texto": "el día vigésimo segundo de marzo de mil novecientos ochenta",
+        "dia": 22,
+        "mes": 3,
+        "anio": 1980,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1980-03-22"
+      },
+      {
+        "texto": "el sexto día del mes de julio de mil novecientos sesenta y dos",
+        "dia": 6,
+        "mes": 7,
+        "anio": 1962,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1962-07-06"
+      },
+      {
+        "texto": "fallecida el treinta y uno de mayo de mil novecientos setenta y nueve",
+        "dia": 31,
+        "mes": 5,
+        "anio": 1979,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1979-05-31"
+      },
+      {
+        "texto": "celebrado el doce de julio de mil novecientos cuarenta y dos",
+        "dia": 12,
+        "mes": 7,
+        "anio": 1942,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1942-07-12"
+      },
+      {
+        "texto": "el día duodécimo de marzo de mil novecientos cincuenta y cuatro",
+        "dia": 12,
+        "mes": 3,
+        "anio": 1954,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1954-03-12"
+      },
+      {
+        "texto": "el nueve de julio de 1947",
+        "dia": 9,
+        "mes": 7,
+        "anio": 1947,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1947-07-09"
+      },
+      {
+        "texto": "día veintinueve de octubre de mil novecientos cuarenta y seis",
+        "dia": 29,
+        "mes": 10,
+        "anio": 1946,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1946-10-29"
+      },
+      {
+        "texto": "fallecida el catorce de febrero de mil novecientos cuarenta y seis",
+        "dia": 14,
+        "mes": 2,
+        "anio": 1946,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1946-02-14"
+      },
+      {
+        "texto": "en fecha treinta y uno de marzo de mil novecientos setenta y siete",
+        "dia": 31,
+        "mes": 3,
+        "anio": 1977,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-03-31"
+      },
+      {
+        "texto": "firmado el ocho de mayo de mil novecientos sesenta",
+        "dia": 8,
+        "mes": 5,
+        "anio": 1960,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1960-05-08"
+      },
+      {
+        "texto": "el diecisiete de abril del año mil novecientos setenta y uno",
+        "dia": 17,
+        "mes": 4,
+        "anio": 1971,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1971-04-17"
+      },
+      {
+        "texto": "día ocho de junio del año mil novecientos ochenta",
+        "dia": 8,
+        "mes": 6,
+        "anio": 1980,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1980-06-08"
+      },
+      {
+        "texto": "notificado el nueve de noviembre de mil novecientos setenta y seis",
+        "dia": 9,
+        "mes": 11,
+        "anio": 1976,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1976-11-09"
+      },
+      {
+        "texto": "fechado el nueve de noviembre de mil novecientos setenta y nueve",
+        "dia": 9,
+        "mes": 11,
+        "anio": 1979,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1979-11-09"
+      },
+      {
+        "texto": "fallecido el veinte de marzo de mil novecientos cincuenta y nueve",
+        "dia": 20,
+        "mes": 3,
+        "anio": 1959,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1959-03-20"
+      },
+      {
+        "texto": "fechado a dieciséis de enero de mil novecientos cincuenta y siete",
+        "dia": 16,
+        "mes": 1,
+        "anio": 1957,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1957-01-16"
+      },
+      {
+        "texto": "pronunciado el diez de septiembre de mil novecientos sesenta y siete",
+        "dia": 10,
+        "mes": 9,
+        "anio": 1967,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1967-09-10"
+      },
+      {
+        "texto": "fallecido el seis de agosto de mil novecientos cincuenta y cuatro",
+        "dia": 6,
+        "mes": 8,
+        "anio": 1954,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1954-08-06"
+      },
+      {
+        "texto": "notificado el once de febrero de mil novecientos setenta",
+        "dia": 11,
+        "mes": 2,
+        "anio": 1970,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1970-02-11"
+      },
+      {
+        "texto": "día trece de enero de 1959",
+        "dia": 13,
+        "mes": 1,
+        "anio": 1959,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1959-01-13"
+      },
+      {
+        "texto": "el uno de octubre de 1971",
+        "dia": 1,
+        "mes": 10,
+        "anio": 1971,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1971-10-01"
+      },
+      {
+        "texto": "día veinte de mayo de 1973",
+        "dia": 20,
+        "mes": 5,
+        "anio": 1973,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1973-05-20"
+      },
+      {
+        "texto": "día treinta de marzo de mil novecientos cuarenta y cuatro",
+        "dia": 30,
+        "mes": 3,
+        "anio": 1944,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1944-03-30"
+      },
+      {
+        "texto": "fechado el catorce de agosto de mil novecientos sesenta y seis",
+        "dia": 14,
+        "mes": 8,
+        "anio": 1966,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1966-08-14"
+      },
+      {
+        "texto": "nacido el nueve de octubre de mil novecientos cincuenta y ocho",
+        "dia": 9,
+        "mes": 10,
+        "anio": 1958,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1958-10-09"
+      },
+      {
+        "texto": "el día seis de septiembre de mil novecientos sesenta y cuatro",
+        "dia": 6,
+        "mes": 9,
+        "anio": 1964,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1964-09-06"
+      },
+      {
+        "texto": "extendido el día veintiocho de octubre de mil novecientos setenta y dos",
+        "dia": 28,
+        "mes": 10,
+        "anio": 1972,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1972-10-28"
+      },
+      {
+        "texto": "día diecisiete de julio de 1956",
+        "dia": 17,
+        "mes": 7,
+        "anio": 1956,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1956-07-17"
+      },
+      {
+        "texto": "el día cuarto de mayo de mil novecientos setenta y seis",
+        "dia": 4,
+        "mes": 5,
+        "anio": 1976,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1976-05-04"
+      },
+      {
+        "texto": "siendo el día siete de mayo de mil novecientos setenta y nueve",
+        "dia": 7,
+        "mes": 5,
+        "anio": 1979,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1979-05-07"
+      },
+      {
+        "texto": "en el día tres del mes de junio del año mil novecientos cincuenta y cinco",
+        "dia": 3,
+        "mes": 6,
+        "anio": 1955,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1955-06-03"
+      },
+      {
+        "texto": "a los diecinueve días del mes de octubre de mil novecientos cincuenta y cuatro",
+        "dia": 19,
+        "mes": 10,
+        "anio": 1954,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1954-10-19"
+      },
+      {
+        "texto": "extendido el día ocho de febrero de mil novecientos setenta y cinco",
+        "dia": 8,
+        "mes": 2,
+        "anio": 1975,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1975-02-08"
+      },
+      {
+        "texto": "fechado a ocho de agosto de mil novecientos setenta",
+        "dia": 8,
+        "mes": 8,
+        "anio": 1970,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1970-08-08"
+      },
+      {
+        "texto": "suscrito el día veintiuno de octubre de mil novecientos sesenta y dos",
+        "dia": 21,
+        "mes": 10,
+        "anio": 1962,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1962-10-21"
+      },
+      {
+        "texto": "el primero de julio de mil novecientos sesenta y nueve",
+        "dia": 1,
+        "mes": 7,
+        "anio": 1969,
+        "patron": "el primero de {mes} de {anio}",
+        "fecha_iso": "1969-07-01"
+      },
+      {
+        "texto": "el veinte de mayo de 1976",
+        "dia": 20,
+        "mes": 5,
+        "anio": 1976,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1976-05-20"
+      },
+      {
+        "texto": "el once de noviembre de 1945",
+        "dia": 11,
+        "mes": 11,
+        "anio": 1945,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1945-11-11"
+      },
+      {
+        "texto": "a los dieciocho días del mes de agosto del año mil novecientos cincuenta y cuatro",
+        "dia": 18,
+        "mes": 8,
+        "anio": 1954,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1954-08-18"
+      },
+      {
+        "texto": "el nueve de diciembre del año mil novecientos setenta y ocho",
+        "dia": 9,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1978-12-09"
+      },
+      {
+        "texto": "nacida el diez de mayo de mil novecientos cuarenta y cinco",
+        "dia": 10,
+        "mes": 5,
+        "anio": 1945,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1945-05-10"
+      },
+      {
+        "texto": "el veintisiete de julio de 1949",
+        "dia": 27,
+        "mes": 7,
+        "anio": 1949,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1949-07-27"
+      },
+      {
+        "texto": "el trece de abril de mil novecientos sesenta y uno",
+        "dia": 13,
+        "mes": 4,
+        "anio": 1961,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1961-04-13"
+      },
+      {
+        "texto": "a veinticinco de diciembre de mil novecientos cincuenta y uno",
+        "dia": 25,
+        "mes": 12,
+        "anio": 1951,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1951-12-25"
+      },
+      {
+        "texto": "notificado el veintiséis de julio de mil novecientos cincuenta y cinco",
+        "dia": 26,
+        "mes": 7,
+        "anio": 1955,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1955-07-26"
+      },
+      {
+        "texto": "dos de mayo de mil novecientos cincuenta y nueve",
+        "dia": 2,
+        "mes": 5,
+        "anio": 1959,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1959-05-02"
+      },
+      {
+        "texto": "el décimo día del mes de noviembre de mil novecientos setenta y uno",
+        "dia": 10,
+        "mes": 11,
+        "anio": 1971,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1971-11-10"
+      },
+      {
+        "texto": "notificado el veinticuatro de noviembre de mil novecientos cincuenta y dos",
+        "dia": 24,
+        "mes": 11,
+        "anio": 1952,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1952-11-24"
+      },
+      {
+        "texto": "día veintisiete de febrero de 1956",
+        "dia": 27,
+        "mes": 2,
+        "anio": 1956,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1956-02-27"
+      },
+      {
+        "texto": "firmado el cinco de octubre de mil novecientos sesenta y dos",
+        "dia": 5,
+        "mes": 10,
+        "anio": 1962,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1962-10-05"
+      },
+      {
+        "texto": "veintiocho de agosto de mil novecientos cincuenta y ocho",
+        "dia": 28,
+        "mes": 8,
+        "anio": 1958,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1958-08-28"
+      },
+      {
+        "texto": "veintisiete de septiembre de 1947",
+        "dia": 27,
+        "mes": 9,
+        "anio": 1947,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "1947-09-27"
+      },
+      {
+        "texto": "fechado a siete de febrero de mil novecientos cuarenta y cinco",
+        "dia": 7,
+        "mes": 2,
+        "anio": 1945,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1945-02-07"
+      },
+      {
+        "texto": "día uno de febrero de mil novecientos cincuenta",
+        "dia": 1,
+        "mes": 2,
+        "anio": 1950,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1950-02-01"
+      },
+      {
+        "texto": "nacido el siete de noviembre de mil novecientos cuarenta y ocho",
+        "dia": 7,
+        "mes": 11,
+        "anio": 1948,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1948-11-07"
+      },
+      {
+        "texto": "el séptimo día del mes de julio de mil novecientos cincuenta y siete",
+        "dia": 7,
+        "mes": 7,
+        "anio": 1957,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1957-07-07"
+      },
+      {
+        "texto": "a los diecisiete días del mes de octubre de mil novecientos sesenta y tres",
+        "dia": 17,
+        "mes": 10,
+        "anio": 1963,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1963-10-17"
+      },
+      {
+        "texto": "fallecido el doce de abril de mil novecientos setenta y dos",
+        "dia": 12,
+        "mes": 4,
+        "anio": 1972,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1972-04-12"
+      },
+      {
+        "texto": "día veintinueve de abril del año mil novecientos setenta y nueve",
+        "dia": 29,
+        "mes": 4,
+        "anio": 1979,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1979-04-29"
+      },
+      {
+        "texto": "con fecha veintinueve de abril de mil novecientos sesenta y siete",
+        "dia": 29,
+        "mes": 4,
+        "anio": 1967,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1967-04-29"
+      },
+      {
+        "texto": "suscrito el día once de mayo de mil novecientos setenta y siete",
+        "dia": 11,
+        "mes": 5,
+        "anio": 1977,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-05-11"
+      },
+      {
+        "texto": "en el día once del mes de mayo del año mil novecientos sesenta y tres",
+        "dia": 11,
+        "mes": 5,
+        "anio": 1963,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1963-05-11"
+      },
+      {
+        "texto": "día seis de julio de 1969",
+        "dia": 6,
+        "mes": 7,
+        "anio": 1969,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1969-07-06"
+      },
+      {
+        "texto": "dieciséis de septiembre de mil novecientos setenta y nueve",
+        "dia": 16,
+        "mes": 9,
+        "anio": 1979,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1979-09-16"
+      },
+      {
+        "texto": "fallecida el veinte de septiembre de mil novecientos cincuenta y nueve",
+        "dia": 20,
+        "mes": 9,
+        "anio": 1959,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1959-09-20"
+      },
+      {
+        "texto": "en fecha dos de enero de mil novecientos sesenta y uno",
+        "dia": 2,
+        "mes": 1,
+        "anio": 1961,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1961-01-02"
+      },
+      {
+        "texto": "pronunciado el veinte de noviembre de mil novecientos sesenta y siete",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1967,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1967-11-20"
+      },
+      {
+        "texto": "día veinte de marzo de 1949",
+        "dia": 20,
+        "mes": 3,
+        "anio": 1949,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1949-03-20"
+      },
+      {
+        "texto": "firmado el veintidós de noviembre de mil novecientos setenta",
+        "dia": 22,
+        "mes": 11,
+        "anio": 1970,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1970-11-22"
+      },
+      {
+        "texto": "otorgado el quince de septiembre de mil novecientos cincuenta y nueve",
+        "dia": 15,
+        "mes": 9,
+        "anio": 1959,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1959-09-15"
+      },
+      {
+        "texto": "el primero de diciembre de mil novecientos ochenta",
+        "dia": 1,
+        "mes": 12,
+        "anio": 1980,
+        "patron": "el primero de {mes} de {anio}",
+        "fecha_iso": "1980-12-01"
+      },
+      {
+        "texto": "día veintiocho de enero de mil novecientos setenta",
+        "dia": 28,
+        "mes": 1,
+        "anio": 1970,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1970-01-28"
+      },
+      {
+        "texto": "veintiocho de junio de mil novecientos setenta y uno",
+        "dia": 28,
+        "mes": 6,
+        "anio": 1971,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1971-06-28"
+      },
+      {
+        "texto": "el primero de agosto de mil novecientos setenta y siete",
+        "dia": 1,
+        "mes": 8,
+        "anio": 1977,
+        "patron": "el primero de {mes} de {anio}",
+        "fecha_iso": "1977-08-01"
+      },
+      {
+        "texto": "nacida el uno de septiembre de mil novecientos cincuenta y ocho",
+        "dia": 1,
+        "mes": 9,
+        "anio": 1958,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1958-09-01"
+      },
+      {
+        "texto": "nacida el veinte de junio de mil novecientos cincuenta y cinco",
+        "dia": 20,
+        "mes": 6,
+        "anio": 1955,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1955-06-20"
+      },
+      {
+        "texto": "fechado el diecisiete de enero de mil novecientos setenta y seis",
+        "dia": 17,
+        "mes": 1,
+        "anio": 1976,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1976-01-17"
+      },
+      {
+        "texto": "dictado el dos de marzo de mil novecientos cuarenta y seis",
+        "dia": 2,
+        "mes": 3,
+        "anio": 1946,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1946-03-02"
+      },
+      {
+        "texto": "nacido el tres de junio de mil novecientos setenta y siete",
+        "dia": 3,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-06-03"
+      },
+      {
+        "texto": "nacido el quince de junio de mil novecientos setenta y tres",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1973,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1973-06-15"
+      },
+      {
+        "texto": "notificado el veintitrés de octubre de mil novecientos setenta y uno",
+        "dia": 23,
+        "mes": 10,
+        "anio": 1971,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1971-10-23"
+      },
+      {
+        "texto": "siendo el día trece de marzo de mil novecientos cincuenta y dos",
+        "dia": 13,
+        "mes": 3,
+        "anio": 1952,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1952-03-13"
+      },
+      {
+        "texto": "extendido el día siete de abril de mil novecientos sesenta y uno",
+        "dia": 7,
+        "mes": 4,
+        "anio": 1961,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1961-04-07"
+      },
+      {
+        "texto": "el siete de julio de 1955",
+        "dia": 7,
+        "mes": 7,
+        "anio": 1955,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1955-07-07"
+      },
+      {
+        "texto": "dos de enero de mil novecientos cuarenta y dos",
+        "dia": 2,
+        "mes": 1,
+        "anio": 1942,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1942-01-02"
+      },
+      {
+        "texto": "el vigésimo segundo día del mes de noviembre de mil novecientos setenta y nueve",
+        "dia": 22,
+        "mes": 11,
+        "anio": 1979,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1979-11-22"
+      },
+      {
+        "texto": "día seis de febrero de 1956",
+        "dia": 6,
+        "mes": 2,
+        "anio": 1956,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1956-02-06"
+      },
+      {
+        "texto": "extendido el día diecisiete de octubre de mil novecientos noventa y cinco",
+        "dia": 17,
+        "mes": 10,
+        "anio": 1995,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1995-10-17"
+      },
+      {
+        "texto": "fallecido el diez de noviembre de dos mil",
+        "dia": 10,
+        "mes": 11,
+        "anio": 2000,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-11-10"
+      },
+      {
+        "texto": "celebrado el seis de mayo de mil novecientos ochenta y seis",
+        "dia": 6,
+        "mes": 5,
+        "anio": 1986,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-05-06"
+      },
+      {
+        "texto": "nacida el veintiséis de mayo de mil novecientos noventa y siete",
+        "dia": 26,
+        "mes": 5,
+        "anio": 1997,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-05-26"
+      },
+      {
+        "texto": "fallecida el diecinueve de febrero de mil novecientos ochenta y seis",
+        "dia": 19,
+        "mes": 2,
+        "anio": 1986,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-02-19"
+      },
+      {
+        "texto": "en el día dieciséis del mes de marzo del año mil novecientos ochenta y tres",
+        "dia": 16,
+        "mes": 3,
+        "anio": 1983,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1983-03-16"
+      },
+      {
+        "texto": "siendo el día seis de enero de mil novecientos ochenta y uno",
+        "dia": 6,
+        "mes": 1,
+        "anio": 1981,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-01-06"
+      },
+      {
+        "texto": "veintidós de abril del año mil novecientos ochenta y dos",
+        "dia": 22,
+        "mes": 4,
+        "anio": 1982,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1982-04-22"
+      },
+      {
+        "texto": "siete de octubre del año mil novecientos ochenta y nueve",
+        "dia": 7,
+        "mes": 10,
+        "anio": 1989,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1989-10-07"
+      },
+      {
+        "texto": "el primero de enero del año mil novecientos ochenta y cinco",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1985,
+        "patron": "el primero de {mes} del año {anio}",
+        "fecha_iso": "1985-01-01"
+      },
+      {
+        "texto": "notificado el ocho de septiembre de mil novecientos ochenta y seis",
+        "dia": 8,
+        "mes": 9,
+        "anio": 1986,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-09-08"
+      },
+      {
+        "texto": "fallecida el ocho de febrero de mil novecientos ochenta y nueve",
+        "dia": 8,
+        "mes": 2,
+        "anio": 1989,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1989-02-08"
+      },
+      {
+        "texto": "en el día catorce del mes de junio del año mil novecientos ochenta y cuatro",
+        "dia": 14,
+        "mes": 6,
+        "anio": 1984,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1984-06-14"
+      },
+      {
+        "texto": "emitido el veintitrés de junio de mil novecientos noventa y dos",
+        "dia": 23,
+        "mes": 6,
+        "anio": 1992,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1992-06-23"
+      },
+      {
+        "texto": "uno de enero de mil novecientos noventa y nueve",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1999,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1999-01-01"
+      },
+      {
+        "texto": "el día quince de febrero del año mil novecientos noventa y uno",
+        "dia": 15,
+        "mes": 2,
+        "anio": 1991,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1991-02-15"
+      },
+      {
+        "texto": "nacida el veintitrés de octubre de mil novecientos ochenta y seis",
+        "dia": 23,
+        "mes": 10,
+        "anio": 1986,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-10-23"
+      },
+      {
+        "texto": "firmado el trece de abril de mil novecientos ochenta",
+        "dia": 13,
+        "mes": 4,
+        "anio": 1980,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-04-13"
+      },
+      {
+        "texto": "nacida el veintitrés de mayo de mil novecientos ochenta",
+        "dia": 23,
+        "mes": 5,
+        "anio": 1980,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-05-23"
+      },
+      {
+        "texto": "a los cuatro días del mes de mayo de mil novecientos ochenta",
+        "dia": 4,
+        "mes": 5,
+        "anio": 1980,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1980-05-04"
+      },
+      {
+        "texto": "fechado el ocho de mayo de mil novecientos ochenta",
+        "dia": 8,
+        "mes": 5,
+        "anio": 1980,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-05-08"
+      },
+      {
+        "texto": "día primero de julio de mil novecientos noventa y siete",
+        "dia": 1,
+        "mes": 7,
+        "anio": 1997,
+        "patron": "día primero de {mes} de {anio}",
+        "fecha_iso": "1997-07-01"
+      },
+      {
+        "texto": "día veintitrés de julio de 1997",
+        "dia": 23,
+        "mes": 7,
+        "anio": 1997,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1997-07-23"
+      },
+      {
+        "texto": "el día segundo de septiembre de mil novecientos noventa y seis",
+        "dia": 2,
+        "mes": 9,
+        "anio": 1996,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1996-09-02"
+      },
+      {
+        "texto": "el día tres de noviembre del año mil novecientos noventa y seis",
+        "dia": 3,
+        "mes": 11,
+        "anio": 1996,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1996-11-03"
+      },
+      {
+        "texto": "en el día catorce del mes de noviembre del año mil novecientos noventa y cinco",
+        "dia": 14,
+        "mes": 11,
+        "anio": 1995,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1995-11-14"
+      },
+      {
+        "texto": "a cuatro de marzo de mil novecientos ochenta y ocho",
+        "dia": 4,
+        "mes": 3,
+        "anio": 1988,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1988-03-04"
+      },
+      {
+        "texto": "a los veintitrés días del mes de enero de mil novecientos noventa y cinco",
+        "dia": 23,
+        "mes": 1,
+        "anio": 1995,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1995-01-23"
+      },
+      {
+        "texto": "nacida el siete de octubre de mil novecientos ochenta",
+        "dia": 7,
+        "mes": 10,
+        "anio": 1980,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-10-07"
+      },
+      {
+        "texto": "el día trece de diciembre de mil novecientos ochenta y dos",
+        "dia": 13,
+        "mes": 12,
+        "anio": 1982,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1982-12-13"
+      },
+      {
+        "texto": "suscrito el día nueve de septiembre de mil novecientos ochenta y ocho",
+        "dia": 9,
+        "mes": 9,
+        "anio": 1988,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1988-09-09"
+      },
+      {
+        "texto": "fallecido el veintiuno de marzo de mil novecientos ochenta y nueve",
+        "dia": 21,
+        "mes": 3,
+        "anio": 1989,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1989-03-21"
+      },
+      {
+        "texto": "nacido el veintinueve de octubre de mil novecientos noventa",
+        "dia": 29,
+        "mes": 10,
+        "anio": 1990,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1990-10-29"
+      },
+      {
+        "texto": "emitido el veintisiete de abril de mil novecientos noventa y ocho",
+        "dia": 27,
+        "mes": 4,
+        "anio": 1998,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1998-04-27"
+      },
+      {
+        "texto": "suscrito el día dieciocho de diciembre de mil novecientos ochenta y uno",
+        "dia": 18,
+        "mes": 12,
+        "anio": 1981,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-12-18"
+      },
+      {
+        "texto": "con fecha veinte de noviembre de mil novecientos ochenta y nueve",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1989,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1989-11-20"
+      },
+      {
+        "texto": "nacido el veinticinco de abril de mil novecientos ochenta",
+        "dia": 25,
+        "mes": 4,
+        "anio": 1980,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-04-25"
+      },
+      {
+        "texto": "fechado a veinticinco de agosto de dos mil",
+        "dia": 25,
+        "mes": 8,
+        "anio": 2000,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-08-25"
+      },
+      {
+        "texto": "día cuatro de enero del año mil novecientos ochenta y tres",
+        "dia": 4,
+        "mes": 1,
+        "anio": 1983,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1983-01-04"
+      },
+      {
+        "texto": "veintiuno de mayo del año mil novecientos ochenta y tres",
+        "dia": 21,
+        "mes": 5,
+        "anio": 1983,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1983-05-21"
+      },
+      {
+        "texto": "día catorce de agosto de mil novecientos ochenta",
+        "dia": 14,
+        "mes": 8,
+        "anio": 1980,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1980-08-14"
+      },
+      {
+        "texto": "el octavo día del mes de julio de mil novecientos ochenta y siete",
+        "dia": 8,
+        "mes": 7,
+        "anio": 1987,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1987-07-08"
+      },
+      {
+        "texto": "fechado a trece de mayo de mil novecientos noventa y cinco",
+        "dia": 13,
+        "mes": 5,
+        "anio": 1995,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1995-05-13"
+      },
+      {
+        "texto": "día doce de septiembre de 1991",
+        "dia": 12,
+        "mes": 9,
+        "anio": 1991,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1991-09-12"
+      },
+      {
+        "texto": "extendido el día nueve de abril de mil novecientos ochenta y seis",
+        "dia": 9,
+        "mes": 4,
+        "anio": 1986,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-04-09"
+      },
+      {
+        "texto": "extendido el día veintisiete de febrero de mil novecientos noventa y seis",
+        "dia": 27,
+        "mes": 2,
+        "anio": 1996,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1996-02-27"
+      },
+      {
+        "texto": "nacida el treinta de noviembre de mil novecientos ochenta y siete",
+        "dia": 30,
+        "mes": 11,
+        "anio": 1987,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1987-11-30"
+      },
+      {
+        "texto": "el veintidós de diciembre de 1995",
+        "dia": 22,
+        "mes": 12,
+        "anio": 1995,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1995-12-22"
+      },
+      {
+        "texto": "fechado a diez de diciembre de mil novecientos ochenta y cuatro",
+        "dia": 10,
+        "mes": 12,
+        "anio": 1984,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "1984-12-10"
+      },
+      {
+        "texto": "extendido el día dos de septiembre de mil novecientos ochenta y uno",
+        "dia": 2,
+        "mes": 9,
+        "anio": 1981,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-09-02"
+      },
+      {
+        "texto": "veintisiete de octubre de mil novecientos noventa y dos",
+        "dia": 27,
+        "mes": 10,
+        "anio": 1992,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1992-10-27"
+      },
+      {
+        "texto": "día treinta y uno de mayo de mil novecientos ochenta y tres",
+        "dia": 31,
+        "mes": 5,
+        "anio": 1983,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1983-05-31"
+      },
+      {
+        "texto": "fallecido el veinticuatro de diciembre de mil novecientos noventa y uno",
+        "dia": 24,
+        "mes": 12,
+        "anio": 1991,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1991-12-24"
+      },
+      {
+        "texto": "día once de enero del año mil novecientos noventa y seis",
+        "dia": 11,
+        "mes": 1,
+        "anio": 1996,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1996-01-11"
+      },
+      {
+        "texto": "otorgado el veintinueve de diciembre de mil novecientos noventa y cinco",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1995,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1995-12-29"
+      },
+      {
+        "texto": "el día sexto de abril de mil novecientos ochenta y siete",
+        "dia": 6,
+        "mes": 4,
+        "anio": 1987,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1987-04-06"
+      },
+      {
+        "texto": "suscrito el día once de julio de mil novecientos noventa y cuatro",
+        "dia": 11,
+        "mes": 7,
+        "anio": 1994,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1994-07-11"
+      },
+      {
+        "texto": "el veintiocho de julio de mil novecientos ochenta y ocho",
+        "dia": 28,
+        "mes": 7,
+        "anio": 1988,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1988-07-28"
+      },
+      {
+        "texto": "el veintitrés de septiembre del año mil novecientos ochenta y tres",
+        "dia": 23,
+        "mes": 9,
+        "anio": 1983,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1983-09-23"
+      },
+      {
+        "texto": "el tres de marzo de 1988",
+        "dia": 3,
+        "mes": 3,
+        "anio": 1988,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1988-03-03"
+      },
+      {
+        "texto": "a nueve de marzo de mil novecientos noventa y nueve",
+        "dia": 9,
+        "mes": 3,
+        "anio": 1999,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1999-03-09"
+      },
+      {
+        "texto": "el veinticinco de enero de mil novecientos noventa y seis",
+        "dia": 25,
+        "mes": 1,
+        "anio": 1996,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1996-01-25"
+      },
+      {
+        "texto": "siendo el día veintiocho de agosto de mil novecientos ochenta y cinco",
+        "dia": 28,
+        "mes": 8,
+        "anio": 1985,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1985-08-28"
+      },
+      {
+        "texto": "notificado el diecisiete de octubre de mil novecientos noventa y cuatro",
+        "dia": 17,
+        "mes": 10,
+        "anio": 1994,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1994-10-17"
+      },
+      {
+        "texto": "a los catorce días del mes de julio de mil novecientos noventa y uno",
+        "dia": 14,
+        "mes": 7,
+        "anio": 1991,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1991-07-14"
+      },
+      {
+        "texto": "el trigésimo día del mes de julio de mil novecientos ochenta y uno",
+        "dia": 30,
+        "mes": 7,
+        "anio": 1981,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1981-07-30"
+      },
+      {
+        "texto": "a seis de diciembre de mil novecientos noventa y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1998,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1998-12-06"
+      },
+      {
+        "texto": "el día quinto de mayo de mil novecientos noventa y tres",
+        "dia": 5,
+        "mes": 5,
+        "anio": 1993,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1993-05-05"
+      },
+      {
+        "texto": "el día dos de mayo del año mil novecientos noventa",
+        "dia": 2,
+        "mes": 5,
+        "anio": 1990,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1990-05-02"
+      },
+      {
+        "texto": "veintiuno de enero de mil novecientos noventa",
+        "dia": 21,
+        "mes": 1,
+        "anio": 1990,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1990-01-21"
+      },
+      {
+        "texto": "fallecida el veintiocho de diciembre de mil novecientos noventa y siete",
+        "dia": 28,
+        "mes": 12,
+        "anio": 1997,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-12-28"
+      },
+      {
+        "texto": "emitido el quince de agosto de mil novecientos noventa y ocho",
+        "dia": 15,
+        "mes": 8,
+        "anio": 1998,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1998-08-15"
+      },
+      {
+        "texto": "firmado el tres de julio de mil novecientos ochenta y cinco",
+        "dia": 3,
+        "mes": 7,
+        "anio": 1985,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1985-07-03"
+      },
+      {
+        "texto": "el dieciocho de noviembre de mil novecientos ochenta y dos",
+        "dia": 18,
+        "mes": 11,
+        "anio": 1982,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1982-11-18"
+      },
+      {
+        "texto": "a cinco de noviembre de mil novecientos noventa y tres",
+        "dia": 5,
+        "mes": 11,
+        "anio": 1993,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1993-11-05"
+      },
+      {
+        "texto": "el día decimotercero de julio de mil novecientos ochenta y seis",
+        "dia": 13,
+        "mes": 7,
+        "anio": 1986,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1986-07-13"
+      },
+      {
+        "texto": "otorgado el veintiuno de enero de mil novecientos noventa y siete",
+        "dia": 21,
+        "mes": 1,
+        "anio": 1997,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-01-21"
+      },
+      {
+        "texto": "firmado el seis de marzo de mil novecientos ochenta y tres",
+        "dia": 6,
+        "mes": 3,
+        "anio": 1983,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1983-03-06"
+      },
+      {
+        "texto": "el día cinco de junio del año mil novecientos ochenta y tres",
+        "dia": 5,
+        "mes": 6,
+        "anio": 1983,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1983-06-05"
+      },
+      {
+        "texto": "en fecha diecinueve de marzo de mil novecientos noventa y siete",
+        "dia": 19,
+        "mes": 3,
+        "anio": 1997,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-03-19"
+      },
+      {
+        "texto": "fallecida el dos de febrero de mil novecientos noventa y cinco",
+        "dia": 2,
+        "mes": 2,
+        "anio": 1995,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1995-02-02"
+      },
+      {
+        "texto": "pronunciado el doce de diciembre de mil novecientos ochenta y dos",
+        "dia": 12,
+        "mes": 12,
+        "anio": 1982,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1982-12-12"
+      },
+      {
+        "texto": "fallecida el veintisiete de julio de mil novecientos noventa y seis",
+        "dia": 27,
+        "mes": 7,
+        "anio": 1996,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1996-07-27"
+      },
+      {
+        "texto": "dieciocho de febrero de mil novecientos noventa y siete",
+        "dia": 18,
+        "mes": 2,
+        "anio": 1997,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "1997-02-18"
+      },
+      {
+        "texto": "doce de julio del año mil novecientos noventa y uno",
+        "dia": 12,
+        "mes": 7,
+        "anio": 1991,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "1991-07-12"
+      },
+      {
+        "texto": "firmado el veintisiete de diciembre de mil novecientos ochenta y tres",
+        "dia": 27,
+        "mes": 12,
+        "anio": 1983,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1983-12-27"
+      },
+      {
+        "texto": "fallecida el nueve de abril de mil novecientos noventa y siete",
+        "dia": 9,
+        "mes": 4,
+        "anio": 1997,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-04-09"
+      },
+      {
+        "texto": "el primero de noviembre del año dos mil",
+        "dia": 1,
+        "mes": 11,
+        "anio": 2000,
+        "patron": "el primero de {mes} del año {anio}",
+        "fecha_iso": "2000-11-01"
+      },
+      {
+        "texto": "día treinta de agosto de mil novecientos noventa y nueve",
+        "dia": 30,
+        "mes": 8,
+        "anio": 1999,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1999-08-30"
+      },
+      {
+        "texto": "dictado el veintidós de febrero de mil novecientos noventa y siete",
+        "dia": 22,
+        "mes": 2,
+        "anio": 1997,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-02-22"
+      },
+      {
+        "texto": "el día primero de enero de mil novecientos ochenta y cuatro",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1984,
+        "patron": "el día primero de {mes} de {anio}",
+        "fecha_iso": "1984-01-01"
+      },
+      {
+        "texto": "fechado el tres de enero de mil novecientos noventa y siete",
+        "dia": 3,
+        "mes": 1,
+        "anio": 1997,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-01-03"
+      },
+      {
+        "texto": "día once de marzo del año mil novecientos ochenta",
+        "dia": 11,
+        "mes": 3,
+        "anio": 1980,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1980-03-11"
+      },
+      {
+        "texto": "el día veintisiete de junio de mil novecientos noventa y siete",
+        "dia": 27,
+        "mes": 6,
+        "anio": 1997,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1997-06-27"
+      },
+      {
+        "texto": "día veinticinco de marzo de 1990",
+        "dia": 25,
+        "mes": 3,
+        "anio": 1990,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1990-03-25"
+      },
+      {
+        "texto": "celebrado el quince de febrero de mil novecientos ochenta y siete",
+        "dia": 15,
+        "mes": 2,
+        "anio": 1987,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1987-02-15"
+      },
+      {
+        "texto": "el diecisiete de marzo del año mil novecientos noventa y dos",
+        "dia": 17,
+        "mes": 3,
+        "anio": 1992,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1992-03-17"
+      },
+      {
+        "texto": "el catorce de febrero de 1983",
+        "dia": 14,
+        "mes": 2,
+        "anio": 1983,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1983-02-14"
+      },
+      {
+        "texto": "el primero de mayo de mil novecientos noventa y cuatro",
+        "dia": 1,
+        "mes": 5,
+        "anio": 1994,
+        "patron": "el primero de {mes} de {anio}",
+        "fecha_iso": "1994-05-01"
+      },
+      {
+        "texto": "siendo el día diez de junio de dos mil",
+        "dia": 10,
+        "mes": 6,
+        "anio": 2000,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-06-10"
+      },
+      {
+        "texto": "a los diez días del mes de noviembre de dos mil diecisiete",
+        "dia": 10,
+        "mes": 11,
+        "anio": 2017,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2017-11-10"
+      },
+      {
+        "texto": "fallecido el veintitrés de abril de dos mil veinticuatro",
+        "dia": 23,
+        "mes": 4,
+        "anio": 2024,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-04-23"
+      },
+      {
+        "texto": "firmado el dos de mayo de dos mil ocho",
+        "dia": 2,
+        "mes": 5,
+        "anio": 2008,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-05-02"
+      },
+      {
+        "texto": "con fecha seis de mayo de dos mil uno",
+        "dia": 6,
+        "mes": 5,
+        "anio": 2001,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2001-05-06"
+      },
+      {
+        "texto": "el día doce de diciembre del año dos mil dieciséis",
+        "dia": 12,
+        "mes": 12,
+        "anio": 2016,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2016-12-12"
+      },
+      {
+        "texto": "a los veintiuno días del mes de noviembre de dos mil catorce",
+        "dia": 21,
+        "mes": 11,
+        "anio": 2014,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2014-11-21"
+      },
+      {
+        "texto": "firmado el veintinueve de noviembre de dos mil once",
+        "dia": 29,
+        "mes": 11,
+        "anio": 2011,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-11-29"
+      },
+      {
+        "texto": "en el día siete del mes de octubre del año dos mil tres",
+        "dia": 7,
+        "mes": 10,
+        "anio": 2003,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2003-10-07"
+      },
+      {
+        "texto": "suscrito el día veinte de octubre de dos mil siete",
+        "dia": 20,
+        "mes": 10,
+        "anio": 2007,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-10-20"
+      },
+      {
+        "texto": "firmado el treinta y uno de octubre de dos mil veinticinco",
+        "dia": 31,
+        "mes": 10,
+        "anio": 2025,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-10-31"
+      },
+      {
+        "texto": "en fecha cuatro de julio de dos mil veinticuatro",
+        "dia": 4,
+        "mes": 7,
+        "anio": 2024,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-07-04"
+      },
+      {
+        "texto": "extendido el día diez de septiembre de dos mil quince",
+        "dia": 10,
+        "mes": 9,
+        "anio": 2015,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2015-09-10"
+      },
+      {
+        "texto": "notificado el dos de mayo de dos mil ocho",
+        "dia": 2,
+        "mes": 5,
+        "anio": 2008,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-05-02"
+      },
+      {
+        "texto": "en el día treinta del mes de enero del año dos mil veintiuno",
+        "dia": 30,
+        "mes": 1,
+        "anio": 2021,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2021-01-30"
+      },
+      {
+        "texto": "el día diez de junio de dos mil dos",
+        "dia": 10,
+        "mes": 6,
+        "anio": 2002,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-06-10"
+      },
+      {
+        "texto": "día undécimo del mes de febrero de dos mil dieciocho",
+        "dia": 11,
+        "mes": 2,
+        "anio": 2018,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "2018-02-11"
+      },
+      {
+        "texto": "dictado el tres de noviembre de dos mil veinticinco",
+        "dia": 3,
+        "mes": 11,
+        "anio": 2025,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-11-03"
+      },
+      {
+        "texto": "dos de enero de dos mil siete",
+        "dia": 2,
+        "mes": 1,
+        "anio": 2007,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "2007-01-02"
+      },
+      {
+        "texto": "celebrado el diecisiete de marzo de dos mil veinticuatro",
+        "dia": 17,
+        "mes": 3,
+        "anio": 2024,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-03-17"
+      },
+      {
+        "texto": "en el día cinco del mes de abril del año dos mil veinticinco",
+        "dia": 5,
+        "mes": 4,
+        "anio": 2025,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2025-04-05"
+      },
+      {
+        "texto": "fallecido el catorce de agosto de dos mil dos",
+        "dia": 14,
+        "mes": 8,
+        "anio": 2002,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-08-14"
+      },
+      {
+        "texto": "extendido el día nueve de junio de dos mil veinticuatro",
+        "dia": 9,
+        "mes": 6,
+        "anio": 2024,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-06-09"
+      },
+      {
+        "texto": "a los diecisiete días del mes de mayo de dos mil dos",
+        "dia": 17,
+        "mes": 5,
+        "anio": 2002,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2002-05-17"
+      },
+      {
+        "texto": "en el día diecinueve del mes de mayo del año dos mil veintiuno",
+        "dia": 19,
+        "mes": 5,
+        "anio": 2021,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2021-05-19"
+      },
+      {
+        "texto": "a los catorce días del mes de enero de dos mil veintitrés",
+        "dia": 14,
+        "mes": 1,
+        "anio": 2023,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2023-01-14"
+      },
+      {
+        "texto": "suscrito el día dos de diciembre de dos mil veinte",
+        "dia": 2,
+        "mes": 12,
+        "anio": 2020,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2020-12-02"
+      },
+      {
+        "texto": "en fecha veinte de diciembre de dos mil once",
+        "dia": 20,
+        "mes": 12,
+        "anio": 2011,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-12-20"
+      },
+      {
+        "texto": "día seis de febrero del año dos mil dieciséis",
+        "dia": 6,
+        "mes": 2,
+        "anio": 2016,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2016-02-06"
+      },
+      {
+        "texto": "notificado el diez de enero de dos mil diez",
+        "dia": 10,
+        "mes": 1,
+        "anio": 2010,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-01-10"
+      },
+      {
+        "texto": "en el día seis del mes de junio del año dos mil dos",
+        "dia": 6,
+        "mes": 6,
+        "anio": 2002,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2002-06-06"
+      },
+      {
+        "texto": "fechado el diecisiete de septiembre de dos mil diecisiete",
+        "dia": 17,
+        "mes": 9,
+        "anio": 2017,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2017-09-17"
+      },
+      {
+        "texto": "día veintidós de junio de dos mil veinticuatro",
+        "dia": 22,
+        "mes": 6,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-06-22"
+      },
+      {
+        "texto": "nacido el veintiséis de diciembre de dos mil diecinueve",
+        "dia": 26,
+        "mes": 12,
+        "anio": 2019,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2019-12-26"
+      },
+      {
+        "texto": "fallecido el seis de octubre de dos mil dieciséis",
+        "dia": 6,
+        "mes": 10,
+        "anio": 2016,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2016-10-06"
+      },
+      {
+        "texto": "emitido el siete de abril de dos mil catorce",
+        "dia": 7,
+        "mes": 4,
+        "anio": 2014,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-04-07"
+      },
+      {
+        "texto": "a los catorce días del mes de junio del año dos mil seis",
+        "dia": 14,
+        "mes": 6,
+        "anio": 2006,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "2006-06-14"
+      },
+      {
+        "texto": "cuatro de mayo del año dos mil cuatro",
+        "dia": 4,
+        "mes": 5,
+        "anio": 2004,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "2004-05-04"
+      },
+      {
+        "texto": "nacida el veintiséis de diciembre de dos mil veinticinco",
+        "dia": 26,
+        "mes": 12,
+        "anio": 2025,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-12-26"
+      },
+      {
+        "texto": "con fecha seis de septiembre de dos mil seis",
+        "dia": 6,
+        "mes": 9,
+        "anio": 2006,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2006-09-06"
+      },
+      {
+        "texto": "el día vigésimo quinto de junio de dos mil dieciséis",
+        "dia": 25,
+        "mes": 6,
+        "anio": 2016,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "2016-06-25"
+      },
+      {
+        "texto": "día diez de enero del año dos mil seis",
+        "dia": 10,
+        "mes": 1,
+        "anio": 2006,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2006-01-10"
+      },
+      {
+        "texto": "a dieciocho de junio de dos mil diez",
+        "dia": 18,
+        "mes": 6,
+        "anio": 2010,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-06-18"
+      },
+      {
+        "texto": "en fecha veintidós de mayo de dos mil",
+        "dia": 22,
+        "mes": 5,
+        "anio": 2000,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-05-22"
+      },
+      {
+        "texto": "celebrado el once de noviembre de dos mil nueve",
+        "dia": 11,
+        "mes": 11,
+        "anio": 2009,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2009-11-11"
+      },
+      {
+        "texto": "dictado el dos de enero de dos mil siete",
+        "dia": 2,
+        "mes": 1,
+        "anio": 2007,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-01-02"
+      },
+      {
+        "texto": "siendo el día seis de julio de dos mil catorce",
+        "dia": 6,
+        "mes": 7,
+        "anio": 2014,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-07-06"
+      },
+      {
+        "texto": "día diecinueve de enero de 2011",
+        "dia": 19,
+        "mes": 1,
+        "anio": 2011,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2011-01-19"
+      },
+      {
+        "texto": "el veintiocho de octubre de dos mil dos",
+        "dia": 28,
+        "mes": 10,
+        "anio": 2002,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-10-28"
+      },
+      {
+        "texto": "día veintitrés de diciembre de 2024",
+        "dia": 23,
+        "mes": 12,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2024-12-23"
+      },
+      {
+        "texto": "nacido el uno de febrero de dos mil doce",
+        "dia": 1,
+        "mes": 2,
+        "anio": 2012,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2012-02-01"
+      },
+      {
+        "texto": "diecinueve de marzo del año dos mil quince",
+        "dia": 19,
+        "mes": 3,
+        "anio": 2015,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "2015-03-19"
+      },
+      {
+        "texto": "en el día catorce del mes de agosto del año dos mil uno",
+        "dia": 14,
+        "mes": 8,
+        "anio": 2001,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2001-08-14"
+      },
+      {
+        "texto": "a los dieciséis días del mes de mayo de dos mil veinticinco",
+        "dia": 16,
+        "mes": 5,
+        "anio": 2025,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2025-05-16"
+      },
+      {
+        "texto": "notificado el ocho de octubre de dos mil veinticuatro",
+        "dia": 8,
+        "mes": 10,
+        "anio": 2024,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-10-08"
+      },
+      {
+        "texto": "a siete de abril de dos mil diecinueve",
+        "dia": 7,
+        "mes": 4,
+        "anio": 2019,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "2019-04-07"
+      },
+      {
+        "texto": "día veinticinco de abril de dos mil veinticuatro",
+        "dia": 25,
+        "mes": 4,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-04-25"
+      },
+      {
+        "texto": "treinta de octubre del año dos mil veintidós",
+        "dia": 30,
+        "mes": 10,
+        "anio": 2022,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "2022-10-30"
+      },
+      {
+        "texto": "siendo el día veintidós de julio de dos mil ocho",
+        "dia": 22,
+        "mes": 7,
+        "anio": 2008,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-07-22"
+      },
+      {
+        "texto": "firmado el veintisiete de noviembre de dos mil veintitrés",
+        "dia": 27,
+        "mes": 11,
+        "anio": 2023,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2023-11-27"
+      },
+      {
+        "texto": "siendo el día veintiocho de febrero de dos mil cuatro",
+        "dia": 28,
+        "mes": 2,
+        "anio": 2004,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2004-02-28"
+      },
+      {
+        "texto": "nacida el diez de mayo de dos mil nueve",
+        "dia": 10,
+        "mes": 5,
+        "anio": 2009,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2009-05-10"
+      },
+      {
+        "texto": "día catorce de noviembre de dos mil once",
+        "dia": 14,
+        "mes": 11,
+        "anio": 2011,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-11-14"
+      },
+      {
+        "texto": "día nueve de marzo de 2016",
+        "dia": 9,
+        "mes": 3,
+        "anio": 2016,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2016-03-09"
+      },
+      {
+        "texto": "el once de febrero de dos mil siete",
+        "dia": 11,
+        "mes": 2,
+        "anio": 2007,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-02-11"
+      },
+      {
+        "texto": "día seis de marzo de dos mil",
+        "dia": 6,
+        "mes": 3,
+        "anio": 2000,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-03-06"
+      },
+      {
+        "texto": "el seis de marzo de 2010",
+        "dia": 6,
+        "mes": 3,
+        "anio": 2010,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2010-03-06"
+      },
+      {
+        "texto": "fallecido el dos de agosto de dos mil cinco",
+        "dia": 2,
+        "mes": 8,
+        "anio": 2005,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2005-08-02"
+      },
+      {
+        "texto": "siete de julio del año dos mil cuatro",
+        "dia": 7,
+        "mes": 7,
+        "anio": 2004,
+        "patron": "{dia} de {mes} del año {anio}",
+        "fecha_iso": "2004-07-07"
+      },
+      {
+        "texto": "fallecida el veintinueve de marzo de dos mil diecisiete",
+        "dia": 29,
+        "mes": 3,
+        "anio": 2017,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2017-03-29"
+      },
+      {
+        "texto": "el día quinto de marzo de dos mil diez",
+        "dia": 5,
+        "mes": 3,
+        "anio": 2010,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "2010-03-05"
+      },
+      {
+        "texto": "otorgado el quince de marzo de dos mil diecisiete",
+        "dia": 15,
+        "mes": 3,
+        "anio": 2017,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2017-03-15"
+      },
+      {
+        "texto": "día treinta de mayo del año dos mil diecisiete",
+        "dia": 30,
+        "mes": 5,
+        "anio": 2017,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2017-05-30"
+      },
+      {
+        "texto": "día veintiocho de octubre de 2008",
+        "dia": 28,
+        "mes": 10,
+        "anio": 2008,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2008-10-28"
+      },
+      {
+        "texto": "en fecha veinticinco de julio de dos mil veinticuatro",
+        "dia": 25,
+        "mes": 7,
+        "anio": 2024,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-07-25"
+      },
+      {
+        "texto": "el día veinticuatro de febrero de dos mil veintitrés",
+        "dia": 24,
+        "mes": 2,
+        "anio": 2023,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2023-02-24"
+      },
+      {
+        "texto": "fallecida el diez de febrero de dos mil veinticuatro",
+        "dia": 10,
+        "mes": 2,
+        "anio": 2024,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-02-10"
+      },
+      {
+        "texto": "pronunciado el ocho de noviembre de dos mil dieciséis",
+        "dia": 8,
+        "mes": 11,
+        "anio": 2016,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2016-11-08"
+      },
+      {
+        "texto": "el día treinta y uno de marzo del año dos mil catorce",
+        "dia": 31,
+        "mes": 3,
+        "anio": 2014,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2014-03-31"
+      },
+      {
+        "texto": "el primero de julio del año dos mil diez",
+        "dia": 1,
+        "mes": 7,
+        "anio": 2010,
+        "patron": "el primero de {mes} del año {anio}",
+        "fecha_iso": "2010-07-01"
+      },
+      {
+        "texto": "el día vigésimo séptimo de febrero de dos mil veinticuatro",
+        "dia": 27,
+        "mes": 2,
+        "anio": 2024,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "2024-02-27"
+      },
+      {
+        "texto": "dictado el catorce de julio de dos mil veintidós",
+        "dia": 14,
+        "mes": 7,
+        "anio": 2022,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2022-07-14"
+      },
+      {
+        "texto": "fallecida el veintiuno de septiembre de dos mil dieciocho",
+        "dia": 21,
+        "mes": 9,
+        "anio": 2018,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2018-09-21"
+      },
+      {
+        "texto": "a los siete días del mes de diciembre de dos mil ocho",
+        "dia": 7,
+        "mes": 12,
+        "anio": 2008,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2008-12-07"
+      },
+      {
+        "texto": "a quince de junio de dos mil",
+        "dia": 15,
+        "mes": 6,
+        "anio": 2000,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-06-15"
+      },
+      {
+        "texto": "el catorce de septiembre de 2012",
+        "dia": 14,
+        "mes": 9,
+        "anio": 2012,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2012-09-14"
+      },
+      {
+        "texto": "el veinticuatro de marzo de dos mil diez",
+        "dia": 24,
+        "mes": 3,
+        "anio": 2010,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-03-24"
+      },
+      {
+        "texto": "el decimonoveno día del mes de octubre de dos mil dos",
+        "dia": 19,
+        "mes": 10,
+        "anio": 2002,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "2002-10-19"
+      },
+      {
+        "texto": "notificado el dos de agosto de dos mil siete",
+        "dia": 2,
+        "mes": 8,
+        "anio": 2007,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-08-02"
+      },
+      {
+        "texto": "fechado el nueve de septiembre de dos mil veinte",
+        "dia": 9,
+        "mes": 9,
+        "anio": 2020,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2020-09-09"
+      },
+      {
+        "texto": "emitido el tres de abril de dos mil once",
+        "dia": 3,
+        "mes": 4,
+        "anio": 2011,
+        "patron": "emitido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-04-03"
+      },
+      {
+        "texto": "notificado el treinta de septiembre de dos mil veinte",
+        "dia": 30,
+        "mes": 9,
+        "anio": 2020,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2020-09-30"
+      },
+      {
+        "texto": "día veinticinco de enero de dos mil veintidós",
+        "dia": 25,
+        "mes": 1,
+        "anio": 2022,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2022-01-25"
+      },
+      {
+        "texto": "dictado el veinticinco de agosto de dos mil dieciocho",
+        "dia": 25,
+        "mes": 8,
+        "anio": 2018,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2018-08-25"
+      },
+      {
+        "texto": "extendido el día veintinueve de noviembre de dos mil trece",
+        "dia": 29,
+        "mes": 11,
+        "anio": 2013,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2013-11-29"
+      },
+      {
+        "texto": "fechado el veintiséis de julio de dos mil veinticinco",
+        "dia": 26,
+        "mes": 7,
+        "anio": 2025,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-07-26"
+      },
+      {
+        "texto": "otorgado el dos de marzo de dos mil veinticinco",
+        "dia": 2,
+        "mes": 3,
+        "anio": 2025,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-03-02"
+      },
+      {
+        "texto": "día trigésimo primero del mes de octubre de dos mil once",
+        "dia": 31,
+        "mes": 10,
+        "anio": 2011,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "2011-10-31"
+      },
+      {
+        "texto": "dictado el once de marzo de dos mil veinticuatro",
+        "dia": 11,
+        "mes": 3,
+        "anio": 2024,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-03-11"
+      },
+      {
+        "texto": "día trece de septiembre de dos mil veinticuatro",
+        "dia": 13,
+        "mes": 9,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-09-13"
+      },
+      {
+        "texto": "a los treinta y uno días del mes de marzo de dos mil dos",
+        "dia": 31,
+        "mes": 3,
+        "anio": 2002,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2002-03-31"
+      },
+      {
+        "texto": "el veintiuno de junio de 2014",
+        "dia": 21,
+        "mes": 6,
+        "anio": 2014,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2014-06-21"
+      },
+      {
+        "texto": "celebrado el cuatro de octubre de dos mil trece",
+        "dia": 4,
+        "mes": 10,
+        "anio": 2013,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2013-10-04"
+      },
+      {
+        "texto": "fallecida el veintisiete de octubre de dos mil dieciocho",
+        "dia": 27,
+        "mes": 10,
+        "anio": 2018,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2018-10-27"
+      },
+      {
+        "texto": "siendo el día veintinueve de marzo de dos mil diez",
+        "dia": 29,
+        "mes": 3,
+        "anio": 2010,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-03-29"
+      },
+      {
+        "texto": "siendo el día diez de septiembre de dos mil once",
+        "dia": 10,
+        "mes": 9,
+        "anio": 2011,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-09-10"
+      },
+      {
+        "texto": "fechado a diecisiete de agosto de dos mil veintiuno",
+        "dia": 17,
+        "mes": 8,
+        "anio": 2021,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-08-17"
+      },
+      {
+        "texto": "firmado el veintiséis de julio de dos mil veintiuno",
+        "dia": 26,
+        "mes": 7,
+        "anio": 2021,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-07-26"
+      },
+      {
+        "texto": "siete de junio de dos mil nueve",
+        "dia": 7,
+        "mes": 6,
+        "anio": 2009,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "2009-06-07"
+      },
+      {
+        "texto": "nacida el siete de noviembre de dos mil ocho",
+        "dia": 7,
+        "mes": 11,
+        "anio": 2008,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-11-07"
+      },
+      {
+        "texto": "extendido el día doce de octubre de dos mil cuatro",
+        "dia": 12,
+        "mes": 10,
+        "anio": 2004,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2004-10-12"
+      },
+      {
+        "texto": "el seis de mayo de 2005",
+        "dia": 6,
+        "mes": 5,
+        "anio": 2005,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2005-05-06"
+      },
+      {
+        "texto": "dieciséis de mayo de dos mil nueve",
+        "dia": 16,
+        "mes": 5,
+        "anio": 2009,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "2009-05-16"
+      },
+      {
+        "texto": "firmado el diecisiete de enero de dos mil diez",
+        "dia": 17,
+        "mes": 1,
+        "anio": 2010,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-01-17"
+      },
+      {
+        "texto": "dictado el veintinueve de febrero de dos mil doce",
+        "dia": 29,
+        "mes": 2,
+        "anio": 2012,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2012-02-29"
+      },
+      {
+        "texto": "siendo el día dieciocho de junio de dos mil once",
+        "dia": 18,
+        "mes": 6,
+        "anio": 2011,
+        "patron": "siendo el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-06-18"
+      },
+      {
+        "texto": "otorgado el quince de diciembre de dos mil doce",
+        "dia": 15,
+        "mes": 12,
+        "anio": 2012,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2012-12-15"
+      },
+      {
+        "texto": "pronunciado el treinta de abril de dos mil veintiuno",
+        "dia": 30,
+        "mes": 4,
+        "anio": 2021,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-04-30"
+      },
+      {
+        "texto": "nacida el dieciséis de noviembre de dos mil diecisiete",
+        "dia": 16,
+        "mes": 11,
+        "anio": 2017,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2017-11-16"
+      },
+      {
+        "texto": "firmado el ocho de agosto de dos mil ocho",
+        "dia": 8,
+        "mes": 8,
+        "anio": 2008,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-08-08"
+      },
+      {
+        "texto": "firmado el veintiséis de septiembre de dos mil ocho",
+        "dia": 26,
+        "mes": 9,
+        "anio": 2008,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-09-26"
+      },
+      {
+        "texto": "el decimotercero día del mes de octubre de dos mil ocho",
+        "dia": 13,
+        "mes": 10,
+        "anio": 2008,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "2008-10-13"
+      },
+      {
+        "texto": "suscrito el día diecisiete de agosto de dos mil dos",
+        "dia": 17,
+        "mes": 8,
+        "anio": 2002,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-08-17"
+      },
+      {
+        "texto": "día veintiséis de diciembre de dos mil dieciocho",
+        "dia": 26,
+        "mes": 12,
+        "anio": 2018,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2018-12-26"
+      },
+      {
+        "texto": "celebrado el veintiocho de junio de dos mil veintidós",
+        "dia": 28,
+        "mes": 6,
+        "anio": 2022,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2022-06-28"
+      },
+      {
+        "texto": "nacida el veinte de septiembre de dos mil dieciséis",
+        "dia": 20,
+        "mes": 9,
+        "anio": 2016,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2016-09-20"
+      },
+      {
+        "texto": "dictado el diecisiete de octubre de dos mil",
+        "dia": 17,
+        "mes": 10,
+        "anio": 2000,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2000-10-17"
+      },
+      {
+        "texto": "notificado el veintiuno de febrero de dos mil veintiuno",
+        "dia": 21,
+        "mes": 2,
+        "anio": 2021,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-02-21"
+      },
+      {
+        "texto": "fechado el cinco de mayo de dos mil veinticinco",
+        "dia": 5,
+        "mes": 5,
+        "anio": 2025,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-05-05"
+      },
+      {
+        "texto": "fallecido el siete de enero de dos mil veintiuno",
+        "dia": 7,
+        "mes": 1,
+        "anio": 2021,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-01-07"
+      },
+      {
+        "texto": "día segundo del mes de enero de dos mil ocho",
+        "dia": 2,
+        "mes": 1,
+        "anio": 2008,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "2008-01-02"
+      },
+      {
+        "texto": "suscrito el día dos de diciembre de dos mil cuatro",
+        "dia": 2,
+        "mes": 12,
+        "anio": 2004,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2004-12-02"
+      },
+      {
+        "texto": "el decimotercero día del mes de febrero de dos mil veintidós",
+        "dia": 13,
+        "mes": 2,
+        "anio": 2022,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "2022-02-13"
+      },
+      {
+        "texto": "veinticinco de febrero de dos mil diecinueve",
+        "dia": 25,
+        "mes": 2,
+        "anio": 2019,
+        "patron": "{dia} de {mes} de {anio}",
+        "fecha_iso": "2019-02-25"
+      },
+      {
+        "texto": "día cinco de julio del año dos mil ocho",
+        "dia": 5,
+        "mes": 7,
+        "anio": 2008,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2008-07-05"
+      },
+      {
+        "texto": "día cinco de diciembre de dos mil veinticuatro",
+        "dia": 5,
+        "mes": 12,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2024-12-05"
+      },
+      {
+        "texto": "el día cinco de febrero de dos mil diez",
+        "dia": 5,
+        "mes": 2,
+        "anio": 2010,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2010-02-05"
+      },
+      {
+        "texto": "día veinte de febrero del año dos mil veinticuatro",
+        "dia": 20,
+        "mes": 2,
+        "anio": 2024,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2024-02-20"
+      },
+      {
+        "texto": "extendido el día veintiocho de marzo de dos mil dos",
+        "dia": 28,
+        "mes": 3,
+        "anio": 2002,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-03-28"
+      },
+      {
+        "texto": "fechado el veintinueve de abril de dos mil once",
+        "dia": 29,
+        "mes": 4,
+        "anio": 2011,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-04-29"
+      },
+      {
+        "texto": "a los cuatro días del mes de septiembre del año dos mil ocho",
+        "dia": 4,
+        "mes": 9,
+        "anio": 2008,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "2008-09-04"
+      },
+      {
+        "texto": "dictado el veintiséis de junio de dos mil catorce",
+        "dia": 26,
+        "mes": 6,
+        "anio": 2014,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-06-26"
+      },
+      {
+        "texto": "con fecha dieciséis de agosto de dos mil dieciséis",
+        "dia": 16,
+        "mes": 8,
+        "anio": 2016,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2016-08-16"
+      },
+      {
+        "texto": "el día veintiocho de noviembre de dos mil veintiuno",
+        "dia": 28,
+        "mes": 11,
+        "anio": 2021,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-11-28"
+      },
+      {
+        "texto": "otorgado el once de marzo de dos mil nueve",
+        "dia": 11,
+        "mes": 3,
+        "anio": 2009,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2009-03-11"
+      },
+      {
+        "texto": "firmado el diecinueve de febrero de dos mil siete",
+        "dia": 19,
+        "mes": 2,
+        "anio": 2007,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-02-19"
+      },
+      {
+        "texto": "el quinto día del mes de febrero de dos mil nueve",
+        "dia": 5,
+        "mes": 2,
+        "anio": 2009,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "2009-02-05"
+      },
+      {
+        "texto": "extendido el día veintidós de mayo de dos mil veintitrés",
+        "dia": 22,
+        "mes": 5,
+        "anio": 2023,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2023-05-22"
+      },
+      {
+        "texto": "catorce de julio de 2018",
+        "dia": 14,
+        "mes": 7,
+        "anio": 2018,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "2018-07-14"
+      },
+      {
+        "texto": "el dieciséis de septiembre del año dos mil veintiuno",
+        "dia": 16,
+        "mes": 9,
+        "anio": 2021,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "2021-09-16"
+      },
+      {
+        "texto": "el día veintitrés de septiembre de dos mil dos",
+        "dia": 23,
+        "mes": 9,
+        "anio": 2002,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-09-23"
+      },
+      {
+        "texto": "día cuatro de agosto de 2014",
+        "dia": 4,
+        "mes": 8,
+        "anio": 2014,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2014-08-04"
+      },
+      {
+        "texto": "el veintisiete de enero de 2012",
+        "dia": 27,
+        "mes": 1,
+        "anio": 2012,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2012-01-27"
+      },
+      {
+        "texto": "fallecida el diecinueve de febrero de dos mil once",
+        "dia": 19,
+        "mes": 2,
+        "anio": 2011,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2011-02-19"
+      },
+      {
+        "texto": "firmado el veintinueve de junio de dos mil doce",
+        "dia": 29,
+        "mes": 6,
+        "anio": 2012,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2012-06-29"
+      },
+      {
+        "texto": "nacida el quince de diciembre de dos mil diecinueve",
+        "dia": 15,
+        "mes": 12,
+        "anio": 2019,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "2019-12-15"
+      },
+      {
+        "texto": "a los dieciocho días del mes de febrero de dos mil dieciséis",
+        "dia": 18,
+        "mes": 2,
+        "anio": 2016,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "2016-02-18"
+      },
+      {
+        "texto": "suscrito el día ocho de enero de dos mil diecinueve",
+        "dia": 8,
+        "mes": 1,
+        "anio": 2019,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2019-01-08"
+      },
+      {
+        "texto": "suscrito el día veinticinco de septiembre de dos mil dos",
+        "dia": 25,
+        "mes": 9,
+        "anio": 2002,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-09-25"
+      },
+      {
+        "texto": "día veintiuno de marzo de dos mil uno",
+        "dia": 21,
+        "mes": 3,
+        "anio": 2001,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2001-03-21"
+      },
+      {
+        "texto": "con fecha diecisiete de junio de dos mil veintitrés",
+        "dia": 17,
+        "mes": 6,
+        "anio": 2023,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2023-06-17"
+      },
+      {
+        "texto": "día decimocuarto del mes de septiembre de dos mil dieciocho",
+        "dia": 14,
+        "mes": 9,
+        "anio": 2018,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "2018-09-14"
+      },
+      {
+        "texto": "dictado el veinticinco de octubre de dos mil veintiuno",
+        "dia": 25,
+        "mes": 10,
+        "anio": 2021,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-10-25"
+      },
+      {
+        "texto": "nacido el cinco de mayo de dos mil quince",
+        "dia": 5,
+        "mes": 5,
+        "anio": 2015,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2015-05-05"
+      },
+      {
+        "texto": "nacido el diecisiete de mayo de dos mil veintiuno",
+        "dia": 17,
+        "mes": 5,
+        "anio": 2021,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2021-05-17"
+      },
+      {
+        "texto": "el día decimoquinto de septiembre de dos mil veintidós",
+        "dia": 15,
+        "mes": 9,
+        "anio": 2022,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "2022-09-15"
+      },
+      {
+        "texto": "el veinticuatro de diciembre de dos mil trece",
+        "dia": 24,
+        "mes": 12,
+        "anio": 2013,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "2013-12-24"
+      },
+      {
+        "texto": "el veinte de diciembre del año dos mil veinticuatro",
+        "dia": 20,
+        "mes": 12,
+        "anio": 2024,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "2024-12-20"
+      },
+      {
+        "texto": "a los veintidós días del mes de septiembre del año dos mil cuatro",
+        "dia": 22,
+        "mes": 9,
+        "anio": 2004,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "2004-09-22"
+      },
+      {
+        "texto": "extendido el día quince de enero de dos mil dieciocho",
+        "dia": 15,
+        "mes": 1,
+        "anio": 2018,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2018-01-15"
+      },
+      {
+        "texto": "con fecha tres de julio de dos mil veinte",
+        "dia": 3,
+        "mes": 7,
+        "anio": 2020,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2020-07-03"
+      },
+      {
+        "texto": "extendido el día cinco de diciembre de dos mil ocho",
+        "dia": 5,
+        "mes": 12,
+        "anio": 2008,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-12-05"
+      },
+      {
+        "texto": "a cuatro de septiembre de dos mil siete",
+        "dia": 4,
+        "mes": 9,
+        "anio": 2007,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "2007-09-04"
+      },
+      {
+        "texto": "con fecha veintidós de agosto de dos mil dieciséis",
+        "dia": 22,
+        "mes": 8,
+        "anio": 2016,
+        "patron": "con fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "2016-08-22"
+      },
+      {
+        "texto": "el veinticinco de diciembre del año dos mil veintiuno",
+        "dia": 25,
+        "mes": 12,
+        "anio": 2021,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "2021-12-25"
+      },
+      {
+        "texto": "en el día diez del mes de diciembre del año dos mil diecisiete",
+        "dia": 10,
+        "mes": 12,
+        "anio": 2017,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2017-12-10"
+      },
+      {
+        "texto": "dictado el tres de marzo de dos mil dos",
+        "dia": 3,
+        "mes": 3,
+        "anio": 2002,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-03-03"
+      },
+      {
+        "texto": "a los seis días del mes de abril del año dos mil trece",
+        "dia": 6,
+        "mes": 4,
+        "anio": 2013,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "2013-04-06"
+      },
+      {
+        "texto": "día veinticinco de octubre de dos mil tres",
+        "dia": 25,
+        "mes": 10,
+        "anio": 2003,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2003-10-25"
+      },
+      {
+        "texto": "el quince de marzo de 2025",
+        "dia": 15,
+        "mes": 3,
+        "anio": 2025,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2025-03-15"
+      },
+      {
+        "texto": "el vigésimo sexto día del mes de noviembre de dos mil cuatro",
+        "dia": 26,
+        "mes": 11,
+        "anio": 2004,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "2004-11-26"
+      },
+      {
+        "texto": "nacido el dos de enero de dos mil veinticinco",
+        "dia": 2,
+        "mes": 1,
+        "anio": 2025,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "2025-01-02"
+      },
+      {
+        "texto": "el día veinticinco de diciembre de dos mil trece",
+        "dia": 25,
+        "mes": 12,
+        "anio": 2013,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2013-12-25"
+      },
+      {
+        "texto": "celebrado el veintiséis de octubre de dos mil seis",
+        "dia": 26,
+        "mes": 10,
+        "anio": 2006,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2006-10-26"
+      },
+      {
+        "texto": "notificado el veinticinco de noviembre de dos mil veintidós",
+        "dia": 25,
+        "mes": 11,
+        "anio": 2022,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2022-11-25"
+      },
+      {
+        "texto": "día dieciséis de octubre del año dos mil dieciocho",
+        "dia": 16,
+        "mes": 10,
+        "anio": 2018,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2018-10-16"
+      },
+      {
+        "texto": "firmado el trece de mayo de dos mil catorce",
+        "dia": 13,
+        "mes": 5,
+        "anio": 2014,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-05-13"
+      },
+      {
+        "texto": "extendido el día treinta de abril de dos mil seis",
+        "dia": 30,
+        "mes": 4,
+        "anio": 2006,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2006-04-30"
+      },
+      {
+        "texto": "el quince de noviembre de 2008",
+        "dia": 15,
+        "mes": 11,
+        "anio": 2008,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "2008-11-15"
+      },
+      {
+        "texto": "notificado el veinticinco de septiembre de dos mil quince",
+        "dia": 25,
+        "mes": 9,
+        "anio": 2015,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2015-09-25"
+      },
+      {
+        "texto": "fechado a catorce de agosto de dos mil doce",
+        "dia": 14,
+        "mes": 8,
+        "anio": 2012,
+        "patron": "fechado a {dia} de {mes} de {anio}",
+        "fecha_iso": "2012-08-14"
+      },
+      {
+        "texto": "día octavo del mes de febrero de dos mil catorce",
+        "dia": 8,
+        "mes": 2,
+        "anio": 2014,
+        "patron": "día {dia_ordinal} del mes de {mes} de {anio}",
+        "fecha_iso": "2014-02-08"
+      },
+      {
+        "texto": "día quince de enero de dos mil dos",
+        "dia": 15,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-01-15"
+      },
+      {
+        "texto": "el día veintidós de junio del año dos mil dieciocho",
+        "dia": 22,
+        "mes": 6,
+        "anio": 2018,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "2018-06-22"
+      },
+      {
+        "texto": "celebrado el dieciséis de marzo de dos mil trece",
+        "dia": 16,
+        "mes": 3,
+        "anio": 2013,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2013-03-16"
+      },
+      {
+        "texto": "extendido el día veintinueve de julio de dos mil catorce",
+        "dia": 29,
+        "mes": 7,
+        "anio": 2014,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-07-29"
+      },
+      {
+        "texto": "el diecinueve de agosto de dos mil veintitrés",
+        "dia": 19,
+        "mes": 8,
+        "anio": 2023,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "2023-08-19"
+      },
+      {
+        "texto": "veinte de junio de 2003",
+        "dia": 20,
+        "mes": 6,
+        "anio": 2003,
+        "patron": "{dia} de {mes} de {anio_num}",
+        "fecha_iso": "2003-06-20"
+      },
+      {
+        "texto": "en el día uno del mes de julio del año dos mil veinticuatro",
+        "dia": 1,
+        "mes": 7,
+        "anio": 2024,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "2024-07-01"
+      },
+      {
+        "texto": "fechado el dieciséis de agosto de dos mil catorce",
+        "dia": 16,
+        "mes": 8,
+        "anio": 2014,
+        "patron": "fechado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2014-08-16"
+      },
+      {
+        "texto": "a veintinueve de octubre de dos mil ocho",
+        "dia": 29,
+        "mes": 10,
+        "anio": 2008,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "2008-10-29"
+      }
+    ],
+    "historicas": [
+      {
+        "texto": "el dieciocho de julio de 1936",
+        "dia": 18,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "el {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1936-07-18",
+        "significado_historico": "inicio de la Guerra Civil"
+      },
+      {
+        "texto": "el decimoctavo día del mes de julio de mil novecientos treinta y seis",
+        "dia": 18,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1936-07-18",
+        "significado_historico": "inicio de la Guerra Civil"
+      },
+      {
+        "texto": "en el día dieciocho del mes de julio del año mil novecientos treinta y seis",
+        "dia": 18,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1936-07-18",
+        "significado_historico": "inicio de la Guerra Civil"
+      },
+      {
+        "texto": "nacida el dieciocho de julio de mil novecientos treinta y seis",
+        "dia": 18,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "nacida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1936-07-18",
+        "significado_historico": "inicio de la Guerra Civil"
+      },
+      {
+        "texto": "el día decimoctavo de julio de mil novecientos treinta y seis",
+        "dia": 18,
+        "mes": 7,
+        "anio": 1936,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "1936-07-18",
+        "significado_historico": "inicio de la Guerra Civil"
+      },
+      {
+        "texto": "celebrado el uno de abril de mil novecientos treinta y nueve",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1939,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-04-01",
+        "significado_historico": "fin de la Guerra Civil"
+      },
+      {
+        "texto": "el día uno de abril de mil novecientos treinta y nueve",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1939,
+        "patron": "el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-04-01",
+        "significado_historico": "fin de la Guerra Civil"
+      },
+      {
+        "texto": "a los uno días del mes de abril de mil novecientos treinta y nueve",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1939,
+        "patron": "a los {dia} días del mes de {mes} de {anio}",
+        "fecha_iso": "1939-04-01",
+        "significado_historico": "fin de la Guerra Civil"
+      },
+      {
+        "texto": "notificado el uno de abril de mil novecientos treinta y nueve",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1939,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-04-01",
+        "significado_historico": "fin de la Guerra Civil"
+      },
+      {
+        "texto": "fallecida el uno de abril de mil novecientos treinta y nueve",
+        "dia": 1,
+        "mes": 4,
+        "anio": 1939,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1939-04-01",
+        "significado_historico": "fin de la Guerra Civil"
+      },
+      {
+        "texto": "fallecido el veinte de noviembre de mil novecientos setenta y cinco",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1975,
+        "patron": "fallecido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1975-11-20",
+        "significado_historico": "muerte de Franco"
+      },
+      {
+        "texto": "el día veinte de noviembre del año mil novecientos setenta y cinco",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1975,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1975-11-20",
+        "significado_historico": "muerte de Franco"
+      },
+      {
+        "texto": "dictado el veinte de noviembre de mil novecientos setenta y cinco",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1975,
+        "patron": "dictado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1975-11-20",
+        "significado_historico": "muerte de Franco"
+      },
+      {
+        "texto": "el veinte de noviembre del año mil novecientos setenta y cinco",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1975,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1975-11-20",
+        "significado_historico": "muerte de Franco"
+      },
+      {
+        "texto": "suscrito el día veinte de noviembre de mil novecientos setenta y cinco",
+        "dia": 20,
+        "mes": 11,
+        "anio": 1975,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1975-11-20",
+        "significado_historico": "muerte de Franco"
+      },
+      {
+        "texto": "nacido el quince de junio de mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "nacido el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-06-15",
+        "significado_historico": "primeras elecciones democráticas"
+      },
+      {
+        "texto": "firmado el quince de junio de mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "firmado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-06-15",
+        "significado_historico": "primeras elecciones democráticas"
+      },
+      {
+        "texto": "pronunciado el quince de junio de mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-06-15",
+        "significado_historico": "primeras elecciones democráticas"
+      },
+      {
+        "texto": "el día quince de junio del año mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1977-06-15",
+        "significado_historico": "primeras elecciones democráticas"
+      },
+      {
+        "texto": "suscrito el día quince de junio de mil novecientos setenta y siete",
+        "dia": 15,
+        "mes": 6,
+        "anio": 1977,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "1977-06-15",
+        "significado_historico": "primeras elecciones democráticas"
+      },
+      {
+        "texto": "el seis de diciembre de mil novecientos setenta y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "el {dia} de {mes} de {anio}",
+        "fecha_iso": "1978-12-06",
+        "significado_historico": "aprobación de la Constitución"
+      },
+      {
+        "texto": "a los seis días del mes de diciembre del año mil novecientos setenta y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1978-12-06",
+        "significado_historico": "aprobación de la Constitución"
+      },
+      {
+        "texto": "otorgado el seis de diciembre de mil novecientos setenta y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "otorgado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1978-12-06",
+        "significado_historico": "aprobación de la Constitución"
+      },
+      {
+        "texto": "día seis de diciembre del año mil novecientos setenta y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1978-12-06",
+        "significado_historico": "aprobación de la Constitución"
+      },
+      {
+        "texto": "en el día seis del mes de diciembre del año mil novecientos setenta y ocho",
+        "dia": 6,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1978-12-06",
+        "significado_historico": "aprobación de la Constitución"
+      },
+      {
+        "texto": "a veintinueve de diciembre de mil novecientos setenta y ocho",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "a {dia} de {mes} de {anio}",
+        "fecha_iso": "1978-12-29",
+        "significado_historico": "entrada en vigor de la Constitución"
+      },
+      {
+        "texto": "día veintinueve de diciembre de mil novecientos setenta y ocho",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1978-12-29",
+        "significado_historico": "entrada en vigor de la Constitución"
+      },
+      {
+        "texto": "el día veintinueve de diciembre del año mil novecientos setenta y ocho",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "el día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1978-12-29",
+        "significado_historico": "entrada en vigor de la Constitución"
+      },
+      {
+        "texto": "el vigésimo noveno día del mes de diciembre de mil novecientos setenta y ocho",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "el {dia_ordinal} día del mes de {mes} de {anio}",
+        "fecha_iso": "1978-12-29",
+        "significado_historico": "entrada en vigor de la Constitución"
+      },
+      {
+        "texto": "en fecha veintinueve de diciembre de mil novecientos setenta y ocho",
+        "dia": 29,
+        "mes": 12,
+        "anio": 1978,
+        "patron": "en fecha {dia} de {mes} de {anio}",
+        "fecha_iso": "1978-12-29",
+        "significado_historico": "entrada en vigor de la Constitución"
+      },
+      {
+        "texto": "notificado el veintitrés de febrero de mil novecientos ochenta y uno",
+        "dia": 23,
+        "mes": 2,
+        "anio": 1981,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-02-23",
+        "significado_historico": "intento de golpe de estado"
+      },
+      {
+        "texto": "fallecida el veintitrés de febrero de mil novecientos ochenta y uno",
+        "dia": 23,
+        "mes": 2,
+        "anio": 1981,
+        "patron": "fallecida el {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-02-23",
+        "significado_historico": "intento de golpe de estado"
+      },
+      {
+        "texto": "a los veintitrés días del mes de febrero del año mil novecientos ochenta y uno",
+        "dia": 23,
+        "mes": 2,
+        "anio": 1981,
+        "patron": "a los {dia} días del mes de {mes} del año {anio}",
+        "fecha_iso": "1981-02-23",
+        "significado_historico": "intento de golpe de estado"
+      },
+      {
+        "texto": "celebrado el veintitrés de febrero de mil novecientos ochenta y uno",
+        "dia": 23,
+        "mes": 2,
+        "anio": 1981,
+        "patron": "celebrado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1981-02-23",
+        "significado_historico": "intento de golpe de estado"
+      },
+      {
+        "texto": "día veintitrés de febrero de 1981",
+        "dia": 23,
+        "mes": 2,
+        "anio": 1981,
+        "patron": "día {dia} de {mes} de {anio_num}",
+        "fecha_iso": "1981-02-23",
+        "significado_historico": "intento de golpe de estado"
+      },
+      {
+        "texto": "pronunciado el uno de enero de mil novecientos ochenta y seis",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1986,
+        "patron": "pronunciado el {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-01-01",
+        "significado_historico": "entrada en la CEE"
+      },
+      {
+        "texto": "día uno de enero de mil novecientos ochenta y seis",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1986,
+        "patron": "día {dia} de {mes} de {anio}",
+        "fecha_iso": "1986-01-01",
+        "significado_historico": "entrada en la CEE"
+      },
+      {
+        "texto": "en el día uno del mes de enero del año mil novecientos ochenta y seis",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1986,
+        "patron": "en el día {dia} del mes de {mes} del año {anio}",
+        "fecha_iso": "1986-01-01",
+        "significado_historico": "entrada en la CEE"
+      },
+      {
+        "texto": "el uno de enero del año mil novecientos ochenta y seis",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1986,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "1986-01-01",
+        "significado_historico": "entrada en la CEE"
+      },
+      {
+        "texto": "día uno de enero del año mil novecientos ochenta y seis",
+        "dia": 1,
+        "mes": 1,
+        "anio": 1986,
+        "patron": "día {dia} de {mes} del año {anio}",
+        "fecha_iso": "1986-01-01",
+        "significado_historico": "entrada en la CEE"
+      },
+      {
+        "texto": "el uno de enero del año dos mil dos",
+        "dia": 1,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "el {dia} de {mes} del año {anio}",
+        "fecha_iso": "2002-01-01",
+        "significado_historico": "entrada del euro"
+      },
+      {
+        "texto": "extendido el día uno de enero de dos mil dos",
+        "dia": 1,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "extendido el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-01-01",
+        "significado_historico": "entrada del euro"
+      },
+      {
+        "texto": "suscrito el día uno de enero de dos mil dos",
+        "dia": 1,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "suscrito el día {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-01-01",
+        "significado_historico": "entrada del euro"
+      },
+      {
+        "texto": "notificado el uno de enero de dos mil dos",
+        "dia": 1,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "notificado el {dia} de {mes} de {anio}",
+        "fecha_iso": "2002-01-01",
+        "significado_historico": "entrada del euro"
+      },
+      {
+        "texto": "el día primero de enero de dos mil dos",
+        "dia": 1,
+        "mes": 1,
+        "anio": 2002,
+        "patron": "el día {dia_ordinal} de {mes} de {anio}",
+        "fecha_iso": "2002-01-01",
+        "significado_historico": "entrada del euro"
+      }
+    ]
+  }
+}

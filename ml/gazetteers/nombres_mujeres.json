@@ -1,0 +1,2229 @@
+{
+  "source": "INE - Nombres por fecha de nacimiento",
+  "gender": "female",
+  "total_decades": 11,
+  "nombres_por_decada": {
+    "pre1930": [
+      {
+        "nombre": "MARIA",
+        "frecuencia": 16509
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 12420
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 8555
+      },
+      {
+        "nombre": "DOLORES",
+        "frecuencia": 6259
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 5509
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 5194
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 5067
+      },
+      {
+        "nombre": "PILAR",
+        "frecuencia": 4564
+      },
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 4498
+      },
+      {
+        "nombre": "TERESA",
+        "frecuencia": 4151
+      },
+      {
+        "nombre": "CONCEPCION",
+        "frecuencia": 4126
+      },
+      {
+        "nombre": "JUANA",
+        "frecuencia": 3437
+      },
+      {
+        "nombre": "ROSA",
+        "frecuencia": 3435
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 3130
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 3086
+      },
+      {
+        "nombre": "ROSARIO",
+        "frecuencia": 3034
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 2886
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 2665
+      },
+      {
+        "nombre": "ENCARNACION",
+        "frecuencia": 2548
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 2389
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 2354
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 2226
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 2157
+      },
+      {
+        "nombre": "ANGELES",
+        "frecuencia": 2104
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 1846
+      },
+      {
+        "nombre": "CONSUELO",
+        "frecuencia": 1838
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 1803
+      },
+      {
+        "nombre": "LUISA",
+        "frecuencia": 1775
+      },
+      {
+        "nombre": "MARGARITA",
+        "frecuencia": 1766
+      },
+      {
+        "nombre": "AMPARO",
+        "frecuencia": 1743
+      },
+      {
+        "nombre": "EMILIA",
+        "frecuencia": 1687
+      },
+      {
+        "nombre": "FELISA",
+        "frecuencia": 1594
+      },
+      {
+        "nombre": "VICTORIA",
+        "frecuencia": 1515
+      },
+      {
+        "nombre": "CATALINA",
+        "frecuencia": 1445
+      },
+      {
+        "nombre": "MARIA JOSEFA",
+        "frecuencia": 1376
+      },
+      {
+        "nombre": "VICENTA",
+        "frecuencia": 1361
+      },
+      {
+        "nombre": "JOSEFINA",
+        "frecuencia": 1343
+      },
+      {
+        "nombre": "ASUNCION",
+        "frecuencia": 1316
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 1312
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 1284
+      },
+      {
+        "nombre": "AURORA",
+        "frecuencia": 1283
+      },
+      {
+        "nombre": "MATILDE",
+        "frecuencia": 1233
+      },
+      {
+        "nombre": "PURIFICACION",
+        "frecuencia": 1176
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 1167
+      },
+      {
+        "nombre": "ESPERANZA",
+        "frecuencia": 1146
+      },
+      {
+        "nombre": "NATIVIDAD",
+        "frecuencia": 1112
+      },
+      {
+        "nombre": "MARIA CONCEPCION",
+        "frecuencia": 1085
+      },
+      {
+        "nombre": "PETRA",
+        "frecuencia": 1061
+      },
+      {
+        "nombre": "TRINIDAD",
+        "frecuencia": 1060
+      },
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 1043
+      }
+    ],
+    "1930s": [
+      {
+        "nombre": "MARIA",
+        "frecuencia": 67826
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 58973
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 42400
+      },
+      {
+        "nombre": "DOLORES",
+        "frecuencia": 30736
+      },
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 29730
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 27334
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 26537
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 25699
+      },
+      {
+        "nombre": "PILAR",
+        "frecuencia": 21020
+      },
+      {
+        "nombre": "CONCEPCION",
+        "frecuencia": 19107
+      },
+      {
+        "nombre": "JUANA",
+        "frecuencia": 17033
+      },
+      {
+        "nombre": "TERESA",
+        "frecuencia": 17015
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 16343
+      },
+      {
+        "nombre": "ROSA",
+        "frecuencia": 16089
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 15198
+      },
+      {
+        "nombre": "ROSARIO",
+        "frecuencia": 14446
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 14373
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 13754
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 13468
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 13368
+      },
+      {
+        "nombre": "ENCARNACION",
+        "frecuencia": 13102
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 12082
+      },
+      {
+        "nombre": "ANGELES",
+        "frecuencia": 9831
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 9755
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 9616
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 9395
+      },
+      {
+        "nombre": "AMPARO",
+        "frecuencia": 8275
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 8081
+      },
+      {
+        "nombre": "MARGARITA",
+        "frecuencia": 8057
+      },
+      {
+        "nombre": "LUISA",
+        "frecuencia": 7923
+      },
+      {
+        "nombre": "CONSUELO",
+        "frecuencia": 7903
+      },
+      {
+        "nombre": "EMILIA",
+        "frecuencia": 7290
+      },
+      {
+        "nombre": "MARIA JOSEFA",
+        "frecuencia": 6943
+      },
+      {
+        "nombre": "JOSEFINA",
+        "frecuencia": 6582
+      },
+      {
+        "nombre": "CATALINA",
+        "frecuencia": 6413
+      },
+      {
+        "nombre": "VICENTA",
+        "frecuencia": 6262
+      },
+      {
+        "nombre": "VICTORIA",
+        "frecuencia": 6176
+      },
+      {
+        "nombre": "AURORA",
+        "frecuencia": 5919
+      },
+      {
+        "nombre": "FELISA",
+        "frecuencia": 5486
+      },
+      {
+        "nombre": "MARIA JESUS",
+        "frecuencia": 5479
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 5256
+      },
+      {
+        "nombre": "MILAGROS",
+        "frecuencia": 5210
+      },
+      {
+        "nombre": "PURIFICACION",
+        "frecuencia": 5133
+      },
+      {
+        "nombre": "ASUNCION",
+        "frecuencia": 5031
+      },
+      {
+        "nombre": "ESPERANZA",
+        "frecuencia": 4958
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 4926
+      },
+      {
+        "nombre": "MARIA ROSA",
+        "frecuencia": 4828
+      },
+      {
+        "nombre": "MATILDE",
+        "frecuencia": 4699
+      },
+      {
+        "nombre": "TRINIDAD",
+        "frecuencia": 4530
+      },
+      {
+        "nombre": "MARIA CONCEPCION",
+        "frecuencia": 4450
+      }
+    ],
+    "1940s": [
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 106114
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 75988
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 74904
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 63870
+      },
+      {
+        "nombre": "DOLORES",
+        "frecuencia": 43230
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 42586
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 42580
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 41454
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 40788
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 39593
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 34907
+      },
+      {
+        "nombre": "CONCEPCION",
+        "frecuencia": 30406
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 30013
+      },
+      {
+        "nombre": "PILAR",
+        "frecuencia": 29848
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 28634
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 26047
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 25323
+      },
+      {
+        "nombre": "JUANA",
+        "frecuencia": 25109
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 23588
+      },
+      {
+        "nombre": "ROSARIO",
+        "frecuencia": 23552
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 23283
+      },
+      {
+        "nombre": "MARIA ISABEL",
+        "frecuencia": 22046
+      },
+      {
+        "nombre": "TERESA",
+        "frecuencia": 22017
+      },
+      {
+        "nombre": "ENCARNACION",
+        "frecuencia": 21537
+      },
+      {
+        "nombre": "ROSA",
+        "frecuencia": 21437
+      },
+      {
+        "nombre": "MARIA JOSEFA",
+        "frecuencia": 16858
+      },
+      {
+        "nombre": "MARIA JESUS",
+        "frecuencia": 16473
+      },
+      {
+        "nombre": "ANGELES",
+        "frecuencia": 14489
+      },
+      {
+        "nombre": "MARGARITA",
+        "frecuencia": 14197
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 13288
+      },
+      {
+        "nombre": "ROSA MARIA",
+        "frecuencia": 13151
+      },
+      {
+        "nombre": "MARIA ROSA",
+        "frecuencia": 12663
+      },
+      {
+        "nombre": "AMPARO",
+        "frecuencia": 12382
+      },
+      {
+        "nombre": "MARIA ROSARIO",
+        "frecuencia": 12034
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 11768
+      },
+      {
+        "nombre": "CONSUELO",
+        "frecuencia": 11215
+      },
+      {
+        "nombre": "MARIA CONCEPCION",
+        "frecuencia": 10990
+      },
+      {
+        "nombre": "JOSEFINA",
+        "frecuencia": 10497
+      },
+      {
+        "nombre": "EMILIA",
+        "frecuencia": 9941
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 9705
+      },
+      {
+        "nombre": "LUISA",
+        "frecuencia": 9593
+      },
+      {
+        "nombre": "CATALINA",
+        "frecuencia": 9481
+      },
+      {
+        "nombre": "MARIA ANTONIA",
+        "frecuencia": 9325
+      },
+      {
+        "nombre": "MILAGROS",
+        "frecuencia": 8440
+      },
+      {
+        "nombre": "MARIA MERCEDES",
+        "frecuencia": 8184
+      },
+      {
+        "nombre": "PURIFICACION",
+        "frecuencia": 8005
+      },
+      {
+        "nombre": "VICENTA",
+        "frecuencia": 7882
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 7726
+      },
+      {
+        "nombre": "AURORA",
+        "frecuencia": 7621
+      },
+      {
+        "nombre": "ESPERANZA",
+        "frecuencia": 7492
+      }
+    ],
+    "1950s": [
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 154615
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 64107
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 63151
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 60035
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 58316
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 57161
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 54718
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 50467
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 49832
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 46701
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 44815
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 44729
+      },
+      {
+        "nombre": "MARIA ISABEL",
+        "frecuencia": 44245
+      },
+      {
+        "nombre": "DOLORES",
+        "frecuencia": 40251
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 37291
+      },
+      {
+        "nombre": "CONCEPCION",
+        "frecuencia": 33624
+      },
+      {
+        "nombre": "MARIA JESUS",
+        "frecuencia": 31157
+      },
+      {
+        "nombre": "ROSA MARIA",
+        "frecuencia": 30695
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 30241
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 27902
+      },
+      {
+        "nombre": "PILAR",
+        "frecuencia": 27366
+      },
+      {
+        "nombre": "JUANA",
+        "frecuencia": 26364
+      },
+      {
+        "nombre": "ROSARIO",
+        "frecuencia": 26327
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 25891
+      },
+      {
+        "nombre": "ENCARNACION",
+        "frecuencia": 25410
+      },
+      {
+        "nombre": "MARIA JOSEFA",
+        "frecuencia": 23476
+      },
+      {
+        "nombre": "TERESA",
+        "frecuencia": 21069
+      },
+      {
+        "nombre": "MARIA JOSE",
+        "frecuencia": 20957
+      },
+      {
+        "nombre": "MARIA ROSARIO",
+        "frecuencia": 20455
+      },
+      {
+        "nombre": "ROSA",
+        "frecuencia": 19987
+      },
+      {
+        "nombre": "MARGARITA",
+        "frecuencia": 18856
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 18257
+      },
+      {
+        "nombre": "MARIA CONCEPCION",
+        "frecuencia": 16520
+      },
+      {
+        "nombre": "MARIA MERCEDES",
+        "frecuencia": 16265
+      },
+      {
+        "nombre": "MARIA ROSA",
+        "frecuencia": 15878
+      },
+      {
+        "nombre": "MARIA ANTONIA",
+        "frecuencia": 14558
+      },
+      {
+        "nombre": "ANGELES",
+        "frecuencia": 14201
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 13500
+      },
+      {
+        "nombre": "MARIA VICTORIA",
+        "frecuencia": 12674
+      },
+      {
+        "nombre": "AMPARO",
+        "frecuencia": 12264
+      },
+      {
+        "nombre": "CONSUELO",
+        "frecuencia": 11192
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 11098
+      },
+      {
+        "nombre": "MARIA NIEVES",
+        "frecuencia": 10929
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 10706
+      },
+      {
+        "nombre": "MARIA SOLEDAD",
+        "frecuencia": 10120
+      },
+      {
+        "nombre": "JOSEFINA",
+        "frecuencia": 10046
+      },
+      {
+        "nombre": "EMILIA",
+        "frecuencia": 9963
+      },
+      {
+        "nombre": "CATALINA",
+        "frecuencia": 9958
+      },
+      {
+        "nombre": "MILAGROS",
+        "frecuencia": 9799
+      },
+      {
+        "nombre": "MARIA ASUNCION",
+        "frecuencia": 9768
+      }
+    ],
+    "1960s": [
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 174786
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 76233
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 72502
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 71569
+      },
+      {
+        "nombre": "MARIA JOSE",
+        "frecuencia": 64777
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 64680
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 62222
+      },
+      {
+        "nombre": "MARIA ISABEL",
+        "frecuencia": 59148
+      },
+      {
+        "nombre": "ROSA MARIA",
+        "frecuencia": 49297
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 48567
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 47983
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 47690
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 43734
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 43023
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 42385
+      },
+      {
+        "nombre": "MARIA JESUS",
+        "frecuencia": 40807
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 37375
+      },
+      {
+        "nombre": "DOLORES",
+        "frecuencia": 32761
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 32476
+      },
+      {
+        "nombre": "MARIA MAR",
+        "frecuencia": 32450
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 30138
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 29282
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 29185
+      },
+      {
+        "nombre": "CONCEPCION",
+        "frecuencia": 28693
+      },
+      {
+        "nombre": "MARIA MERCEDES",
+        "frecuencia": 25994
+      },
+      {
+        "nombre": "ENCARNACION",
+        "frecuencia": 25395
+      },
+      {
+        "nombre": "ROSARIO",
+        "frecuencia": 24528
+      },
+      {
+        "nombre": "PILAR",
+        "frecuencia": 23710
+      },
+      {
+        "nombre": "ANA ISABEL",
+        "frecuencia": 23126
+      },
+      {
+        "nombre": "JUANA",
+        "frecuencia": 22600
+      },
+      {
+        "nombre": "MARIA ROSARIO",
+        "frecuencia": 21919
+      },
+      {
+        "nombre": "MARIA JOSEFA",
+        "frecuencia": 21432
+      },
+      {
+        "nombre": "MARGARITA",
+        "frecuencia": 20561
+      },
+      {
+        "nombre": "INMACULADA",
+        "frecuencia": 20291
+      },
+      {
+        "nombre": "YOLANDA",
+        "frecuencia": 19758
+      },
+      {
+        "nombre": "MARIA ELENA",
+        "frecuencia": 19462
+      },
+      {
+        "nombre": "CRISTINA",
+        "frecuencia": 18608
+      },
+      {
+        "nombre": "MARIA VICTORIA",
+        "frecuencia": 17324
+      },
+      {
+        "nombre": "SUSANA",
+        "frecuencia": 17289
+      },
+      {
+        "nombre": "TERESA",
+        "frecuencia": 16881
+      },
+      {
+        "nombre": "NURIA",
+        "frecuencia": 16694
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 16430
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 16163
+      },
+      {
+        "nombre": "MARIA CONCEPCION",
+        "frecuencia": 16009
+      },
+      {
+        "nombre": "ROSA",
+        "frecuencia": 15077
+      },
+      {
+        "nombre": "MARIA NIEVES",
+        "frecuencia": 14982
+      },
+      {
+        "nombre": "MARIA ANTONIA",
+        "frecuencia": 14981
+      },
+      {
+        "nombre": "MARIA ROSA",
+        "frecuencia": 14788
+      },
+      {
+        "nombre": "MARIA SOLEDAD",
+        "frecuencia": 14412
+      },
+      {
+        "nombre": "MARIA BEGOÑA",
+        "frecuencia": 13912
+      }
+    ],
+    "1970s": [
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 103095
+      },
+      {
+        "nombre": "MARIA JOSE",
+        "frecuencia": 64425
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 60871
+      },
+      {
+        "nombre": "MONICA",
+        "frecuencia": 55631
+      },
+      {
+        "nombre": "CRISTINA",
+        "frecuencia": 54444
+      },
+      {
+        "nombre": "RAQUEL",
+        "frecuencia": 54091
+      },
+      {
+        "nombre": "SONIA",
+        "frecuencia": 51470
+      },
+      {
+        "nombre": "SUSANA",
+        "frecuencia": 51076
+      },
+      {
+        "nombre": "YOLANDA",
+        "frecuencia": 46576
+      },
+      {
+        "nombre": "MARIA ISABEL",
+        "frecuencia": 46510
+      },
+      {
+        "nombre": "SILVIA",
+        "frecuencia": 46231
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 46159
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 45041
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 44159
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 43591
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 41443
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 41084
+      },
+      {
+        "nombre": "LAURA",
+        "frecuencia": 39661
+      },
+      {
+        "nombre": "EVA MARIA",
+        "frecuencia": 38920
+      },
+      {
+        "nombre": "MARIA MAR",
+        "frecuencia": 36777
+      },
+      {
+        "nombre": "NURIA",
+        "frecuencia": 34601
+      },
+      {
+        "nombre": "BEATRIZ",
+        "frecuencia": 33709
+      },
+      {
+        "nombre": "ROSA MARIA",
+        "frecuencia": 33188
+      },
+      {
+        "nombre": "ANA BELEN",
+        "frecuencia": 32227
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 30163
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 29973
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 28305
+      },
+      {
+        "nombre": "ANA ISABEL",
+        "frecuencia": 28293
+      },
+      {
+        "nombre": "MONTSERRAT",
+        "frecuencia": 28104
+      },
+      {
+        "nombre": "EVA",
+        "frecuencia": 27161
+      },
+      {
+        "nombre": "INMACULADA",
+        "frecuencia": 25329
+      },
+      {
+        "nombre": "PATRICIA",
+        "frecuencia": 25102
+      },
+      {
+        "nombre": "MARIA JESUS",
+        "frecuencia": 24030
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 22042
+      },
+      {
+        "nombre": "SANDRA",
+        "frecuencia": 21896
+      },
+      {
+        "nombre": "ESTHER",
+        "frecuencia": 20520
+      },
+      {
+        "nombre": "MARIA LUISA",
+        "frecuencia": 20427
+      },
+      {
+        "nombre": "FRANCISCA",
+        "frecuencia": 20390
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 20021
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 19209
+      },
+      {
+        "nombre": "ANTONIA",
+        "frecuencia": 18978
+      },
+      {
+        "nombre": "NATALIA",
+        "frecuencia": 18945
+      },
+      {
+        "nombre": "VERONICA",
+        "frecuencia": 18193
+      },
+      {
+        "nombre": "OLGA",
+        "frecuencia": 17612
+      },
+      {
+        "nombre": "MARIA ELENA",
+        "frecuencia": 17574
+      },
+      {
+        "nombre": "CAROLINA",
+        "frecuencia": 17148
+      },
+      {
+        "nombre": "MERCEDES",
+        "frecuencia": 16668
+      },
+      {
+        "nombre": "NOELIA",
+        "frecuencia": 16347
+      },
+      {
+        "nombre": "JOSEFA",
+        "frecuencia": 16246
+      },
+      {
+        "nombre": "MARIA BELEN",
+        "frecuencia": 14929
+      }
+    ],
+    "1980s": [
+      {
+        "nombre": "LAURA",
+        "frecuencia": 66276
+      },
+      {
+        "nombre": "CRISTINA",
+        "frecuencia": 63428
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 60973
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 43380
+      },
+      {
+        "nombre": "PATRICIA",
+        "frecuencia": 39805
+      },
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 38354
+      },
+      {
+        "nombre": "RAQUEL",
+        "frecuencia": 36750
+      },
+      {
+        "nombre": "BEATRIZ",
+        "frecuencia": 36497
+      },
+      {
+        "nombre": "VERONICA",
+        "frecuencia": 34844
+      },
+      {
+        "nombre": "SARA",
+        "frecuencia": 34096
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 31778
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 30236
+      },
+      {
+        "nombre": "SANDRA",
+        "frecuencia": 30030
+      },
+      {
+        "nombre": "SILVIA",
+        "frecuencia": 27965
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 27175
+      },
+      {
+        "nombre": "MARIA JOSE",
+        "frecuencia": 26538
+      },
+      {
+        "nombre": "VANESA",
+        "frecuencia": 26091
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 25921
+      },
+      {
+        "nombre": "LORENA",
+        "frecuencia": 25068
+      },
+      {
+        "nombre": "SONIA",
+        "frecuencia": 22775
+      },
+      {
+        "nombre": "NOELIA",
+        "frecuencia": 22384
+      },
+      {
+        "nombre": "NURIA",
+        "frecuencia": 21220
+      },
+      {
+        "nombre": "MONICA",
+        "frecuencia": 19919
+      },
+      {
+        "nombre": "MIRIAM",
+        "frecuencia": 18833
+      },
+      {
+        "nombre": "ANA BELEN",
+        "frecuencia": 18359
+      },
+      {
+        "nombre": "NATALIA",
+        "frecuencia": 18072
+      },
+      {
+        "nombre": "IRENE",
+        "frecuencia": 17857
+      },
+      {
+        "nombre": "CAROLINA",
+        "frecuencia": 17665
+      },
+      {
+        "nombre": "ESTEFANIA",
+        "frecuencia": 17157
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 16819
+      },
+      {
+        "nombre": "TAMARA",
+        "frecuencia": 16469
+      },
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 16468
+      },
+      {
+        "nombre": "MARIA ANGELES",
+        "frecuencia": 16281
+      },
+      {
+        "nombre": "VANESSA",
+        "frecuencia": 15980
+      },
+      {
+        "nombre": "MARIA ISABEL",
+        "frecuencia": 15737
+      },
+      {
+        "nombre": "MARIA DOLORES",
+        "frecuencia": 15590
+      },
+      {
+        "nombre": "MARIA TERESA",
+        "frecuencia": 15574
+      },
+      {
+        "nombre": "MARIA PILAR",
+        "frecuencia": 15384
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 15076
+      },
+      {
+        "nombre": "EVA",
+        "frecuencia": 15026
+      },
+      {
+        "nombre": "ESTHER",
+        "frecuencia": 14594
+      },
+      {
+        "nombre": "SUSANA",
+        "frecuencia": 14109
+      },
+      {
+        "nombre": "JESSICA",
+        "frecuencia": 13753
+      },
+      {
+        "nombre": "MARIA MAR",
+        "frecuencia": 13660
+      },
+      {
+        "nombre": "INMACULADA",
+        "frecuencia": 13369
+      },
+      {
+        "nombre": "YOLANDA",
+        "frecuencia": 13119
+      },
+      {
+        "nombre": "PAULA",
+        "frecuencia": 12893
+      },
+      {
+        "nombre": "LIDIA",
+        "frecuencia": 12883
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 12874
+      },
+      {
+        "nombre": "ANA ISABEL",
+        "frecuencia": 12854
+      }
+    ],
+    "1990s": [
+      {
+        "nombre": "MARIA",
+        "frecuencia": 74066
+      },
+      {
+        "nombre": "LAURA",
+        "frecuencia": 62790
+      },
+      {
+        "nombre": "CRISTINA",
+        "frecuencia": 51833
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 46844
+      },
+      {
+        "nombre": "SARA",
+        "frecuencia": 39489
+      },
+      {
+        "nombre": "ANDREA",
+        "frecuencia": 39058
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 34531
+      },
+      {
+        "nombre": "PAULA",
+        "frecuencia": 33342
+      },
+      {
+        "nombre": "ALBA",
+        "frecuencia": 33177
+      },
+      {
+        "nombre": "SANDRA",
+        "frecuencia": 26467
+      },
+      {
+        "nombre": "PATRICIA",
+        "frecuencia": 25099
+      },
+      {
+        "nombre": "IRENE",
+        "frecuencia": 24967
+      },
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 23768
+      },
+      {
+        "nombre": "RAQUEL",
+        "frecuencia": 23704
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 22621
+      },
+      {
+        "nombre": "MARINA",
+        "frecuencia": 22513
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 21209
+      },
+      {
+        "nombre": "BEATRIZ",
+        "frecuencia": 20428
+      },
+      {
+        "nombre": "NOELIA",
+        "frecuencia": 18272
+      },
+      {
+        "nombre": "MIRIAM",
+        "frecuencia": 17937
+      },
+      {
+        "nombre": "NATALIA",
+        "frecuencia": 17916
+      },
+      {
+        "nombre": "LORENA",
+        "frecuencia": 16244
+      },
+      {
+        "nombre": "MARIA CARMEN",
+        "frecuencia": 16025
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 15303
+      },
+      {
+        "nombre": "NEREA",
+        "frecuencia": 15270
+      },
+      {
+        "nombre": "SILVIA",
+        "frecuencia": 15044
+      },
+      {
+        "nombre": "NURIA",
+        "frecuencia": 14077
+      },
+      {
+        "nombre": "ANA MARIA",
+        "frecuencia": 13743
+      },
+      {
+        "nombre": "CLAUDIA",
+        "frecuencia": 13342
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 12699
+      },
+      {
+        "nombre": "CARLA",
+        "frecuencia": 11974
+      },
+      {
+        "nombre": "MARIA JOSE",
+        "frecuencia": 11974
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 11854
+      },
+      {
+        "nombre": "ESTEFANIA",
+        "frecuencia": 11590
+      },
+      {
+        "nombre": "TAMARA",
+        "frecuencia": 11516
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 11121
+      },
+      {
+        "nombre": "MONICA",
+        "frecuencia": 10980
+      },
+      {
+        "nombre": "LIDIA",
+        "frecuencia": 10442
+      },
+      {
+        "nombre": "CAROLINA",
+        "frecuencia": 10221
+      },
+      {
+        "nombre": "SONIA",
+        "frecuencia": 10209
+      },
+      {
+        "nombre": "EVA",
+        "frecuencia": 10115
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 9968
+      },
+      {
+        "nombre": "VERONICA",
+        "frecuencia": 9958
+      },
+      {
+        "nombre": "ANNA",
+        "frecuencia": 9896
+      },
+      {
+        "nombre": "TANIA",
+        "frecuencia": 9147
+      },
+      {
+        "nombre": "CLARA",
+        "frecuencia": 8985
+      },
+      {
+        "nombre": "JENNIFER",
+        "frecuencia": 8970
+      },
+      {
+        "nombre": "ESTHER",
+        "frecuencia": 8488
+      },
+      {
+        "nombre": "CELIA",
+        "frecuencia": 8462
+      },
+      {
+        "nombre": "BELEN",
+        "frecuencia": 8277
+      }
+    ],
+    "2000s": [
+      {
+        "nombre": "MARIA",
+        "frecuencia": 80965
+      },
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 79532
+      },
+      {
+        "nombre": "PAULA",
+        "frecuencia": 66892
+      },
+      {
+        "nombre": "LAURA",
+        "frecuencia": 51652
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 45787
+      },
+      {
+        "nombre": "ALBA",
+        "frecuencia": 42330
+      },
+      {
+        "nombre": "SARA",
+        "frecuencia": 39650
+      },
+      {
+        "nombre": "ANDREA",
+        "frecuencia": 39060
+      },
+      {
+        "nombre": "CLAUDIA",
+        "frecuencia": 35786
+      },
+      {
+        "nombre": "CARLA",
+        "frecuencia": 31435
+      },
+      {
+        "nombre": "IRENE",
+        "frecuencia": 30732
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 30003
+      },
+      {
+        "nombre": "NEREA",
+        "frecuencia": 28227
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 24321
+      },
+      {
+        "nombre": "NATALIA",
+        "frecuencia": 23040
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 22875
+      },
+      {
+        "nombre": "MARINA",
+        "frecuencia": 22473
+      },
+      {
+        "nombre": "SOFIA",
+        "frecuencia": 22269
+      },
+      {
+        "nombre": "CRISTINA",
+        "frecuencia": 22251
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 22212
+      },
+      {
+        "nombre": "AINHOA",
+        "frecuencia": 18244
+      },
+      {
+        "nombre": "DANIELA",
+        "frecuencia": 17613
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 17309
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 16589
+      },
+      {
+        "nombre": "NURIA",
+        "frecuencia": 15207
+      },
+      {
+        "nombre": "ALEJANDRA",
+        "frecuencia": 14888
+      },
+      {
+        "nombre": "SANDRA",
+        "frecuencia": 13876
+      },
+      {
+        "nombre": "INES",
+        "frecuencia": 13490
+      },
+      {
+        "nombre": "PATRICIA",
+        "frecuencia": 12685
+      },
+      {
+        "nombre": "AITANA",
+        "frecuencia": 12671
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 12333
+      },
+      {
+        "nombre": "CELIA",
+        "frecuencia": 12251
+      },
+      {
+        "nombre": "RAQUEL",
+        "frecuencia": 12161
+      },
+      {
+        "nombre": "CLARA",
+        "frecuencia": 12101
+      },
+      {
+        "nombre": "NOELIA",
+        "frecuencia": 12018
+      },
+      {
+        "nombre": "ADRIANA",
+        "frecuencia": 11607
+      },
+      {
+        "nombre": "MIRIAM",
+        "frecuencia": 11215
+      },
+      {
+        "nombre": "LAIA",
+        "frecuencia": 11212
+      },
+      {
+        "nombre": "EVA",
+        "frecuencia": 11112
+      },
+      {
+        "nombre": "SILVIA",
+        "frecuencia": 10671
+      },
+      {
+        "nombre": "ARIADNA",
+        "frecuencia": 10633
+      },
+      {
+        "nombre": "ISABEL",
+        "frecuencia": 10614
+      },
+      {
+        "nombre": "MARTINA",
+        "frecuencia": 10409
+      },
+      {
+        "nombre": "CARLOTA",
+        "frecuencia": 9801
+      },
+      {
+        "nombre": "BLANCA",
+        "frecuencia": 9685
+      },
+      {
+        "nombre": "LORENA",
+        "frecuencia": 9659
+      },
+      {
+        "nombre": "CANDELA",
+        "frecuencia": 8991
+      },
+      {
+        "nombre": "CAROLINA",
+        "frecuencia": 8779
+      },
+      {
+        "nombre": "NOA",
+        "frecuencia": 8505
+      },
+      {
+        "nombre": "AINARA",
+        "frecuencia": 8421
+      }
+    ],
+    "2010s": [
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 51284
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 45779
+      },
+      {
+        "nombre": "PAULA",
+        "frecuencia": 40541
+      },
+      {
+        "nombre": "MARTINA",
+        "frecuencia": 37393
+      },
+      {
+        "nombre": "SOFIA",
+        "frecuencia": 36971
+      },
+      {
+        "nombre": "DANIELA",
+        "frecuencia": 35299
+      },
+      {
+        "nombre": "SARA",
+        "frecuencia": 32121
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 30456
+      },
+      {
+        "nombre": "CARLA",
+        "frecuencia": 30179
+      },
+      {
+        "nombre": "ALBA",
+        "frecuencia": 29579
+      },
+      {
+        "nombre": "VALERIA",
+        "frecuencia": 27516
+      },
+      {
+        "nombre": "CLAUDIA",
+        "frecuencia": 25085
+      },
+      {
+        "nombre": "NOA",
+        "frecuencia": 24201
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 22327
+      },
+      {
+        "nombre": "EMMA",
+        "frecuencia": 22066
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 20302
+      },
+      {
+        "nombre": "IRENE",
+        "frecuencia": 19924
+      },
+      {
+        "nombre": "LAURA",
+        "frecuencia": 18721
+      },
+      {
+        "nombre": "ADRIANA",
+        "frecuencia": 17560
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 17502
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 17086
+      },
+      {
+        "nombre": "AITANA",
+        "frecuencia": 15490
+      },
+      {
+        "nombre": "ALEJANDRA",
+        "frecuencia": 15397
+      },
+      {
+        "nombre": "VALENTINA",
+        "frecuencia": 14481
+      },
+      {
+        "nombre": "INES",
+        "frecuencia": 13900
+      },
+      {
+        "nombre": "AINHOA",
+        "frecuencia": 13624
+      },
+      {
+        "nombre": "LAIA",
+        "frecuencia": 13292
+      },
+      {
+        "nombre": "LOLA",
+        "frecuencia": 13077
+      },
+      {
+        "nombre": "ARIADNA",
+        "frecuencia": 12625
+      },
+      {
+        "nombre": "MARINA",
+        "frecuencia": 12480
+      },
+      {
+        "nombre": "JIMENA",
+        "frecuencia": 12158
+      },
+      {
+        "nombre": "CANDELA",
+        "frecuencia": 12134
+      },
+      {
+        "nombre": "NEREA",
+        "frecuencia": 11844
+      },
+      {
+        "nombre": "CARLOTA",
+        "frecuencia": 11574
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 11393
+      },
+      {
+        "nombre": "VEGA",
+        "frecuencia": 11211
+      },
+      {
+        "nombre": "OLIVIA",
+        "frecuencia": 11068
+      },
+      {
+        "nombre": "ALMA",
+        "frecuencia": 11065
+      },
+      {
+        "nombre": "ANDREA",
+        "frecuencia": 10810
+      },
+      {
+        "nombre": "LEIRE",
+        "frecuencia": 10562
+      },
+      {
+        "nombre": "AINARA",
+        "frecuencia": 10559
+      },
+      {
+        "nombre": "ANGELA",
+        "frecuencia": 10439
+      },
+      {
+        "nombre": "VERA",
+        "frecuencia": 10359
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 10287
+      },
+      {
+        "nombre": "BLANCA",
+        "frecuencia": 10270
+      },
+      {
+        "nombre": "NORA",
+        "frecuencia": 10051
+      },
+      {
+        "nombre": "CLARA",
+        "frecuencia": 9672
+      },
+      {
+        "nombre": "CELIA",
+        "frecuencia": 9520
+      },
+      {
+        "nombre": "NATALIA",
+        "frecuencia": 9186
+      },
+      {
+        "nombre": "VICTORIA",
+        "frecuencia": 8947
+      }
+    ],
+    "2020s": [
+      {
+        "nombre": "LUCIA",
+        "frecuencia": 6889
+      },
+      {
+        "nombre": "SOFIA",
+        "frecuencia": 6080
+      },
+      {
+        "nombre": "MARTINA",
+        "frecuencia": 5903
+      },
+      {
+        "nombre": "MARIA",
+        "frecuencia": 5369
+      },
+      {
+        "nombre": "JULIA",
+        "frecuencia": 4689
+      },
+      {
+        "nombre": "VALERIA",
+        "frecuencia": 4405
+      },
+      {
+        "nombre": "PAULA",
+        "frecuencia": 4146
+      },
+      {
+        "nombre": "EMMA",
+        "frecuencia": 4054
+      },
+      {
+        "nombre": "DANIELA",
+        "frecuencia": 3766
+      },
+      {
+        "nombre": "CARLA",
+        "frecuencia": 3539
+      },
+      {
+        "nombre": "ALMA",
+        "frecuencia": 3405
+      },
+      {
+        "nombre": "SARA",
+        "frecuencia": 3372
+      },
+      {
+        "nombre": "CARMEN",
+        "frecuencia": 3306
+      },
+      {
+        "nombre": "ALBA",
+        "frecuencia": 3260
+      },
+      {
+        "nombre": "VEGA",
+        "frecuencia": 3241
+      },
+      {
+        "nombre": "NOA",
+        "frecuencia": 3234
+      },
+      {
+        "nombre": "OLIVIA",
+        "frecuencia": 3110
+      },
+      {
+        "nombre": "LARA",
+        "frecuencia": 3071
+      },
+      {
+        "nombre": "MIA",
+        "frecuencia": 3071
+      },
+      {
+        "nombre": "VALENTINA",
+        "frecuencia": 2818
+      },
+      {
+        "nombre": "LOLA",
+        "frecuencia": 2784
+      },
+      {
+        "nombre": "CLAUDIA",
+        "frecuencia": 2689
+      },
+      {
+        "nombre": "CHLOE",
+        "frecuencia": 2642
+      },
+      {
+        "nombre": "JIMENA",
+        "frecuencia": 2616
+      },
+      {
+        "nombre": "AITANA",
+        "frecuencia": 2450
+      },
+      {
+        "nombre": "ABRIL",
+        "frecuencia": 2239
+      },
+      {
+        "nombre": "LAIA",
+        "frecuencia": 2236
+      },
+      {
+        "nombre": "ANA",
+        "frecuencia": 2168
+      },
+      {
+        "nombre": "TRIANA",
+        "frecuencia": 2110
+      },
+      {
+        "nombre": "CANDELA",
+        "frecuencia": 2079
+      },
+      {
+        "nombre": "ALEJANDRA",
+        "frecuencia": 2078
+      },
+      {
+        "nombre": "VERA",
+        "frecuencia": 2003
+      },
+      {
+        "nombre": "ELENA",
+        "frecuencia": 1945
+      },
+      {
+        "nombre": "ADRIANA",
+        "frecuencia": 1935
+      },
+      {
+        "nombre": "MANUELA",
+        "frecuencia": 1888
+      },
+      {
+        "nombre": "INES",
+        "frecuencia": 1815
+      },
+      {
+        "nombre": "CARLOTA",
+        "frecuencia": 1801
+      },
+      {
+        "nombre": "MARTA",
+        "frecuencia": 1689
+      },
+      {
+        "nombre": "BLANCA",
+        "frecuencia": 1650
+      },
+      {
+        "nombre": "MARINA",
+        "frecuencia": 1638
+      },
+      {
+        "nombre": "VICTORIA",
+        "frecuencia": 1608
+      },
+      {
+        "nombre": "IRENE",
+        "frecuencia": 1535
+      },
+      {
+        "nombre": "LIA",
+        "frecuencia": 1486
+      },
+      {
+        "nombre": "ROCIO",
+        "frecuencia": 1472
+      },
+      {
+        "nombre": "NORA",
+        "frecuencia": 1471
+      },
+      {
+        "nombre": "ALICIA",
+        "frecuencia": 1463
+      },
+      {
+        "nombre": "CLARA",
+        "frecuencia": 1429
+      },
+      {
+        "nombre": "LAURA",
+        "frecuencia": 1425
+      },
+      {
+        "nombre": "ZOE",
+        "frecuencia": 1363
+      },
+      {
+        "nombre": "ARIADNA",
+        "frecuencia": 1311
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+# Traceability Audit: F-001
+# Function: DetectPiiEntities
+# Bounded Context: BC-002 (Entity Detection)
+
+traceability_audit:
+  function_id: "F-001"
+  function_name: "DetectPiiEntities"
+  bounded_context: "BC-002"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/detect_pii/detect_pii.py"
+    supporting_files:
+      - "src/contextsafe/application/ports/ner_service.py"
+      - "src/contextsafe/domain/entity_detection/entities/detection_result.py"
+      - "src/contextsafe/domain/shared/value_objects/pii_category.py"
+      - "src/contextsafe/domain/shared/events/pii_detected.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_detect_pii.py"
+        tests: []
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_detect_pii_integration.py"
+        tests: []
+        status: "not_created"
+    pbt_properties:
+      - "PBT-001: Same text input always produces same detections"
+      - "PBT-002: Confidence scores are always between 0.0 and 1.0"
+      - "PBT-003: Detected entities never overlap in text spans"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-001"  # PII detection recall on structured text
+    risk_refs:
+      - "R-001"    # NER detection fails to identify PII entities
+    adr_refs:
+      - "ADR-005"  # Use llama.cpp for local LLM inference
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Primary use case for NER-based PII detection.
+    Implements DetectPii use case in application layer.
+    Uses NerService port for LLM inference.
+    Creates DetectionResult entities for each detected PII.
+    Publishes PiiDetected domain event.

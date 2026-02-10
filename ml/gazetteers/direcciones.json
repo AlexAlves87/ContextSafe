@@ -1,0 +1,5620 @@
+{
+  "source": "Synthetic - Spanish Addresses for Legal Documents",
+  "description": "Direcciones españolas sintéticas para documentos legales",
+  "stats": {
+    "direcciones": 600,
+    "con_contexto_legal": 416,
+    "tipos_via": 20,
+    "nombres_calles_disponibles": 211
+  },
+  "vocabulario": {
+    "tipos_via": [
+      "Calle",
+      "Avenida",
+      "Plaza",
+      "Paseo",
+      "Carretera",
+      "Camino",
+      "Travesía",
+      "Ronda",
+      "Glorieta",
+      "Urbanización",
+      "Pasaje",
+      "Callejón",
+      "Costanilla",
+      "Barrio",
+      "Partida",
+      "Polígono",
+      "Parque",
+      "Jardín",
+      "Vía",
+      "Bulevar"
+    ],
+    "pisos": [
+      "bajo",
+      "entresuelo",
+      "principal",
+      "1º",
+      "2º",
+      "3º",
+      "4º",
+      "5º",
+      "6º",
+      "7º",
+      "8º",
+      "9º",
+      "10º",
+      "ático",
+      "sobreático",
+      "planta baja",
+      "planta primera",
+      "planta segunda"
+    ],
+    "puertas": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "izquierda",
+      "derecha",
+      "centro",
+      "izda.",
+      "dcha.",
+      "ctro.",
+      "1ª",
+      "2ª",
+      "3ª",
+      "4ª",
+      "interior",
+      "exterior",
+      "frente"
+    ]
+  },
+  "direcciones": [
+    {
+      "texto": "Paseo Carniceros 16",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Carniceros",
+      "numero": 16,
+      "componentes": {},
+      "codigo_postal": "19127",
+      "municipio": "Escamilla",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Vía Corta 41",
+      "tipo_via": "Vía",
+      "nombre_calle": "Corta",
+      "numero": 41,
+      "componentes": {
+        "bloque": "D",
+        "piso": "ático",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "28540",
+      "municipio": "Perales de Tajuña",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Bulevar Santa Ana, nº 94",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Santa Ana",
+      "numero": 94,
+      "componentes": {},
+      "codigo_postal": "15572",
+      "municipio": "Narón",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "CO del Ayuntamiento 117",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "del Ayuntamiento",
+      "numero": 117,
+      "componentes": {
+        "piso": "principal",
+        "puerta": "A"
+      },
+      "codigo_postal": "36300",
+      "municipio": "Baiona",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Plaza Primero de Mayo 103",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Primero de Mayo",
+      "numero": 103,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "33798",
+      "municipio": "Boal",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Carretera Unamuno, número 103, 5º, de Teulada",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Unamuno",
+      "numero": 103,
+      "componentes": {
+        "piso": "5º"
+      },
+      "codigo_postal": "43884",
+      "municipio": "Teulada",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Bulevar Zapateros 109",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Zapateros",
+      "numero": 109,
+      "componentes": {
+        "piso": "7º",
+        "puerta": "B"
+      },
+      "codigo_postal": "46350",
+      "municipio": "Chera",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Urbanización Virgen del Pilar, número 29, entresuelo, frente, de Carpio, El",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Virgen del Pilar",
+      "numero": 29,
+      "componentes": {
+        "piso": "entresuelo",
+        "puerta": "frente"
+      },
+      "codigo_postal": "34517",
+      "municipio": "Carpio, El",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Camino Clarín, 148, 3º, C, 04240 Viator",
+      "tipo_via": "Camino",
+      "nombre_calle": "Clarín",
+      "numero": 148,
+      "componentes": {
+        "piso": "3º",
+        "puerta": "C"
+      },
+      "codigo_postal": "04240",
+      "municipio": "Viator",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Avenida de la Democracia, 59, bloque 4, principal, ctro., 17948 Aras",
+      "tipo_via": "Avenida",
+      "nombre_calle": "de la Democracia",
+      "numero": 59,
+      "componentes": {
+        "bloque": "4",
+        "piso": "principal",
+        "puerta": "ctro."
+      },
+      "codigo_postal": "17948",
+      "municipio": "Aras",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Calle Tercera, número 11, de Benaoján",
+      "tipo_via": "Calle",
+      "nombre_calle": "Tercera",
+      "numero": 11,
+      "componentes": {},
+      "codigo_postal": "29370",
+      "municipio": "Benaoján",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "CO Baroja, número 148, 2º, 2ª, de Salzadella, la",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Baroja",
+      "numero": 148,
+      "componentes": {
+        "piso": "2º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "24964",
+      "municipio": "Salzadella, la",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Partida El Cid, 13, sobreático, exterior, 03610 Petrer",
+      "tipo_via": "Partida",
+      "nombre_calle": "El Cid",
+      "numero": 13,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "exterior"
+      },
+      "codigo_postal": "03610",
+      "municipio": "Petrer",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Avenida Segunda, 31, 08192 Sant Quirze del Vallès",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Segunda",
+      "numero": 31,
+      "componentes": {},
+      "codigo_postal": "08192",
+      "municipio": "Sant Quirze del Vallès",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Travesía Torneros 65",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Torneros",
+      "numero": 65,
+      "componentes": {},
+      "codigo_postal": "23165",
+      "municipio": "Guardia, La",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "RD Norte 9",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Norte",
+      "numero": 9,
+      "componentes": {},
+      "codigo_postal": "36117",
+      "municipio": "Cerdedo-Cotobade",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Ptda. San Ignacio, número 98, bloque 5, 6º, ctro., de Caminomorisco",
+      "tipo_via": "Partida",
+      "nombre_calle": "San Ignacio",
+      "numero": 98,
+      "componentes": {
+        "bloque": "5",
+        "piso": "6º",
+        "puerta": "ctro."
+      },
+      "codigo_postal": "10623",
+      "municipio": "Caminomorisco",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "UR Principal 116, bloque 5-sobreático",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Principal",
+      "numero": 116,
+      "componentes": {
+        "bloque": "5",
+        "piso": "sobreático"
+      },
+      "codigo_postal": "49006",
+      "municipio": "Treviana",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Ptda. Isabel la Católica, 102, escalera derecha, 4º, E, 05147 Hurtumpascual",
+      "tipo_via": "Partida",
+      "nombre_calle": "Isabel la Católica",
+      "numero": 102,
+      "componentes": {
+        "escalera": "derecha",
+        "piso": "4º",
+        "puerta": "E"
+      },
+      "codigo_postal": "05147",
+      "municipio": "Hurtumpascual",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Carretera Encinas, nº 148, 8º, B",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Encinas",
+      "numero": 148,
+      "componentes": {
+        "piso": "8º",
+        "puerta": "B"
+      },
+      "codigo_postal": "42164",
+      "municipio": "Almarza",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Ronda Virgen de Covadonga 28",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Virgen de Covadonga",
+      "numero": 28,
+      "componentes": {
+        "piso": "planta segunda",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "03819",
+      "municipio": "Salar",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Plaza Veintiocho de Febrero, número 65, de Lugo",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Veintiocho de Febrero",
+      "numero": 65,
+      "componentes": {},
+      "codigo_postal": "27297",
+      "municipio": "Lugo",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Jardín Veintiocho de Febrero, nº 107, planta baja, centro",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Veintiocho de Febrero",
+      "numero": 107,
+      "componentes": {
+        "piso": "planta baja",
+        "puerta": "centro"
+      },
+      "codigo_postal": "36388",
+      "municipio": "Gondomar",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Camino de Francia, número 34, de Castilléjar",
+      "tipo_via": "Camino",
+      "nombre_calle": "de Francia",
+      "numero": 34,
+      "componentes": {},
+      "codigo_postal": "18818",
+      "municipio": "Castilléjar",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Gta. Casals 75, 8º",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "Casals",
+      "numero": 75,
+      "componentes": {
+        "piso": "8º"
+      },
+      "codigo_postal": "17210",
+      "municipio": "Palafrugell",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Vía San Pablo, número 10, bloque 4, bajo, A, de Orellana de la Sierra",
+      "tipo_via": "Vía",
+      "nombre_calle": "San Pablo",
+      "numero": 10,
+      "componentes": {
+        "bloque": "4",
+        "piso": "bajo",
+        "puerta": "A"
+      },
+      "codigo_postal": "38942",
+      "municipio": "Orellana de la Sierra",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Calle Estrecha, 146, 2º, E, 08026 Barcelona",
+      "tipo_via": "Calle",
+      "nombre_calle": "Estrecha",
+      "numero": 146,
+      "componentes": {
+        "piso": "2º",
+        "puerta": "E"
+      },
+      "codigo_postal": "08026",
+      "municipio": "Barcelona",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Costanilla Ancha, nº 140",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Ancha",
+      "numero": 140,
+      "componentes": {},
+      "codigo_postal": "08101",
+      "municipio": "Piera",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Calle de la Constitución, 81, entresuelo, exterior, 37202 Biel",
+      "tipo_via": "Calle",
+      "nombre_calle": "de la Constitución",
+      "numero": 81,
+      "componentes": {
+        "piso": "entresuelo",
+        "puerta": "exterior"
+      },
+      "codigo_postal": "37202",
+      "municipio": "Biel",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Ronda Real, número 92, 10º, exterior, de Baélls",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Real",
+      "numero": 92,
+      "componentes": {
+        "piso": "10º",
+        "puerta": "exterior"
+      },
+      "codigo_postal": "22569",
+      "municipio": "Baélls",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Travesía San Pablo, nº 104",
+      "tipo_via": "Travesía",
+      "nombre_calle": "San Pablo",
+      "numero": 104,
+      "componentes": {},
+      "codigo_postal": "44827",
+      "municipio": "Valbuena de Pisuerga",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Paseo Valle-Inclán, número 43, de Benitachell/Poble Nou de Benitatxell, el",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Valle-Inclán",
+      "numero": 43,
+      "componentes": {},
+      "codigo_postal": "03726",
+      "municipio": "Benitachell/Poble Nou de Benitatxell, el",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Parque del Sol, 150, bloque E, 7º, C, 02999 Ayna",
+      "tipo_via": "Parque",
+      "nombre_calle": "del Sol",
+      "numero": 150,
+      "componentes": {
+        "bloque": "E",
+        "piso": "7º",
+        "puerta": "C"
+      },
+      "codigo_postal": "02999",
+      "municipio": "Ayna",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Costanilla Clarín 77, bloque D-5º",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Clarín",
+      "numero": 77,
+      "componentes": {
+        "bloque": "D",
+        "piso": "5º",
+        "puerta": "izquierda"
+      },
+      "codigo_postal": "48940",
+      "municipio": "Leioa",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "PQ San Roque, 1, 32525 Boborás",
+      "tipo_via": "Parque",
+      "nombre_calle": "San Roque",
+      "numero": 1,
+      "componentes": {},
+      "codigo_postal": "32525",
+      "municipio": "Boborás",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Camino Colón, número 55, de Almoguera",
+      "tipo_via": "Camino",
+      "nombre_calle": "Colón",
+      "numero": 55,
+      "componentes": {},
+      "codigo_postal": "27254",
+      "municipio": "Almoguera",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Plaza Virgen de Fátima, nº 119, escalera A, sobreático, centro",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Virgen de Fátima",
+      "numero": 119,
+      "componentes": {
+        "escalera": "A",
+        "piso": "sobreático",
+        "puerta": "centro"
+      },
+      "codigo_postal": "48006",
+      "municipio": "Bilbao",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Urb. Olivos 60, bloque A-escalera 2",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Olivos",
+      "numero": 60,
+      "componentes": {
+        "bloque": "A",
+        "escalera": "2",
+        "piso": "7º",
+        "puerta": "F"
+      },
+      "codigo_postal": "36543",
+      "municipio": "Silleda",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "V. Purificación 40, 6º-C",
+      "tipo_via": "Vía",
+      "nombre_calle": "Purificación",
+      "numero": 40,
+      "componentes": {
+        "piso": "6º",
+        "puerta": "C"
+      },
+      "codigo_postal": "14413",
+      "municipio": "Guijo, El",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Jdín. Felipe II, 114, escalera A, 9º, 4ª, 47640 Peñaflor de Hornija",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Felipe II",
+      "numero": 114,
+      "componentes": {
+        "escalera": "A",
+        "piso": "9º",
+        "puerta": "4ª"
+      },
+      "codigo_postal": "47640",
+      "municipio": "Peñaflor de Hornija",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Avenida San Luis, 94, 10º, 47870 Tiedra",
+      "tipo_via": "Avenida",
+      "nombre_calle": "San Luis",
+      "numero": 94,
+      "componentes": {
+        "piso": "10º"
+      },
+      "codigo_postal": "47870",
+      "municipio": "Tiedra",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "V. Tilos 124, 4º-derecha",
+      "tipo_via": "Vía",
+      "nombre_calle": "Tilos",
+      "numero": 124,
+      "componentes": {
+        "piso": "4º",
+        "puerta": "derecha"
+      },
+      "codigo_postal": "07590",
+      "municipio": "Capdepera",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Bulevar Amapolas, 103, 10º, derecha, 43536 Cangas del Narcea",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Amapolas",
+      "numero": 103,
+      "componentes": {
+        "piso": "10º",
+        "puerta": "derecha"
+      },
+      "codigo_postal": "43536",
+      "municipio": "Cangas del Narcea",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Plaza Virgen de los Desamparados, nº 115, bloque 5, 4º, 3ª",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Virgen de los Desamparados",
+      "numero": 115,
+      "componentes": {
+        "bloque": "5",
+        "piso": "4º",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "16128",
+      "municipio": "Carolina, La",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Blvr. Rosalía de Castro 57",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Rosalía de Castro",
+      "numero": 57,
+      "componentes": {
+        "piso": "10º",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "23485",
+      "municipio": "Cazorla",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Plaza del Ayuntamiento, 139, 45443 Andilla",
+      "tipo_via": "Plaza",
+      "nombre_calle": "del Ayuntamiento",
+      "numero": 139,
+      "componentes": {},
+      "codigo_postal": "45443",
+      "municipio": "Andilla",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Callejón San Miguel, nº 78, escalera 2, bajo, B",
+      "tipo_via": "Callejón",
+      "nombre_calle": "San Miguel",
+      "numero": 78,
+      "componentes": {
+        "escalera": "2",
+        "piso": "bajo",
+        "puerta": "B"
+      },
+      "codigo_postal": "08224",
+      "municipio": "Terrassa",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Polígono Picasso 18",
+      "tipo_via": "Polígono",
+      "nombre_calle": "Picasso",
+      "numero": 18,
+      "componentes": {},
+      "codigo_postal": "05309",
+      "municipio": "Rivilla de Barajas",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Camino Machado 35, sobreático",
+      "tipo_via": "Camino",
+      "nombre_calle": "Machado",
+      "numero": 35,
+      "componentes": {
+        "piso": "sobreático"
+      },
+      "codigo_postal": "45109",
+      "municipio": "Orgaz",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "PD San Isidro 112",
+      "tipo_via": "Partida",
+      "nombre_calle": "San Isidro",
+      "numero": 112,
+      "componentes": {},
+      "codigo_postal": "36460",
+      "municipio": "Salceda de Caselas",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "UR del Castillo 35, sobreático",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "del Castillo",
+      "numero": 35,
+      "componentes": {
+        "piso": "sobreático"
+      },
+      "codigo_postal": "48650",
+      "municipio": "Tala, La",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Cmno. Albéniz, número 36, de Férez",
+      "tipo_via": "Camino",
+      "nombre_calle": "Albéniz",
+      "numero": 36,
+      "componentes": {},
+      "codigo_postal": "02436",
+      "municipio": "Férez",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Jardín Felipe II, número 9, 3º, C, de Villafranca del Bierzo",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Felipe II",
+      "numero": 9,
+      "componentes": {
+        "piso": "3º",
+        "puerta": "C"
+      },
+      "codigo_postal": "24512",
+      "municipio": "Villafranca del Bierzo",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Pº del Convento 57",
+      "tipo_via": "Paseo",
+      "nombre_calle": "del Convento",
+      "numero": 57,
+      "componentes": {},
+      "codigo_postal": "49798",
+      "municipio": "Parrilla, La",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Travesía San Vicente 124",
+      "tipo_via": "Travesía",
+      "nombre_calle": "San Vicente",
+      "numero": 124,
+      "componentes": {},
+      "codigo_postal": "26573",
+      "municipio": "Rascafría",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Partida Real, nº 69, bloque 3, 9º, centro",
+      "tipo_via": "Partida",
+      "nombre_calle": "Real",
+      "numero": 69,
+      "componentes": {
+        "bloque": "3",
+        "piso": "9º",
+        "puerta": "centro"
+      },
+      "codigo_postal": "22751",
+      "municipio": "Bailo",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Camino Virgen del Carmen 33",
+      "tipo_via": "Camino",
+      "nombre_calle": "Virgen del Carmen",
+      "numero": 33,
+      "componentes": {},
+      "codigo_postal": "43717",
+      "municipio": "Bisbal del Penedès, La",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Vía del Convento 119",
+      "tipo_via": "Vía",
+      "nombre_calle": "del Convento",
+      "numero": 119,
+      "componentes": {},
+      "codigo_postal": "35435",
+      "municipio": "Firgas",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Paseo Tintoreros, 128, planta primera, interior, 02071 Albacete",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Tintoreros",
+      "numero": 128,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "interior"
+      },
+      "codigo_postal": "02071",
+      "municipio": "Albacete",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Urb. Curtidores 144",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Curtidores",
+      "numero": 144,
+      "componentes": {},
+      "codigo_postal": "06770",
+      "municipio": "Casas de Don Pedro",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "CO Primera 133",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Primera",
+      "numero": 133,
+      "componentes": {
+        "bloque": "C",
+        "escalera": "D",
+        "piso": "planta baja"
+      },
+      "codigo_postal": "05153",
+      "municipio": "Malpartida de Corneja",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Carretera Virgen de Covadonga 63",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Virgen de Covadonga",
+      "numero": 63,
+      "componentes": {},
+      "codigo_postal": "33012",
+      "municipio": "Oviedo",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "V. Tintoreros, nº 144, bloque A, 3º",
+      "tipo_via": "Vía",
+      "nombre_calle": "Tintoreros",
+      "numero": 144,
+      "componentes": {
+        "bloque": "A",
+        "piso": "3º"
+      },
+      "codigo_postal": "13473",
+      "municipio": "Abenójar",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Costanilla Sederos 96",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Sederos",
+      "numero": 96,
+      "componentes": {
+        "bloque": "A",
+        "escalera": "derecha",
+        "piso": "10º"
+      },
+      "codigo_postal": "16101",
+      "municipio": "Yébenes, Los",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Partida Isaac Peral, número 149, planta segunda, 1ª, de Canillas de Esgueva",
+      "tipo_via": "Partida",
+      "nombre_calle": "Isaac Peral",
+      "numero": 149,
+      "componentes": {
+        "piso": "planta segunda",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "47185",
+      "municipio": "Canillas de Esgueva",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Avenida Virgen del Carmen, número 24, planta primera, de Medina de Pomar",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Virgen del Carmen",
+      "numero": 24,
+      "componentes": {
+        "piso": "planta primera"
+      },
+      "codigo_postal": "09500",
+      "municipio": "Medina de Pomar",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Cost. Vicente Ferrer, nº 92, 6º, derecha",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Vicente Ferrer",
+      "numero": 92,
+      "componentes": {
+        "piso": "6º",
+        "puerta": "derecha"
+      },
+      "codigo_postal": "14932",
+      "municipio": "Pobra de Trives, A",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Avenida Caldereros 134",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Caldereros",
+      "numero": 134,
+      "componentes": {
+        "piso": "10º",
+        "puerta": "ctro."
+      },
+      "codigo_postal": "17861",
+      "municipio": "Ogassa",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "PZ Clarín 96",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Clarín",
+      "numero": 96,
+      "componentes": {},
+      "codigo_postal": "15888",
+      "municipio": "Oroso",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Costanilla Isabel la Católica, nº 128, planta primera, dcha.",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Isabel la Católica",
+      "numero": 128,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "18400",
+      "municipio": "Órgiva",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Travesía Ignacio de Loyola 17",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Ignacio de Loyola",
+      "numero": 17,
+      "componentes": {},
+      "codigo_postal": "27690",
+      "municipio": "Sarria",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Ronda Pescaderos, nº 43, planta primera",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Pescaderos",
+      "numero": 43,
+      "componentes": {
+        "piso": "planta primera"
+      },
+      "codigo_postal": "08232",
+      "municipio": "Viladecavalls",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Parque Falla, 50, bloque 2, escalera C, 10º, 01289 Hinojales",
+      "tipo_via": "Parque",
+      "nombre_calle": "Falla",
+      "numero": 50,
+      "componentes": {
+        "bloque": "2",
+        "escalera": "C",
+        "piso": "10º"
+      },
+      "codigo_postal": "01289",
+      "municipio": "Hinojales",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "PS Norte, nº 130, bloque 5, 3º, 3ª",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Norte",
+      "numero": 130,
+      "componentes": {
+        "bloque": "5",
+        "piso": "3º",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "28823",
+      "municipio": "Coslada",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "c/ Felipe IV, 79, bloque E, 2º, 1ª, 05446 Daya Vieja",
+      "tipo_via": "Calle",
+      "nombre_calle": "Felipe IV",
+      "numero": 79,
+      "componentes": {
+        "bloque": "E",
+        "piso": "2º",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "05446",
+      "municipio": "Daya Vieja",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Vía Rodrigo 100, planta baja-frente",
+      "tipo_via": "Vía",
+      "nombre_calle": "Rodrigo",
+      "numero": 100,
+      "componentes": {
+        "piso": "planta baja",
+        "puerta": "frente"
+      },
+      "codigo_postal": "32359",
+      "municipio": "Alba de Cerrato",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "PJ Vicente Ferrer 15",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Vicente Ferrer",
+      "numero": 15,
+      "componentes": {
+        "escalera": "3",
+        "piso": "7º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "17531",
+      "municipio": "Itero de la Vega",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Urbanización Dalí, número 48, planta segunda, de Seva",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Dalí",
+      "numero": 48,
+      "componentes": {
+        "piso": "planta segunda"
+      },
+      "codigo_postal": "08553",
+      "municipio": "Seva",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Callejón Fernando el Católico 93",
+      "tipo_via": "Callejón",
+      "nombre_calle": "Fernando el Católico",
+      "numero": 93,
+      "componentes": {
+        "piso": "4º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "33163",
+      "municipio": "Morcín",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Jardín Hernán Cortés 108",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Hernán Cortés",
+      "numero": 108,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "F"
+      },
+      "codigo_postal": "25114",
+      "municipio": "Gimenells i el Pla de la Font",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Plaza Curtidores, nº 6, bloque A, planta baja, izquierda",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Curtidores",
+      "numero": 6,
+      "componentes": {
+        "bloque": "A",
+        "piso": "planta baja",
+        "puerta": "izquierda"
+      },
+      "codigo_postal": "43300",
+      "municipio": "Mont-roig del Camp",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Glorieta Santa Teresa 128",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "Santa Teresa",
+      "numero": 128,
+      "componentes": {
+        "bloque": "C",
+        "escalera": "2",
+        "piso": "4º"
+      },
+      "codigo_postal": "30796",
+      "municipio": "Membribe de la Sierra",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Bulevar Severo Ochoa, 13, bloque D, 9º, 37439 San Cristóbal de la Cuesta",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Severo Ochoa",
+      "numero": 13,
+      "componentes": {
+        "bloque": "D",
+        "piso": "9º"
+      },
+      "codigo_postal": "37439",
+      "municipio": "San Cristóbal de la Cuesta",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Parque Rodrigo 36, escalera 3-principal",
+      "tipo_via": "Parque",
+      "nombre_calle": "Rodrigo",
+      "numero": 36,
+      "componentes": {
+        "escalera": "3",
+        "piso": "principal",
+        "puerta": "frente"
+      },
+      "codigo_postal": "43712",
+      "municipio": "Llorenç del Penedès",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Urbanización San Miguel, número 27, de Zaratán",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "San Miguel",
+      "numero": 27,
+      "componentes": {},
+      "codigo_postal": "47610",
+      "municipio": "Zaratán",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "PJ Lirios 119, sobreático-E",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Lirios",
+      "numero": 119,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "E"
+      },
+      "codigo_postal": "12303",
+      "municipio": "Cava",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Trv. Clarín, número 137, bloque D, 2º, 2ª, de Rozas de Madrid, Las",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Clarín",
+      "numero": 137,
+      "componentes": {
+        "bloque": "D",
+        "piso": "2º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "28290",
+      "municipio": "Rozas de Madrid, Las",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Jardín San Pedro, 28, 50638 Cabañas de Ebro",
+      "tipo_via": "Jardín",
+      "nombre_calle": "San Pedro",
+      "numero": 28,
+      "componentes": {},
+      "codigo_postal": "50638",
+      "municipio": "Cabañas de Ebro",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Jardín San Ignacio 3",
+      "tipo_via": "Jardín",
+      "nombre_calle": "San Ignacio",
+      "numero": 3,
+      "componentes": {
+        "bloque": "E",
+        "piso": "principal",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "44303",
+      "municipio": "Almodóvar del Río",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "AV Cipreses, número 65, escalera derecha, entresuelo, C, de Busquístar",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Cipreses",
+      "numero": 65,
+      "componentes": {
+        "escalera": "derecha",
+        "piso": "entresuelo",
+        "puerta": "C"
+      },
+      "codigo_postal": "18416",
+      "municipio": "Busquístar",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Bulevar Santa Clara 126, escalera B-planta baja",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "Santa Clara",
+      "numero": 126,
+      "componentes": {
+        "escalera": "B",
+        "piso": "planta baja",
+        "puerta": "F"
+      },
+      "codigo_postal": "24560",
+      "municipio": "Toral de los Vados",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Vía Corta 142, sobreático-3ª",
+      "tipo_via": "Vía",
+      "nombre_calle": "Corta",
+      "numero": 142,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "38291",
+      "municipio": "San Cristóbal de La Laguna",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Ronda San Juan, nº 118",
+      "tipo_via": "Ronda",
+      "nombre_calle": "San Juan",
+      "numero": 118,
+      "componentes": {},
+      "codigo_postal": "28804",
+      "municipio": "Friera de Valverde",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Calle Valle-Inclán, número 21, de Catllar, El",
+      "tipo_via": "Calle",
+      "nombre_calle": "Valle-Inclán",
+      "numero": 21,
+      "componentes": {},
+      "codigo_postal": "49274",
+      "municipio": "Catllar, El",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Cmno. Falla, número 3, 7º, de Carrizosa",
+      "tipo_via": "Camino",
+      "nombre_calle": "Falla",
+      "numero": 3,
+      "componentes": {
+        "piso": "7º"
+      },
+      "codigo_postal": "13329",
+      "municipio": "Carrizosa",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Carretera Corta, número 35, escalera 2, bajo, izda., de Castrelo do Val",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Corta",
+      "numero": 35,
+      "componentes": {
+        "escalera": "2",
+        "piso": "bajo",
+        "puerta": "izda."
+      },
+      "codigo_postal": "32624",
+      "municipio": "Castrelo do Val",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Polígono de la Playa 122, bloque C-3º",
+      "tipo_via": "Polígono",
+      "nombre_calle": "de la Playa",
+      "numero": 122,
+      "componentes": {
+        "bloque": "C",
+        "piso": "3º",
+        "puerta": "F"
+      },
+      "codigo_postal": "27117",
+      "municipio": "Fonsagrada, A",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Barrio Falla, 150, escalera derecha, 6º, 24565 Carracedelo",
+      "tipo_via": "Barrio",
+      "nombre_calle": "Falla",
+      "numero": 150,
+      "componentes": {
+        "escalera": "derecha",
+        "piso": "6º"
+      },
+      "codigo_postal": "24565",
+      "municipio": "Carracedelo",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Paseo Vicente Ferrer, 24, bloque 1, escalera 3, 4º, C, 38687 Guía de Isora",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Vicente Ferrer",
+      "numero": 24,
+      "componentes": {
+        "bloque": "1",
+        "escalera": "3",
+        "piso": "4º",
+        "puerta": "C"
+      },
+      "codigo_postal": "38687",
+      "municipio": "Guía de Isora",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Parque Sur, número 91, bloque 3, principal, A, de Valenzuela de Calatrava",
+      "tipo_via": "Parque",
+      "nombre_calle": "Sur",
+      "numero": 91,
+      "componentes": {
+        "bloque": "3",
+        "piso": "principal",
+        "puerta": "A"
+      },
+      "codigo_postal": "47280",
+      "municipio": "Valenzuela de Calatrava",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Urbanización Unamuno 28, sobreático-frente",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Unamuno",
+      "numero": 28,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "frente"
+      },
+      "codigo_postal": "34563",
+      "municipio": "Velilla de Cinca",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Pza. El Greco 100",
+      "tipo_via": "Plaza",
+      "nombre_calle": "El Greco",
+      "numero": 100,
+      "componentes": {},
+      "codigo_postal": "08730",
+      "municipio": "Santa Margarida i els Monjos",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Partida Nueva 15",
+      "tipo_via": "Partida",
+      "nombre_calle": "Nueva",
+      "numero": 15,
+      "componentes": {},
+      "codigo_postal": "10665",
+      "municipio": "Guijo de Granadilla",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Barrio Severo Ochoa 115",
+      "tipo_via": "Barrio",
+      "nombre_calle": "Severo Ochoa",
+      "numero": 115,
+      "componentes": {
+        "escalera": "1",
+        "piso": "bajo",
+        "puerta": "C"
+      },
+      "codigo_postal": "32318",
+      "municipio": "Barco de Valdeorras, O",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Pasaje Olmos, 126, bloque 1, 2º, 45480 Urda",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Olmos",
+      "numero": 126,
+      "componentes": {
+        "bloque": "1",
+        "piso": "2º"
+      },
+      "codigo_postal": "45480",
+      "municipio": "Urda",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Psje. Plateros 141",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Plateros",
+      "numero": 141,
+      "componentes": {
+        "piso": "ático",
+        "puerta": "izda."
+      },
+      "codigo_postal": "31382",
+      "municipio": "Monterrubio de la Sierra",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Cjón. de España 132",
+      "tipo_via": "Callejón",
+      "nombre_calle": "de España",
+      "numero": 132,
+      "componentes": {},
+      "codigo_postal": "37256",
+      "municipio": "Milano, El",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Plaza Clarín 30, ático-2ª",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Clarín",
+      "numero": 30,
+      "componentes": {
+        "piso": "ático",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "32704",
+      "municipio": "Baños de Molgas",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Paseo Santa María, 67, planta segunda, 32486 Quintanilla de Urz",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Santa María",
+      "numero": 67,
+      "componentes": {
+        "piso": "planta segunda"
+      },
+      "codigo_postal": "32486",
+      "municipio": "Quintanilla de Urz",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Callejón de América 120",
+      "tipo_via": "Callejón",
+      "nombre_calle": "de América",
+      "numero": 120,
+      "componentes": {
+        "piso": "9º",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "15240",
+      "municipio": "Muros",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Parque Ortega y Gasset, nº 77, planta primera, A",
+      "tipo_via": "Parque",
+      "nombre_calle": "Ortega y Gasset",
+      "numero": 77,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "A"
+      },
+      "codigo_postal": "15286",
+      "municipio": "Outes",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Parque Castaños, 94, 33346 Ribadesella",
+      "tipo_via": "Parque",
+      "nombre_calle": "Castaños",
+      "numero": 94,
+      "componentes": {},
+      "codigo_postal": "33346",
+      "municipio": "Ribadesella",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Jardín Este, número 15, sobreático, 3ª, de Orozko",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Este",
+      "numero": 15,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "48410",
+      "municipio": "Orozko",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Cmno. de la Libertad, número 7, 4º, F, de Carrocera",
+      "tipo_via": "Camino",
+      "nombre_calle": "de la Libertad",
+      "numero": 7,
+      "componentes": {
+        "piso": "4º",
+        "puerta": "F"
+      },
+      "codigo_postal": "24123",
+      "municipio": "Carrocera",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Calle de la Plaza, nº 102, bloque C, sobreático, dcha.",
+      "tipo_via": "Calle",
+      "nombre_calle": "de la Plaza",
+      "numero": 102,
+      "componentes": {
+        "bloque": "C",
+        "piso": "sobreático",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "25267",
+      "municipio": "Sant Martí de Riucorb",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Calle Zuloaga, 133, 1º, centro, 30395 Cartagena",
+      "tipo_via": "Calle",
+      "nombre_calle": "Zuloaga",
+      "numero": 133,
+      "componentes": {
+        "piso": "1º",
+        "puerta": "centro"
+      },
+      "codigo_postal": "30395",
+      "municipio": "Cartagena",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Ctra. Ignacio de Loyola 130, planta primera-1ª",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Ignacio de Loyola",
+      "numero": 130,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "42127",
+      "municipio": "Montenegro de Cameros",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "PG Baroja 133, 1º-ctro.",
+      "tipo_via": "Polígono",
+      "nombre_calle": "Baroja",
+      "numero": 133,
+      "componentes": {
+        "piso": "1º",
+        "puerta": "ctro."
+      },
+      "codigo_postal": "51957",
+      "municipio": "Valdemoro-Sierra",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Costanilla Tilos, nº 146, escalera izquierda, 10º, izda.",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Tilos",
+      "numero": 146,
+      "componentes": {
+        "escalera": "izquierda",
+        "piso": "10º",
+        "puerta": "izda."
+      },
+      "codigo_postal": "09258",
+      "municipio": "Valle de Oca",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Cjón. de la Plaza 127",
+      "tipo_via": "Callejón",
+      "nombre_calle": "de la Plaza",
+      "numero": 127,
+      "componentes": {
+        "escalera": "A",
+        "piso": "1º",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "24110",
+      "municipio": "Villablino",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Costanilla Bordadores, 75, 18100 Armilla",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "Bordadores",
+      "numero": 75,
+      "componentes": {},
+      "codigo_postal": "18100",
+      "municipio": "Armilla",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Paseo Santa Lucía, nº 20, bloque D, 9º",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Santa Lucía",
+      "numero": 20,
+      "componentes": {
+        "bloque": "D",
+        "piso": "9º"
+      },
+      "codigo_postal": "39574",
+      "municipio": "Cabezón de Liébana",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "UR del Mar, número 35, 3º, derecha, de Tudela",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "del Mar",
+      "numero": 35,
+      "componentes": {
+        "piso": "3º",
+        "puerta": "derecha"
+      },
+      "codigo_postal": "31500",
+      "municipio": "Tudela",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Pol. Carlos V, 59, escalera B, 10º, D, 46417 Riola",
+      "tipo_via": "Polígono",
+      "nombre_calle": "Carlos V",
+      "numero": 59,
+      "componentes": {
+        "escalera": "B",
+        "piso": "10º",
+        "puerta": "D"
+      },
+      "codigo_postal": "46417",
+      "municipio": "Riola",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "PS Naranjos, 38, 08870 Sitges",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Naranjos",
+      "numero": 38,
+      "componentes": {},
+      "codigo_postal": "08870",
+      "municipio": "Sitges",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Glorieta del Castillo 146, escalera C-6º",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "del Castillo",
+      "numero": 146,
+      "componentes": {
+        "escalera": "C",
+        "piso": "6º"
+      },
+      "codigo_postal": "36886",
+      "municipio": "Cañiza, A",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Pl. de la Muralla, nº 37",
+      "tipo_via": "Plaza",
+      "nombre_calle": "de la Muralla",
+      "numero": 37,
+      "componentes": {},
+      "codigo_postal": "30391",
+      "municipio": "Cartagena",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Pq. Tejedores 95",
+      "tipo_via": "Parque",
+      "nombre_calle": "Tejedores",
+      "numero": 95,
+      "componentes": {
+        "piso": "2º",
+        "puerta": "centro"
+      },
+      "codigo_postal": "15592",
+      "municipio": "Ferrol",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Glorieta Encarnación 70",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "Encarnación",
+      "numero": 70,
+      "componentes": {},
+      "codigo_postal": "20567",
+      "municipio": "Oñati",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "C/ Goya 24",
+      "tipo_via": "Calle",
+      "nombre_calle": "Goya",
+      "numero": 24,
+      "componentes": {
+        "piso": "5º",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "36637",
+      "municipio": "Meis",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "V. Valle-Inclán, número 127, bloque A, 8º, frente, de Santa Cruz de Tenerife",
+      "tipo_via": "Vía",
+      "nombre_calle": "Valle-Inclán",
+      "numero": 127,
+      "componentes": {
+        "bloque": "A",
+        "piso": "8º",
+        "puerta": "frente"
+      },
+      "codigo_postal": "38008",
+      "municipio": "Santa Cruz de Tenerife",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Jardín de la Torre 66, bloque 5-10º",
+      "tipo_via": "Jardín",
+      "nombre_calle": "de la Torre",
+      "numero": 66,
+      "componentes": {
+        "bloque": "5",
+        "piso": "10º"
+      },
+      "codigo_postal": "47324",
+      "municipio": "Valdáliga",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Ronda Virgen de Montserrat 128, bloque 1-5º",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Virgen de Montserrat",
+      "numero": 128,
+      "componentes": {
+        "bloque": "1",
+        "piso": "5º",
+        "puerta": "ctro."
+      },
+      "codigo_postal": "38650",
+      "municipio": "Arona",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Paseo Purificación 140, 7º-1ª",
+      "tipo_via": "Paseo",
+      "nombre_calle": "Purificación",
+      "numero": 140,
+      "componentes": {
+        "piso": "7º",
+        "puerta": "1ª"
+      },
+      "codigo_postal": "33206",
+      "municipio": "Gijón",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "PD Carniceros, nº 101, 9º, E",
+      "tipo_via": "Partida",
+      "nombre_calle": "Carniceros",
+      "numero": 101,
+      "componentes": {
+        "piso": "9º",
+        "puerta": "E"
+      },
+      "codigo_postal": "31243",
+      "municipio": "Barbarin",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Ronda Olivos, número 88, 2º, 2ª, de Villarquemado",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Olivos",
+      "numero": 88,
+      "componentes": {
+        "piso": "2º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "48180",
+      "municipio": "Villarquemado",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Jdín. Corta, 89, 27639 Triacastela",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Corta",
+      "numero": 89,
+      "componentes": {},
+      "codigo_postal": "27639",
+      "municipio": "Triacastela",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "CJ Primero de Mayo, nº 18, escalera izquierda, planta primera, centro",
+      "tipo_via": "Callejón",
+      "nombre_calle": "Primero de Mayo",
+      "numero": 18,
+      "componentes": {
+        "escalera": "izquierda",
+        "piso": "planta primera",
+        "puerta": "centro"
+      },
+      "codigo_postal": "36310",
+      "municipio": "Vigo",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Carretera Virgen de Fátima, número 68, bloque 4, escalera A, 9º, A, de Castrillo de la Guareña",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Virgen de Fátima",
+      "numero": 68,
+      "componentes": {
+        "bloque": "4",
+        "escalera": "A",
+        "piso": "9º",
+        "puerta": "A"
+      },
+      "codigo_postal": "49419",
+      "municipio": "Castrillo de la Guareña",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Glorieta de la Playa, nº 69, escalera 2, 2º, dcha.",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "de la Playa",
+      "numero": 69,
+      "componentes": {
+        "escalera": "2",
+        "piso": "2º",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "45121",
+      "municipio": "Menasalbas",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "CL Unamuno, número 98, principal, de Fuentidueña de Tajo",
+      "tipo_via": "Calle",
+      "nombre_calle": "Unamuno",
+      "numero": 98,
+      "componentes": {
+        "piso": "principal"
+      },
+      "codigo_postal": "41996",
+      "municipio": "Fuentidueña de Tajo",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Urb. Cerrajeros 139",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Cerrajeros",
+      "numero": 139,
+      "componentes": {
+        "piso": "planta baja",
+        "puerta": "4ª"
+      },
+      "codigo_postal": "05514",
+      "municipio": "San Miguel de Corneja",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Bulevar San Pedro, 18, bloque C, escalera B, planta segunda, B, 06830 Zarza, La",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "San Pedro",
+      "numero": 18,
+      "componentes": {
+        "bloque": "C",
+        "escalera": "B",
+        "piso": "planta segunda",
+        "puerta": "B"
+      },
+      "codigo_postal": "06830",
+      "municipio": "Zarza, La",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Barrio del Río 64",
+      "tipo_via": "Barrio",
+      "nombre_calle": "del Río",
+      "numero": 64,
+      "componentes": {},
+      "codigo_postal": "38630",
+      "municipio": "Arona",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "CO de Portugal, 109, 49272 Pereruela",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "de Portugal",
+      "numero": 109,
+      "componentes": {},
+      "codigo_postal": "49272",
+      "municipio": "Pereruela",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Barrio Dalí, número 53, 8º, F, de Harana/Valle de Arana",
+      "tipo_via": "Barrio",
+      "nombre_calle": "Dalí",
+      "numero": 53,
+      "componentes": {
+        "piso": "8º",
+        "puerta": "F"
+      },
+      "codigo_postal": "51736",
+      "municipio": "Harana/Valle de Arana",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Avenida Limoneros, nº 100",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Limoneros",
+      "numero": 100,
+      "componentes": {},
+      "codigo_postal": "18004",
+      "municipio": "Granada",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Calle Grande 18",
+      "tipo_via": "Calle",
+      "nombre_calle": "Grande",
+      "numero": 18,
+      "componentes": {
+        "piso": "5º",
+        "puerta": "E"
+      },
+      "codigo_postal": "32849",
+      "municipio": "Bande",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Barrio Cipreses 69",
+      "tipo_via": "Barrio",
+      "nombre_calle": "Cipreses",
+      "numero": 69,
+      "componentes": {
+        "escalera": "A",
+        "piso": "planta primera",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "10317",
+      "municipio": "Collado de la Vera",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Avenida del Parque, nº 79, principal",
+      "tipo_via": "Avenida",
+      "nombre_calle": "del Parque",
+      "numero": 79,
+      "componentes": {
+        "piso": "principal"
+      },
+      "codigo_postal": "49016",
+      "municipio": "Zamora",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Parque del Trabajo 109",
+      "tipo_via": "Parque",
+      "nombre_calle": "del Trabajo",
+      "numero": 109,
+      "componentes": {
+        "piso": "1º",
+        "puerta": "A"
+      },
+      "codigo_postal": "22534",
+      "municipio": "Albalate de Cinca",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Callejón Francisco de Asís, 105, 50320 Frasno, El",
+      "tipo_via": "Callejón",
+      "nombre_calle": "Francisco de Asís",
+      "numero": 105,
+      "componentes": {},
+      "codigo_postal": "50320",
+      "municipio": "Frasno, El",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Polígono San Sebastián 44",
+      "tipo_via": "Polígono",
+      "nombre_calle": "San Sebastián",
+      "numero": 44,
+      "componentes": {},
+      "codigo_postal": "13415",
+      "municipio": "Almodóvar del Campo",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Pasaje San Martín, nº 18",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "San Martín",
+      "numero": 18,
+      "componentes": {},
+      "codigo_postal": "27889",
+      "municipio": "Cervo",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Gta. Virgen de Fátima, nº 116",
+      "tipo_via": "Glorieta",
+      "nombre_calle": "Virgen de Fátima",
+      "numero": 116,
+      "componentes": {},
+      "codigo_postal": "24111",
+      "municipio": "Villablino",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Costanilla San Miguel 67",
+      "tipo_via": "Costanilla",
+      "nombre_calle": "San Miguel",
+      "numero": 67,
+      "componentes": {
+        "bloque": "C",
+        "escalera": "2",
+        "piso": "8º",
+        "puerta": "izquierda"
+      },
+      "codigo_postal": "33530",
+      "municipio": "Piloña",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Polígono Miró, nº 65, 4º, C",
+      "tipo_via": "Polígono",
+      "nombre_calle": "Miró",
+      "numero": 65,
+      "componentes": {
+        "piso": "4º",
+        "puerta": "C"
+      },
+      "codigo_postal": "05633",
+      "municipio": "San Juan de Gredos",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Ptda. de la Torre 87, planta primera-3ª",
+      "tipo_via": "Partida",
+      "nombre_calle": "de la Torre",
+      "numero": 87,
+      "componentes": {
+        "piso": "planta primera",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "33991",
+      "municipio": "Laviana",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Calle Tintoreros, número 5, escalera derecha, principal, exterior, de Larva",
+      "tipo_via": "Calle",
+      "nombre_calle": "Tintoreros",
+      "numero": 5,
+      "componentes": {
+        "escalera": "derecha",
+        "piso": "principal",
+        "puerta": "exterior"
+      },
+      "codigo_postal": "45779",
+      "municipio": "Larva",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Blvr. San Fernando, 133, escalera D, ático, 37181 Calvarrasa de Abajo",
+      "tipo_via": "Bulevar",
+      "nombre_calle": "San Fernando",
+      "numero": 133,
+      "componentes": {
+        "escalera": "D",
+        "piso": "ático"
+      },
+      "codigo_postal": "37181",
+      "municipio": "Calvarrasa de Abajo",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Travesía Violetas, número 77, bloque A, escalera 2, 10º, 3ª, de Perafort",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Violetas",
+      "numero": 77,
+      "componentes": {
+        "bloque": "A",
+        "escalera": "2",
+        "piso": "10º",
+        "puerta": "3ª"
+      },
+      "codigo_postal": "43152",
+      "municipio": "Perafort",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Paseo del Río, número 95, bloque 3, escalera 1, 8º, D, de Villanueva de la Condesa",
+      "tipo_via": "Paseo",
+      "nombre_calle": "del Río",
+      "numero": 95,
+      "componentes": {
+        "bloque": "3",
+        "escalera": "1",
+        "piso": "8º",
+        "puerta": "D"
+      },
+      "codigo_postal": "47608",
+      "municipio": "Villanueva de la Condesa",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Callejón del Mercado, 17, bloque B, 8º, frente, 46594 Alfara de la Baronia",
+      "tipo_via": "Callejón",
+      "nombre_calle": "del Mercado",
+      "numero": 17,
+      "componentes": {
+        "bloque": "B",
+        "piso": "8º",
+        "puerta": "frente"
+      },
+      "codigo_postal": "46594",
+      "municipio": "Alfara de la Baronia",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Pasaje Olmos, número 7, sobreático, 2ª, de Lloret de Vistalegre",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Olmos",
+      "numero": 7,
+      "componentes": {
+        "piso": "sobreático",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "07518",
+      "municipio": "Lloret de Vistalegre",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Ronda Santa Bárbara, número 117, bloque D, ático, de Piera",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Santa Bárbara",
+      "numero": 117,
+      "componentes": {
+        "bloque": "D",
+        "piso": "ático"
+      },
+      "codigo_postal": "08101",
+      "municipio": "Piera",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Cmno. Este, 148, 07223 Gilet",
+      "tipo_via": "Camino",
+      "nombre_calle": "Este",
+      "numero": 148,
+      "componentes": {},
+      "codigo_postal": "07223",
+      "municipio": "Gilet",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Carretera Real 108",
+      "tipo_via": "Carretera",
+      "nombre_calle": "Real",
+      "numero": 108,
+      "componentes": {
+        "escalera": "2",
+        "piso": "planta segunda"
+      },
+      "codigo_postal": "27651",
+      "municipio": "Navia de Suarna",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "PD Virgen de Montserrat, 32, 6º, 2ª, 44557 Crivillén",
+      "tipo_via": "Partida",
+      "nombre_calle": "Virgen de Montserrat",
+      "numero": 32,
+      "componentes": {
+        "piso": "6º",
+        "puerta": "2ª"
+      },
+      "codigo_postal": "44557",
+      "municipio": "Crivillén",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Paseo de los Jardines, 140, 24276 Santa María de Ordás",
+      "tipo_via": "Paseo",
+      "nombre_calle": "de los Jardines",
+      "numero": 140,
+      "componentes": {},
+      "codigo_postal": "24276",
+      "municipio": "Santa María de Ordás",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "V. de España 39",
+      "tipo_via": "Vía",
+      "nombre_calle": "de España",
+      "numero": 39,
+      "componentes": {
+        "bloque": "2",
+        "piso": "sobreático",
+        "puerta": "interior"
+      },
+      "codigo_postal": "19222",
+      "municipio": "Tamajón",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "TR Panaderos, número 67, 2º, izquierda, de Cabezarados",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Panaderos",
+      "numero": 67,
+      "componentes": {
+        "piso": "2º",
+        "puerta": "izquierda"
+      },
+      "codigo_postal": "49594",
+      "municipio": "Cabezarados",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "PZ Vicente Ferrer, número 114, bloque E, escalera 1, planta baja, de Horcajada, La",
+      "tipo_via": "Plaza",
+      "nombre_calle": "Vicente Ferrer",
+      "numero": 114,
+      "componentes": {
+        "bloque": "E",
+        "escalera": "1",
+        "piso": "planta baja"
+      },
+      "codigo_postal": "05696",
+      "municipio": "Horcajada, La",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "CL Falla, 125, 4º, dcha., 47008 Valladolid",
+      "tipo_via": "Calle",
+      "nombre_calle": "Falla",
+      "numero": 125,
+      "componentes": {
+        "piso": "4º",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "47008",
+      "municipio": "Valladolid",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Urbanización San Lorenzo, número 16, 5º, B, de Iurreta",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "San Lorenzo",
+      "numero": 16,
+      "componentes": {
+        "piso": "5º",
+        "puerta": "B"
+      },
+      "codigo_postal": "48215",
+      "municipio": "Iurreta",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Polígono Santa Catalina 5",
+      "tipo_via": "Polígono",
+      "nombre_calle": "Santa Catalina",
+      "numero": 5,
+      "componentes": {},
+      "codigo_postal": "40002",
+      "municipio": "Segovia",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Pasaje Segunda, nº 112, 9º, izquierda",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Segunda",
+      "numero": 112,
+      "componentes": {
+        "piso": "9º",
+        "puerta": "izquierda"
+      },
+      "codigo_postal": "38357",
+      "municipio": "Tacoronte",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Camino Claveles 148",
+      "tipo_via": "Camino",
+      "nombre_calle": "Claveles",
+      "numero": 148,
+      "componentes": {},
+      "codigo_postal": "49326",
+      "municipio": "Rionegro del Puente",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Jardín Santa María 92",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Santa María",
+      "numero": 92,
+      "componentes": {
+        "bloque": "A",
+        "piso": "2º",
+        "puerta": "B"
+      },
+      "codigo_postal": "09125",
+      "municipio": "Basconcillos del Tozo",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Avda. Santa Clara, 143, entresuelo, dcha., 31579 Cárcar",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Santa Clara",
+      "numero": 143,
+      "componentes": {
+        "piso": "entresuelo",
+        "puerta": "dcha."
+      },
+      "codigo_postal": "31579",
+      "municipio": "Cárcar",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "TR Real, 8, 31400 Sangüesa/Zangoza",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Real",
+      "numero": 8,
+      "componentes": {},
+      "codigo_postal": "31400",
+      "municipio": "Sangüesa/Zangoza",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Ronda Almendros 86",
+      "tipo_via": "Ronda",
+      "nombre_calle": "Almendros",
+      "numero": 86,
+      "componentes": {
+        "piso": "3º",
+        "puerta": "frente"
+      },
+      "codigo_postal": "39100",
+      "municipio": "Santa Cruz de Bezana",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Pasaje Santa Lucía 120, escalera B-planta primera",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Santa Lucía",
+      "numero": 120,
+      "componentes": {
+        "escalera": "B",
+        "piso": "planta primera"
+      },
+      "codigo_postal": "40036",
+      "municipio": "Carcelén",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Psje. Baja 50",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "Baja",
+      "numero": 50,
+      "componentes": {
+        "escalera": "3",
+        "piso": "7º",
+        "puerta": "F"
+      },
+      "codigo_postal": "39311",
+      "municipio": "Cartes",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Callejón del Mercado 13",
+      "tipo_via": "Callejón",
+      "nombre_calle": "del Mercado",
+      "numero": 13,
+      "componentes": {
+        "bloque": "E",
+        "piso": "8º",
+        "puerta": "F"
+      },
+      "codigo_postal": "27786",
+      "municipio": "Buenamadre",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Avenida Central 118",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Central",
+      "numero": 118,
+      "componentes": {},
+      "codigo_postal": "50695",
+      "municipio": "Biota",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Ronda San Nicolás 115, escalera izquierda-sobreático",
+      "tipo_via": "Ronda",
+      "nombre_calle": "San Nicolás",
+      "numero": 115,
+      "componentes": {
+        "escalera": "izquierda",
+        "piso": "sobreático",
+        "puerta": "D"
+      },
+      "codigo_postal": "04425",
+      "municipio": "Miranda de Azán",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Jardín Limoneros, número 16, de Galinduste",
+      "tipo_via": "Jardín",
+      "nombre_calle": "Limoneros",
+      "numero": 16,
+      "componentes": {},
+      "codigo_postal": "37785",
+      "municipio": "Galinduste",
+      "formato": "legal_extenso"
+    },
+    {
+      "texto": "Avenida Olmos 29",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Olmos",
+      "numero": 29,
+      "componentes": {},
+      "codigo_postal": "17171",
+      "municipio": "Susqueda",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Calle Severo Ochoa 17, 5º-C",
+      "tipo_via": "Calle",
+      "nombre_calle": "Severo Ochoa",
+      "numero": 17,
+      "componentes": {
+        "piso": "5º",
+        "puerta": "C"
+      },
+      "codigo_postal": "06950",
+      "municipio": "Arce/Artzi",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Avenida Anunciación, nº 125, 8º, izda.",
+      "tipo_via": "Avenida",
+      "nombre_calle": "Anunciación",
+      "numero": 125,
+      "componentes": {
+        "piso": "8º",
+        "puerta": "izda."
+      },
+      "codigo_postal": "14008",
+      "municipio": "Córdoba",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "Parque Velázquez, nº 101, escalera C, 10º, A",
+      "tipo_via": "Parque",
+      "nombre_calle": "Velázquez",
+      "numero": 101,
+      "componentes": {
+        "escalera": "C",
+        "piso": "10º",
+        "puerta": "A"
+      },
+      "codigo_postal": "45678",
+      "municipio": "Robledo del Mazo",
+      "formato": "completo_sin_cp"
+    },
+    {
+      "texto": "BO Herreros 29",
+      "tipo_via": "Barrio",
+      "nombre_calle": "Herreros",
+      "numero": 29,
+      "componentes": {},
+      "codigo_postal": "37542",
+      "municipio": "Navasfrías",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Pasaje de la Libertad 92",
+      "tipo_via": "Pasaje",
+      "nombre_calle": "de la Libertad",
+      "numero": 92,
+      "componentes": {
+        "bloque": "4",
+        "escalera": "C",
+        "piso": "planta segunda"
+      },
+      "codigo_postal": "06428",
+      "municipio": "Benquerencia de la Serena",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "Camino Murillo 61",
+      "tipo_via": "Camino",
+      "nombre_calle": "Murillo",
+      "numero": 61,
+      "componentes": {},
+      "codigo_postal": "34336",
+      "municipio": "Algodre",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Travesía Machado 13",
+      "tipo_via": "Travesía",
+      "nombre_calle": "Machado",
+      "numero": 13,
+      "componentes": {
+        "piso": "10º",
+        "puerta": "izda."
+      },
+      "codigo_postal": "45425",
+      "municipio": "Sant Climent Sescebes",
+      "formato": "solo_calle"
+    },
+    {
+      "texto": "V. Virgen del Pilar, 97, 36580 Vila de Cruces",
+      "tipo_via": "Vía",
+      "nombre_calle": "Virgen del Pilar",
+      "numero": 97,
+      "componentes": {},
+      "codigo_postal": "36580",
+      "municipio": "Vila de Cruces",
+      "formato": "completo_con_cp"
+    },
+    {
+      "texto": "Camino Jovellanos 23",
+      "tipo_via": "Camino",
+      "nombre_calle": "Jovellanos",
+      "numero": 23,
+      "componentes": {},
+      "codigo_postal": "28801",
+      "municipio": "Alcalá de Henares",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Partida Felipe II 111",
+      "tipo_via": "Partida",
+      "nombre_calle": "Felipe II",
+      "numero": 111,
+      "componentes": {},
+      "codigo_postal": "10180",
+      "municipio": "Valdefuentes",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "VI Virgen de Montserrat 93",
+      "tipo_via": "Vía",
+      "nombre_calle": "Virgen de Montserrat",
+      "numero": 93,
+      "componentes": {},
+      "codigo_postal": "27300",
+      "municipio": "Guitiriz",
+      "formato": "abreviado"
+    },
+    {
+      "texto": "Urbanización Pescaderos 6, escalera derecha-4º",
+      "tipo_via": "Urbanización",
+      "nombre_calle": "Pescaderos",
+      "numero": 6,
+      "componentes": {
+        "escalera": "derecha",
+        "piso": "4º",
+        "puerta": "derecha"
+      },
+      "codigo_postal": "27579",
+      "municipio": "Antas de Ulla",
+      "formato": "abreviado"
+    }
+  ],
+  "direcciones_con_contexto": [
+    {
+      "texto_contexto": "en su domicilio sito en Vía Corta 41",
+      "direccion": {
+        "texto": "Vía Corta 41",
+        "tipo_via": "Vía",
+        "nombre_calle": "Corta",
+        "numero": 41,
+        "componentes": {
+          "bloque": "D",
+          "piso": "ático",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "28540",
+        "municipio": "Perales de Tajuña",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Bulevar Santa Ana, nº 94",
+      "direccion": {
+        "texto": "Bulevar Santa Ana, nº 94",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Santa Ana",
+        "numero": 94,
+        "componentes": {},
+        "codigo_postal": "15572",
+        "municipio": "Narón",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Baiona, con residencia en CO del Ayuntamiento 117",
+      "direccion": {
+        "texto": "CO del Ayuntamiento 117",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "del Ayuntamiento",
+        "numero": 117,
+        "componentes": {
+          "piso": "principal",
+          "puerta": "A"
+        },
+        "codigo_postal": "36300",
+        "municipio": "Baiona",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Plaza Primero de Mayo 103",
+      "direccion": {
+        "texto": "Plaza Primero de Mayo 103",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Primero de Mayo",
+        "numero": 103,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "33798",
+        "municipio": "Boal",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Carretera Unamuno, número 103, 5º, de Teulada",
+      "direccion": {
+        "texto": "Carretera Unamuno, número 103, 5º, de Teulada",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Unamuno",
+        "numero": 103,
+        "componentes": {
+          "piso": "5º"
+        },
+        "codigo_postal": "43884",
+        "municipio": "Teulada",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Avenida de la Democracia, 59, bloque 4, principal, ctro., 17948 Aras",
+      "direccion": {
+        "texto": "Avenida de la Democracia, 59, bloque 4, principal, ctro., 17948 Aras",
+        "tipo_via": "Avenida",
+        "nombre_calle": "de la Democracia",
+        "numero": 59,
+        "componentes": {
+          "bloque": "4",
+          "piso": "principal",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "17948",
+        "municipio": "Aras",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Calle Tercera, número 11, de Benaoján",
+      "direccion": {
+        "texto": "Calle Tercera, número 11, de Benaoján",
+        "tipo_via": "Calle",
+        "nombre_calle": "Tercera",
+        "numero": 11,
+        "componentes": {},
+        "codigo_postal": "29370",
+        "municipio": "Benaoján",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Partida El Cid, 13, sobreático, exterior, 03610 Petrer",
+      "direccion": {
+        "texto": "Partida El Cid, 13, sobreático, exterior, 03610 Petrer",
+        "tipo_via": "Partida",
+        "nombre_calle": "El Cid",
+        "numero": 13,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "exterior"
+        },
+        "codigo_postal": "03610",
+        "municipio": "Petrer",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Travesía Torneros 65",
+      "direccion": {
+        "texto": "Travesía Torneros 65",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Torneros",
+        "numero": 65,
+        "componentes": {},
+        "codigo_postal": "23165",
+        "municipio": "Guardia, La",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en RD Norte 9",
+      "direccion": {
+        "texto": "RD Norte 9",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Norte",
+        "numero": 9,
+        "componentes": {},
+        "codigo_postal": "36117",
+        "municipio": "Cerdedo-Cotobade",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en UR Principal 116, bloque 5-sobreático",
+      "direccion": {
+        "texto": "UR Principal 116, bloque 5-sobreático",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Principal",
+        "numero": 116,
+        "componentes": {
+          "bloque": "5",
+          "piso": "sobreático"
+        },
+        "codigo_postal": "49006",
+        "municipio": "Treviana",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Carretera Encinas, nº 148, 8º, B",
+      "direccion": {
+        "texto": "Carretera Encinas, nº 148, 8º, B",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Encinas",
+        "numero": 148,
+        "componentes": {
+          "piso": "8º",
+          "puerta": "B"
+        },
+        "codigo_postal": "42164",
+        "municipio": "Almarza",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Ronda Virgen de Covadonga 28",
+      "direccion": {
+        "texto": "Ronda Virgen de Covadonga 28",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Virgen de Covadonga",
+        "numero": 28,
+        "componentes": {
+          "piso": "planta segunda",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "03819",
+        "municipio": "Salar",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Gondomar, con domicilio en Jardín Veintiocho de Febrero, nº 107, planta baja, centro",
+      "direccion": {
+        "texto": "Jardín Veintiocho de Febrero, nº 107, planta baja, centro",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Veintiocho de Febrero",
+        "numero": 107,
+        "componentes": {
+          "piso": "planta baja",
+          "puerta": "centro"
+        },
+        "codigo_postal": "36388",
+        "municipio": "Gondomar",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Camino de Francia, número 34, de Castilléjar",
+      "direccion": {
+        "texto": "Camino de Francia, número 34, de Castilléjar",
+        "tipo_via": "Camino",
+        "nombre_calle": "de Francia",
+        "numero": 34,
+        "componentes": {},
+        "codigo_postal": "18818",
+        "municipio": "Castilléjar",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Gta. Casals 75, 8º",
+      "direccion": {
+        "texto": "Gta. Casals 75, 8º",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Casals",
+        "numero": 75,
+        "componentes": {
+          "piso": "8º"
+        },
+        "codigo_postal": "17210",
+        "municipio": "Palafrugell",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "residente en Vía San Pablo, número 10, bloque 4, bajo, A, de Orellana de la Sierra",
+      "direccion": {
+        "texto": "Vía San Pablo, número 10, bloque 4, bajo, A, de Orellana de la Sierra",
+        "tipo_via": "Vía",
+        "nombre_calle": "San Pablo",
+        "numero": 10,
+        "componentes": {
+          "bloque": "4",
+          "piso": "bajo",
+          "puerta": "A"
+        },
+        "codigo_postal": "38942",
+        "municipio": "Orellana de la Sierra",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Calle Estrecha, 146, 2º, E, 08026 Barcelona",
+      "direccion": {
+        "texto": "Calle Estrecha, 146, 2º, E, 08026 Barcelona",
+        "tipo_via": "Calle",
+        "nombre_calle": "Estrecha",
+        "numero": 146,
+        "componentes": {
+          "piso": "2º",
+          "puerta": "E"
+        },
+        "codigo_postal": "08026",
+        "municipio": "Barcelona",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Ronda Real, número 92, 10º, exterior, de Baélls",
+      "direccion": {
+        "texto": "Ronda Real, número 92, 10º, exterior, de Baélls",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Real",
+        "numero": 92,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "exterior"
+        },
+        "codigo_postal": "22569",
+        "municipio": "Baélls",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Paseo Valle-Inclán, número 43, de Benitachell/Poble Nou de Benitatxell, el",
+      "direccion": {
+        "texto": "Paseo Valle-Inclán, número 43, de Benitachell/Poble Nou de Benitatxell, el",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Valle-Inclán",
+        "numero": 43,
+        "componentes": {},
+        "codigo_postal": "03726",
+        "municipio": "Benitachell/Poble Nou de Benitatxell, el",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Parque del Sol, 150, bloque E, 7º, C, 02999 Ayna",
+      "direccion": {
+        "texto": "Parque del Sol, 150, bloque E, 7º, C, 02999 Ayna",
+        "tipo_via": "Parque",
+        "nombre_calle": "del Sol",
+        "numero": 150,
+        "componentes": {
+          "bloque": "E",
+          "piso": "7º",
+          "puerta": "C"
+        },
+        "codigo_postal": "02999",
+        "municipio": "Ayna",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Leioa, con domicilio en Costanilla Clarín 77, bloque D-5º",
+      "direccion": {
+        "texto": "Costanilla Clarín 77, bloque D-5º",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Clarín",
+        "numero": 77,
+        "componentes": {
+          "bloque": "D",
+          "piso": "5º",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "48940",
+        "municipio": "Leioa",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en PQ San Roque, 1, 32525 Boborás",
+      "direccion": {
+        "texto": "PQ San Roque, 1, 32525 Boborás",
+        "tipo_via": "Parque",
+        "nombre_calle": "San Roque",
+        "numero": 1,
+        "componentes": {},
+        "codigo_postal": "32525",
+        "municipio": "Boborás",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Plaza Virgen de Fátima, nº 119, escalera A, sobreático, centro",
+      "direccion": {
+        "texto": "Plaza Virgen de Fátima, nº 119, escalera A, sobreático, centro",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Virgen de Fátima",
+        "numero": 119,
+        "componentes": {
+          "escalera": "A",
+          "piso": "sobreático",
+          "puerta": "centro"
+        },
+        "codigo_postal": "48006",
+        "municipio": "Bilbao",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Tiedra, con domicilio en Avenida San Luis, 94, 10º, 47870 Tiedra",
+      "direccion": {
+        "texto": "Avenida San Luis, 94, 10º, 47870 Tiedra",
+        "tipo_via": "Avenida",
+        "nombre_calle": "San Luis",
+        "numero": 94,
+        "componentes": {
+          "piso": "10º"
+        },
+        "codigo_postal": "47870",
+        "municipio": "Tiedra",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en V. Tilos 124, 4º-derecha",
+      "direccion": {
+        "texto": "V. Tilos 124, 4º-derecha",
+        "tipo_via": "Vía",
+        "nombre_calle": "Tilos",
+        "numero": 124,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "07590",
+        "municipio": "Capdepera",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "residente en Bulevar Amapolas, 103, 10º, derecha, 43536 Cangas del Narcea",
+      "direccion": {
+        "texto": "Bulevar Amapolas, 103, 10º, derecha, 43536 Cangas del Narcea",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Amapolas",
+        "numero": 103,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "43536",
+        "municipio": "Cangas del Narcea",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Carolina, La, con domicilio en Plaza Virgen de los Desamparados, nº 115, bloque 5, 4º, 3ª",
+      "direccion": {
+        "texto": "Plaza Virgen de los Desamparados, nº 115, bloque 5, 4º, 3ª",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Virgen de los Desamparados",
+        "numero": 115,
+        "componentes": {
+          "bloque": "5",
+          "piso": "4º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "16128",
+        "municipio": "Carolina, La",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Blvr. Rosalía de Castro 57",
+      "direccion": {
+        "texto": "Blvr. Rosalía de Castro 57",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Rosalía de Castro",
+        "numero": 57,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "23485",
+        "municipio": "Cazorla",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Plaza del Ayuntamiento, 139, 45443 Andilla",
+      "direccion": {
+        "texto": "Plaza del Ayuntamiento, 139, 45443 Andilla",
+        "tipo_via": "Plaza",
+        "nombre_calle": "del Ayuntamiento",
+        "numero": 139,
+        "componentes": {},
+        "codigo_postal": "45443",
+        "municipio": "Andilla",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Callejón San Miguel, nº 78, escalera 2, bajo, B",
+      "direccion": {
+        "texto": "Callejón San Miguel, nº 78, escalera 2, bajo, B",
+        "tipo_via": "Callejón",
+        "nombre_calle": "San Miguel",
+        "numero": 78,
+        "componentes": {
+          "escalera": "2",
+          "piso": "bajo",
+          "puerta": "B"
+        },
+        "codigo_postal": "08224",
+        "municipio": "Terrassa",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Polígono Picasso 18",
+      "direccion": {
+        "texto": "Polígono Picasso 18",
+        "tipo_via": "Polígono",
+        "nombre_calle": "Picasso",
+        "numero": 18,
+        "componentes": {},
+        "codigo_postal": "05309",
+        "municipio": "Rivilla de Barajas",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Camino Machado 35, sobreático",
+      "direccion": {
+        "texto": "Camino Machado 35, sobreático",
+        "tipo_via": "Camino",
+        "nombre_calle": "Machado",
+        "numero": 35,
+        "componentes": {
+          "piso": "sobreático"
+        },
+        "codigo_postal": "45109",
+        "municipio": "Orgaz",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en PD San Isidro 112",
+      "direccion": {
+        "texto": "PD San Isidro 112",
+        "tipo_via": "Partida",
+        "nombre_calle": "San Isidro",
+        "numero": 112,
+        "componentes": {},
+        "codigo_postal": "36460",
+        "municipio": "Salceda de Caselas",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en UR del Castillo 35, sobreático",
+      "direccion": {
+        "texto": "UR del Castillo 35, sobreático",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "del Castillo",
+        "numero": 35,
+        "componentes": {
+          "piso": "sobreático"
+        },
+        "codigo_postal": "48650",
+        "municipio": "Tala, La",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Cmno. Albéniz, número 36, de Férez",
+      "direccion": {
+        "texto": "Cmno. Albéniz, número 36, de Férez",
+        "tipo_via": "Camino",
+        "nombre_calle": "Albéniz",
+        "numero": 36,
+        "componentes": {},
+        "codigo_postal": "02436",
+        "municipio": "Férez",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "residente en Jardín Felipe II, número 9, 3º, C, de Villafranca del Bierzo",
+      "direccion": {
+        "texto": "Jardín Felipe II, número 9, 3º, C, de Villafranca del Bierzo",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Felipe II",
+        "numero": 9,
+        "componentes": {
+          "piso": "3º",
+          "puerta": "C"
+        },
+        "codigo_postal": "24512",
+        "municipio": "Villafranca del Bierzo",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Pº del Convento 57",
+      "direccion": {
+        "texto": "Pº del Convento 57",
+        "tipo_via": "Paseo",
+        "nombre_calle": "del Convento",
+        "numero": 57,
+        "componentes": {},
+        "codigo_postal": "49798",
+        "municipio": "Parrilla, La",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Travesía San Vicente 124",
+      "direccion": {
+        "texto": "Travesía San Vicente 124",
+        "tipo_via": "Travesía",
+        "nombre_calle": "San Vicente",
+        "numero": 124,
+        "componentes": {},
+        "codigo_postal": "26573",
+        "municipio": "Rascafría",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Firgas, con domicilio en Vía del Convento 119",
+      "direccion": {
+        "texto": "Vía del Convento 119",
+        "tipo_via": "Vía",
+        "nombre_calle": "del Convento",
+        "numero": 119,
+        "componentes": {},
+        "codigo_postal": "35435",
+        "municipio": "Firgas",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Paseo Tintoreros, 128, planta primera, interior, 02071 Albacete",
+      "direccion": {
+        "texto": "Paseo Tintoreros, 128, planta primera, interior, 02071 Albacete",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Tintoreros",
+        "numero": 128,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "interior"
+        },
+        "codigo_postal": "02071",
+        "municipio": "Albacete",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Urb. Curtidores 144",
+      "direccion": {
+        "texto": "Urb. Curtidores 144",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Curtidores",
+        "numero": 144,
+        "componentes": {},
+        "codigo_postal": "06770",
+        "municipio": "Casas de Don Pedro",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en CO Primera 133",
+      "direccion": {
+        "texto": "CO Primera 133",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Primera",
+        "numero": 133,
+        "componentes": {
+          "bloque": "C",
+          "escalera": "D",
+          "piso": "planta baja"
+        },
+        "codigo_postal": "05153",
+        "municipio": "Malpartida de Corneja",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Carretera Virgen de Covadonga 63",
+      "direccion": {
+        "texto": "Carretera Virgen de Covadonga 63",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Virgen de Covadonga",
+        "numero": 63,
+        "componentes": {},
+        "codigo_postal": "33012",
+        "municipio": "Oviedo",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Costanilla Sederos 96",
+      "direccion": {
+        "texto": "Costanilla Sederos 96",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Sederos",
+        "numero": 96,
+        "componentes": {
+          "bloque": "A",
+          "escalera": "derecha",
+          "piso": "10º"
+        },
+        "codigo_postal": "16101",
+        "municipio": "Yébenes, Los",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Partida Isaac Peral, número 149, planta segunda, 1ª, de Canillas de Esgueva",
+      "direccion": {
+        "texto": "Partida Isaac Peral, número 149, planta segunda, 1ª, de Canillas de Esgueva",
+        "tipo_via": "Partida",
+        "nombre_calle": "Isaac Peral",
+        "numero": 149,
+        "componentes": {
+          "piso": "planta segunda",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "47185",
+        "municipio": "Canillas de Esgueva",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Avenida Virgen del Carmen, número 24, planta primera, de Medina de Pomar",
+      "direccion": {
+        "texto": "Avenida Virgen del Carmen, número 24, planta primera, de Medina de Pomar",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Virgen del Carmen",
+        "numero": 24,
+        "componentes": {
+          "piso": "planta primera"
+        },
+        "codigo_postal": "09500",
+        "municipio": "Medina de Pomar",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Cost. Vicente Ferrer, nº 92, 6º, derecha",
+      "direccion": {
+        "texto": "Cost. Vicente Ferrer, nº 92, 6º, derecha",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Vicente Ferrer",
+        "numero": 92,
+        "componentes": {
+          "piso": "6º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "14932",
+        "municipio": "Pobra de Trives, A",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Ogassa, con residencia en Avenida Caldereros 134",
+      "direccion": {
+        "texto": "Avenida Caldereros 134",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Caldereros",
+        "numero": 134,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "17861",
+        "municipio": "Ogassa",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en PZ Clarín 96",
+      "direccion": {
+        "texto": "PZ Clarín 96",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Clarín",
+        "numero": 96,
+        "componentes": {},
+        "codigo_postal": "15888",
+        "municipio": "Oroso",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Costanilla Isabel la Católica, nº 128, planta primera, dcha.",
+      "direccion": {
+        "texto": "Costanilla Isabel la Católica, nº 128, planta primera, dcha.",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Isabel la Católica",
+        "numero": 128,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "18400",
+        "municipio": "Órgiva",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Travesía Ignacio de Loyola 17",
+      "direccion": {
+        "texto": "Travesía Ignacio de Loyola 17",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Ignacio de Loyola",
+        "numero": 17,
+        "componentes": {},
+        "codigo_postal": "27690",
+        "municipio": "Sarria",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Parque Falla, 50, bloque 2, escalera C, 10º, 01289 Hinojales",
+      "direccion": {
+        "texto": "Parque Falla, 50, bloque 2, escalera C, 10º, 01289 Hinojales",
+        "tipo_via": "Parque",
+        "nombre_calle": "Falla",
+        "numero": 50,
+        "componentes": {
+          "bloque": "2",
+          "escalera": "C",
+          "piso": "10º"
+        },
+        "codigo_postal": "01289",
+        "municipio": "Hinojales",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Alba de Cerrato, con domicilio en Vía Rodrigo 100, planta baja-frente",
+      "direccion": {
+        "texto": "Vía Rodrigo 100, planta baja-frente",
+        "tipo_via": "Vía",
+        "nombre_calle": "Rodrigo",
+        "numero": 100,
+        "componentes": {
+          "piso": "planta baja",
+          "puerta": "frente"
+        },
+        "codigo_postal": "32359",
+        "municipio": "Alba de Cerrato",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Callejón Fernando el Católico 93",
+      "direccion": {
+        "texto": "Callejón Fernando el Católico 93",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Fernando el Católico",
+        "numero": 93,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "33163",
+        "municipio": "Morcín",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "natural de Gimenells i el Pla de la Font, con residencia en Jardín Hernán Cortés 108",
+      "direccion": {
+        "texto": "Jardín Hernán Cortés 108",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Hernán Cortés",
+        "numero": 108,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "F"
+        },
+        "codigo_postal": "25114",
+        "municipio": "Gimenells i el Pla de la Font",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Mont-roig del Camp, con domicilio en Plaza Curtidores, nº 6, bloque A, planta baja, izquierda",
+      "direccion": {
+        "texto": "Plaza Curtidores, nº 6, bloque A, planta baja, izquierda",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Curtidores",
+        "numero": 6,
+        "componentes": {
+          "bloque": "A",
+          "piso": "planta baja",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "43300",
+        "municipio": "Mont-roig del Camp",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Bulevar Severo Ochoa, 13, bloque D, 9º, 37439 San Cristóbal de la Cuesta",
+      "direccion": {
+        "texto": "Bulevar Severo Ochoa, 13, bloque D, 9º, 37439 San Cristóbal de la Cuesta",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Severo Ochoa",
+        "numero": 13,
+        "componentes": {
+          "bloque": "D",
+          "piso": "9º"
+        },
+        "codigo_postal": "37439",
+        "municipio": "San Cristóbal de la Cuesta",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Llorenç del Penedès, con domicilio en Parque Rodrigo 36, escalera 3-principal",
+      "direccion": {
+        "texto": "Parque Rodrigo 36, escalera 3-principal",
+        "tipo_via": "Parque",
+        "nombre_calle": "Rodrigo",
+        "numero": 36,
+        "componentes": {
+          "escalera": "3",
+          "piso": "principal",
+          "puerta": "frente"
+        },
+        "codigo_postal": "43712",
+        "municipio": "Llorenç del Penedès",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "residente en PJ Lirios 119, sobreático-E",
+      "direccion": {
+        "texto": "PJ Lirios 119, sobreático-E",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "Lirios",
+        "numero": 119,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "E"
+        },
+        "codigo_postal": "12303",
+        "municipio": "Cava",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "residente en Trv. Clarín, número 137, bloque D, 2º, 2ª, de Rozas de Madrid, Las",
+      "direccion": {
+        "texto": "Trv. Clarín, número 137, bloque D, 2º, 2ª, de Rozas de Madrid, Las",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Clarín",
+        "numero": 137,
+        "componentes": {
+          "bloque": "D",
+          "piso": "2º",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "28290",
+        "municipio": "Rozas de Madrid, Las",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Jardín San Pedro, 28, 50638 Cabañas de Ebro",
+      "direccion": {
+        "texto": "Jardín San Pedro, 28, 50638 Cabañas de Ebro",
+        "tipo_via": "Jardín",
+        "nombre_calle": "San Pedro",
+        "numero": 28,
+        "componentes": {},
+        "codigo_postal": "50638",
+        "municipio": "Cabañas de Ebro",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Jardín San Ignacio 3",
+      "direccion": {
+        "texto": "Jardín San Ignacio 3",
+        "tipo_via": "Jardín",
+        "nombre_calle": "San Ignacio",
+        "numero": 3,
+        "componentes": {
+          "bloque": "E",
+          "piso": "principal",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "44303",
+        "municipio": "Almodóvar del Río",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "establecido en AV Cipreses, número 65, escalera derecha, entresuelo, C, de Busquístar",
+      "direccion": {
+        "texto": "AV Cipreses, número 65, escalera derecha, entresuelo, C, de Busquístar",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Cipreses",
+        "numero": 65,
+        "componentes": {
+          "escalera": "derecha",
+          "piso": "entresuelo",
+          "puerta": "C"
+        },
+        "codigo_postal": "18416",
+        "municipio": "Busquístar",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Bulevar Santa Clara 126, escalera B-planta baja",
+      "direccion": {
+        "texto": "Bulevar Santa Clara 126, escalera B-planta baja",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Santa Clara",
+        "numero": 126,
+        "componentes": {
+          "escalera": "B",
+          "piso": "planta baja",
+          "puerta": "F"
+        },
+        "codigo_postal": "24560",
+        "municipio": "Toral de los Vados",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Ronda San Juan, nº 118",
+      "direccion": {
+        "texto": "Ronda San Juan, nº 118",
+        "tipo_via": "Ronda",
+        "nombre_calle": "San Juan",
+        "numero": 118,
+        "componentes": {},
+        "codigo_postal": "28804",
+        "municipio": "Friera de Valverde",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Calle Valle-Inclán, número 21, de Catllar, El",
+      "direccion": {
+        "texto": "Calle Valle-Inclán, número 21, de Catllar, El",
+        "tipo_via": "Calle",
+        "nombre_calle": "Valle-Inclán",
+        "numero": 21,
+        "componentes": {},
+        "codigo_postal": "49274",
+        "municipio": "Catllar, El",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Carretera Corta, número 35, escalera 2, bajo, izda., de Castrelo do Val",
+      "direccion": {
+        "texto": "Carretera Corta, número 35, escalera 2, bajo, izda., de Castrelo do Val",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Corta",
+        "numero": 35,
+        "componentes": {
+          "escalera": "2",
+          "piso": "bajo",
+          "puerta": "izda."
+        },
+        "codigo_postal": "32624",
+        "municipio": "Castrelo do Val",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "natural de Guía de Isora, con residencia en Paseo Vicente Ferrer, 24, bloque 1, escalera 3, 4º, C, 38687 Guía de Isora",
+      "direccion": {
+        "texto": "Paseo Vicente Ferrer, 24, bloque 1, escalera 3, 4º, C, 38687 Guía de Isora",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Vicente Ferrer",
+        "numero": 24,
+        "componentes": {
+          "bloque": "1",
+          "escalera": "3",
+          "piso": "4º",
+          "puerta": "C"
+        },
+        "codigo_postal": "38687",
+        "municipio": "Guía de Isora",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Parque Sur, número 91, bloque 3, principal, A, de Valenzuela de Calatrava",
+      "direccion": {
+        "texto": "Parque Sur, número 91, bloque 3, principal, A, de Valenzuela de Calatrava",
+        "tipo_via": "Parque",
+        "nombre_calle": "Sur",
+        "numero": 91,
+        "componentes": {
+          "bloque": "3",
+          "piso": "principal",
+          "puerta": "A"
+        },
+        "codigo_postal": "47280",
+        "municipio": "Valenzuela de Calatrava",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "residente en Urbanización Unamuno 28, sobreático-frente",
+      "direccion": {
+        "texto": "Urbanización Unamuno 28, sobreático-frente",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Unamuno",
+        "numero": 28,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "frente"
+        },
+        "codigo_postal": "34563",
+        "municipio": "Velilla de Cinca",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Pza. El Greco 100",
+      "direccion": {
+        "texto": "Pza. El Greco 100",
+        "tipo_via": "Plaza",
+        "nombre_calle": "El Greco",
+        "numero": 100,
+        "componentes": {},
+        "codigo_postal": "08730",
+        "municipio": "Santa Margarida i els Monjos",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Barrio Severo Ochoa 115",
+      "direccion": {
+        "texto": "Barrio Severo Ochoa 115",
+        "tipo_via": "Barrio",
+        "nombre_calle": "Severo Ochoa",
+        "numero": 115,
+        "componentes": {
+          "escalera": "1",
+          "piso": "bajo",
+          "puerta": "C"
+        },
+        "codigo_postal": "32318",
+        "municipio": "Barco de Valdeorras, O",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Urda, con domicilio en Pasaje Olmos, 126, bloque 1, 2º, 45480 Urda",
+      "direccion": {
+        "texto": "Pasaje Olmos, 126, bloque 1, 2º, 45480 Urda",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "Olmos",
+        "numero": 126,
+        "componentes": {
+          "bloque": "1",
+          "piso": "2º"
+        },
+        "codigo_postal": "45480",
+        "municipio": "Urda",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Cjón. de España 132",
+      "direccion": {
+        "texto": "Cjón. de España 132",
+        "tipo_via": "Callejón",
+        "nombre_calle": "de España",
+        "numero": 132,
+        "componentes": {},
+        "codigo_postal": "37256",
+        "municipio": "Milano, El",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Plaza Clarín 30, ático-2ª",
+      "direccion": {
+        "texto": "Plaza Clarín 30, ático-2ª",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Clarín",
+        "numero": 30,
+        "componentes": {
+          "piso": "ático",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "32704",
+        "municipio": "Baños de Molgas",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Paseo Santa María, 67, planta segunda, 32486 Quintanilla de Urz",
+      "direccion": {
+        "texto": "Paseo Santa María, 67, planta segunda, 32486 Quintanilla de Urz",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Santa María",
+        "numero": 67,
+        "componentes": {
+          "piso": "planta segunda"
+        },
+        "codigo_postal": "32486",
+        "municipio": "Quintanilla de Urz",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Callejón de América 120",
+      "direccion": {
+        "texto": "Callejón de América 120",
+        "tipo_via": "Callejón",
+        "nombre_calle": "de América",
+        "numero": 120,
+        "componentes": {
+          "piso": "9º",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "15240",
+        "municipio": "Muros",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Parque Ortega y Gasset, nº 77, planta primera, A",
+      "direccion": {
+        "texto": "Parque Ortega y Gasset, nº 77, planta primera, A",
+        "tipo_via": "Parque",
+        "nombre_calle": "Ortega y Gasset",
+        "numero": 77,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "A"
+        },
+        "codigo_postal": "15286",
+        "municipio": "Outes",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "residente en Parque Castaños, 94, 33346 Ribadesella",
+      "direccion": {
+        "texto": "Parque Castaños, 94, 33346 Ribadesella",
+        "tipo_via": "Parque",
+        "nombre_calle": "Castaños",
+        "numero": 94,
+        "componentes": {},
+        "codigo_postal": "33346",
+        "municipio": "Ribadesella",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Cmno. de la Libertad, número 7, 4º, F, de Carrocera",
+      "direccion": {
+        "texto": "Cmno. de la Libertad, número 7, 4º, F, de Carrocera",
+        "tipo_via": "Camino",
+        "nombre_calle": "de la Libertad",
+        "numero": 7,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "F"
+        },
+        "codigo_postal": "24123",
+        "municipio": "Carrocera",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Sant Martí de Riucorb, con domicilio en Calle de la Plaza, nº 102, bloque C, sobreático, dcha.",
+      "direccion": {
+        "texto": "Calle de la Plaza, nº 102, bloque C, sobreático, dcha.",
+        "tipo_via": "Calle",
+        "nombre_calle": "de la Plaza",
+        "numero": 102,
+        "componentes": {
+          "bloque": "C",
+          "piso": "sobreático",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "25267",
+        "municipio": "Sant Martí de Riucorb",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Calle Zuloaga, 133, 1º, centro, 30395 Cartagena",
+      "direccion": {
+        "texto": "Calle Zuloaga, 133, 1º, centro, 30395 Cartagena",
+        "tipo_via": "Calle",
+        "nombre_calle": "Zuloaga",
+        "numero": 133,
+        "componentes": {
+          "piso": "1º",
+          "puerta": "centro"
+        },
+        "codigo_postal": "30395",
+        "municipio": "Cartagena",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Montenegro de Cameros, con residencia en Ctra. Ignacio de Loyola 130, planta primera-1ª",
+      "direccion": {
+        "texto": "Ctra. Ignacio de Loyola 130, planta primera-1ª",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Ignacio de Loyola",
+        "numero": 130,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "42127",
+        "municipio": "Montenegro de Cameros",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "natural de Valdemoro-Sierra, con residencia en PG Baroja 133, 1º-ctro.",
+      "direccion": {
+        "texto": "PG Baroja 133, 1º-ctro.",
+        "tipo_via": "Polígono",
+        "nombre_calle": "Baroja",
+        "numero": 133,
+        "componentes": {
+          "piso": "1º",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "51957",
+        "municipio": "Valdemoro-Sierra",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Costanilla Tilos, nº 146, escalera izquierda, 10º, izda.",
+      "direccion": {
+        "texto": "Costanilla Tilos, nº 146, escalera izquierda, 10º, izda.",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Tilos",
+        "numero": 146,
+        "componentes": {
+          "escalera": "izquierda",
+          "piso": "10º",
+          "puerta": "izda."
+        },
+        "codigo_postal": "09258",
+        "municipio": "Valle de Oca",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Cjón. de la Plaza 127",
+      "direccion": {
+        "texto": "Cjón. de la Plaza 127",
+        "tipo_via": "Callejón",
+        "nombre_calle": "de la Plaza",
+        "numero": 127,
+        "componentes": {
+          "escalera": "A",
+          "piso": "1º",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "24110",
+        "municipio": "Villablino",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Armilla, con domicilio en Costanilla Bordadores, 75, 18100 Armilla",
+      "direccion": {
+        "texto": "Costanilla Bordadores, 75, 18100 Armilla",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Bordadores",
+        "numero": 75,
+        "componentes": {},
+        "codigo_postal": "18100",
+        "municipio": "Armilla",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en PS Naranjos, 38, 08870 Sitges",
+      "direccion": {
+        "texto": "PS Naranjos, 38, 08870 Sitges",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Naranjos",
+        "numero": 38,
+        "componentes": {},
+        "codigo_postal": "08870",
+        "municipio": "Sitges",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Pq. Tejedores 95",
+      "direccion": {
+        "texto": "Pq. Tejedores 95",
+        "tipo_via": "Parque",
+        "nombre_calle": "Tejedores",
+        "numero": 95,
+        "componentes": {
+          "piso": "2º",
+          "puerta": "centro"
+        },
+        "codigo_postal": "15592",
+        "municipio": "Ferrol",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Oñati, con domicilio en Glorieta Encarnación 70",
+      "direccion": {
+        "texto": "Glorieta Encarnación 70",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Encarnación",
+        "numero": 70,
+        "componentes": {},
+        "codigo_postal": "20567",
+        "municipio": "Oñati",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Ronda Virgen de Montserrat 128, bloque 1-5º",
+      "direccion": {
+        "texto": "Ronda Virgen de Montserrat 128, bloque 1-5º",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Virgen de Montserrat",
+        "numero": 128,
+        "componentes": {
+          "bloque": "1",
+          "piso": "5º",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "38650",
+        "municipio": "Arona",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Paseo Purificación 140, 7º-1ª",
+      "direccion": {
+        "texto": "Paseo Purificación 140, 7º-1ª",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Purificación",
+        "numero": 140,
+        "componentes": {
+          "piso": "7º",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "33206",
+        "municipio": "Gijón",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en PD Carniceros, nº 101, 9º, E",
+      "direccion": {
+        "texto": "PD Carniceros, nº 101, 9º, E",
+        "tipo_via": "Partida",
+        "nombre_calle": "Carniceros",
+        "numero": 101,
+        "componentes": {
+          "piso": "9º",
+          "puerta": "E"
+        },
+        "codigo_postal": "31243",
+        "municipio": "Barbarin",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Jdín. Corta, 89, 27639 Triacastela",
+      "direccion": {
+        "texto": "Jdín. Corta, 89, 27639 Triacastela",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Corta",
+        "numero": 89,
+        "componentes": {},
+        "codigo_postal": "27639",
+        "municipio": "Triacastela",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección CJ Primero de Mayo, nº 18, escalera izquierda, planta primera, centro",
+      "direccion": {
+        "texto": "CJ Primero de Mayo, nº 18, escalera izquierda, planta primera, centro",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Primero de Mayo",
+        "numero": 18,
+        "componentes": {
+          "escalera": "izquierda",
+          "piso": "planta primera",
+          "puerta": "centro"
+        },
+        "codigo_postal": "36310",
+        "municipio": "Vigo",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Glorieta de la Playa, nº 69, escalera 2, 2º, dcha.",
+      "direccion": {
+        "texto": "Glorieta de la Playa, nº 69, escalera 2, 2º, dcha.",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "de la Playa",
+        "numero": 69,
+        "componentes": {
+          "escalera": "2",
+          "piso": "2º",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "45121",
+        "municipio": "Menasalbas",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en CL Unamuno, número 98, principal, de Fuentidueña de Tajo",
+      "direccion": {
+        "texto": "CL Unamuno, número 98, principal, de Fuentidueña de Tajo",
+        "tipo_via": "Calle",
+        "nombre_calle": "Unamuno",
+        "numero": 98,
+        "componentes": {
+          "piso": "principal"
+        },
+        "codigo_postal": "41996",
+        "municipio": "Fuentidueña de Tajo",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Urb. Cerrajeros 139",
+      "direccion": {
+        "texto": "Urb. Cerrajeros 139",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Cerrajeros",
+        "numero": 139,
+        "componentes": {
+          "piso": "planta baja",
+          "puerta": "4ª"
+        },
+        "codigo_postal": "05514",
+        "municipio": "San Miguel de Corneja",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Bulevar San Pedro, 18, bloque C, escalera B, planta segunda, B, 06830 Zarza, La",
+      "direccion": {
+        "texto": "Bulevar San Pedro, 18, bloque C, escalera B, planta segunda, B, 06830 Zarza, La",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "San Pedro",
+        "numero": 18,
+        "componentes": {
+          "bloque": "C",
+          "escalera": "B",
+          "piso": "planta segunda",
+          "puerta": "B"
+        },
+        "codigo_postal": "06830",
+        "municipio": "Zarza, La",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Arona, con residencia en Barrio del Río 64",
+      "direccion": {
+        "texto": "Barrio del Río 64",
+        "tipo_via": "Barrio",
+        "nombre_calle": "del Río",
+        "numero": 64,
+        "componentes": {},
+        "codigo_postal": "38630",
+        "municipio": "Arona",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "natural de Pereruela, con residencia en CO de Portugal, 109, 49272 Pereruela",
+      "direccion": {
+        "texto": "CO de Portugal, 109, 49272 Pereruela",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "de Portugal",
+        "numero": 109,
+        "componentes": {},
+        "codigo_postal": "49272",
+        "municipio": "Pereruela",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Barrio Dalí, número 53, 8º, F, de Harana/Valle de Arana",
+      "direccion": {
+        "texto": "Barrio Dalí, número 53, 8º, F, de Harana/Valle de Arana",
+        "tipo_via": "Barrio",
+        "nombre_calle": "Dalí",
+        "numero": 53,
+        "componentes": {
+          "piso": "8º",
+          "puerta": "F"
+        },
+        "codigo_postal": "51736",
+        "municipio": "Harana/Valle de Arana",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Calle Grande 18",
+      "direccion": {
+        "texto": "Calle Grande 18",
+        "tipo_via": "Calle",
+        "nombre_calle": "Grande",
+        "numero": 18,
+        "componentes": {
+          "piso": "5º",
+          "puerta": "E"
+        },
+        "codigo_postal": "32849",
+        "municipio": "Bande",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Parque del Trabajo 109",
+      "direccion": {
+        "texto": "Parque del Trabajo 109",
+        "tipo_via": "Parque",
+        "nombre_calle": "del Trabajo",
+        "numero": 109,
+        "componentes": {
+          "piso": "1º",
+          "puerta": "A"
+        },
+        "codigo_postal": "22534",
+        "municipio": "Albalate de Cinca",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Callejón Francisco de Asís, 105, 50320 Frasno, El",
+      "direccion": {
+        "texto": "Callejón Francisco de Asís, 105, 50320 Frasno, El",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Francisco de Asís",
+        "numero": 105,
+        "componentes": {},
+        "codigo_postal": "50320",
+        "municipio": "Frasno, El",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Polígono San Sebastián 44",
+      "direccion": {
+        "texto": "Polígono San Sebastián 44",
+        "tipo_via": "Polígono",
+        "nombre_calle": "San Sebastián",
+        "numero": 44,
+        "componentes": {},
+        "codigo_postal": "13415",
+        "municipio": "Almodóvar del Campo",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Gta. Virgen de Fátima, nº 116",
+      "direccion": {
+        "texto": "Gta. Virgen de Fátima, nº 116",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Virgen de Fátima",
+        "numero": 116,
+        "componentes": {},
+        "codigo_postal": "24111",
+        "municipio": "Villablino",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Costanilla San Miguel 67",
+      "direccion": {
+        "texto": "Costanilla San Miguel 67",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "San Miguel",
+        "numero": 67,
+        "componentes": {
+          "bloque": "C",
+          "escalera": "2",
+          "piso": "8º",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "33530",
+        "municipio": "Piloña",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Ptda. de la Torre 87, planta primera-3ª",
+      "direccion": {
+        "texto": "Ptda. de la Torre 87, planta primera-3ª",
+        "tipo_via": "Partida",
+        "nombre_calle": "de la Torre",
+        "numero": 87,
+        "componentes": {
+          "piso": "planta primera",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "33991",
+        "municipio": "Laviana",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Larva, con domicilio en Calle Tintoreros, número 5, escalera derecha, principal, exterior, de Larva",
+      "direccion": {
+        "texto": "Calle Tintoreros, número 5, escalera derecha, principal, exterior, de Larva",
+        "tipo_via": "Calle",
+        "nombre_calle": "Tintoreros",
+        "numero": 5,
+        "componentes": {
+          "escalera": "derecha",
+          "piso": "principal",
+          "puerta": "exterior"
+        },
+        "codigo_postal": "45779",
+        "municipio": "Larva",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Blvr. San Fernando, 133, escalera D, ático, 37181 Calvarrasa de Abajo",
+      "direccion": {
+        "texto": "Blvr. San Fernando, 133, escalera D, ático, 37181 Calvarrasa de Abajo",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "San Fernando",
+        "numero": 133,
+        "componentes": {
+          "escalera": "D",
+          "piso": "ático"
+        },
+        "codigo_postal": "37181",
+        "municipio": "Calvarrasa de Abajo",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Paseo del Río, número 95, bloque 3, escalera 1, 8º, D, de Villanueva de la Condesa",
+      "direccion": {
+        "texto": "Paseo del Río, número 95, bloque 3, escalera 1, 8º, D, de Villanueva de la Condesa",
+        "tipo_via": "Paseo",
+        "nombre_calle": "del Río",
+        "numero": 95,
+        "componentes": {
+          "bloque": "3",
+          "escalera": "1",
+          "piso": "8º",
+          "puerta": "D"
+        },
+        "codigo_postal": "47608",
+        "municipio": "Villanueva de la Condesa",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Callejón del Mercado, 17, bloque B, 8º, frente, 46594 Alfara de la Baronia",
+      "direccion": {
+        "texto": "Callejón del Mercado, 17, bloque B, 8º, frente, 46594 Alfara de la Baronia",
+        "tipo_via": "Callejón",
+        "nombre_calle": "del Mercado",
+        "numero": 17,
+        "componentes": {
+          "bloque": "B",
+          "piso": "8º",
+          "puerta": "frente"
+        },
+        "codigo_postal": "46594",
+        "municipio": "Alfara de la Baronia",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Lloret de Vistalegre, con domicilio en Pasaje Olmos, número 7, sobreático, 2ª, de Lloret de Vistalegre",
+      "direccion": {
+        "texto": "Pasaje Olmos, número 7, sobreático, 2ª, de Lloret de Vistalegre",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "Olmos",
+        "numero": 7,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "07518",
+        "municipio": "Lloret de Vistalegre",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Ronda Santa Bárbara, número 117, bloque D, ático, de Piera",
+      "direccion": {
+        "texto": "Ronda Santa Bárbara, número 117, bloque D, ático, de Piera",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Santa Bárbara",
+        "numero": 117,
+        "componentes": {
+          "bloque": "D",
+          "piso": "ático"
+        },
+        "codigo_postal": "08101",
+        "municipio": "Piera",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Carretera Real 108",
+      "direccion": {
+        "texto": "Carretera Real 108",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Real",
+        "numero": 108,
+        "componentes": {
+          "escalera": "2",
+          "piso": "planta segunda"
+        },
+        "codigo_postal": "27651",
+        "municipio": "Navia de Suarna",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "residente en PD Virgen de Montserrat, 32, 6º, 2ª, 44557 Crivillén",
+      "direccion": {
+        "texto": "PD Virgen de Montserrat, 32, 6º, 2ª, 44557 Crivillén",
+        "tipo_via": "Partida",
+        "nombre_calle": "Virgen de Montserrat",
+        "numero": 32,
+        "componentes": {
+          "piso": "6º",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "44557",
+        "municipio": "Crivillén",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Paseo de los Jardines, 140, 24276 Santa María de Ordás",
+      "direccion": {
+        "texto": "Paseo de los Jardines, 140, 24276 Santa María de Ordás",
+        "tipo_via": "Paseo",
+        "nombre_calle": "de los Jardines",
+        "numero": 140,
+        "componentes": {},
+        "codigo_postal": "24276",
+        "municipio": "Santa María de Ordás",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en V. de España 39",
+      "direccion": {
+        "texto": "V. de España 39",
+        "tipo_via": "Vía",
+        "nombre_calle": "de España",
+        "numero": 39,
+        "componentes": {
+          "bloque": "2",
+          "piso": "sobreático",
+          "puerta": "interior"
+        },
+        "codigo_postal": "19222",
+        "municipio": "Tamajón",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Camino Claveles 148",
+      "direccion": {
+        "texto": "Camino Claveles 148",
+        "tipo_via": "Camino",
+        "nombre_calle": "Claveles",
+        "numero": 148,
+        "componentes": {},
+        "codigo_postal": "49326",
+        "municipio": "Rionegro del Puente",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Basconcillos del Tozo, con domicilio en Jardín Santa María 92",
+      "direccion": {
+        "texto": "Jardín Santa María 92",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Santa María",
+        "numero": 92,
+        "componentes": {
+          "bloque": "A",
+          "piso": "2º",
+          "puerta": "B"
+        },
+        "codigo_postal": "09125",
+        "municipio": "Basconcillos del Tozo",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "residente en TR Real, 8, 31400 Sangüesa/Zangoza",
+      "direccion": {
+        "texto": "TR Real, 8, 31400 Sangüesa/Zangoza",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Real",
+        "numero": 8,
+        "componentes": {},
+        "codigo_postal": "31400",
+        "municipio": "Sangüesa/Zangoza",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Ronda Almendros 86",
+      "direccion": {
+        "texto": "Ronda Almendros 86",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Almendros",
+        "numero": 86,
+        "componentes": {
+          "piso": "3º",
+          "puerta": "frente"
+        },
+        "codigo_postal": "39100",
+        "municipio": "Santa Cruz de Bezana",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Pasaje Santa Lucía 120, escalera B-planta primera",
+      "direccion": {
+        "texto": "Pasaje Santa Lucía 120, escalera B-planta primera",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "Santa Lucía",
+        "numero": 120,
+        "componentes": {
+          "escalera": "B",
+          "piso": "planta primera"
+        },
+        "codigo_postal": "40036",
+        "municipio": "Carcelén",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "residente en Psje. Baja 50",
+      "direccion": {
+        "texto": "Psje. Baja 50",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "Baja",
+        "numero": 50,
+        "componentes": {
+          "escalera": "3",
+          "piso": "7º",
+          "puerta": "F"
+        },
+        "codigo_postal": "39311",
+        "municipio": "Cartes",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "natural de Buenamadre, con residencia en Callejón del Mercado 13",
+      "direccion": {
+        "texto": "Callejón del Mercado 13",
+        "tipo_via": "Callejón",
+        "nombre_calle": "del Mercado",
+        "numero": 13,
+        "componentes": {
+          "bloque": "E",
+          "piso": "8º",
+          "puerta": "F"
+        },
+        "codigo_postal": "27786",
+        "municipio": "Buenamadre",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "residente en Avenida Central 118",
+      "direccion": {
+        "texto": "Avenida Central 118",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Central",
+        "numero": 118,
+        "componentes": {},
+        "codigo_postal": "50695",
+        "municipio": "Biota",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Ronda San Nicolás 115, escalera izquierda-sobreático",
+      "direccion": {
+        "texto": "Ronda San Nicolás 115, escalera izquierda-sobreático",
+        "tipo_via": "Ronda",
+        "nombre_calle": "San Nicolás",
+        "numero": 115,
+        "componentes": {
+          "escalera": "izquierda",
+          "piso": "sobreático",
+          "puerta": "D"
+        },
+        "codigo_postal": "04425",
+        "municipio": "Miranda de Azán",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Galinduste, con domicilio en Jardín Limoneros, número 16, de Galinduste",
+      "direccion": {
+        "texto": "Jardín Limoneros, número 16, de Galinduste",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Limoneros",
+        "numero": 16,
+        "componentes": {},
+        "codigo_postal": "37785",
+        "municipio": "Galinduste",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Calle Severo Ochoa 17, 5º-C",
+      "direccion": {
+        "texto": "Calle Severo Ochoa 17, 5º-C",
+        "tipo_via": "Calle",
+        "nombre_calle": "Severo Ochoa",
+        "numero": 17,
+        "componentes": {
+          "piso": "5º",
+          "puerta": "C"
+        },
+        "codigo_postal": "06950",
+        "municipio": "Arce/Artzi",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "natural de Córdoba, con residencia en Avenida Anunciación, nº 125, 8º, izda.",
+      "direccion": {
+        "texto": "Avenida Anunciación, nº 125, 8º, izda.",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Anunciación",
+        "numero": 125,
+        "componentes": {
+          "piso": "8º",
+          "puerta": "izda."
+        },
+        "codigo_postal": "14008",
+        "municipio": "Córdoba",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Travesía Machado 13",
+      "direccion": {
+        "texto": "Travesía Machado 13",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Machado",
+        "numero": 13,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "izda."
+        },
+        "codigo_postal": "45425",
+        "municipio": "Sant Climent Sescebes",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección V. Virgen del Pilar, 97, 36580 Vila de Cruces",
+      "direccion": {
+        "texto": "V. Virgen del Pilar, 97, 36580 Vila de Cruces",
+        "tipo_via": "Vía",
+        "nombre_calle": "Virgen del Pilar",
+        "numero": 97,
+        "componentes": {},
+        "codigo_postal": "36580",
+        "municipio": "Vila de Cruces",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Alcalá de Henares, con residencia en Camino Jovellanos 23",
+      "direccion": {
+        "texto": "Camino Jovellanos 23",
+        "tipo_via": "Camino",
+        "nombre_calle": "Jovellanos",
+        "numero": 23,
+        "componentes": {},
+        "codigo_postal": "28801",
+        "municipio": "Alcalá de Henares",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Partida Felipe II 111",
+      "direccion": {
+        "texto": "Partida Felipe II 111",
+        "tipo_via": "Partida",
+        "nombre_calle": "Felipe II",
+        "numero": 111,
+        "componentes": {},
+        "codigo_postal": "10180",
+        "municipio": "Valdefuentes",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en VI Virgen de Montserrat 93",
+      "direccion": {
+        "texto": "VI Virgen de Montserrat 93",
+        "tipo_via": "Vía",
+        "nombre_calle": "Virgen de Montserrat",
+        "numero": 93,
+        "componentes": {},
+        "codigo_postal": "27300",
+        "municipio": "Guitiriz",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Urbanización Pescaderos 6, escalera derecha-4º",
+      "direccion": {
+        "texto": "Urbanización Pescaderos 6, escalera derecha-4º",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Pescaderos",
+        "numero": 6,
+        "componentes": {
+          "escalera": "derecha",
+          "piso": "4º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "27579",
+        "municipio": "Antas de Ulla",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Páramo del Sil, con domicilio en Partida Purificación, número 31, de Páramo del Sil",
+      "direccion": {
+        "texto": "Partida Purificación, número 31, de Páramo del Sil",
+        "tipo_via": "Partida",
+        "nombre_calle": "Purificación",
+        "numero": 31,
+        "componentes": {},
+        "codigo_postal": "24478",
+        "municipio": "Páramo del Sil",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Travesía Robles 122",
+      "direccion": {
+        "texto": "Travesía Robles 122",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Robles",
+        "numero": 122,
+        "componentes": {
+          "piso": "planta segunda"
+        },
+        "codigo_postal": "27715",
+        "municipio": "Ribadeo",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "natural de Tarragona, con residencia en Ronda Santa Ana 89, bloque 1-1º",
+      "direccion": {
+        "texto": "Ronda Santa Ana 89, bloque 1-1º",
+        "tipo_via": "Ronda",
+        "nombre_calle": "Santa Ana",
+        "numero": 89,
+        "componentes": {
+          "bloque": "1",
+          "piso": "1º",
+          "puerta": "frente"
+        },
+        "codigo_postal": "43005",
+        "municipio": "Tarragona",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Polígono Albéniz, nº 104, entresuelo, A",
+      "direccion": {
+        "texto": "Polígono Albéniz, nº 104, entresuelo, A",
+        "tipo_via": "Polígono",
+        "nombre_calle": "Albéniz",
+        "numero": 104,
+        "componentes": {
+          "piso": "entresuelo",
+          "puerta": "A"
+        },
+        "codigo_postal": "45960",
+        "municipio": "Segura de la Sierra",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Navalvillar de Ibor, con residencia en Pol. Claveles 37, escalera 1-planta baja",
+      "direccion": {
+        "texto": "Pol. Claveles 37, escalera 1-planta baja",
+        "tipo_via": "Polígono",
+        "nombre_calle": "Claveles",
+        "numero": 37,
+        "componentes": {
+          "escalera": "1",
+          "piso": "planta baja",
+          "puerta": "4ª"
+        },
+        "codigo_postal": "42065",
+        "municipio": "Navalvillar de Ibor",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Carretera San Fernando 140",
+      "direccion": {
+        "texto": "Carretera San Fernando 140",
+        "tipo_via": "Carretera",
+        "nombre_calle": "San Fernando",
+        "numero": 140,
+        "componentes": {
+          "piso": "8º",
+          "puerta": "D"
+        },
+        "codigo_postal": "46314",
+        "municipio": "Fuenterrobles",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Bulevar Estrecha 83",
+      "direccion": {
+        "texto": "Bulevar Estrecha 83",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Estrecha",
+        "numero": 83,
+        "componentes": {
+          "escalera": "2",
+          "piso": "bajo"
+        },
+        "codigo_postal": "36911",
+        "municipio": "Marín",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Callejón Pardo Bazán 138, escalera D-ático",
+      "direccion": {
+        "texto": "Callejón Pardo Bazán 138, escalera D-ático",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Pardo Bazán",
+        "numero": 138,
+        "componentes": {
+          "escalera": "D",
+          "piso": "ático"
+        },
+        "codigo_postal": "37724",
+        "municipio": "Cerro, El",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "natural de San Martín de Montalbán, con residencia en Carretera Francisco de Borja, 24, 45165 San Martín de Montalbán",
+      "direccion": {
+        "texto": "Carretera Francisco de Borja, 24, 45165 San Martín de Montalbán",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Francisco de Borja",
+        "numero": 24,
+        "componentes": {},
+        "codigo_postal": "45165",
+        "municipio": "San Martín de Montalbán",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Carretera de la Democracia 79, entresuelo-dcha.",
+      "direccion": {
+        "texto": "Carretera de la Democracia 79, entresuelo-dcha.",
+        "tipo_via": "Carretera",
+        "nombre_calle": "de la Democracia",
+        "numero": 79,
+        "componentes": {
+          "piso": "entresuelo",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "18015",
+        "municipio": "Granada",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Jardín Seis de Diciembre, 107, 9º, 12192 Vilafamés",
+      "direccion": {
+        "texto": "Jardín Seis de Diciembre, 107, 9º, 12192 Vilafamés",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Seis de Diciembre",
+        "numero": 107,
+        "componentes": {
+          "piso": "9º"
+        },
+        "codigo_postal": "12192",
+        "municipio": "Vilafamés",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Costanilla de Portugal 6, planta segunda",
+      "direccion": {
+        "texto": "Costanilla de Portugal 6, planta segunda",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "de Portugal",
+        "numero": 6,
+        "componentes": {
+          "piso": "planta segunda"
+        },
+        "codigo_postal": "15560",
+        "municipio": "San Sadurniño",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Costanilla Juan de la Cruz 98",
+      "direccion": {
+        "texto": "Costanilla Juan de la Cruz 98",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "Juan de la Cruz",
+        "numero": 98,
+        "componentes": {},
+        "codigo_postal": "26325",
+        "municipio": "Cañas",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "residente en Partida de la Catedral, número 133, 9º, de Soriguera",
+      "direccion": {
+        "texto": "Partida de la Catedral, número 133, 9º, de Soriguera",
+        "tipo_via": "Partida",
+        "nombre_calle": "de la Catedral",
+        "numero": 133,
+        "componentes": {
+          "piso": "9º"
+        },
+        "codigo_postal": "25566",
+        "municipio": "Soriguera",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Glorieta Larga 60, escalera 1-8º",
+      "direccion": {
+        "texto": "Glorieta Larga 60, escalera 1-8º",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Larga",
+        "numero": 60,
+        "componentes": {
+          "escalera": "1",
+          "piso": "8º",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "22215",
+        "municipio": "Castelflorite",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Cehegín, con domicilio en Parque Falla, número 104, 4º, frente, de Cehegín",
+      "direccion": {
+        "texto": "Parque Falla, número 104, 4º, frente, de Cehegín",
+        "tipo_via": "Parque",
+        "nombre_calle": "Falla",
+        "numero": 104,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "frente"
+        },
+        "codigo_postal": "30430",
+        "municipio": "Cehegín",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en BO de la Fuente, 124, 9º, 3ª, 15707 Santiago de Compostela",
+      "direccion": {
+        "texto": "BO de la Fuente, 124, 9º, 3ª, 15707 Santiago de Compostela",
+        "tipo_via": "Barrio",
+        "nombre_calle": "de la Fuente",
+        "numero": 124,
+        "componentes": {
+          "piso": "9º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "15707",
+        "municipio": "Santiago de Compostela",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Sant Llorenç d'Hortons, con domicilio en Calle Limoneros, nº 34, bloque B, principal, ctro.",
+      "direccion": {
+        "texto": "Calle Limoneros, nº 34, bloque B, principal, ctro.",
+        "tipo_via": "Calle",
+        "nombre_calle": "Limoneros",
+        "numero": 34,
+        "componentes": {
+          "bloque": "B",
+          "piso": "principal",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "08791",
+        "municipio": "Sant Llorenç d'Hortons",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Camino Cipreses, 103, planta primera, 24412 Cabañas Raras",
+      "direccion": {
+        "texto": "Camino Cipreses, 103, planta primera, 24412 Cabañas Raras",
+        "tipo_via": "Camino",
+        "nombre_calle": "Cipreses",
+        "numero": 103,
+        "componentes": {
+          "piso": "planta primera"
+        },
+        "codigo_postal": "24412",
+        "municipio": "Cabañas Raras",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "residente en Partida Virgen de Montserrat 106, 1º-E",
+      "direccion": {
+        "texto": "Partida Virgen de Montserrat 106, 1º-E",
+        "tipo_via": "Partida",
+        "nombre_calle": "Virgen de Montserrat",
+        "numero": 106,
+        "componentes": {
+          "piso": "1º",
+          "puerta": "E"
+        },
+        "codigo_postal": "28110",
+        "municipio": "Algete",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Camino Vieja, número 101, 3º, de Fuente la Reina",
+      "direccion": {
+        "texto": "Camino Vieja, número 101, 3º, de Fuente la Reina",
+        "tipo_via": "Camino",
+        "nombre_calle": "Vieja",
+        "numero": 101,
+        "componentes": {
+          "piso": "3º"
+        },
+        "codigo_postal": "12428",
+        "municipio": "Fuente la Reina",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Avenida Seis de Diciembre 128, escalera 1-9º",
+      "direccion": {
+        "texto": "Avenida Seis de Diciembre 128, escalera 1-9º",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Seis de Diciembre",
+        "numero": 128,
+        "componentes": {
+          "escalera": "1",
+          "piso": "9º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "28231",
+        "municipio": "Rozas de Madrid, Las",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Polígono Hernán Cortés 60, escalera D-5º",
+      "direccion": {
+        "texto": "Polígono Hernán Cortés 60, escalera D-5º",
+        "tipo_via": "Polígono",
+        "nombre_calle": "Hernán Cortés",
+        "numero": 60,
+        "componentes": {
+          "escalera": "D",
+          "piso": "5º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "22591",
+        "municipio": "Candasnos",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Paseo San Luis, 13, sobreático, izda., 24194 Cordovilla",
+      "direccion": {
+        "texto": "Paseo San Luis, 13, sobreático, izda., 24194 Cordovilla",
+        "tipo_via": "Paseo",
+        "nombre_calle": "San Luis",
+        "numero": 13,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "izda."
+        },
+        "codigo_postal": "24194",
+        "municipio": "Cordovilla",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Camino Curtidores, nº 3, escalera 3, 10º, interior",
+      "direccion": {
+        "texto": "Camino Curtidores, nº 3, escalera 3, 10º, interior",
+        "tipo_via": "Camino",
+        "nombre_calle": "Curtidores",
+        "numero": 3,
+        "componentes": {
+          "escalera": "3",
+          "piso": "10º",
+          "puerta": "interior"
+        },
+        "codigo_postal": "27458",
+        "municipio": "Castellar de la Frontera",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Becerreá, con domicilio en Bulevar Vieja, número 60, de Becerreá",
+      "direccion": {
+        "texto": "Bulevar Vieja, número 60, de Becerreá",
+        "tipo_via": "Bulevar",
+        "nombre_calle": "Vieja",
+        "numero": 60,
+        "componentes": {},
+        "codigo_postal": "27647",
+        "municipio": "Becerreá",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Partida Santa Ana 108",
+      "direccion": {
+        "texto": "Partida Santa Ana 108",
+        "tipo_via": "Partida",
+        "nombre_calle": "Santa Ana",
+        "numero": 108,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "36684",
+        "municipio": "Estrada, A",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Rda. San Lorenzo, nº 74, 10º, frente",
+      "direccion": {
+        "texto": "Rda. San Lorenzo, nº 74, 10º, frente",
+        "tipo_via": "Ronda",
+        "nombre_calle": "San Lorenzo",
+        "numero": 74,
+        "componentes": {
+          "piso": "10º",
+          "puerta": "frente"
+        },
+        "codigo_postal": "12001",
+        "municipio": "Castellón de la Plana/Castelló de la Plana",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Vía Amapolas, nº 109",
+      "direccion": {
+        "texto": "Vía Amapolas, nº 109",
+        "tipo_via": "Vía",
+        "nombre_calle": "Amapolas",
+        "numero": 109,
+        "componentes": {},
+        "codigo_postal": "06412",
+        "municipio": "Don Benito",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Travesía Francisco de Borja 79",
+      "direccion": {
+        "texto": "Travesía Francisco de Borja 79",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Francisco de Borja",
+        "numero": 79,
+        "componentes": {
+          "piso": "5º",
+          "puerta": "B"
+        },
+        "codigo_postal": "42140",
+        "municipio": "Beniardà",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "natural de Molló, con residencia en Ctra. Quevedo 24",
+      "direccion": {
+        "texto": "Ctra. Quevedo 24",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Quevedo",
+        "numero": 24,
+        "componentes": {},
+        "codigo_postal": "17868",
+        "municipio": "Molló",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en P. Magallanes, 59, principal, exterior, 36350 Nigrán",
+      "direccion": {
+        "texto": "P. Magallanes, 59, principal, exterior, 36350 Nigrán",
+        "tipo_via": "Paseo",
+        "nombre_calle": "Magallanes",
+        "numero": 59,
+        "componentes": {
+          "piso": "principal",
+          "puerta": "exterior"
+        },
+        "codigo_postal": "36350",
+        "municipio": "Nigrán",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Partida Seis de Diciembre 138, entresuelo-A",
+      "direccion": {
+        "texto": "Partida Seis de Diciembre 138, entresuelo-A",
+        "tipo_via": "Partida",
+        "nombre_calle": "Seis de Diciembre",
+        "numero": 138,
+        "componentes": {
+          "piso": "entresuelo",
+          "puerta": "A"
+        },
+        "codigo_postal": "49710",
+        "municipio": "Cubo de Tierra del Vino, El",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "natural de Villamantilla, con residencia en Vía Claveles, nº 110",
+      "direccion": {
+        "texto": "Vía Claveles, nº 110",
+        "tipo_via": "Vía",
+        "nombre_calle": "Claveles",
+        "numero": 110,
+        "componentes": {},
+        "codigo_postal": "28609",
+        "municipio": "Villamantilla",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de San Cristóbal de la Vega, con domicilio en Barrio San Roque, nº 64",
+      "direccion": {
+        "texto": "Barrio San Roque, nº 64",
+        "tipo_via": "Barrio",
+        "nombre_calle": "San Roque",
+        "numero": 64,
+        "componentes": {},
+        "codigo_postal": "40465",
+        "municipio": "San Cristóbal de la Vega",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Glorieta Segunda 8",
+      "direccion": {
+        "texto": "Glorieta Segunda 8",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Segunda",
+        "numero": 8,
+        "componentes": {},
+        "codigo_postal": "05693",
+        "municipio": "Umbrías",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Parque Virgen de Fátima 19",
+      "direccion": {
+        "texto": "Parque Virgen de Fátima 19",
+        "tipo_via": "Parque",
+        "nombre_calle": "Virgen de Fátima",
+        "numero": 19,
+        "componentes": {
+          "escalera": "A",
+          "piso": "2º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "35510",
+        "municipio": "Tías",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Travesía Dieciocho de Julio, nº 101, bloque A, 6º, F",
+      "direccion": {
+        "texto": "Travesía Dieciocho de Julio, nº 101, bloque A, 6º, F",
+        "tipo_via": "Travesía",
+        "nombre_calle": "Dieciocho de Julio",
+        "numero": 101,
+        "componentes": {
+          "bloque": "A",
+          "piso": "6º",
+          "puerta": "F"
+        },
+        "codigo_postal": "40355",
+        "municipio": "Fuentesaúco de Fuentidueña",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Villanueva de Castellón, con domicilio en Calle Lope de Vega 114",
+      "direccion": {
+        "texto": "Calle Lope de Vega 114",
+        "tipo_via": "Calle",
+        "nombre_calle": "Lope de Vega",
+        "numero": 114,
+        "componentes": {
+          "bloque": "D",
+          "piso": "1º",
+          "puerta": "1ª"
+        },
+        "codigo_postal": "46270",
+        "municipio": "Villanueva de Castellón",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Jdín. de la Industria 78, escalera izquierda-2º",
+      "direccion": {
+        "texto": "Jdín. de la Industria 78, escalera izquierda-2º",
+        "tipo_via": "Jardín",
+        "nombre_calle": "de la Industria",
+        "numero": 78,
+        "componentes": {
+          "escalera": "izquierda",
+          "piso": "2º",
+          "puerta": "3ª"
+        },
+        "codigo_postal": "13431",
+        "municipio": "Villar del Pozo",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Avenida Girasoles 149",
+      "direccion": {
+        "texto": "Avenida Girasoles 149",
+        "tipo_via": "Avenida",
+        "nombre_calle": "Girasoles",
+        "numero": 149,
+        "componentes": {},
+        "codigo_postal": "27800",
+        "municipio": "Cubillo del Campo",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Cost. de la Constitución 16",
+      "direccion": {
+        "texto": "Cost. de la Constitución 16",
+        "tipo_via": "Costanilla",
+        "nombre_calle": "de la Constitución",
+        "numero": 16,
+        "componentes": {},
+        "codigo_postal": "08210",
+        "municipio": "Barberà del Vallès",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en CR San Pedro, nº 81, bloque 4, entresuelo",
+      "direccion": {
+        "texto": "CR San Pedro, nº 81, bloque 4, entresuelo",
+        "tipo_via": "Carretera",
+        "nombre_calle": "San Pedro",
+        "numero": 81,
+        "componentes": {
+          "bloque": "4",
+          "piso": "entresuelo"
+        },
+        "codigo_postal": "33206",
+        "municipio": "Gijón",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Barrio del Sol 28",
+      "direccion": {
+        "texto": "Barrio del Sol 28",
+        "tipo_via": "Barrio",
+        "nombre_calle": "del Sol",
+        "numero": 28,
+        "componentes": {},
+        "codigo_postal": "18131",
+        "municipio": "Ventas de Huelma",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Glorieta del Parque, 137, 5º, 47238 Matapozuelos",
+      "direccion": {
+        "texto": "Glorieta del Parque, 137, 5º, 47238 Matapozuelos",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "del Parque",
+        "numero": 137,
+        "componentes": {
+          "piso": "5º"
+        },
+        "codigo_postal": "47238",
+        "municipio": "Matapozuelos",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "domiciliada en Pasaje San José 101",
+      "direccion": {
+        "texto": "Pasaje San José 101",
+        "tipo_via": "Pasaje",
+        "nombre_calle": "San José",
+        "numero": 101,
+        "componentes": {
+          "piso": "8º",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "07012",
+        "municipio": "Palma de Mallorca",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "vecina de Polaciones, con domicilio en Pza. Baroja, nº 69, escalera 3, planta segunda, centro",
+      "direccion": {
+        "texto": "Pza. Baroja, nº 69, escalera 3, planta segunda, centro",
+        "tipo_via": "Plaza",
+        "nombre_calle": "Baroja",
+        "numero": 69,
+        "componentes": {
+          "escalera": "3",
+          "piso": "planta segunda",
+          "puerta": "centro"
+        },
+        "codigo_postal": "17173",
+        "municipio": "Polaciones",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio en Vía Norte, nº 43, 4º, dcha.",
+      "direccion": {
+        "texto": "Vía Norte, nº 43, 4º, dcha.",
+        "tipo_via": "Vía",
+        "nombre_calle": "Norte",
+        "numero": 43,
+        "componentes": {
+          "piso": "4º",
+          "puerta": "dcha."
+        },
+        "codigo_postal": "36585",
+        "municipio": "Vila de Cruces",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Barrio Hernán Cortés, 117, planta segunda, izquierda, 08495 Fogars de la Selva",
+      "direccion": {
+        "texto": "Barrio Hernán Cortés, 117, planta segunda, izquierda, 08495 Fogars de la Selva",
+        "tipo_via": "Barrio",
+        "nombre_calle": "Hernán Cortés",
+        "numero": 117,
+        "componentes": {
+          "piso": "planta segunda",
+          "puerta": "izquierda"
+        },
+        "codigo_postal": "08495",
+        "municipio": "Fogars de la Selva",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con domicilio social en Glorieta Principal 87",
+      "direccion": {
+        "texto": "Glorieta Principal 87",
+        "tipo_via": "Glorieta",
+        "nombre_calle": "Principal",
+        "numero": 87,
+        "componentes": {},
+        "codigo_postal": "40514",
+        "municipio": "Ayllón",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en VI de la Torre, 82, 41388 San Nicolás del Puerto",
+      "direccion": {
+        "texto": "VI de la Torre, 82, 41388 San Nicolás del Puerto",
+        "tipo_via": "Vía",
+        "nombre_calle": "de la Torre",
+        "numero": 82,
+        "componentes": {},
+        "codigo_postal": "41388",
+        "municipio": "San Nicolás del Puerto",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Fuente la Lancha, con domicilio en Vía de la Agricultura, número 114, 4º, de Fuente la Lancha",
+      "direccion": {
+        "texto": "Vía de la Agricultura, número 114, 4º, de Fuente la Lancha",
+        "tipo_via": "Vía",
+        "nombre_calle": "de la Agricultura",
+        "numero": 114,
+        "componentes": {
+          "piso": "4º"
+        },
+        "codigo_postal": "14260",
+        "municipio": "Fuente la Lancha",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en V. Virgen de la Paloma, nº 4, bloque C, planta segunda",
+      "direccion": {
+        "texto": "V. Virgen de la Paloma, nº 4, bloque C, planta segunda",
+        "tipo_via": "Vía",
+        "nombre_calle": "Virgen de la Paloma",
+        "numero": 4,
+        "componentes": {
+          "bloque": "C",
+          "piso": "planta segunda"
+        },
+        "codigo_postal": "08903",
+        "municipio": "Hospitalet de Llobregat, L'",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "vecino de Parada de Sil, con domicilio en CJ Estrecha, 20, bloque D, escalera C, planta primera, 32747 Parada de Sil",
+      "direccion": {
+        "texto": "CJ Estrecha, 20, bloque D, escalera C, planta primera, 32747 Parada de Sil",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Estrecha",
+        "numero": 20,
+        "componentes": {
+          "bloque": "D",
+          "escalera": "C",
+          "piso": "planta primera"
+        },
+        "codigo_postal": "32747",
+        "municipio": "Parada de Sil",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "natural de Fondarella, con residencia en Callejón Virgen de Fátima 69",
+      "direccion": {
+        "texto": "Callejón Virgen de Fátima 69",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Virgen de Fátima",
+        "numero": 69,
+        "componentes": {
+          "piso": "sobreático",
+          "puerta": "2ª"
+        },
+        "codigo_postal": "23934",
+        "municipio": "Fondarella",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "en su domicilio sito en Jardín Zorrilla 45",
+      "direccion": {
+        "texto": "Jardín Zorrilla 45",
+        "tipo_via": "Jardín",
+        "nombre_calle": "Zorrilla",
+        "numero": 45,
+        "componentes": {
+          "bloque": "3",
+          "piso": "bajo",
+          "puerta": "exterior"
+        },
+        "codigo_postal": "36639",
+        "municipio": "Cambados",
+        "formato": "solo_calle"
+      }
+    },
+    {
+      "texto_contexto": "domiciliado en Calle de las Estrellas, número 125, de Monteagudo de las Vicarías",
+      "direccion": {
+        "texto": "Calle de las Estrellas, número 125, de Monteagudo de las Vicarías",
+        "tipo_via": "Calle",
+        "nombre_calle": "de las Estrellas",
+        "numero": 125,
+        "componentes": {},
+        "codigo_postal": "42220",
+        "municipio": "Monteagudo de las Vicarías",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "cuyo domicilio radica en Calle San Agustín, número 26, de Sant Martí de Tous",
+      "direccion": {
+        "texto": "Calle San Agustín, número 26, de Sant Martí de Tous",
+        "tipo_via": "Calle",
+        "nombre_calle": "San Agustín",
+        "numero": 26,
+        "componentes": {},
+        "codigo_postal": "08712",
+        "municipio": "Sant Martí de Tous",
+        "formato": "legal_extenso"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en Callejón Severo Ochoa, 50, 1º, ctro., 03201 Higuera de Vargas",
+      "direccion": {
+        "texto": "Callejón Severo Ochoa, 50, 1º, ctro., 03201 Higuera de Vargas",
+        "tipo_via": "Callejón",
+        "nombre_calle": "Severo Ochoa",
+        "numero": 50,
+        "componentes": {
+          "piso": "1º",
+          "puerta": "ctro."
+        },
+        "codigo_postal": "03201",
+        "municipio": "Higuera de Vargas",
+        "formato": "completo_con_cp"
+      }
+    },
+    {
+      "texto_contexto": "con residencia habitual en PQ El Greco 146, 5º-derecha",
+      "direccion": {
+        "texto": "PQ El Greco 146, 5º-derecha",
+        "tipo_via": "Parque",
+        "nombre_calle": "El Greco",
+        "numero": 146,
+        "componentes": {
+          "piso": "5º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "16211",
+        "municipio": "Picazo, El",
+        "formato": "abreviado"
+      }
+    },
+    {
+      "texto_contexto": "establecido en Urbanización Amapolas, nº 87, escalera B, 4º, interior",
+      "direccion": {
+        "texto": "Urbanización Amapolas, nº 87, escalera B, 4º, interior",
+        "tipo_via": "Urbanización",
+        "nombre_calle": "Amapolas",
+        "numero": 87,
+        "componentes": {
+          "escalera": "B",
+          "piso": "4º",
+          "puerta": "interior"
+        },
+        "codigo_postal": "39777",
+        "municipio": "Laredo",
+        "formato": "completo_sin_cp"
+      }
+    },
+    {
+      "texto_contexto": "en la dirección Carretera Fernando el Católico, número 100, 3º, derecha, de Velilla de los Ajos",
+      "direccion": {
+        "texto": "Carretera Fernando el Católico, número 100, 3º, derecha, de Velilla de los Ajos",
+        "tipo_via": "Carretera",
+        "nombre_calle": "Fernando el Católico",
+        "numero": 100,
+        "componentes": {
+          "piso": "3º",
+          "puerta": "derecha"
+        },
+        "codigo_postal": "05746",
+        "municipio": "Velilla de los Ajos",
+        "formato": "legal_extenso"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Traceability Audit: F-017
+# Function: QueryAuditTrail
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-017"
+  function_name: "QueryAuditTrail"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/query_audit/query_audit.py"
+    supporting_files:
+      - "src/contextsafe/domain/project_management/entities/audit_log.py"
+      - "src/contextsafe/application/ports/audit_repository.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_query_audit.py"
+        tests:
+          - "test_query_by_project"
+          - "test_query_by_document"
+          - "test_query_by_date_range"
+          - "test_query_by_operation_type"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_audit_queries.py"
+        tests:
+          - "test_complex_audit_queries"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-033: Query results are always chronologically ordered"
+      - "PBT-034: Audit entries are never deleted"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-004"  # Complete audit trail for all anonymization operations
+    risk_refs:
+      - "R-006"    # Incomplete audit trail fails GDPR due diligence
+    adr_refs:
+      - "ADR-002"  # SQLite with SQLCipher for storage
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Query use case for audit trail.
+    Supports filtering by project, document, date, operation.
+    Used for GDPR compliance reporting.

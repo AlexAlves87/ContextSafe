@@ -1,0 +1,43 @@
+# Traceability Audit: F-002
+# Function: ScoreDetectionConfidence
+# Bounded Context: BC-002 (Entity Detection)
+
+traceability_audit:
+  function_id: "F-002"
+  function_name: "ScoreDetectionConfidence"
+  bounded_context: "BC-002"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/domain/entity_detection/entities/detection_result.py"
+    supporting_files:
+      - "src/contextsafe/domain/shared/value_objects/confidence_score.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/domain/entity_detection/test_detection_result.py"
+        tests: []
+        status: "not_created"
+    integration_tests: []
+    pbt_properties:
+      - "PBT-004: Confidence score validation (0.0 <= score <= 1.0)"
+      - "PBT-005: Confidence thresholds correctly categorize detections"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-001"  # PII detection recall on structured text
+    risk_refs:
+      - "R-001"    # NER detection fails to identify PII entities
+    adr_refs:
+      - "ADR-004"  # Property-based testing with icontract
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Confidence scoring is implemented in DetectionResult entity.
+    ConfidenceScore value object enforces invariants.
+    Scores are provided by NER service and validated at creation.

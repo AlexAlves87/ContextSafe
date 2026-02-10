@@ -1,0 +1,816 @@
+/**
+ * Global CSS - Industrial Theme with HSL Variables
+ * LegalTech Professional Tool Design
+ *
+ * Inspired by: VS Code, Linear, Figma
+ * Typography: IBM Plex (industrial, technical)
+ * Color System: HSL variables for maintainability
+ */
+
+/* Import IBM Plex fonts + JetBrains Mono for industrial style */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* HSL Variables - Industrial Dark Theme */
+  :root {
+    /* Light mode - Gray (NO white) - WCAG AA compliant */
+    --background: 220 10% 95%;
+    --foreground: 220 13% 20%;
+
+    /* Card surfaces */
+    --card: 220 10% 98%;
+    --card-foreground: 220 13% 20%;
+
+    /* Popover/Modal */
+    --popover: 220 10% 96%;
+    --popover-foreground: 220 13% 20%;
+
+    /* Primary - Industrial blue (contrast 4.5:1) */
+    --primary: 207 90% 40%;
+    --primary-foreground: 220 10% 98%;
+
+    /* Secondary - Muted gray */
+    --secondary: 220 10% 75%;
+    --secondary-foreground: 220 13% 20%;
+
+    /* Muted elements */
+    --muted: 220 10% 88%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Highlight color */
+    --accent: 220 10% 88%;
+    --accent-foreground: 220 13% 20%;
+
+    /* Destructive - Red */
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 220 10% 98%;
+
+    /* Success - Green */
+    --success: 142 76% 32%;
+    --success-foreground: 220 10% 98%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 40%;
+    --warning-foreground: 220 10% 98%;
+
+    /* Borders and inputs */
+    --border: 220 10% 80%;
+    --input: 220 10% 92%;
+    --ring: 207 90% 40%;
+
+    /* Sidebar */
+    --sidebar-background: 220 10% 90%;
+    --sidebar-foreground: 220 13% 20%;
+    --sidebar-border: 220 10% 80%;
+    --sidebar-active: 207 90% 40%;
+    --sidebar-active-foreground: 220 10% 98%;
+
+    /* Border radius */
+    --radius: 4px;
+
+    /* Entity colors - PII Categories (6 grupos temáticos) */
+
+    /* Grupo 1: Identidad Personal (azul) */
+    --entity-person: 207 85% 50%;
+    --entity-person-bg: 207 60% 90%;
+    --entity-dni: 207 85% 50%;
+    --entity-dni-bg: 207 60% 90%;
+    --entity-passport: 207 85% 50%;
+    --entity-passport-bg: 207 60% 90%;
+
+    /* Grupo 2: Organización (gris neutro) */
+    --entity-organization: 215 15% 40%;
+    --entity-organization-bg: 215 10% 88%;
+    --entity-cif: 215 15% 40%;
+    --entity-cif-bg: 215 10% 88%;
+
+    /* Grupo 3: Ubicación (verde esmeralda) */
+    --entity-address: 158 64% 42%;
+    --entity-address-bg: 158 45% 88%;
+    --entity-location: 158 64% 42%;
+    --entity-location-bg: 158 45% 88%;
+    --entity-postal: 158 64% 42%;
+    --entity-postal-bg: 158 45% 88%;
+
+    /* Grupo 4: Contacto (cyan) */
+    --entity-phone: 188 94% 45%;
+    --entity-phone-bg: 188 70% 88%;
+    --entity-email: 188 94% 45%;
+    --entity-email-bg: 188 70% 88%;
+    --entity-url: 188 94% 45%;
+    --entity-url-bg: 188 70% 88%;
+    --entity-ip: 188 94% 45%;
+    --entity-ip-bg: 188 70% 88%;
+
+    /* Grupo 5: Financiero (ámbar) */
+    --entity-iban: 38 92% 50%;
+    --entity-iban-bg: 38 70% 85%;
+    --entity-bank: 38 92% 50%;
+    --entity-bank-bg: 38 70% 85%;
+    --entity-card: 38 92% 50%;
+    --entity-card-bg: 38 70% 85%;
+
+    /* Grupo 6: Administrativo (violeta) */
+    --entity-social: 262 83% 48%;
+    --entity-social-bg: 262 60% 88%;
+    --entity-nss: 262 83% 48%;
+    --entity-nss-bg: 262 60% 88%;
+    --entity-license: 262 83% 48%;
+    --entity-license-bg: 262 60% 88%;
+    --entity-date: 262 83% 48%;
+    --entity-date-bg: 262 60% 88%;
+    --entity-medical: 262 83% 48%;
+    --entity-medical-bg: 262 60% 88%;
+  }
+
+  .dark {
+    /* Dark mode - WCAG AA compliant (contrast >7:1) */
+    /* Background lightened 10% for better readability */
+    --background: 220 13% 25%;
+    --foreground: 220 10% 95%;
+
+    /* Card surfaces - Slightly lighter than background */
+    --card: 220 13% 28%;
+    --card-foreground: 220 10% 95%;
+
+    /* Popover/Modal */
+    --popover: 220 13% 22%;
+    --popover-foreground: 220 10% 95%;
+
+    /* Primary - Industrial blue (bright enough for dark bg) */
+    --primary: 207 90% 54%;
+    --primary-foreground: 220 13% 10%;
+
+    /* Secondary - Muted gray */
+    --secondary: 220 10% 30%;
+    --secondary-foreground: 220 10% 95%;
+
+    /* Muted elements */
+    --muted: 220 10% 25%;
+    --muted-foreground: 220 10% 70%;
+
+    /* Accent - Highlight color */
+    --accent: 220 10% 25%;
+    --accent-foreground: 220 10% 95%;
+
+    /* Destructive - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 10% 98%;
+
+    /* Success - Green */
+    --success: 142 76% 45%;
+    --success-foreground: 220 10% 98%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 55%;
+    --warning-foreground: 220 13% 10%;
+
+    /* Borders and inputs */
+    --border: 220 10% 30%;
+    --input: 220 10% 22%;
+    --ring: 207 90% 54%;
+
+    /* Sidebar - Even darker */
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 220 10% 85%;
+    --sidebar-border: 220 10% 25%;
+    --sidebar-active: 207 90% 54%;
+    --sidebar-active-foreground: 220 13% 10%;
+
+    /* Border radius */
+    --radius: 4px;
+
+    /* Entity colors - PII Categories (6 grupos temáticos) */
+
+    /* Grupo 1: Identidad Personal (azul) */
+    --entity-person: 207 85% 60%;
+    --entity-person-bg: 207 60% 22%;
+    --entity-dni: 207 85% 60%;
+    --entity-dni-bg: 207 60% 22%;
+    --entity-passport: 207 85% 60%;
+    --entity-passport-bg: 207 60% 22%;
+
+    /* Grupo 2: Organización (gris neutro) */
+    --entity-organization: 215 15% 70%;
+    --entity-organization-bg: 215 10% 28%;
+    --entity-cif: 215 15% 70%;
+    --entity-cif-bg: 215 10% 28%;
+
+    /* Grupo 3: Ubicación (verde esmeralda) */
+    --entity-address: 158 64% 52%;
+    --entity-address-bg: 158 45% 22%;
+    --entity-location: 158 64% 52%;
+    --entity-location-bg: 158 45% 22%;
+    --entity-postal: 158 64% 52%;
+    --entity-postal-bg: 158 45% 22%;
+
+    /* Grupo 4: Contacto (cyan) */
+    --entity-phone: 188 94% 55%;
+    --entity-phone-bg: 188 70% 22%;
+    --entity-email: 188 94% 55%;
+    --entity-email-bg: 188 70% 22%;
+    --entity-url: 188 94% 55%;
+    --entity-url-bg: 188 70% 22%;
+    --entity-ip: 188 94% 55%;
+    --entity-ip-bg: 188 70% 22%;
+
+    /* Grupo 5: Financiero (ámbar) */
+    --entity-iban: 38 92% 60%;
+    --entity-iban-bg: 38 70% 25%;
+    --entity-bank: 38 92% 60%;
+    --entity-bank-bg: 38 70% 25%;
+    --entity-card: 38 92% 60%;
+    --entity-card-bg: 38 70% 25%;
+
+    /* Grupo 6: Administrativo (violeta) */
+    --entity-social: 262 83% 58%;
+    --entity-social-bg: 262 60% 22%;
+    --entity-nss: 262 83% 58%;
+    --entity-nss-bg: 262 60% 22%;
+    --entity-license: 262 83% 58%;
+    --entity-license-bg: 262 60% 22%;
+    --entity-date: 262 83% 58%;
+    --entity-date-bg: 262 60% 22%;
+    --entity-medical: 262 83% 58%;
+    --entity-medical-bg: 262 60% 22%;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Base body - Industrial theme */
+  body {
+    @apply bg-background text-foreground;
+    @apply antialiased;
+    font-family: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Focus visible styling - Professional */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar - Industrial dark */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  /* Card component - Industrial */
+  .card {
+    @apply bg-card text-card-foreground rounded-md border border-border;
+    @apply shadow-sm;
+  }
+
+  /* Button base - Dense industrial (8pt grid) */
+  .btn {
+    @apply inline-flex items-center justify-center;
+    @apply px-4 py-2 text-sm font-medium;
+    @apply rounded border;
+    @apply transition-all duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    @apply btn;
+    @apply bg-primary-600 text-white border-primary-600;
+    @apply hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply btn;
+    @apply bg-secondary text-secondary-foreground border-border;
+    @apply hover:bg-secondary/80;
+  }
+
+  .btn-destructive {
+    @apply btn;
+    @apply bg-destructive text-destructive-foreground border-destructive;
+    @apply hover:bg-destructive/90;
+  }
+
+  .btn-ghost {
+    @apply btn;
+    @apply bg-transparent border-transparent;
+    @apply hover:bg-accent hover:text-accent-foreground;
+  }
+
+  /* Input styling - Industrial dense (8pt grid) */
+  .input {
+    @apply w-full px-3 py-2 text-sm;
+    @apply bg-input text-foreground;
+    @apply border border-border rounded;
+    @apply placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply transition-all duration-150;
+  }
+
+  /* Label styling (8pt grid) */
+  .label {
+    @apply block text-sm font-medium text-foreground;
+    margin-bottom: 8px;
+  }
+
+  /* Toolbar button - Windows style (8pt grid: 32px height) */
+  .toolbar-button {
+    @apply inline-flex items-center justify-center;
+    @apply px-2 text-xs font-medium;
+    @apply bg-transparent text-muted-foreground;
+    @apply border border-transparent rounded;
+    @apply hover:bg-accent hover:text-accent-foreground hover:border-border;
+    @apply transition-all duration-100;
+    height: 32px;
+    gap: 8px;
+  }
+
+  .toolbar-button.active {
+    @apply bg-accent text-accent-foreground border-border;
+  }
+
+  /* Entity chip - PII categories (8pt grid) */
+  .entity-chip {
+    @apply inline-flex items-center text-xs font-medium;
+    @apply rounded border;
+    @apply transition-all duration-150;
+    padding: 4px 8px;
+    gap: 8px;
+  }
+
+  /* Entity chip variants */
+  .entity-chip-person {
+    @apply bg-entity-person-bg text-entity-person border-entity-person/30;
+  }
+
+  .entity-chip-dni {
+    @apply bg-entity-dni-bg text-entity-dni border-entity-dni/30;
+  }
+
+  .entity-chip-organization {
+    @apply bg-entity-organization-bg text-entity-organization border-entity-organization/30;
+  }
+
+  .entity-chip-address {
+    @apply bg-entity-address-bg text-entity-address border-entity-address/30;
+  }
+
+  .entity-chip-phone {
+    @apply bg-entity-phone-bg text-entity-phone border-entity-phone/30;
+  }
+
+  .entity-chip-email {
+    @apply bg-entity-email-bg text-entity-email border-entity-email/30;
+  }
+
+  .entity-chip-iban {
+    @apply bg-entity-iban-bg text-entity-iban border-entity-iban/30;
+  }
+
+  .entity-chip-social {
+    @apply bg-entity-social-bg text-entity-social border-entity-social/30;
+  }
+
+  /* Entity highlight marks - for text comparison view */
+  /* Light mode: pastel backgrounds with dark text */
+  /* Dark mode: semi-transparent dark bg (20-30%), bright border, WHITE text */
+  .entity-highlight {
+    @apply px-0.5 rounded font-medium;
+  }
+
+  .entity-highlight-person {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+  }
+  .dark .entity-highlight-person {
+    background-color: rgba(59, 130, 246, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #60a5fa;
+  }
+
+  .entity-highlight-organization {
+    background-color: #e9d5ff;
+    color: #581c87;
+  }
+  .dark .entity-highlight-organization {
+    background-color: rgba(139, 92, 246, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #a78bfa;
+  }
+
+  .entity-highlight-location,
+  .entity-highlight-address {
+    background-color: #bbf7d0;
+    color: #14532d;
+  }
+  .dark .entity-highlight-location,
+  .dark .entity-highlight-address {
+    background-color: rgba(34, 197, 94, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #4ade80;
+  }
+
+  .entity-highlight-dni,
+  .entity-highlight-nie,
+  .entity-highlight-dni_nie {
+    background-color: #fecaca;
+    color: #7f1d1d;
+  }
+  .dark .entity-highlight-dni,
+  .dark .entity-highlight-nie,
+  .dark .entity-highlight-dni_nie {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #f87171;
+  }
+
+  .entity-highlight-phone {
+    background-color: #fef08a;
+    color: #713f12;
+  }
+  .dark .entity-highlight-phone {
+    background-color: rgba(234, 179, 8, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #facc15;
+  }
+
+  .entity-highlight-email {
+    background-color: #a5f3fc;
+    color: #164e63;
+  }
+  .dark .entity-highlight-email {
+    background-color: rgba(6, 182, 212, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #22d3ee;
+  }
+
+  .entity-highlight-iban {
+    background-color: #fed7aa;
+    color: #7c2d12;
+  }
+  .dark .entity-highlight-iban {
+    background-color: rgba(249, 115, 22, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #fb923c;
+  }
+
+  .entity-highlight-date,
+  .entity-highlight-professional_id {
+    background-color: #fbcfe8;
+    color: #831843;
+  }
+  .dark .entity-highlight-date,
+  .dark .entity-highlight-professional_id {
+    background-color: rgba(236, 72, 153, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #f472b6;
+  }
+
+  .entity-highlight-other {
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+  .dark .entity-highlight-other {
+    background-color: rgba(107, 114, 128, 0.25);
+    color: #FFFFFF;
+    border: 1px solid #9ca3af;
+  }
+
+  /* Document panel - VS Code style (8pt grid) */
+  .document-panel {
+    @apply bg-card border border-border rounded-md;
+    @apply flex flex-col;
+  }
+
+  .document-panel-header {
+    @apply flex items-center justify-between;
+    @apply border-b border-border;
+    @apply bg-muted/30;
+    padding: 8px 16px;
+  }
+
+  .document-panel-content {
+    @apply overflow-auto;
+    padding: 16px;
+  }
+
+  /* Separator - Subtle divider */
+  .separator {
+    @apply h-px bg-border;
+  }
+
+  /* Badge - Status indicators (8pt grid) */
+  .badge {
+    @apply inline-flex items-center;
+    @apply text-xs font-medium;
+    @apply rounded border;
+    padding: 4px 8px;
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success border-success/30;
+  }
+
+  .badge-warning {
+    @apply bg-warning/10 text-warning border-warning/30;
+  }
+
+  .badge-destructive {
+    @apply bg-destructive/10 text-destructive border-destructive/30;
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.15s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.15s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.15s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ============================================
+   * INDUSTRIAL THEME - Workspace Screen
+   * Desktop tool aesthetic (VS Code, CAD, Excel)
+   * ============================================ */
+
+  /* 1. Industrial container - eliminates rounded corners */
+  .industrial {
+    --radius: 2px;
+  }
+
+  .industrial * {
+    border-radius: 2px !important;
+  }
+
+  /* 2. Industrial typography - monospace for data */
+  .font-industrial {
+    font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+    font-size: 0.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* 3. Industrial borders - technical grid lines */
+  .border-industrial {
+    border: 1px solid hsl(220 13% 22%);
+  }
+
+  .border-industrial-light {
+    border: 1px solid hsl(220 13% 30%);
+  }
+
+  /* 4. Grid pattern background for upload zone */
+  .bg-grid-pattern {
+    background-color: hsl(220 13% 12%);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  /* 5. Industrial button */
+  .btn-industrial {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: 1px solid hsl(var(--primary));
+    border-radius: 2px !important;
+    box-shadow: none;
+    transition: background-color 100ms;
+  }
+
+  .btn-industrial:hover {
+    background-color: hsl(var(--primary) / 0.9);
+  }
+
+  /* 6. Industrial panel - no gaps, shared borders */
+  .panel-industrial {
+    @apply bg-card border-industrial;
+    border-radius: 0 !important;
+  }
+
+  .panel-industrial-header {
+    @apply px-3 py-2 border-b border-industrial;
+    @apply text-[10px] font-semibold uppercase tracking-wider;
+    @apply text-muted-foreground bg-muted/30;
+  }
+
+  /* 7. Industrial table - compact grid style */
+  .table-industrial {
+    @apply w-full text-sm;
+    border-collapse: collapse;
+  }
+
+  .table-industrial th {
+    @apply px-3 py-2 text-left;
+    @apply text-[10px] font-semibold uppercase tracking-wider;
+    @apply text-muted-foreground bg-muted/50;
+    @apply border border-border;
+  }
+
+  .table-industrial td {
+    @apply px-3 py-2;
+    @apply border border-border;
+    @apply font-industrial;
+  }
+
+  .table-industrial tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  /* 8. Status bar - compact project info */
+  .status-bar-industrial {
+    @apply flex items-center justify-between;
+    @apply px-3 py-2;
+    @apply text-[11px] font-medium uppercase tracking-wide;
+    @apply text-muted-foreground bg-muted/40;
+    @apply border-b border-industrial;
+  }
+
+  .status-bar-industrial .status-item {
+    @apply flex items-center gap-2;
+  }
+
+  .status-bar-industrial .status-separator {
+    @apply text-border mx-2;
+  }
+
+  /* 9. Upload zone industrial */
+  .upload-zone-industrial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 1rem;
+    background-color: hsl(220 13% 12%);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 16px 16px;
+    border: 2px dashed hsl(var(--border));
+    cursor: pointer;
+    transition: all 150ms;
+  }
+
+  .upload-zone-industrial:hover {
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary) / 0.05);
+  }
+
+  .upload-zone-industrial.dragging {
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  .upload-zone-industrial .upload-icon {
+    @apply w-10 h-10 mb-3 text-muted-foreground;
+  }
+
+  .upload-zone-industrial .upload-text {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+  }
+
+  .upload-zone-industrial .upload-hint {
+    @apply text-[10px] uppercase tracking-wide text-muted-foreground/60 mt-1;
+  }
+
+  /* 10. Category abbreviations for compact display */
+  .cat-abbrev {
+    @apply text-[10px] font-semibold uppercase tracking-wider;
+    @apply px-1.5 py-0.5;
+    @apply bg-muted/50 text-muted-foreground;
+    @apply border border-border;
+  }
+
+  /* 11. Extension badge */
+  .ext-badge {
+    @apply text-[10px] font-bold uppercase;
+    @apply px-1.5 py-0.5;
+    @apply bg-muted text-muted-foreground;
+    @apply border border-border;
+  }
+
+  /* 12. Document state badges */
+  .state-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.125rem 0.5rem;
+  }
+
+  .state-badge-ready {
+    background-color: hsl(var(--muted) / 0.5);
+    color: hsl(var(--muted-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .state-badge-processing {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+
+  .state-badge-done {
+    background-color: hsl(var(--success) / 0.2);
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.3);
+  }
+
+  .state-badge-fail {
+    background-color: hsl(var(--destructive) / 0.2);
+    color: hsl(var(--destructive));
+    border: 1px solid hsl(var(--destructive) / 0.3);
+  }
+}

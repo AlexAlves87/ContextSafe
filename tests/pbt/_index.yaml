@@ -1,0 +1,138 @@
+# Property-Based Tests Index
+# ======================================
+# Project: ContextSafe
+
+pbt_tests:
+  description: |
+    Property-based tests using Hypothesis to verify domain invariants
+    and critical business rules across random inputs.
+
+  framework: "hypothesis"
+  total_properties: 42
+
+  files:
+    - name: conftest.py
+      description: "Shared Hypothesis strategies and fixtures"
+      strategies:
+        - confidence_scores
+        - pii_categories
+        - text_spans
+        - aliases
+        - documents
+
+    - name: test_result_type.py
+      description: "Result[T, E] monad law verification"
+      properties:
+        - id: "PBT-001"
+          name: "Result functor identity"
+          description: "map(id) == id"
+        - id: "PBT-002"
+          name: "Result functor composition"
+          description: "map(f . g) == map(f) . map(g)"
+        - id: "PBT-003"
+          name: "Result monad left identity"
+          description: "pure(a).flatMap(f) == f(a)"
+        - id: "PBT-004"
+          name: "Result monad right identity"
+          description: "m.flatMap(pure) == m"
+
+    - name: test_value_objects.py
+      description: "Value object invariant tests"
+      properties:
+        - id: "PBT-012"
+          name: "ConfidenceScore bounds"
+          invariant: "0.0 <= value <= 1.0"
+        - id: "PBT-013"
+          name: "ConfidenceScore equality by value"
+        - id: "PBT-014"
+          name: "TextSpan valid range"
+          invariant: "0 <= start < end"
+        - id: "PBT-015"
+          name: "TextSpan length consistency"
+        - id: "PBT-016"
+          name: "Alias format compliance"
+        - id: "PBT-017"
+          name: "PiiCategory valid enum"
+        - id: "PBT-018"
+          name: "DocumentState transitions"
+        - id: "PBT-019"
+          name: "ProjectId UUID format"
+        - id: "PBT-020"
+          name: "Value object immutability"
+
+    - name: test_aggregates.py
+      description: "Aggregate invariant tests"
+      properties:
+        - id: "PBT-021"
+          name: "Glossary no duplicate aliases"
+          business_rule: "BR-002"
+          critical: true
+        - id: "PBT-022"
+          name: "Same entity always same alias"
+          business_rule: "BR-002"
+          critical: true
+        - id: "PBT-023"
+          name: "DocumentAggregate state machine"
+        - id: "PBT-024"
+          name: "Aggregate version increments"
+        - id: "PBT-025"
+          name: "Aggregate event consistency"
+
+    - name: test_use_cases.py
+      description: "Use case command/result invariant tests"
+      properties:
+        - id: "PBT-026"
+          name: "IngestDocument idempotent on same content"
+        - id: "PBT-027"
+          name: "DetectPii deterministic"
+        - id: "PBT-028"
+          name: "CreateProject generates unique IDs"
+        - id: "PBT-029"
+          name: "GenerateAnonymized preserves structure"
+        - id: "PBT-030"
+          name: "LogAuditEvent never fails"
+        - id: "PBT-031"
+          name: "ExportDocument format correctness"
+        - id: "PBT-032"
+          name: "Command validation before execution"
+        - id: "PBT-033"
+          name: "Result error types match domain errors"
+        - id: "PBT-034"
+          name: "Use case transaction boundaries"
+
+    - name: test_anonymization.py
+      description: "BR-004 critical anonymization tests"
+      properties:
+        - id: "PBT-040"
+          name: "No PII in anonymized output"
+          business_rule: "BR-004"
+          critical: true
+        - id: "PBT-041"
+          name: "Anonymization is deterministic"
+          business_rule: "BR-004"
+          critical: true
+        - id: "PBT-042"
+          name: "All detected entities are replaced"
+          business_rule: "BR-004"
+          critical: true
+        - id: "PBT-043"
+          name: "Alias format compliance"
+
+  coverage:
+    business_rules:
+      BR-002:
+        properties: ["PBT-021", "PBT-022"]
+        coverage: "100%"
+      BR-004:
+        properties: ["PBT-040", "PBT-041", "PBT-042"]
+        coverage: "100%"
+
+  execution:
+    command: "pytest tests/pbt/ -v"
+    settings:
+      max_examples: 100
+      deadline: null
+      verbosity: "verbose"
+
+metadata:
+  version: "0.1.0"

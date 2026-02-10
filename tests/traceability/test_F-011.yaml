@@ -1,0 +1,45 @@
+# Traceability Audit: F-011
+# Function: NormalizeEntityForLookup
+# Bounded Context: BC-003 (Anonymization)
+
+traceability_audit:
+  function_id: "F-011"
+  function_name: "NormalizeEntityForLookup"
+  bounded_context: "BC-003"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/domain/anonymization/aggregates/glossary.py"
+    supporting_files:
+      - "src/contextsafe/domain/anonymization/services/entity_normalizer.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/domain/anonymization/test_entity_normalizer.py"
+        tests:
+          - "test_normalize_person_name"
+          - "test_normalize_dni"
+          - "test_normalize_phone_number"
+          - "test_case_insensitive_lookup"
+        status: "not_created"
+    integration_tests: []
+    pbt_properties:
+      - "PBT-021: Normalization is idempotent"
+      - "PBT-022: Similar entities normalize to same key"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-003"  # Alias consistency across all documents
+    risk_refs: []
+    adr_refs: []
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Entity normalization for glossary lookup.
+    Handles case variations, whitespace, formatting.
+    Ensures "Juan Pérez" and "juan perez" get same alias.

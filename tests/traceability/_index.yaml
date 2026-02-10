@@ -1,0 +1,329 @@
+# Traceability Audit Tests Index
+# ==========================================
+# Project: ContextSafe
+
+index:
+  type: "traceability_audits"
+  count: 24
+  created_at: "2026-01-11"
+  last_updated: "2026-01-11"
+
+  summary:
+    total_functions: 24
+    domain_functions: 19
+    presentation_functions: 5
+    implemented: 24
+    tests_created: 0
+    tests_passing: 0
+    overall_coverage_percent: 0
+
+  by_bounded_context:
+    BC-001:  # Document Processing
+      count: 6
+      functions:
+        - "F-004"  # IngestDocument
+        - "F-005"  # ExtractTextFromImage
+        - "F-006"  # PreprocessDocument
+        - "F-007"  # ScoreDocumentQuality
+        - "F-008"  # ProcessDocumentBatch
+        - "F-009"  # TrackProcessingProgress
+
+    BC-002:  # Entity Detection
+      count: 3
+      functions:
+        - "F-001"  # DetectPiiEntities
+        - "F-002"  # ScoreDetectionConfidence
+        - "F-003"  # FlagLowConfidenceDetections
+
+    BC-003:  # Anonymization
+      count: 4
+      functions:
+        - "F-010"  # AssignEntityAlias
+        - "F-011"  # NormalizeEntityForLookup
+        - "F-012"  # GenerateAnonymizedDocument
+        - "F-013"  # ManageProjectGlossary
+
+    BC-004:  # Project Management
+      count: 6
+      functions:
+        - "F-014"  # CreateProject
+        - "F-015"  # ManageProjectDocuments
+        - "F-016"  # LogAuditEvent
+        - "F-017"  # QueryAuditTrail
+        - "F-018"  # GenerateComplianceReport
+        - "F-019"  # ExportAnonymizedDocument
+
+    Presentation:
+      count: 5
+      functions:
+        - "F-UI-001"  # DisplayWorkspace
+        - "F-UI-002"  # ShowDocumentPreview
+        - "F-UI-003"  # DisplayProcessingStatus
+        - "F-UI-004"  # NavigateToDocumentDetail
+        - "F-UI-005"  # RenderEntityHighlights
+
+  by_complexity:
+    complex:
+      count: 6
+      functions:
+        - "F-001"  # DetectPiiEntities
+        - "F-005"  # ExtractTextFromImage
+        - "F-008"  # ProcessDocumentBatch
+        - "F-010"  # AssignEntityAlias
+        - "F-012"  # GenerateAnonymizedDocument
+    moderate:
+      count: 13
+      functions:
+        - "F-002"  # ScoreDetectionConfidence
+        - "F-004"  # IngestDocument
+        - "F-006"  # PreprocessDocument
+        - "F-009"  # TrackProcessingProgress
+        - "F-011"  # NormalizeEntityForLookup
+        - "F-013"  # ManageProjectGlossary
+        - "F-014"  # CreateProject
+        - "F-016"  # LogAuditEvent
+        - "F-017"  # QueryAuditTrail
+        - "F-018"  # GenerateComplianceReport
+        - "F-019"  # ExportAnonymizedDocument
+        - "F-UI-001"  # DisplayWorkspace
+        - "F-UI-002"  # ShowDocumentPreview
+        - "F-UI-003"  # DisplayProcessingStatus
+        - "F-UI-005"  # RenderEntityHighlights
+    simple:
+      count: 5
+      functions:
+        - "F-003"  # FlagLowConfidenceDetections
+        - "F-007"  # ScoreDocumentQuality
+        - "F-015"  # ManageProjectDocuments
+        - "F-UI-004"  # NavigateToDocumentDetail
+
+  traceability_coverage:
+    qas_covered:
+      - "QAS-001"  # PII detection recall on structured text (F-001, F-002, F-003, F-006, F-UI-005)
+      - "QAS-002"  # PII detection recall on scanned documents (F-005, F-007)
+      - "QAS-003"  # Alias consistency across documents (F-010, F-011, F-012, F-013)
+      - "QAS-004"  # Complete audit trail (F-016, F-017, F-018)
+      - "QAS-005"  # Batch processing throughput (F-004, F-008, F-009, F-UI-003)
+      - "QAS-006"  # Zero external data transmission (implementation constraint)
+      - "QAS-UX-001"  # UI response time (F-UI-001, F-UI-002, F-UI-003, F-UI-004)
+      - "QAS-UX-002"  # WCAG-A accessibility (F-UI-001, F-UI-005)
+
+    risks_mitigated:
+      - "R-001"  # NER detection failure (F-001, F-002, F-003, F-UI-005)
+      - "R-002"  # OCR quality degradation (F-004, F-005, F-007)
+      - "R-003"  # Semantic aliases reveal info (F-010, F-012)
+      - "R-004"  # LLM model unavailable (handled in infrastructure layer)
+      - "R-005"  # SQLCipher key compromise (handled in infrastructure layer)
+      - "R-006"  # Incomplete audit trail (F-016, F-017, F-018)
+      - "R-007"  # LLM context window insufficient (handled in use case layer)
+      - "R-008"  # Single developer bottleneck (accepted)
+
+    adrs_enforced:
+      - "ADR-001"  # Hexagonal architecture (F-004, F-014, F-015)
+      - "ADR-002"  # SQLite with SQLCipher (F-004, F-013, F-014, F-016, F-017)
+      - "ADR-003"  # WebSocket for real-time updates (F-008, F-009, F-UI-003)
+      - "ADR-004"  # Property-based testing (F-002 and all PBT properties)
+      - "ADR-005"  # llama.cpp for local LLM (F-001, F-010)
+      - "ADR-006"  # React + TypeScript + Tailwind (F-UI-001 through F-UI-005)
+
+  property_based_tests:
+    total_properties: 38
+    by_category:
+      consistency:
+        - "PBT-001: Same text input → same detections"
+        - "PBT-018: Same entity → same alias"
+        - "PBT-019: Different entities → different aliases"
+        - "PBT-020: Alias assignment is idempotent"
+        - "PBT-021: Normalization is idempotent"
+        - "PBT-022: Similar entities normalize to same key"
+        - "PBT-024: Same PII across docs gets same alias"
+        - "PBT-026: Glossary maintains bijection"
+      validation:
+        - "PBT-002: Confidence scores 0.0-1.0"
+        - "PBT-004: Confidence score validation"
+        - "PBT-013: Quality score 0.0-1.0"
+        - "PBT-016: Progress percentage 0-100"
+        - "PBT-028: Project ID always unique"
+      state_management:
+        - "PBT-007: Document state transitions valid"
+        - "PBT-014: Batch progress monotonically increases"
+        - "PBT-015: Batch completion fires event once"
+        - "PBT-027: Glossary operations are ACID"
+        - "PBT-029: Project creation is idempotent"
+        - "PBT-030: Document list reflects current state"
+      security:
+        - "PBT-023: All detected PII replaced"
+        - "PBT-037: Exported doc contains no original PII"
+      audit:
+        - "PBT-031: All domain events → audit log entries"
+        - "PBT-032: Audit logs immutable after creation"
+        - "PBT-033: Query results chronologically ordered"
+        - "PBT-034: Audit entries never deleted"
+        - "PBT-035: Report includes all audit entries"
+
+  test_status:
+    not_created:
+      count: 24
+      note: "All test files need to be created. Implementation exists but tests pending."
+
+  files:
+    - id: "test_F-001"
+      file: "test_F-001.yaml"
+      function: "DetectPiiEntities"
+      status: "implemented_no_tests"
+
+    - id: "test_F-002"
+      file: "test_F-002.yaml"
+      function: "ScoreDetectionConfidence"
+      status: "implemented_no_tests"
+
+    - id: "test_F-003"
+      file: "test_F-003.yaml"
+      function: "FlagLowConfidenceDetections"
+      status: "implemented_no_tests"
+
+    - id: "test_F-004"
+      file: "test_F-004.yaml"
+      function: "IngestDocument"
+      status: "implemented_no_tests"
+
+    - id: "test_F-005"
+      file: "test_F-005.yaml"
+      function: "ExtractTextFromImage"
+      status: "implemented_no_tests"
+
+    - id: "test_F-006"
+      file: "test_F-006.yaml"
+      function: "PreprocessDocument"
+      status: "implemented_no_tests"
+
+    - id: "test_F-007"
+      file: "test_F-007.yaml"
+      function: "ScoreDocumentQuality"
+      status: "implemented_no_tests"
+
+    - id: "test_F-008"
+      file: "test_F-008.yaml"
+      function: "ProcessDocumentBatch"
+      status: "implemented_no_tests"
+
+    - id: "test_F-009"
+      file: "test_F-009.yaml"
+      function: "TrackProcessingProgress"
+      status: "implemented_no_tests"
+
+    - id: "test_F-010"
+      file: "test_F-010.yaml"
+      function: "AssignEntityAlias"
+      status: "implemented_no_tests"
+
+    - id: "test_F-011"
+      file: "test_F-011.yaml"
+      function: "NormalizeEntityForLookup"
+      status: "implemented_no_tests"
+
+    - id: "test_F-012"
+      file: "test_F-012.yaml"
+      function: "GenerateAnonymizedDocument"
+      status: "implemented_no_tests"
+
+    - id: "test_F-013"
+      file: "test_F-013.yaml"
+      function: "ManageProjectGlossary"
+      status: "implemented_no_tests"
+
+    - id: "test_F-014"
+      file: "test_F-014.yaml"
+      function: "CreateProject"
+      status: "implemented_no_tests"
+
+    - id: "test_F-015"
+      file: "test_F-015.yaml"
+      function: "ManageProjectDocuments"
+      status: "implemented_no_tests"
+
+    - id: "test_F-016"
+      file: "test_F-016.yaml"
+      function: "LogAuditEvent"
+      status: "implemented_no_tests"
+
+    - id: "test_F-017"
+      file: "test_F-017.yaml"
+      function: "QueryAuditTrail"
+      status: "implemented_no_tests"
+
+    - id: "test_F-018"
+      file: "test_F-018.yaml"
+      function: "GenerateComplianceReport"
+      status: "implemented_no_tests"
+
+    - id: "test_F-019"
+      file: "test_F-019.yaml"
+      function: "ExportAnonymizedDocument"
+      status: "implemented_no_tests"
+
+    - id: "test_F-UI-001"
+      file: "test_F-UI-001.yaml"
+      function: "DisplayWorkspace"
+      status: "implemented_no_tests"
+
+    - id: "test_F-UI-002"
+      file: "test_F-UI-002.yaml"
+      function: "ShowDocumentPreview"
+      status: "implemented_no_tests"
+
+    - id: "test_F-UI-003"
+      file: "test_F-UI-003.yaml"
+      function: "DisplayProcessingStatus"
+      status: "implemented_no_tests"
+
+    - id: "test_F-UI-004"
+      file: "test_F-UI-004.yaml"
+      function: "NavigateToDocumentDetail"
+      status: "implemented_no_tests"
+
+    - id: "test_F-UI-005"
+      file: "test_F-UI-005.yaml"
+      function: "RenderEntityHighlights"
+      status: "implemented_no_tests"
+
+  next_actions:
+    - "Create unit test files for all 24 functions"
+    - "Create integration test files for complex workflows"
+    - "Implement property-based tests using Hypothesis (Python) or fast-check (TypeScript)"
+    - "Implement E2E tests for presentation layer using Playwright"
+    - "Run tests and update verification status"
+    - "Track coverage metrics and update traceability audit files"
+
+  notes: |
+    This traceability audit tracks implementation status and test coverage
+    for all 24 functions defined in the RTM (Requirements Traceability Matrix).
+
+    Current Status (2026-01-11):
+    - All 24 functions have been implemented in the codebase
+    - No test files have been created yet (0% test coverage)
+    - Traceability chain verified for all functions:
+      * All functions trace back to QAS (Quality Attribute Scenarios)
+      * High-risk functions trace to mitigation strategies
+      * Architecture decisions (ADRs) are enforced in implementation
+
+    Implementation Quality:
+    - Hexagonal architecture properly applied (domain, application, infrastructure layers)
+    - Port/adapter pattern used for external dependencies
+    - Domain events published for all state changes
+    - Value objects enforce invariants
+    - Result<T, E> pattern for error handling
+
+    Test Strategy:
+    - Unit tests: Test individual components in isolation
+    - Integration tests: Test component interactions
+    - Property-based tests: Validate invariants across all inputs
+    - E2E tests: Test complete user workflows
+    - Contract tests: Validate port implementations
+
+    Priority for Test Creation:
+    1. HIGH: F-001, F-010, F-012 (core PII detection and anonymization)
+    2. HIGH: F-016, F-017 (audit trail for GDPR compliance)
+    3. MEDIUM: F-004, F-008 (document processing)
+    4. MEDIUM: F-UI-001 through F-UI-005 (user interface)
+    5. LOW: F-015, F-UI-004 (simple CRUD operations)

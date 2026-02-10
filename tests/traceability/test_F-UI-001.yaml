@@ -1,0 +1,53 @@
+# Traceability Audit: F-UI-001
+# Function: DisplayWorkspace
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-UI-001"
+  function_name: "DisplayWorkspace"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/presentation/screens/workspace_screen.tsx"
+    supporting_files:
+      - "src/contextsafe/presentation/components/project_card.tsx"
+      - "src/contextsafe/presentation/components/document_table.tsx"
+      - "src/contextsafe/presentation/components/drag_drop_zone.tsx"
+      - "src/contextsafe/presentation/layouts/main_layout.tsx"
+      - "src/contextsafe/presentation/services/project_service.ts"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/presentation/test_workspace_screen.tsx"
+        tests:
+          - "test_render_project_list"
+          - "test_render_document_table"
+          - "test_drag_drop_functionality"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/e2e/test_workspace_flow.spec.ts"
+        tests:
+          - "test_end_to_end_workspace_navigation"
+        status: "not_created"
+    pbt_properties: []
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-UX-001"  # UI response time for interactive operations
+      - "QAS-UX-002"  # WCAG-A accessibility compliance
+    risk_refs: []
+    adr_refs:
+      - "ADR-006"  # React with TypeScript, Tailwind, and Zustand
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Main workspace screen (route: /projects/:projectId).
+    Displays projects, documents, glossary preview.
+    Supports drag-and-drop file upload.
+    Shows processing status indicators.

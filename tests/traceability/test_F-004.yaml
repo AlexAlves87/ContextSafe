@@ -1,0 +1,58 @@
+# Traceability Audit: F-004
+# Function: IngestDocument
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-004"
+  function_name: "IngestDocument"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/ingest_document/ingest_document.py"
+    supporting_files:
+      - "src/contextsafe/application/ports/document_repository.py"
+      - "src/contextsafe/application/ports/text_extractor.py"
+      - "src/contextsafe/application/ports/event_publisher.py"
+      - "src/contextsafe/domain/document_processing/aggregates/document_aggregate.py"
+      - "src/contextsafe/domain/shared/events/document_ingested.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_ingest_document.py"
+        tests:
+          - "test_ingest_pdf_success"
+          - "test_ingest_docx_success"
+          - "test_ingest_txt_success"
+          - "test_ingest_invalid_project_id"
+          - "test_ingest_extraction_failure"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_ingest_document_integration.py"
+        tests:
+          - "test_end_to_end_pdf_ingestion"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-007: Document state transitions are valid"
+      - "PBT-008: DocumentIngested event always published on success"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-005"  # Batch document processing throughput
+    risk_refs:
+      - "R-002"    # OCR quality degrades PII detection
+    adr_refs:
+      - "ADR-001"  # Hexagonal architecture
+      - "ADR-002"  # SQLite with SQLCipher
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Core use case for document ingestion.
+    Supports multiple formats (PDF, DOCX, TXT, images).
+    Uses TextExtractor port for format-specific extraction.
+    Creates DocumentAggregate and persists via repository.

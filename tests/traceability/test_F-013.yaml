@@ -1,0 +1,53 @@
+# Traceability Audit: F-013
+# Function: ManageProjectGlossary
+# Bounded Context: BC-003 (Anonymization)
+
+traceability_audit:
+  function_id: "F-013"
+  function_name: "ManageProjectGlossary"
+  bounded_context: "BC-003"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/domain/anonymization/aggregates/glossary.py"
+    supporting_files:
+      - "src/contextsafe/application/ports/glossary_repository.py"
+      - "src/contextsafe/domain/anonymization/entities/alias_mapping.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/domain/anonymization/test_glossary.py"
+        tests:
+          - "test_add_mapping"
+          - "test_lookup_alias"
+          - "test_update_mapping"
+          - "test_remove_mapping"
+          - "test_export_glossary"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_glossary_persistence.py"
+        tests:
+          - "test_glossary_persistence"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-026: Glossary maintains bijection (entity ↔ alias)"
+      - "PBT-027: Glossary operations are ACID"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-003"  # Alias consistency across all documents
+    risk_refs: []
+    adr_refs:
+      - "ADR-002"  # SQLite with SQLCipher for storage
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Glossary aggregate is the consistency root.
+    Manages project-wide entity-to-alias mappings.
+    Supports CRUD operations on mappings.
+    Persisted in encrypted SQLite database.

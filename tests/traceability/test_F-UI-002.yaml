@@ -1,0 +1,51 @@
+# Traceability Audit: F-UI-002
+# Function: ShowDocumentPreview
+# Bounded Context: BC-001 (Document Processing)
+
+traceability_audit:
+  function_id: "F-UI-002"
+  function_name: "ShowDocumentPreview"
+  bounded_context: "BC-001"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/presentation/screens/preview_screen.tsx"
+    supporting_files:
+      - "src/contextsafe/presentation/components/diff_viewer.tsx"
+      - "src/contextsafe/presentation/components/entity_highlighter.tsx"
+      - "src/contextsafe/presentation/components/alias_mapper.tsx"
+      - "src/contextsafe/presentation/renderers/document_renderer.tsx"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/presentation/test_preview_screen.tsx"
+        tests:
+          - "test_render_diff_viewer"
+          - "test_highlight_entities"
+          - "test_show_alias_mapping"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/e2e/test_document_preview.spec.ts"
+        tests:
+          - "test_end_to_end_preview_workflow"
+        status: "not_created"
+    pbt_properties: []
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-UX-001"  # UI response time for interactive operations
+    risk_refs: []
+    adr_refs:
+      - "ADR-006"  # React with TypeScript, Tailwind, and Zustand
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Document preview screen (route: /projects/:projectId/documents/:documentId).
+    Side-by-side comparison: original vs anonymized.
+    Highlights detected entities with color coding.
+    Shows glossary mappings applied to document.

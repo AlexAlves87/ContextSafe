@@ -1,0 +1,139 @@
+# ContextSafe - Docker Compose Configuration
+# ============================================
+# Includes: Log rotation (Fix #19), Robust healthchecks (Fix #15)
+
+version: "3.8"
+
+# ============================================
+# GLOBAL LOG ROTATION (Fix #19)
+# ============================================
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+    compress: "true"
+
+# ============================================
+# COMMON ENVIRONMENT
+# ============================================
+x-common-env: &common-env
+  TZ: Europe/Madrid
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+
+services:
+  # ============================================
+  # API BACKEND
+  # ============================================
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: contextsafe-api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      <<: *common-env
+      DATABASE_URL: sqlite+aiosqlite:///data/contextsafe.db
+      DATABASE_KEY: ${DATABASE_KEY:-change_me_in_production}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://localhost:3000}
+      LLM_MODEL_PATH: /app/models/${LLM_MODEL:-mistral-7b-v0.3.Q4_K_M.gguf}
+      LLM_N_GPU_LAYERS: ${LLM_N_GPU_LAYERS:-0}
+      SPACY_MODEL: es_core_news_lg
+      TESSERACT_LANG: spa
+    volumes:
+      - contextsafe-data:/app/data
+      - contextsafe-models:/app/models
+      - contextsafe-logs:/app/logs
+    depends_on:
+      ollama:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging: *default-logging
+    restart: unless-stopped
+    networks:
+      - contextsafe-network
+
+  # ============================================
+  # OLLAMA (Alternative LLM Runtime)
+  # ============================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: contextsafe-ollama
+    ports:
+      - "${OLLAMA_PORT:-11434}:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    environment:
+      <<: *common-env
+      OLLAMA_KEEP_ALIVE: 24h
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:11434/api/tags"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    logging: *default-logging
+    restart: unless-stopped
+    networks:
+      - contextsafe-network
+    # Uncomment for GPU support (NVIDIA)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  # ============================================
+  # FRONTEND (React + Vite)
+  # ============================================
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: contextsafe-frontend
+    ports:
+      - "${FRONTEND_PORT:-5173}:80"
+    environment:
+      <<: *common-env
+      VITE_API_URL: ${API_URL:-http://localhost:8000}
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:80"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging: *default-logging
+    restart: unless-stopped
+    networks:
+      - contextsafe-network
+
+# ============================================
+# VOLUMES
+# ============================================
+volumes:
+  contextsafe-data:
+    driver: local
+  contextsafe-models:
+    driver: local
+  contextsafe-logs:
+    driver: local
+  ollama-models:
+    driver: local
+
+# ============================================
+# NETWORKS
+# ============================================
+networks:
+  contextsafe-network:
+    driver: bridge

@@ -1,0 +1,54 @@
+# Traceability Audit: F-016
+# Function: LogAuditEvent
+# Bounded Context: BC-004 (Project Management)
+
+traceability_audit:
+  function_id: "F-016"
+  function_name: "LogAuditEvent"
+  bounded_context: "BC-004"
+
+  implementation:
+    status: "implemented"
+    primary_file: "src/contextsafe/application/use_cases/log_audit/log_audit.py"
+    supporting_files:
+      - "src/contextsafe/domain/project_management/entities/audit_log.py"
+      - "src/contextsafe/core/observability/logging.py"
+      - "src/contextsafe/core/observability/traceability.py"
+
+  test_coverage:
+    unit_tests:
+      - file: "tests/unit/application/test_log_audit.py"
+        tests:
+          - "test_log_document_ingestion"
+          - "test_log_pii_detection"
+          - "test_log_anonymization"
+          - "test_log_export"
+        status: "not_created"
+    integration_tests:
+      - file: "tests/integration/test_audit_trail.py"
+        tests:
+          - "test_complete_audit_trail"
+        status: "not_created"
+    pbt_properties:
+      - "PBT-031: All domain events generate audit log entries"
+      - "PBT-032: Audit logs are immutable after creation"
+
+  traceability_chain:
+    qas_refs:
+      - "QAS-004"  # Complete audit trail for all anonymization operations
+    risk_refs:
+      - "R-006"    # Incomplete audit trail fails GDPR due diligence
+    adr_refs:
+      - "ADR-002"  # SQLite with SQLCipher for storage
+
+  verification:
+    implementation_exists: true
+    tests_exist: false
+    all_assertions_pass: false
+    coverage_percent: 0
+
+  notes: |
+    Audit logging use case.
+    AuditLog entity captures all operations.
+    Immutable, append-only for GDPR compliance.
+    Encrypted at rest via SQLCipher.
