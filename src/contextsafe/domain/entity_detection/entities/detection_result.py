@@ -26,7 +26,7 @@ from contextsafe.domain.shared.value_objects import (
 )
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class DetectionResult(Entity[EntityId]):
     """
     A detected PII entity in a document.

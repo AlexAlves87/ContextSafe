@@ -37,7 +37,7 @@ MAX_DOCUMENT_SIZE = 10 * 1024 * 1024
 VALID_EXTENSIONS = frozenset({".txt", ".pdf", ".png", ".jpg", ".jpeg", ".docx"})
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Document(Entity[DocumentId]):
     """
     Document entity for anonymization processing.

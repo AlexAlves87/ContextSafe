@@ -19,7 +19,7 @@ from contextsafe.domain.shared.types.base_event import DomainEvent
 IdType = TypeVar("IdType")
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class AggregateRoot(Generic[IdType]):
     """
     Base class for all aggregate roots.

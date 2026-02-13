@@ -29,7 +29,7 @@ from contextsafe.domain.shared.value_objects import (
 )
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class AliasMapping(Entity[EntityId]):
     """
     A mapping from a normalized PII value to its alias.

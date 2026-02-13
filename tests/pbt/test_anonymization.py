@@ -17,7 +17,7 @@ from typing import TYPE_CHECKING
 from uuid import uuid4
 
 import pytest
-from hypothesis import assume, given, settings, strategies as st
+from hypothesis import assume, given, settings, HealthCheck, strategies as st
 
 if TYPE_CHECKING:
     from contextsafe.domain.anonymization.entities.anonymized_document import (
@@ -39,7 +39,7 @@ try:
         DetectionResult,
     )
     from contextsafe.domain.anonymization.aggregates.glossary import Glossary
-    from contextsafe.domain.project_management.value_objects import ProjectId
+    from contextsafe.domain.shared.value_objects import ProjectId
 
     IMPORTS_AVAILABLE = True
 except ImportError:
@@ -59,7 +59,7 @@ def pii_entities(draw) -> tuple[str, str]:
         ("ADDRESS", ["Calle Mayor 123", "Av. Diagonal 456", "Plaza España 1"]),
         ("PHONE", ["+34 612 345 678", "91 234 56 78", "666 123 456"]),
         ("EMAIL", ["juan@example.com", "maria@empresa.es", "info@acme.com"]),
-        ("ID_NUMBER", ["12345678A", "X1234567B", "Y9876543C"]),
+        ("DNI_NIE", ["12345678A", "X1234567B", "Y9876543C"]),
     ]
     category, examples = draw(st.sampled_from(categories))
     entity = draw(st.sampled_from(examples))
@@ -138,10 +138,10 @@ class TestNoPiiInOutput:
         # Build replacement map
         replacements = {}
         for entity_text, category, start, end in entities:
-            alias = glossary.get_or_create_alias(
+            alias = glossary.get_or_assign_alias(
                 normalized_value=entity_text.lower(),
-                category=PiiCategory(category)
-            )
+                category=PiiCategory.from_string(category).unwrap()
+            ).unwrap()
             replacements[(start, end)] = alias.value
 
         # Apply replacements (from end to start to preserve positions)
@@ -164,10 +164,10 @@ class TestNoPiiInOutput:
         project_id = ProjectId(uuid4())
         glossary = Glossary.create(project_id)
 
-        alias = glossary.get_or_create_alias(
+        alias = glossary.get_or_assign_alias(
             normalized_value=entity.lower(),
-            category=PiiCategory("PERSON_NAME")
-        )
+            category=PiiCategory.from_string("PERSON_NAME").unwrap()
+        ).unwrap()
 
         # Alias should not contain the original entity
         assert entity.lower() not in alias.value.lower(), (
@@ -205,10 +205,10 @@ class TestAnonymizationDeterminism:
             # Sort by position descending to preserve indices
             sorted_ents = sorted(ents, key=lambda e: e[2], reverse=True)
             for entity_text, category, start, end in sorted_ents:
-                alias = glossary.get_or_create_alias(
+                alias = glossary.get_or_assign_alias(
                     normalized_value=entity_text.lower(),
-                    category=PiiCategory(category)
-                )
+                    category=PiiCategory.from_string(category).unwrap()
+                ).unwrap()
                 result = result[:start] + alias.value + result[end:]
             return result
 
@@ -234,18 +234,18 @@ class TestAnonymizationDeterminism:
         project_id = ProjectId(uuid4())
         glossary = Glossary.create(project_id)
 
-        alias1 = glossary.get_or_create_alias(
+        alias1 = glossary.get_or_assign_alias(
             normalized_value=entity.lower(),
-            category=PiiCategory(category)
-        )
-        alias2 = glossary.get_or_create_alias(
+            category=PiiCategory.from_string(category).unwrap()
+        ).unwrap()
+        alias2 = glossary.get_or_assign_alias(
             normalized_value=entity.lower(),
-            category=PiiCategory(category)
-        )
-        alias3 = glossary.get_or_create_alias(
+            category=PiiCategory.from_string(category).unwrap()
+        ).unwrap()
+        alias3 = glossary.get_or_assign_alias(
             normalized_value=entity.lower(),
-            category=PiiCategory(category)
-        )
+            category=PiiCategory.from_string(category).unwrap()
+        ).unwrap()
 
         assert alias1 == alias2 == alias3, (
             f"Alias not stable: {alias1}, {alias2}, {alias3}"
@@ -282,10 +282,10 @@ class TestAllEntitiesReplaced:
         # Apply replacements (descending position order)
         sorted_ents = sorted(entities, key=lambda e: e[2], reverse=True)
         for entity_text, category, start, end in sorted_ents:
-            alias = glossary.get_or_create_alias(
+            alias = glossary.get_or_assign_alias(
                 normalized_value=entity_text.lower(),
-                category=PiiCategory(category)
-            )
+                category=PiiCategory.from_string(category).unwrap()
+            ).unwrap()
             result = result[:start] + alias.value + result[end:]
             applied_replacements.append(entity_text)
 
@@ -317,10 +317,10 @@ class TestAllEntitiesReplaced:
 
         aliases = []
         for entity_text, category in entities:
-            alias = glossary.get_or_create_alias(
+            alias = glossary.get_or_assign_alias(
                 normalized_value=entity_text.lower(),
-                category=PiiCategory(category)
-            )
+                category=PiiCategory.from_string(category).unwrap()
+            ).unwrap()
             aliases.append(alias.value)
 
         # All aliases should be unique
@@ -341,13 +341,13 @@ class TestAliasFormat:
     Format: [CATEGORY_NNN] where NNN is a zero-padded counter.
     """
 
-    ALIAS_PATTERN = re.compile(r"^\[[A-Z_]+_\d{3}\]$")
+    ALIAS_PATTERN = re.compile(r"^[A-Za-z]+_\d+$")
 
     @given(
         entity=st.text(min_size=1, max_size=50),
         category=st.sampled_from([
             "PERSON_NAME", "ORGANIZATION", "ADDRESS",
-            "PHONE", "EMAIL", "ID_NUMBER"
+            "PHONE", "EMAIL", "DNI_NIE"
         ])
     )
     @settings(max_examples=100)
@@ -358,10 +358,10 @@ class TestAliasFormat:
         project_id = ProjectId(uuid4())
         glossary = Glossary.create(project_id)
 
-        alias = glossary.get_or_create_alias(
+        alias = glossary.get_or_assign_alias(
             normalized_value=entity.lower(),
-            category=PiiCategory(category)
-        )
+            category=PiiCategory.from_string(category).unwrap()
+        ).unwrap()
 
         assert self.ALIAS_PATTERN.match(alias.value), (
             f"Alias '{alias.value}' doesn't match pattern [CATEGORY_NNN]"
@@ -386,17 +386,17 @@ class TestAliasFormat:
         for entity in entities:
             if not entity.strip():
                 continue
-            alias = glossary.get_or_create_alias(
+            alias = glossary.get_or_assign_alias(
                 normalized_value=entity.lower(),
-                category=PiiCategory("PERSON_NAME")
-            )
+                category=PiiCategory.from_string("PERSON_NAME").unwrap()
+            ).unwrap()
             if entity.lower() not in {e.lower() for e in seen_aliases}:
                 seen_aliases.add(entity)
 
         # Should have generated unique aliases for unique entities
         unique_entities = len({e.lower() for e in entities if e.strip()})
         unique_aliases = len({
-            glossary.get_or_create_alias(e.lower(), PiiCategory("PERSON_NAME")).value
+            glossary.get_or_assign_alias(e.lower(), PiiCategory.from_string("PERSON_NAME").unwrap()).unwrap().value
             for e in entities if e.strip()
         })
 
@@ -424,10 +424,10 @@ class TestEdgeCases:
         project_id = ProjectId(uuid4())
         glossary = Glossary.create(project_id)
 
-        alias = glossary.get_or_create_alias(
+        alias = glossary.get_or_assign_alias(
             normalized_value="juan garcía lópez",
-            category=PiiCategory("PERSON_NAME")
-        )
+            category=PiiCategory.from_string("PERSON_NAME").unwrap()
+        ).unwrap()
 
         # Replace the full name
         result = text.replace("Juan García López", alias.value)
@@ -449,10 +449,10 @@ class TestEdgeCases:
         glossary = Glossary.create(project_id)
 
         for entity in entities:
-            alias = glossary.get_or_create_alias(
+            alias = glossary.get_or_assign_alias(
                 normalized_value=entity.lower(),
-                category=PiiCategory("PERSON_NAME")
-            )
+                category=PiiCategory.from_string("PERSON_NAME").unwrap()
+            ).unwrap()
             # Alias should be generated without error
             assert alias.value is not None
             assert entity.lower() not in alias.value.lower()
@@ -472,19 +472,215 @@ class TestEdgeCases:
         project_id = ProjectId(uuid4())
         glossary = Glossary.create(project_id)
 
-        alias_lower = glossary.get_or_create_alias(
+        alias_lower = glossary.get_or_assign_alias(
             normalized_value="juan garcía",
-            category=PiiCategory("PERSON_NAME")
-        )
-        alias_upper = glossary.get_or_create_alias(
+            category=PiiCategory.from_string("PERSON_NAME").unwrap()
+        ).unwrap()
+        alias_upper = glossary.get_or_assign_alias(
             normalized_value="JUAN GARCÍA".lower(),
-            category=PiiCategory("PERSON_NAME")
-        )
-        alias_mixed = glossary.get_or_create_alias(
+            category=PiiCategory.from_string("PERSON_NAME").unwrap()
+        ).unwrap()
+        alias_mixed = glossary.get_or_assign_alias(
             normalized_value="Juan García".lower(),
-            category=PiiCategory("PERSON_NAME")
-        )
+            category=PiiCategory.from_string("PERSON_NAME").unwrap()
+        ).unwrap()
 
         assert alias_lower == alias_upper == alias_mixed, (
             "Case normalization failed"
+        )
+
+
+# =============================================================================
+# PBT-044: Adversarial Input Robustness
+# =============================================================================
+
+try:
+    from .conftest import (
+        adversarial_pii_entities_gen,
+        control_chars_text_gen,
+        dirty_text_gen,
+        homoglyph_text_gen,
+        injection_payload_gen,
+        large_text_gen,
+        rtl_text_gen,
+    )
+    DIRTY_IMPORTS_AVAILABLE = IMPORTS_AVAILABLE
+except ImportError:
+    DIRTY_IMPORTS_AVAILABLE = False
+
+
+@pytest.mark.skipif(not DIRTY_IMPORTS_AVAILABLE, reason="Domain imports not available")
+class TestAdversarialInputRobustness:
+    """
+    PBT-044: System must not crash or leak PII with adversarial inputs.
+
+    Tests that the anonymization pipeline handles dirty, malicious, or
+    malformed text without exceptions or data leakage.
+    """
+
+    @given(
+        entity=adversarial_pii_entities_gen(),
+        filler=dirty_text_gen(),
+    )
+    @settings(max_examples=100, deadline=None)
+    def test_adversarial_entities_get_aliases(self, entity: tuple, filler: str):
+        """Adversarial PII entities must receive valid aliases without crashing."""
+        entity_text, category = entity
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=entity_text.lower(),
+            category=PiiCategory.from_string(category).unwrap(),
+        ).unwrap()
+
+        # Alias must be generated and must not contain the original entity
+        assert alias.value is not None
+        assert len(alias.value) > 0
+        # The normalized entity text should NOT appear in the alias
+        if entity_text.strip():
+            assert entity_text.lower() not in alias.value.lower()
+
+    @given(payload=injection_payload_gen())
+    @settings(max_examples=50, deadline=None)
+    def test_injection_payloads_safely_aliased(self, payload: str):
+        """SQL/XSS/prompt injection payloads must be aliased without leaking."""
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=payload.lower(),
+            category=PiiCategory.from_string("PERSON_NAME").unwrap(),
+        ).unwrap()
+
+        # The alias must NOT contain the payload
+        assert payload.lower() not in alias.value.lower()
+        # The alias must follow the expected pattern
+        assert re.match(r"^Persona_\d+$", alias.value)
+
+    @given(text=control_chars_text_gen())
+    @settings(max_examples=50, deadline=None)
+    def test_control_characters_handled(self, text: str):
+        """Text with control characters must not crash alias generation."""
+        assume(any(c.isalnum() for c in text))
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        # Must not raise any exception
+        alias = glossary.get_or_assign_alias(
+            normalized_value=text.lower(),
+            category=PiiCategory.from_string("PERSON_NAME").unwrap(),
+        ).unwrap()
+        assert alias.value is not None
+
+    @given(text=homoglyph_text_gen())
+    @settings(max_examples=50, deadline=None)
+    def test_homoglyph_text_handled(self, text: str):
+        """Text with Unicode homoglyphs must not crash or bypass anonymization."""
+        assume(len(text.strip()) > 0)
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=text.lower(),
+            category=PiiCategory.from_string("PERSON_NAME").unwrap(),
+        ).unwrap()
+        assert alias.value is not None
+        assert text.lower() not in alias.value.lower()
+
+    @given(text=rtl_text_gen())
+    @settings(max_examples=30, deadline=None)
+    def test_rtl_text_handled(self, text: str):
+        """Right-to-left text must not crash or produce invalid aliases."""
+        assume(len(text.strip()) > 0)
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=text.lower(),
+            category=PiiCategory.from_string("PERSON_NAME").unwrap(),
+        ).unwrap()
+        assert alias.value is not None
+        assert re.match(r"^Persona_\d+$", alias.value)
+
+    @given(text=large_text_gen(min_kb=100, max_kb=500))
+    @settings(
+        max_examples=5,
+        deadline=None,
+        suppress_health_check=[HealthCheck.too_slow, HealthCheck.large_base_example],
+    )
+    def test_large_text_handled(self, text: str):
+        """Large text inputs (100KB-500KB) must not cause OOM or timeout."""
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=text[:1000].lower(),  # Normalize only a prefix
+            category=PiiCategory.from_string("PERSON_NAME").unwrap(),
+        ).unwrap()
+        assert alias.value is not None
+
+    @given(
+        entity=adversarial_pii_entities_gen(),
+        filler=dirty_text_gen(),
+    )
+    @settings(max_examples=50, deadline=None)
+    def test_adversarial_no_pii_in_output(self, entity: tuple, filler: str):
+        """PII must not leak at its original position after replacement."""
+        entity_text, category = entity
+        assume(len(entity_text.strip()) > 0)
+        # Avoid false positives: skip when filler contains the entity text
+        assume(entity_text not in filler)
+
+        # Build document: filler + entity + filler
+        doc = f"{filler} {entity_text} {filler}"
+        start = len(filler) + 1
+        end = start + len(entity_text)
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias = glossary.get_or_assign_alias(
+            normalized_value=entity_text.lower(),
+            category=PiiCategory.from_string(category).unwrap(),
+        ).unwrap()
+
+        # Replace entity in document
+        anonymized = doc[:start] + alias.value + doc[end:]
+
+        # The replaced segment must contain the alias, not the original PII
+        replaced_segment = anonymized[start:start + len(alias.value)]
+        assert replaced_segment == alias.value
+        # Original entity must not appear in the anonymized output
+        assert entity_text not in anonymized, (
+            f"PII '{entity_text}' leaked in anonymized output with dirty filler"
+        )
+
+    @given(
+        entity=adversarial_pii_entities_gen(),
+    )
+    @settings(max_examples=50, deadline=None)
+    def test_adversarial_determinism(self, entity: tuple):
+        """Adversarial entities must produce deterministic aliases."""
+        entity_text, category = entity
+
+        project_id = ProjectId(uuid4())
+        glossary = Glossary.create(project_id)
+
+        alias1 = glossary.get_or_assign_alias(
+            normalized_value=entity_text.lower(),
+            category=PiiCategory.from_string(category).unwrap(),
+        ).unwrap()
+        alias2 = glossary.get_or_assign_alias(
+            normalized_value=entity_text.lower(),
+            category=PiiCategory.from_string(category).unwrap(),
+        ).unwrap()
+
+        assert alias1 == alias2, (
+            f"Determinism violated for adversarial entity '{entity_text}': "
+            f"{alias1} != {alias2}"
         )

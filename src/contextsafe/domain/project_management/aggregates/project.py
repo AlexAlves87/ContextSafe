@@ -27,7 +27,7 @@ class ProjectError(DomainError):
     status = 422
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Project(AggregateRoot[ProjectId]):
     """
     Aggregate root for a project.

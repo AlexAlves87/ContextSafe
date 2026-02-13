@@ -51,7 +51,7 @@ class AuditEventType(str, Enum):
     SETTINGS_CHANGED = "SETTINGS_CHANGED"
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class AuditLog(Entity[EntityId]):
     """
     Audit log entry for tracking user actions.

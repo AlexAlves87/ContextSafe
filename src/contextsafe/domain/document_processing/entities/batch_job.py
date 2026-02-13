@@ -37,7 +37,7 @@ class BatchJobStatus(str, Enum):
     CANCELLED = "CANCELLED"
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class BatchJob(Entity[EntityId]):
     """
     A batch processing job for multiple documents.

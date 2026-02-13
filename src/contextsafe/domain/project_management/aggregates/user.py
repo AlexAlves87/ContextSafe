@@ -35,7 +35,7 @@ class UserError(DomainError):
     status = 422
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class User(AggregateRoot[EntityId]):
     """
     Aggregate root for a user.

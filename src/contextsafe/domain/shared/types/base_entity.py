@@ -19,7 +19,7 @@ from uuid import UUID, uuid4
 IdType = TypeVar("IdType")
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Entity(ABC, Generic[IdType]):
     """
     Base class for all domain entities.

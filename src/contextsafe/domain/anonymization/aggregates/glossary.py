@@ -37,7 +37,7 @@ from contextsafe.domain.shared.value_objects import (
 )
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class Glossary(AggregateRoot[ProjectId]):
     """
     Aggregate root for managing alias mappings within a project.
@@ -324,8 +324,8 @@ class Glossary(AggregateRoot[ProjectId]):
             glossary._mappings_by_value[lookup_key] = mapping
             glossary._values_by_alias[mapping.alias.value] = mapping.normalized_value
 
-        glossary.created_at = datetime.fromisoformat(data["created_at"])
-        glossary.updated_at = datetime.fromisoformat(data["updated_at"])
-        glossary.version = data.get("version", 1)
+        object.__setattr__(glossary, "created_at", datetime.fromisoformat(data["created_at"]))
+        object.__setattr__(glossary, "updated_at", datetime.fromisoformat(data["updated_at"]))
+        object.__setattr__(glossary, "version", data.get("version", 1))
 
         return glossary
