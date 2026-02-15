@@ -47,6 +47,7 @@ DETECTOR_CATEGORY_BONUS: dict[tuple[str, str], float] = {
     ("regex", "CREDIT_CARD"): 2.5,
     ("regex", "SOCIAL_SECURITY"): 2.5,
     ("regex", "LICENSE_PLATE"): 2.0,
+    ("regex", "CASE_NUMBER"): 2.5,
     # RoBERTa is better for semantic entities
     ("roberta", "PERSON_NAME"): 1.0,
     ("roberta", "ORGANIZATION"): 0.5,

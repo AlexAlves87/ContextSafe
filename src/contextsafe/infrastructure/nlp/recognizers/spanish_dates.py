@@ -103,7 +103,7 @@ class SpanishDateRecognizer(PatternRecognizer):
         supported_entity: str = "ES_DATE",
     ):
         patterns = patterns if patterns else self.PATTERNS
-        context = context if context else self.CONTEXT
+        context = context if context is not None else []
         super().__init__(
             supported_entity=supported_entity,
             patterns=patterns,

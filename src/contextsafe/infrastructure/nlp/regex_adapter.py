@@ -146,7 +146,7 @@ _PARTICLE_UC = rf'(?:DE(?:{_S}(?:LA|LOS|LAS))?{_S}|DEL{_S})'
 _FIRST = rf'(?:Mª|{_CAP})'
 _NWORD = rf'(?:{_PARTICLE})?{_CAP_HYP}'
 _NWORD_UC = rf'(?:{_PARTICLE_UC})?{_CAP_UC}'
-_TERM = rf'(?={_S0}[,.:;\n>)\]]|{_S}[a-záéíóúñü]|\s*$)'
+_TERM = rf'(?={_S0}[,.:;\n>)\]|]|{_S}[a-záéíóúñü]|\s*$)'
 _TERM_UC = rf'(?={_S0}[,.:;\n>)\]]|\s*$)'
 
 

@@ -444,10 +444,12 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
                 entity_info = f"{detection.category.value}: {result.replacement[:25]}..."
                 await progress_callback(i + 1, total_detections, entity_info)
 
-            # Replace in text
+            # Replace in text (with boundary check to preserve whitespace)
             start = detection.span.start
             end = detection.span.end
-            anonymized = anonymized[:start] + result.replacement + anonymized[end:]
+            after_char = anonymized[end:end + 1] if end < len(anonymized) else ""
+            space_suffix = " " if after_char.isalnum() else ""
+            anonymized = anonymized[:start] + result.replacement + space_suffix + anonymized[end:]
 
             # Record replacement
             replacements.append(
@@ -461,6 +463,16 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
                 )
             )
 
+        # Glossary consistency scan — find values NER missed
+        # Searches text for glossary-known entities (PERSON_NAME, ORGANIZATION)
+        # that were not detected by NER (e.g., bare names in tables).
+        replaced_spans = [
+            (d.span.start, d.span.end) for d in sorted_detections
+        ]
+        anonymized = self._glossary_consistency_scan(
+            anonymized, project_id, replaced_spans
+        )
+
         # Final progress update
         if progress_callback:
             await progress_callback(total_detections, total_detections, "Completado")
@@ -473,6 +485,73 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
             anonymized_text=anonymized,
             replacements=replacements,
         )
+
+    def _glossary_consistency_scan(
+        self,
+        text: str,
+        project_id: str,
+        replaced_spans: list[tuple[int, int]],
+    ) -> str:
+        """
+        Post-replacement scan: find glossary-known values that NER missed.
+
+        Searches the already-partially-anonymized text for occurrences of
+        values that exist in the glossary but were not detected by NER.
+        This catches bare names in tables, repeated mentions without titles, etc.
+
+        Only scans for PERSON_NAME and ORGANIZATION categories (the ones
+        prone to detection gaps when appearing without contextual markers).
+
+        Args:
+            text: Text after NER-based replacements
+            project_id: Project ID for glossary lookup
+            replaced_spans: Spans already replaced (to avoid double-processing)
+
+        Returns:
+            Text with additional replacements applied
+        """
+        project_glossary = self._glossaries.get(project_id, {})
+        if not project_glossary:
+            return text
+
+        # Only scan categories prone to detection gaps
+        scan_categories = ("PERSON_NAME", "ORGANIZATION")
+
+        additional_replacements: list[tuple[int, int, str]] = []
+
+        for category in scan_categories:
+            entries = project_glossary.get(category, {})
+            for original_value, alias in entries.items():
+                # Skip very short values to avoid false matches
+                if len(original_value) < 5:
+                    continue
+
+                # Search case-insensitive in the current text
+                pattern = re.compile(re.escape(original_value), re.IGNORECASE)
+                for match in pattern.finditer(text):
+                    m_start, m_end = match.start(), match.end()
+
+                    # Skip if this span overlaps with an already-replaced zone
+                    overlaps = False
+                    for r_start, r_end in replaced_spans:
+                        if m_start < r_end and m_end > r_start:
+                            overlaps = True
+                            break
+                    if overlaps:
+                        continue
+
+                    additional_replacements.append(
+                        (m_start, m_end, alias)
+                    )
+
+        # Apply replacements in reverse order (largest offset first)
+        additional_replacements.sort(key=lambda x: x[0], reverse=True)
+        for start, end, alias_value in additional_replacements:
+            after_char = text[end:end + 1] if end < len(text) else ""
+            space_suffix = " " if after_char.isalnum() else ""
+            text = text[:start] + alias_value + space_suffix + text[end:]
+
+        return text
 
     async def get_or_create_alias(
         self,

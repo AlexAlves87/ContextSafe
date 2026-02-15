@@ -47,6 +47,7 @@ LEVEL_CATEGORIES: dict[AnonymizationLevelEnum, FrozenSet[PiiCategoryEnum]] = {
         PiiCategoryEnum.DATE,
         PiiCategoryEnum.SOCIAL_SECURITY,
         PiiCategoryEnum.MEDICAL_RECORD,
+        PiiCategoryEnum.PLATFORM,
     }),
     AnonymizationLevelEnum.ADVANCED: frozenset({
         PiiCategoryEnum.PERSON_NAME,
@@ -62,6 +63,7 @@ LEVEL_CATEGORIES: dict[AnonymizationLevelEnum, FrozenSet[PiiCategoryEnum]] = {
         PiiCategoryEnum.MEDICAL_RECORD,
         PiiCategoryEnum.LICENSE_PLATE,
         PiiCategoryEnum.SOCIAL_SECURITY,
+        PiiCategoryEnum.PLATFORM,
     }),
 }
 

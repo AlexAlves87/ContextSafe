@@ -179,8 +179,10 @@ class GenerateAnonymized:
 
             alias = alias_result.unwrap()
 
-            # Replace in text
-            text = text[:entity.start] + alias.value + text[entity.end:]
+            # Replace in text (with boundary check to preserve whitespace)
+            after_char = text[entity.end:entity.end + 1] if entity.end < len(text) else ""
+            space_suffix = " " if after_char.isalnum() else ""
+            text = text[:entity.start] + alias.value + space_suffix + text[entity.end:]
 
             # Track usage
             key = f"{category}:{entity.value.lower()}"
@@ -199,6 +201,20 @@ class GenerateAnonymized:
                     category=str(category),
                     occurrences=1,
                 )
+
+        # 9.5 Glossary consistency scan — find values NER missed
+        # Searches text for glossary-known entities (PERSON_NAME, ORGANIZATION)
+        # that were not detected by NER (e.g., bare names in tables).
+        replaced_spans = [
+            (entity.start, entity.end) for entity in sorted_entities
+            if PiiCategory.from_string(entity.category).is_ok()
+            and level.includes_category(
+                PiiCategory.from_string(entity.category).unwrap().value
+            )
+        ]
+        text = self._glossary_consistency_scan(
+            text, glossary, replaced_spans, level
+        )
 
         # 10. Complete anonymization
         result = aggregate.complete_anonymization(text)
@@ -232,3 +248,80 @@ class GenerateAnonymized:
                 anonymized_text=text,
             )
         )
+
+    @staticmethod
+    def _glossary_consistency_scan(
+        text: str,
+        glossary: Any,
+        replaced_spans: list[tuple[int, int]],
+        level: AnonymizationLevel,
+    ) -> str:
+        """
+        Post-replacement scan: find glossary-known values that NER missed.
+
+        Searches the already-partially-anonymized text for occurrences of
+        values that exist in the glossary but were not detected by NER.
+        This catches bare names in tables, repeated mentions without titles, etc.
+
+        Only scans for PERSON_NAME and ORGANIZATION categories (the ones
+        prone to detection gaps when appearing without contextual markers).
+
+        Args:
+            text: Text after NER-based replacements
+            glossary: The project glossary with known mappings
+            replaced_spans: Spans already replaced (to avoid double-processing)
+            level: Anonymization level (to filter categories)
+
+        Returns:
+            Text with additional replacements applied
+        """
+        additional_replacements: list[tuple[int, int, str]] = []
+
+        for lookup_key, mapping in glossary._mappings_by_value.items():
+            parts = lookup_key.split(":", 1)
+            if len(parts) != 2:
+                continue
+            category_str, normalized_value = parts
+
+            # Check if category is included in this level
+            cat_result = PiiCategory.from_string(category_str)
+            if cat_result.is_err():
+                continue
+            category = cat_result.unwrap()
+            if not level.includes_category(category.value):
+                continue
+
+            # Only scan for categories prone to detection gaps
+            if category_str not in ("PERSON_NAME", "ORGANIZATION"):
+                continue
+
+            # Skip very short values to avoid false matches
+            if len(normalized_value) < 5:
+                continue
+
+            # Search case-insensitive in the current text
+            pattern = re.compile(re.escape(normalized_value), re.IGNORECASE)
+            for match in pattern.finditer(text):
+                m_start, m_end = match.start(), match.end()
+
+                # Skip if this span overlaps with an already-replaced zone
+                overlaps = False
+                for r_start, r_end in replaced_spans:
+                    if m_start < r_end and m_end > r_start:
+                        overlaps = True
+                        break
+                if overlaps:
+                    continue
+
+                additional_replacements.append(
+                    (m_start, m_end, mapping.alias.value)
+                )
+
+        # Apply replacements in reverse order (largest offset first)
+        additional_replacements.sort(key=lambda x: x[0], reverse=True)
+        for start, end, alias_value in additional_replacements:
+            after_char = text[end:end + 1] if end < len(text) else ""
+            space_suffix = " " if after_char.isalnum() else ""
+            text = text[:start] + alias_value + space_suffix + text[end:]
+
+        return text

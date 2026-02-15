@@ -209,6 +209,21 @@ COMMON_SHORT_WORDS = {
 
 
 # ============================================================================
+# PLATFORM NAMES BLOCKLIST (Error 3 — WhatsApp as Persona)
+# Platform/app names that spaCy/RoBERTa misclassify as PERSON_NAME.
+# These should ONLY be detected as PLATFORM, never as PERSON_NAME.
+# ============================================================================
+PLATFORM_NAMES_BLOCKLIST = {
+    "whatsapp", "telegram", "signal", "messenger",
+    "instagram", "facebook", "twitter", "tiktok",
+    "linkedin", "snapchat", "discord", "slack",
+    "teams", "skype", "zoom", "wechat", "viber",
+    "wallapop", "vinted", "milanuncios", "idealista",
+    "fotocasa", "infojobs", "imessage", "facetime",
+}
+
+
+# ============================================================================
 # GENERIC TERMS WHITELIST (FP-4)
 # Terms that represent generic concepts, not specific PII entities.
 # These should NEVER be anonymized even if detected as ORG/PERSON.
@@ -266,6 +281,59 @@ CONTEXT_EXCLUSION_PATTERNS: List[Pattern] = [
 # ============================================================================
 
 YEAR_FOOTNOTE_PATTERN = re.compile(r"\b((?:19|20)\d{2})(\d{1,2})\b")
+
+
+# ============================================================================
+# STRUCTURAL OVERRIDE PATTERNS (Errors 5-7 — post-merge reclassification)
+# Deterministic patterns that should ALWAYS win over statistical models.
+# Applied after merge to fix misclassifications by RoBERTa/spaCy.
+# ============================================================================
+
+_MONTH_NAMES = (
+    r"(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto"
+    r"|septiembre|octubre|noviembre|diciembre)"
+)
+
+# Patterns that definitively identify a DATE
+STRUCTURAL_DATE_PATTERNS: list[re.Pattern] = [
+    # "28 de octubre de 2025"
+    re.compile(
+        rf"^\d{{1,2}}\s+de\s+{_MONTH_NAMES}\s+de\s+\d{{4}}$",
+        re.IGNORECASE,
+    ),
+    # "17 julio 2025"
+    re.compile(
+        rf"^\d{{1,2}}\s+{_MONTH_NAMES}\s+\d{{4}}$",
+        re.IGNORECASE,
+    ),
+    # DD/MM/YYYY, DD-MM-YYYY, DD.MM.YYYY
+    re.compile(r"^\d{1,2}[/\-\.]\d{1,2}[/\-\.]\d{4}$"),
+]
+
+# Patterns that definitively identify a CASE_NUMBER
+STRUCTURAL_CASE_NUMBER_PATTERNS: list[re.Pattern] = [
+    # "548/2025-D7" — digits/year with alphanumeric suffix
+    re.compile(r"^\d{1,5}/\d{4}-[A-Z0-9]{1,4}$", re.IGNORECASE),
+    # "548/2025" — bare digits/year (only when NOT already a known entity)
+    re.compile(r"^\d{1,5}/\d{4}$"),
+]
+
+# Context pattern: entity right after judicial number ("Nº 6 DE", "nº 3 de")
+# Used to reclassify ORG -> LOCATION for city names in judicial headers
+# Two patterns for judicial location context:
+# 1. "Juzgado ... Nº X de/DE" (judicial organ with number)
+# 2. "Audiencia Provincial de" (no number needed)
+JUDICIAL_LOCATION_CONTEXT: list[re.Pattern] = [
+    re.compile(
+        r"(?:juzgado|sala)\s+.*?"
+        r"n[ºúu]m?\.?\s*\d+\s+(?:de|DE)\s*$",
+        re.IGNORECASE | re.DOTALL,
+    ),
+    re.compile(
+        r"(?:audiencia\s+provincial|tribunal\s+superior)\s+(?:de|DE)\s*$",
+        re.IGNORECASE,
+    ),
+]
 
 
 # ============================================================================
@@ -512,6 +580,9 @@ class CompositeNerAdapter(NerService):
                 winner = self._resolve_by_voting(group)
                 merged.append(winner)
 
+        # Step 8.5: Structural overrides (deterministic reclassification)
+        merged = self._apply_structural_overrides(merged, text)
+
         # Step 9: Sort by position for consistent output
         merged.sort(key=lambda d: (d.span.start, d.span.end))
 
@@ -607,6 +678,65 @@ class CompositeNerAdapter(NerService):
         )
 
         return best
+
+    def _apply_structural_overrides(
+        self,
+        detections: list[NerDetection],
+        text: str = "",
+    ) -> list[NerDetection]:
+        """
+        Post-merge structural overrides for deterministic patterns.
+
+        Reclassifies entities whose text matches deterministic patterns
+        that should ALWAYS override statistical model predictions.
+
+        Fixes:
+        - Error 5: Dates classified as ORG (e.g., "28 de octubre de 2025")
+        - Error 6: Case numbers classified as ORG (e.g., "548/2025-D7")
+        - Error 7: City names in judicial headers classified as ORG
+
+        Args:
+            detections: Merged detections after voting
+            text: Original text for context analysis
+
+        Returns:
+            Detections with structural overrides applied
+        """
+        _date = PiiCategory.from_string("DATE").unwrap()
+        _case_number = PiiCategory.from_string("CASE_NUMBER").unwrap()
+        _location = PiiCategory.from_string("LOCATION").unwrap()
+
+        result: list[NerDetection] = []
+
+        for det in detections:
+            value = det.value.strip()
+
+            # Override 1: DATE patterns
+            if det.category != _date:
+                for pattern in STRUCTURAL_DATE_PATTERNS:
+                    if pattern.match(value):
+                        det = det.with_category(_date)
+                        break
+
+            # Override 2: CASE_NUMBER patterns
+            if det.category != _case_number:
+                for pattern in STRUCTURAL_CASE_NUMBER_PATTERNS:
+                    if pattern.match(value):
+                        det = det.with_category(_case_number)
+                        break
+
+            # Override 3: LOCATION in judicial headers
+            # If entity is classified as ORG and context before it matches
+            # a judicial organ + number pattern, reclassify as LOCATION
+            if det.category == ORGANIZATION and text:
+                context_start = max(0, det.span.start - 120)
+                context_before = text[context_start:det.span.start]
+                if any(p.search(context_before) for p in JUDICIAL_LOCATION_CONTEXT):
+                    det = det.with_category(_location)
+
+            result.append(det)
+
+        return result
 
     def _filter_nested_entities(
         self, detections: list[NerDetection]
@@ -786,6 +916,11 @@ class CompositeNerAdapter(NerService):
             # Check generic terms whitelist (FP-4)
             if value_lower in GENERIC_TERMS_WHITELIST:
                 continue
+
+            # Check if platform name misclassified as PERSON_NAME (Error 3)
+            if detection.category == PERSON_NAME:
+                if value_lower in PLATFORM_NAMES_BLOCKLIST:
+                    continue
 
             # Check if it's a short common word (1-5 chars, single word)
             if len(value_lower) <= 5 and " " not in value_lower:
