@@ -212,11 +212,11 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         return "http://localhost:11434"
 
     # Categories that should be merged when adjacent (Corrección #1)
-    # If an ADDRESS and POSTAL_CODE are adjacent, keep only the longer one
+    # NOTE: POSTAL_CODE removed from merge — CP is independent PII that
+    # identifies the locality even without the street address.
+    # Fix C4: "08635" must be anonymized separately from the address.
     MERGE_ADJACENT_CATEGORIES = {
-        ("ADDRESS", "POSTAL_CODE"),
         ("ADDRESS", "LOCATION"),
-        ("POSTAL_CODE", "ADDRESS"),
         ("LOCATION", "ADDRESS"),
     }
 
@@ -247,12 +247,25 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         if not detections:
             return []
 
-        # Sort by span length (longest first), then by confidence
+        # Fix C2: GDPR risk priority — higher risk categories survive overlap.
+        # Consistent with voting.py priority system.
+        # Example: LOCATION (60) beats ORGANIZATION (50) when spans overlap.
+        _CATEGORY_PRIORITY = {
+            "PERSON_NAME": 100, "DNI_NIE": 95, "SOCIAL_SECURITY": 90,
+            "PHONE": 85, "EMAIL": 80, "IBAN": 75, "CREDIT_CARD": 70,
+            "ADDRESS": 65, "LOCATION": 60, "PASSPORT": 55,
+            "ORGANIZATION": 50, "DATE": 40, "POSTAL_CODE": 35,
+            "LICENSE_PLATE": 30, "CASE_NUMBER": 20,
+        }
+
         sorted_dets = sorted(
             detections,
             key=lambda d: (
-                -(d.span.end - d.span.start),  # Longer spans first
+                -_CATEGORY_PRIORITY.get(
+                    d.category.value if hasattr(d.category, 'value') else str(d.category), 0
+                ),                              # Higher GDPR risk first
                 -d.confidence.value,            # Higher confidence first
+                -(d.span.end - d.span.start),   # Longer spans first (tiebreaker)
             ),
         )
 
@@ -501,10 +514,24 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # consistency. The same entity always gets the same alias.
         # ================================================================
 
-        # Check if already mapped using centralized normalization
+        # Check if already mapped in CURRENT category
         existing_alias = find_matching_value(original_value, project_glossary[category], category)
         if existing_alias:
             return existing_alias
+
+        # CROSS-CATEGORY CHECK (Fix C1): Same text in different category = reuse alias
+        # Prevents "ALEJANDRO ÁLVAREZ ESPEJO" getting Org_002 AND Persona_001
+        for other_category, other_entries in project_glossary.items():
+            if other_category == category or other_category.startswith("_"):
+                continue
+            # Use PERSON_NAME matching rules (partial, fuzzy) for cross-category
+            # because the same name may appear as ORG in one detector and PER in another
+            cross_match = find_matching_value(original_value, other_entries, "PERSON_NAME")
+            if cross_match:
+                # Found in another category — reuse that alias
+                # Also register in current category to avoid repeated cross-lookups
+                project_glossary[category][original_value] = cross_match
+                return cross_match
 
         # Special handling for DATE: also compare parsed values
         if category == "DATE":

@@ -131,82 +131,181 @@ class RegexPattern:
     case_sensitive: bool = False  # Whether pattern needs case-sensitive matching
 
 
+# ============================================================================
+# PERSON NAME — Building blocks (ML audit R4)
+# Source: plan_integracion_hallazgos_ml_a_produccion.md §3.2
+# ============================================================================
+_S = r'[^\S\n]+'           # whitespace but NOT newline
+_S0 = r'[^\S\n]*'          # optional non-newline whitespace
+_SN = r'[\s]+'             # whitespace INCLUDING newline (title→name gap only)
+_CAP = r'[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+'
+_CAP_HYP = r'[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+(?:-[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+)?'
+_CAP_UC = r'[A-ZÁÉÍÓÚÑÜ]{2,}'
+_PARTICLE = rf'(?:de(?:{_S}(?:la|los|las))?{_S}|del{_S})'
+_PARTICLE_UC = rf'(?:DE(?:{_S}(?:LA|LOS|LAS))?{_S}|DEL{_S})'
+_FIRST = rf'(?:Mª|{_CAP})'
+_NWORD = rf'(?:{_PARTICLE})?{_CAP_HYP}'
+_NWORD_UC = rf'(?:{_PARTICLE_UC})?{_CAP_UC}'
+_TERM = rf'(?={_S0}[,.:;\n>)\]]|{_S}[a-záéíóúñü]|\s*$)'
+_TERM_UC = rf'(?={_S0}[,.:;\n>)\]]|\s*$)'
+
+
 # Regex patterns for Spanish PII
 # Patterns with validators will get confidence=1.0 if validation passes
 PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # =========================================================================
-    # PERSON NAMES (BUG 1 & 5 - Critical)
-    # Names with honorifics: D., Dña., Don, Doña, Sr., Sra.
-    # IMPORTANT: Use lookahead (?=...) to stop at verbs/lowercase words
+    # PERSON NAMES (ML audit R1-R4: 19 patterns with particles, hyphens,
+    # cross-line, double titles, extended terminators)
+    # Source: plan_integracion_hallazgos_ml_a_produccion.md §3.2, §5 Cambios 4-7
+    # Evidence: +9 TP across 5 audited documents, 0 regressions
     # =========================================================================
-    # Pattern: "D. Nombre Apellido1 Apellido2" - stops before lowercase verb
-    # Example: "D. Alberto Baxeras Aizpún vulneraría" → captures only name
-    # CRITICAL: case_sensitive=True to prevent IGNORECASE from breaking lookahead
+    # "D. Nombre [de/del/de la] Apellido1 Apellido2"
     (
-        r"\bD\.\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,2})(?=\s*[,.:;\n]|\s+[a-záéíóúñ]|\s*$)",
+        rf'\bD\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
         "PERSON_NAME",
         0.98,
         None,
-        True,  # case_sensitive - MUST be True for lookahead to work!
+        True,
     ),
-    # Pattern: "Dña. Nombre Apellido1 Apellido2"
+    # "D.ª Nombre Apellido1 Apellido2" (feminine magistrates)
     (
-        r"\bD(?:ña|ÑA)\.\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,2})(?=\s*[,.:;\n]|\s+[a-záéíóúñ]|\s*$)",
+        rf'\bD\.ª{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
         "PERSON_NAME",
         0.98,
         None,
-        True,  # case_sensitive
+        True,
     ),
-    # Pattern: "Don/Doña Nombre Apellido1 Apellido2"
+    # "Dª[.] Nombre Apellido1 Apellido2"
     (
-        r"\b(?:Don|Doña)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,2})(?=\s*[,.:;\n]|\s+[a-záéíóúñ]|\s*$)",
+        rf'\bDª\.?{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
         "PERSON_NAME",
         0.98,
         None,
-        True,  # case_sensitive
+        True,
     ),
-    # Pattern: "Sr./Sra./Srta. Apellido1 Apellido2"
+    # "Dña./DÑA. Nombre [de/del] Apellido1 Apellido2"
     (
-        r"\b(?:Sr|Sra|Srta)\.\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){0,1})(?=\s*[,.:;\n]|\s+[a-záéíóúñ]|\s*$)",
+        rf'\bD(?:ña|ÑA)\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.98,
+        None,
+        True,
+    ),
+    # "don/doña/Don/Doña Nombre [de/del] Apellido1 Apellido2"
+    (
+        rf'\b(?:[Dd]on|[Dd]oña){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.98,
+        None,
+        True,
+    ),
+    # "Sra. Dña./D.ª Nombre Apellido" (double title — Cambio 5)
+    (
+        rf'\b(?:Sr|Sra)\.{_S}(?:Dña\.|D\.ª|Dª\.?){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.98,
+        None,
+        True,
+    ),
+    # "Sr./Sra./Srta. Nombre [de/del] Apellido1 Apellido2"
+    # Excludes titles/roles as first word (Dña, Letrada, Fiscal, ...)
+    (
+        rf'\b(?:Sr|Sra|Srta)\.{_S}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}',
         "PERSON_NAME",
         0.95,
         None,
-        True,  # case_sensitive
+        True,
     ),
-    # Pattern: UPPERCASE names in signatures "D. ALEJANDRO ÁLVAREZ ESPEJO"
-    # case_sensitive=True - only uppercase names
+    # ALL CAPS: "D. ALEJANDRO ÁLVAREZ ESPEJO DE LA TORRE"
     (
-        r"\bD\.\s+([A-ZÁÉÍÓÚÑ]{2,}(?:\s+[A-ZÁÉÍÓÚÑ]{2,}){1,2})(?=\s*[,.:;\n]|\s*$)",
+        rf'\bD\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}',
         "PERSON_NAME",
         0.98,
         None,
-        True,  # case_sensitive - only uppercase
+        True,
     ),
-    # Pattern: Person initials "D. A", "D. R", "Dña. M" (common in legal docs)
-    # Uses word boundary \b after the initial to ensure it's a single letter
-    # "D. A como" matches (A is word boundary), "D. Alberto" doesn't (A continues)
+    # ALL CAPS: "DÑA. MARÍA GARCÍA LÓPEZ"
     (
-        r"\bD\.\s+([A-ZÁÉÍÓÚÑ])\b",
+        rf'\bD(?:ña|ÑA)\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}',
+        "PERSON_NAME",
+        0.98,
+        None,
+        True,
+    ),
+    # Person initials: "D. A", "Dña. M"
+    (
+        r'\bD\.\s+([A-ZÁÉÍÓÚÑÜ])\b',
         "PERSON_NAME",
         0.92,
         None,
-        True,  # case_sensitive
+        True,
     ),
-    # Pattern: "Dña. M", "Dña. A" - female initials
     (
-        r"\bD(?:ña|ÑA)\.\s+([A-ZÁÉÍÓÚÑ])\b",
+        r'\bD(?:ña|ÑA)\.\s+([A-ZÁÉÍÓÚÑÜ])\b',
         "PERSON_NAME",
         0.92,
         None,
-        True,  # case_sensitive
+        True,
     ),
-    # Pattern: Multiple initials "D. A. B. C." or "D.A.B.C."
+    # Multiple initials: "D. A. B. C."
     (
-        r"\bD\.\s*([A-ZÁÉÍÓÚÑ]\.(?:\s*[A-ZÁÉÍÓÚÑ]\.)+)",
+        r'\bD\.\s*([A-ZÁÉÍÓÚÑÜ]\.(?:\s*[A-ZÁÉÍÓÚÑÜ]\.)+)',
         "PERSON_NAME",
         0.92,
         None,
-        True,  # case_sensitive
+        True,
+    ),
+    # --- Cross-line variants (title\nName) — Cambio 6 ---
+    # Lower confidence (0.93) to distinguish from same-line matches.
+    # _SN allows newline ONLY between title and first name;
+    # subsequent name parts use _S (no newline) to prevent bleeding.
+    # "D.\nNombre Apellido1 Apellido2"
+    (
+        rf'\bD\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.93,
+        None,
+        True,
+    ),
+    # "D.ª\nNombre Apellido1 Apellido2"
+    (
+        rf'\bD\.ª{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.93,
+        None,
+        True,
+    ),
+    # "Dª[.]\nNombre Apellido1 Apellido2"
+    (
+        rf'\bDª\.?{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.93,
+        None,
+        True,
+    ),
+    # "Dña.\nNombre Apellido1 Apellido2"
+    (
+        rf'\bD(?:ña|ÑA)\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.93,
+        None,
+        True,
+    ),
+    # "don/doña\nNombre Apellido1 Apellido2"
+    (
+        rf'\b(?:[Dd]on|[Dd]oña){_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        "PERSON_NAME",
+        0.93,
+        None,
+        True,
+    ),
+    # "Sr./Sra.\nNombre Apellido1 Apellido2" (with role exclusion)
+    (
+        rf'\b(?:Sr|Sra|Srta)\.{_SN}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}',
+        "PERSON_NAME",
+        0.90,
+        None,
+        True,
     ),
 
     # =========================================================================
@@ -482,6 +581,16 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         r"(?i)\ben\s+([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑa-záéíóúñ\s]{2,30}?),?\s+a\s+(?:\[FECHA\]|\d{1,2})",
         "LOCATION",
         0.90,
+        None,
+    ),
+    # Pattern: "[Ciudad], a [fecha]" - signature WITHOUT "en" prefix (Fix C3)
+    # Common in Spanish legal signatures: "Martorell, a 15 de febrero de 2025"
+    # Uses ^/newline anchor to avoid false positives mid-sentence
+    # Confidence 0.88 (lower than "en Ciudad" variant to avoid FP)
+    (
+        r"(?im)^([A-ZÁÉÍÓÚÑ][a-záéíóúñ]{2,25}),?\s+a\s+(?:\[FECHA\]|\d{1,2})",
+        "LOCATION",
+        0.88,
         None,
     ),
     # Pattern: "AL JUZGADO DE [algo] Nº X DE [CIUDAD]" header

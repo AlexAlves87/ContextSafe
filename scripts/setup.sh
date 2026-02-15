@@ -69,7 +69,7 @@ pip install pydantic pydantic-settings structlog httpx > /dev/null 2>&1
 echo -e "${GREEN}  ✓ Core${NC}"
 
 # Web framework
-pip install fastapi "uvicorn[standard]" websockets > /dev/null 2>&1
+pip install fastapi "uvicorn[standard]" websockets python-multipart > /dev/null 2>&1
 echo -e "${GREEN}  ✓ FastAPI${NC}"
 
 # Database

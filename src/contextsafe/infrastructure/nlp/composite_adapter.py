@@ -268,6 +268,21 @@ CONTEXT_EXCLUSION_PATTERNS: List[Pattern] = [
 YEAR_FOOTNOTE_PATTERN = re.compile(r"\b((?:19|20)\d{2})(\d{1,2})\b")
 
 
+# ============================================================================
+# NER GARBAGE FILTERS (ML audit R2/R3 — post-merge false positive reduction)
+# Source: plan_integracion_hallazgos_ml_a_produccion.md, Cambios 1-3
+# Evidence: Reporte consolidado §3.3, §4.1, §5.1
+# ============================================================================
+
+# Whitelist: 1-word ORGs that are always valid (F2)
+_ORG_WHITELIST_1WORD = frozenset({
+    "ETA", "TEDH", "CNI", "CESID", "NATO", "OTAN", "ONU", "UE",
+    "UNESCO", "UNICEF", "EUROPOL", "INTERPOL", "FRONTEX",
+    "Batasuna", "Sortu", "Bildu", "Podemos", "Ciudadanos", "Vox",
+    "TSJ", "CGPJ", "BOE", "BOCG", "TSJC", "TSJPV",
+})
+
+
 class CompositeNerAdapter(NerService):
     """
     Composite NER service that combines multiple NER adapters.
@@ -449,6 +464,9 @@ class CompositeNerAdapter(NerService):
 
         # Step 2: Filter out stopwords and generic terms (Corrección #6, FP-4)
         filtered_detections = self._filter_stopwords(filtered_detections)
+
+        # Step 2.5: Filter NER garbage (ML audit R2/R3: F1, F2, F3, F5, F6)
+        filtered_detections = self._filter_ner_garbage(filtered_detections)
 
         # Step 3: Filter contextual false positives (DOI, ORCID, URLs) (FP-2, FP-3)
         if text:
@@ -783,6 +801,75 @@ class CompositeNerAdapter(NerService):
                         continue
 
             filtered.append(detection)
+
+        return filtered
+
+    def _filter_ner_garbage(
+        self, detections: list[NerDetection]
+    ) -> list[NerDetection]:
+        """
+        Filter NER garbage detections from RoBERTa.
+
+        Applies post-filters discovered during ML audit (4 rounds on 5 real
+        documents, 926K chars). These catch false positives that pass through
+        the model but are clearly not valid entities.
+
+        Filters:
+        F1. ≤2 alphabetic chars (PDF fragments: "E", "V", "Gu")
+        F2. 1-word ORG with confidence <0.85, not in whitelist
+        F3. Starts/ends with quotes or truncated preposition ("de"/"del"/"de la")
+        F5. Starts with lowercase letter (PDF truncation: "hiza", "izcaya")
+        F6. Starts with punctuation (garbage: ".\\nSegismundo")
+
+        Note: F4 (gazetteer surnames) not applicable — production has no gazetteer.
+        Note: F7 (generic ORG blacklist) already covered by _filter_stopwords()
+              which uses .lower() matching against GENERIC_TERMS_WHITELIST.
+
+        Evidence: plan_integracion_hallazgos_ml_a_produccion.md §5 Cambios 1-2
+        """
+        filtered: list[NerDetection] = []
+
+        for det in detections:
+            if det.source != "roberta":
+                filtered.append(det)
+                continue
+
+            text_s = det.value.strip()
+            if not text_s:
+                continue
+
+            # F1: ≤2 alphabetic chars — PDF fragment artifacts
+            alpha_count = sum(1 for c in text_s if c.isalpha())
+            if alpha_count <= 2:
+                continue
+
+            # F3: starts with quote or ends with truncated preposition
+            if (
+                text_s.startswith('"') or text_s.startswith("'")
+                or text_s.endswith(" de") or text_s.endswith(" del")
+                or text_s.endswith(" de la")
+            ):
+                continue
+
+            # F5: starts with lowercase — PDF truncation
+            if text_s[0].islower():
+                continue
+
+            # F6: starts with punctuation — NER garbage
+            if not text_s[0].isalnum():
+                continue
+
+            # F2: 1-word ORG from NER, low confidence, not in whitelist
+            text_normalized = " ".join(text_s.split())
+            if (
+                det.category == ORGANIZATION
+                and " " not in text_normalized
+                and text_normalized not in _ORG_WHITELIST_1WORD
+                and det.confidence.value < 0.85
+            ):
+                continue
+
+            filtered.append(det)
 
         return filtered
 
