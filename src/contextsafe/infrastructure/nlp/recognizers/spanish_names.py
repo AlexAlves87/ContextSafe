@@ -15,7 +15,9 @@ Traceability:
 
 from __future__ import annotations
 
+import json
 import re
+from pathlib import Path
 from typing import List, Optional
 
 from presidio_analyzer import Pattern, PatternRecognizer
@@ -143,6 +145,44 @@ class SpanishNameRecognizer(PatternRecognizer):
             context=context,
             supported_language=supported_language,
         )
+        self._all_names = self._load_name_gazetteers()
+
+    @staticmethod
+    def _load_name_gazetteers() -> frozenset:
+        """Load all name gazetteers from ml/gazetteers/."""
+        base = Path(__file__).resolve().parents[4] / "ml" / "gazetteers"
+        names: set[str] = set()
+
+        # nombres_todos.json → campo "nombres" (lista)
+        todos = base / "nombres_todos.json"
+        if todos.exists():
+            data = json.loads(todos.read_text(encoding="utf-8"))
+            names.update(n.upper() for n in data.get("nombres", []))
+
+        # nombres_arcaicos_flat.json → campo "todos_nombres" (lista)
+        arcaicos = base / "nombres_arcaicos_flat.json"
+        if arcaicos.exists():
+            data = json.loads(arcaicos.read_text(encoding="utf-8"))
+            names.update(n.upper() for n in data.get("todos_nombres", []))
+
+        # nombres_hombres/mujeres.json → campo "nombres_por_decada"
+        # Cada década es lista de {"nombre": "JOSE", "frecuencia": 8395}
+        for f in ["nombres_hombres.json", "nombres_mujeres.json"]:
+            path = base / f
+            if path.exists():
+                data = json.loads(path.read_text(encoding="utf-8"))
+                for decade_entries in data.get("nombres_por_decada", {}).values():
+                    for entry in decade_entries:
+                        if isinstance(entry, dict):
+                            names.add(entry["nombre"].upper())
+                        else:
+                            names.add(str(entry).upper())
+
+        # Fallback: si no se encontraron gazetteers, usar COMMON_NAMES
+        if not names:
+            names.update(SpanishNameRecognizer.COMMON_NAMES)
+
+        return frozenset(names)
 
     # Words that should NEVER appear in a person's name
     NAME_FALSE_POSITIVES = {
@@ -194,7 +234,7 @@ class SpanishNameRecognizer(PatternRecognizer):
         words = clean.split()
         if len(words) < 2:
             # Single word - only valid if it's a known first name
-            return clean.upper() in self.COMMON_NAMES
+            return clean.upper() in self._all_names
 
         # CRITICAL: Names with more than 5 words are probably multiple people or errors
         if len(words) > 5:
