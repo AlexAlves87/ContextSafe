@@ -583,6 +583,10 @@ class CompositeNerAdapter(NerService):
         # Step 8.5: Structural overrides (deterministic reclassification)
         merged = self._apply_structural_overrides(merged, text)
 
+        # Step 8.6: Coreference boost for names confirmed with title
+        if text:
+            merged = self._boost_coreferenced_names(merged, text)
+
         # Step 9: Sort by position for consistent output
         merged.sort(key=lambda d: (d.span.start, d.span.end))
 
@@ -737,6 +741,72 @@ class CompositeNerAdapter(NerService):
             result.append(det)
 
         return result
+
+    def _boost_coreferenced_names(
+        self,
+        detections: list[NerDetection],
+        text: str,
+    ) -> list[NerDetection]:
+        """
+        Boost confidence of standalone names confirmed by titled occurrences.
+
+        If "D. Teodoro García" appears with high confidence (≥0.90),
+        all standalone "Teodoro" occurrences with low confidence (<0.75)
+        are boosted to 0.85.
+
+        This prevents false negatives when NER detects a bare first name
+        with low confidence, but the same name was already confirmed
+        with a formal title elsewhere in the document.
+
+        Evidence: plan_produccion_mejoras_pendientes_v2.md §4 (Cambio 2)
+        Impact: 36 fragile detections (NER-only, conf <0.70) gain backup
+
+        Args:
+            detections: Merged detections after structural overrides
+            text: Original document text
+
+        Returns:
+            Detections with boosted confidence for coreferenced names
+        """
+        _title_re = re.compile(
+            r'^(?:D\.|Dña\.|D\.ª|Dª\.?|Don|Doña|Sr\.|Sra\.)\s*',
+            re.IGNORECASE,
+        )
+
+        # Step 1: Collect confirmed first names from high-confidence detections
+        confirmed_first_names: set[str] = set()
+        for det in detections:
+            if det.category != PERSON_NAME or det.confidence.value < 0.90:
+                continue
+            clean = _title_re.sub('', det.value).strip()
+            if not clean:
+                continue
+            first_name = clean.split()[0]
+            if len(first_name) >= 3:
+                confirmed_first_names.add(first_name.upper())
+
+        if not confirmed_first_names:
+            return detections
+
+        # Step 2: Boost low-confidence standalone names that match
+        boosted: list[NerDetection] = []
+        for det in detections:
+            if (
+                det.category == PERSON_NAME
+                and det.confidence.value < 0.75
+                and det.value.strip().upper() in confirmed_first_names
+            ):
+                boosted.append(NerDetection(
+                    category=det.category,
+                    value=det.value,
+                    span=det.span,
+                    confidence=ConfidenceScore(0.85),
+                    source=det.source,
+                ))
+            else:
+                boosted.append(det)
+
+        return boosted
 
     def _filter_nested_entities(
         self, detections: list[NerDetection]
