@@ -8,6 +8,8 @@ from uuid import uuid4
 
 import pytest
 
+pytestmark = pytest.mark.unit
+
 from contextsafe.domain.shared.value_objects import (
     Alias,
     ConfidenceScore,
