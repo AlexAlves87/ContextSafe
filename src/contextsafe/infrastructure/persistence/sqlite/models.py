@@ -17,6 +17,8 @@ from typing import Any, Optional
 from sqlalchemy import JSON, Boolean, DateTime, Integer, String, Text
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
+from contextsafe.infrastructure.persistence.encryption import decrypt, encrypt
+
 
 class Base(DeclarativeBase):
     """SQLAlchemy declarative base for all models."""
@@ -65,12 +67,12 @@ class DocumentModel(Base):
             project_id=doc_data.get("project_id", ""),
             filename=doc_data.get("filename", ""),
             content_path=doc_data.get("content_path"),
-            extracted_text=data.get("extracted_text"),
+            extracted_text=encrypt(data.get("extracted_text")),
             state=data["state"],
-            anonymized_text=data.get("anonymized_text"),
+            anonymized_text=encrypt(data.get("anonymized_text")),
             anonymization_level=data.get("anonymization_level"),
             detection_count=data.get("detection_count", 0),
-            error_message=data.get("error_message"),
+            error_message=encrypt(data.get("error_message")),
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),
             version=data.get("version", 1),
@@ -89,12 +91,12 @@ class DocumentModel(Base):
         self.project_id = doc_data.get("project_id", self.project_id)
         self.filename = doc_data.get("filename", self.filename)
         self.content_path = doc_data.get("content_path")
-        self.extracted_text = data.get("extracted_text")
+        self.extracted_text = encrypt(data.get("extracted_text"))
         self.state = data["state"]
-        self.anonymized_text = data.get("anonymized_text")
+        self.anonymized_text = encrypt(data.get("anonymized_text"))
         self.anonymization_level = data.get("anonymization_level")
         self.detection_count = data.get("detection_count", 0)
-        self.error_message = data.get("error_message")
+        self.error_message = encrypt(data.get("error_message"))
         self.updated_at = datetime.fromisoformat(data["updated_at"])
         self.version = data.get("version", 1)
         self.metadata_json = doc_data.get("metadata")
@@ -108,7 +110,7 @@ class DocumentModel(Base):
                 "project_id": self.project_id,
                 "filename": self.filename,
                 "content_path": self.content_path,
-                "extracted_text": self.extracted_text,
+                "extracted_text": decrypt(self.extracted_text),
                 "state": self.state,
                 "created_at": self.created_at.isoformat(),
                 "updated_at": self.updated_at.isoformat(),
@@ -116,11 +118,11 @@ class DocumentModel(Base):
                 "metadata": self.metadata_json or {},
             },
             "state": self.state,
-            "extracted_text": self.extracted_text,
-            "anonymized_text": self.anonymized_text,
+            "extracted_text": decrypt(self.extracted_text),
+            "anonymized_text": decrypt(self.anonymized_text),
             "anonymization_level": self.anonymization_level,
             "detection_count": self.detection_count,
-            "error_message": self.error_message,
+            "error_message": decrypt(self.error_message),
             "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
             "version": self.version,
@@ -238,8 +240,8 @@ class GlossaryModel(Base):
         return cls(
             id=str(uuid4()),
             project_id=data["id"],
-            mappings_json=data.get("mappings", []),
-            counters_json=data.get("counters", {}),
+            mappings_json=encrypt(json.dumps(data.get("mappings", []))),
+            counters_json=encrypt(json.dumps(data.get("counters", {}))),
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),
             version=data.get("version", 1),
@@ -253,8 +255,8 @@ class GlossaryModel(Base):
             glossary: Glossary aggregate instance
         """
         data = glossary.to_dict()
-        self.mappings_json = data.get("mappings", [])
-        self.counters_json = data.get("counters", {})
+        self.mappings_json = encrypt(json.dumps(data.get("mappings", [])))
+        self.counters_json = encrypt(json.dumps(data.get("counters", {})))
         self.updated_at = datetime.fromisoformat(data["updated_at"])
         self.version = data.get("version", 1)
 
@@ -262,8 +264,8 @@ class GlossaryModel(Base):
         """Convert model to dictionary for aggregate reconstruction."""
         return {
             "id": self.project_id,
-            "mappings": self.mappings_json or [],
-            "counters": self.counters_json or {},
+            "mappings": json.loads(decrypt(self.mappings_json) or "[]"),
+            "counters": json.loads(decrypt(self.counters_json) or "{}"),
             "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
             "version": self.version,
