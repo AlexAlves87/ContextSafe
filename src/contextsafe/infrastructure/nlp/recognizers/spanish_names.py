@@ -95,19 +95,19 @@ class SpanishNameRecognizer(PatternRecognizer):
         # Pattern 1: D./Dña. + Mixed-case Name (e.g., "D. Juan García López")
         Pattern(
             "NAME_WITH_TITLE_D",
-            r"\b(?:D\.|Dña\.|D\.ª|Dª\.?)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
+            r"\b(?:D\.|Dña\.|D\.ª|Dª\.?)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
             0.95,
         ),
         # Pattern 2: Don/Doña + Mixed-case Name (e.g., "Don Juan García")
         Pattern(
             "NAME_WITH_TITLE_DON",
-            r"(?i)\b(?:Don|Doña)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
+            r"(?i)\b(?:Don|Doña)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
             0.95,
         ),
         # Pattern 3: Sr./Sra. + Name (e.g., "Sr. García López")
         Pattern(
             "NAME_WITH_TITLE_SR",
-            r"\b(?:Sr\.|Sra\.|Señor|Señora)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){0,2})(?=\s*[,.\n]|$)",
+            r"\b(?:Sr\.|Sra\.|Señor|Señora)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){0,2})(?=\s*[,.\n]|$)",
             0.90,
         ),
         # Pattern 4: UPPERCASE names after prefix (e.g., "DON PEDRO MARTINEZ")
@@ -127,35 +127,35 @@ class SpanishNameRecognizer(PatternRecognizer):
         # Captures: FirstName LastName LastName, Role (allows newline between comma and role)
         Pattern(
             "NAME_WITH_ROLE",
-            r"\b([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}),\s*\n?\s*(?:Letrado|Abogado|Procurador|Magistrado|Juez|Secretario|Fiscal|Notario|Registrador|Director|Presidente|Vocal|Consejero)",
+            r"\b([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}),\s*\n?\s*(?:Letrado|Abogado|Procurador|Magistrado|Juez|Secretario|Fiscal|Notario|Registrador|Director|Presidente|Vocal|Consejero)",
             0.92,
         ),
         # Pattern 7: Excmo./Excma. Sr./Sra. D./Dña. + Name (judicial honorifics)
         # Added negative lookahead to stop before "Votación", "Ponente", etc.
         Pattern(
             "NAME_JUDICIAL_HONORIFIC",
-            r"\b(?:Excm[oa]\.|Ilm[oa]\.)\s*(?:Sr\.|Sra\.)\s*(?:D\.|Dña\.)\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?!Votación|Ponente|Materia|Recurso)[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*\n|\s*$|\s+Votación|\s+Ponente)",
+            r"\b(?:Excm[oa]\.|Ilm[oa]\.)\s*(?:Sr\.|Sra\.)\s*(?:D\.|Dña\.)\s*([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?!Votación|Ponente|Materia|Recurso)(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*\n|\s*$|\s+Votación|\s+Ponente)",
             0.95,
         ),
         # Pattern 8: Name after newline followed by role (common in document headers)
         # e.g., "Agustín Pardillo Hernández,\nLetrado del Gabinete Técnico"
         Pattern(
             "NAME_HEADER_WITH_ROLE",
-            r"\n([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}),?\s*\n\s*(?:Letrado|Abogado|Procurador|Magistrado|Secretario)",
+            r"\n([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3}),?\s*\n\s*(?:Letrado|Abogado|Procurador|Magistrado|Secretario)",
             0.90,
         ),
         # Pattern 9: Name without prefix followed by comma and role context
         # Captures names like "Agustín Pardillo Hernández," when followed by professional role
         Pattern(
             "NAME_STANDALONE_WITH_ROLE_CONTEXT",
-            r"(?:^|\n)([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)?),\s*(?:\n\s*)?(?:Letrado|Abogado|Procurador|Magistrado|Juez|Secretario|Fiscal|Notario|del\s+Gabinete)",
+            r"(?:^|\n)([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)?),\s*(?:\n\s*)?(?:Letrado|Abogado|Procurador|Magistrado|Juez|Secretario|Fiscal|Notario|del\s+Gabinete)",
             0.88,
         ),
         # Pattern 10: Name in list after D./Dña. entries (detects standalone names in magistrate lists)
         # e.g., after "D. Fernando Cerdá Albero\n" comes "Agustín Pardillo Hernández,"
         Pattern(
             "NAME_AFTER_MAGISTRATE_LIST",
-            r"(?:D\.|Dña\.)[^\n]+\n([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)?),",
+            r"(?:D\.|Dña\.)[^\n]+\n([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)?),",
             0.85,
         ),
     ]
