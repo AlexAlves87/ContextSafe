@@ -29,11 +29,11 @@
 
 ## FASE 4: Infraestructura
 
-- [ ] F09 — fix(nlp): evitar inyeccion PowerShell via stdin
-- [ ] F10 — fix(nlp): delimitadores XML y validacion de entidades LLM
-- [ ] F07 — fix(docproc): try/except en deteccion de imagenes DOCX
-- [ ] F05 — fix(api): reemplazar datetime.utcnow() por now(timezone.utc)
-- [ ] F06 — fix(cli): sincronizar version con pyproject.toml
+- [x] F09 — fix(nlp): evitar inyeccion PowerShell via stdin
+- [x] F10 — fix(nlp): delimitadores XML y validacion de entidades LLM
+- [x] F07 — fix(docproc): try/except en deteccion de imagenes DOCX
+- [x] F05 — fix(api): reemplazar datetime.utcnow() por now(timezone.utc)
+- [x] F06 — fix(cli): sincronizar version con pyproject.toml
 
 ## FASE 5: Offset Mapping + Glossary Scan
 
