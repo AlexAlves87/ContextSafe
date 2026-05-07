@@ -11,6 +11,9 @@ Standalone tests: ml/scripts/preprocess/text_normalizer.py
 import re
 import unicodedata
 
+from contextsafe.application.ports.text_preprocessor import OffsetMapping
+from contextsafe.infrastructure.text_processing.offset_tracker import OffsetTracker
+
 
 # Zero-width and invisible characters to remove
 ZERO_WIDTH_PATTERN = re.compile(r"[\u200b-\u200f\u2060-\u206f\ufeff]")
@@ -88,6 +91,67 @@ class TextNormalizer:
         text = text.replace("\u00ad", "")
 
         return text.strip()
+
+    def normalize_with_mapping(self, text: str) -> OffsetMapping:
+        """
+        Normalize text and return an OffsetMapping to translate offsets back.
+
+        Args:
+            text: Input text to normalize.
+
+        Returns:
+            OffsetMapping with source_text, normalized_text, and char_map.
+        """
+        if not text:
+            return OffsetMapping.identity(text)
+
+        tracker = OffsetTracker(text)
+        for i, ch in enumerate(text):
+            if ZERO_WIDTH_PATTERN.match(ch):
+                tracker.skip_char(i)
+                continue
+            nfkc = unicodedata.normalize('NFKC', ch)
+            nfkc = ''.join(HOMOGLYPHS.get(c, c) for c in nfkc)
+            if '\u00ad' in nfkc:
+                nfkc = nfkc.replace('\u00ad', '')
+                tracker.replace_char(i, nfkc)
+                continue
+            tracker.replace_char(i, nfkc)
+
+        # Build initial mapping
+        mapping = tracker.build()
+        norm_chars = list(mapping.normalized_text)
+        char_map = list(mapping.char_map)
+
+        # Collapse multiple spaces → single space (matching normalize behaviour)
+        collapsed_chars: list[str] = []
+        collapsed_map: list[int] = []
+        prev_space = False
+        for ch, src_pos in zip(norm_chars, char_map):
+            if ch == ' ':
+                if prev_space:
+                    continue
+                prev_space = True
+            else:
+                prev_space = False
+            collapsed_chars.append(ch)
+            collapsed_map.append(src_pos)
+
+        # Strip leading/trailing spaces
+        full = ''.join(collapsed_chars)
+        stripped = full.strip()
+        left_strip = len(full) - len(full.lstrip(' '))
+        right_strip = len(full) - len(full.rstrip(' '))
+        start = left_strip
+        end = len(collapsed_chars) - right_strip
+        final_chars = collapsed_chars[start:end]
+        final_map = collapsed_map[start:end]
+
+        return OffsetMapping(
+            source_text=text,
+            normalized_text=''.join(final_chars),
+            char_map=tuple(final_map),
+        )
 
 
 # Module-level instance for convenience
