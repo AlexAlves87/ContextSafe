@@ -67,8 +67,7 @@ class SessionManager:
 
     def __init__(self):
         self._sessions: dict[str, Session] = {}
-
-    _local_session_id: str = "local"
+        self._local_session_id: str = str(uuid.uuid4())
 
     def get_or_create_local_session(self) -> Session:
         """Obtiene o crea la sesión local única."""
