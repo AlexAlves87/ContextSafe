@@ -11,7 +11,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Optional
 from uuid import uuid4
@@ -74,8 +74,8 @@ class AuditLog(Entity[EntityId]):
     new_value: Optional[str] = None
     ip_address: Optional[str] = None
     user_agent: Optional[str] = None
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     metadata: dict[str, Any] = field(default_factory=dict)
 

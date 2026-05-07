@@ -14,7 +14,8 @@ from __future__ import annotations
 import csv
 import io
 import json
-from datetime import datetime
+import re
+from datetime import datetime, timezone
 from enum import Enum
 from uuid import UUID
 
@@ -347,13 +348,13 @@ async def export_glossary(
         )
 
     entries = session_manager.get_glossary(session_id, project_id_str)
-    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
 
     if format == ExportFormat.JSON:
         # Export as JSON
         export_data = {
             "project_id": project_id_str,
-            "exported_at": datetime.utcnow().isoformat(),
+            "exported_at": datetime.now(timezone.utc).isoformat(),
             "total_entries": len(entries),
             "entries": [
                 {

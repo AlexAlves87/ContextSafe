@@ -11,7 +11,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 from uuid import uuid4
@@ -56,8 +56,8 @@ class Document(Entity[DocumentId]):
     content_path: Optional[str] = None
     extracted_text: Optional[str] = None
     state: DocumentState = field(default_factory=lambda: PENDING)
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     metadata: dict[str, Any] = field(default_factory=dict)
 

@@ -10,7 +10,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Optional
 from uuid import uuid4
@@ -60,8 +60,8 @@ class BatchJob(Entity[EntityId]):
     error_message: Optional[str] = None
     started_at: Optional[datetime] = None
     completed_at: Optional[datetime] = None
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     metadata: dict[str, Any] = field(default_factory=dict)
 
@@ -112,7 +112,7 @@ class BatchJob(Entity[EntityId]):
     def start(self) -> None:
         """Mark the job as started."""
         object.__setattr__(self, "status", BatchJobStatus.RUNNING)
-        object.__setattr__(self, "started_at", datetime.utcnow())
+        object.__setattr__(self, "started_at", datetime.now(timezone.utc))
         self._touch()
 
     def pause(self) -> None:
@@ -131,7 +131,7 @@ class BatchJob(Entity[EntityId]):
         """Cancel the job."""
         if self.status in {BatchJobStatus.PENDING, BatchJobStatus.RUNNING, BatchJobStatus.PAUSED}:
             object.__setattr__(self, "status", BatchJobStatus.CANCELLED)
-            object.__setattr__(self, "completed_at", datetime.utcnow())
+            object.__setattr__(self, "completed_at", datetime.now(timezone.utc))
             self._touch()
 
     def record_success(self) -> None:
@@ -152,7 +152,7 @@ class BatchJob(Entity[EntityId]):
         """Mark the entire job as failed."""
         object.__setattr__(self, "status", BatchJobStatus.FAILED)
         object.__setattr__(self, "error_message", error)
-        object.__setattr__(self, "completed_at", datetime.utcnow())
+        object.__setattr__(self, "completed_at", datetime.now(timezone.utc))
         self._touch()
 
     def _check_completion(self) -> None:
@@ -162,7 +162,7 @@ class BatchJob(Entity[EntityId]):
                 object.__setattr__(self, "status", BatchJobStatus.FAILED)
             else:
                 object.__setattr__(self, "status", BatchJobStatus.COMPLETED)
-            object.__setattr__(self, "completed_at", datetime.utcnow())
+            object.__setattr__(self, "completed_at", datetime.now(timezone.utc))
 
     @property
     def progress_percent(self) -> int:

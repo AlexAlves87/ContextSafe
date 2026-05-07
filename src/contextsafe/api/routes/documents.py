@@ -11,7 +11,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 from uuid import UUID, uuid4
 
@@ -138,7 +138,7 @@ async def create_document(
             detail="Failed to create document",
         )
 
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     response = DocumentResponse(
         id=UUID(doc.id),
         project_id=project_id,
@@ -724,7 +724,7 @@ async def review_entity(
                                 "alias": new_alias,
                                 "category": new_cat_upper,
                                 "occurrences": 1,
-                                "created_at": datetime.utcnow().isoformat(),
+                                "created_at": datetime.now(timezone.utc).isoformat(),
                                 "reversible": True,
                             }
                         )
@@ -1068,7 +1068,7 @@ async def anonymize_selection(
                 "alias": generated_alias,
                 "category": category_upper,
                 "occurrences": original_text.count(text),
-                "created_at": datetime.utcnow().isoformat(),
+                "created_at": datetime.now(timezone.utc).isoformat(),
                 "manual": True,  # Mark as manually added
                 "reversible": not is_masking_level,  # BASIC is not reversible
                 "masking_level": anonymization_level,

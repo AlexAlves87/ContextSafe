@@ -11,7 +11,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 from uuid import uuid4
 
@@ -28,7 +28,7 @@ class DomainEvent:
     - Include metadata for tracing and correlation
     """
 
-    occurred_at: datetime = field(default_factory=datetime.utcnow)
+    occurred_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     event_id: str = field(default_factory=lambda: str(uuid4()))
     correlation_id: str = field(default="")
     causation_id: str = field(default="")

@@ -8,7 +8,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Optional
 from uuid import uuid4
@@ -51,8 +51,8 @@ class User(AggregateRoot[EntityId]):
     is_active: bool = True
     last_login: Optional[datetime] = None
     settings: dict[str, Any] = field(default_factory=dict)
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
@@ -135,7 +135,7 @@ class User(AggregateRoot[EntityId]):
 
     def record_login(self) -> None:
         """Record a login event."""
-        object.__setattr__(self, "last_login", datetime.utcnow())
+        object.__setattr__(self, "last_login", datetime.now(timezone.utc))
         self._touch()
 
     def deactivate(self) -> None:

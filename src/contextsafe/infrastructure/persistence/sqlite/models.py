@@ -10,7 +10,8 @@ Traceability:
 
 from __future__ import annotations
 
-from datetime import datetime
+import json
+from datetime import datetime, timezone
 from typing import Any, Optional
 
 from sqlalchemy import JSON, Boolean, DateTime, Integer, String, Text

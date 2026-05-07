@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import UUID, uuid4
 
 from contextsafe.api.services.ner_registry import (
@@ -261,21 +261,17 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         for alias, count in alias_counts.items():
             if alias not in existing_aliases:
                 entity = alias_data[alias]
-                session_manager.add_glossary_entry(
-                    session_id,
-                    project_id,
-                    {
-                        "id": str(uuid4()),
-                        "original_text": entity["original_text"],
-                        "alias": entity["alias"],
-                        "category": entity["category"],
-                        "occurrences": count,
-                        "created_at": datetime.utcnow().isoformat(),
-                        # BASIC level: mark as not reversible (audit only)
-                        "reversible": not is_masking_level,
-                        "masking_level": anonymization_level,
-                    },
-                )
+                session_manager.add_glossary_entry(session_id, project_id, {
+                    "id": str(uuid4()),
+                    "original_text": entity["original_text"],
+                    "alias": entity["alias"],
+                    "category": entity["category"],
+                    "occurrences": count,
+                    "created_at": datetime.now(timezone.utc).isoformat(),
+                    # BASIC level: mark as not reversible (audit only)
+                    "reversible": not is_masking_level,
+                    "masking_level": anonymization_level,
+                })
                 existing_aliases.add(alias)
             else:
                 # Update occurrence count for existing entry

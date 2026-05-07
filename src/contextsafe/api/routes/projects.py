@@ -8,7 +8,7 @@ Traceability:
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import UUID, uuid4
 
 from fastapi import APIRouter, HTTPException, Query, Request, Response, status
@@ -47,7 +47,7 @@ async def create_project(
     session_id = get_session_id(request)
 
     project_id = uuid4()
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     project = ProjectResponse(
         id=project_id,
         name=request_body.name,
@@ -122,7 +122,7 @@ async def update_project(
         description=request_body.description,
         anonymization_level=request_body.default_anonymization_level.lower(),
         created_at=created_at,
-        updated_at=datetime.utcnow(),
+        updated_at=datetime.now(timezone.utc),
         document_count=project_data.get("document_count", 0),
         entity_count=project_data.get("entity_count", 0),
         completion_percentage=project_data.get("completion_percentage", 0),

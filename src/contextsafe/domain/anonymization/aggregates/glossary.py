@@ -14,8 +14,8 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
-from typing import Any, Optional
+from datetime import datetime, timezone
+from typing import Any, Dict, List, Optional
 
 from contextsafe.domain.anonymization.entities.alias_mapping import AliasMapping
 from contextsafe.domain.anonymization.services.normalization import (
@@ -53,9 +53,9 @@ class Glossary(AggregateRoot[ProjectId]):
     # Maps alias_value -> normalized_value (for uniqueness check)
     _values_by_alias: dict[str, str] = field(default_factory=dict)
     # Counter per category for generating sequential aliases
-    _counters: dict[PiiCategoryEnum, int] = field(default_factory=dict)
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    _counters: Dict[PiiCategoryEnum, int] = field(default_factory=dict)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 

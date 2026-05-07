@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, Generic, TypeVar
 from uuid import uuid4
 
@@ -34,8 +34,8 @@ class Entity(ABC, Generic[IdType]):
     """
 
     id: IdType = field(kw_only=False)  # Allow positional for id
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
 
     def __eq__(self, other: object) -> bool:
@@ -50,7 +50,7 @@ class Entity(ABC, Generic[IdType]):
 
     def _touch(self) -> None:
         """Update the updated_at timestamp and increment version."""
-        object.__setattr__(self, "updated_at", datetime.utcnow())
+        object.__setattr__(self, "updated_at", datetime.now(timezone.utc))
         object.__setattr__(self, "version", self.version + 1)
 
     @classmethod

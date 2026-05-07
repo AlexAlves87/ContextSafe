@@ -9,8 +9,8 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime
-from typing import Any, Optional
+from datetime import datetime, timezone
+from typing import Any, List, Optional
 from uuid import uuid4
 
 from contextsafe.domain.shared.errors import DomainError
@@ -46,8 +46,8 @@ class Project(AggregateRoot[ProjectId]):
     document_count: int = 0
     is_active: bool = True
     settings: dict[str, Any] = field(default_factory=dict)
-    created_at: datetime = field(default_factory=datetime.utcnow)
-    updated_at: datetime = field(default_factory=datetime.utcnow)
+    created_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
     version: int = field(default=1)
     _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
