@@ -26,6 +26,7 @@ from typing import Any
 
 from contextsafe.application.ports import NerDetection, NerService, ProgressCallback
 from contextsafe.domain.shared.types import Ok
+from contextsafe.application.ports.text_preprocessor import OffsetMapping
 from contextsafe.domain.shared.value_objects import (
     ADDRESS,
     BANK_ACCOUNT,
@@ -38,6 +39,7 @@ from contextsafe.domain.shared.value_objects import (
     PERSON_NAME,
     ConfidenceScore,
     PiiCategory,
+    TextSpan,
 )
 
 # Intelligent merge components
@@ -580,10 +582,14 @@ class CompositeNerAdapter(NerService):
         if not text or not text.strip():
             return []
 
+        original_text = text
+        offset_mapping: OffsetMapping | None = None
+
         # Apply text normalization (Unicode, OCR robustness)
         # This handles: fullwidth chars, zero-width chars, Cyrillic homoglyphs
         if self._normalizer:
-            text = self._normalizer.normalize(text)
+            offset_mapping = self._normalizer.normalize_with_mapping(text)
+            text = offset_mapping.normalized_text
             if not text:  # After normalization, text might become empty
                 return []
 
@@ -666,6 +672,21 @@ class CompositeNerAdapter(NerService):
 
         if progress_callback:
             await progress_callback(100, 100, f"Detección completa: {len(merged)} entidades")
+
+        # Translate offsets back to original text
+        if offset_mapping is not None:
+            translated: list[NerDetection] = []
+            for det in merged:
+                orig_start, orig_end = offset_mapping.to_original_span(
+                    det.span.start, det.span.end
+                )
+                new_value = original_text[orig_start:orig_end]
+                span_result = TextSpan.create(orig_start, orig_end, new_value)
+                if span_result.is_ok():
+                    translated.append(det.with_span(span_result.unwrap(), new_value))
+                else:
+                    translated.append(det)
+            return translated
 
         return merged
 
