@@ -56,19 +56,19 @@
 ## FASE 8: Sesion y WebSocket
 
 - [x] F21 — fix(api): session_manager genera UUID por cliente
-- [ ] F22 — fix(api): validar session en WebSocket handshake
+- [x] F22 — fix(api): validar session en WebSocket handshake
 
 ## FASE 9: Voting y Entidades Anidadas
 
-- [ ] F19 — fix(nlp): anadir 11 categorias faltantes a RISK_PRIORITY
-- [ ] F20 — fix(nlp): mitigar entidades anidadas para categorias sin prioridad
+- [x] F19 — fix(nlp): anadir 11 categorias faltantes a RISK_PRIORITY
+- [x] F20 — fix(nlp): mitigar entidades anidadas para categorias sin prioridad
 
 ## FASE 10: Tests de Validacion e Idempotencia
 
 - [x] T06 — test(pbt): arreglar asercion test_homoglyph_text_handled
-- [ ] T07 — chore(tests): anadir markers pytest y poetry install instrucciones
-- [ ] T08 — test(integration): pipeline idempotente NER + anonymize (TF-004)
-- [ ] F16 — fix(tests): corregir prefijo /api/v1 -> /v1 en integration tests
+- [x] T07 — chore(tests): anadir markers pytest y poetry install instrucciones
+- [x] T08 — test(integration): pipeline idempotente NER + anonymize (TF-004)
+- [x] F16 — fix(tests): corregir prefijo /api/v1 -> /v1 en integration tests
 
 ---
 
