@@ -224,6 +224,40 @@ class SpanishCIFRecognizer(PatternRecognizer):
             supported_language=supported_language,
         )
 
+    # CIF control mapping: digit → letter for A,B,C,D,E,F,G,H,J,U,V
+    _CIF_DIGIT_TO_LETTER = {0: "J", 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7: "G", 8: "H", 9: "I"}
+    _CIF_LETTER_CONTROL_TYPES = set("ABCDEFGHJUV")
+    _CIF_DIGIT_CONTROL_TYPES = set("NPQRSW")
+
+    def validate_result(self, pattern_text: str) -> Optional[bool]:
+        """Validate CIF checksum."""
+        clean = re.sub(r"[.\-\s]", "", pattern_text).upper()
+        if len(clean) != 9:
+            return False
+        if clean[0] not in self._CIF_LETTER_CONTROL_TYPES and clean[0] not in self._CIF_DIGIT_CONTROL_TYPES:
+            return False
+        if not clean[1:8].isdigit():
+            return False
+
+        try:
+            digits = [int(d) for d in clean[1:8]]
+            sum_even = sum(digits[i] for i in (1, 3, 5))  # positions 2,4,6 (0-based even)
+            sum_odd = 0
+            for i in (0, 2, 4, 6):  # positions 1,3,5,7
+                n = digits[i] * 2
+                sum_odd += (n // 10) + (n % 10)
+            total = sum_even + sum_odd
+            control_digit = (10 - (total % 10)) % 10
+            control_char = clean[8]
+
+            if clean[0] in self._CIF_LETTER_CONTROL_TYPES:
+                expected = self._CIF_DIGIT_TO_LETTER.get(control_digit, str(control_digit))
+                return control_char == expected or control_char == str(control_digit)
+            else:
+                return control_char == str(control_digit)
+        except (ValueError, IndexError):
+            return False
+
 
 class SpanishNSSRecognizer(PatternRecognizer):
     """
