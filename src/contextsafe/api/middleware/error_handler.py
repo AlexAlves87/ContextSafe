@@ -52,7 +52,7 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
                 type_uri="/errors/not-found",
                 title="Not Found",
                 status=404,
-                detail=str(exc),
+                detail="A domain validation error occurred.",
                 instance=str(request.url.path),
             )
 
