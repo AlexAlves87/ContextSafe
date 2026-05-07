@@ -7,6 +7,8 @@ Traceability:
 
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
@@ -31,10 +33,19 @@ def configure_cors(
         max_age: Max age for preflight cache (seconds)
     """
     if allow_origins is None:
-        allow_origins = [
-            "http://localhost:5173",  # Vite dev server
-            "http://localhost:3000",  # Alternative port
-        ]
+        if os.environ.get("APP_ENV") == "production":
+            allow_origins = os.environ.get(
+                "CONTEXTSAFE_CORS_ORIGINS", ""
+            ).split(",")
+            allow_origins = [o.strip() for o in allow_origins if o.strip()]
+            if not allow_origins:
+                allow_origins = []
+            allow_credentials = False
+        else:
+            allow_origins = [
+                "http://localhost:5173",  # Vite dev server
+                "http://localhost:3000",  # Alternative port
+            ]
 
     if allow_methods is None:
         allow_methods = ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
