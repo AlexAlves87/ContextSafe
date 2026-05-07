@@ -37,14 +37,14 @@
 
 ## FASE 5: Offset Mapping + Glossary Scan
 
-- [ ] A1 — feat(nlp): TextNormalizer devuelve OffsetMapping
-- [ ] A2 — fix(nlp): composite_adapter traduce offsets normalizado a original
-- [ ] A3 — fix(nlp): glossary_consistency_scan opera sobre texto original
+- [x] A1 — feat(nlp): TextNormalizer devuelve OffsetMapping
+- [x] A2 — fix(nlp): composite_adapter traduce offsets normalizado a original
+- [x] A3 — fix(nlp): glossary_consistency_scan opera sobre texto original
 
 ## FASE 6: Persistencia Encriptada
 
-- [ ] B1 — feat(persistence): utilidades de cifrado Fernet
-- [ ] B2 — fix(persistence): repositorios cifran content y glossary
+- [x] B1 — feat(persistence): utilidades de cifrado Fernet
+- [x] B2 — fix(persistence): repositorios cifran content y glossary
 
 ## FASE 7: Arquitectura y Cleanup
 
