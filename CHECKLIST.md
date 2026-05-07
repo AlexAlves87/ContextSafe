@@ -48,14 +48,14 @@
 
 ## FASE 7: Arquitectura y Cleanup
 
-- [ ] C1 — refactor(docproc): migrar mejoras de extractors/ a raiz
-- [ ] C2 — chore(docproc): eliminar directorio extractors/ duplicado
-- [ ] F18 — chore(nlp): eliminar hybrid_ner_adapter muerto
-- [ ] F17 — fix(deps): anadir psutil a pyproject.toml
+- [x] C1 — refactor(docproc): migrar mejoras de extractors/ a raiz
+- [x] C2 — chore(docproc): eliminar directorio extractors/ duplicado
+- [x] F18 — chore(nlp): eliminar hybrid_ner_adapter muerto
+- [x] F17 — fix(deps): anadir psutil a pyproject.toml
 
 ## FASE 8: Sesion y WebSocket
 
-- [ ] F21 — fix(api): session_manager genera UUID por cliente
+- [x] F21 — fix(api): session_manager genera UUID por cliente
 - [ ] F22 — fix(api): validar session en WebSocket handshake
 
 ## FASE 9: Voting y Entidades Anidadas
