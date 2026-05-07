@@ -39,6 +39,9 @@ sqlalchemy = { version = "^2.0.0", extras = ["asyncio"] }
 aiosqlite = "^0.19.0"
 sqlcipher3-binary = "^0.5.0"
 
+# Field-level encryption
+cryptography = "^42.0.0"
+
 # Document Processing
 pdfplumber = "^0.10.0"
 python-docx = "^0.8.11"
