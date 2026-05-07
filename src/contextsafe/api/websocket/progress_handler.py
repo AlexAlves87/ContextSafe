@@ -18,6 +18,7 @@ from uuid import UUID
 
 from fastapi import WebSocket, WebSocketDisconnect
 
+from contextsafe.api.session_manager import session_manager
 
 logger = logging.getLogger(__name__)
 
@@ -102,10 +103,22 @@ class ProgressWebSocketHandler:
         """
         Accept WebSocket connection and subscribe to document events.
 
+        Validates that the document exists in a known session before accepting.
+
         Args:
             websocket: The WebSocket connection
             document_id: Document to monitor
         """
+        # Validate document belongs to a known session before accepting
+        doc_exists = any(
+            session.get_document(str(document_id)) is not None
+            for session in session_manager._sessions.values()
+        )
+        if not doc_exists:
+            logger.warning(f"WebSocket rejected: document {document_id} not found in any session")
+            await websocket.close(code=4004, reason="Document not found")
+            return
+
         await websocket.accept()
         connection_id = f"{document_id}:{id(websocket)}"
         self._active_connections[connection_id] = websocket
