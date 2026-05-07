@@ -295,9 +295,14 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         logger.info(f"Document {document_id} processed: {len(entities)} entities detected")
 
     except Exception as e:
-        session_manager.update_document(session_id, document_id, state="error", error=str(e))
-        await progress_handler.send_error(doc_uuid, str(e))
-        logger.error(f"Error processing document {document_id}: {e}")
+        logger.exception(f"Error processing document {document_id}: {e}")
+        safe_message = "Processing failed. Please try again."
+        session_manager.update_document(
+            session_id, document_id,
+            state="error",
+            error=safe_message
+        )
+        await progress_handler.send_error(doc_uuid, safe_message)
     finally:
         # Prevent memory leak: remove completed/failed task reference
         processing_tasks.pop(document_id, None)
