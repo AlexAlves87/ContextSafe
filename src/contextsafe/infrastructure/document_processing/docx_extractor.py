@@ -66,10 +66,13 @@ class DocxExtractor(TextExtractor):
                         texts.append(row_text)
 
             # Check for images (simplified check)
-            for rel in doc.part.rels.values():
-                if "image" in rel.target_ref.lower():
-                    has_images = True
-                    break
+            try:
+                for rel in doc.part.rels.values():
+                    if "image" in rel.target_ref.lower():
+                        has_images = True
+                        break
+            except Exception:
+                has_images = False
 
             full_text = "\n\n".join(texts)
 
