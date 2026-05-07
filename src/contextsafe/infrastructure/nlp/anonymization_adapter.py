@@ -257,21 +257,16 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # Consistent with voting.py priority system.
         # Example: LOCATION (60) beats ORGANIZATION (50) when spans overlap.
         _CATEGORY_PRIORITY = {
-            "PERSON_NAME": 100,
-            "DNI_NIE": 95,
-            "SOCIAL_SECURITY": 90,
-            "PHONE": 85,
-            "EMAIL": 80,
-            "IBAN": 75,
-            "CREDIT_CARD": 70,
-            "ADDRESS": 65,
-            "LOCATION": 60,
-            "PASSPORT": 55,
-            "ORGANIZATION": 50,
-            "DATE": 40,
-            "POSTAL_CODE": 35,
-            "LICENSE_PLATE": 30,
-            "CASE_NUMBER": 20,
+            "PERSON_NAME": 100, "DNI_NIE": 95, "ID_SUPPORT": 94,
+            "PROFESSIONAL_ID": 92, "CSV": 91, "MEDICAL_RECORD": 90,
+            "HEALTH_ID": 89, "SOCIAL_SECURITY": 88, "NIG": 87,
+            "PHONE": 85, "ECLI": 84, "EMAIL": 80,
+            "CADASTRAL_REF": 79, "IBAN": 75, "CREDIT_CARD": 70,
+            "BANK_ACCOUNT": 69, "EMPLOYER_ID": 68, "ADDRESS": 65,
+            "PASSPORT": 60, "IP_ADDRESS": 58, "ORGANIZATION": 50,
+            "LOCATION": 40, "CASE_NUMBER": 38, "POSTAL_CODE": 35,
+            "LICENSE_PLATE": 30, "DATE": 25, "PLATFORM": 15,
+            "MISC": 10,
         }
 
         sorted_dets = sorted(
