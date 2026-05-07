@@ -351,3 +351,66 @@ class TestDocumentDeletion:
         """Should return 404 when deleting nonexistent document."""
         response = client.delete("/v1/documents/00000000-0000-0000-0000-000000000000")
         assert response.status_code == 404
+
+
+class TestAnonymizeIdempotence:
+    """Tests that re-processing a document yields the same anonymized text."""
+
+    def _wait_for_completion(self, client, doc_id, timeout=60):
+        import time
+        for _ in range(timeout * 2):
+            response = client.get(f"/v1/documents/{doc_id}")
+            if response.status_code == 200:
+                state = response.json()["data"]["state"]
+                if state == "completed":
+                    return
+                if state == "error":
+                    raise RuntimeError(f"Document {doc_id} entered error state")
+            time.sleep(0.5)
+        raise TimeoutError(f"Document {doc_id} did not complete within {timeout}s")
+
+    @pytest.fixture
+    def idempotent_document(self, client, project_id):
+        """Upload and fully process a document with PII."""
+        content = b"""INFORME CONFIDENCIAL
+Paciente: Ana Maria Lopez
+DNI: 12345678Z
+Telefono: +34 666 123 456
+Email: ana.lopez@email.com
+Direccion: Calle Mayor 123, Madrid
+"""
+        files = {"file": ("idempotent.txt", io.BytesIO(content), "text/plain")}
+        response = client.post(
+            f"/v1/documents?project_id={project_id}",
+            files=files,
+        )
+        assert response.status_code == 201
+        doc_id = response.json()["data"]["id"]
+
+        # First processing
+        response = client.post(f"/v1/documents/{doc_id}/process")
+        assert response.status_code == 202
+        self._wait_for_completion(client, doc_id)
+
+        return doc_id
+
+    def test_anonymize_twice_is_idempotent(self, client, idempotent_document):
+        """Re-processing a completed document must yield identical anonymized text."""
+        doc_id = idempotent_document
+
+        # Capture first anonymized result
+        response = client.get(f"/v1/documents/{doc_id}/anonymized")
+        assert response.status_code == 200
+        first = response.json()["data"]["anonymizedText"]
+
+        # Re-process
+        response = client.post(f"/v1/documents/{doc_id}/process")
+        assert response.status_code == 202
+        self._wait_for_completion(client, doc_id)
+
+        # Capture second anonymized result
+        response = client.get(f"/v1/documents/{doc_id}/anonymized")
+        assert response.status_code == 200
+        second = response.json()["data"]["anonymizedText"]
+
+        assert first == second, "Anonymized text changed after re-processing"
