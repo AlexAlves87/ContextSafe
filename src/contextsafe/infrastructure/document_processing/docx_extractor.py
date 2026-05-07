@@ -49,6 +49,37 @@ class DocxExtractor(TextExtractor):
             texts: list[str] = []
             has_tables = False
             has_images = False
+            metadata: dict[str, str] = {}
+
+            # Extract core properties (metadata)
+            try:
+                core_props = doc.core_properties
+                if core_props.title:
+                    metadata["title"] = core_props.title
+                if core_props.author:
+                    metadata["author"] = core_props.author
+                if core_props.subject:
+                    metadata["subject"] = core_props.subject
+                if core_props.created:
+                    metadata["created"] = core_props.created.isoformat()
+                if core_props.modified:
+                    metadata["modified"] = core_props.modified.isoformat()
+            except Exception:
+                pass
+
+            # Extract headers from first section
+            try:
+                for section in doc.sections:
+                    header = section.header
+                    if header:
+                        header_text = "\n".join(
+                            p.text for p in header.paragraphs if p.text.strip()
+                        )
+                        if header_text:
+                            texts.append(f"[ENCABEZADO]\n{header_text}")
+                    break  # Only first section's header
+            except Exception:
+                pass
 
             # Extract paragraphs
             for para in doc.paragraphs:
@@ -64,6 +95,20 @@ class DocxExtractor(TextExtractor):
                     )
                     if row_text:
                         texts.append(row_text)
+
+            # Extract footers from first section
+            try:
+                for section in doc.sections:
+                    footer = section.footer
+                    if footer:
+                        footer_text = "\n".join(
+                            p.text for p in footer.paragraphs if p.text.strip()
+                        )
+                        if footer_text:
+                            texts.append(f"\n[PIE DE PÁGINA]\n{footer_text}")
+                    break  # Only first section's footer
+            except Exception:
+                pass
 
             # Check for images (simplified check)
             try:
@@ -88,6 +133,7 @@ class DocxExtractor(TextExtractor):
                 has_images=has_images,
                 ocr_used=False,
                 confidence=0.95,
+                metadata=metadata if metadata else None,
             )
 
         except ImportError:

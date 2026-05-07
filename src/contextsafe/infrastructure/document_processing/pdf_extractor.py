@@ -57,17 +57,24 @@ class PdfExtractor(TextExtractor):
         Returns:
             ExtractionResult with extracted text
         """
+        texts: list[str] = []
+        page_count = 0
+        has_tables = False
+        has_images = False
+        ocr_used = False
+        metadata: dict[str, str] = {}
+
         try:
             import pdfplumber
 
-            texts: list[str] = []
-            page_count = 0
-            has_tables = False
-            has_images = False
-            ocr_used = False
-
             with pdfplumber.open(io.BytesIO(content)) as pdf:
                 page_count = len(pdf.pages)
+
+                # Extract metadata
+                if pdf.metadata:
+                    for key, value in pdf.metadata.items():
+                        if value:
+                            metadata[key] = value
 
                 for page in pdf.pages:
                     # Extract text
@@ -108,18 +115,6 @@ class PdfExtractor(TextExtractor):
                     if page_text.strip():
                         texts.append(page_text)
 
-            full_text = "\n\n".join(texts)
-
-            return ExtractionResult(
-                text=full_text,
-                format_detected="pdf",
-                page_count=page_count,
-                has_tables=has_tables,
-                has_images=has_images,
-                ocr_used=ocr_used,
-                confidence=0.9 if not ocr_used else 0.7,
-            )
-
         except ImportError:
             return ExtractionResult(
                 text="",
@@ -127,13 +122,48 @@ class PdfExtractor(TextExtractor):
                 confidence=0.0,
                 metadata={"error": "pdfplumber not installed"},
             )
-        except Exception as e:
-            return ExtractionResult(
-                text="",
-                format_detected="pdf",
-                confidence=0.0,
-                metadata={"error": str(e)},
-            )
+        except Exception:
+            # Fallback to pypdf2
+            try:
+                from pypdf import PdfReader
+
+                reader = PdfReader(io.BytesIO(content))
+                page_count = len(reader.pages)
+                for page in reader.pages:
+                    page_text = page.extract_text() or ""
+                    if page_text.strip():
+                        texts.append(page_text)
+                if reader.metadata:
+                    for key in ("/Title", "/Author", "/Subject", "/Creator"):
+                        if key in reader.metadata and reader.metadata[key]:
+                            metadata[key.lstrip("/")] = str(reader.metadata[key])
+            except ImportError:
+                return ExtractionResult(
+                    text="",
+                    format_detected="pdf",
+                    confidence=0.0,
+                    metadata={"error": "pdfplumber and pypdf not installed"},
+                )
+            except Exception as e2:
+                return ExtractionResult(
+                    text="",
+                    format_detected="pdf",
+                    confidence=0.0,
+                    metadata={"error": str(e2)},
+                )
+
+        full_text = "\n\n".join(texts)
+
+        return ExtractionResult(
+            text=full_text,
+            format_detected="pdf",
+            page_count=page_count,
+            has_tables=has_tables,
+            has_images=has_images,
+            ocr_used=ocr_used,
+            confidence=0.9 if not ocr_used else 0.7,
+            metadata=metadata if metadata else None,
+        )
 
     async def extract_from_path(
         self,
