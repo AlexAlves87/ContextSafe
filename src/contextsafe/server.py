@@ -87,10 +87,12 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     if settings is None:
         settings = get_settings()
 
+    from contextsafe import __version__
+
     app = FastAPI(
         title="ContextSafe",
         description="Document anonymization API",
-        version="0.1.0",
+        version=__version__,
         lifespan=lifespan,
         docs_url="/docs" if not settings.is_production else None,
         redoc_url="/redoc" if not settings.is_production else None,
