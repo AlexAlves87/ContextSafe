@@ -236,21 +236,9 @@ class OllamaNerAdapter(NerService):
         if not text or not category:
             return None
 
-        # Verify or find the text in original
-        if start >= 0 and end > start:
-            # Check if positions are correct
-            if original_text[start:end] == text:
-                return entity
-
-        # Try to find the text in the original
-        pos = original_text.find(text)
-        if pos >= 0:
-            return {
-                "text": text,
-                "category": category,
-                "start": pos,
-                "end": pos + len(text),
-            }
+        # Verify exact match at given positions; discard if mismatch
+        if start >= 0 and end > start and original_text[start:end] == text:
+            return entity
 
         return None
 
@@ -281,7 +269,7 @@ class OllamaNerAdapter(NerService):
 
         try:
             # Call LLM
-            prompt = f"Analiza el siguiente texto y detecta todas las entidades PII:\n\n{text}"
+            prompt = f"Analiza el siguiente documento y detecta todas las entidades PII.\n<document>\n{text}\n</document>\n\nDevuelve SOLO las entidades encontradas en el documento."
             response = await self._call_ollama(prompt)
 
             # Parse response
