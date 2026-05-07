@@ -12,6 +12,7 @@ Traceability:
 
 from __future__ import annotations
 
+import asyncio
 import re
 from typing import Any
 
@@ -528,11 +529,14 @@ class PresidioNerAdapter(NerService):
         if not text or not text.strip():
             return []
 
-        # Analyze text
-        results = self._analyzer.analyze(
-            text=text,
-            language="es",
-            score_threshold=min_confidence,
+        # Analyze text (offload blocking Presidio call to thread pool)
+        loop = asyncio.get_event_loop()
+        results = await loop.run_in_executor(
+            None,
+            self._analyzer.analyze,
+            text,
+            "es",
+            min_confidence,
         )
 
         detections: list[NerDetection] = []
