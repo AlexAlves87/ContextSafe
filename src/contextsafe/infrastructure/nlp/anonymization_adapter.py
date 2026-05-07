@@ -482,10 +482,14 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
             )
 
         # Glossary consistency scan — find values NER missed
-        # Searches text for glossary-known entities (PERSON_NAME, ORGANIZATION)
+        # Searches original text for glossary-known entities (PERSON_NAME, ORGANIZATION)
         # that were not detected by NER (e.g., bare names in tables).
-        replaced_spans = [(d.span.start, d.span.end) for d in sorted_detections]
-        anonymized = self._glossary_consistency_scan(anonymized, project_id, replaced_spans)
+        replaced_spans = [
+            (d.span.start, d.span.end) for d in sorted_detections
+        ]
+        anonymized = self._glossary_consistency_scan(
+            anonymized, text, project_id, replaced_spans
+        )
 
         # Final progress update
         if progress_callback:
@@ -503,21 +507,23 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
     def _glossary_consistency_scan(
         self,
         text: str,
+        original_text: str,
         project_id: str,
         replaced_spans: list[tuple[int, int]],
     ) -> str:
         """
         Post-replacement scan: find glossary-known values that NER missed.
 
-        Searches the already-partially-anonymized text for occurrences of
-        values that exist in the glossary but were not detected by NER.
-        This catches bare names in tables, repeated mentions without titles, etc.
+        Searches the original text for occurrences of values that exist in the
+        glossary but were not detected by NER. This catches bare names in tables,
+        repeated mentions without titles, etc.
 
         Only scans for PERSON_NAME and ORGANIZATION categories (the ones
         prone to detection gaps when appearing without contextual markers).
 
         Args:
-            text: Text after NER-based replacements
+            text: Text after NER-based replacements (anonymized)
+            original_text: Original unmodified text (for correct offset search)
             project_id: Project ID for glossary lookup
             replaced_spans: Spans already replaced (to avoid double-processing)
 
@@ -540,9 +546,9 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
                 if len(original_value) < 5:
                     continue
 
-                # Search case-insensitive in the current text
+                # Search case-insensitive in the ORIGINAL text (correct offsets)
                 pattern = re.compile(re.escape(original_value), re.IGNORECASE)
-                for match in pattern.finditer(text):
+                for match in pattern.finditer(original_text):
                     m_start, m_end = match.start(), match.end()
 
                     # Skip if this span overlaps with an already-replaced zone
