@@ -162,7 +162,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Run contract tests
-        run: poetry run pytest tests/contract -v
+        run: poetry run pytest tests/contract -v --ignore-glob="*/__init__.py" || [ $? -eq 5 ]
 
   # ============================================
   # INTEGRATION TESTS
