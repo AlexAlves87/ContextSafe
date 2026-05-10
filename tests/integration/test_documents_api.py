@@ -269,9 +269,7 @@ class TestGlossaryExport:
 
     def test_export_glossary_as_csv(self, client, project_with_glossary):
         """Should export glossary as CSV."""
-        response = client.get(
-            f"/v1/projects/{project_with_glossary}/export/glossary?format=csv"
-        )
+        response = client.get(f"/v1/projects/{project_with_glossary}/export/glossary?format=csv")
 
         assert response.status_code == 200
         assert "text/csv" in response.headers.get("content-type", "")
@@ -281,9 +279,7 @@ class TestGlossaryExport:
 
     def test_export_glossary_as_json(self, client, project_with_glossary):
         """Should export glossary as JSON."""
-        response = client.get(
-            f"/v1/projects/{project_with_glossary}/export/glossary?format=json"
-        )
+        response = client.get(f"/v1/projects/{project_with_glossary}/export/glossary?format=json")
 
         assert response.status_code == 200
         assert "application/json" in response.headers.get("content-type", "")
@@ -293,9 +289,7 @@ class TestGlossaryExport:
 
     def test_export_glossary_nonexistent_project(self, client):
         """Should fail when project doesn't exist."""
-        response = client.get(
-            "/v1/projects/00000000-0000-0000-0000-000000000000/export/glossary"
-        )
+        response = client.get("/v1/projects/00000000-0000-0000-0000-000000000000/export/glossary")
 
         assert response.status_code == 404
 
