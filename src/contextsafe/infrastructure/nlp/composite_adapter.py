@@ -677,9 +677,7 @@ class CompositeNerAdapter(NerService):
         if offset_mapping is not None:
             translated: list[NerDetection] = []
             for det in merged:
-                orig_start, orig_end = offset_mapping.to_original_span(
-                    det.span.start, det.span.end
-                )
+                orig_start, orig_end = offset_mapping.to_original_span(det.span.start, det.span.end)
                 new_value = original_text[orig_start:orig_end]
                 span_result = TextSpan.create(orig_start, orig_end, new_value)
                 if span_result.is_ok():

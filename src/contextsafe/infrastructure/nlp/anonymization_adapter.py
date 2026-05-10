@@ -257,15 +257,33 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # Consistent with voting.py priority system.
         # Example: LOCATION (60) beats ORGANIZATION (50) when spans overlap.
         _CATEGORY_PRIORITY = {
-            "PERSON_NAME": 100, "DNI_NIE": 95, "ID_SUPPORT": 94,
-            "PROFESSIONAL_ID": 92, "CSV": 91, "MEDICAL_RECORD": 90,
-            "HEALTH_ID": 89, "SOCIAL_SECURITY": 88, "NIG": 87,
-            "PHONE": 85, "ECLI": 84, "EMAIL": 80,
-            "CADASTRAL_REF": 79, "IBAN": 75, "CREDIT_CARD": 70,
-            "BANK_ACCOUNT": 69, "EMPLOYER_ID": 68, "ADDRESS": 65,
-            "PASSPORT": 60, "IP_ADDRESS": 58, "ORGANIZATION": 50,
-            "LOCATION": 40, "CASE_NUMBER": 38, "POSTAL_CODE": 35,
-            "LICENSE_PLATE": 30, "DATE": 25, "PLATFORM": 15,
+            "PERSON_NAME": 100,
+            "DNI_NIE": 95,
+            "ID_SUPPORT": 94,
+            "PROFESSIONAL_ID": 92,
+            "CSV": 91,
+            "MEDICAL_RECORD": 90,
+            "HEALTH_ID": 89,
+            "SOCIAL_SECURITY": 88,
+            "NIG": 87,
+            "PHONE": 85,
+            "ECLI": 84,
+            "EMAIL": 80,
+            "CADASTRAL_REF": 79,
+            "IBAN": 75,
+            "CREDIT_CARD": 70,
+            "BANK_ACCOUNT": 69,
+            "EMPLOYER_ID": 68,
+            "ADDRESS": 65,
+            "PASSPORT": 60,
+            "IP_ADDRESS": 58,
+            "ORGANIZATION": 50,
+            "LOCATION": 40,
+            "CASE_NUMBER": 38,
+            "POSTAL_CODE": 35,
+            "LICENSE_PLATE": 30,
+            "DATE": 25,
+            "PLATFORM": 15,
             "MISC": 10,
         }
 
@@ -479,12 +497,8 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # Glossary consistency scan — find values NER missed
         # Searches original text for glossary-known entities (PERSON_NAME, ORGANIZATION)
         # that were not detected by NER (e.g., bare names in tables).
-        replaced_spans = [
-            (d.span.start, d.span.end) for d in sorted_detections
-        ]
-        anonymized = self._glossary_consistency_scan(
-            anonymized, text, project_id, replaced_spans
-        )
+        replaced_spans = [(d.span.start, d.span.end) for d in sorted_detections]
+        anonymized = self._glossary_consistency_scan(anonymized, text, project_id, replaced_spans)
 
         # Final progress update
         if progress_callback:

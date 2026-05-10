@@ -110,10 +110,10 @@ class TextNormalizer:
             if ZERO_WIDTH_PATTERN.match(ch):
                 tracker.skip_char(i)
                 continue
-            nfkc = unicodedata.normalize('NFKC', ch)
-            nfkc = ''.join(HOMOGLYPHS.get(c, c) for c in nfkc)
-            if '\u00ad' in nfkc:
-                nfkc = nfkc.replace('\u00ad', '')
+            nfkc = unicodedata.normalize("NFKC", ch)
+            nfkc = "".join(HOMOGLYPHS.get(c, c) for c in nfkc)
+            if "\u00ad" in nfkc:
+                nfkc = nfkc.replace("\u00ad", "")
                 tracker.replace_char(i, nfkc)
                 continue
             tracker.replace_char(i, nfkc)
@@ -128,7 +128,7 @@ class TextNormalizer:
         collapsed_map: list[int] = []
         prev_space = False
         for ch, src_pos in zip(norm_chars, char_map):
-            if ch == ' ':
+            if ch == " ":
                 if prev_space:
                     continue
                 prev_space = True
@@ -138,10 +138,10 @@ class TextNormalizer:
             collapsed_map.append(src_pos)
 
         # Strip leading/trailing spaces
-        full = ''.join(collapsed_chars)
+        full = "".join(collapsed_chars)
         stripped = full.strip()
-        left_strip = len(full) - len(full.lstrip(' '))
-        right_strip = len(full) - len(full.rstrip(' '))
+        left_strip = len(full) - len(full.lstrip(" "))
+        right_strip = len(full) - len(full.rstrip(" "))
         start = left_strip
         end = len(collapsed_chars) - right_strip
         final_chars = collapsed_chars[start:end]
@@ -149,7 +149,7 @@ class TextNormalizer:
 
         return OffsetMapping(
             source_text=text,
-            normalized_text=''.join(final_chars),
+            normalized_text="".join(final_chars),
             char_map=tuple(final_map),
         )
 

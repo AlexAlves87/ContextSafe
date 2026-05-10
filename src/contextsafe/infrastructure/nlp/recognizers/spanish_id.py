@@ -225,7 +225,18 @@ class SpanishCIFRecognizer(PatternRecognizer):
         )
 
     # CIF control mapping: digit → letter for A,B,C,D,E,F,G,H,J,U,V
-    _CIF_DIGIT_TO_LETTER = {0: "J", 1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7: "G", 8: "H", 9: "I"}
+    _CIF_DIGIT_TO_LETTER = {
+        0: "J",
+        1: "A",
+        2: "B",
+        3: "C",
+        4: "D",
+        5: "E",
+        6: "F",
+        7: "G",
+        8: "H",
+        9: "I",
+    }
     _CIF_LETTER_CONTROL_TYPES = set("ABCDEFGHJUV")
     _CIF_DIGIT_CONTROL_TYPES = set("NPQRSW")
 
@@ -234,7 +245,10 @@ class SpanishCIFRecognizer(PatternRecognizer):
         clean = re.sub(r"[.\-\s]", "", pattern_text).upper()
         if len(clean) != 9:
             return False
-        if clean[0] not in self._CIF_LETTER_CONTROL_TYPES and clean[0] not in self._CIF_DIGIT_CONTROL_TYPES:
+        if (
+            clean[0] not in self._CIF_LETTER_CONTROL_TYPES
+            and clean[0] not in self._CIF_DIGIT_CONTROL_TYPES
+        ):
             return False
         if not clean[1:8].isdigit():
             return False

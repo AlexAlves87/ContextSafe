@@ -18,7 +18,6 @@ from contextsafe.infrastructure.nlp.spacy_adapter import SpacyNerAdapter
 
 __all__ = [
     "CompositeNerAdapter",
-    
     "RegexNerAdapter",
     "RobertaNerAdapter",
     "SpacyNerAdapter",

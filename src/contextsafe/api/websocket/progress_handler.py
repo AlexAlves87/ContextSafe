@@ -109,17 +109,17 @@ class ProgressWebSocketHandler:
             websocket: The WebSocket connection
             document_id: Document to monitor
         """
-        # Validate document belongs to a known session before accepting
+        await websocket.accept()
+
+        # Validate document belongs to a known session (post-accept to avoid race condition
+        # where frontend connects before the document is registered in the session)
         doc_exists = any(
-            session.get_document(str(document_id)) is not None
-            for session in session_manager._sessions.values()
+            str(document_id) in session.documents for session in session_manager._sessions.values()
         )
         if not doc_exists:
             logger.warning(f"WebSocket rejected: document {document_id} not found in any session")
             await websocket.close(code=4004, reason="Document not found")
             return
-
-        await websocket.accept()
         connection_id = f"{document_id}:{id(websocket)}"
         self._active_connections[connection_id] = websocket
 

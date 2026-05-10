@@ -261,17 +261,21 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         for alias, count in alias_counts.items():
             if alias not in existing_aliases:
                 entity = alias_data[alias]
-                session_manager.add_glossary_entry(session_id, project_id, {
-                    "id": str(uuid4()),
-                    "original_text": entity["original_text"],
-                    "alias": entity["alias"],
-                    "category": entity["category"],
-                    "occurrences": count,
-                    "created_at": datetime.now(timezone.utc).isoformat(),
-                    # BASIC level: mark as not reversible (audit only)
-                    "reversible": not is_masking_level,
-                    "masking_level": anonymization_level,
-                })
+                session_manager.add_glossary_entry(
+                    session_id,
+                    project_id,
+                    {
+                        "id": str(uuid4()),
+                        "original_text": entity["original_text"],
+                        "alias": entity["alias"],
+                        "category": entity["category"],
+                        "occurrences": count,
+                        "created_at": datetime.now(timezone.utc).isoformat(),
+                        # BASIC level: mark as not reversible (audit only)
+                        "reversible": not is_masking_level,
+                        "masking_level": anonymization_level,
+                    },
+                )
                 existing_aliases.add(alias)
             else:
                 # Update occurrence count for existing entry
@@ -293,11 +297,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
     except Exception as e:
         logger.exception(f"Error processing document {document_id}: {e}")
         safe_message = "Processing failed. Please try again."
-        session_manager.update_document(
-            session_id, document_id,
-            state="error",
-            error=safe_message
-        )
+        session_manager.update_document(session_id, document_id, state="error", error=safe_message)
         await progress_handler.send_error(doc_uuid, safe_message)
     finally:
         # Prevent memory leak: remove completed/failed task reference

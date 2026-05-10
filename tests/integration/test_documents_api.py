@@ -324,6 +324,7 @@ class TestBatchProcessing:
         assert data["total_started"] == 3
 
 
+
 class TestDocumentDeletion:
     """Tests for document deletion functionality."""
 
@@ -358,6 +359,7 @@ class TestAnonymizeIdempotence:
 
     def _wait_for_completion(self, client, doc_id, timeout=60):
         import time
+
         for _ in range(timeout * 2):
             response = client.get(f"/v1/documents/{doc_id}")
             if response.status_code == 200:

@@ -66,34 +66,34 @@ DETECTOR_CATEGORY_BONUS: dict[tuple[str, str], float] = {
 # Higher = more risky to miss (should favor anonymizing)
 
 RISK_PRIORITY: dict[str, int] = {
-    "PERSON_NAME": 100,      # Highest risk - personal identity
-    "DNI_NIE": 95,           # National ID
-    "ID_SUPPORT": 94,        # Número de Soporte (IDESP/IXESP)
-    "PROFESSIONAL_ID": 92,   # Colegiado numbers
-    "CSV": 91,               # Código Seguro de Verificación
-    "MEDICAL_RECORD": 90,    # Sensitive health data
-    "HEALTH_ID": 89,         # CIP-SNS y CIP Autonómicos
-    "SOCIAL_SECURITY": 88,   # Social security number
-    "NIG": 87,               # Número de Identificación General
-    "PHONE": 85,             # Contact info
-    "ECLI": 84,              # European Case Law Identifier
-    "EMAIL": 80,             # Contact info
-    "CADASTRAL_REF": 79,     # Referencia Catastral
-    "IBAN": 75,              # Financial
-    "BANK_ACCOUNT": 70,      # Financial
-    "CREDIT_CARD": 70,       # Financial
-    "EMPLOYER_ID": 68,       # CCC - Código Cuenta de Cotización
-    "ADDRESS": 65,           # Location
-    "PASSPORT": 60,          # ID document
-    "IP_ADDRESS": 58,        # IP address
-    "ORGANIZATION": 50,      # Less risky
-    "LOCATION": 40,          # Generic location
-    "CASE_NUMBER": 38,       # Judicial procedure numbers
-    "DATE": 30,              # Temporal
-    "LICENSE_PLATE": 25,     # Vehicle
-    "POSTAL_CODE": 20,       # Partial location
-    "PLATFORM": 15,          # WhatsApp, Telegram, etc.
-    "MISC": 10,              # Miscellaneous
+    "PERSON_NAME": 100,  # Highest risk - personal identity
+    "DNI_NIE": 95,  # National ID
+    "ID_SUPPORT": 94,  # Número de Soporte (IDESP/IXESP)
+    "PROFESSIONAL_ID": 92,  # Colegiado numbers
+    "CSV": 91,  # Código Seguro de Verificación
+    "MEDICAL_RECORD": 90,  # Sensitive health data
+    "HEALTH_ID": 89,  # CIP-SNS y CIP Autonómicos
+    "SOCIAL_SECURITY": 88,  # Social security number
+    "NIG": 87,  # Número de Identificación General
+    "PHONE": 85,  # Contact info
+    "ECLI": 84,  # European Case Law Identifier
+    "EMAIL": 80,  # Contact info
+    "CADASTRAL_REF": 79,  # Referencia Catastral
+    "IBAN": 75,  # Financial
+    "BANK_ACCOUNT": 70,  # Financial
+    "CREDIT_CARD": 70,  # Financial
+    "EMPLOYER_ID": 68,  # CCC - Código Cuenta de Cotización
+    "ADDRESS": 65,  # Location
+    "PASSPORT": 60,  # ID document
+    "IP_ADDRESS": 58,  # IP address
+    "ORGANIZATION": 50,  # Less risky
+    "LOCATION": 40,  # Generic location
+    "CASE_NUMBER": 38,  # Judicial procedure numbers
+    "DATE": 30,  # Temporal
+    "LICENSE_PLATE": 25,  # Vehicle
+    "POSTAL_CODE": 20,  # Partial location
+    "PLATFORM": 15,  # WhatsApp, Telegram, etc.
+    "MISC": 10,  # Miscellaneous
 }
 
 # Threshold for considering a "technical tie"

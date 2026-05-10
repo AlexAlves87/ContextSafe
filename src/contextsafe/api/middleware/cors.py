@@ -34,9 +34,7 @@ def configure_cors(
     """
     if allow_origins is None:
         if os.environ.get("APP_ENV") == "production":
-            allow_origins = os.environ.get(
-                "CONTEXTSAFE_CORS_ORIGINS", ""
-            ).split(",")
+            allow_origins = os.environ.get("CONTEXTSAFE_CORS_ORIGINS", "").split(",")
             allow_origins = [o.strip() for o in allow_origins if o.strip()]
             if not allow_origins:
                 allow_origins = []
