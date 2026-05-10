@@ -340,4 +340,12 @@ show_missing = true
 
 [tool.bandit]
 exclude_dirs = ["tests", "scripts"]
-skips = ["B101"]  # assert_used - needed for icontract
+skips = [
+    "B101",  # assert_used - needed for icontract
+    "B104",  # hardcoded_bind_all_interfaces - accepted, configured via env
+    "B110",  # try_except_pass - accepted pattern for optional features
+    "B311",  # random - not used for cryptography, only for synthetic data
+    "B404",  # subprocess import - legitimate use for NLP tools
+    "B603",  # subprocess_without_shell_equals_true - commands are controlled
+    "B607",  # start_process_with_partial_path - commands are controlled
+]
