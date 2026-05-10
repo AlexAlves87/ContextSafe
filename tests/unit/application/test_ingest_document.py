@@ -25,6 +25,7 @@ from contextsafe.domain.shared.types import Ok, Err
 @dataclass
 class MockTextExtraction:
     """Mock text extraction result."""
+
     text: str
     format_detected: str
 

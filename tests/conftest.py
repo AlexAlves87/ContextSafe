@@ -16,6 +16,7 @@ import pytest
 # ASYNC EVENT LOOP
 # ============================================
 
+
 @pytest.fixture(scope="session")
 def event_loop() -> Generator[asyncio.AbstractEventLoop, None, None]:
     """Create an instance of the default event loop for each test case."""
@@ -28,6 +29,7 @@ def event_loop() -> Generator[asyncio.AbstractEventLoop, None, None]:
 # ============================================
 # DATABASE FIXTURES
 # ============================================
+
 
 @pytest.fixture
 async def test_db() -> AsyncGenerator[None, None]:
@@ -44,6 +46,7 @@ async def test_db() -> AsyncGenerator[None, None]:
 # ============================================
 # MOCK FIXTURES
 # ============================================
+
 
 @pytest.fixture
 def mock_ner_service():

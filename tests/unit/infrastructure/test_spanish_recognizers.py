@@ -18,6 +18,7 @@ class TestSpanishDNIRecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishDNIRecognizer
+
         return SpanishDNIRecognizer()
 
     # Valid DNIs with correct checksum
@@ -32,10 +33,10 @@ class TestSpanishDNIRecognizer:
     # Invalid DNIs
     INVALID_DNIS = [
         "12345678A",  # Wrong letter (should be Z)
-        "1234567Z",   # Too short
-        "123456789Z", # Too long
+        "1234567Z",  # Too short
+        "123456789Z",  # Too long
         "ABCDEFGHI",  # No digits
-        "12345678",   # No letter
+        "12345678",  # No letter
     ]
 
     @pytest.mark.parametrize("dni", VALID_DNIS)
@@ -69,20 +70,21 @@ class TestSpanishNIERecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishNIERecognizer
+
         return SpanishNIERecognizer()
 
     VALID_NIES = [
         "X0000000T",  # X prefix (X=0)
         "Y0000000Z",  # Y prefix (Y=1, so 10000000 % 23 = 11 -> Z)
         "Z0000000M",  # Z prefix (Z=2, so 20000000 % 23 = 9 -> M)
-        "X-1234567-L", # With separators
+        "X-1234567-L",  # With separators
     ]
 
     INVALID_NIES = [
         "X0000000A",  # Wrong letter
         "A1234567B",  # Invalid prefix
-        "X123456A",   # Too short
-        "X12345678A", # Too long
+        "X123456A",  # Too short
+        "X12345678A",  # Too long
     ]
 
     @pytest.mark.parametrize("nie", VALID_NIES)
@@ -104,6 +106,7 @@ class TestSpanishCIFRecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishCIFRecognizer
+
         return SpanishCIFRecognizer()
 
     def test_cif_patterns_exist(self, recognizer):
@@ -121,19 +124,20 @@ class TestSpanishNSSRecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishNSSRecognizer
+
         return SpanishNSSRecognizer()
 
     VALID_NSS = [
-        "281234567890",    # Province 28 (Madrid)
+        "281234567890",  # Province 28 (Madrid)
         "08/12345678/90",  # With separators, province 08 (Barcelona)
         "01-12345678-90",  # Province 01
         "52 12345678 90",  # Province 52 (Melilla, max valid)
     ]
 
     INVALID_NSS = [
-        "00123456789",     # Province 00 invalid
+        "00123456789",  # Province 00 invalid
         "53123456789012",  # Province 53 invalid (> 52)
-        "281234567",       # Too short
+        "281234567",  # Too short
         "28123456789012",  # Too long
     ]
 
@@ -156,15 +160,16 @@ class TestSpanishPhoneRecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_phone import SpanishPhoneRecognizer
+
         return SpanishPhoneRecognizer()
 
     VALID_PHONES = [
-        "+34 612 345 678",   # Mobile with country code
-        "+34612345678",      # Mobile compact
-        "612 345 678",       # Mobile without country code
-        "612345678",         # Mobile compact
-        "912 345 678",       # Landline (Madrid)
-        "932 345 678",       # Landline (Barcelona)
+        "+34 612 345 678",  # Mobile with country code
+        "+34612345678",  # Mobile compact
+        "612 345 678",  # Mobile without country code
+        "612345678",  # Mobile compact
+        "912 345 678",  # Landline (Madrid)
+        "932 345 678",  # Landline (Barcelona)
     ]
 
     def test_phone_patterns_exist(self, recognizer):
@@ -182,6 +187,7 @@ class TestSpanishIBANRecognizer:
     @pytest.fixture
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
+
         return SpanishIBANRecognizer()
 
     # Valid IBANs (pass MOD-97-10)
@@ -193,8 +199,8 @@ class TestSpanishIBANRecognizer:
     # Invalid IBANs
     INVALID_IBANS = [
         "ES0021000418450200051332",  # Wrong check digits
-        "ES91210004184502000513",    # Too short
-        "ES91210004184502000513320", # Too long
+        "ES91210004184502000513",  # Too short
+        "ES91210004184502000513320",  # Too long
         "FR9121000418450200051332",  # Not Spanish
         "ESXX21000418450200051332",  # Non-numeric check digits
     ]

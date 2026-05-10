@@ -36,6 +36,7 @@ def test_result_left_identity_law(x: int):
     Contract: CNT-T0-RESULT-001
     Invariant: Monad law - identity
     """
+
     # Define a function that returns Result
     def f(n: int) -> Result[int, str]:
         return Ok(n + 1)
@@ -184,6 +185,7 @@ def test_result_map_preserves_status(result: Result[int, str]):
     Contract: CNT-T0-RESULT-001
     Invariant: POST-001
     """
+
     # Define a mapping function
     def double(n: int) -> int:
         return n * 2
@@ -203,6 +205,7 @@ def test_result_map_err_preserves_status(result: Result[str, str]):
     Property: PBT-004
     Contract: CNT-T0-RESULT-001
     """
+
     # Define error mapping function
     def uppercase_error(e: str) -> str:
         return e.upper()

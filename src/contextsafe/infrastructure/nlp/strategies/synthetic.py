@@ -51,6 +51,7 @@ logger = logging.getLogger(__name__)
 # ENVIRONMENT DETECTION
 # =============================================================================
 
+
 def _is_wsl() -> bool:
     """Detect if running in WSL (Windows Subsystem for Linux)."""
     try:
@@ -167,14 +168,14 @@ def generate_invalid_credit_card() -> str:
     invalid_check = (valid_check + random.randint(1, 9)) % 10
     digits.append(invalid_check)
 
-    num = ''.join(map(str, digits))
+    num = "".join(map(str, digits))
     return f"{num[:4]} {num[4:8]} {num[8:12]} {num[12:]}"
 
 
 def generate_phone() -> str:
     """Generate a plausible Spanish mobile number."""
     prefix = random.choice(["6", "7"])
-    rest = ''.join([str(random.randint(0, 9)) for _ in range(8)])
+    rest = "".join([str(random.randint(0, 9)) for _ in range(8)])
     return f"+34 {prefix}{rest[:2]} {rest[2:5]} {rest[5:]}"
 
 
@@ -183,7 +184,7 @@ def generate_license_plate() -> str:
     digits = f"{random.randint(0, 9999):04d}"
     # Spanish plates use consonants only (no vowels, no Ñ, Q)
     consonants = "BCDFGHJKLMNPRSTVWXYZ"
-    letters = ''.join(random.choices(consonants, k=3))
+    letters = "".join(random.choices(consonants, k=3))
     return f"{digits} {letters}"
 
 
@@ -191,6 +192,7 @@ def generate_license_plate() -> str:
 # NUEVOS GENERADORES - SECTOR LEGAL ESPAÑOL
 # Ref: "Patrones Regex Sector Legal Español.md"
 # =============================================================================
+
 
 def generate_id_support() -> str:
     """
@@ -200,7 +202,7 @@ def generate_id_support() -> str:
     These numbers don't have a public checksum algorithm,
     but we generate random ones that are unlikely to match real ones.
     """
-    letters = ''.join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=3))
+    letters = "".join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=3))
     digits = f"{random.randint(0, 999999):06d}"
     return f"{letters}{digits}"
 
@@ -254,7 +256,7 @@ def generate_csv() -> str:
     """
     length = random.randint(16, 22)
     chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789"
-    return ''.join(random.choices(chars, k=length))
+    return "".join(random.choices(chars, k=length))
 
 
 def generate_health_id() -> str:
@@ -267,9 +269,9 @@ def generate_health_id() -> str:
     """
     # Consonant-only prefix (unlikely real surname pattern)
     consonants = "BCDFGHJKLMNPQRSTVWXZ"
-    prefix = ''.join(random.choices(consonants, k=4))
+    prefix = "".join(random.choices(consonants, k=4))
     # Random digits
-    digits = ''.join([str(random.randint(0, 9)) for _ in range(12)])
+    digits = "".join([str(random.randint(0, 9)) for _ in range(12)])
     return f"{prefix}{digits}"
 
 
@@ -286,11 +288,11 @@ def generate_cadastral_ref() -> str:
     # Second block: 7 digits
     block2 = f"{random.randint(0, 9999999):07d}"
     # Control letters (2)
-    letters1 = ''.join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=2))
+    letters1 = "".join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=2))
     # Final 4 digits
     digits = f"{random.randint(0, 9999):04d}"
     # Final 4 letters
-    letters2 = ''.join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=4))
+    letters2 = "".join(random.choices("ABCDEFGHJKLMNPQRSTUVWXYZ", k=4))
     return f"{block1}{block2}{letters1}{digits}{letters2}"
 
 
@@ -351,23 +353,106 @@ LLM_CATEGORIES = {
 # =============================================================================
 
 FEMALE_NAMES = {
-    "maria", "maría", "ana", "carmen", "laura", "isabel", "rosa", "teresa",
-    "elena", "cristina", "lucia", "lucía", "marta", "sara", "paula", "eva",
-    "raquel", "silvia", "nuria", "pilar", "dolores", "mercedes", "angeles",
-    "ángeles", "francisca", "josefa", "antonia", "julia", "beatriz",
-    "alicia", "patricia", "mónica", "monica", "susana", "rocío", "rocio",
-    "esther", "ester", "irene", "natalia", "sandra", "yolanda", "diana",
-    "carolina", "adriana", "gloria", "luisa", "manuela", "consuelo",
-    "inmaculada", "concepción", "concepcion", "amparo", "victoria",
+    "maria",
+    "maría",
+    "ana",
+    "carmen",
+    "laura",
+    "isabel",
+    "rosa",
+    "teresa",
+    "elena",
+    "cristina",
+    "lucia",
+    "lucía",
+    "marta",
+    "sara",
+    "paula",
+    "eva",
+    "raquel",
+    "silvia",
+    "nuria",
+    "pilar",
+    "dolores",
+    "mercedes",
+    "angeles",
+    "ángeles",
+    "francisca",
+    "josefa",
+    "antonia",
+    "julia",
+    "beatriz",
+    "alicia",
+    "patricia",
+    "mónica",
+    "monica",
+    "susana",
+    "rocío",
+    "rocio",
+    "esther",
+    "ester",
+    "irene",
+    "natalia",
+    "sandra",
+    "yolanda",
+    "diana",
+    "carolina",
+    "adriana",
+    "gloria",
+    "luisa",
+    "manuela",
+    "consuelo",
+    "inmaculada",
+    "concepción",
+    "concepcion",
+    "amparo",
+    "victoria",
 }
 
 MALE_NAMES = {
-    "juan", "jose", "josé", "antonio", "manuel", "francisco", "david",
-    "carlos", "jesus", "jesús", "javier", "daniel", "miguel", "rafael",
-    "pedro", "pablo", "luis", "alberto", "fernando", "sergio", "jorge",
-    "enrique", "andres", "andrés", "ramon", "ramón", "diego", "alejandro",
-    "victor", "víctor", "mario", "alfonso", "eduardo", "ignacio", "adrian",
-    "adrián", "ivan", "iván", "ruben", "rubén", "oscar", "óscar", "jaime",
+    "juan",
+    "jose",
+    "josé",
+    "antonio",
+    "manuel",
+    "francisco",
+    "david",
+    "carlos",
+    "jesus",
+    "jesús",
+    "javier",
+    "daniel",
+    "miguel",
+    "rafael",
+    "pedro",
+    "pablo",
+    "luis",
+    "alberto",
+    "fernando",
+    "sergio",
+    "jorge",
+    "enrique",
+    "andres",
+    "andrés",
+    "ramon",
+    "ramón",
+    "diego",
+    "alejandro",
+    "victor",
+    "víctor",
+    "mario",
+    "alfonso",
+    "eduardo",
+    "ignacio",
+    "adrian",
+    "adrián",
+    "ivan",
+    "iván",
+    "ruben",
+    "rubén",
+    "oscar",
+    "óscar",
+    "jaime",
 }
 
 MALE_NAMES_ENDING_A = {"borja", "garcia", "garcía", "joshua", "luca", "nikita"}
@@ -390,9 +475,7 @@ def detect_gender(name: str) -> str:
         return "female"
 
     # Extract first name
-    clean_name = re.sub(
-        r"^(?:d\.?ª?|dña\.?|don|doña|sr\.?|sra\.?)\s+", "", name_lower
-    )
+    clean_name = re.sub(r"^(?:d\.?ª?|dña\.?|don|doña|sr\.?|sra\.?)\s+", "", name_lower)
     first_name = clean_name.split()[0] if clean_name.split() else ""
 
     if first_name in FEMALE_NAMES:
@@ -420,28 +503,49 @@ def detect_organization_sector(name: str) -> str:
     name_lower = name.lower()
 
     # Banking/Financial
-    if any(w in name_lower for w in ["banco", "caja", "bankia", "bbva", "santander",
-                                       "ibercaja", "kutxa", "laboral", "credit", "financ"]):
+    if any(
+        w in name_lower
+        for w in [
+            "banco",
+            "caja",
+            "bankia",
+            "bbva",
+            "santander",
+            "ibercaja",
+            "kutxa",
+            "laboral",
+            "credit",
+            "financ",
+        ]
+    ):
         return "banco o caja de ahorros"
 
     # Legal
-    if any(w in name_lower for w in ["abogado", "letrado", "bufete", "legal",
-                                       "jurídic", "juridic", "asesor", "slp"]):
+    if any(
+        w in name_lower
+        for w in ["abogado", "letrado", "bufete", "legal", "jurídic", "juridic", "asesor", "slp"]
+    ):
         return "despacho de abogados"
 
     # Healthcare
-    if any(w in name_lower for w in ["hospital", "clínica", "clinica", "médic",
-                                       "medic", "sanitar", "salud", "dental"]):
+    if any(
+        w in name_lower
+        for w in ["hospital", "clínica", "clinica", "médic", "medic", "sanitar", "salud", "dental"]
+    ):
         return "centro médico o clínica"
 
     # Insurance
-    if any(w in name_lower for w in ["seguro", "mutua", "asegurador", "mapfre",
-                                       "axa", "allianz", "zurich"]):
+    if any(
+        w in name_lower
+        for w in ["seguro", "mutua", "asegurador", "mapfre", "axa", "allianz", "zurich"]
+    ):
         return "compañía de seguros"
 
     # Technology
-    if any(w in name_lower for w in ["tech", "software", "sistemas", "informátic",
-                                       "digital", "datos", "cloud"]):
+    if any(
+        w in name_lower
+        for w in ["tech", "software", "sistemas", "informátic", "digital", "datos", "cloud"]
+    ):
         return "empresa tecnológica"
 
     # Construction/Real Estate
@@ -454,6 +558,7 @@ def detect_organization_sector(name: str) -> str:
 # =============================================================================
 # LLM PROMPTS WITH SEMANTIC COHERENCE
 # =============================================================================
+
 
 def get_person_name_prompt(original: str) -> str:
     """Generate prompt for person name with gender consistency."""
@@ -512,11 +617,9 @@ CATEGORY_PROMPTS = {
     "ADDRESS": """Genera una dirección española plausible pero inventada.
 Usa patrones reales: "Calle del Almendro 15, 3ºB", "Avenida de los Rosales 42".
 Solo escribe la dirección, nada más.""",
-
     "LOCATION": """Genera un nombre de pueblo o ciudad española que suene auténtico pero sea inventado.
 Usa patrones reales: "Villanueva del Prado", "San Martín de la Vega", "Fuente del Olmo".
 Solo escribe el nombre del lugar, nada más.""",
-
     "EMAIL": """Genera un email plausible con nombre inventado.
 Usa patrones comunes: nombre.apellido@empresa.es, n.apellido@mail.com
 Solo escribe el email, nada más.""",
@@ -526,6 +629,7 @@ Solo escribe el email, nada más.""",
 # =============================================================================
 # SYNTHETIC STRATEGY
 # =============================================================================
+
 
 class SyntheticStrategy(AnonymizationStrategy):
     """
@@ -615,8 +719,8 @@ class SyntheticStrategy(AnonymizationStrategy):
             generated = data.get("response", "").strip()
 
             # Clean up
-            generated = generated.strip('"\'')
-            generated = generated.split('\n')[0]
+            generated = generated.strip("\"'")
+            generated = generated.split("\n")[0]
 
             logger.debug(f"Ollama generated synthetic ({len(generated)} chars)")
             return generated
@@ -659,12 +763,12 @@ $response.response
             )
 
             try:
-                stdout = result.stdout.decode('utf-8').strip()
+                stdout = result.stdout.decode("utf-8").strip()
             except UnicodeDecodeError:
-                stdout = result.stdout.decode('latin-1').strip()
+                stdout = result.stdout.decode("latin-1").strip()
 
             if result.returncode == 0 and stdout:
-                generated = stdout.strip('"\'').split('\n')[0]
+                generated = stdout.strip("\"'").split("\n")[0]
                 logger.debug(f"PowerShell Ollama generated synthetic ({len(generated)} chars)")
                 return generated
 

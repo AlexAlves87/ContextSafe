@@ -30,20 +30,20 @@ class SpanishOrgRecognizer(PatternRecognizer):
 
     # Spanish legal entity suffixes
     LEGAL_FORMS = [
-        r"S\.?L\.?P\.?",      # Sociedad Limitada Profesional
-        r"S\.?L\.?U\.?",      # Sociedad Limitada Unipersonal
-        r"S\.?L\.?",          # Sociedad Limitada
-        r"S\.?A\.?U\.?",      # Sociedad Anónima Unipersonal
-        r"S\.?A\.?",          # Sociedad Anónima
-        r"S\.?C\.?",          # Sociedad Civil
-        r"S\.?Coop\.?",       # Sociedad Cooperativa
-        r"S\.?Com\.?",        # Sociedad Comanditaria
-        r"A\.?I\.?E\.?",      # Agrupación de Interés Económico
-        r"Cía\.?",            # Compañía
-        r"Cia\.?",            # Compañía (sin tilde)
-        r"Ltda\.?",           # Limitada
-        r"Inc\.?",            # Incorporated (foreign)
-        r"Corp\.?",           # Corporation (foreign)
+        r"S\.?L\.?P\.?",  # Sociedad Limitada Profesional
+        r"S\.?L\.?U\.?",  # Sociedad Limitada Unipersonal
+        r"S\.?L\.?",  # Sociedad Limitada
+        r"S\.?A\.?U\.?",  # Sociedad Anónima Unipersonal
+        r"S\.?A\.?",  # Sociedad Anónima
+        r"S\.?C\.?",  # Sociedad Civil
+        r"S\.?Coop\.?",  # Sociedad Cooperativa
+        r"S\.?Com\.?",  # Sociedad Comanditaria
+        r"A\.?I\.?E\.?",  # Agrupación de Interés Económico
+        r"Cía\.?",  # Compañía
+        r"Cia\.?",  # Compañía (sin tilde)
+        r"Ltda\.?",  # Limitada
+        r"Inc\.?",  # Incorporated (foreign)
+        r"Corp\.?",  # Corporation (foreign)
     ]
 
     PATTERNS = [
@@ -81,10 +81,25 @@ class SpanishOrgRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "empresa", "compañía", "sociedad", "mercantil", "entidad",
-        "demandante", "actora", "ejecutante", "acreedora", "parte",
-        "representada", "cliente", "proveedor", "contratista",
-        "banco", "aseguradora", "despacho", "bufete", "firma",
+        "empresa",
+        "compañía",
+        "sociedad",
+        "mercantil",
+        "entidad",
+        "demandante",
+        "actora",
+        "ejecutante",
+        "acreedora",
+        "parte",
+        "representada",
+        "cliente",
+        "proveedor",
+        "contratista",
+        "banco",
+        "aseguradora",
+        "despacho",
+        "bufete",
+        "firma",
     ]
 
     def __init__(
@@ -106,17 +121,65 @@ class SpanishOrgRecognizer(PatternRecognizer):
     # Common Spanish words that are NEVER organization names
     FALSE_POSITIVE_WORDS = {
         # Articles and prepositions
-        "del", "de", "la", "el", "las", "los", "al", "en", "con", "por", "para",
-        "como", "que", "sin", "sobre", "entre", "hacia", "desde", "hasta",
+        "del",
+        "de",
+        "la",
+        "el",
+        "las",
+        "los",
+        "al",
+        "en",
+        "con",
+        "por",
+        "para",
+        "como",
+        "que",
+        "sin",
+        "sobre",
+        "entre",
+        "hacia",
+        "desde",
+        "hasta",
         # Common verbs
-        "hubiera", "habría", "había", "haber", "sido", "siendo", "fueron",
-        "demanda", "reclama", "solicita", "declara", "declarada", "declarado",
+        "hubiera",
+        "habría",
+        "había",
+        "haber",
+        "sido",
+        "siendo",
+        "fueron",
+        "demanda",
+        "reclama",
+        "solicita",
+        "declara",
+        "declarada",
+        "declarado",
         # Legal terms
-        "concurso", "sociedad", "empresa", "mercantil", "entidad", "parte",
-        "demandante", "demandada", "actora", "decisión", "cierre", "financiación",
-        "propia", "propias", "propio", "propios",
+        "concurso",
+        "sociedad",
+        "empresa",
+        "mercantil",
+        "entidad",
+        "parte",
+        "demandante",
+        "demandada",
+        "actora",
+        "decisión",
+        "cierre",
+        "financiación",
+        "propia",
+        "propias",
+        "propio",
+        "propios",
         # Other common words
-        "mismo", "misma", "mismos", "mismas", "otro", "otra", "otros", "otras",
+        "mismo",
+        "misma",
+        "mismos",
+        "mismas",
+        "otro",
+        "otra",
+        "otros",
+        "otras",
     }
 
     def validate_result(self, pattern_text: str) -> Optional[bool]:

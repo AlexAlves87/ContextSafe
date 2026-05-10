@@ -55,11 +55,13 @@ class DocumentIngested(DomainEvent):
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "filename": self.filename,
-            "text_length": self.text_length,
-            "format_detected": self.format_detected,
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "filename": self.filename,
+                "text_length": self.text_length,
+                "format_detected": self.format_detected,
+            }
+        )
         return base

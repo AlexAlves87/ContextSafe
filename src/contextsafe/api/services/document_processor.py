@@ -40,21 +40,41 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
 
     try:
         # Stage 1: Ingesting (0-10%)
-        session_manager.update_document(session_id, document_id, state="ingesting", progress=0.0, current_entity="Iniciando procesamiento...")
+        session_manager.update_document(
+            session_id,
+            document_id,
+            state="ingesting",
+            progress=0.0,
+            current_entity="Iniciando procesamiento...",
+        )
         await progress_handler.send_progress(doc_uuid, "ingesting", 0.0)
 
         # Get text content
         original_text = doc.content or ""
         if not original_text:
-            session_manager.update_document(session_id, document_id, state="error", progress=0.0, error="No text content to process")
+            session_manager.update_document(
+                session_id,
+                document_id,
+                state="error",
+                progress=0.0,
+                error="No text content to process",
+            )
             await progress_handler.send_error(doc_uuid, "No text content to process")
             return
 
-        session_manager.update_document(session_id, document_id, progress=0.1, current_entity="Texto extraído")
+        session_manager.update_document(
+            session_id, document_id, progress=0.1, current_entity="Texto extraído"
+        )
         await progress_handler.send_progress(doc_uuid, "ingesting", 0.1)
 
         # Stage 2: Detecting PII entities (10-40%)
-        session_manager.update_document(session_id, document_id, state="detecting", progress=0.1, current_entity="Detectando entidades PII...")
+        session_manager.update_document(
+            session_id,
+            document_id,
+            state="detecting",
+            progress=0.1,
+            current_entity="Detectando entidades PII...",
+        )
         await progress_handler.send_progress(doc_uuid, "detecting", 0.1)
 
         # Progress callback for NER detection
@@ -63,18 +83,17 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         async def detection_progress(current: int, total: int, entity_info: str):
             # NER now reports current/100, total=100
             # Map NER's 0-100% to our 10%-40% range
-            ner_progress = current / 100.0 if total == 100 else (current / total if total > 0 else 0)
+            ner_progress = (
+                current / 100.0 if total == 100 else (current / total if total > 0 else 0)
+            )
             progress = 0.1 + (0.3 * ner_progress)  # 0.1 to 0.4
             safe_status = f"Analizando texto... {current}%"
             logger.debug(f"[NER-PROGRESS] {document_id}: {current}% -> {progress:.0%}")
             session_manager.update_document(
-                session_id, document_id,
-                progress=progress,
-                current_entity=safe_status
+                session_id, document_id, progress=progress, current_entity=safe_status
             )
             await progress_handler.send_progress(
-                doc_uuid, "detecting", progress,
-                current_entity=safe_status
+                doc_uuid, "detecting", progress, current_entity=safe_status
             )
 
         ner_service = get_ner_service()
@@ -85,13 +104,16 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         )
 
         await progress_handler.send_progress(
-            doc_uuid, "detecting", 0.4,
-            current_entity=f"Detectadas {len(detections)} entidades"
+            doc_uuid, "detecting", 0.4, current_entity=f"Detectadas {len(detections)} entidades"
         )
 
         # Get anonymization level from project
         project_data = session_manager.get_project(session_id, project_id)
-        anonymization_level = (project_data.get("anonymization_level", "INTERMEDIATE") if project_data else "INTERMEDIATE").upper()
+        anonymization_level = (
+            project_data.get("anonymization_level", "INTERMEDIATE")
+            if project_data
+            else "INTERMEDIATE"
+        ).upper()
 
         # Stage 3: Anonymizing (20-80%)
         # IMPORTANT: We perform anonymization FIRST to get the correct aliases
@@ -117,17 +139,16 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
                 logger.debug(f"[PROGRESS] {document_id}: {current}/{total} ({progress:.0%})")
                 # Update document progress for polling
                 session_manager.update_document(
-                    session_id, document_id,
-                    progress=progress,
-                    current_entity=safe_status
+                    session_id, document_id, progress=progress, current_entity=safe_status
                 )
                 # Also send via WebSocket for real-time frontends
                 await progress_handler.send_progress(
-                    doc_uuid, "anonymizing", progress,
-                    current_entity=safe_status
+                    doc_uuid, "anonymizing", progress, current_entity=safe_status
                 )
 
-        logger.info(f"[ANON] Starting anonymization level={anonymization_level} for {len(detections)} detections")
+        logger.info(
+            f"[ANON] Starting anonymization level={anonymization_level} for {len(detections)} detections"
+        )
 
         # Perform anonymization with the project's level
         # This creates the correct aliases based on strategy:
@@ -136,6 +157,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         # - ADVANCED: synthetic names via Ollama (Carlos Mendive)
         # Get compute mode for anonymization strategy (GPU/CPU)
         from contextsafe.api.services.compute_state import get_effective_compute_mode
+
         effective_compute_mode = get_effective_compute_mode()
 
         result = await anonymization_service.anonymize_text(
@@ -177,34 +199,35 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
                     # Should not happen, but fallback to pseudonym format
                     alias = f"[{category[:3]}]"
 
-            entities.append({
-                "id": str(uuid4()),
-                "document_id": document_id,
-                "category": category,
-                "original_text": original_value,
-                "alias": alias,
-                "confidence": round(detection.confidence.value, 2),
-                "start_offset": detection.span.start,
-                "end_offset": detection.span.end,
-            })
+            entities.append(
+                {
+                    "id": str(uuid4()),
+                    "document_id": document_id,
+                    "category": category,
+                    "original_text": original_value,
+                    "alias": alias,
+                    "confidence": round(detection.confidence.value, 2),
+                    "start_offset": detection.span.start,
+                    "end_offset": detection.span.end,
+                }
+            )
 
         # Progress already reported via callback during anonymize_text()
 
         # Store entities in document (0.6 -> 0.7)
         await progress_handler.send_progress(
-            doc_uuid, "anonymizing", 0.65,
-            current_entity="Guardando entidades detectadas"
+            doc_uuid, "anonymizing", 0.65, current_entity="Guardando entidades detectadas"
         )
         session_manager.update_document(session_id, document_id, detected_pii=entities)
 
         # Store anonymized text (0.7 -> 0.8)
         await progress_handler.send_progress(
-            doc_uuid, "anonymizing", 0.75,
-            current_entity="Guardando texto anonimizado"
+            doc_uuid, "anonymizing", 0.75, current_entity="Guardando texto anonimizado"
         )
         session_manager.update_document(
-            session_id, document_id,
-            anonymized={"original": original_text, "anonymized": result.anonymized_text}
+            session_id,
+            document_id,
+            anonymized={"original": original_text, "anonymized": result.anonymized_text},
         )
 
         # Update glossary for project (90-100%)
@@ -212,8 +235,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         # - BASIC: For audit/manual editing only (not for reversibility - shows asterisks)
         # - INTERMEDIATE/ADVANCED: For reversibility and editing
         await progress_handler.send_progress(
-            doc_uuid, "anonymizing", 0.9,
-            current_entity="Actualizando glosario"
+            doc_uuid, "anonymizing", 0.9, current_entity="Actualizando glosario"
         )
 
         # Get current glossary
@@ -239,17 +261,21 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         for alias, count in alias_counts.items():
             if alias not in existing_aliases:
                 entity = alias_data[alias]
-                session_manager.add_glossary_entry(session_id, project_id, {
-                    "id": str(uuid4()),
-                    "original_text": entity["original_text"],
-                    "alias": entity["alias"],
-                    "category": entity["category"],
-                    "occurrences": count,
-                    "created_at": datetime.utcnow().isoformat(),
-                    # BASIC level: mark as not reversible (audit only)
-                    "reversible": not is_masking_level,
-                    "masking_level": anonymization_level,
-                })
+                session_manager.add_glossary_entry(
+                    session_id,
+                    project_id,
+                    {
+                        "id": str(uuid4()),
+                        "original_text": entity["original_text"],
+                        "alias": entity["alias"],
+                        "category": entity["category"],
+                        "occurrences": count,
+                        "created_at": datetime.utcnow().isoformat(),
+                        # BASIC level: mark as not reversible (audit only)
+                        "reversible": not is_masking_level,
+                        "masking_level": anonymization_level,
+                    },
+                )
                 existing_aliases.add(alias)
             else:
                 # Update occurrence count for existing entry
@@ -261,9 +287,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
 
         # Complete
         session_manager.update_document(
-            session_id, document_id,
-            state="completed",
-            entity_count=len(entities)
+            session_id, document_id, state="completed", entity_count=len(entities)
         )
 
         # Send completion
@@ -271,11 +295,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
         logger.info(f"Document {document_id} processed: {len(entities)} entities detected")
 
     except Exception as e:
-        session_manager.update_document(
-            session_id, document_id,
-            state="error",
-            error=str(e)
-        )
+        session_manager.update_document(session_id, document_id, state="error", error=str(e))
         await progress_handler.send_error(doc_uuid, str(e))
         logger.error(f"Error processing document {document_id}: {e}")
     finally:

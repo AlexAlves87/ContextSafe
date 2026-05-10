@@ -54,9 +54,9 @@ class TestOffsetTracker:
         """Collapsing multiple spaces works correctly."""
         source = "Juan   García"  # 3 spaces
         tracker = OffsetTracker(source)
-        tracker.keep(0, 4)           # "Juan"
-        tracker.replace(4, 7, " ")   # 3 spaces -> 1
-        tracker.keep(7, 13)          # "García"
+        tracker.keep(0, 4)  # "Juan"
+        tracker.replace(4, 7, " ")  # 3 spaces -> 1
+        tracker.keep(7, 13)  # "García"
         mapping = tracker.build()
 
         assert mapping.normalized_text == "Juan García"

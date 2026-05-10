@@ -95,9 +95,7 @@ class AliasMapping(Entity[EntityId]):
                 id=mapping_id,
                 project_id=project_id,
                 category=category,
-                normalized_value=normalize_pii_value(
-                    normalized_value, str(category)
-                ),
+                normalized_value=normalize_pii_value(normalized_value, str(category)),
                 alias=alias,
                 occurrence_count=1,
                 first_document_id=first_document_id,

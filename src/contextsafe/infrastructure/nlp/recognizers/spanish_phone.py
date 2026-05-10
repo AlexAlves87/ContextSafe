@@ -62,9 +62,21 @@ class SpanishPhoneRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "teléfono", "telefono", "móvil", "movil", "celular",
-        "tel", "tfno", "telf", "contacto", "llamar", "número",
-        "numero", "fijo", "particular", "whatsapp",
+        "teléfono",
+        "telefono",
+        "móvil",
+        "movil",
+        "celular",
+        "tel",
+        "tfno",
+        "telf",
+        "contacto",
+        "llamar",
+        "número",
+        "numero",
+        "fijo",
+        "particular",
+        "whatsapp",
     ]
 
     def __init__(

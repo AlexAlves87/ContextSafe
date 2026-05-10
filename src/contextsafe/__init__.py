@@ -23,12 +23,14 @@ __author__ = "ContextSafe Team"
 def get_settings():
     """Lazy load settings to avoid import-time configuration loading."""
     from contextsafe.api.config import get_settings as _get_settings
+
     return _get_settings()
 
 
 def create_app():
     """Lazy load app factory to avoid import-time configuration loading."""
     from contextsafe.server import create_app as _create_app
+
     return _create_app()
 
 

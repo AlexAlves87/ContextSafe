@@ -56,55 +56,105 @@ class ValidationResult:
 
 
 # Categories that can be validated with embeddings
-VALIDATABLE_CATEGORIES = frozenset({
-    "PERSON_NAME",
-    "ORGANIZATION",
-    "LOCATION",
-    "ADDRESS",
-    "DATE",
-})
+VALIDATABLE_CATEGORIES = frozenset(
+    {
+        "PERSON_NAME",
+        "ORGANIZATION",
+        "LOCATION",
+        "ADDRESS",
+        "DATE",
+    }
+)
 
 # Categories to skip (structured data validated by regex)
-SKIP_VALIDATION_CATEGORIES = frozenset({
-    "DNI_NIE",
-    "PASSPORT",
-    "PHONE",
-    "EMAIL",
-    "IBAN",
-    "BANK_ACCOUNT",
-    "CREDIT_CARD",
-    "POSTAL_CODE",
-    "LICENSE_PLATE",
-    "SOCIAL_SECURITY",
-    "MEDICAL_RECORD",
-    "IP_ADDRESS",
-    "CASE_NUMBER",
-    "PROFESSIONAL_ID",
-    "ID_SUPPORT",
-    "NIG",
-    "ECLI",
-    "CSV",
-    "HEALTH_ID",
-    "CADASTRAL_REF",
-    "EMPLOYER_ID",
-    "PLATFORM",
-})
+SKIP_VALIDATION_CATEGORIES = frozenset(
+    {
+        "DNI_NIE",
+        "PASSPORT",
+        "PHONE",
+        "EMAIL",
+        "IBAN",
+        "BANK_ACCOUNT",
+        "CREDIT_CARD",
+        "POSTAL_CODE",
+        "LICENSE_PLATE",
+        "SOCIAL_SECURITY",
+        "MEDICAL_RECORD",
+        "IP_ADDRESS",
+        "CASE_NUMBER",
+        "PROFESSIONAL_ID",
+        "ID_SUPPORT",
+        "NIG",
+        "ECLI",
+        "CSV",
+        "HEALTH_ID",
+        "CADASTRAL_REF",
+        "EMPLOYER_ID",
+        "PLATFORM",
+    }
+)
 
 # Spanish stopwords that should NEVER be entities
-SPANISH_STOPWORDS = frozenset({
-    # Pronouns
-    "quien", "quién", "quienes", "quiénes", "cual", "cuál", "cuales", "cuáles",
-    "que", "qué", "donde", "dónde", "cuando", "cuándo", "como", "cómo",
-    # Common words incorrectly capitalized
-    "finalmente", "terminaba", "mientras", "aunque", "porque", "entonces",
-    "además", "también", "todavía", "siempre", "nunca", "apenas",
-    "estado", "manera", "forma", "parte", "hecho", "caso", "tiempo",
-    # Verbs commonly capitalized at sentence start
-    "siendo", "habiendo", "teniendo", "estando", "haciendo",
-    "dice", "dijo", "señala", "indica", "establece", "dispone",
-    # Legal terms that aren't PII
-    "sentencia", "recurso", "demanda", "escrito", "auto", "providencia",
-})
+SPANISH_STOPWORDS = frozenset(
+    {
+        # Pronouns
+        "quien",
+        "quién",
+        "quienes",
+        "quiénes",
+        "cual",
+        "cuál",
+        "cuales",
+        "cuáles",
+        "que",
+        "qué",
+        "donde",
+        "dónde",
+        "cuando",
+        "cuándo",
+        "como",
+        "cómo",
+        # Common words incorrectly capitalized
+        "finalmente",
+        "terminaba",
+        "mientras",
+        "aunque",
+        "porque",
+        "entonces",
+        "además",
+        "también",
+        "todavía",
+        "siempre",
+        "nunca",
+        "apenas",
+        "estado",
+        "manera",
+        "forma",
+        "parte",
+        "hecho",
+        "caso",
+        "tiempo",
+        # Verbs commonly capitalized at sentence start
+        "siendo",
+        "habiendo",
+        "teniendo",
+        "estando",
+        "haciendo",
+        "dice",
+        "dijo",
+        "señala",
+        "indica",
+        "establece",
+        "dispone",
+        # Legal terms that aren't PII
+        "sentencia",
+        "recurso",
+        "demanda",
+        "escrito",
+        "auto",
+        "providencia",
+    }
+)
 
 
 class EntityTypeValidator:
@@ -180,8 +230,7 @@ class EntityTypeValidator:
 
         except ImportError:
             logger.error(
-                "sentence-transformers not installed. "
-                "Run: pip install sentence-transformers"
+                "sentence-transformers not installed. " "Run: pip install sentence-transformers"
             )
             return False
         except Exception as e:
@@ -378,9 +427,7 @@ class EntityTypeValidator:
             )
 
         # Exclude NOT_ENTITY from reclassification targets
-        pii_similarities = {
-            k: v for k, v in similarities.items() if k != "NOT_ENTITY"
-        }
+        pii_similarities = {k: v for k, v in similarities.items() if k != "NOT_ENTITY"}
         if pii_similarities:
             best_pii_type = max(pii_similarities, key=pii_similarities.get)
             best_pii_score = pii_similarities[best_pii_type]

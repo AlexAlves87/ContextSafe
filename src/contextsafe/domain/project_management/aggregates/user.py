@@ -182,7 +182,9 @@ class User(AggregateRoot[EntityId]):
             password_hash=data.get("password_hash", ""),
             role=role,
             is_active=data.get("is_active", True),
-            last_login=datetime.fromisoformat(data["last_login"]) if data.get("last_login") else None,
+            last_login=datetime.fromisoformat(data["last_login"])
+            if data.get("last_login")
+            else None,
             settings=data.get("settings", {}),
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),

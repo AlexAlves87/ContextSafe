@@ -48,9 +48,18 @@ class SpanishIBANRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "iban", "cuenta", "bancaria", "banco", "transferencia",
-        "ingreso", "domiciliación", "domiciliacion", "pago",
-        "ccc", "número de cuenta", "numero de cuenta",
+        "iban",
+        "cuenta",
+        "bancaria",
+        "banco",
+        "transferencia",
+        "ingreso",
+        "domiciliación",
+        "domiciliacion",
+        "pago",
+        "ccc",
+        "número de cuenta",
+        "numero de cuenta",
     ]
 
     def __init__(

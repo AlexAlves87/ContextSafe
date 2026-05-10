@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 def reset_ner_service() -> None:
     """Reset NER service to reinitialize on next call (e.g., after compute mode change)."""
     from contextsafe.api.dependencies import get_container
+
     get_container().reset_ner_service()
     logger.info("[NER] Service reset - will reinitialize on next call")
 
@@ -22,10 +23,12 @@ def reset_ner_service() -> None:
 def get_ner_service():
     """Get the NER service from the container."""
     from contextsafe.api.dependencies import get_container
+
     return get_container().ner_service
 
 
 def get_anonymization_service():
     """Get the anonymization service from the container."""
     from contextsafe.api.dependencies import get_container
+
     return get_container().anonymization_service

@@ -13,7 +13,7 @@ class TestReplacementWhitespace:
         start, end = 3, 15
         alias = "Persona_001"
 
-        after_char = text[end:end + 1] if end < len(text) else ""
+        after_char = text[end : end + 1] if end < len(text) else ""
         space_suffix = " " if after_char.isalnum() else ""
         result = text[:start] + alias + space_suffix + text[end:]
 
@@ -26,7 +26,7 @@ class TestReplacementWhitespace:
         start, end = 9, 17  # "WhatsApp"
         alias = "Plataforma_001"
 
-        after_char = text[end:end + 1] if end < len(text) else ""
+        after_char = text[end : end + 1] if end < len(text) else ""
         space_suffix = " " if after_char.isalnum() else ""
         result = text[:start] + alias + space_suffix + text[end:]
 
@@ -38,7 +38,7 @@ class TestReplacementWhitespace:
         start, end = 12, 23  # "Juan García"
         alias = "Persona_001"
 
-        after_char = text[end:end + 1] if end < len(text) else ""
+        after_char = text[end : end + 1] if end < len(text) else ""
         space_suffix = " " if after_char.isalnum() else ""
         result = text[:start] + alias + space_suffix + text[end:]
 
@@ -50,7 +50,7 @@ class TestReplacementWhitespace:
         start, end = 12, 23  # "Juan García"
         alias = "Persona_001"
 
-        after_char = text[end:end + 1] if end < len(text) else ""
+        after_char = text[end : end + 1] if end < len(text) else ""
         space_suffix = " " if after_char.isalnum() else ""
         result = text[:start] + alias + space_suffix + text[end:]
 
@@ -62,7 +62,7 @@ class TestReplacementWhitespace:
         start, end = 9, 17  # "WhatsApp"
         alias = "Plataforma_001"
 
-        after_char = text[end:end + 1] if end < len(text) else ""
+        after_char = text[end : end + 1] if end < len(text) else ""
         space_suffix = " " if after_char.isalnum() else ""
         result = text[:start] + alias + space_suffix + text[end:]
 

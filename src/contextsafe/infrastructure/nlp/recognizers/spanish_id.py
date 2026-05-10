@@ -57,8 +57,15 @@ class SpanishDNIRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "dni", "documento", "identidad", "nacional", "nif",
-        "identificación", "identificacion", "número", "numero",
+        "dni",
+        "documento",
+        "identidad",
+        "nacional",
+        "nif",
+        "identificación",
+        "identificacion",
+        "número",
+        "numero",
     ]
 
     def __init__(
@@ -122,8 +129,14 @@ class SpanishNIERecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "nie", "extranjero", "residencia", "identificación",
-        "identificacion", "número", "numero", "tarjeta",
+        "nie",
+        "extranjero",
+        "residencia",
+        "identificación",
+        "identificacion",
+        "número",
+        "numero",
+        "tarjeta",
     ]
 
     def __init__(
@@ -184,8 +197,15 @@ class SpanishCIFRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "cif", "fiscal", "empresa", "sociedad", "compañía",
-        "compania", "mercantil", "nif", "identificación fiscal",
+        "cif",
+        "fiscal",
+        "empresa",
+        "sociedad",
+        "compañía",
+        "compania",
+        "mercantil",
+        "nif",
+        "identificación fiscal",
     ]
 
     def __init__(
@@ -229,8 +249,13 @@ class SpanishNSSRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "seguridad social", "nss", "afiliación", "afiliacion",
-        "número de afiliación", "numero de afiliacion", "ss",
+        "seguridad social",
+        "nss",
+        "afiliación",
+        "afiliacion",
+        "número de afiliación",
+        "numero de afiliacion",
+        "ss",
     ]
 
     def __init__(

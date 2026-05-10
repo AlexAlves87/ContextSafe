@@ -68,9 +68,7 @@ class DocxExtractor(DocumentExtractor):
                 for section in doc.sections:
                     header = section.header
                     if header:
-                        header_text = "\n".join(
-                            p.text for p in header.paragraphs if p.text.strip()
-                        )
+                        header_text = "\n".join(p.text for p in header.paragraphs if p.text.strip())
                         if header_text:
                             text_parts.append(f"[ENCABEZADO]\n{header_text}")
                     break  # Only first section's header
@@ -102,9 +100,7 @@ class DocxExtractor(DocumentExtractor):
                 for section in doc.sections:
                     footer = section.footer
                     if footer:
-                        footer_text = "\n".join(
-                            p.text for p in footer.paragraphs if p.text.strip()
-                        )
+                        footer_text = "\n".join(p.text for p in footer.paragraphs if p.text.strip())
                         if footer_text:
                             text_parts.append(f"\n[PIE DE PÁGINA]\n{footer_text}")
                     break

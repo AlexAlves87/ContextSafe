@@ -162,9 +162,7 @@ class AuditLog(Entity[EntityId]):
         """Reconstruct from dictionary."""
         audit_id = EntityId.create(data["id"]).unwrap()
         project_id = (
-            ProjectId.create(data["project_id"]).unwrap()
-            if data.get("project_id")
-            else None
+            ProjectId.create(data["project_id"]).unwrap() if data.get("project_id") else None
         )
         event = AuditEventType(data["event_type"])
 

@@ -43,9 +43,7 @@ class DocumentModel(Base):
     anonymization_level: Mapped[Optional[str]] = mapped_column(String(20), nullable=True)
     detection_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     error_message: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime, nullable=False, default=datetime.utcnow
-    )
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow
     )
@@ -147,9 +145,7 @@ class ProjectModel(Base):
     document_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     settings: Mapped[Optional[str]] = mapped_column(JSON, nullable=True, default=None)
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime, nullable=False, default=datetime.utcnow
-    )
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow
     )
@@ -221,14 +217,10 @@ class GlossaryModel(Base):
     __tablename__ = "glossaries"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
-    project_id: Mapped[str] = mapped_column(
-        String(36), nullable=False, unique=True, index=True
-    )
+    project_id: Mapped[str] = mapped_column(String(36), nullable=False, unique=True, index=True)
     mappings_json: Mapped[Optional[str]] = mapped_column(JSON, nullable=True, default=None)
     counters_json: Mapped[Optional[str]] = mapped_column(JSON, nullable=True, default=None)
-    created_at: Mapped[datetime] = mapped_column(
-        DateTime, nullable=False, default=datetime.utcnow
-    )
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow
     )

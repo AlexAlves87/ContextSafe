@@ -51,7 +51,7 @@ NAME_BEFORE_TITLE_PATTERN = re.compile(
     r"([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})"  # Name (2-4 words)
     r"\s*,?\s*"  # Optional comma
     r"(" + "|".join(LEGAL_TITLES) + r")",  # Legal title
-    re.IGNORECASE | re.UNICODE
+    re.IGNORECASE | re.UNICODE,
 )
 
 # Simpler pattern for names directly followed by title
@@ -59,7 +59,7 @@ NAME_TITLE_DIRECT_PATTERN = re.compile(
     r"([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})"  # Name
     r"\s*,\s*"  # Comma separator
     r"(" + "|".join(LEGAL_TITLES) + r")",  # Legal title
-    re.IGNORECASE | re.UNICODE
+    re.IGNORECASE | re.UNICODE,
 )
 
 

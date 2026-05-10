@@ -36,14 +36,52 @@ class SpanishNameRecognizer(PatternRecognizer):
     # Common Spanish first names for pattern matching
     COMMON_NAMES = [
         # Male names
-        "AGUSTÍN", "AGUSTIN", "ALEJANDRO", "ANTONIO", "CARLOS", "DANIEL",
-        "DAVID", "FERNANDO", "FRANCISCO", "IGNACIO", "JAVIER", "JORGE",
-        "JOSE", "JOSÉ", "JUAN", "LUIS", "MANUEL", "MIGUEL", "PABLO",
-        "PEDRO", "RAFAEL", "ROBERTO", "SERGIO",
+        "AGUSTÍN",
+        "AGUSTIN",
+        "ALEJANDRO",
+        "ANTONIO",
+        "CARLOS",
+        "DANIEL",
+        "DAVID",
+        "FERNANDO",
+        "FRANCISCO",
+        "IGNACIO",
+        "JAVIER",
+        "JORGE",
+        "JOSE",
+        "JOSÉ",
+        "JUAN",
+        "LUIS",
+        "MANUEL",
+        "MIGUEL",
+        "PABLO",
+        "PEDRO",
+        "RAFAEL",
+        "ROBERTO",
+        "SERGIO",
         # Female names
-        "ANA", "ANDREA", "CARMEN", "CRISTINA", "ELENA", "ISABEL", "LAURA",
-        "LUCIA", "LUCÍA", "MARIA", "MARÍA", "MARTA", "NURIA", "PATRICIA",
-        "PAULA", "RAQUEL", "ROSA", "SANDRA", "SARA", "SILVIA", "SONIA", "SUSANA",
+        "ANA",
+        "ANDREA",
+        "CARMEN",
+        "CRISTINA",
+        "ELENA",
+        "ISABEL",
+        "LAURA",
+        "LUCIA",
+        "LUCÍA",
+        "MARIA",
+        "MARÍA",
+        "MARTA",
+        "NURIA",
+        "PATRICIA",
+        "PAULA",
+        "RAQUEL",
+        "ROSA",
+        "SANDRA",
+        "SARA",
+        "SILVIA",
+        "SONIA",
+        "SUSANA",
     ]
 
     # Surname connectors
@@ -123,11 +161,29 @@ class SpanishNameRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "demandado", "demandada", "demandante", "acusado", "acusada",
-        "querellante", "denunciante", "compareciente", "firmante",
-        "representado", "representada", "otorgante", "apoderado",
-        "cliente", "paciente", "usuario", "persona", "ciudadano",
-        "nombre", "apellido", "apellidos", "identificado", "identificada",
+        "demandado",
+        "demandada",
+        "demandante",
+        "acusado",
+        "acusada",
+        "querellante",
+        "denunciante",
+        "compareciente",
+        "firmante",
+        "representado",
+        "representada",
+        "otorgante",
+        "apoderado",
+        "cliente",
+        "paciente",
+        "usuario",
+        "persona",
+        "ciudadano",
+        "nombre",
+        "apellido",
+        "apellidos",
+        "identificado",
+        "identificada",
     ]
 
     def __init__(
@@ -187,15 +243,43 @@ class SpanishNameRecognizer(PatternRecognizer):
     # Words that should NEVER appear in a person's name
     NAME_FALSE_POSITIVES = {
         # Legal terms
-        "JUZGADO", "PRIMERA", "INSTANCIA", "PROCEDIMIENTO", "JUICIO",
-        "VERBAL", "CIVIL", "PENAL", "AUDIENCIA", "TRIBUNAL", "SALA",
-        "SENTENCIA", "DEMANDA", "ESCRITO", "RECURSO", "APELACIÓN",
-        "DILIGENCIA", "ORDENACIÓN", "PROVIDENCIA", "AUTO", "DECRETO",
+        "JUZGADO",
+        "PRIMERA",
+        "INSTANCIA",
+        "PROCEDIMIENTO",
+        "JUICIO",
+        "VERBAL",
+        "CIVIL",
+        "PENAL",
+        "AUDIENCIA",
+        "TRIBUNAL",
+        "SALA",
+        "SENTENCIA",
+        "DEMANDA",
+        "ESCRITO",
+        "RECURSO",
+        "APELACIÓN",
+        "DILIGENCIA",
+        "ORDENACIÓN",
+        "PROVIDENCIA",
+        "AUTO",
+        "DECRETO",
         # Document structure words (these indicate we captured too much)
-        "VOTACIÓN", "VOTACION", "PONENTE", "MATERIA", "RECURSO",
-        "FALLO", "LETRADO", "ABOGADO", "PROCURADOR",
+        "VOTACIÓN",
+        "VOTACION",
+        "PONENTE",
+        "MATERIA",
+        "RECURSO",
+        "FALLO",
+        "LETRADO",
+        "ABOGADO",
+        "PROCURADOR",
         # Common words that aren't names
-        "PRESIDENTE", "SECRETARIO", "GABINETE", "TÉCNICO", "TECNICO",
+        "PRESIDENTE",
+        "SECRETARIO",
+        "GABINETE",
+        "TÉCNICO",
+        "TECNICO",
     }
 
     def validate_result(self, pattern_text: str) -> Optional[bool]:
@@ -250,7 +334,7 @@ class SpanishNameRecognizer(PatternRecognizer):
             return False
 
         # Reject if contains newlines (probably multiple entries)
-        if '\n' in pattern_text:
+        if "\n" in pattern_text:
             return False
 
         return True

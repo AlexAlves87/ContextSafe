@@ -185,9 +185,7 @@ class ApplyGlossaryChanges:
         anonymized_text: Optional[str] = None
 
         if request.document_id and changes_applied > 0:
-            regen_result = await self._regenerate_document(
-                request.document_id, glossary
-            )
+            regen_result = await self._regenerate_document(request.document_id, glossary)
             if regen_result.is_ok():
                 document_regenerated = True
                 anonymized_text = regen_result.unwrap()
@@ -203,9 +201,7 @@ class ApplyGlossaryChanges:
             )
         )
 
-    async def _regenerate_document(
-        self, document_id: str, glossary
-    ) -> Result[str, DomainError]:
+    async def _regenerate_document(self, document_id: str, glossary) -> Result[str, DomainError]:
         """
         Regenerate anonymized text for a document using updated glossary.
 
@@ -270,7 +266,9 @@ class ApplyGlossaryChanges:
         event = DocumentAnonymized.create(
             document_id=document_id,
             project_id=str(aggregate.document.project_id),
-            anonymization_level=str(aggregate.anonymization_level) if aggregate.anonymization_level else "INTERMEDIATE",
+            anonymization_level=str(aggregate.anonymization_level)
+            if aggregate.anonymization_level
+            else "INTERMEDIATE",
             entities_anonymized=len(sorted_mappings),
             unique_aliases_used=len(sorted_mappings),
             original_length=len(aggregate.extracted_text),

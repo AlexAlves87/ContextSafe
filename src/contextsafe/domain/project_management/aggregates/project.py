@@ -73,9 +73,7 @@ class Project(AggregateRoot[ProjectId]):
         # Validate name (INV-013)
         name = name.strip()
         if not name or len(name) > 200:
-            return Err(
-                ProjectError("Project name must be 1-200 characters")
-            )
+            return Err(ProjectError("Project name must be 1-200 characters"))
 
         # Validate owner (INV-015)
         if not owner_id:
@@ -107,9 +105,7 @@ class Project(AggregateRoot[ProjectId]):
         """
         new_name = new_name.strip()
         if not new_name or len(new_name) > 200:
-            return Err(
-                ProjectError("Project name must be 1-200 characters")
-            )
+            return Err(ProjectError("Project name must be 1-200 characters"))
 
         object.__setattr__(self, "name", new_name)
         self._touch()

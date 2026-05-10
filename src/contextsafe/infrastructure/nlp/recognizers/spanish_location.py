@@ -45,10 +45,24 @@ class SpanishPostalCodeRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "código postal", "cp", "c.p.", "dirección", "direccion",
-        "domicilio", "calle", "avenida", "plaza", "paseo",
-        "localidad", "municipio", "población", "poblacion",
-        "residencia", "vive", "residente", "notificaciones",
+        "código postal",
+        "cp",
+        "c.p.",
+        "dirección",
+        "direccion",
+        "domicilio",
+        "calle",
+        "avenida",
+        "plaza",
+        "paseo",
+        "localidad",
+        "municipio",
+        "población",
+        "poblacion",
+        "residencia",
+        "vive",
+        "residente",
+        "notificaciones",
     ]
 
     def __init__(
@@ -120,8 +134,16 @@ class SpanishAddressRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "domicilio", "dirección", "direccion", "residencia",
-        "calle", "avenida", "plaza", "paseo", "vive", "residente",
+        "domicilio",
+        "dirección",
+        "direccion",
+        "residencia",
+        "calle",
+        "avenida",
+        "plaza",
+        "paseo",
+        "vive",
+        "residente",
     ]
 
     def __init__(

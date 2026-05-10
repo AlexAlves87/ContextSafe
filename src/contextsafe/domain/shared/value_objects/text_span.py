@@ -37,12 +37,12 @@ class TextSpan:
         if self.start < 0:
             raise ValueError(f"Start position must be non-negative, got {self.start}")
         if self.end <= self.start:
-            raise ValueError(f"End must be greater than start, got start={self.start} end={self.end}")
+            raise ValueError(
+                f"End must be greater than start, got start={self.start} end={self.end}"
+            )
 
     @classmethod
-    def create(
-        cls, start: int, end: int, text: str
-    ) -> Result[TextSpan, InvalidSpanError]:
+    def create(cls, start: int, end: int, text: str) -> Result[TextSpan, InvalidSpanError]:
         """
         Create a validated TextSpan.
 
@@ -94,11 +94,7 @@ class TextSpan:
     def __eq__(self, other: object) -> bool:
         """Compare by all fields."""
         if isinstance(other, TextSpan):
-            return (
-                self.start == other.start
-                and self.end == other.end
-                and self.text == other.text
-            )
+            return self.start == other.start and self.end == other.end and self.text == other.text
         return False
 
     def __hash__(self) -> int:

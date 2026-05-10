@@ -22,6 +22,7 @@ from fastapi.testclient import TestClient
 def client():
     """Create test client for the API."""
     from contextsafe.api.main import app
+
     with TestClient(app) as c:
         yield c
 
@@ -34,7 +35,7 @@ def project_id(client):
         json={
             "name": "Test Project",
             "description": "Integration test project",
-        }
+        },
     )
     assert response.status_code == 201
     return response.json()["data"]["id"]
@@ -108,9 +109,7 @@ Direccion: Calle Mayor 123, Madrid
 
     def test_process_document(self, client, uploaded_document):
         """Should start document processing."""
-        response = client.post(
-            f"/api/v1/documents/{uploaded_document}/process"
-        )
+        response = client.post(f"/api/v1/documents/{uploaded_document}/process")
 
         assert response.status_code == 200
         data = response.json()["data"]
@@ -119,9 +118,7 @@ Direccion: Calle Mayor 123, Madrid
 
     def test_process_nonexistent_document(self, client):
         """Should fail when document doesn't exist."""
-        response = client.post(
-            "/api/v1/documents/00000000-0000-0000-0000-000000000000/process"
-        )
+        response = client.post("/api/v1/documents/00000000-0000-0000-0000-000000000000/process")
 
         assert response.status_code == 404
 
@@ -208,18 +205,14 @@ class TestDocumentExport:
 
     def test_export_as_txt(self, client, document_for_export):
         """Should export document as plain text."""
-        response = client.post(
-            f"/api/v1/documents/{document_for_export}/export?format=txt"
-        )
+        response = client.post(f"/api/v1/documents/{document_for_export}/export?format=txt")
 
         assert response.status_code == 200
         assert "text/plain" in response.headers.get("content-type", "")
 
     def test_export_as_pdf(self, client, document_for_export):
         """Should export document as PDF."""
-        response = client.post(
-            f"/api/v1/documents/{document_for_export}/export?format=pdf"
-        )
+        response = client.post(f"/api/v1/documents/{document_for_export}/export?format=pdf")
 
         assert response.status_code == 200
         assert "application/pdf" in response.headers.get("content-type", "")
@@ -228,9 +221,7 @@ class TestDocumentExport:
 
     def test_export_as_docx(self, client, document_for_export):
         """Should export document as DOCX."""
-        response = client.post(
-            f"/api/v1/documents/{document_for_export}/export?format=docx"
-        )
+        response = client.post(f"/api/v1/documents/{document_for_export}/export?format=docx")
 
         assert response.status_code == 200
         content_type = response.headers.get("content-type", "")
@@ -332,14 +323,13 @@ class TestBatchProcessing:
         """Should process all pending documents in a project."""
         doc_ids, project_id = multiple_documents
 
-        response = client.post(
-            f"/api/v1/documents/project/{project_id}/process-all"
-        )
+        response = client.post(f"/api/v1/documents/project/{project_id}/process-all")
 
         assert response.status_code == 200
         data = response.json()["data"]
         assert data["total_started"] == 3
         assert len(data["started"]) == 3
+
 
 class TestDocumentDeletion:
     """Tests for document deletion functionality."""
@@ -366,7 +356,5 @@ class TestDocumentDeletion:
 
     def test_delete_nonexistent_document(self, client):
         """Should return 404 when deleting nonexistent document."""
-        response = client.delete(
-            "/api/v1/documents/00000000-0000-0000-0000-000000000000"
-        )
+        response = client.delete("/api/v1/documents/00000000-0000-0000-0000-000000000000")
         assert response.status_code == 404

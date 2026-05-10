@@ -17,6 +17,7 @@ from dataclasses import dataclass
 @dataclass
 class CriticalPiiMatch:
     """A detected critical PII in anonymized text."""
+
     category: str
     value: str
     position: int
@@ -34,7 +35,11 @@ CRITICAL_PII_PATTERNS = [
     (r"\b[A-Z]{2}\d{2}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{2}[-\s]?\d{10}\b", "IBAN", "CRITICAL"),
     (r"\bES\d{22}\b", "IBAN España", "CRITICAL"),
     # Credit Card - CRITICAL
-    (r"\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})\b", "Tarjeta Crédito", "CRITICAL"),
+    (
+        r"\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})\b",
+        "Tarjeta Crédito",
+        "CRITICAL",
+    ),
     (r"\b\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}\b", "Número Tarjeta", "CRITICAL"),
     # Passport - HIGH
     (r"\b[A-Z]{2}[0-9]{7}\b", "Pasaporte", "HIGH"),
@@ -77,12 +82,14 @@ def validate_no_critical_pii(text: str, strict: bool = True) -> list[CriticalPii
             if re.match(r"^\d+/\d{4}$", value):
                 continue
 
-            matches.append(CriticalPiiMatch(
-                category=category,
-                value=value,
-                position=match.start(),
-                severity=severity,
-            ))
+            matches.append(
+                CriticalPiiMatch(
+                    category=category,
+                    value=value,
+                    position=match.start(),
+                    severity=severity,
+                )
+            )
 
     return matches
 

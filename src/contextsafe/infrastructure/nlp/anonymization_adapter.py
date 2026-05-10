@@ -41,9 +41,18 @@ if TYPE_CHECKING:
 
 # Spanish month names to numbers
 SPANISH_MONTHS = {
-    "enero": 1, "febrero": 2, "marzo": 3, "abril": 4,
-    "mayo": 5, "junio": 6, "julio": 7, "agosto": 8,
-    "septiembre": 9, "octubre": 10, "noviembre": 11, "diciembre": 12,
+    "enero": 1,
+    "febrero": 2,
+    "marzo": 3,
+    "abril": 4,
+    "mayo": 5,
+    "junio": 6,
+    "julio": 7,
+    "agosto": 8,
+    "septiembre": 9,
+    "octubre": 10,
+    "noviembre": 11,
+    "diciembre": 12,
 }
 
 
@@ -62,11 +71,7 @@ def parse_spanish_date(date_str: str) -> Optional[datetime]:
     date_str = date_str.strip().lower()
 
     # Format: "15 de marzo de 2024"
-    match = re.match(
-        r"(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})",
-        date_str,
-        re.IGNORECASE
-    )
+    match = re.match(r"(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})", date_str, re.IGNORECASE)
     if match:
         day, month_name, year = match.groups()
         month = SPANISH_MONTHS.get(month_name.lower())
@@ -114,7 +119,7 @@ def get_chronological_alias(index: int) -> str:
     index += 1  # 1-based for calculation
     while index > 0:
         index -= 1
-        result = chr(ord('A') + (index % 26)) + result
+        result = chr(ord("A") + (index % 26)) + result
         index //= 26
     return result
 
@@ -128,16 +133,16 @@ ALIAS_PREFIXES = {
     # Location
     "ADDRESS": "Dir",
     "LOCATION": "Lugar",
-    "POSTAL_CODE": "CP",        # Spanish postal codes
+    "POSTAL_CODE": "CP",  # Spanish postal codes
     # Identity Documents
-    "DNI_NIE": "ID",            # Covers DNI, NIE, NIF, CIF
+    "DNI_NIE": "ID",  # Covers DNI, NIE, NIF, CIF
     "PASSPORT": "Pasaporte",
     # Contact
     "PHONE": "Tel",
     "EMAIL": "Email",
     # Financial
     "BANK_ACCOUNT": "Cuenta",
-    "IBAN": "IBAN",             # Spanish IBAN codes
+    "IBAN": "IBAN",  # Spanish IBAN codes
     "CREDIT_CARD": "Tarjeta",
     # Dates
     "DATE": "Fecha",
@@ -147,7 +152,7 @@ ALIAS_PREFIXES = {
     "SOCIAL_SECURITY": "NSS",
     # Professional & Legal (new for FUGA 1/2)
     "PROFESSIONAL_ID": "IdProf",
-    "CASE_NUMBER": "Proc",      # Procedure numbers
+    "CASE_NUMBER": "Proc",  # Procedure numbers
     # Digital & Platform (new for FUGA 3)
     "PLATFORM": "Plataforma",
     "IP_ADDRESS": "IP",
@@ -184,6 +189,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
     def _get_windows_host_ip() -> str:
         """Get the Windows host IP from WSL."""
         import subprocess
+
         try:
             result = subprocess.run(
                 ["ip", "route", "show", "default"],
@@ -223,9 +229,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
     # Maximum gap (in characters) to consider entities as "adjacent"
     MAX_ADJACENT_GAP = 10
 
-    def _remove_overlapping_detections(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _remove_overlapping_detections(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Remove overlapping AND adjacent detections.
 
@@ -251,21 +255,31 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # Consistent with voting.py priority system.
         # Example: LOCATION (60) beats ORGANIZATION (50) when spans overlap.
         _CATEGORY_PRIORITY = {
-            "PERSON_NAME": 100, "DNI_NIE": 95, "SOCIAL_SECURITY": 90,
-            "PHONE": 85, "EMAIL": 80, "IBAN": 75, "CREDIT_CARD": 70,
-            "ADDRESS": 65, "LOCATION": 60, "PASSPORT": 55,
-            "ORGANIZATION": 50, "DATE": 40, "POSTAL_CODE": 35,
-            "LICENSE_PLATE": 30, "CASE_NUMBER": 20,
+            "PERSON_NAME": 100,
+            "DNI_NIE": 95,
+            "SOCIAL_SECURITY": 90,
+            "PHONE": 85,
+            "EMAIL": 80,
+            "IBAN": 75,
+            "CREDIT_CARD": 70,
+            "ADDRESS": 65,
+            "LOCATION": 60,
+            "PASSPORT": 55,
+            "ORGANIZATION": 50,
+            "DATE": 40,
+            "POSTAL_CODE": 35,
+            "LICENSE_PLATE": 30,
+            "CASE_NUMBER": 20,
         }
 
         sorted_dets = sorted(
             detections,
             key=lambda d: (
                 -_CATEGORY_PRIORITY.get(
-                    d.category.value if hasattr(d.category, 'value') else str(d.category), 0
-                ),                              # Higher GDPR risk first
-                -d.confidence.value,            # Higher confidence first
-                -(d.span.end - d.span.start),   # Longer spans first (tiebreaker)
+                    d.category.value if hasattr(d.category, "value") else str(d.category), 0
+                ),  # Higher GDPR risk first
+                -d.confidence.value,  # Higher confidence first
+                -(d.span.end - d.span.start),  # Longer spans first (tiebreaker)
             ),
         )
 
@@ -324,7 +338,9 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
 
         return gap <= self.MAX_ADJACENT_GAP
 
-    def _get_strategy(self, level: str, compute_mode: "ComputeMode | None" = None) -> "AnonymizationStrategy":
+    def _get_strategy(
+        self, level: str, compute_mode: "ComputeMode | None" = None
+    ) -> "AnonymizationStrategy":
         """
         Get the appropriate strategy for the anonymization level.
 
@@ -447,7 +463,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
             # Replace in text (with boundary check to preserve whitespace)
             start = detection.span.start
             end = detection.span.end
-            after_char = anonymized[end:end + 1] if end < len(anonymized) else ""
+            after_char = anonymized[end : end + 1] if end < len(anonymized) else ""
             space_suffix = " " if after_char.isalnum() else ""
             anonymized = anonymized[:start] + result.replacement + space_suffix + anonymized[end:]
 
@@ -466,12 +482,8 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         # Glossary consistency scan — find values NER missed
         # Searches text for glossary-known entities (PERSON_NAME, ORGANIZATION)
         # that were not detected by NER (e.g., bare names in tables).
-        replaced_spans = [
-            (d.span.start, d.span.end) for d in sorted_detections
-        ]
-        anonymized = self._glossary_consistency_scan(
-            anonymized, project_id, replaced_spans
-        )
+        replaced_spans = [(d.span.start, d.span.end) for d in sorted_detections]
+        anonymized = self._glossary_consistency_scan(anonymized, project_id, replaced_spans)
 
         # Final progress update
         if progress_callback:
@@ -540,14 +552,12 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
                     if overlaps:
                         continue
 
-                    additional_replacements.append(
-                        (m_start, m_end, alias)
-                    )
+                    additional_replacements.append((m_start, m_end, alias))
 
         # Apply replacements in reverse order (largest offset first)
         additional_replacements.sort(key=lambda x: x[0], reverse=True)
         for start, end, alias_value in additional_replacements:
-            after_char = text[end:end + 1] if end < len(text) else ""
+            after_char = text[end : end + 1] if end < len(text) else ""
             space_suffix = " " if after_char.isalnum() else ""
             text = text[:start] + alias_value + space_suffix + text[end:]
 

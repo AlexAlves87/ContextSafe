@@ -33,16 +33,27 @@ from typing import Dict, Optional
 @dataclass
 class DateShiftConfig:
     """Configuration for date shifting."""
+
     min_shift_days: int = -1825  # -5 years
-    max_shift_days: int = 1825   # +5 years
+    max_shift_days: int = 1825  # +5 years
     preserve_day_of_week: bool = False
     preserve_month: bool = False
 
 
 # Spanish month names
 MONTHS_ES = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
 ]
 
 
@@ -173,11 +184,7 @@ class DateShifter:
         date_lower = date_str.lower()
 
         # Format: "15 de marzo de 2024"
-        match = re.match(
-            r"(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})",
-            date_lower,
-            re.IGNORECASE
-        )
+        match = re.match(r"(\d{1,2})\s+de\s+(\w+)\s+de\s+(\d{4})", date_lower, re.IGNORECASE)
         if match:
             day, month_name, year = match.groups()
             try:

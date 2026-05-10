@@ -42,8 +42,18 @@ class TestDateDetectionWithoutContext:
     async def test_detects_all_months(self, adapter):
         """All Spanish months should be recognized."""
         months = [
-            "enero", "febrero", "marzo", "abril", "mayo", "junio",
-            "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+            "enero",
+            "febrero",
+            "marzo",
+            "abril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre",
         ]
         for month in months:
             text = f"el 15 de {month} de 2024 se celebró"
@@ -68,6 +78,9 @@ class TestSpanishDateRecognizerNoContext:
         from contextsafe.infrastructure.nlp.recognizers.spanish_dates import (
             SpanishDateRecognizer,
         )
+
         recognizer = SpanishDateRecognizer()
         # The recognizer should work with empty context (no requirement)
-        assert recognizer.context == [] or recognizer.context is None or len(recognizer.context) == 0
+        assert (
+            recognizer.context == [] or recognizer.context is None or len(recognizer.context) == 0
+        )

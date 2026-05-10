@@ -44,9 +44,7 @@ class DocumentRepository(ABC):
         ...
 
     @abstractmethod
-    async def find_by_id(
-        self, document_id: DocumentId
-    ) -> Optional[DocumentAggregate]:
+    async def find_by_id(self, document_id: DocumentId) -> Optional[DocumentAggregate]:
         """
         Find a document by ID.
 

@@ -37,6 +37,7 @@ from contextsafe.infrastructure.nlp.merge.voting import (
 # HELPER FUNCTIONS
 # =============================================================================
 
+
 def create_detection(
     category: str,
     value: str,
@@ -58,6 +59,7 @@ def create_detection(
 # =============================================================================
 # PHASE 1: CONTEXTUAL ANCHORS TESTS
 # =============================================================================
+
 
 class TestContextualAnchors:
     """Tests for Spanish legal domain contextual anchors."""
@@ -224,6 +226,7 @@ class TestContextualAnchors:
 # PHASE 2: WEIGHTED VOTING TESTS
 # =============================================================================
 
+
 class TestWeightedVoting:
     """Tests for weighted voting system."""
 
@@ -284,6 +287,7 @@ class TestWeightedVoting:
 # PHASE 3: TIEBREAKER TESTS
 # =============================================================================
 
+
 class TestGdprRiskTiebreaker:
     """Tests for GDPR risk-based tiebreaker."""
 
@@ -322,6 +326,7 @@ class TestGdprRiskTiebreaker:
 # DETECTOR WEIGHTS TESTS
 # =============================================================================
 
+
 class TestDetectorWeights:
     """Tests for detector weight configuration."""
 
@@ -349,6 +354,7 @@ class TestDetectorWeights:
 # =============================================================================
 # WEIGHTED SCORE CALCULATION TESTS
 # =============================================================================
+
 
 class TestWeightedScore:
     """Tests for individual detection score calculation."""
@@ -379,6 +385,7 @@ class TestWeightedScore:
 # AUDIT CASE TESTS
 # =============================================================================
 
+
 class TestAuditCases:
     """Tests based on actual audit findings from auditoria.md."""
 
@@ -406,8 +413,16 @@ class TestAuditCases:
     def test_multiple_person_anchors_recognized(self):
         """Test various person anchors are recognized."""
         anchors_to_test = [
-            "doña", "don", "letrado", "abogado", "procurador",
-            "magistrado", "juez", "testigo", "demandante", "demandado",
+            "doña",
+            "don",
+            "letrado",
+            "abogado",
+            "procurador",
+            "magistrado",
+            "juez",
+            "testigo",
+            "demandante",
+            "demandado",
         ]
 
         for anchor in anchors_to_test:
@@ -418,8 +433,13 @@ class TestAuditCases:
     def test_location_anchors_recognized(self):
         """Test location anchors are recognized."""
         anchors_to_test = [
-            "calle", "avenida", "plaza", "sito en", "domiciliado en",
-            "municipio de", "provincia de",
+            "calle",
+            "avenida",
+            "plaza",
+            "sito en",
+            "domiciliado en",
+            "municipio de",
+            "provincia de",
         ]
 
         for anchor in anchors_to_test:
@@ -431,10 +451,15 @@ class TestAuditCases:
         # Note: Anchors with periods like "s.l." need different regex handling
         # due to word boundary behavior with non-alphanumeric characters
         anchors_to_test = [
-            "banco", "juzgado de", "tribunal",
-            "ayuntamiento de", "ministerio de",
-            "sociedad limitada", "sociedad anónima",
-            "entidad bancaria", "entidad mercantil",
+            "banco",
+            "juzgado de",
+            "tribunal",
+            "ayuntamiento de",
+            "ministerio de",
+            "sociedad limitada",
+            "sociedad anónima",
+            "entidad bancaria",
+            "entidad mercantil",
         ]
 
         for anchor in anchors_to_test:

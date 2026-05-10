@@ -136,9 +136,7 @@ class GenerateAnonymized:
             return Err(result.unwrap_err())
 
         # 6. Get or create glossary
-        glossary = await self._glossary_repo.get_or_create(
-            aggregate.document.project_id
-        )
+        glossary = await self._glossary_repo.get_or_create(aggregate.document.project_id)
 
         # 7. If no entities provided, we cannot anonymize
         if not request.entities:
@@ -180,9 +178,9 @@ class GenerateAnonymized:
             alias = alias_result.unwrap()
 
             # Replace in text (with boundary check to preserve whitespace)
-            after_char = text[entity.end:entity.end + 1] if entity.end < len(text) else ""
+            after_char = text[entity.end : entity.end + 1] if entity.end < len(text) else ""
             space_suffix = " " if after_char.isalnum() else ""
-            text = text[:entity.start] + alias.value + space_suffix + text[entity.end:]
+            text = text[: entity.start] + alias.value + space_suffix + text[entity.end :]
 
             # Track usage
             key = f"{category}:{entity.value.lower()}"
@@ -206,15 +204,12 @@ class GenerateAnonymized:
         # Searches text for glossary-known entities (PERSON_NAME, ORGANIZATION)
         # that were not detected by NER (e.g., bare names in tables).
         replaced_spans = [
-            (entity.start, entity.end) for entity in sorted_entities
+            (entity.start, entity.end)
+            for entity in sorted_entities
             if PiiCategory.from_string(entity.category).is_ok()
-            and level.includes_category(
-                PiiCategory.from_string(entity.category).unwrap().value
-            )
+            and level.includes_category(PiiCategory.from_string(entity.category).unwrap().value)
         ]
-        text = self._glossary_consistency_scan(
-            text, glossary, replaced_spans, level
-        )
+        text = self._glossary_consistency_scan(text, glossary, replaced_spans, level)
 
         # 10. Complete anonymization
         result = aggregate.complete_anonymization(text)
@@ -313,14 +308,12 @@ class GenerateAnonymized:
                 if overlaps:
                     continue
 
-                additional_replacements.append(
-                    (m_start, m_end, mapping.alias.value)
-                )
+                additional_replacements.append((m_start, m_end, mapping.alias.value))
 
         # Apply replacements in reverse order (largest offset first)
         additional_replacements.sort(key=lambda x: x[0], reverse=True)
         for start, end, alias_value in additional_replacements:
-            after_char = text[end:end + 1] if end < len(text) else ""
+            after_char = text[end : end + 1] if end < len(text) else ""
             space_suffix = " " if after_char.isalnum() else ""
             text = text[:start] + alias_value + space_suffix + text[end:]
 

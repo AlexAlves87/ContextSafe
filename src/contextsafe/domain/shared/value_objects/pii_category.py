@@ -27,7 +27,7 @@ class PiiCategoryEnum(str, Enum):
     # Location
     ADDRESS = "ADDRESS"
     LOCATION = "LOCATION"
-    POSTAL_CODE = "POSTAL_CODE"      # Spanish: Código Postal
+    POSTAL_CODE = "POSTAL_CODE"  # Spanish: Código Postal
 
     # Identity Documents
     DNI_NIE = "DNI_NIE"
@@ -43,7 +43,7 @@ class PiiCategoryEnum(str, Enum):
     CREDIT_CARD = "CREDIT_CARD"
 
     # Dates
-    DATE = "DATE"                    # Generic date (not specifically birth date)
+    DATE = "DATE"  # Generic date (not specifically birth date)
 
     # Health & Vehicle
     MEDICAL_RECORD = "MEDICAL_RECORD"
@@ -52,10 +52,10 @@ class PiiCategoryEnum(str, Enum):
 
     # Professional & Legal (new)
     PROFESSIONAL_ID = "PROFESSIONAL_ID"  # Colegiado numbers, etc.
-    CASE_NUMBER = "CASE_NUMBER"          # Judicial procedure numbers
+    CASE_NUMBER = "CASE_NUMBER"  # Judicial procedure numbers
 
     # Digital & Platform (new)
-    PLATFORM = "PLATFORM"                # WhatsApp, Telegram, etc.
+    PLATFORM = "PLATFORM"  # WhatsApp, Telegram, etc.
     IP_ADDRESS = "IP_ADDRESS"
 
     # =========================================================================
@@ -64,21 +64,21 @@ class PiiCategoryEnum(str, Enum):
     # =========================================================================
 
     # Identificación Civil Avanzada
-    ID_SUPPORT = "ID_SUPPORT"            # Número de Soporte (IDESP/IXESP) - CRÍTICO
+    ID_SUPPORT = "ID_SUPPORT"  # Número de Soporte (IDESP/IXESP) - CRÍTICO
 
     # Sector Judicial
-    NIG = "NIG"                          # Número de Identificación General (19 dígitos)
-    ECLI = "ECLI"                        # European Case Law Identifier
-    CSV = "CSV"                          # Código Seguro de Verificación - CRÍTICO
+    NIG = "NIG"  # Número de Identificación General (19 dígitos)
+    ECLI = "ECLI"  # European Case Law Identifier
+    CSV = "CSV"  # Código Seguro de Verificación - CRÍTICO
 
     # Sector Sanitario
-    HEALTH_ID = "HEALTH_ID"              # CIP-SNS y CIP Autonómicos
+    HEALTH_ID = "HEALTH_ID"  # CIP-SNS y CIP Autonómicos
 
     # Hacienda y Patrimonio
-    CADASTRAL_REF = "CADASTRAL_REF"      # Referencia Catastral
+    CADASTRAL_REF = "CADASTRAL_REF"  # Referencia Catastral
 
     # Ámbito Laboral
-    EMPLOYER_ID = "EMPLOYER_ID"          # CCC - Código Cuenta de Cotización
+    EMPLOYER_ID = "EMPLOYER_ID"  # CCC - Código Cuenta de Cotización
 
 
 # Alias patterns for each category
@@ -86,41 +86,32 @@ ALIAS_PATTERNS: Dict[PiiCategoryEnum, str] = {
     # Person & Organization
     PiiCategoryEnum.PERSON_NAME: "Persona_{N}",
     PiiCategoryEnum.ORGANIZATION: "Org_{N}",
-
     # Location
     PiiCategoryEnum.ADDRESS: "Dir_{N}",
     PiiCategoryEnum.LOCATION: "Lugar_{N}",
     PiiCategoryEnum.POSTAL_CODE: "CP_{N}",
-
     # Identity Documents
     PiiCategoryEnum.DNI_NIE: "ID_{N}",
     PiiCategoryEnum.PASSPORT: "Pasaporte_{N}",
-
     # Contact
     PiiCategoryEnum.PHONE: "Tel_{N}",
     PiiCategoryEnum.EMAIL: "Email_{N}",
-
     # Financial
     PiiCategoryEnum.BANK_ACCOUNT: "Cuenta_{N}",
     PiiCategoryEnum.IBAN: "IBAN_{N}",
     PiiCategoryEnum.CREDIT_CARD: "Tarjeta_{N}",
-
     # Dates
     PiiCategoryEnum.DATE: "Fecha_{N}",
-
     # Health & Vehicle
     PiiCategoryEnum.MEDICAL_RECORD: "HistoriaMedica_{N}",
     PiiCategoryEnum.LICENSE_PLATE: "Matricula_{N}",
     PiiCategoryEnum.SOCIAL_SECURITY: "NSS_{N}",
-
     # Professional & Legal
     PiiCategoryEnum.PROFESSIONAL_ID: "IdProf_{N}",
     PiiCategoryEnum.CASE_NUMBER: "Proc_{N}",
-
     # Digital & Platform
     PiiCategoryEnum.PLATFORM: "Plataforma_{N}",
     PiiCategoryEnum.IP_ADDRESS: "IP_{N}",
-
     # Sector Legal Español
     PiiCategoryEnum.ID_SUPPORT: "Soporte_{N}",
     PiiCategoryEnum.NIG: "NIG_{N}",

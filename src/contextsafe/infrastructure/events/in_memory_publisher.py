@@ -37,9 +37,9 @@ class InMemoryEventPublisher(EventPublisher):
         self._handlers: dict[type[DomainEvent], set[Callable[[DomainEvent], None]]] = defaultdict(
             set
         )
-        self._async_handlers: dict[type[DomainEvent], set[Callable[[DomainEvent], None]]] = (
-            defaultdict(set)
-        )
+        self._async_handlers: dict[
+            type[DomainEvent], set[Callable[[DomainEvent], None]]
+        ] = defaultdict(set)
 
     async def publish(self, event: DomainEvent) -> None:
         """

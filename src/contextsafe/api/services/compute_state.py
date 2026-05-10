@@ -52,9 +52,12 @@ def _is_gpu_available() -> bool:
     # Method 1: nvidia-smi (works on native Linux and WSL2 with GPU passthrough)
     try:
         import subprocess
+
         result = subprocess.run(
             ["nvidia-smi", "--query-gpu=name", "--format=csv,noheader"],
-            capture_output=True, text=True, timeout=5,
+            capture_output=True,
+            text=True,
+            timeout=5,
         )
         if result.returncode == 0 and result.stdout.strip():
             available = True
@@ -65,6 +68,7 @@ def _is_gpu_available() -> bool:
     if not available:
         try:
             import torch
+
             available = torch.cuda.is_available()
         except ImportError:
             pass

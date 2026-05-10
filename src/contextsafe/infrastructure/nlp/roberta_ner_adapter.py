@@ -40,8 +40,9 @@ from contextsafe.domain.shared.value_objects import (
 
 
 # Check for offline mode via environment variables
-OFFLINE_MODE = os.environ.get("HF_OFFLINE", "0") == "1" or \
-               os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
+OFFLINE_MODE = (
+    os.environ.get("HF_OFFLINE", "0") == "1" or os.environ.get("TRANSFORMERS_OFFLINE", "0") == "1"
+)
 
 # Default cache directory for HuggingFace models
 DEFAULT_CACHE_DIR = Path.home() / ".cache" / "huggingface" / "hub"
@@ -57,7 +58,6 @@ LABEL_TO_CATEGORY: dict[str, str] = {
     "ORG": "ORGANIZATION",
     "LOC": "LOCATION",
     # MISC is skipped - too generic for reliable PII detection
-
     # === Local v2 model labels (legal_ner_v2) ===
     "PERSON": "PERSON_NAME",
     "LOCATION": "LOCATION",
@@ -77,12 +77,34 @@ LABEL_TO_CATEGORY: dict[str, str] = {
 
 # Titles and honorifics that should NOT be detected as person names
 HONORIFIC_TITLES = {
-    "d", "d.", "dña", "dña.", "don", "doña",
-    "sr", "sr.", "sra", "sra.", "señor", "señora",
-    "excmo", "excmo.", "excma", "excma.",
-    "ilmo", "ilmo.", "ilma", "ilma.",
-    "dr", "dr.", "dra", "dra.",
-    "lic", "lic.", "ing", "ing.",
+    "d",
+    "d.",
+    "dña",
+    "dña.",
+    "don",
+    "doña",
+    "sr",
+    "sr.",
+    "sra",
+    "sra.",
+    "señor",
+    "señora",
+    "excmo",
+    "excmo.",
+    "excma",
+    "excma.",
+    "ilmo",
+    "ilmo.",
+    "ilma",
+    "ilma.",
+    "dr",
+    "dr.",
+    "dra",
+    "dra.",
+    "lic",
+    "lic.",
+    "ing",
+    "ing.",
 }
 
 # Public institutions that should NOT be anonymized (they are public, not PII)
@@ -91,15 +113,26 @@ HONORIFIC_TITLES = {
 # institutions where triangulation is not possible.
 PUBLIC_INSTITUTIONS = {
     # National-level courts only (no triangulation risk)
-    "tribunal supremo", "tribunal constitucional", "audiencia nacional",
+    "tribunal supremo",
+    "tribunal constitucional",
+    "audiencia nacional",
     # Government bodies
-    "ministerio fiscal", "ministerio de justicia", "gobierno",
-    "administración", "administracion", "congreso", "senado",
+    "ministerio fiscal",
+    "ministerio de justicia",
+    "gobierno",
+    "administración",
+    "administracion",
+    "congreso",
+    "senado",
     # Court offices (generic terms, not identifying)
-    "gabinete técnico", "gabinete tecnico", "decanato",
+    "gabinete técnico",
+    "gabinete tecnico",
+    "decanato",
     # Generic legal terms
-    "consejo de administración", "consejo de administracion",
-    "junta general", "asamblea",
+    "consejo de administración",
+    "consejo de administracion",
+    "junta general",
+    "asamblea",
 }
 
 # Minimum length for valid entity names
@@ -124,7 +157,7 @@ class RobertaNerAdapter(NerService):
 
     # RoBERTa max tokens is 512, but we use less to be safe with special tokens
     MAX_CHUNK_CHARS = 1500  # ~375 tokens approx (4 chars/token average)
-    OVERLAP_CHARS = 200    # Overlap between chunks to catch boundary entities
+    OVERLAP_CHARS = 200  # Overlap between chunks to catch boundary entities
 
     # Thread pool for non-blocking ML inference
     # Using max_workers=1 to avoid GPU memory issues with concurrent inference
@@ -234,7 +267,7 @@ class RobertaNerAdapter(NerService):
                     f"Cache directory: {self._cache_dir}\n"
                     f"To download the model:\n"
                     f"  1. Unset HF_OFFLINE=1 and TRANSFORMERS_OFFLINE=1\n"
-                    f"  2. Run: python -c \"from transformers import pipeline; "
+                    f'  2. Run: python -c "from transformers import pipeline; '
                     f"pipeline('ner', model='{self._model_name}')\"\n"
                     f"  3. The model will be cached for offline use"
                 )
@@ -362,7 +395,9 @@ class RobertaNerAdapter(NerService):
             result = await self._detect_single_chunk(text, 0, categories, effective_min_score)
 
             if progress_callback:
-                await progress_callback(90, 100, f"RoBERTa: procesando {len(result)} detecciones...")
+                await progress_callback(
+                    90, 100, f"RoBERTa: procesando {len(result)} detecciones..."
+                )
                 await progress_callback(100, 100, f"RoBERTa: {len(result)} entidades detectadas")
 
             return result
@@ -420,22 +455,20 @@ class RobertaNerAdapter(NerService):
                 # Use percentage scale (0-100) for more granular updates
                 pre_progress = int(10 + (80 * (chunk_num - 1) / total_chunks))
                 await progress_callback(
-                    pre_progress, 100,
-                    f"RoBERTa: analizando chunk {chunk_num}/{total_chunks}..."
+                    pre_progress, 100, f"RoBERTa: analizando chunk {chunk_num}/{total_chunks}..."
                 )
 
             # Detect entities in this chunk (async to allow WebSocket updates)
-            chunk_detections = await self._detect_single_chunk(
-                chunk, pos, categories, min_score
-            )
+            chunk_detections = await self._detect_single_chunk(chunk, pos, categories, min_score)
             all_detections.extend(chunk_detections)
 
             # Report progress after processing chunk
             if progress_callback:
                 post_progress = int(10 + (80 * chunk_num / total_chunks))
                 await progress_callback(
-                    post_progress, 100,
-                    f"RoBERTa: chunk {chunk_num}/{total_chunks} - {len(chunk_detections)} entidades"
+                    post_progress,
+                    100,
+                    f"RoBERTa: chunk {chunk_num}/{total_chunks} - {len(chunk_detections)} entidades",
                 )
 
             # Move position for next chunk
@@ -455,8 +488,7 @@ class RobertaNerAdapter(NerService):
         # Report completion
         if progress_callback:
             await progress_callback(
-                95, 100,
-                f"RoBERTa: deduplicando {len(all_detections)} detecciones..."
+                95, 100, f"RoBERTa: deduplicando {len(all_detections)} detecciones..."
             )
 
         # Deduplicate (especially important for overlap regions)
@@ -487,23 +519,23 @@ class RobertaNerAdapter(NerService):
         min_chunk = len(chunk) // 2  # Don't make chunks smaller than half
 
         # Priority 1: Paragraph break
-        para_break = chunk.rfind('\n\n')
+        para_break = chunk.rfind("\n\n")
         if para_break > min_chunk:
             return start + para_break + 2
 
         # Priority 2: Sentence end
-        for sentence_end in ['. ', '.\n', '! ', '!\n', '? ', '?\n']:
+        for sentence_end in [". ", ".\n", "! ", "!\n", "? ", "?\n"]:
             pos = chunk.rfind(sentence_end)
             if pos > min_chunk:
                 return start + pos + len(sentence_end)
 
         # Priority 3: Single newline
-        newline = chunk.rfind('\n')
+        newline = chunk.rfind("\n")
         if newline > min_chunk:
             return start + newline + 1
 
         # Priority 4: Word boundary (space)
-        space = chunk.rfind(' ')
+        space = chunk.rfind(" ")
         if space > min_chunk:
             return start + space + 1
 
@@ -563,7 +595,9 @@ class RobertaNerAdapter(NerService):
             category_str = self._map_label_to_category(label)
             if not category_str:
                 # DEBUG: Log unmapped labels
-                print(f"[ROBERTA-DEBUG] Unmapped label: '{label}' for text: '{entity.get('word', '')[:30]}'")
+                print(
+                    f"[ROBERTA-DEBUG] Unmapped label: '{label}' for text: '{entity.get('word', '')[:30]}'"
+                )
                 continue
 
             # Create PiiCategory
@@ -585,9 +619,7 @@ class RobertaNerAdapter(NerService):
             raw_text = chunk[local_start:local_end]
 
             # Clean up tokenization artifacts and title remnants
-            cleaned_text = self._clean_entity_text(
-                entity_text, chunk, local_start, local_end
-            )
+            cleaned_text = self._clean_entity_text(entity_text, chunk, local_start, local_end)
 
             if not cleaned_text or local_start >= local_end:
                 continue
@@ -637,7 +669,9 @@ class RobertaNerAdapter(NerService):
                 continue
 
             # DEBUG: Log detected entities
-            print(f"[ROBERTA-DEBUG] Detected: label='{label}' -> category={category.value} text='{actual_text[:40]}' score={score:.3f}")
+            print(
+                f"[ROBERTA-DEBUG] Detected: label='{label}' -> category={category.value} text='{actual_text[:40]}' score={score:.3f}"
+            )
             detections.append(
                 NerDetection(
                     category=category,
@@ -650,9 +684,7 @@ class RobertaNerAdapter(NerService):
 
         return detections
 
-    def _clean_entity_text(
-        self, entity_text: str, original_text: str, start: int, end: int
-    ) -> str:
+    def _clean_entity_text(self, entity_text: str, original_text: str, start: int, end: int) -> str:
         """
         Clean tokenization artifacts from entity text.
 
@@ -677,9 +709,9 @@ class RobertaNerAdapter(NerService):
         # === FIX: Handle newlines and trailing garbage ===
         # Pattern: "MARTORELL\n\nD" -> "MARTORELL"
         # If entity contains newline, take only the first "word" before newlines
-        if '\n' in cleaned:
+        if "\n" in cleaned:
             # Split by newlines and take the first non-empty part
-            parts = cleaned.split('\n')
+            parts = cleaned.split("\n")
             first_part = parts[0].strip()
             if first_part and len(first_part) >= MIN_ENTITY_LENGTH:
                 cleaned = first_part
@@ -689,7 +721,7 @@ class RobertaNerAdapter(NerService):
 
         # Remove trailing single letters (often title remnants like "D" for "Don")
         # Pattern: "García D" -> "García"
-        cleaned = re.sub(r'\s+[A-ZÁÉÍÓÚÑ]\.?$', '', cleaned).strip()
+        cleaned = re.sub(r"\s+[A-ZÁÉÍÓÚÑ]\.?$", "", cleaned).strip()
 
         # If we have the original text positions, prefer that
         if 0 <= start < end <= len(original_text):
@@ -698,8 +730,8 @@ class RobertaNerAdapter(NerService):
             original_clean = original.strip()
 
             # Apply same newline fix to original
-            if '\n' in original_clean:
-                parts = original_clean.split('\n')
+            if "\n" in original_clean:
+                parts = original_clean.split("\n")
                 first_part = parts[0].strip()
                 if first_part and len(first_part) >= MIN_ENTITY_LENGTH:
                     original_clean = first_part
@@ -710,7 +742,7 @@ class RobertaNerAdapter(NerService):
                 original_clean = original_clean[1:].strip()
 
             # Remove trailing single letters from original too
-            original_clean = re.sub(r'\s+[A-ZÁÉÍÓÚÑ]\.?$', '', original_clean).strip()
+            original_clean = re.sub(r"\s+[A-ZÁÉÍÓÚÑ]\.?$", "", original_clean).strip()
 
             # If similar enough, use original
             if original_clean.lower() == cleaned.lower():
@@ -718,9 +750,7 @@ class RobertaNerAdapter(NerService):
 
         return cleaned
 
-    def _deduplicate_overlapping(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _deduplicate_overlapping(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Remove overlapping detections, keeping the highest confidence one.
 
@@ -776,9 +806,7 @@ class RobertaNerAdapter(NerService):
 
         return False
 
-    def _is_fragmented_entity(
-        self, text: str, chunk: str, start: int, end: int
-    ) -> bool:
+    def _is_fragmented_entity(self, text: str, chunk: str, start: int, end: int) -> bool:
         """
         Check if the entity appears to be a fragment (cut by chunking).
 
@@ -885,7 +913,9 @@ class RobertaNerAdapter(NerService):
             "label_mapping": LABEL_TO_CATEGORY,
             "tip": (
                 "To cache model for offline use, run: "
-                f"python -c \"from transformers import pipeline; "
+                f'python -c "from transformers import pipeline; '
                 f"pipeline('ner', model='{self._model_name}')\""
-            ) if not model_cached else None,
+            )
+            if not model_cached
+            else None,
         }

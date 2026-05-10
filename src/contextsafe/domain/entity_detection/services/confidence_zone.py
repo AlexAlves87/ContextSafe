@@ -29,21 +29,23 @@ GREEN_THRESHOLD = 0.85
 AMBER_THRESHOLD = 0.40
 
 # Categories where checksum validation is possible
-CHECKSUM_CATEGORIES = frozenset({
-    PiiCategoryEnum.DNI_NIE,
-    PiiCategoryEnum.IBAN,
-    PiiCategoryEnum.SOCIAL_SECURITY,
-    PiiCategoryEnum.CREDIT_CARD,
-    PiiCategoryEnum.NIG,
-})
+CHECKSUM_CATEGORIES = frozenset(
+    {
+        PiiCategoryEnum.DNI_NIE,
+        PiiCategoryEnum.IBAN,
+        PiiCategoryEnum.SOCIAL_SECURITY,
+        PiiCategoryEnum.CREDIT_CARD,
+        PiiCategoryEnum.NIG,
+    }
+)
 
 
 class ConfidenceZoneEnum(str, Enum):
     """Triage zones for entity review."""
 
-    GREEN = "GREEN"    # Confidence > 0.85 AND valid checksum (if applicable)
-    AMBER = "AMBER"    # Confidence 0.40-0.85 OR invalid checksum
-    RED = "RED"        # Confidence < 0.40 (potential false negatives)
+    GREEN = "GREEN"  # Confidence > 0.85 AND valid checksum (if applicable)
+    AMBER = "AMBER"  # Confidence 0.40-0.85 OR invalid checksum
+    RED = "RED"  # Confidence < 0.40 (potential false negatives)
 
 
 @dataclass(frozen=True, slots=True)

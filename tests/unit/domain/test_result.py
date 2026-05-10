@@ -58,6 +58,7 @@ class TestOk:
 
     def test_and_then_chains_operations(self):
         """Test and_then() chains Result-returning operations."""
+
         def divide(x: int) -> Ok[float] | Err[str]:
             if x == 0:
                 return Err("Division by zero")
@@ -70,6 +71,7 @@ class TestOk:
 
     def test_and_then_propagates_error(self):
         """Test and_then() propagates Err from chained operation."""
+
         def divide(x: int) -> Ok[float] | Err[str]:
             if x == 0:
                 return Err("Division by zero")
@@ -165,6 +167,7 @@ class TestResultChaining:
 
     def test_chain_multiple_operations(self):
         """Test chaining multiple Result operations."""
+
         def parse_int(s: str) -> Ok[int] | Err[str]:
             try:
                 return Ok(int(s))
@@ -180,18 +183,14 @@ class TestResultChaining:
             return Err("Not positive")
 
         # Success path
-        result = (
-            Ok("100")
-            .and_then(parse_int)
-            .and_then(divide_by_2)
-            .and_then(check_positive)
-        )
+        result = Ok("100").and_then(parse_int).and_then(divide_by_2).and_then(check_positive)
 
         assert result.is_ok()
         assert result.unwrap() == 50.0
 
     def test_chain_fails_early(self):
         """Test that chain fails on first error."""
+
         def parse_int(s: str) -> Ok[int] | Err[str]:
             try:
                 return Ok(int(s))
@@ -202,23 +201,14 @@ class TestResultChaining:
             return Ok(x / 2.0)
 
         # Fails at parse_int
-        result = (
-            Ok("not-a-number")
-            .and_then(parse_int)
-            .and_then(divide_by_2)
-        )
+        result = Ok("not-a-number").and_then(parse_int).and_then(divide_by_2)
 
         assert result.is_err()
         assert "Invalid int" in result.unwrap_err()
 
     def test_map_chain(self):
         """Test chaining map operations."""
-        result = (
-            Ok(10)
-            .map(lambda x: x * 2)
-            .map(lambda x: x + 5)
-            .map(lambda x: str(x))
-        )
+        result = Ok(10).map(lambda x: x * 2).map(lambda x: x + 5).map(lambda x: str(x))
 
         assert result.is_ok()
         assert result.unwrap() == "25"

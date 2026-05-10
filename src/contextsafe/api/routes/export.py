@@ -64,22 +64,22 @@ def _generate_pdf_content(text: str, title: str) -> bytes:
         doc = SimpleDocTemplate(
             buffer,
             pagesize=A4,
-            rightMargin=2*cm,
-            leftMargin=2*cm,
-            topMargin=2*cm,
-            bottomMargin=2*cm,
+            rightMargin=2 * cm,
+            leftMargin=2 * cm,
+            topMargin=2 * cm,
+            bottomMargin=2 * cm,
         )
 
         styles = getSampleStyleSheet()
         title_style = ParagraphStyle(
-            'CustomTitle',
-            parent=styles['Heading1'],
+            "CustomTitle",
+            parent=styles["Heading1"],
             fontSize=14,
             spaceAfter=20,
         )
         body_style = ParagraphStyle(
-            'CustomBody',
-            parent=styles['Normal'],
+            "CustomBody",
+            parent=styles["Normal"],
             fontSize=10,
             leading=14,  # Line spacing
             spaceAfter=6,
@@ -93,12 +93,12 @@ def _generate_pdf_content(text: str, title: str) -> bytes:
 
         # Process text preserving line breaks
         # Split by double newlines for paragraphs, single newlines for line breaks
-        paragraphs = text.split('\n\n')
+        paragraphs = text.split("\n\n")
         for para in paragraphs:
             # Replace single newlines with <br/> for line breaks within paragraph
-            para_html = para.replace('\n', '<br/>')
+            para_html = para.replace("\n", "<br/>")
             # Escape special characters
-            para_html = para_html.replace('&', '&amp;').replace('<br/>', '<br/>')
+            para_html = para_html.replace("&", "&amp;").replace("<br/>", "<br/>")
             if para_html.strip():
                 story.append(Paragraph(para_html, body_style))
                 story.append(Spacer(1, 6))
@@ -112,25 +112,25 @@ def _generate_pdf_content(text: str, title: str) -> bytes:
 
     # Simplified PDF fallback (limited but works without dependencies)
     # Normalize text: handle both \r\n and \n line endings
-    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
 
     # Process text into lines with word wrapping at ~80 chars
-    raw_lines = text.split('\n')
+    raw_lines = text.split("\n")
     wrapped_lines = []
     max_line_len = 80
 
     for line in raw_lines:
         if not line:
-            wrapped_lines.append('')  # Preserve empty lines
+            wrapped_lines.append("")  # Preserve empty lines
         elif len(line) <= max_line_len:
             wrapped_lines.append(line)
         else:
             # Word wrap long lines
-            words = line.split(' ')
-            current_line = ''
+            words = line.split(" ")
+            current_line = ""
             for word in words:
                 if len(current_line) + len(word) + 1 <= max_line_len:
-                    current_line = current_line + ' ' + word if current_line else word
+                    current_line = current_line + " " + word if current_line else word
                 else:
                     if current_line:
                         wrapped_lines.append(current_line)
@@ -164,15 +164,15 @@ BT
 50 770 Td
 """
     # Add title
-    safe_title = title.replace('(', '\\(').replace(')', '\\)').replace('\\', '\\\\')
+    safe_title = title.replace("(", "\\(").replace(")", "\\)").replace("\\", "\\\\")
     pdf_content += f"({safe_title}) Tj\n0 -16 Td\n"
 
     # Add lines (limit to reasonable amount for fallback)
     for line in wrapped_lines[:200]:  # Increased from 50 to 200
         # Escape PDF special characters and handle Unicode
-        safe_line = line.replace('\\', '\\\\').replace('(', '\\(').replace(')', '\\)')
+        safe_line = line.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
         # Replace problematic Unicode chars with ASCII equivalents
-        safe_line = safe_line.encode('ascii', 'replace').decode('ascii')
+        safe_line = safe_line.encode("ascii", "replace").decode("ascii")
         pdf_content += f"({safe_line}) Tj\n0 -12 Td\n"
 
     pdf_content += """ET
@@ -195,12 +195,12 @@ startxref
 %%EOF"""
 
     # Calculate actual stream length and replace placeholder
-    stream_start = pdf_content.find('stream\n') + 7
-    stream_end = pdf_content.find('\nendstream')
+    stream_start = pdf_content.find("stream\n") + 7
+    stream_end = pdf_content.find("\nendstream")
     stream_length = stream_end - stream_start
-    pdf_content = pdf_content.replace('PLACEHOLDER', str(stream_length))
+    pdf_content = pdf_content.replace("PLACEHOLDER", str(stream_length))
 
-    return pdf_content.encode('latin-1', errors='replace')
+    return pdf_content.encode("latin-1", errors="replace")
 
 
 def _generate_docx_content(text: str, title: str) -> bytes:
@@ -221,16 +221,16 @@ def _generate_docx_content(text: str, title: str) -> bytes:
         heading = doc.add_heading(title, level=1)
 
         # Normalize line endings
-        text = text.replace('\r\n', '\n').replace('\r', '\n')
+        text = text.replace("\r\n", "\n").replace("\r", "\n")
 
         # Process text preserving line breaks
         # Split by double newlines for separate paragraphs
-        sections = text.split('\n\n')
+        sections = text.split("\n\n")
         for section in sections:
             if section.strip():
                 # For single-line breaks within a section, add them to same paragraph
                 para = doc.add_paragraph()
-                lines = section.split('\n')
+                lines = section.split("\n")
                 for i, line in enumerate(lines):
                     if i > 0:
                         para.add_run().add_break()  # Line break within paragraph
@@ -250,69 +250,72 @@ def _generate_docx_content(text: str, title: str) -> bytes:
     import zipfile
 
     # Normalize line endings
-    text = text.replace('\r\n', '\n').replace('\r', '\n')
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
 
     # Create DOCX (which is a ZIP file with XML content)
     buffer = io.BytesIO()
 
-    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zf:
         # [Content_Types].xml
-        content_types = '''<?xml version="1.0" encoding="UTF-8"?>
+        content_types = """<?xml version="1.0" encoding="UTF-8"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
     <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
     <Default Extension="xml" ContentType="application/xml"/>
     <Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
-</Types>'''
-        zf.writestr('[Content_Types].xml', content_types)
+</Types>"""
+        zf.writestr("[Content_Types].xml", content_types)
 
         # _rels/.rels
-        rels = '''<?xml version="1.0" encoding="UTF-8"?>
+        rels = """<?xml version="1.0" encoding="UTF-8"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
     <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
-</Relationships>'''
-        zf.writestr('_rels/.rels', rels)
+</Relationships>"""
+        zf.writestr("_rels/.rels", rels)
 
         # word/_rels/document.xml.rels
-        doc_rels = '''<?xml version="1.0" encoding="UTF-8"?>
+        doc_rels = """<?xml version="1.0" encoding="UTF-8"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-</Relationships>'''
-        zf.writestr('word/_rels/document.xml.rels', doc_rels)
+</Relationships>"""
+        zf.writestr("word/_rels/document.xml.rels", doc_rels)
 
         # word/document.xml - the actual content
         # Escape XML special characters
         def escape_xml(s: str) -> str:
-            return (s
-                .replace('&', '&amp;')
-                .replace('<', '&lt;')
-                .replace('>', '&gt;')
-                .replace('"', '&quot;')
-                .replace("'", '&apos;'))
+            return (
+                s.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace('"', "&quot;")
+                .replace("'", "&apos;")
+            )
 
         escaped_title = escape_xml(title)
 
         # Build paragraphs preserving empty lines
         paragraphs = []
-        lines = text.split('\n')
+        lines = text.split("\n")
         for line in lines:
             escaped_line = escape_xml(line)
             if line.strip():
                 # Non-empty line
-                paragraphs.append(f'<w:p><w:r><w:t xml:space="preserve">{escaped_line}</w:t></w:r></w:p>')
+                paragraphs.append(
+                    f'<w:p><w:r><w:t xml:space="preserve">{escaped_line}</w:t></w:r></w:p>'
+                )
             else:
                 # Empty line - preserve as empty paragraph for spacing
-                paragraphs.append('<w:p/>')
+                paragraphs.append("<w:p/>")
 
-        paragraphs_xml = '\n        '.join(paragraphs)
+        paragraphs_xml = "\n        ".join(paragraphs)
 
-        document = f'''<?xml version="1.0" encoding="UTF-8"?>
+        document = f"""<?xml version="1.0" encoding="UTF-8"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
     <w:body>
         <w:p><w:r><w:rPr><w:b/></w:rPr><w:t>{escaped_title}</w:t></w:r></w:p>
         <w:p/>
         {paragraphs_xml}
     </w:body>
-</w:document>'''
-        zf.writestr('word/document.xml', document)
+</w:document>"""
+        zf.writestr("word/document.xml", document)
 
     return buffer.getvalue()
 
@@ -371,9 +374,7 @@ async def export_glossary(
         return StreamingResponse(
             iter([content.encode("utf-8")]),
             media_type="application/json",
-            headers={
-                "Content-Disposition": f'attachment; filename="glosario_{timestamp}.json"'
-            },
+            headers={"Content-Disposition": f'attachment; filename="glosario_{timestamp}.json"'},
         )
 
     else:
@@ -386,21 +387,21 @@ async def export_glossary(
 
         # Data
         for entry in entries:
-            writer.writerow([
-                entry["original_text"],
-                entry["alias"],
-                entry["category"],
-                entry.get("occurrences", 1),
-            ])
+            writer.writerow(
+                [
+                    entry["original_text"],
+                    entry["alias"],
+                    entry["category"],
+                    entry.get("occurrences", 1),
+                ]
+            )
 
         csv_content = buffer.getvalue()
 
         return StreamingResponse(
             iter([csv_content.encode("utf-8")]),
             media_type="text/csv",
-            headers={
-                "Content-Disposition": f'attachment; filename="glosario_{timestamp}.csv"'
-            },
+            headers={"Content-Disposition": f'attachment; filename="glosario_{timestamp}.csv"'},
         )
 
 

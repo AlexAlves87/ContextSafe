@@ -66,23 +66,23 @@ DETECTOR_CATEGORY_BONUS: dict[tuple[str, str], float] = {
 # Higher = more risky to miss (should favor anonymizing)
 
 RISK_PRIORITY: dict[str, int] = {
-    "PERSON_NAME": 100,      # Highest risk - personal identity
-    "DNI_NIE": 95,           # National ID
-    "MEDICAL_RECORD": 90,    # Sensitive health data
-    "SOCIAL_SECURITY": 88,   # Social security number
-    "PHONE": 85,             # Contact info
-    "EMAIL": 80,             # Contact info
-    "IBAN": 75,              # Financial
-    "BANK_ACCOUNT": 70,      # Financial
-    "CREDIT_CARD": 70,       # Financial
-    "ADDRESS": 65,           # Location
-    "PASSPORT": 60,          # ID document
-    "ORGANIZATION": 50,      # Less risky
-    "LOCATION": 40,          # Generic location
-    "DATE": 30,              # Temporal
-    "LICENSE_PLATE": 25,     # Vehicle
-    "POSTAL_CODE": 20,       # Partial location
-    "MISC": 10,              # Miscellaneous
+    "PERSON_NAME": 100,  # Highest risk - personal identity
+    "DNI_NIE": 95,  # National ID
+    "MEDICAL_RECORD": 90,  # Sensitive health data
+    "SOCIAL_SECURITY": 88,  # Social security number
+    "PHONE": 85,  # Contact info
+    "EMAIL": 80,  # Contact info
+    "IBAN": 75,  # Financial
+    "BANK_ACCOUNT": 70,  # Financial
+    "CREDIT_CARD": 70,  # Financial
+    "ADDRESS": 65,  # Location
+    "PASSPORT": 60,  # ID document
+    "ORGANIZATION": 50,  # Less risky
+    "LOCATION": 40,  # Generic location
+    "DATE": 30,  # Temporal
+    "LICENSE_PLATE": 25,  # Vehicle
+    "POSTAL_CODE": 20,  # Partial location
+    "MISC": 10,  # Miscellaneous
 }
 
 # Threshold for considering a "technical tie"
@@ -93,6 +93,7 @@ TIE_THRESHOLD: float = 0.3
 # =============================================================================
 # VOTING RESULT
 # =============================================================================
+
 
 @dataclass
 class VotingResult:
@@ -109,6 +110,7 @@ class VotingResult:
 # =============================================================================
 # WEIGHTED VOTING
 # =============================================================================
+
 
 def weighted_vote_with_tiebreaker(
     detections: list[NerDetection],

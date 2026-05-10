@@ -45,9 +45,7 @@ class Alias:
     category: PiiCategory
 
     @classmethod
-    def create(
-        cls, value: str, category: PiiCategory
-    ) -> Result[Alias, InvalidAliasError]:
+    def create(cls, value: str, category: PiiCategory) -> Result[Alias, InvalidAliasError]:
         """
         Create a validated Alias.
 
@@ -64,9 +62,7 @@ class Alias:
         # Validate format matches pattern
         if not ALIAS_PATTERN.match(value):
             return Err(
-                InvalidAliasError.create(
-                    value, "Alias must match pattern '{Prefix}_{Number}'"
-                )
+                InvalidAliasError.create(value, "Alias must match pattern '{Prefix}_{Number}'")
             )
 
         # Validate prefix matches category
@@ -85,9 +81,7 @@ class Alias:
         return Ok(cls(value=value, category=category))
 
     @classmethod
-    def create_custom(
-        cls, value: str, category: PiiCategory
-    ) -> Result[Alias, InvalidAliasError]:
+    def create_custom(cls, value: str, category: PiiCategory) -> Result[Alias, InvalidAliasError]:
         """
         Create a custom user-defined alias.
 
@@ -121,9 +115,7 @@ class Alias:
 
         # Ensure alias is not too long
         if len(cleaned_value) > 100:
-            return Err(
-                InvalidAliasError.create(value, "Alias cannot exceed 100 characters")
-            )
+            return Err(InvalidAliasError.create(value, "Alias cannot exceed 100 characters"))
 
         # Ensure alias doesn't look like PII (basic check)
         if "@" in cleaned_value or cleaned_value.count(".") > 1:

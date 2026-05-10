@@ -24,8 +24,16 @@ class TestPlatformBlocklist:
 
     def test_common_platforms_in_blocklist(self):
         expected = {
-            "whatsapp", "telegram", "signal", "instagram", "facebook",
-            "twitter", "tiktok", "linkedin", "discord", "slack",
+            "whatsapp",
+            "telegram",
+            "signal",
+            "instagram",
+            "facebook",
+            "twitter",
+            "tiktok",
+            "linkedin",
+            "discord",
+            "slack",
         }
         assert expected.issubset(PLATFORM_NAMES_BLOCKLIST)
 

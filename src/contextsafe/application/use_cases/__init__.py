@@ -55,4 +55,3 @@ __all__ = [
     "ApplyGlossaryChangesResponse",
     "AliasChange",
 ]
-

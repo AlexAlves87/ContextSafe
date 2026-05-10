@@ -70,9 +70,7 @@ class PdfExtractor(DocumentExtractor):
                             for table in page_tables:
                                 # Convert None values to empty strings
                                 cleaned_table = [
-                                    [cell or "" for cell in row]
-                                    for row in table
-                                    if row
+                                    [cell or "" for cell in row] for row in table if row
                                 ]
                                 if cleaned_table:
                                     tables.append(cleaned_table)
@@ -102,9 +100,7 @@ class PdfExtractor(DocumentExtractor):
             format="pdf",
         )
 
-    def _extract_with_pypdf2(
-        self, file: BinaryIO
-    ) -> tuple[str, int, dict[str, str]]:
+    def _extract_with_pypdf2(self, file: BinaryIO) -> tuple[str, int, dict[str, str]]:
         """Fallback extraction using pypdf2."""
         from pypdf import PdfReader
 

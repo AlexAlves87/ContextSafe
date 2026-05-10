@@ -59,12 +59,14 @@ class AliasAssigned(DomainEvent):
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         base = super().to_dict()
-        base.update({
-            "project_id": self.project_id,
-            "entity_id": self.entity_id,
-            "original_value": self.original_value,
-            "alias": self.alias,
-            "category": self.category,
-            "is_new_alias": self.is_new_alias,
-        })
+        base.update(
+            {
+                "project_id": self.project_id,
+                "entity_id": self.entity_id,
+                "original_value": self.original_value,
+                "alias": self.alias,
+                "category": self.category,
+                "is_new_alias": self.is_new_alias,
+            }
+        )
         return base

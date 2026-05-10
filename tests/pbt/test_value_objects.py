@@ -185,6 +185,7 @@ def test_confidence_score_not_nan(score: ConfidenceScore):
     Contract: CNT-T0-VO-007
     """
     import math
+
     assert not math.isnan(score.value)
     assert not math.isinf(score.value)
 
@@ -364,41 +365,42 @@ def test_alias_pattern_matches_category(alias: Alias):
     """
     # Define pattern mapping (must match ALIAS_PATTERNS in pii_category.py)
     pattern_map = {
-        PiiCategoryEnum.PERSON_NAME: r'^Persona_\d+$',
-        PiiCategoryEnum.ORGANIZATION: r'^Org_\d+$',
-        PiiCategoryEnum.ADDRESS: r'^Dir_\d+$',
-        PiiCategoryEnum.LOCATION: r'^Lugar_\d+$',
-        PiiCategoryEnum.POSTAL_CODE: r'^CP_\d+$',
-        PiiCategoryEnum.DNI_NIE: r'^ID_\d+$',
-        PiiCategoryEnum.PASSPORT: r'^Pasaporte_\d+$',
-        PiiCategoryEnum.PHONE: r'^Tel_\d+$',
-        PiiCategoryEnum.EMAIL: r'^Email_\d+$',
-        PiiCategoryEnum.BANK_ACCOUNT: r'^Cuenta_\d+$',
-        PiiCategoryEnum.IBAN: r'^IBAN_\d+$',
-        PiiCategoryEnum.CREDIT_CARD: r'^Tarjeta_\d+$',
-        PiiCategoryEnum.DATE: r'^Fecha_\d+$',
-        PiiCategoryEnum.MEDICAL_RECORD: r'^HistoriaMedica_\d+$',
-        PiiCategoryEnum.LICENSE_PLATE: r'^Matricula_\d+$',
-        PiiCategoryEnum.SOCIAL_SECURITY: r'^NSS_\d+$',
-        PiiCategoryEnum.PROFESSIONAL_ID: r'^IdProf_\d+$',
-        PiiCategoryEnum.CASE_NUMBER: r'^Proc_\d+$',
-        PiiCategoryEnum.PLATFORM: r'^Plataforma_\d+$',
-        PiiCategoryEnum.IP_ADDRESS: r'^IP_\d+$',
-        PiiCategoryEnum.ID_SUPPORT: r'^Soporte_\d+$',
-        PiiCategoryEnum.NIG: r'^NIG_\d+$',
-        PiiCategoryEnum.ECLI: r'^ECLI_\d+$',
-        PiiCategoryEnum.CSV: r'^CSV_\d+$',
-        PiiCategoryEnum.HEALTH_ID: r'^CIP_\d+$',
-        PiiCategoryEnum.CADASTRAL_REF: r'^RefCat_\d+$',
-        PiiCategoryEnum.EMPLOYER_ID: r'^CCC_\d+$',
+        PiiCategoryEnum.PERSON_NAME: r"^Persona_\d+$",
+        PiiCategoryEnum.ORGANIZATION: r"^Org_\d+$",
+        PiiCategoryEnum.ADDRESS: r"^Dir_\d+$",
+        PiiCategoryEnum.LOCATION: r"^Lugar_\d+$",
+        PiiCategoryEnum.POSTAL_CODE: r"^CP_\d+$",
+        PiiCategoryEnum.DNI_NIE: r"^ID_\d+$",
+        PiiCategoryEnum.PASSPORT: r"^Pasaporte_\d+$",
+        PiiCategoryEnum.PHONE: r"^Tel_\d+$",
+        PiiCategoryEnum.EMAIL: r"^Email_\d+$",
+        PiiCategoryEnum.BANK_ACCOUNT: r"^Cuenta_\d+$",
+        PiiCategoryEnum.IBAN: r"^IBAN_\d+$",
+        PiiCategoryEnum.CREDIT_CARD: r"^Tarjeta_\d+$",
+        PiiCategoryEnum.DATE: r"^Fecha_\d+$",
+        PiiCategoryEnum.MEDICAL_RECORD: r"^HistoriaMedica_\d+$",
+        PiiCategoryEnum.LICENSE_PLATE: r"^Matricula_\d+$",
+        PiiCategoryEnum.SOCIAL_SECURITY: r"^NSS_\d+$",
+        PiiCategoryEnum.PROFESSIONAL_ID: r"^IdProf_\d+$",
+        PiiCategoryEnum.CASE_NUMBER: r"^Proc_\d+$",
+        PiiCategoryEnum.PLATFORM: r"^Plataforma_\d+$",
+        PiiCategoryEnum.IP_ADDRESS: r"^IP_\d+$",
+        PiiCategoryEnum.ID_SUPPORT: r"^Soporte_\d+$",
+        PiiCategoryEnum.NIG: r"^NIG_\d+$",
+        PiiCategoryEnum.ECLI: r"^ECLI_\d+$",
+        PiiCategoryEnum.CSV: r"^CSV_\d+$",
+        PiiCategoryEnum.HEALTH_ID: r"^CIP_\d+$",
+        PiiCategoryEnum.CADASTRAL_REF: r"^RefCat_\d+$",
+        PiiCategoryEnum.EMPLOYER_ID: r"^CCC_\d+$",
     }
 
     # Access the enum value from the PiiCategory wrapper
     category_enum = alias.category.value
     expected_pattern = pattern_map.get(category_enum)
     assert expected_pattern is not None, f"No pattern defined for {category_enum}"
-    assert re.match(expected_pattern, alias.value), \
-        f"Alias '{alias.value}' does not match pattern {expected_pattern}"
+    assert re.match(
+        expected_pattern, alias.value
+    ), f"Alias '{alias.value}' does not match pattern {expected_pattern}"
 
 
 @given(pii_category_gen(), st.integers(min_value=1, max_value=9999))

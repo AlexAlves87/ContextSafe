@@ -31,8 +31,18 @@ class SpanishDateRecognizer(PatternRecognizer):
 
     # Spanish month names
     MONTHS = [
-        "enero", "febrero", "marzo", "abril", "mayo", "junio",
-        "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre",
     ]
 
     # Month pattern
@@ -90,9 +100,21 @@ class SpanishDateRecognizer(PatternRecognizer):
     ]
 
     CONTEXT = [
-        "fecha", "nacimiento", "nacido", "nacida", "dia", "día",
-        "celebrado", "firmado", "expedido", "emitido", "otorgado",
-        "vencimiento", "caducidad", "vigencia", "notificada",
+        "fecha",
+        "nacimiento",
+        "nacido",
+        "nacida",
+        "dia",
+        "día",
+        "celebrado",
+        "firmado",
+        "expedido",
+        "emitido",
+        "otorgado",
+        "vencimiento",
+        "caducidad",
+        "vigencia",
+        "notificada",
     ]
 
     def __init__(

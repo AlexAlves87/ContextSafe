@@ -29,7 +29,7 @@ def _compile_anchors(anchors: list[str]) -> Pattern:
     """
     # Escape special regex characters and join with OR
     escaped = [re.escape(a) for a in anchors]
-    pattern = r'\b(' + '|'.join(escaped) + r')\b'
+    pattern = r"\b(" + "|".join(escaped) + r")\b"
     return re.compile(pattern, re.IGNORECASE)
 
 
@@ -40,33 +40,80 @@ def _compile_anchors(anchors: list[str]) -> Pattern:
 
 PERSON_ANCHORS_RAW = [
     # Honoríficos
-    "don", "doña", "d.", "dña.", "d.ª",
-    "sr.", "sra.", "señor", "señora",
+    "don",
+    "doña",
+    "d.",
+    "dña.",
+    "d.ª",
+    "sr.",
+    "sra.",
+    "señor",
+    "señora",
     # Profesionales legales
-    "letrado", "letrada", "abogado", "abogada",
-    "procurador", "procuradora", "notario", "notaria",
-    "magistrado", "magistrada", "juez", "jueza",
+    "letrado",
+    "letrada",
+    "abogado",
+    "abogada",
+    "procurador",
+    "procuradora",
+    "notario",
+    "notaria",
+    "magistrado",
+    "magistrada",
+    "juez",
+    "jueza",
     # Eclesiásticos (testamentos)
-    "fray", "sor",
+    "fray",
+    "sor",
     # Representación
-    "en representación de", "representado por", "representada por",
-    "tutor de", "tutora de", "curador de", "curadora de",
+    "en representación de",
+    "representado por",
+    "representada por",
+    "tutor de",
+    "tutora de",
+    "curador de",
+    "curadora de",
     # Filiación (Registro Civil)
-    "hijo de", "hija de", "cónyuge de",
-    "viudo de", "viuda de", "casado con", "casada con",
+    "hijo de",
+    "hija de",
+    "cónyuge de",
+    "viudo de",
+    "viuda de",
+    "casado con",
+    "casada con",
     # Peritos/Funcionarios
-    "perito", "secretario judicial", "letrado de la administración",
-    "LAJ", "agente judicial",
+    "perito",
+    "secretario judicial",
+    "letrado de la administración",
+    "LAJ",
+    "agente judicial",
     # Partes procesales
-    "demandante", "demandado", "demandada",
-    "denunciante", "denunciado", "denunciada",
-    "recurrente", "recurrido", "recurrida",
-    "apelante", "apelado", "apelada",
-    "querellante", "querellado", "querellada",
-    "ejecutante", "ejecutado", "ejecutada",
-    "acusado", "acusada", "imputado", "imputada",
+    "demandante",
+    "demandado",
+    "demandada",
+    "denunciante",
+    "denunciado",
+    "denunciada",
+    "recurrente",
+    "recurrido",
+    "recurrida",
+    "apelante",
+    "apelado",
+    "apelada",
+    "querellante",
+    "querellado",
+    "querellada",
+    "ejecutante",
+    "ejecutado",
+    "ejecutada",
+    "acusado",
+    "acusada",
+    "imputado",
+    "imputada",
     # Testigos y declarantes
-    "testigo", "declarante", "compareciente",
+    "testigo",
+    "declarante",
+    "compareciente",
 ]
 
 PERSON_ANCHORS = _compile_anchors(PERSON_ANCHORS_RAW)
@@ -79,23 +126,50 @@ PERSON_ANCHORS = _compile_anchors(PERSON_ANCHORS_RAW)
 
 LOCATION_ANCHORS_RAW = [
     # Vías
-    "calle", "c/", "avenida", "av.", "avda.", "plaza", "pza.",
-    "paseo", "camino", "carretera", "ctra.", "glorieta",
-    "travesía", "ronda", "vía",
+    "calle",
+    "c/",
+    "avenida",
+    "av.",
+    "avda.",
+    "plaza",
+    "pza.",
+    "paseo",
+    "camino",
+    "carretera",
+    "ctra.",
+    "glorieta",
+    "travesía",
+    "ronda",
+    "vía",
     # Inmuebles (muy fuerte en documentos registrales)
-    "sito en", "situada en", "situado en", "sita en",
-    "finca registral", "finca catastral", "parcela",
-    "inmueble sito", "local sito", "vivienda sita",
+    "sito en",
+    "situada en",
+    "situado en",
+    "sita en",
+    "finca registral",
+    "finca catastral",
+    "parcela",
+    "inmueble sito",
+    "local sito",
+    "vivienda sita",
     # Registros
-    "registro de la propiedad de", "registro civil de",
+    "registro de la propiedad de",
+    "registro civil de",
     "registro mercantil de",
     # Domicilios
-    "domiciliado en", "domiciliada en",
-    "con domicilio en", "vecino de", "vecina de",
-    "residente en", "natural de",
+    "domiciliado en",
+    "domiciliada en",
+    "con domicilio en",
+    "vecino de",
+    "vecina de",
+    "residente en",
+    "natural de",
     # Administrativos
-    "municipio de", "localidad de", "provincia de",
-    "partido judicial de", "término municipal de",
+    "municipio de",
+    "localidad de",
+    "provincia de",
+    "partido judicial de",
+    "término municipal de",
     "comunidad autónoma de",
 ]
 
@@ -110,29 +184,57 @@ LOCATION_ANCHORS = _compile_anchors(LOCATION_ANCHORS_RAW)
 
 ORG_ANCHORS_RAW = [
     # Formas jurídicas (también se buscan dentro de la entidad)
-    "s.a.", "s.l.", "s.l.u.", "s.l.p.", "s.c.", "s.c.p.",
-    "sociedad anónima", "sociedad limitada",
-    "sociedad civil", "comunidad de bienes",
+    "s.a.",
+    "s.l.",
+    "s.l.u.",
+    "s.l.p.",
+    "s.c.",
+    "s.c.p.",
+    "sociedad anónima",
+    "sociedad limitada",
+    "sociedad civil",
+    "comunidad de bienes",
     # Bancarias (crítico para contexto IBAN)
-    "banco", "caja", "caixa", "entidad bancaria", "entidad mercantil",
+    "banco",
+    "caja",
+    "caixa",
+    "entidad bancaria",
+    "entidad mercantil",
     "entidad financiera",
     # Instituciones judiciales
-    "juzgado de", "tribunal", "audiencia provincial",
-    "sala de lo", "fiscalía", "ministerio fiscal",
+    "juzgado de",
+    "tribunal",
+    "audiencia provincial",
+    "sala de lo",
+    "fiscalía",
+    "ministerio fiscal",
     # Públicas
-    "ayuntamiento de", "diputación de", "consejería de",
-    "ministerio de", "gobierno de", "delegación de",
+    "ayuntamiento de",
+    "diputación de",
+    "consejería de",
+    "ministerio de",
+    "gobierno de",
+    "delegación de",
     # Órganos internos
-    "consejo de administración", "junta de accionistas",
-    "junta directiva", "comité de", "comisión de",
+    "consejo de administración",
+    "junta de accionistas",
+    "junta directiva",
+    "comité de",
+    "comisión de",
 ]
 
 ORG_ANCHORS = _compile_anchors(ORG_ANCHORS_RAW)
 
 # Sufijos que se buscan DENTRO de la entidad (no en contexto previo)
 ORG_SUFFIXES_RAW = [
-    "s.a.", "s.l.", "s.l.u.", "s.l.p.", "s.c.", "s.c.p.",
-    "s.a.u.", "s.coop.",
+    "s.a.",
+    "s.l.",
+    "s.l.u.",
+    "s.l.p.",
+    "s.c.",
+    "s.c.p.",
+    "s.a.u.",
+    "s.coop.",
 ]
 ORG_SUFFIXES = _compile_anchors(ORG_SUFFIXES_RAW)
 

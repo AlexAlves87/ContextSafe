@@ -22,7 +22,12 @@ from contextsafe.application.ports import (
 from contextsafe.domain.entity_detection.entities.detection_result import (
     DetectionResult,
 )
-from contextsafe.domain.shared.errors import DetectionError, DocumentError, DomainError, NotFoundError
+from contextsafe.domain.shared.errors import (
+    DetectionError,
+    DocumentError,
+    DomainError,
+    NotFoundError,
+)
 from contextsafe.domain.shared.events import PiiDetected
 from contextsafe.domain.shared.types import Err, Ok, Result
 from contextsafe.domain.shared.value_objects import DocumentId, PiiCategory
@@ -86,9 +91,7 @@ class DetectPii:
         self._event_publisher = event_publisher
         self._preprocessor = detection_preprocessor
 
-    async def execute(
-        self, request: DetectPiiRequest
-    ) -> Result[DetectPiiResponse, DomainError]:
+    async def execute(self, request: DetectPiiRequest) -> Result[DetectPiiResponse, DomainError]:
         """
         Execute the PII detection use case.
 

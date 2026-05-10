@@ -28,43 +28,49 @@ class AnonymizationLevelEnum(str, Enum):
 
 # Categories included in each level
 LEVEL_CATEGORIES: dict[AnonymizationLevelEnum, FrozenSet[PiiCategoryEnum]] = {
-    AnonymizationLevelEnum.BASIC: frozenset({
-        PiiCategoryEnum.DNI_NIE,
-        PiiCategoryEnum.PASSPORT,
-        PiiCategoryEnum.PHONE,
-        PiiCategoryEnum.BANK_ACCOUNT,
-        PiiCategoryEnum.CREDIT_CARD,
-        PiiCategoryEnum.SOCIAL_SECURITY,
-    }),
-    AnonymizationLevelEnum.INTERMEDIATE: frozenset({
-        PiiCategoryEnum.PERSON_NAME,
-        PiiCategoryEnum.DNI_NIE,
-        PiiCategoryEnum.PASSPORT,
-        PiiCategoryEnum.PHONE,
-        PiiCategoryEnum.EMAIL,
-        PiiCategoryEnum.BANK_ACCOUNT,
-        PiiCategoryEnum.CREDIT_CARD,
-        PiiCategoryEnum.DATE,
-        PiiCategoryEnum.SOCIAL_SECURITY,
-        PiiCategoryEnum.MEDICAL_RECORD,
-        PiiCategoryEnum.PLATFORM,
-    }),
-    AnonymizationLevelEnum.ADVANCED: frozenset({
-        PiiCategoryEnum.PERSON_NAME,
-        PiiCategoryEnum.ORGANIZATION,
-        PiiCategoryEnum.ADDRESS,
-        PiiCategoryEnum.DNI_NIE,
-        PiiCategoryEnum.PASSPORT,
-        PiiCategoryEnum.PHONE,
-        PiiCategoryEnum.EMAIL,
-        PiiCategoryEnum.BANK_ACCOUNT,
-        PiiCategoryEnum.CREDIT_CARD,
-        PiiCategoryEnum.DATE,
-        PiiCategoryEnum.MEDICAL_RECORD,
-        PiiCategoryEnum.LICENSE_PLATE,
-        PiiCategoryEnum.SOCIAL_SECURITY,
-        PiiCategoryEnum.PLATFORM,
-    }),
+    AnonymizationLevelEnum.BASIC: frozenset(
+        {
+            PiiCategoryEnum.DNI_NIE,
+            PiiCategoryEnum.PASSPORT,
+            PiiCategoryEnum.PHONE,
+            PiiCategoryEnum.BANK_ACCOUNT,
+            PiiCategoryEnum.CREDIT_CARD,
+            PiiCategoryEnum.SOCIAL_SECURITY,
+        }
+    ),
+    AnonymizationLevelEnum.INTERMEDIATE: frozenset(
+        {
+            PiiCategoryEnum.PERSON_NAME,
+            PiiCategoryEnum.DNI_NIE,
+            PiiCategoryEnum.PASSPORT,
+            PiiCategoryEnum.PHONE,
+            PiiCategoryEnum.EMAIL,
+            PiiCategoryEnum.BANK_ACCOUNT,
+            PiiCategoryEnum.CREDIT_CARD,
+            PiiCategoryEnum.DATE,
+            PiiCategoryEnum.SOCIAL_SECURITY,
+            PiiCategoryEnum.MEDICAL_RECORD,
+            PiiCategoryEnum.PLATFORM,
+        }
+    ),
+    AnonymizationLevelEnum.ADVANCED: frozenset(
+        {
+            PiiCategoryEnum.PERSON_NAME,
+            PiiCategoryEnum.ORGANIZATION,
+            PiiCategoryEnum.ADDRESS,
+            PiiCategoryEnum.DNI_NIE,
+            PiiCategoryEnum.PASSPORT,
+            PiiCategoryEnum.PHONE,
+            PiiCategoryEnum.EMAIL,
+            PiiCategoryEnum.BANK_ACCOUNT,
+            PiiCategoryEnum.CREDIT_CARD,
+            PiiCategoryEnum.DATE,
+            PiiCategoryEnum.MEDICAL_RECORD,
+            PiiCategoryEnum.LICENSE_PLATE,
+            PiiCategoryEnum.SOCIAL_SECURITY,
+            PiiCategoryEnum.PLATFORM,
+        }
+    ),
 }
 
 

@@ -151,9 +151,7 @@ class DetectionResult(Entity[EntityId]):
         entity_id = EntityId.create(data["id"]).unwrap()
         document_id = DocumentId.create(data["document_id"]).unwrap()
         category = PiiCategory.from_string(data["category"]).unwrap()
-        span = TextSpan.create(
-            data["span_start"], data["span_end"], data["span_text"]
-        ).unwrap()
+        span = TextSpan.create(data["span_start"], data["span_end"], data["span_text"]).unwrap()
         confidence = ConfidenceScore.create(data["confidence"]).unwrap()
 
         return cls(

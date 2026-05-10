@@ -58,12 +58,14 @@ class PiiDetected(DomainEvent):
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "total_entities": self.total_entities,
-            "entities_by_category": dict(self.entities_by_category),
-            "low_confidence_count": self.low_confidence_count,
-            "processing_time_ms": self.processing_time_ms,
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "total_entities": self.total_entities,
+                "entities_by_category": dict(self.entities_by_category),
+                "low_confidence_count": self.low_confidence_count,
+                "processing_time_ms": self.processing_time_ms,
+            }
+        )
         return base

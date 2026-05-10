@@ -9,5 +9,6 @@ from enum import Enum
 
 class ComputeMode(str, Enum):
     """Processing compute mode."""
+
     GPU = "gpu"
     CPU = "cpu"

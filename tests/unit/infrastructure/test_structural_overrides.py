@@ -21,8 +21,12 @@ from contextsafe.infrastructure.nlp.composite_adapter import CompositeNerAdapter
 
 
 def _make_detection(
-    value: str, category: str, start: int, end: int,
-    confidence: float = 0.90, source: str = "roberta",
+    value: str,
+    category: str,
+    start: int,
+    end: int,
+    confidence: float = 0.90,
+    source: str = "roberta",
 ) -> NerDetection:
     """Helper to build NerDetection for tests."""
     return NerDetection(

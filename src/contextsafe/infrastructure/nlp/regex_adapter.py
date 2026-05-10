@@ -135,19 +135,19 @@ class RegexPattern:
 # PERSON NAME — Building blocks (ML audit R4)
 # Source: plan_integracion_hallazgos_ml_a_produccion.md §3.2
 # ============================================================================
-_S = r'[^\S\n]+'           # whitespace but NOT newline
-_S0 = r'[^\S\n]*'          # optional non-newline whitespace
-_SN = r'[\s]+'             # whitespace INCLUDING newline (title→name gap only)
-_CAP = r'[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+'
-_CAP_HYP = r'[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+(?:-[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+)?'
-_CAP_UC = r'[A-ZÁÉÍÓÚÑÜ]{2,}'
-_PARTICLE = rf'(?:de(?:{_S}(?:la|los|las))?{_S}|del{_S})'
-_PARTICLE_UC = rf'(?:DE(?:{_S}(?:LA|LOS|LAS))?{_S}|DEL{_S})'
-_FIRST = rf'(?:Mª|{_CAP})'
-_NWORD = rf'(?:{_PARTICLE})?{_CAP_HYP}'
-_NWORD_UC = rf'(?:{_PARTICLE_UC})?{_CAP_UC}'
-_TERM = rf'(?={_S0}[,.:;\n>)\]|]|{_S}[a-záéíóúñü]|\s*$)'
-_TERM_UC = rf'(?={_S0}[,.:;\n>)\]]|\s*$)'
+_S = r"[^\S\n]+"  # whitespace but NOT newline
+_S0 = r"[^\S\n]*"  # optional non-newline whitespace
+_SN = r"[\s]+"  # whitespace INCLUDING newline (title→name gap only)
+_CAP = r"[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+"
+_CAP_HYP = r"[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+(?:-[A-ZÁÉÍÓÚÑÜ][a-záéíóúñü]+)?"
+_CAP_UC = r"[A-ZÁÉÍÓÚÑÜ]{2,}"
+_PARTICLE = rf"(?:de(?:{_S}(?:la|los|las))?{_S}|del{_S})"
+_PARTICLE_UC = rf"(?:DE(?:{_S}(?:LA|LOS|LAS))?{_S}|DEL{_S})"
+_FIRST = rf"(?:Mª|{_CAP})"
+_NWORD = rf"(?:{_PARTICLE})?{_CAP_HYP}"
+_NWORD_UC = rf"(?:{_PARTICLE_UC})?{_CAP_UC}"
+_TERM = rf"(?={_S0}[,.:;\n>)\]|]|{_S}[a-záéíóúñü]|\s*$)"
+_TERM_UC = rf"(?={_S0}[,.:;\n>)\]]|\s*$)"
 
 
 # Regex patterns for Spanish PII
@@ -161,7 +161,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # =========================================================================
     # "D. Nombre [de/del/de la] Apellido1 Apellido2"
     (
-        rf'\bD\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -169,7 +169,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "D.ª Nombre Apellido1 Apellido2" (feminine magistrates)
     (
-        rf'\bD\.ª{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD\.ª{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -177,7 +177,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Dª[.] Nombre Apellido1 Apellido2"
     (
-        rf'\bDª\.?{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bDª\.?{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -185,7 +185,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Dña./DÑA. Nombre [de/del] Apellido1 Apellido2"
     (
-        rf'\bD(?:ña|ÑA)\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD(?:ña|ÑA)\.{_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -193,7 +193,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "don/doña/Don/Doña Nombre [de/del] Apellido1 Apellido2"
     (
-        rf'\b(?:[Dd]on|[Dd]oña){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\b(?:[Dd]on|[Dd]oña){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -201,7 +201,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Sra. Dña./D.ª Nombre Apellido" (double title — Cambio 5)
     (
-        rf'\b(?:Sr|Sra)\.{_S}(?:Dña\.|D\.ª|Dª\.?){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\b(?:Sr|Sra)\.{_S}(?:Dña\.|D\.ª|Dª\.?){_S}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.98,
         None,
@@ -210,7 +210,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # "Sr./Sra./Srta. Nombre [de/del] Apellido1 Apellido2"
     # Excludes titles/roles as first word (Dña, Letrada, Fiscal, ...)
     (
-        rf'\b(?:Sr|Sra|Srta)\.{_S}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}',
+        rf"\b(?:Sr|Sra|Srta)\.{_S}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}",
         "PERSON_NAME",
         0.95,
         None,
@@ -218,7 +218,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # ALL CAPS: "D. ALEJANDRO ÁLVAREZ ESPEJO DE LA TORRE"
     (
-        rf'\bD\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}',
+        rf"\bD\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}",
         "PERSON_NAME",
         0.98,
         None,
@@ -226,7 +226,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # ALL CAPS: "DÑA. MARÍA GARCÍA LÓPEZ"
     (
-        rf'\bD(?:ña|ÑA)\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}',
+        rf"\bD(?:ña|ÑA)\.{_S}({_CAP_UC}(?:{_S}{_NWORD_UC}){{0,4}}){_TERM_UC}",
         "PERSON_NAME",
         0.98,
         None,
@@ -234,14 +234,14 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # Person initials: "D. A", "Dña. M"
     (
-        r'\bD\.\s+([A-ZÁÉÍÓÚÑÜ])\b',
+        r"\bD\.\s+([A-ZÁÉÍÓÚÑÜ])\b",
         "PERSON_NAME",
         0.92,
         None,
         True,
     ),
     (
-        r'\bD(?:ña|ÑA)\.\s+([A-ZÁÉÍÓÚÑÜ])\b',
+        r"\bD(?:ña|ÑA)\.\s+([A-ZÁÉÍÓÚÑÜ])\b",
         "PERSON_NAME",
         0.92,
         None,
@@ -249,7 +249,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # Multiple initials: "D. A. B. C."
     (
-        r'\bD\.\s*([A-ZÁÉÍÓÚÑÜ]\.(?:\s*[A-ZÁÉÍÓÚÑÜ]\.)+)',
+        r"\bD\.\s*([A-ZÁÉÍÓÚÑÜ]\.(?:\s*[A-ZÁÉÍÓÚÑÜ]\.)+)",
         "PERSON_NAME",
         0.92,
         None,
@@ -261,7 +261,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # subsequent name parts use _S (no newline) to prevent bleeding.
     # "D.\nNombre Apellido1 Apellido2"
     (
-        rf'\bD\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.93,
         None,
@@ -269,7 +269,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "D.ª\nNombre Apellido1 Apellido2"
     (
-        rf'\bD\.ª{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD\.ª{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.93,
         None,
@@ -277,7 +277,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Dª[.]\nNombre Apellido1 Apellido2"
     (
-        rf'\bDª\.?{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bDª\.?{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.93,
         None,
@@ -285,7 +285,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Dña.\nNombre Apellido1 Apellido2"
     (
-        rf'\bD(?:ña|ÑA)\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\bD(?:ña|ÑA)\.{_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.93,
         None,
@@ -293,7 +293,7 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "don/doña\nNombre Apellido1 Apellido2"
     (
-        rf'\b(?:[Dd]on|[Dd]oña){_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}',
+        rf"\b(?:[Dd]on|[Dd]oña){_SN}({_FIRST}(?:{_S}{_NWORD}){{0,4}}){_TERM}",
         "PERSON_NAME",
         0.93,
         None,
@@ -301,13 +301,12 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # "Sr./Sra.\nNombre Apellido1 Apellido2" (with role exclusion)
     (
-        rf'\b(?:Sr|Sra|Srta)\.{_SN}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}',
+        rf"\b(?:Sr|Sra|Srta)\.{_SN}(?!Dña|Dña\.|D\.{_S0}|Letrad[oa]|Fiscal|President[ea]|Magistrad[oa]|Secretari[oa])({_CAP}(?:{_S}{_NWORD}){{0,3}}){_TERM}",
         "PERSON_NAME",
         0.90,
         None,
         True,
     ),
-
     # =========================================================================
     # ADDRESSES (BUG 2 - Critical)
     # Complete street addresses: "c/ Santiago Ramón y Cajal nº 45"
@@ -328,7 +327,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.98,
         None,
     ),
-
     # =========================================================================
     # IDENTITY DOCUMENTS
     # =========================================================================
@@ -339,12 +337,10 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # Passport
     (r"\b[A-Z]{2}[0-9]{7}\b", "PASSPORT", 0.85, None),
     (r"\b[A-Z]{3}[0-9]{6}\b", "PASSPORT", 0.85, None),
-
     # =========================================================================
     # ORGANIZATIONS (FUGA 1 - Critical)
     # Spanish legal entities: S.L., S.L.P., S.A., S.L.U., S.C., etc.
     # =========================================================================
-
     # Pattern: Single word company name + legal form
     # Captures: "Seguriber S.L.", "Telefónica S.A."
     (
@@ -354,7 +350,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive
     ),
-
     # Pattern: Two+ word company names + legal form
     # Captures: "Uniformes Universales S.A.", "Servicios Integrales S.L."
     (
@@ -364,7 +359,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive
     ),
-
     # Pattern: FLEXIBLE - Names with prepositions + legal form
     # Captures: "Seguriber Compañía de Servicios Integrales S.L."
     # Allows lowercase prepositions (de, y, del, la, los, las, e) between words
@@ -375,7 +369,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive
     ),
-
     # Pattern: ALL CAPS name + legal form (highest confidence)
     # "MENTOR ABOGADOS S.L.P." - uppercase words followed by legal form
     (
@@ -385,7 +378,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive=True - CRITICAL for uppercase org names
     ),
-
     # Pattern: Mixed case with "Abogados" - law firms
     # "Mentor Abogados S.L.P."
     (
@@ -395,7 +387,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive=True
     ),
-
     # Pattern: "Compañía de ..." - Spanish company naming
     # "Seguriber Compañía de Servicios Integrales S.L."
     (
@@ -405,7 +396,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,
     ),
-
     # Pattern: Investment funds - FCR, SICAV, FI, etc.
     # "Ezten FCR", "Fondo XYZ SICAV"
     (
@@ -439,7 +429,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         False,  # case_sensitive=False - insurance names can be mixed case
     ),
-
     # =========================================================================
     # ORGANIZATIONS - CONTEXTUAL DETECTION (sin sufijo legal)
     # Detecta nombres propios seguidos de verbos típicos de organizaciones
@@ -470,7 +459,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         None,
         True,  # case_sensitive
     ),
-
     # =========================================================================
     # PROCEDURE NUMBERS (FUGA 2 - Critical)
     # Judicial procedure identifiers: nº XXX/YYYY, Proc. XXX/YYYY-XX
@@ -511,7 +499,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.90,
         None,
     ),
-
     # =========================================================================
     # SENSITIVE PLATFORMS (FUGA 3)
     # Messaging and social media platforms (contextual sensitivity)
@@ -531,7 +518,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.90,
         None,
     ),
-
     # =========================================================================
     # CONTACT INFORMATION
     # =========================================================================
@@ -540,7 +526,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     (r"\b[6789]\d{8}\b", "PHONE", 0.90, None),
     # Email - high confidence for valid format
     (r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b", "EMAIL", 0.98, None),
-
     # =========================================================================
     # FINANCIAL INFORMATION
     # =========================================================================
@@ -550,11 +535,15 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     (r"\b3[47][0-9]{13}\b", "CREDIT_CARD", 0.95, None),  # AMEX
     (r"\b\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}\b", "CREDIT_CARD", 0.85, None),
     # IBAN (Spanish) - with validation
-    (r"\bES\s?\d{2}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b", "IBAN", 0.95, validate_iban_spain),
+    (
+        r"\bES\s?\d{2}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b",
+        "IBAN",
+        0.95,
+        validate_iban_spain,
+    ),
     (r"\bES\d{22}\b", "IBAN", 0.95, validate_iban_spain),
     # Generic IBAN (other countries)
     (r"\b[A-Z]{2}\d{2}[\s-]?(?:\d{4}[\s-]?){3,5}\d{1,4}\b", "BANK_ACCOUNT", 0.90, None),
-
     # =========================================================================
     # VEHICLE & LOCATION
     # =========================================================================
@@ -571,7 +560,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     # NOTE: Increased confidence to 0.92 to ensure detection even when adjacent to address
     # Province codes 01-52 are validated (01=Álava, 08=Barcelona, 28=Madrid, 52=Melilla)
     (r"\b(?:0[1-9]|[1-4]\d|5[0-2])\d{3}\b", "POSTAL_CODE", 0.92, None),
-
     # =========================================================================
     # LOCATIONS IN JUDICIAL CONTEXT
     # Captures city names in common judicial patterns (often in UPPERCASE)
@@ -609,7 +597,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.95,
         None,
     ),
-
     # =========================================================================
     # SOCIAL SECURITY & PROFESSIONAL IDS
     # =========================================================================
@@ -621,9 +608,8 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         r"(?:colegiado|n[ºúu]\s*colegiado|número\s+de\s+colegiado)[:\s]*n?[ºúu]?\s*(\d{3,8})",
         "PROFESSIONAL_ID",
         0.98,
-        None
+        None,
     ),
-
     # =========================================================================
     # DATES
     # =========================================================================
@@ -635,20 +621,17 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         r"\b\d{1,2}\s+de\s+(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s+de\s+\d{4}\b",
         "DATE",
         0.90,
-        None
+        None,
     ),
-
     # =========================================================================
     # NETWORK
     # =========================================================================
     # IP Address
     (r"\b(?:\d{1,3}\.){3}\d{1,3}\b", "IP_ADDRESS", 0.85, None),
-
     # =========================================================================
     # SECTOR LEGAL ESPAÑOL - Nuevos patrones
     # Ref: "Patrones Regex Sector Legal Español.md"
     # =========================================================================
-
     # -------------------------------------------------------------------------
     # NÚMERO DE SOPORTE (IDESP/IXESP) - CRÍTICO
     # Permite acceso a Cl@ve de la Agencia Tributaria
@@ -666,7 +649,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.98,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # NIG - NÚMERO DE IDENTIFICACIÓN GENERAL (19 dígitos)
     # Identificador único de procedimientos judiciales en España
@@ -688,7 +670,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.99,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # ECLI - European Case Law Identifier
     # Formato: ECLI:ES:Órgano:Año:Número
@@ -702,7 +683,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.95,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # CSV - CÓDIGO SEGURO DE VERIFICACIÓN - ¡¡CRÍTICO!!
     # Permite descargar documento original desde sede electrónica
@@ -724,7 +704,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.99,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # CIP-SNS - Código de Identificación Personal del Sistema Nacional de Salud
     # Estructura: 4 letras + 12 dígitos
@@ -737,7 +716,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.99,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # CIP AUTONÓMICOS - Códigos de tarjeta sanitaria por Comunidad Autónoma
     # -------------------------------------------------------------------------
@@ -761,7 +739,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
     ),
     # Castilla y León: CYL + 10 dígitos
     (r"\bCYL\d{10}\b", "HEALTH_ID", 0.95, None),
-
     # -------------------------------------------------------------------------
     # REFERENCIA CATASTRAL
     # Identificador único de inmuebles en España
@@ -791,7 +768,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.99,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # CCC - CÓDIGO DE CUENTA DE COTIZACIÓN (Empresas)
     # Estructura: Provincia(2) + Régimen(2) + Número(7) + Control(2) = 13 dígitos
@@ -810,7 +786,6 @@ PII_PATTERNS: list[tuple[str, str, float, callable | None]] = [
         0.99,
         None,
     ),
-
     # -------------------------------------------------------------------------
     # NAF - NÚMERO DE AFILIACIÓN (mejora del patrón existente)
     # Estructura: Provincia(2) + Secuencial(8) + Control(2) = 12 dígitos
@@ -923,14 +898,13 @@ class RegexNerAdapter(NerService):
                     full_end = match.end()
 
                     # Check if there's prefix context (like "D." or "AL JUZGADO DE")
-                    has_prefix_context = (full_start < group1_start)
+                    has_prefix_context = full_start < group1_start
 
                     # Check if there's suffix context (like lookahead matches)
                     # For organizations with legal form, group 2 has the S.L.P.
                     # but we WANT to include it, so we use full match
                     has_suffix_entity = (
-                        match.lastindex >= 2 and
-                        regex_pattern.category.value == "ORGANIZATION"
+                        match.lastindex >= 2 and regex_pattern.category.value == "ORGANIZATION"
                     )
 
                     if has_prefix_context and not has_suffix_entity:
@@ -940,11 +914,17 @@ class RegexNerAdapter(NerService):
                         end = group1_end
                     elif has_suffix_entity:
                         # Combine all groups for organizations with legal form
-                        parts = [match.group(i) for i in range(1, match.lastindex + 1) if match.group(i)]
+                        parts = [
+                            match.group(i) for i in range(1, match.lastindex + 1) if match.group(i)
+                        ]
                         matched_text = " ".join(parts)
                         # Recalculate span to cover all groups
-                        start = min(match.start(i) for i in range(1, match.lastindex + 1) if match.group(i))
-                        end = max(match.end(i) for i in range(1, match.lastindex + 1) if match.group(i))
+                        start = min(
+                            match.start(i) for i in range(1, match.lastindex + 1) if match.group(i)
+                        )
+                        end = max(
+                            match.end(i) for i in range(1, match.lastindex + 1) if match.group(i)
+                        )
                     else:
                         # No prefix context - use full match
                         start, end = full_start, full_end

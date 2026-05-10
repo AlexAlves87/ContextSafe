@@ -7,4 +7,3 @@ from contextsafe.application.use_cases.detect_pii.detect_pii import (
 )
 
 __all__ = ["DetectPii", "DetectPiiRequest", "DetectPiiResponse", "DetectedEntity"]
-

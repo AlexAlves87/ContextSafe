@@ -17,6 +17,7 @@ import uuid
 @dataclass
 class DocumentWithTimer:
     """Documento en memoria."""
+
     id: str
     filename: str
     page_count: int
@@ -38,6 +39,7 @@ class DocumentWithTimer:
 @dataclass
 class Session:
     """Sesión local con documentos."""
+
     id: str
     created_at: datetime
     documents: Dict[str, DocumentWithTimer] = field(default_factory=dict)
@@ -54,10 +56,7 @@ class Session:
 
     def get_project_documents(self, project_id: str) -> Dict[str, DocumentWithTimer]:
         """Documentos de un proyecto específico."""
-        return {
-            k: v for k, v in self.documents.items()
-            if v.project_id == project_id
-        }
+        return {k: v for k, v in self.documents.items() if v.project_id == project_id}
 
 
 # ============================================================================
@@ -213,8 +212,7 @@ class SessionManager:
         if project_id in session.projects:
             del session.projects[project_id]
             docs_to_delete = [
-                doc_id for doc_id, doc in session.documents.items()
-                if doc.project_id == project_id
+                doc_id for doc_id, doc in session.documents.items() if doc.project_id == project_id
             ]
             for doc_id in docs_to_delete:
                 del session.documents[doc_id]

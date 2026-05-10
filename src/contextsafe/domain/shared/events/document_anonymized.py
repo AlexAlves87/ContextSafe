@@ -64,14 +64,16 @@ class DocumentAnonymized(DomainEvent):
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "anonymization_level": self.anonymization_level,
-            "entities_replaced": self.entities_replaced,
-            "unique_aliases_used": self.unique_aliases_used,
-            "original_length": self.original_length,
-            "anonymized_length": self.anonymized_length,
-            "processing_time_ms": self.processing_time_ms,
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "anonymization_level": self.anonymization_level,
+                "entities_replaced": self.entities_replaced,
+                "unique_aliases_used": self.unique_aliases_used,
+                "original_length": self.original_length,
+                "anonymized_length": self.anonymized_length,
+                "processing_time_ms": self.processing_time_ms,
+            }
+        )
         return base

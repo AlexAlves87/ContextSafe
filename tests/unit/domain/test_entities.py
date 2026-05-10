@@ -271,9 +271,7 @@ class TestDetectionResult:
         """Create a text span for testing."""
         return TextSpan.create(0, 10, "John Smith").unwrap()
 
-    def test_create_valid_detection(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_create_valid_detection(self, document_id: DocumentId, text_span: TextSpan):
         """Test creating a valid detection result."""
         # Arrange
         confidence = ConfidenceScore.create(0.95).unwrap()
@@ -321,9 +319,7 @@ class TestDetectionResult:
         assert detection.needs_review is True
         assert detection.reviewed is False
 
-    def test_mark_reviewed_approved(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_mark_reviewed_approved(self, document_id: DocumentId, text_span: TextSpan):
         """Test marking detection as reviewed and approved."""
         # Arrange
         low_confidence = ConfidenceScore.create(0.5).unwrap()
@@ -344,9 +340,7 @@ class TestDetectionResult:
         assert detection.needs_review is False
         assert detection.version == initial_version + 1
 
-    def test_mark_reviewed_rejected(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_mark_reviewed_rejected(self, document_id: DocumentId, text_span: TextSpan):
         """Test marking detection as reviewed but rejected."""
         # Arrange
         confidence = ConfidenceScore.create(0.95).unwrap()
@@ -365,9 +359,7 @@ class TestDetectionResult:
         assert detection.reviewed is True
         assert detection.needs_review is True
 
-    def test_update_category(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_update_category(self, document_id: DocumentId, text_span: TextSpan):
         """Test updating category after review."""
         # Arrange
         confidence = ConfidenceScore.create(0.95).unwrap()
@@ -387,9 +379,7 @@ class TestDetectionResult:
         assert detection.category == EMAIL
         assert detection.version == initial_version + 1
 
-    def test_is_high_confidence_property(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_is_high_confidence_property(self, document_id: DocumentId, text_span: TextSpan):
         """Test is_high_confidence property."""
         # Arrange
         high = DetectionResult.create(
@@ -411,9 +401,7 @@ class TestDetectionResult:
         assert high.is_high_confidence is True
         assert low.is_high_confidence is False
 
-    def test_is_actionable_property(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_is_actionable_property(self, document_id: DocumentId, text_span: TextSpan):
         """Test is_actionable property."""
         # Arrange
         high_confidence = DetectionResult.create(
@@ -446,9 +434,7 @@ class TestDetectionResult:
         assert low_confidence_not_reviewed.is_actionable is False
         assert low_confidence_reviewed.is_actionable is True
 
-    def test_to_dict_and_from_dict(
-        self, document_id: DocumentId, text_span: TextSpan
-    ):
+    def test_to_dict_and_from_dict(self, document_id: DocumentId, text_span: TextSpan):
         """Test serialization round-trip."""
         # Arrange
         confidence = ConfidenceScore.create(0.95).unwrap()

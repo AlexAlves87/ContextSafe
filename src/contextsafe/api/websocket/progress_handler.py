@@ -51,27 +51,33 @@ class WebSocketMessage:
     @staticmethod
     def complete(document_id: UUID) -> str:
         """Create complete message."""
-        return json.dumps({
-            "type": "complete",
-            "documentId": str(document_id),
-        })
+        return json.dumps(
+            {
+                "type": "complete",
+                "documentId": str(document_id),
+            }
+        )
 
     @staticmethod
     def error(document_id: UUID, message: str) -> str:
         """Create error message."""
-        return json.dumps({
-            "type": "error",
-            "documentId": str(document_id),
-            "message": message,
-        })
+        return json.dumps(
+            {
+                "type": "error",
+                "documentId": str(document_id),
+                "message": message,
+            }
+        )
 
     @staticmethod
     def connected(document_id: UUID) -> str:
         """Create connected acknowledgment."""
-        return json.dumps({
-            "type": "connected",
-            "documentId": str(document_id),
-        })
+        return json.dumps(
+            {
+                "type": "connected",
+                "documentId": str(document_id),
+            }
+        )
 
     @staticmethod
     def ping() -> str:
@@ -150,14 +156,18 @@ class ProgressWebSocketHandler:
         """
         # Log connection status for debugging - USE PRINT to guarantee visibility
         conn_count = self.get_document_connections(document_id)
-        print(f"[WS-SEND] doc={document_id} stage={stage} progress={progress:.0%} connections={conn_count}")
+        print(
+            f"[WS-SEND] doc={document_id} stage={stage} progress={progress:.0%} connections={conn_count}"
+        )
         print(f"[WS-SEND] All connections: {list(self._active_connections.keys())}")
 
         if conn_count == 0:
             print(f"[WS-SEND] *** WARNING *** NO CONNECTIONS for document {document_id}!")
             print(f"[WS-SEND] Looking for prefix: {str(document_id)}")
 
-        logger.info(f"[WS] send_progress doc={document_id} stage={stage} progress={progress:.0%} connections={conn_count}")
+        logger.info(
+            f"[WS] send_progress doc={document_id} stage={stage} progress={progress:.0%} connections={conn_count}"
+        )
 
         message = WebSocketMessage.progress(
             document_id=document_id,

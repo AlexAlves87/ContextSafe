@@ -26,7 +26,7 @@ class ValidationSeverity(str, Enum):
     """Severity level of validation failures."""
 
     CRITICAL = "CRITICAL"  # Blocks export
-    WARNING = "WARNING"    # Alerts user but allows override
+    WARNING = "WARNING"  # Alerts user but allows override
 
 
 @dataclass(frozen=True, slots=True)
@@ -61,7 +61,8 @@ class ExportValidation:
     def warnings(self) -> list[ValidationResult]:
         """All WARNING-level failures."""
         return [
-            r for r in self.validation_results
+            r
+            for r in self.validation_results
             if not r.passed and r.severity == ValidationSeverity.WARNING
         ]
 
@@ -74,6 +75,7 @@ class ExportValidation:
 
 
 # --- Sanity Check Rules ---
+
 
 @dataclass(frozen=True)
 class SanityCheckRule:
@@ -146,8 +148,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
             PiiCategoryEnum.DATE: 1,
         },
         message_template=(
-            "No se han detectado fechas en esta sentencia. "
-            "Revise manualmente. Faltan: {missing}"
+            "No se han detectado fechas en esta sentencia. " "Revise manualmente. Faltan: {missing}"
         ),
     ),
     SanityCheckRule(
@@ -157,10 +158,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
         required_categories={
             PiiCategoryEnum.ORGANIZATION: 1,
         },
-        message_template=(
-            "Factura sin emisor (Organización) detectado. "
-            "Faltan: {missing}"
-        ),
+        message_template=("Factura sin emisor (Organización) detectado. " "Faltan: {missing}"),
     ),
     SanityCheckRule(
         rule_id="SC-004",
@@ -170,8 +168,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
             PiiCategoryEnum.PERSON_NAME: 1,
         },
         message_template=(
-            "Una denuncia debería tener al menos una persona "
-            "identificada. Faltan: {missing}"
+            "Una denuncia debería tener al menos una persona " "identificada. Faltan: {missing}"
         ),
     ),
 ]
@@ -222,24 +219,20 @@ class ExportValidator:
                 severity=ValidationSeverity.CRITICAL,
                 rule_id="LATCH-001",
                 message=(
-                    "OK" if latch_passed
+                    "OK"
+                    if latch_passed
                     else f"{pending_amber_red} entidades (ámbar/rojo) pendientes de revisión"
                 ),
             )
         )
 
         # Sanity Checks: Apply rules for this document type
-        applicable_rules = [
-            r for r in self._rules if r.document_type == document_type
-        ]
+        applicable_rules = [r for r in self._rules if r.document_type == document_type]
         for rule in applicable_rules:
             results.append(rule.check(entity_counts))
 
         # Can export only if no CRITICAL failures
-        can_export = all(
-            r.passed for r in results
-            if r.severity == ValidationSeverity.CRITICAL
-        )
+        can_export = all(r.passed for r in results if r.severity == ValidationSeverity.CRITICAL)
 
         return ExportValidation(
             can_export=can_export,

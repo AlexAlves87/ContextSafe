@@ -65,11 +65,15 @@ def test_ingest_command_content_non_empty(content_bytes: bytes):
 # ==============================================================================
 
 
-@given(st.sampled_from([
-    'application/pdf',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'text/plain'
-]))
+@given(
+    st.sampled_from(
+        [
+            "application/pdf",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "text/plain",
+        ]
+    )
+)
 def test_ingest_command_valid_content_type(content_type: str):
     """
     Test IngestDocumentCommand only accepts valid content types.
@@ -79,19 +83,24 @@ def test_ingest_command_valid_content_type(content_type: str):
     Invariant: PRE (content_type in supported)
     """
     VALID_TYPES = [
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'text/plain'
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "text/plain",
     ]
 
     assert content_type in VALID_TYPES
 
 
-@given(st.text(min_size=1).filter(lambda x: x not in [
-    'application/pdf',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'text/plain'
-]))
+@given(
+    st.text(min_size=1).filter(
+        lambda x: x
+        not in [
+            "application/pdf",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "text/plain",
+        ]
+    )
+)
 def test_ingest_command_rejects_invalid_content_type(content_type: str):
     """
     Test IngestDocumentCommand rejects invalid content types.
@@ -100,9 +109,9 @@ def test_ingest_command_rejects_invalid_content_type(content_type: str):
     Contract: CNT-T2-UC001-002
     """
     VALID_TYPES = [
-        'application/pdf',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'text/plain'
+        "application/pdf",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "text/plain",
     ]
 
     assert content_type not in VALID_TYPES
@@ -207,10 +216,7 @@ def test_detect_result_confidence_range(confidence: ConfidenceScore):
 # ==============================================================================
 
 
-@given(
-    st.integers(min_value=0, max_value=1000),
-    st.integers(min_value=0, max_value=1000)
-)
+@given(st.integers(min_value=0, max_value=1000), st.integers(min_value=0, max_value=1000))
 def test_assign_result_counts_non_negative(aliases_assigned: int, aliases_reused: int):
     """
     Test AssignAliasResult counts are non-negative.
@@ -223,10 +229,7 @@ def test_assign_result_counts_non_negative(aliases_assigned: int, aliases_reused
     assert aliases_reused >= 0
 
 
-@given(
-    st.integers(min_value=0, max_value=1000),
-    st.integers(min_value=0, max_value=1000)
-)
+@given(st.integers(min_value=0, max_value=1000), st.integers(min_value=0, max_value=1000))
 def test_assign_result_total_consistency(aliases_assigned: int, aliases_reused: int):
     """
     Test AssignAliasResult total = assigned + reused.
@@ -274,7 +277,9 @@ def test_anonymized_result_replacements_non_negative(replacements_made: int):
     assert replacements_made >= 0
 
 
-@given(st.text(min_size=10, max_size=500, alphabet=st.characters(whitelist_categories=('L', 'N', 'Z'))))
+@given(
+    st.text(min_size=10, max_size=500, alphabet=st.characters(whitelist_categories=("L", "N", "Z")))
+)
 def test_anonymized_result_replacements_bounded_by_text_length(anonymized_text: str):
     """
     Test GenerateAnonymizedResult replacements should be bounded by text length.
@@ -285,6 +290,7 @@ def test_anonymized_result_replacements_bounded_by_text_length(anonymized_text: 
     Contract: CNT-T2-UC004-004
     """
     from hypothesis import assume
+
     # Ensure text has words (spaces between characters)
     word_count = len(anonymized_text.split())
     assume(word_count > 0)

@@ -159,6 +159,7 @@ class Container:
         """Get the anonymization service (lazy-initialized)."""
         if self._anonymization_service is None:
             from contextsafe.infrastructure.nlp import InMemoryAnonymizationAdapter
+
             self._anonymization_service = InMemoryAnonymizationAdapter()
         return self._anonymization_service
 
@@ -184,6 +185,7 @@ class Container:
             from contextsafe.infrastructure.text_processing import (
                 DefaultIngestPreprocessor,
             )
+
             self._ingest_preprocessor = DefaultIngestPreprocessor()
         return self._ingest_preprocessor
 
@@ -195,6 +197,7 @@ class Container:
             from contextsafe.infrastructure.text_processing import (
                 DefaultDetectionPreprocessor,
             )
+
             self._detection_preprocessor = DefaultDetectionPreprocessor()
         return self._detection_preprocessor
 

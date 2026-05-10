@@ -61,7 +61,7 @@ async def create_project(
     )
 
     # Store in session
-    project_data = project.model_dump() if hasattr(project, 'model_dump') else project.dict()
+    project_data = project.model_dump() if hasattr(project, "model_dump") else project.dict()
     session_manager.add_project(session_id, str(project_id), project_data)
 
     return ApiResponse(data=project)
@@ -128,7 +128,7 @@ async def update_project(
         completion_percentage=project_data.get("completion_percentage", 0),
     )
 
-    updated_data = updated.model_dump() if hasattr(updated, 'model_dump') else updated.dict()
+    updated_data = updated.model_dump() if hasattr(updated, "model_dump") else updated.dict()
     session_manager.update_project(session_id, str(project_id), updated_data)
 
     return ApiResponse(data=updated)
@@ -172,7 +172,7 @@ async def list_projects(
     all_projects = [ProjectResponse(**p) for p in all_projects_data]
 
     total = len(all_projects)
-    paginated = all_projects[offset:offset + limit]
+    paginated = all_projects[offset : offset + limit]
     return ApiListResponse(
         data=paginated,
         meta=PaginatedMeta(total=total, limit=limit, offset=offset),
@@ -224,7 +224,7 @@ async def list_project_documents(
     ]
 
     total = len(docs)
-    paginated = docs[offset:offset + limit]
+    paginated = docs[offset : offset + limit]
     return ApiListResponse(
         data=paginated,
         meta=PaginatedMeta(total=total, limit=limit, offset=offset),

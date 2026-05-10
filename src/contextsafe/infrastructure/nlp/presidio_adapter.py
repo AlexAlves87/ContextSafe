@@ -27,43 +27,105 @@ from contextsafe.domain.shared.value_objects import (
 # These should NEVER be detected as PII
 FALSE_POSITIVE_BLOCKLIST = {
     # Spanish ordinals (often misclassified as PERSON)
-    "PRIMERO", "SEGUNDO", "TERCERO", "CUARTO", "QUINTO",
-    "SEXTO", "SÉPTIMO", "OCTAVO", "NOVENO", "DÉCIMO",
-    "UNDÉCIMO", "DUODÉCIMO", "DECIMOTERCERO", "DECIMOCUARTO",
-    "primero", "segundo", "tercero", "cuarto", "quinto",
-    "sexto", "séptimo", "octavo", "noveno", "décimo",
+    "PRIMERO",
+    "SEGUNDO",
+    "TERCERO",
+    "CUARTO",
+    "QUINTO",
+    "SEXTO",
+    "SÉPTIMO",
+    "OCTAVO",
+    "NOVENO",
+    "DÉCIMO",
+    "UNDÉCIMO",
+    "DUODÉCIMO",
+    "DECIMOTERCERO",
+    "DECIMOCUARTO",
+    "primero",
+    "segundo",
+    "tercero",
+    "cuarto",
+    "quinto",
+    "sexto",
+    "séptimo",
+    "octavo",
+    "noveno",
+    "décimo",
     # Legal terms misclassified as ADDRESS
-    "DESNATURALIZACIÓN", "DESNATURALIZACION",
-    "VULNERACIÓN", "VULNERACION",
-    "IMPUGNACIÓN", "IMPUGNACION",
-    "POSICIÓN", "POSICION",
+    "DESNATURALIZACIÓN",
+    "DESNATURALIZACION",
+    "VULNERACIÓN",
+    "VULNERACION",
+    "IMPUGNACIÓN",
+    "IMPUGNACION",
+    "POSICIÓN",
+    "POSICION",
     "RAZONABILIDAD",
     "DISPENSA",
     "ESCRITO",
-    "CONCLUSIÓN", "CONCLUSION",
+    "CONCLUSIÓN",
+    "CONCLUSION",
     "SUBSIDIARIAMENTE",
     "IMPROCEDENCIA",
     # Legal procedure types (misclassified as PERSON)
-    "PROCEDIMIENTO ORDINARIO", "PROCEDIMIENTO VERBAL",
-    "PROCEDIMIENTO MONITORIO", "PROCEDIMIENTO ABREVIADO",
-    "JUICIO ORDINARIO", "JUICIO VERBAL",
+    "PROCEDIMIENTO ORDINARIO",
+    "PROCEDIMIENTO VERBAL",
+    "PROCEDIMIENTO MONITORIO",
+    "PROCEDIMIENTO ABREVIADO",
+    "JUICIO ORDINARIO",
+    "JUICIO VERBAL",
     # Common words (often misclassified as PERSON)
-    "HECHOS", "FUNDAMENTOS", "DERECHO", "SUPLICO",
-    "AUTO", "SENTENCIA", "RESOLUCIÓN", "RESOLUCION",
-    "Razón", "RAZÓN", "RAZON",  # "Razón por la que..."
-    "Todo", "TODO", "Ello", "ELLO",
-    "Votación", "VOTACIÓN", "VOTACION",  # "Votación y fallo"
+    "HECHOS",
+    "FUNDAMENTOS",
+    "DERECHO",
+    "SUPLICO",
+    "AUTO",
+    "SENTENCIA",
+    "RESOLUCIÓN",
+    "RESOLUCION",
+    "Razón",
+    "RAZÓN",
+    "RAZON",  # "Razón por la que..."
+    "Todo",
+    "TODO",
+    "Ello",
+    "ELLO",
+    "Votación",
+    "VOTACIÓN",
+    "VOTACION",  # "Votación y fallo"
     # Legal roles (not personal names) - WITH and WITHOUT "DON/DOÑA"
-    "Procurador", "PROCURADOR", "El Procurador", "EL PROCURADOR",
-    "Letrado", "LETRADO", "El Letrado", "EL LETRADO",
-    "Magistrado", "MAGISTRADO", "Juez", "JUEZ",
-    "Secretario", "SECRETARIO", "Fiscal", "FISCAL",
-    "Ponente", "PONENTE",
+    "Procurador",
+    "PROCURADOR",
+    "El Procurador",
+    "EL PROCURADOR",
+    "Letrado",
+    "LETRADO",
+    "El Letrado",
+    "EL LETRADO",
+    "Magistrado",
+    "MAGISTRADO",
+    "Juez",
+    "JUEZ",
+    "Secretario",
+    "SECRETARIO",
+    "Fiscal",
+    "FISCAL",
+    "Ponente",
+    "PONENTE",
     # Short words that are never PII
-    "LA", "EL", "DE", "EN", "CON", "POR", "DEL", "AL",
+    "LA",
+    "EL",
+    "DE",
+    "EN",
+    "CON",
+    "POR",
+    "DEL",
+    "AL",
     # Company names that are public (banks, etc.)
-    "Liberbank", "LIBERBANK",
-    "Banca March", "BANCA MARCH",
+    "Liberbank",
+    "LIBERBANK",
+    "Banca March",
+    "BANCA MARCH",
     # NOTE: Spanish city names REMOVED from blocklist (2026-01-31)
     # In judicial anonymization context, city names MUST be anonymized
     # because they enable triangulation (e.g., "Juzgado de Martorell"
@@ -85,15 +147,15 @@ FALSE_POSITIVE_PATTERNS = [
 # Regex patterns that indicate false positives
 FALSE_POSITIVE_REGEX = [
     # Case/sentence numbers: 61/2019, 456/2020, 1947/2025
-    re.compile(r'^\d{1,4}/\d{4}$'),
+    re.compile(r"^\d{1,4}/\d{4}$"),
     # Dates in legal documents: DE 23 DE DICIEMBRE, DE 14 DE ENERO
-    re.compile(r'^DE\s+\d{1,2}\s+DE\s+[A-ZÁÉÍÓÚÑ]+$', re.IGNORECASE),
+    re.compile(r"^DE\s+\d{1,2}\s+DE\s+[A-ZÁÉÍÓÚÑ]+$", re.IGNORECASE),
     # Article references: art. 367, art. 1301
-    re.compile(r'^art\.\s*\d+', re.IGNORECASE),
+    re.compile(r"^art\.\s*\d+", re.IGNORECASE),
     # Law references: Ley 3/2020, R.D. 1234/2021
-    re.compile(r'^(?:Ley|R\.?D\.?)\s*\d+/\d{4}', re.IGNORECASE),
+    re.compile(r"^(?:Ley|R\.?D\.?)\s*\d+/\d{4}", re.IGNORECASE),
     # Sentence reference with n.º: n.º 61/2019
-    re.compile(r'^n\.º\s*\d+/\d{4}$', re.IGNORECASE),
+    re.compile(r"^n\.º\s*\d+/\d{4}$", re.IGNORECASE),
 ]
 
 
@@ -119,26 +181,41 @@ def _is_false_positive(text: str, category: str) -> bool:
     # For PERSON_NAME: reject if it's just an ordinal possibly with punctuation
     if category == "PERSON_NAME":
         # Remove punctuation and check
-        alpha_only = ''.join(c for c in clean if c.isalpha())
+        alpha_only = "".join(c for c in clean if c.isalpha())
         if alpha_only.upper() in FALSE_POSITIVE_BLOCKLIST:
             return True
 
         # Reject if it looks like a case/sentence number
-        if re.match(r'^\d{1,4}/\d{4}$', clean):
+        if re.match(r"^\d{1,4}/\d{4}$", clean):
             return True
 
         # Reject single words that are common in legal text
-        if ' ' not in clean and len(clean) < 10:
-            common_words = {'Razón', 'Todo', 'Ello', 'Votación', 'Enero', 'Febrero',
-                          'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto',
-                          'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'}
+        if " " not in clean and len(clean) < 10:
+            common_words = {
+                "Razón",
+                "Todo",
+                "Ello",
+                "Votación",
+                "Enero",
+                "Febrero",
+                "Marzo",
+                "Abril",
+                "Mayo",
+                "Junio",
+                "Julio",
+                "Agosto",
+                "Septiembre",
+                "Octubre",
+                "Noviembre",
+                "Diciembre",
+            }
             if clean in common_words or clean.upper() in {w.upper() for w in common_words}:
                 return True
 
     # For DATE: reject public document dates (sentences, laws)
     if category == "DATE":
         # Dates of sentences are public info, not PII
-        if re.search(r'SENTENCIA|AUTO|PROVIDENCIA|LEY|DECRETO', upper):
+        if re.search(r"SENTENCIA|AUTO|PROVIDENCIA|LEY|DECRETO", upper):
             return True
 
     return False
@@ -150,13 +227,26 @@ def _is_street_name_context(text: str, start: int, full_text: str) -> bool:
         return False
 
     # Look at text before the detection
-    prefix = full_text[max(0, start - 20):start].lower()
+    prefix = full_text[max(0, start - 20) : start].lower()
 
     street_indicators = [
-        "c/", "calle ", "c. ", "avda ", "avda. ", "avenida ",
-        "pza ", "pza. ", "plaza ", "paseo ", "pº ",
-        "ronda ", "travesía ", "camino ", "carretera ",
-        "en ", "de ",  # Common before street names
+        "c/",
+        "calle ",
+        "c. ",
+        "avda ",
+        "avda. ",
+        "avenida ",
+        "pza ",
+        "pza. ",
+        "plaza ",
+        "paseo ",
+        "pº ",
+        "ronda ",
+        "travesía ",
+        "camino ",
+        "carretera ",
+        "en ",
+        "de ",  # Common before street names
     ]
 
     for indicator in street_indicators:
@@ -178,18 +268,41 @@ def _clean_entity_text(text: str, category: str) -> str:
         # Prefixes that spaCy/Presidio often include by mistake
         # Order matters - more specific first
         prefixes_to_remove = [
-            "contra\n\nla entidad ", "contra\n\nla empresa ",
-            "contra\nla entidad ", "contra\nla empresa ",
-            "contra la entidad ", "contra la empresa ",
-            "la entidad ", "La entidad ", "LA ENTIDAD ",
-            "la empresa ", "La empresa ", "LA EMPRESA ",
-            "la sociedad ", "La sociedad ", "LA SOCIEDAD ",
-            "la mercantil ", "La mercantil ", "LA MERCANTIL ",
-            "procesal de ", "representación de ", "parte de ",
-            "demandante ", "demandada ", "actora ",
-            "interpuesto por ", "formulada por ", "presentado por ",
-            "que ", "de ", "por ", "contra ", "a ", "y ",
-            "representación ", "comparecencia de ",
+            "contra\n\nla entidad ",
+            "contra\n\nla empresa ",
+            "contra\nla entidad ",
+            "contra\nla empresa ",
+            "contra la entidad ",
+            "contra la empresa ",
+            "la entidad ",
+            "La entidad ",
+            "LA ENTIDAD ",
+            "la empresa ",
+            "La empresa ",
+            "LA EMPRESA ",
+            "la sociedad ",
+            "La sociedad ",
+            "LA SOCIEDAD ",
+            "la mercantil ",
+            "La mercantil ",
+            "LA MERCANTIL ",
+            "procesal de ",
+            "representación de ",
+            "parte de ",
+            "demandante ",
+            "demandada ",
+            "actora ",
+            "interpuesto por ",
+            "formulada por ",
+            "presentado por ",
+            "que ",
+            "de ",
+            "por ",
+            "contra ",
+            "a ",
+            "y ",
+            "representación ",
+            "comparecencia de ",
         ]
         # Keep removing prefixes until no more match
         changed = True
@@ -198,7 +311,7 @@ def _clean_entity_text(text: str, category: str) -> str:
             clean_lower = clean.lower()
             for prefix in prefixes_to_remove:
                 if clean_lower.startswith(prefix.lower()):
-                    clean = clean[len(prefix):].strip()
+                    clean = clean[len(prefix) :].strip()
                     changed = True
                     break
 
@@ -219,14 +332,16 @@ def _clean_entity_text(text: str, category: str) -> str:
         clean_lower = clean.lower()
         for prefix in legal_prefixes:
             if clean_lower.startswith(prefix):
-                clean = clean[len(prefix):]
+                clean = clean[len(prefix) :]
                 clean_lower = clean.lower()
 
         # If after stripping we have no actual address content, return empty
         # An actual address should have a street indicator or number
-        if clean and not any(ind in clean_lower for ind in ["c/", "calle", "avda", "avenida", "plaza", "paseo"]):
+        if clean and not any(
+            ind in clean_lower for ind in ["c/", "calle", "avda", "avenida", "plaza", "paseo"]
+        ):
             # Check if it at least has a number (like a postal code or street number)
-            if not re.search(r'\d', clean):
+            if not re.search(r"\d", clean):
                 return ""
 
     return clean
@@ -239,35 +354,35 @@ PRESIDIO_TO_PII_MAPPING = {
     "PERSON": "PERSON_NAME",
     "EMAIL_ADDRESS": "EMAIL",
     "PHONE_NUMBER": "PHONE",
-    "IBAN_CODE": "BANK_ACCOUNT",      # Maps to BANK_ACCOUNT (includes IBAN)
+    "IBAN_CODE": "BANK_ACCOUNT",  # Maps to BANK_ACCOUNT (includes IBAN)
     "CREDIT_CARD": "CREDIT_CARD",
-    "IP_ADDRESS": "ADDRESS",           # No specific category, use ADDRESS
-    "DATE_TIME": "DATE",               # Generic date (not birth date)
-    "LOCATION": "LOCATION",            # FIXED: Keep as LOCATION (cities, towns)
-    "URL": "ADDRESS",                  # No specific category, use ADDRESS
+    "IP_ADDRESS": "ADDRESS",  # No specific category, use ADDRESS
+    "DATE_TIME": "DATE",  # Generic date (not birth date)
+    "LOCATION": "LOCATION",  # FIXED: Keep as LOCATION (cities, towns)
+    "URL": "ADDRESS",  # No specific category, use ADDRESS
     # Spanish custom entities - must match PiiCategoryEnum values
-    "ES_DNI": "DNI_NIE",               # Fixed: was "DNI", must be "DNI_NIE"
-    "ES_NIE": "DNI_NIE",               # Fixed: was "NIE", must be "DNI_NIE"
-    "ES_NIF": "DNI_NIE",               # Added: Presidio's built-in NIF recognizer
-    "ES_CIF": "DNI_NIE",               # Company tax ID, mapped to DNI_NIE
-    "ES_NSS": "SOCIAL_SECURITY",       # Fixed: was "NSS", must be "SOCIAL_SECURITY"
+    "ES_DNI": "DNI_NIE",  # Fixed: was "DNI", must be "DNI_NIE"
+    "ES_NIE": "DNI_NIE",  # Fixed: was "NIE", must be "DNI_NIE"
+    "ES_NIF": "DNI_NIE",  # Added: Presidio's built-in NIF recognizer
+    "ES_CIF": "DNI_NIE",  # Company tax ID, mapped to DNI_NIE
+    "ES_NSS": "SOCIAL_SECURITY",  # Fixed: was "NSS", must be "SOCIAL_SECURITY"
     "ES_PHONE": "PHONE",
-    "ES_IBAN": "BANK_ACCOUNT",         # Fixed: was "IBAN", must be "BANK_ACCOUNT"
+    "ES_IBAN": "BANK_ACCOUNT",  # Fixed: was "IBAN", must be "BANK_ACCOUNT"
     # NEW: Custom Spanish recognizers
-    "ES_PERSON": "PERSON_NAME",        # Spanish name recognizer
-    "ES_ORG": "ORGANIZATION",          # Spanish organization recognizer
-    "ES_ZIP_CODE": "POSTAL_CODE",      # Spanish postal codes
-    "ES_ADDRESS": "ADDRESS",           # Spanish addresses (street + number)
-    "ES_LOCATION": "LOCATION",         # Spanish locations (cities, towns, municipalities)
-    "ES_DATE": "DATE",                 # Spanish dates (generic)
+    "ES_PERSON": "PERSON_NAME",  # Spanish name recognizer
+    "ES_ORG": "ORGANIZATION",  # Spanish organization recognizer
+    "ES_ZIP_CODE": "POSTAL_CODE",  # Spanish postal codes
+    "ES_ADDRESS": "ADDRESS",  # Spanish addresses (street + number)
+    "ES_LOCATION": "LOCATION",  # Spanish locations (cities, towns, municipalities)
+    "ES_DATE": "DATE",  # Spanish dates (generic)
     # spaCy entities (via NlpEngine)
     "PER": "PERSON_NAME",
     "ORG": "ORGANIZATION",
-    "GPE": "LOCATION",                 # FIXED: GPE (cities, countries) → LOCATION
-    "LOC": "LOCATION",                 # FIXED: LOC (geographic locations) → LOCATION
+    "GPE": "LOCATION",  # FIXED: GPE (cities, countries) → LOCATION
+    "LOC": "LOCATION",  # FIXED: LOC (geographic locations) → LOCATION
     # MISC entities - spaCy often misclassifies Spanish entities as MISC
     # We still capture them for review but with lower confidence
-    "MISC": "PERSON_NAME",             # spaCy MISC often contains names in legal docs
+    "MISC": "PERSON_NAME",  # spaCy MISC often contains names in legal docs
 }
 
 
@@ -429,7 +544,7 @@ class PresidioNerAdapter(NerService):
                 continue
 
             # Extract the raw text
-            raw_text = text[result.start:result.end]
+            raw_text = text[result.start : result.end]
 
             # FILTER 1: Check for false positives (ordinals, legal terms, etc.)
             if _is_false_positive(raw_text, pii_category_str):
@@ -492,18 +607,13 @@ class PresidioNerAdapter(NerService):
         # Deduplicate overlapping detections (keep highest confidence)
         return self._deduplicate_detections(detections)
 
-    def _deduplicate_detections(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _deduplicate_detections(self, detections: list[NerDetection]) -> list[NerDetection]:
         """Remove duplicate/overlapping detections, keeping highest confidence."""
         if not detections:
             return []
 
         # Sort by start position, then by confidence descending
-        sorted_dets = sorted(
-            detections,
-            key=lambda d: (d.span.start, -d.confidence.value)
-        )
+        sorted_dets = sorted(detections, key=lambda d: (d.span.start, -d.confidence.value))
 
         result: list[NerDetection] = []
         for det in sorted_dets:
@@ -511,13 +621,11 @@ class PresidioNerAdapter(NerService):
             is_duplicate = False
             for existing in result:
                 # Same span = exact duplicate
-                if (det.span.start == existing.span.start and
-                    det.span.end == existing.span.end):
+                if det.span.start == existing.span.start and det.span.end == existing.span.end:
                     is_duplicate = True
                     break
                 # Overlapping spans - keep the one with higher confidence
-                if (det.span.start < existing.span.end and
-                    det.span.end > existing.span.start):
+                if det.span.start < existing.span.end and det.span.end > existing.span.start:
                     # They overlap - existing has higher confidence (we sorted)
                     is_duplicate = True
                     break
@@ -547,9 +655,8 @@ class PresidioNerAdapter(NerService):
         if self._is_loaded and self._analyzer:
             # Get list of registered recognizers
             recognizers = [
-                r.name for r in self._analyzer.registry.get_recognizers(
-                    language="es", all_fields=True
-                )
+                r.name
+                for r in self._analyzer.registry.get_recognizers(language="es", all_fields=True)
             ]
             info["recognizers"] = recognizers
             info["recognizer_count"] = len(recognizers)

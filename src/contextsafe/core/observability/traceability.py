@@ -69,6 +69,7 @@ def trace_use_case(use_case_id: str) -> Callable[[Callable[P, T]], Callable[P, T
             # All logs within this function will include use_case_id="UC-001"
             ...
     """
+
     def decorator(func: Callable[P, T]) -> Callable[P, T]:
         @functools.wraps(func)
         async def async_wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
@@ -110,6 +111,7 @@ def trace_use_case(use_case_id: str) -> Callable[[Callable[P, T]], Callable[P, T
 
         # Check if function is async
         import asyncio
+
         if asyncio.iscoroutinefunction(func):
             return async_wrapper  # type: ignore[return-value]
         return sync_wrapper
@@ -133,6 +135,7 @@ def trace_business_rule(rule_id: str) -> Callable[[Callable[P, T]], Callable[P, 
             # All logs within this function will include business_rule_id="BR-002"
             ...
     """
+
     def decorator(func: Callable[P, T]) -> Callable[P, T]:
         @functools.wraps(func)
         def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:

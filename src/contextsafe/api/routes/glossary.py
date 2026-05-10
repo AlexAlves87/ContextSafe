@@ -45,7 +45,9 @@ class AliasChangeSchema(BaseModel):
     original_term: str = Field(..., description="The original PII text")
     category: str = Field(..., description="PII category (e.g., PERSON_NAME)")
     new_alias: str = Field(..., description="The new alias to use (e.g., 'Juez')")
-    new_category: Optional[str] = Field(None, description="New category if changing (e.g., 'organization')")
+    new_category: Optional[str] = Field(
+        None, description="New category if changing (e.g., 'organization')"
+    )
 
 
 class UpdateGlossaryRequest(BaseModel):
@@ -57,9 +59,7 @@ class UpdateGlossaryRequest(BaseModel):
     deletions: List[str] = Field(
         default=[], description="List of entry IDs to delete (undo anonymization)"
     )
-    document_id: Optional[str] = Field(
-        None, description="Document ID to regenerate (optional)"
-    )
+    document_id: Optional[str] = Field(None, description="Document ID to regenerate (optional)")
 
 
 class ChangeResultSchema(BaseModel):
@@ -115,18 +115,20 @@ async def get_glossary(project_id: UUID, request: Request) -> ApiListResponse[di
     # Include version/traceability info (OMISIÓN 2)
     formatted_entries = []
     for entry in entries:
-        formatted_entries.append({
-            "id": entry["id"],
-            "originalText": entry["original_text"],
-            "alias": entry["alias"],
-            "category": entry["category"],
-            "occurrences": entry.get("occurrences", 1),
-            "createdAt": entry.get("created_at", ""),
-            # Traceability fields
-            "version": entry.get("version", 1),
-            "updatedAt": entry.get("updated_at", entry.get("created_at", "")),
-            "historyCount": len(entry.get("history", [])),
-        })
+        formatted_entries.append(
+            {
+                "id": entry["id"],
+                "originalText": entry["original_text"],
+                "alias": entry["alias"],
+                "category": entry["category"],
+                "occurrences": entry.get("occurrences", 1),
+                "createdAt": entry.get("created_at", ""),
+                # Traceability fields
+                "version": entry.get("version", 1),
+                "updatedAt": entry.get("updated_at", entry.get("created_at", "")),
+                "historyCount": len(entry.get("history", [])),
+            }
+        )
 
     return ApiListResponse(
         data=formatted_entries,
@@ -185,14 +187,14 @@ async def update_glossary(
 
         # 1. Apply Deletions first
         deletions_applied = 0
-        if hasattr(request_body, 'deletions') and request_body.deletions:
+        if hasattr(request_body, "deletions") and request_body.deletions:
             original_count = len(glossary_entries)
             # Filter out deleted entries
             glossary_entries = [
                 e for e in glossary_entries if e["id"] not in request_body.deletions
             ]
             deletions_applied = original_count - len(glossary_entries)
-    
+
         # 2. Apply Updates
         for change in request_body.changes:
             # Find the entry to update
@@ -225,25 +227,29 @@ async def update_glossary(
                     entry["updated_at"] = datetime.now(timezone.utc).isoformat()
                     entry["version"] = len(entry["history"]) + 1
 
-                    change_results.append(ChangeResultSchema(
-                        original_term=change.original_term,
-                        old_alias=old_alias,
-                        new_alias=change.new_alias,
-                        success=True,
-                        error=None,
-                    ))
+                    change_results.append(
+                        ChangeResultSchema(
+                            original_term=change.original_term,
+                            old_alias=old_alias,
+                            new_alias=change.new_alias,
+                            success=True,
+                            error=None,
+                        )
+                    )
                     changes_applied += 1
                     found = True
                     break
 
             if not found:
-                change_results.append(ChangeResultSchema(
-                    original_term=change.original_term,
-                    old_alias="",
-                    new_alias=change.new_alias,
-                    success=False,
-                    error=f"Entry not found: {change.original_term}",
-                ))
+                change_results.append(
+                    ChangeResultSchema(
+                        original_term=change.original_term,
+                        old_alias="",
+                        new_alias=change.new_alias,
+                        success=False,
+                        error=f"Entry not found: {change.original_term}",
+                    )
+                )
                 changes_failed += 1
 
         # 3. MERGE DUPLICATES: Unify entries with same alias AND category
@@ -263,8 +269,8 @@ async def update_glossary(
                 first_entry = glossary_entries[first_idx]
 
                 # Sum occurrences
-                first_entry["occurrences"] = (
-                    first_entry.get("occurrences", 1) + entry.get("occurrences", 1)
+                first_entry["occurrences"] = first_entry.get("occurrences", 1) + entry.get(
+                    "occurrences", 1
                 )
 
                 # Combine original_text as list (for reference)
@@ -273,12 +279,14 @@ async def update_glossary(
                 first_entry["merged_originals"].append(entry.get("original_text", ""))
 
                 # Track merge in history
-                first_entry["history"].append({
-                    "action": "merged_duplicate",
-                    "merged_original_text": entry.get("original_text", ""),
-                    "merged_occurrences": entry.get("occurrences", 1),
-                    "changed_at": datetime.now(timezone.utc).isoformat(),
-                })
+                first_entry["history"].append(
+                    {
+                        "action": "merged_duplicate",
+                        "merged_original_text": entry.get("original_text", ""),
+                        "merged_occurrences": entry.get("occurrences", 1),
+                        "changed_at": datetime.now(timezone.utc).isoformat(),
+                    }
+                )
                 first_entry["updated_at"] = datetime.now(timezone.utc).isoformat()
                 first_entry["version"] = len(first_entry.get("history", [])) + 1
 
@@ -329,8 +337,9 @@ async def update_glossary(
 
                         # Update anonymized content in session
                         session_manager.update_document(
-                            session_id, doc_id,
-                            anonymized={"original": original_text, "anonymized": new_anonymized}
+                            session_id,
+                            doc_id,
+                            anonymized={"original": original_text, "anonymized": new_anonymized},
                         )
                         documents_updated += 1
 
@@ -339,7 +348,7 @@ async def update_glossary(
                             anonymized_text = new_anonymized
 
                 document_regenerated = documents_updated > 0
-    
+
         return ApiResponse(
             data=UpdateGlossaryResponse(
                 project_id=project_id_str,
@@ -380,9 +389,7 @@ class CorrectGlossaryRequest(BaseModel):
     corrections: List[OriginalTextCorrectionSchema] = Field(
         ..., description="List of corrections to apply"
     )
-    document_id: Optional[str] = Field(
-        None, description="Document ID to regenerate (optional)"
-    )
+    document_id: Optional[str] = Field(None, description="Document ID to regenerate (optional)")
 
 
 class CorrectGlossaryResponse(BaseModel):
@@ -438,9 +445,10 @@ async def correct_glossary_entries(
         found = False
         for entry in glossary_entries:
             # Match by ID or by original text
-            if (entry.get("id") == correction.entry_id or
-                entry.get("original_text", "").lower() == correction.old_original_text.lower()):
-
+            if (
+                entry.get("id") == correction.entry_id
+                or entry.get("original_text", "").lower() == correction.old_original_text.lower()
+            ):
                 old_text = entry.get("original_text", "")
                 new_text = correction.new_original_text
                 old_alias = entry.get("alias", "")
@@ -465,7 +473,9 @@ async def correct_glossary_entries(
                     existing_entry = None
                     for other_entry in glossary_entries:
                         if other_entry is not entry and other_entry.get("category") == category:
-                            if values_match(other_entry.get("original_text", ""), new_text, category):
+                            if values_match(
+                                other_entry.get("original_text", ""), new_text, category
+                            ):
                                 existing_entry = other_entry
                                 break
 
@@ -547,8 +557,9 @@ async def correct_glossary_entries(
                             new_anonymized = pattern.sub(alias, new_anonymized)
 
                     session_manager.update_document(
-                        session_id, doc_id,
-                        anonymized={"original": original_text, "anonymized": new_anonymized}
+                        session_id,
+                        doc_id,
+                        anonymized={"original": original_text, "anonymized": new_anonymized},
                     )
                     document_regenerated = True
 

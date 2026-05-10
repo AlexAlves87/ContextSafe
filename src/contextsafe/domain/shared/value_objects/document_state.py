@@ -31,26 +31,36 @@ class DocumentStateEnum(str, Enum):
 
 # Valid state transitions (INV-002)
 VALID_TRANSITIONS: dict[DocumentStateEnum, FrozenSet[DocumentStateEnum]] = {
-    DocumentStateEnum.PENDING: frozenset({
-        DocumentStateEnum.INGESTED,
-        DocumentStateEnum.FAILED,
-    }),
-    DocumentStateEnum.INGESTED: frozenset({
-        DocumentStateEnum.DETECTING,
-        DocumentStateEnum.FAILED,
-    }),
-    DocumentStateEnum.DETECTING: frozenset({
-        DocumentStateEnum.DETECTED,
-        DocumentStateEnum.FAILED,
-    }),
-    DocumentStateEnum.DETECTED: frozenset({
-        DocumentStateEnum.ANONYMIZING,
-        DocumentStateEnum.FAILED,
-    }),
-    DocumentStateEnum.ANONYMIZING: frozenset({
-        DocumentStateEnum.ANONYMIZED,
-        DocumentStateEnum.FAILED,
-    }),
+    DocumentStateEnum.PENDING: frozenset(
+        {
+            DocumentStateEnum.INGESTED,
+            DocumentStateEnum.FAILED,
+        }
+    ),
+    DocumentStateEnum.INGESTED: frozenset(
+        {
+            DocumentStateEnum.DETECTING,
+            DocumentStateEnum.FAILED,
+        }
+    ),
+    DocumentStateEnum.DETECTING: frozenset(
+        {
+            DocumentStateEnum.DETECTED,
+            DocumentStateEnum.FAILED,
+        }
+    ),
+    DocumentStateEnum.DETECTED: frozenset(
+        {
+            DocumentStateEnum.ANONYMIZING,
+            DocumentStateEnum.FAILED,
+        }
+    ),
+    DocumentStateEnum.ANONYMIZING: frozenset(
+        {
+            DocumentStateEnum.ANONYMIZED,
+            DocumentStateEnum.FAILED,
+        }
+    ),
     DocumentStateEnum.ANONYMIZED: frozenset(),  # Terminal state
     DocumentStateEnum.FAILED: frozenset(),  # Terminal state
 }

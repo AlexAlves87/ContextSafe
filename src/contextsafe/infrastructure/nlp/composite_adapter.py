@@ -73,77 +73,72 @@ FALSE_POSITIVE_PATTERNS: List[Pattern] = [
     # =========================================================================
     re.compile(
         r"^(?:FUNDAMENTOS?|ANTECEDENTES?|CONCLUSI[OÓ]N|CONCLUSIONES)\s+(?:DE\s+)?(?:DERECHO|HECHO|HECHOS?)?\s*$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
     re.compile(r"^HECHOS?\s*(?:PRIMERO|SEGUNDO|TERCERO|CUARTO|QUINTO|SEXTO)?\s*$", re.IGNORECASE),
     re.compile(r"^(?:SUPLICO|SOLICITO|PIDO)\s+(?:AL\s+)?(?:JUZGADO|TRIBUNAL)?\s*$", re.IGNORECASE),
     re.compile(r"^(?:AL\s+)?JUZGADO\s*$", re.IGNORECASE),
     re.compile(r"^(?:OTROSI|OTROSÍ)\s+DIGO\s*$", re.IGNORECASE),
-    re.compile(r"^(?:PRIMERO|SEGUNDO|TERCERO|CUARTO|QUINTO|SEXTO|SÉPTIMO|OCTAVO|NOVENO|DÉCIMO)\s*[.:\-]?\s*$", re.IGNORECASE),
-    re.compile(r"^(?:EN\s+)?(?:NOMBRE|REPRESENTACI[OÓ]N)\s+(?:Y\s+)?(?:DE|DEL)?\s*$", re.IGNORECASE),
+    re.compile(
+        r"^(?:PRIMERO|SEGUNDO|TERCERO|CUARTO|QUINTO|SEXTO|SÉPTIMO|OCTAVO|NOVENO|DÉCIMO)\s*[.:\-]?\s*$",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"^(?:EN\s+)?(?:NOMBRE|REPRESENTACI[OÓ]N)\s+(?:Y\s+)?(?:DE|DEL)?\s*$", re.IGNORECASE
+    ),
     re.compile(r"^FALLO\s*$", re.IGNORECASE),
     re.compile(r"^VISTOS?\s*$", re.IGNORECASE),
     re.compile(r"^RESULTANDO\s*$", re.IGNORECASE),
     re.compile(r"^CONSIDERANDO\s*$", re.IGNORECASE),
-
     # Court decisions with variations:
     # "Sentencia 61/2019", "SENTENCIA nº 61/2019", "Sentencia núm. 61/2019"
     re.compile(
-        r"^(?:Sentencia|Auto|Providencia|Decreto)\s*(?:n[úu]m?\.?\s*)?\d+/\d{4}$",
-        re.IGNORECASE
+        r"^(?:Sentencia|Auto|Providencia|Decreto)\s*(?:n[úu]m?\.?\s*)?\d+/\d{4}$", re.IGNORECASE
     ),
     # STS references: "STS 1234/2020", "STSJ 567/2019"
     re.compile(r"^STS[JC]?\s*\d+/\d{4}$", re.IGNORECASE),
     # SAP references: "SAP Madrid 123/2020"
     re.compile(r"^SAP\s+\w+\s+\d+/\d{4}$", re.IGNORECASE),
-
     # Law references with variations:
     # "Ley 39/2015", "L.O. 1/2004", "Ley Orgánica 3/2007"
     re.compile(
         r"^(?:Ley|L\.?O\.?|Ley\s+Org[áa]nica|R\.?D\.?|Real\s+Decreto|RDL|RD-Ley)\s*\d+/\d{4}$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
     # LEC, LECrim, LOPJ references (standalone)
     re.compile(r"^(?:LEC(?:rim)?|LOPJ|CE|CP|CC|ET|LAU|LPH|LSC|TRLSC)\s*$", re.IGNORECASE),
-
     # Article references with variations:
     # "artículo 24", "art. 18.4", "arts. 14 y 15", "artículo 24.2 CE"
     re.compile(
         r"^(?:art[íi]culos?|arts?\.?)\s+\d+(?:\.\d+)?(?:\s+(?:y|a|,)\s+\d+(?:\.\d+)?)*(?:\s+(?:CE|CP|CC|LEC|LOPJ|LAU|ET))?$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
-
     # CRITICAL: Article numbers followed by legal codes - NOT license plates!
     # "1285 CC", "24.2 CE", "371 LEC", "y 1285 CC"
     # This prevents "1285 CC" from being detected as a vehicle plate
     re.compile(
         r"^(?:y\s+)?\d+(?:\.\d+)?\s+(?:CC|CE|CP|LEC|LECrim|LOPJ|ET|LAU|LPH|LSC|TRLSC)$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
-
     # Lists of articles: "1281.1, 1282 y 1285 CC"
     re.compile(
         r"^\d+(?:\.\d+)?(?:\s*,\s*\d+(?:\.\d+)?)*(?:\s+y\s+\d+(?:\.\d+)?)?\s+(?:CC|CE|CP|LEC|LOPJ)$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
-
     # Case/procedure numbers: "61/2019", "Rollo 123/2020", "Recurso 456/2021"
     re.compile(r"^\d+/\d{4}$"),
     re.compile(
         r"^(?:Rollo|Recurso|Procedimiento|Autos|Ejecutoria|Diligencias)\s*(?:n[úu]m?\.?\s*)?\d+/\d{4}$",
-        re.IGNORECASE
+        re.IGNORECASE,
     ),
-
     # NOTE (Corrección #2): Court names pattern REMOVED to allow anonymization
     # of local judicial organs that could enable triangulation.
     # Previously: r"^(?:Juzgado|Audiencia|Tribunal|Sala)\s+(?:de\s+lo\s+)?(?:\w+\s*)+(?:n[úu]m?\.?\s*\d+)?$"
     # Now: Local judicial organs (Juzgado Nº X de Localidad) will be anonymized.
     # Only national-level courts (Tribunal Supremo, Audiencia Nacional) are
     # kept in PUBLIC_INSTITUTIONS for exclusion.
-
     # NIG (Número de Identificación General) - public case identifier
     re.compile(r"^NIG[:\s]*[\d\-]+$", re.IGNORECASE),
-
     # ECLI (European Case Law Identifier)
     re.compile(r"^ECLI:ES:\w+:\d{4}:\d+$", re.IGNORECASE),
 ]
@@ -158,53 +153,143 @@ FALSE_POSITIVE_PATTERNS: List[Pattern] = [
 
 SPANISH_STOPWORDS = {
     # Interrogative/relative pronouns (common problems)
-    "quien", "quién", "quienes", "quiénes",
-    "cual", "cuál", "cuales", "cuáles",
-    "que", "qué",
-    "donde", "dónde", "adonde", "adónde",
-    "cuando", "cuándo",
-    "como", "cómo",
-    "cuanto", "cuánto", "cuanta", "cuánta",
-
+    "quien",
+    "quién",
+    "quienes",
+    "quiénes",
+    "cual",
+    "cuál",
+    "cuales",
+    "cuáles",
+    "que",
+    "qué",
+    "donde",
+    "dónde",
+    "adonde",
+    "adónde",
+    "cuando",
+    "cuándo",
+    "como",
+    "cómo",
+    "cuanto",
+    "cuánto",
+    "cuanta",
+    "cuánta",
     # Personal pronouns
-    "yo", "tu", "tú", "el", "él", "ella", "ello",
-    "nosotros", "nosotras", "vosotros", "vosotras",
-    "ellos", "ellas", "usted", "ustedes",
-
+    "yo",
+    "tu",
+    "tú",
+    "el",
+    "él",
+    "ella",
+    "ello",
+    "nosotros",
+    "nosotras",
+    "vosotros",
+    "vosotras",
+    "ellos",
+    "ellas",
+    "usted",
+    "ustedes",
     # Demonstratives
-    "este", "esta", "esto", "estos", "estas",
-    "ese", "esa", "eso", "esos", "esas",
-    "aquel", "aquella", "aquello", "aquellos", "aquellas",
-
+    "este",
+    "esta",
+    "esto",
+    "estos",
+    "estas",
+    "ese",
+    "esa",
+    "eso",
+    "esos",
+    "esas",
+    "aquel",
+    "aquella",
+    "aquello",
+    "aquellos",
+    "aquellas",
     # Articles (in case they're capitalized)
-    "el", "la", "los", "las", "un", "una", "unos", "unas",
-
+    "el",
+    "la",
+    "los",
+    "las",
+    "un",
+    "una",
+    "unos",
+    "unas",
     # Common connectors
-    "sin embargo", "no obstante", "por tanto", "por lo tanto",
-    "asimismo", "además", "también", "tampoco",
-
+    "sin embargo",
+    "no obstante",
+    "por tanto",
+    "por lo tanto",
+    "asimismo",
+    "además",
+    "también",
+    "tampoco",
     # Common legal words that are NOT PII
-    "demandante", "demandado", "demandada", "actor", "actora",
-    "recurrente", "recurrido", "recurrida", "apelante", "apelado",
-    "querellante", "querellado", "querellada", "denunciante",
-    "denunciado", "denunciada", "ejecutante", "ejecutado", "ejecutada",
-
+    "demandante",
+    "demandado",
+    "demandada",
+    "actor",
+    "actora",
+    "recurrente",
+    "recurrido",
+    "recurrida",
+    "apelante",
+    "apelado",
+    "querellante",
+    "querellado",
+    "querellada",
+    "denunciante",
+    "denunciado",
+    "denunciada",
+    "ejecutante",
+    "ejecutado",
+    "ejecutada",
     # Legal adverbs (often misclassified by RoBERTa as PERSON/ORG)
-    "subsidiariamente", "alternativamente", "conjuntamente",
-    "solidariamente", "mancomunadamente", "expresamente",
-    "tácitamente", "implícitamente", "explícitamente",
-    "parcialmente", "totalmente", "íntegramente",
-
+    "subsidiariamente",
+    "alternativamente",
+    "conjuntamente",
+    "solidariamente",
+    "mancomunadamente",
+    "expresamente",
+    "tácitamente",
+    "implícitamente",
+    "explícitamente",
+    "parcialmente",
+    "totalmente",
+    "íntegramente",
     # Verbs and adverbs misclassified as ORG (audit findings)
-    "terminaba", "finalmente", "inicialmente", "posteriormente",
-    "seguidamente", "inmediatamente", "anteriormente",
+    "terminaba",
+    "finalmente",
+    "inicialmente",
+    "posteriormente",
+    "seguidamente",
+    "inmediatamente",
+    "anteriormente",
 }
 
 # Short common words that should be filtered when detected alone
 COMMON_SHORT_WORDS = {
-    "para", "pero", "sino", "pues", "tras", "ante", "bajo", "cabe",
-    "con", "contra", "desde", "hasta", "hacia", "según", "sin", "sobre",
-    "durante", "mediante", "excepto", "salvo",
+    "para",
+    "pero",
+    "sino",
+    "pues",
+    "tras",
+    "ante",
+    "bajo",
+    "cabe",
+    "con",
+    "contra",
+    "desde",
+    "hasta",
+    "hacia",
+    "según",
+    "sin",
+    "sobre",
+    "durante",
+    "mediante",
+    "excepto",
+    "salvo",
 }
 
 
@@ -214,12 +299,31 @@ COMMON_SHORT_WORDS = {
 # These should ONLY be detected as PLATFORM, never as PERSON_NAME.
 # ============================================================================
 PLATFORM_NAMES_BLOCKLIST = {
-    "whatsapp", "telegram", "signal", "messenger",
-    "instagram", "facebook", "twitter", "tiktok",
-    "linkedin", "snapchat", "discord", "slack",
-    "teams", "skype", "zoom", "wechat", "viber",
-    "wallapop", "vinted", "milanuncios", "idealista",
-    "fotocasa", "infojobs", "imessage", "facetime",
+    "whatsapp",
+    "telegram",
+    "signal",
+    "messenger",
+    "instagram",
+    "facebook",
+    "twitter",
+    "tiktok",
+    "linkedin",
+    "snapchat",
+    "discord",
+    "slack",
+    "teams",
+    "skype",
+    "zoom",
+    "wechat",
+    "viber",
+    "wallapop",
+    "vinted",
+    "milanuncios",
+    "idealista",
+    "fotocasa",
+    "infojobs",
+    "imessage",
+    "facetime",
 }
 
 
@@ -231,20 +335,57 @@ PLATFORM_NAMES_BLOCKLIST = {
 
 GENERIC_TERMS_WHITELIST = {
     # Generic political/institutional terms
-    "estado", "estados", "unión", "union", "nación", "nacion",
-    "parlamento", "consejo", "comisión", "comision",
-    "gobierno", "ministerio", "tribunal", "juzgado",
-    "congreso", "senado", "cortes",
+    "estado",
+    "estados",
+    "unión",
+    "union",
+    "nación",
+    "nacion",
+    "parlamento",
+    "consejo",
+    "comisión",
+    "comision",
+    "gobierno",
+    "ministerio",
+    "tribunal",
+    "juzgado",
+    "congreso",
+    "senado",
+    "cortes",
     # Generic geographic terms
-    "europa", "asia", "africa", "américa", "america",
+    "europa",
+    "asia",
+    "africa",
+    "américa",
+    "america",
     # Acronyms for regulations/documents (not organizations)
-    "ria", "rgpd", "gdpr", "lopd", "lopdgdd",
-    "lec", "lecrim", "lopj", "ce", "cp", "cc", "et",
+    "ria",
+    "rgpd",
+    "gdpr",
+    "lopd",
+    "lopdgdd",
+    "lec",
+    "lecrim",
+    "lopj",
+    "ce",
+    "cp",
+    "cc",
+    "et",
     # Common words incorrectly detected as entities
-    "conducta", "proceso", "principios", "reglamento",
-    "directiva", "sentencia", "auto", "decreto",
+    "conducta",
+    "proceso",
+    "principios",
+    "reglamento",
+    "directiva",
+    "sentencia",
+    "auto",
+    "decreto",
     # English equivalents (for bilingual documents)
-    "states", "union", "parliament", "council", "commission",
+    "states",
+    "union",
+    "parliament",
+    "council",
+    "commission",
 }
 
 
@@ -259,16 +400,13 @@ CONTEXT_EXCLUSION_PATTERNS: List[Pattern] = [
     # Format: 10.XXXXX/... - the numeric part is NOT a postal code
     re.compile(r"(?:https?://)?(?:dx\.)?doi\.org/10\.\d+/[^\s]+", re.IGNORECASE),
     re.compile(r"doi:\s*10\.\d+/[^\s]+", re.IGNORECASE),
-
     # ORCID - Open Researcher and Contributor ID
     # Format: 0000-0000-0000-000X - NOT a credit card number
     re.compile(r"(?:https?://)?orcid\.org/\d{4}-\d{4}-\d{4}-\d{3}[0-9X]", re.IGNORECASE),
     re.compile(r"orcid:\s*\d{4}-\d{4}-\d{4}-\d{3}[0-9X]", re.IGNORECASE),
-
     # ISSN/ISBN - Publication identifiers, not PII
     re.compile(r"ISSN\s*:?\s*\d{4}-\d{3}[0-9X]", re.IGNORECASE),
     re.compile(r"ISBN\s*:?\s*[\d\-]{10,17}", re.IGNORECASE),
-
     # URLs - Numbers in URLs are not PII
     re.compile(r"https?://[^\s]+", re.IGNORECASE),
 ]
@@ -325,8 +463,7 @@ STRUCTURAL_CASE_NUMBER_PATTERNS: list[re.Pattern] = [
 # 2. "Audiencia Provincial de" (no number needed)
 JUDICIAL_LOCATION_CONTEXT: list[re.Pattern] = [
     re.compile(
-        r"(?:juzgado|sala)\s+.*?"
-        r"n[ºúu]m?\.?\s*\d+\s+(?:de|DE)\s*$",
+        r"(?:juzgado|sala)\s+.*?" r"n[ºúu]m?\.?\s*\d+\s+(?:de|DE)\s*$",
         re.IGNORECASE | re.DOTALL,
     ),
     re.compile(
@@ -343,12 +480,35 @@ JUDICIAL_LOCATION_CONTEXT: list[re.Pattern] = [
 # ============================================================================
 
 # Whitelist: 1-word ORGs that are always valid (F2)
-_ORG_WHITELIST_1WORD = frozenset({
-    "ETA", "TEDH", "CNI", "CESID", "NATO", "OTAN", "ONU", "UE",
-    "UNESCO", "UNICEF", "EUROPOL", "INTERPOL", "FRONTEX",
-    "Batasuna", "Sortu", "Bildu", "Podemos", "Ciudadanos", "Vox",
-    "TSJ", "CGPJ", "BOE", "BOCG", "TSJC", "TSJPV",
-})
+_ORG_WHITELIST_1WORD = frozenset(
+    {
+        "ETA",
+        "TEDH",
+        "CNI",
+        "CESID",
+        "NATO",
+        "OTAN",
+        "ONU",
+        "UE",
+        "UNESCO",
+        "UNICEF",
+        "EUROPOL",
+        "INTERPOL",
+        "FRONTEX",
+        "Batasuna",
+        "Sortu",
+        "Bildu",
+        "Podemos",
+        "Ciudadanos",
+        "Vox",
+        "TSJ",
+        "CGPJ",
+        "BOE",
+        "BOCG",
+        "TSJC",
+        "TSJPV",
+    }
+)
 
 
 class CompositeNerAdapter(NerService):
@@ -428,7 +588,7 @@ class CompositeNerAdapter(NerService):
         # Track progress across adapters
         # RoBERTa gets 0-80%, Regex gets 80-90%, Merge gets 90-100%
         adapter_ranges = [
-            (0, 80),   # First adapter (usually RoBERTa - slow)
+            (0, 80),  # First adapter (usually RoBERTa - slow)
             (80, 90),  # Second adapter (usually Regex - fast)
         ]
 
@@ -470,7 +630,7 @@ class CompositeNerAdapter(NerService):
         # Run ALL adapters in PARALLEL using asyncio.gather
         results = await asyncio.gather(
             *[run_adapter(i, adapter) for i, adapter in enumerate(self._adapters)],
-            return_exceptions=True
+            return_exceptions=True,
         )
 
         # Report merge phase
@@ -538,9 +698,7 @@ class CompositeNerAdapter(NerService):
 
         # Step 3: Filter contextual false positives (DOI, ORCID, URLs) (FP-2, FP-3)
         if text:
-            filtered_detections = self._filter_contextual_false_positives(
-                filtered_detections, text
-            )
+            filtered_detections = self._filter_contextual_false_positives(filtered_detections, text)
 
         # Step 4: Filter year+footnote false positives (FP-1)
         if text:
@@ -644,9 +802,7 @@ class CompositeNerAdapter(NerService):
 
         return groups
 
-    def _resolve_by_voting(
-        self, detections: list[NerDetection]
-    ) -> NerDetection:
+    def _resolve_by_voting(self, detections: list[NerDetection]) -> NerDetection:
         """
         Resolve multiple overlapping detections using weighted voting.
 
@@ -677,7 +833,7 @@ class CompositeNerAdapter(NerService):
             candidates,
             key=lambda d: (
                 d.span.end - d.span.start,  # Longer span
-                get_weighted_score(d),       # Higher weighted score
+                get_weighted_score(d),  # Higher weighted score
             ),
         )
 
@@ -734,7 +890,7 @@ class CompositeNerAdapter(NerService):
             # a judicial organ + number pattern, reclassify as LOCATION
             if det.category == ORGANIZATION and text:
                 context_start = max(0, det.span.start - 120)
-                context_before = text[context_start:det.span.start]
+                context_before = text[context_start : det.span.start]
                 if any(p.search(context_before) for p in JUDICIAL_LOCATION_CONTEXT):
                     det = det.with_category(_location)
 
@@ -769,7 +925,7 @@ class CompositeNerAdapter(NerService):
             Detections with boosted confidence for coreferenced names
         """
         _title_re = re.compile(
-            r'^(?:D\.|Dña\.|D\.ª|Dª\.?|Don|Doña|Sr\.|Sra\.)\s*',
+            r"^(?:D\.|Dña\.|D\.ª|Dª\.?|Don|Doña|Sr\.|Sra\.)\s*",
             re.IGNORECASE,
         )
 
@@ -778,7 +934,7 @@ class CompositeNerAdapter(NerService):
         for det in detections:
             if det.category != PERSON_NAME or det.confidence.value < 0.90:
                 continue
-            clean = _title_re.sub('', det.value).strip()
+            clean = _title_re.sub("", det.value).strip()
             if not clean:
                 continue
             first_name = clean.split()[0]
@@ -796,21 +952,21 @@ class CompositeNerAdapter(NerService):
                 and det.confidence.value < 0.75
                 and det.value.strip().upper() in confirmed_first_names
             ):
-                boosted.append(NerDetection(
-                    category=det.category,
-                    value=det.value,
-                    span=det.span,
-                    confidence=ConfidenceScore(0.85),
-                    source=det.source,
-                ))
+                boosted.append(
+                    NerDetection(
+                        category=det.category,
+                        value=det.value,
+                        span=det.span,
+                        confidence=ConfidenceScore(0.85),
+                        source=det.source,
+                    )
+                )
             else:
                 boosted.append(det)
 
         return boosted
 
-    def _filter_nested_entities(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _filter_nested_entities(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Remove nested (Matrioshka) entities.
 
@@ -832,10 +988,7 @@ class CompositeNerAdapter(NerService):
             return detections
 
         # Sort by span length (longest first) to process larger entities first
-        sorted_by_length = sorted(
-            detections,
-            key=lambda d: -(d.span.end - d.span.start)
-        )
+        sorted_by_length = sorted(detections, key=lambda d: -(d.span.end - d.span.start))
 
         kept: list[NerDetection] = []
 
@@ -869,15 +1022,14 @@ class CompositeNerAdapter(NerService):
             True if small is fully within large
         """
         return (
-            large.span.start <= small.span.start and
-            small.span.end <= large.span.end and
+            large.span.start <= small.span.start
+            and small.span.end <= large.span.end
+            and
             # Make sure they're not identical
             not (large.span.start == small.span.start and large.span.end == small.span.end)
         )
 
-    def _are_compatible_categories(
-        self, cat1: PiiCategory, cat2: PiiCategory
-    ) -> bool:
+    def _are_compatible_categories(self, cat1: PiiCategory, cat2: PiiCategory) -> bool:
         """
         Check if two categories are compatible for nested entity filtering.
 
@@ -912,9 +1064,7 @@ class CompositeNerAdapter(NerService):
 
         return False
 
-    def _filter_false_positives(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _filter_false_positives(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Filter out false positive detections.
 
@@ -946,9 +1096,7 @@ class CompositeNerAdapter(NerService):
 
         return filtered
 
-    def _filter_stopwords(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _filter_stopwords(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Filter out detections that are stopwords or generic terms.
 
@@ -1009,9 +1157,7 @@ class CompositeNerAdapter(NerService):
 
         return filtered
 
-    def _filter_ner_garbage(
-        self, detections: list[NerDetection]
-    ) -> list[NerDetection]:
+    def _filter_ner_garbage(self, detections: list[NerDetection]) -> list[NerDetection]:
         """
         Filter NER garbage detections from RoBERTa.
 
@@ -1050,8 +1196,10 @@ class CompositeNerAdapter(NerService):
 
             # F3: starts with quote or ends with truncated preposition
             if (
-                text_s.startswith('"') or text_s.startswith("'")
-                or text_s.endswith(" de") or text_s.endswith(" del")
+                text_s.startswith('"')
+                or text_s.startswith("'")
+                or text_s.endswith(" de")
+                or text_s.endswith(" del")
                 or text_s.endswith(" de la")
             ):
                 continue
@@ -1265,9 +1413,7 @@ class CompositeNerAdapter(NerService):
                 if isinstance(category_result, Ok):
                     det = det.with_category(category_result.value)
                 else:
-                    logger.warning(
-                        f"Invalid reclassification target: {result.validated_type}"
-                    )
+                    logger.warning(f"Invalid reclassification target: {result.validated_type}")
 
             elif result.action == ValidationAction.FLAG_HITL:
                 logger.info(
@@ -1318,8 +1464,7 @@ class CompositeNerAdapter(NerService):
         """Check if at least one adapter is available."""
         # Check all adapters in parallel
         results = await asyncio.gather(
-            *[adapter.is_available() for adapter in self._adapters],
-            return_exceptions=True
+            *[adapter.is_available() for adapter in self._adapters], return_exceptions=True
         )
         return any(r is True for r in results)
 
@@ -1327,8 +1472,7 @@ class CompositeNerAdapter(NerService):
         """Get information about all adapters."""
         # Get info from all adapters in parallel
         results = await asyncio.gather(
-            *[adapter.get_model_info() for adapter in self._adapters],
-            return_exceptions=True
+            *[adapter.get_model_info() for adapter in self._adapters], return_exceptions=True
         )
 
         adapter_infos = []

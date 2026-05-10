@@ -101,7 +101,7 @@ class TestAliasGeneration:
         alias_email = await adapter.get_or_create_alias("EMAIL", "c@d.com", project_id)
 
         assert alias_name == "Persona_002"  # Second person
-        assert alias_email == "Email_002"   # Second email
+        assert alias_email == "Email_002"  # Second email
 
     @pytest.mark.asyncio
     async def test_separate_glossaries_per_project(self, adapter):
@@ -129,8 +129,9 @@ class TestAliasGeneration:
                 original_value=f"test_{category}",
                 project_id=project_id,
             )
-            assert alias.startswith(expected_prefix + "_"), \
-                f"Category {category} should start with {expected_prefix}_"
+            assert alias.startswith(
+                expected_prefix + "_"
+            ), f"Category {category} should start with {expected_prefix}_"
 
     @pytest.mark.asyncio
     async def test_unknown_category_uses_abbreviation(self, adapter, project_id):

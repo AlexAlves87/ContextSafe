@@ -6,4 +6,3 @@ from contextsafe.application.use_cases.ingest_document.ingest_document import (
 )
 
 __all__ = ["IngestDocument", "IngestDocumentRequest", "IngestDocumentResponse"]
-

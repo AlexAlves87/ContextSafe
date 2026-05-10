@@ -142,9 +142,7 @@ class Glossary(AggregateRoot[ProjectId]):
 
         return Ok(alias)
 
-    def find_alias(
-        self, normalized_value: str, category: PiiCategory
-    ) -> Optional[Alias]:
+    def find_alias(self, normalized_value: str, category: PiiCategory) -> Optional[Alias]:
         """
         Find existing alias for a value.
 
@@ -195,8 +193,7 @@ class Glossary(AggregateRoot[ProjectId]):
         if mapping is None:
             return Err(
                 GlossaryError(
-                    f"No mapping found for term '{original_term}' "
-                    f"in category '{category}'"
+                    f"No mapping found for term '{original_term}' " f"in category '{category}'"
                 )
             )
 
@@ -247,9 +244,7 @@ class Glossary(AggregateRoot[ProjectId]):
         """
         return self._values_by_alias.get(alias_value)
 
-    def _generate_next_alias(
-        self, category: PiiCategory
-    ) -> Result[Alias, GlossaryError]:
+    def _generate_next_alias(self, category: PiiCategory) -> Result[Alias, GlossaryError]:
         """
         Generate the next sequential alias for a category.
 
@@ -285,14 +280,9 @@ class Glossary(AggregateRoot[ProjectId]):
         """Get all mappings."""
         return list(self._mappings_by_value.values())
 
-    def get_mappings_by_category(
-        self, category: PiiCategory
-    ) -> List[AliasMapping]:
+    def get_mappings_by_category(self, category: PiiCategory) -> List[AliasMapping]:
         """Get all mappings for a category."""
-        return [
-            m for m in self._mappings_by_value.values()
-            if m.category == category
-        ]
+        return [m for m in self._mappings_by_value.values() if m.category == category]
 
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary for persistence."""

@@ -4,4 +4,3 @@ from contextsafe.domain.document_processing.aggregates.document_aggregate import
 )
 
 __all__ = ["DocumentAggregate"]
-

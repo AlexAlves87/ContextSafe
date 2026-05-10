@@ -126,22 +126,22 @@ class OllamaNerAdapter(NerService):
 
         if payload:
             # Write JSON to temp file to avoid escaping issues
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False, encoding='utf-8') as f:
+            with tempfile.NamedTemporaryFile(
+                mode="w", suffix=".json", delete=False, encoding="utf-8"
+            ) as f:
                 json.dump(payload, f, ensure_ascii=False)
                 temp_path = f.name
 
             # Convert WSL path to Windows path
             win_path = subprocess.run(
-                ["wslpath", "-w", temp_path],
-                capture_output=True,
-                text=True
+                ["wslpath", "-w", temp_path], capture_output=True, text=True
             ).stdout.strip()
 
-            ps_cmd = f'''
+            ps_cmd = f"""
             $body = Get-Content -Raw -Encoding UTF8 "{win_path}"
             $response = Invoke-WebRequest -Uri "{url}" -Method POST -Body $body -ContentType "application/json; charset=utf-8" -UseBasicParsing
             $response.Content
-            '''
+            """
 
             try:
                 result = subprocess.run(
@@ -153,10 +153,10 @@ class OllamaNerAdapter(NerService):
                 os.unlink(temp_path)
         else:
             # GET request
-            ps_cmd = f'''
+            ps_cmd = f"""
             $response = Invoke-WebRequest -Uri "{url}" -UseBasicParsing
             $response.Content
-            '''
+            """
             result = subprocess.run(
                 ["powershell.exe", "-Command", ps_cmd],
                 capture_output=True,
@@ -164,17 +164,19 @@ class OllamaNerAdapter(NerService):
             )
 
         if result.returncode != 0:
-            raise RuntimeError(f"PowerShell error: {result.stderr.decode('utf-8', errors='replace')}")
+            raise RuntimeError(
+                f"PowerShell error: {result.stderr.decode('utf-8', errors='replace')}"
+            )
 
         # Handle Windows encoding (UTF-8 with BOM or CP1252)
         stdout = result.stdout
         try:
-            return stdout.decode('utf-8').strip()
+            return stdout.decode("utf-8").strip()
         except UnicodeDecodeError:
             try:
-                return stdout.decode('utf-8-sig').strip()
+                return stdout.decode("utf-8-sig").strip()
             except UnicodeDecodeError:
-                return stdout.decode('cp1252', errors='replace').strip()
+                return stdout.decode("cp1252", errors="replace").strip()
 
     async def _call_ollama(self, prompt: str) -> str:
         """Call Ollama API with the given prompt."""
@@ -222,9 +224,7 @@ class OllamaNerAdapter(NerService):
         except json.JSONDecodeError:
             return []
 
-    def _validate_entity(
-        self, entity: dict[str, Any], original_text: str
-    ) -> dict[str, Any] | None:
+    def _validate_entity(self, entity: dict[str, Any], original_text: str) -> dict[str, Any] | None:
         """Validate and correct entity positions."""
         text = entity.get("text", "")
         category = entity.get("category", "")
@@ -351,9 +351,7 @@ class OllamaNerAdapter(NerService):
             chunk = text[pos:chunk_end]
 
             # Detect in chunk
-            chunk_detections = await self.detect_entities(
-                chunk, categories, min_confidence
-            )
+            chunk_detections = await self.detect_entities(chunk, categories, min_confidence)
 
             # Adjust positions and deduplicate
             for detection in chunk_detections:
@@ -366,9 +364,7 @@ class OllamaNerAdapter(NerService):
                 seen_spans.add(span_key)
 
                 # Create new detection with adjusted span
-                span_result = TextSpan.create(
-                    adjusted_start, adjusted_end, detection.value
-                )
+                span_result = TextSpan.create(adjusted_start, adjusted_end, detection.value)
                 if span_result.is_ok():
                     all_detections.append(
                         NerDetection(

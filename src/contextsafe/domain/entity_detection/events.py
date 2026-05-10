@@ -79,21 +79,23 @@ class EntityReviewed(DomainEvent):
 
     def to_dict(self) -> Dict[str, Any]:
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "entity_id": self.entity_id,
-            "category": self.category,
-            "original_value": self.original_value,
-            "confidence": self.confidence,
-            "zone": self.zone,
-            "action": self.action,
-            "correction_applied": self.correction_applied,
-            "new_category": self.new_category,
-            "new_value": self.new_value,
-            "user_session_id": self.user_session_id,
-            "review_time_ms": self.review_time_ms,
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "entity_id": self.entity_id,
+                "category": self.category,
+                "original_value": self.original_value,
+                "confidence": self.confidence,
+                "zone": self.zone,
+                "action": self.action,
+                "correction_applied": self.correction_applied,
+                "new_category": self.new_category,
+                "new_value": self.new_value,
+                "user_session_id": self.user_session_id,
+                "review_time_ms": self.review_time_ms,
+            }
+        )
         return base
 
 
@@ -131,13 +133,15 @@ class BatchReviewCompleted(DomainEvent):
 
     def to_dict(self) -> Dict[str, Any]:
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "entity_count": self.entity_count,
-            "zone": self.zone,
-            "user_session_id": self.user_session_id,
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "entity_count": self.entity_count,
+                "zone": self.zone,
+                "user_session_id": self.user_session_id,
+            }
+        )
         return base
 
 
@@ -188,15 +192,17 @@ class ExportAttempted(DomainEvent):
 
     def to_dict(self) -> Dict[str, Any]:
         base = super().to_dict()
-        base.update({
-            "document_id": self.document_id,
-            "project_id": self.project_id,
-            "user_session_id": self.user_session_id,
-            "allowed": self.allowed,
-            "blocked_reason": self.blocked_reason,
-            "pending_reviews": self.pending_reviews,
-            "total_entities": self.total_entities,
-            "reviewed_entities": self.reviewed_entities,
-            "validation_failures": list(self.validation_failures),
-        })
+        base.update(
+            {
+                "document_id": self.document_id,
+                "project_id": self.project_id,
+                "user_session_id": self.user_session_id,
+                "allowed": self.allowed,
+                "blocked_reason": self.blocked_reason,
+                "pending_reviews": self.pending_reviews,
+                "total_entities": self.total_entities,
+                "reviewed_entities": self.reviewed_entities,
+                "validation_failures": list(self.validation_failures),
+            }
+        )
         return base

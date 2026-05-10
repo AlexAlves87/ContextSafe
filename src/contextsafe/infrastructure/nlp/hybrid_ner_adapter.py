@@ -85,21 +85,15 @@ class HybridNerAdapter(NerService):
         llm_detections: list[NerDetection] = []
         if llm_available:
             try:
-                llm_detections = await self._llm.detect_entities(
-                    text, categories, min_confidence
-                )
+                llm_detections = await self._llm.detect_entities(text, categories, min_confidence)
             except Exception as e:
                 print(f"[HybridNER] LLM detection failed: {e}")
 
         # Always run Presidio as fallback/enhancement
-        presidio_detections = await self._presidio.detect_entities(
-            text, categories, min_confidence
-        )
+        presidio_detections = await self._presidio.detect_entities(text, categories, min_confidence)
 
         # Merge results
-        merged = self._merge_detections(
-            llm_detections, presidio_detections, text
-        )
+        merged = self._merge_detections(llm_detections, presidio_detections, text)
 
         # Apply minimum confidence filter
         return [d for d in merged if d.confidence.value >= min_confidence]
@@ -148,9 +142,7 @@ class HybridNerAdapter(NerService):
                 # Same span, check if same category
                 if existing.category == det.category:
                     # Both agree! Boost confidence
-                    boosted_conf = min(
-                        max(existing.confidence.value, adjusted_conf) + 0.1, 1.0
-                    )
+                    boosted_conf = min(max(existing.confidence.value, adjusted_conf) + 0.1, 1.0)
                     conf_result = ConfidenceScore.create(boosted_conf)
                     if conf_result.is_ok():
                         used_spans[span_key] = NerDetection(

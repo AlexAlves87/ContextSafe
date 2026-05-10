@@ -83,8 +83,15 @@ async def create_document(
     # Determine format from filename
     filename = file.filename or "unknown"
     ext = filename.rsplit(".", 1)[-1].lower() if "." in filename else "txt"
-    format_map = {"pdf": "pdf", "docx": "docx", "doc": "docx", "txt": "txt",
-                  "png": "image", "jpg": "image", "jpeg": "image"}
+    format_map = {
+        "pdf": "pdf",
+        "docx": "docx",
+        "doc": "docx",
+        "txt": "txt",
+        "png": "image",
+        "jpg": "image",
+        "jpeg": "image",
+    }
     doc_format = format_map.get(ext, "txt")
 
     # Extract text from document using the container's text extractor
@@ -92,6 +99,7 @@ async def create_document(
     page_count = 1
     try:
         from contextsafe.api.dependencies import get_text_extractor
+
         extractor = get_text_extractor()
         result = await extractor.extract(content, filename)
         if result.text.strip():
@@ -160,20 +168,22 @@ async def get_document(document_id: UUID, request: Request) -> ApiResponse[dict]
         )
 
     # Return full document info including progress for polling
-    return ApiResponse(data={
-        "id": doc.id,
-        "projectId": doc.project_id,
-        "filename": doc.filename,
-        "format": doc.format,
-        "state": doc.state,
-        "progress": doc.progress,
-        "currentEntity": doc.current_entity,
-        "pageCount": doc.page_count,
-        "entityCount": doc.entity_count,
-        "expiresInSeconds": None,
-        "createdAt": doc.created_at.isoformat(),
-        "textContent": doc.content or "",
-    })
+    return ApiResponse(
+        data={
+            "id": doc.id,
+            "projectId": doc.project_id,
+            "filename": doc.filename,
+            "format": doc.format,
+            "state": doc.state,
+            "progress": doc.progress,
+            "currentEntity": doc.current_entity,
+            "pageCount": doc.page_count,
+            "entityCount": doc.entity_count,
+            "expiresInSeconds": None,
+            "createdAt": doc.created_at.isoformat(),
+            "textContent": doc.content or "",
+        }
+    )
 
 
 @router.delete(
@@ -246,15 +256,19 @@ async def get_anonymized(document_id: UUID, request: Request) -> ApiResponse[dic
 
     if not doc.anonymized:
         # Return original if not yet processed
-        return ApiResponse(data={
-            "originalText": doc.content or "",
-            "anonymizedText": doc.content or "",
-        })
+        return ApiResponse(
+            data={
+                "originalText": doc.content or "",
+                "anonymizedText": doc.content or "",
+            }
+        )
 
-    return ApiResponse(data={
-        "originalText": doc.anonymized.get("original", ""),
-        "anonymizedText": doc.anonymized.get("anonymized", ""),
-    })
+    return ApiResponse(
+        data={
+            "originalText": doc.anonymized.get("original", ""),
+            "anonymizedText": doc.anonymized.get("anonymized", ""),
+        }
+    )
 
 
 @router.post(
@@ -305,12 +319,14 @@ async def process_document(
     task = asyncio.create_task(_process_document_real(doc_id_str, project_id, session_id))
     _processing_tasks[doc_id_str] = task
 
-    return ApiResponse(data={
-        "documentId": doc_id_str,
-        "status": "processing_started",
-        "state": "ingesting",
-        "message": f"Document processing has been initiated with level {level or 'default'}",
-    })
+    return ApiResponse(
+        data={
+            "documentId": doc_id_str,
+            "status": "processing_started",
+            "state": "ingesting",
+            "message": f"Document processing has been initiated with level {level or 'default'}",
+        }
+    )
 
 
 @router.post(
@@ -353,13 +369,15 @@ async def batch_process_documents(
         _processing_tasks[doc_id] = task
         started.append(doc_id)
 
-    return ApiResponse(data={
-        "started": started,
-        "skipped": skipped,
-        "not_found": not_found,
-        "total_started": len(started),
-        "message": f"Batch processing started for {len(started)} documents",
-    })
+    return ApiResponse(
+        data={
+            "started": started,
+            "skipped": skipped,
+            "not_found": not_found,
+            "total_started": len(started),
+            "message": f"Batch processing started for {len(started)} documents",
+        }
+    )
 
 
 @router.post(
@@ -392,10 +410,7 @@ async def process_all_project_documents(project_id: UUID, request: Request) -> A
         raise HTTPException(status_code=401, detail="Session not found")
 
     project_docs = session.get_project_documents(project_id_str)
-    pending_docs = [
-        doc for doc in project_docs.values()
-        if doc.state in ["pending", "error"]
-    ]
+    pending_docs = [doc for doc in project_docs.values() if doc.state in ["pending", "error"]]
 
     started = []
     for doc in pending_docs:
@@ -404,13 +419,15 @@ async def process_all_project_documents(project_id: UUID, request: Request) -> A
             _processing_tasks[doc.id] = task
             started.append(doc.id)
 
-    return ApiResponse(data={
-        "project_id": project_id_str,
-        "started": started,
-        "total_started": len(started),
-        "total_pending": len(pending_docs),
-        "message": f"Started processing {len(started)} documents",
-    })
+    return ApiResponse(
+        data={
+            "project_id": project_id_str,
+            "started": started,
+            "total_started": len(started),
+            "total_pending": len(pending_docs),
+            "message": f"Started processing {len(started)} documents",
+        }
+    )
 
 
 @router.post(
@@ -444,11 +461,13 @@ async def validate_document_pii(
         )
 
     if not doc.anonymized:
-        return ApiResponse(data={
-            "valid": False,
-            "status": "NOT_ANONYMIZED",
-            "message": "El documento no ha sido anonimizado. Procese el documento primero.",
-        })
+        return ApiResponse(
+            data={
+                "valid": False,
+                "status": "NOT_ANONYMIZED",
+                "message": "El documento no ha sido anonimizado. Procese el documento primero.",
+            }
+        )
 
     # Import and run validation
     from contextsafe.api.services.pii_validation import validate_no_critical_pii
@@ -460,28 +479,32 @@ async def validate_document_pii(
         critical = [m for m in pii_matches if m.severity == "CRITICAL"]
         high = [m for m in pii_matches if m.severity == "HIGH"]
 
-        return ApiResponse(data={
-            "valid": False,
-            "status": "PII_DETECTED",
-            "message": f"Se detectaron {len(pii_matches)} datos personales sin anonimizar",
-            "critical_count": len(critical),
-            "high_count": len(high),
-            "details": [
-                {
-                    "category": m.category,
-                    "value": m.value[:3] + "***" if len(m.value) > 3 else "***",
-                    "severity": m.severity,
-                }
-                for m in pii_matches[:10]
-            ],
-            "recommendation": "Reprocese el documento con la detección NER actualizada.",
-        })
+        return ApiResponse(
+            data={
+                "valid": False,
+                "status": "PII_DETECTED",
+                "message": f"Se detectaron {len(pii_matches)} datos personales sin anonimizar",
+                "critical_count": len(critical),
+                "high_count": len(high),
+                "details": [
+                    {
+                        "category": m.category,
+                        "value": m.value[:3] + "***" if len(m.value) > 3 else "***",
+                        "severity": m.severity,
+                    }
+                    for m in pii_matches[:10]
+                ],
+                "recommendation": "Reprocese el documento con la detección NER actualizada.",
+            }
+        )
 
-    return ApiResponse(data={
-        "valid": True,
-        "status": "SAFE_TO_EXPORT",
-        "message": "El documento está correctamente anonimizado y es seguro exportar.",
-    })
+    return ApiResponse(
+        data={
+            "valid": True,
+            "status": "SAFE_TO_EXPORT",
+            "message": "El documento está correctamente anonimizado y es seguro exportar.",
+        }
+    )
 
 
 @router.post(
@@ -540,20 +563,26 @@ async def export_document(
 
     if format == "pdf":
         from contextsafe.api.routes.export import _generate_pdf_content
+
         pdf_bytes = _generate_pdf_content(text_content, title)
         return StreamingResponse(
             iter([pdf_bytes]),
             media_type="application/pdf",
-            headers={"Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.pdf"'},
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.pdf"'
+            },
         )
 
     elif format == "docx":
         from contextsafe.api.routes.export import _generate_docx_content
+
         docx_bytes = _generate_docx_content(text_content, title)
         return StreamingResponse(
             iter([docx_bytes]),
             media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-            headers={"Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.docx"'},
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.docx"'
+            },
         )
 
     else:
@@ -561,7 +590,9 @@ async def export_document(
         return StreamingResponse(
             iter([text_content.encode("utf-8")]),
             media_type="text/plain",
-            headers={"Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.txt"'},
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename_base}_anonimizado.txt"'
+            },
         )
 
 
@@ -572,6 +603,7 @@ async def export_document(
 # ============================================================================
 # ENTITY REVIEW (HITL - Human In The Loop)
 # ============================================================================
+
 
 @router.post(
     "/{document_id}/entities/{entity_id}/review",
@@ -684,15 +716,17 @@ async def review_entity(
                         # Remove old glossary entry for this alias
                         glossary = [g for g in glossary if g.get("alias") != old_alias]
                         # Add new entry
-                        glossary.append({
-                            "id": str(uuid4()),
-                            "original_text": entity["original_text"],
-                            "alias": new_alias,
-                            "category": new_cat_upper,
-                            "occurrences": 1,
-                            "created_at": datetime.utcnow().isoformat(),
-                            "reversible": True,
-                        })
+                        glossary.append(
+                            {
+                                "id": str(uuid4()),
+                                "original_text": entity["original_text"],
+                                "alias": new_alias,
+                                "category": new_cat_upper,
+                                "occurrences": 1,
+                                "created_at": datetime.utcnow().isoformat(),
+                                "reversible": True,
+                            }
+                        )
                         session_manager.set_glossary(session_id, project_id, glossary)
 
                     # Update anonymized text: replace old alias with new alias
@@ -832,11 +866,13 @@ async def batch_review_entities(
         "progress": round(reviewed / total * 100, 1) if total > 0 else 100,
     }
 
-    return ApiResponse(data={
-        "entitiesApproved": entities_approved,
-        "zone": zone,
-        "reviewSummary": review_summary,
-    })
+    return ApiResponse(
+        data={
+            "entitiesApproved": entities_approved,
+            "zone": zone,
+            "reviewSummary": review_summary,
+        }
+    )
 
 
 # ============================================================================
@@ -885,6 +921,7 @@ async def list_pii_categories() -> ApiResponse[list]:
 # ============================================================================
 # MANUAL ANONYMIZATION
 # ============================================================================
+
 
 @router.post(
     "/{document_id}/anonymize-selection",
@@ -939,7 +976,9 @@ async def anonymize_selection(
 
     # Get anonymization level from project
     project_data = session_manager.get_project(session_id, project_id)
-    anonymization_level = (project_data.get("anonymization_level", "INTERMEDIATE") if project_data else "INTERMEDIATE").upper()
+    anonymization_level = (
+        project_data.get("anonymization_level", "INTERMEDIATE") if project_data else "INTERMEDIATE"
+    ).upper()
     is_masking_level = anonymization_level == "BASIC"
 
     # Normalize category
@@ -947,10 +986,21 @@ async def anonymize_selection(
 
     # Valid categories
     valid_categories = {
-        "PERSON_NAME", "ORGANIZATION", "ADDRESS", "POSTAL_CODE",
-        "DNI_NIE", "PASSPORT", "PHONE", "EMAIL", "BANK_ACCOUNT",
-        "CREDIT_CARD", "DATE", "MEDICAL_RECORD", "LICENSE_PLATE",
-        "SOCIAL_SECURITY", "OTHER"
+        "PERSON_NAME",
+        "ORGANIZATION",
+        "ADDRESS",
+        "POSTAL_CODE",
+        "DNI_NIE",
+        "PASSPORT",
+        "PHONE",
+        "EMAIL",
+        "BANK_ACCOUNT",
+        "CREDIT_CARD",
+        "DATE",
+        "MEDICAL_RECORD",
+        "LICENSE_PLATE",
+        "SOCIAL_SECURITY",
+        "OTHER",
     }
 
     if category_upper not in valid_categories:
@@ -964,8 +1014,7 @@ async def anonymize_selection(
 
     # Check if text is already in glossary
     existing = next(
-        (e for e in glossary if e.get("original_text", "").lower() == text.lower()),
-        None
+        (e for e in glossary if e.get("original_text", "").lower() == text.lower()), None
     )
 
     if existing:
@@ -1002,25 +1051,28 @@ async def anonymize_selection(
             }.get(category_upper, "Dato")
 
             existing_count = sum(
-                1 for e in glossary
-                if e.get("category", "").upper() == category_upper
+                1 for e in glossary if e.get("category", "").upper() == category_upper
             )
             generated_alias = f"{category_prefix}_{existing_count + 1:03d}"
         else:
             generated_alias = alias
 
         # Add to glossary
-        session_manager.add_glossary_entry(session_id, project_id, {
-            "id": str(uuid4()),
-            "original_text": text,
-            "alias": generated_alias,
-            "category": category_upper,
-            "occurrences": original_text.count(text),
-            "created_at": datetime.utcnow().isoformat(),
-            "manual": True,  # Mark as manually added
-            "reversible": not is_masking_level,  # BASIC is not reversible
-            "masking_level": anonymization_level,
-        })
+        session_manager.add_glossary_entry(
+            session_id,
+            project_id,
+            {
+                "id": str(uuid4()),
+                "original_text": text,
+                "alias": generated_alias,
+                "category": category_upper,
+                "occurrences": original_text.count(text),
+                "created_at": datetime.utcnow().isoformat(),
+                "manual": True,  # Mark as manually added
+                "reversible": not is_masking_level,  # BASIC is not reversible
+                "masking_level": anonymization_level,
+            },
+        )
 
     # Regenerate anonymized text for this document
     anonymized_text = original_text
@@ -1043,16 +1095,19 @@ async def anonymize_selection(
 
     # Update anonymized content in session
     session_manager.update_document(
-        session_id, doc_id_str,
-        anonymized={"original": original_text, "anonymized": anonymized_text}
+        session_id,
+        doc_id_str,
+        anonymized={"original": original_text, "anonymized": anonymized_text},
     )
 
-    return ApiResponse(data={
-        "success": True,
-        "text": text,
-        "alias": generated_alias,
-        "category": category_upper,
-        "document_id": doc_id_str,
-        "anonymized_text": anonymized_text,
-        "message": f"'{text}' anonimizado como '{generated_alias}'",
-    })
+    return ApiResponse(
+        data={
+            "success": True,
+            "text": text,
+            "alias": generated_alias,
+            "category": category_upper,
+            "document_id": doc_id_str,
+            "anonymized_text": anonymized_text,
+            "message": f"'{text}' anonimizado como '{generated_alias}'",
+        }
+    )

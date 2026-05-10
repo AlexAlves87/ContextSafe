@@ -174,12 +174,20 @@ class BatchJob(Entity[EntityId]):
     @property
     def is_active(self) -> bool:
         """Check if job is still active."""
-        return self.status in {BatchJobStatus.PENDING, BatchJobStatus.RUNNING, BatchJobStatus.PAUSED}
+        return self.status in {
+            BatchJobStatus.PENDING,
+            BatchJobStatus.RUNNING,
+            BatchJobStatus.PAUSED,
+        }
 
     @property
     def is_completed(self) -> bool:
         """Check if job is completed (success or failure)."""
-        return self.status in {BatchJobStatus.COMPLETED, BatchJobStatus.FAILED, BatchJobStatus.CANCELLED}
+        return self.status in {
+            BatchJobStatus.COMPLETED,
+            BatchJobStatus.FAILED,
+            BatchJobStatus.CANCELLED,
+        }
 
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary for persistence."""
@@ -220,8 +228,12 @@ class BatchJob(Entity[EntityId]):
             processed_documents=data["processed_documents"],
             failed_documents=data["failed_documents"],
             error_message=data.get("error_message"),
-            started_at=datetime.fromisoformat(data["started_at"]) if data.get("started_at") else None,
-            completed_at=datetime.fromisoformat(data["completed_at"]) if data.get("completed_at") else None,
+            started_at=datetime.fromisoformat(data["started_at"])
+            if data.get("started_at")
+            else None,
+            completed_at=datetime.fromisoformat(data["completed_at"])
+            if data.get("completed_at")
+            else None,
             created_at=datetime.fromisoformat(data["created_at"]),
             updated_at=datetime.fromisoformat(data["updated_at"]),
             version=data.get("version", 1),

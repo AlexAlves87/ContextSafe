@@ -32,6 +32,7 @@ router = APIRouter(prefix="/v1/system", tags=["system"])
 # DETECTION FUNCTIONS
 # ============================================================================
 
+
 def detect_nvidia_gpu() -> dict[str, Any]:
     """
     Detect NVIDIA GPU using multiple methods.
@@ -43,7 +44,11 @@ def detect_nvidia_gpu() -> dict[str, Any]:
     # Method 1: nvidia-smi
     try:
         result = subprocess.run(
-            ["nvidia-smi", "--query-gpu=name,memory.total,memory.free", "--format=csv,noheader,nounits"],
+            [
+                "nvidia-smi",
+                "--query-gpu=name,memory.total,memory.free",
+                "--format=csv,noheader,nounits",
+            ],
             capture_output=True,
             text=True,
             timeout=5,
@@ -55,7 +60,9 @@ def detect_nvidia_gpu() -> dict[str, Any]:
                 name = parts[0].strip()
                 vram_mb = int(parts[1].strip())
                 vram_gb = round(vram_mb / 1024, 1)
-                vram_free_gb = round(int(parts[2].strip()) / 1024, 1) if len(parts) >= 3 else vram_gb
+                vram_free_gb = (
+                    round(int(parts[2].strip()) / 1024, 1) if len(parts) >= 3 else vram_gb
+                )
                 return {
                     "available": True,
                     "name": name,
@@ -69,12 +76,13 @@ def detect_nvidia_gpu() -> dict[str, Any]:
     # Method 2: torch.cuda (fallback, better for WSL2)
     try:
         import torch
+
         if torch.cuda.is_available():
             device_props = torch.cuda.get_device_properties(0)
             vram_bytes = device_props.total_memory
-            vram_gb = round(vram_bytes / (1024 ** 3), 1)
+            vram_gb = round(vram_bytes / (1024**3), 1)
             vram_free = torch.cuda.memory_reserved(0) - torch.cuda.memory_allocated(0)
-            vram_free_gb = round(vram_free / (1024 ** 3), 1) if vram_free > 0 else vram_gb
+            vram_free_gb = round(vram_free / (1024**3), 1) if vram_free > 0 else vram_gb
             return {
                 "available": True,
                 "name": device_props.name,
@@ -114,10 +122,11 @@ def detect_ram() -> dict[str, Any]:
     """Detect system RAM information."""
     try:
         import psutil
+
         mem = psutil.virtual_memory()
         return {
-            "total_gb": round(mem.total / (1024 ** 3), 1),
-            "available_gb": round(mem.available / (1024 ** 3), 1),
+            "total_gb": round(mem.total / (1024**3), 1),
+            "available_gb": round(mem.available / (1024**3), 1),
             "percent_used": mem.percent,
         }
     except ImportError:
@@ -131,12 +140,14 @@ def detect_ram() -> dict[str, Any]:
                         total_kb = int(re.search(r"\d+", line).group())
                     elif line.startswith("MemAvailable:"):
                         available_kb = int(re.search(r"\d+", line).group())
-            total_gb = round(total_kb / (1024 ** 2), 1)
-            available_gb = round(available_kb / (1024 ** 2), 1)
+            total_gb = round(total_kb / (1024**2), 1)
+            available_gb = round(available_kb / (1024**2), 1)
             return {
                 "total_gb": total_gb,
                 "available_gb": available_gb,
-                "percent_used": round((1 - available_gb / total_gb) * 100, 1) if total_gb > 0 else 0,
+                "percent_used": round((1 - available_gb / total_gb) * 100, 1)
+                if total_gb > 0
+                else 0,
             }
         except Exception:
             pass
@@ -162,13 +173,16 @@ def recommend_compute_mode(gpu_info: dict, ram_info: dict) -> ComputeMode:
 # API SCHEMAS
 # ============================================================================
 
+
 class ComputeModeRequest(BaseModel):
     """Request to set compute mode."""
+
     mode: Literal["gpu", "cpu"]
 
 
 class ComputeModeResponse(BaseModel):
     """Response with current compute mode."""
+
     mode: str
     gpu_available: bool
     effective: str  # What's actually being used
@@ -176,6 +190,7 @@ class ComputeModeResponse(BaseModel):
 
 class HardwareInfoResponse(BaseModel):
     """Full hardware information response."""
+
     gpu: dict
     cpu: dict
     ram: dict
@@ -186,6 +201,7 @@ class HardwareInfoResponse(BaseModel):
 # ============================================================================
 # API ENDPOINTS
 # ============================================================================
+
 
 @router.get("/hardware", response_model=HardwareInfoResponse)
 async def get_hardware_info() -> HardwareInfoResponse:
@@ -237,8 +253,7 @@ async def set_compute_mode(request: ComputeModeRequest) -> ComputeModeResponse:
     # Validate GPU availability
     if requested_mode == ComputeMode.GPU and not gpu_info.get("available", False):
         raise HTTPException(
-            status_code=400,
-            detail="GPU mode requested but no compatible GPU detected"
+            status_code=400, detail="GPU mode requested but no compatible GPU detected"
         )
 
     old_mode = get_current_compute_mode()
@@ -247,6 +262,7 @@ async def set_compute_mode(request: ComputeModeRequest) -> ComputeModeResponse:
     # Reset NER service if mode changed (so it reinitializes with new device)
     if old_mode != requested_mode:
         from contextsafe.api.services.ner_registry import reset_ner_service
+
         reset_ner_service()
 
     return ComputeModeResponse(

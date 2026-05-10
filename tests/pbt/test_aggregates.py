@@ -164,7 +164,11 @@ def test_glossary_alias_consistency(project_id, text: str, category):
     assert alias1.value == alias2.value == alias3.value
 
 
-@given(project_id_gen(), st.text(alphabet=st.characters(whitelist_categories=('L', 'N')), min_size=1, max_size=100), pii_category_gen())
+@given(
+    project_id_gen(),
+    st.text(alphabet=st.characters(whitelist_categories=("L", "N")), min_size=1, max_size=100),
+    pii_category_gen(),
+)
 def test_glossary_case_insensitive_consistency(project_id, text: str, category):
     """
     Test Glossary treats case variations as same entity.
@@ -174,6 +178,7 @@ def test_glossary_case_insensitive_consistency(project_id, text: str, category):
     Business Rule: BR-002
     """
     from hypothesis import assume
+
     # Skip edge cases where lower/upper don't roundtrip (e.g., German ß -> SS)
     assume(text.lower() == text.upper().lower())
 
@@ -226,7 +231,11 @@ def test_glossary_idempotent(project_id, text: str, category):
     assert glossary.mapping_count == initial_size + 1
 
 
-@given(project_id_gen(), st.lists(st.text(min_size=1, max_size=50), min_size=1, max_size=10), pii_category_gen())
+@given(
+    project_id_gen(),
+    st.lists(st.text(min_size=1, max_size=50), min_size=1, max_size=10),
+    pii_category_gen(),
+)
 def test_glossary_idempotent_with_multiple_values(project_id, texts: list[str], category):
     """
     Test idempotency with multiple different values.
@@ -368,7 +377,9 @@ def test_glossary_get_mappings_by_category(project_id, category):
         glossary.get_or_assign_alias(f"value {i}", category)
 
     # Add mappings in a different category (ensure it's different from target)
-    other_enum = PiiCategoryEnum.EMAIL if category.value != PiiCategoryEnum.EMAIL else PiiCategoryEnum.PHONE
+    other_enum = (
+        PiiCategoryEnum.EMAIL if category.value != PiiCategoryEnum.EMAIL else PiiCategoryEnum.PHONE
+    )
     other_category = PiiCategory.from_string(other_enum.value).unwrap()
     for i in range(2):
         glossary.get_or_assign_alias(f"other{i}", other_category)

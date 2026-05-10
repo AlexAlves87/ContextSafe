@@ -19,6 +19,7 @@ from typing import Optional
 # Fuzzy matching for typo handling (FP-6)
 try:
     from thefuzz import fuzz
+
     THEFUZZ_AVAILABLE = True
 except ImportError:
     THEFUZZ_AVAILABLE = False
@@ -37,7 +38,7 @@ FUZZY_MATCH_THRESHOLD = 90
 HONORIFIC_PREFIXES = re.compile(
     r"^(?:D\.?ª?|Dña\.?|Don|Doña|Sr\.?|Sra\.?|Señor|Señora|"
     r"Ilmo\.?|Excmo\.?|Ilma\.?|Excma\.?|Dr\.?|Dra\.?)\s+",
-    re.IGNORECASE | re.UNICODE
+    re.IGNORECASE | re.UNICODE,
 )
 
 # Legal form suffixes to normalize (Spanish company types)
@@ -45,7 +46,7 @@ LEGAL_SUFFIXES = re.compile(
     r"\s*,?\s*(?:S\.?\s*L\.?\s*P\.?|S\.?\s*L\.?\s*U\.?|S\.?\s*L\.?|"
     r"S\.?\s*A\.?\s*U\.?|S\.?\s*A\.?|S\.?\s*C\.?|C\.?\s*B\.?|"
     r"S\.?\s*Coop\.?|Coop\.?)\s*\.?\s*$",
-    re.IGNORECASE
+    re.IGNORECASE,
 )
 
 # Categories that use person-specific normalization
@@ -209,13 +210,13 @@ def find_matching_value(
                 # Check if target is a prefix of original (same first N words)
                 # "alberto baxeras" matches "alberto baxeras aizpún"
                 if len(original_parts) > len(target_parts):
-                    if original_parts[:len(target_parts)] == target_parts:
+                    if original_parts[: len(target_parts)] == target_parts:
                         return alias
 
                 # Check if original is a prefix of target
                 # "alberto baxeras aizpún" should find alias of "alberto baxeras"
                 elif len(target_parts) > len(original_parts):
-                    if target_parts[:len(original_parts)] == original_parts:
+                    if target_parts[: len(original_parts)] == original_parts:
                         return alias
 
     # Third pass: fuzzy matching for typos (PERSON_NAME only)

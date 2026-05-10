@@ -39,12 +39,16 @@ class ProjectResponse(BaseModel):
     id: UUID = Field(..., description="Project ID")
     name: str = Field(..., description="Project name")
     description: str | None = Field(None, description="Project description")
-    anonymization_level: str = Field("intermediate", alias="anonymizationLevel", description="Anonymization level")
+    anonymization_level: str = Field(
+        "intermediate", alias="anonymizationLevel", description="Anonymization level"
+    )
     created_at: datetime = Field(..., alias="createdAt", description="Creation timestamp")
     updated_at: datetime = Field(..., alias="updatedAt", description="Update timestamp")
     document_count: int = Field(0, alias="documentCount", description="Number of documents")
     entity_count: int = Field(0, alias="entityCount", description="Number of detected entities")
-    completion_percentage: int = Field(0, alias="completionPercentage", description="Processing completion percentage")
+    completion_percentage: int = Field(
+        0, alias="completionPercentage", description="Processing completion percentage"
+    )
 
     model_config = {
         "from_attributes": True,

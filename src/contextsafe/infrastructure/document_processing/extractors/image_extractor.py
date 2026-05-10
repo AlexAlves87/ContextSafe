@@ -90,9 +90,7 @@ class ImageExtractor(DocumentExtractor):
                     lang=self.languages,
                     output_type=pytesseract.Output.DICT,
                 )
-                confidences = [
-                    int(c) for c in data["conf"] if c != "-1" and str(c).isdigit()
-                ]
+                confidences = [int(c) for c in data["conf"] if c != "-1" and str(c).isdigit()]
                 if confidences:
                     avg_confidence = sum(confidences) / len(confidences)
                     metadata["ocr_confidence"] = f"{avg_confidence:.1f}%"

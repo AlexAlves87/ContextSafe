@@ -97,9 +97,7 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
 
         return Ok(aggregate)
 
-    def transition_to(
-        self, new_state: DocumentState
-    ) -> Result[None, StateTransitionError]:
+    def transition_to(self, new_state: DocumentState) -> Result[None, StateTransitionError]:
         """
         Transition to a new state.
 
@@ -110,9 +108,7 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
             Ok[None] if valid transition, Err[StateTransitionError] if invalid
         """
         if not self.state.can_transition_to(new_state):
-            return Err(
-                StateTransitionError.create(str(self.state), str(new_state))
-            )
+            return Err(StateTransitionError.create(str(self.state), str(new_state)))
 
         object.__setattr__(self, "state", new_state)
         self._touch()
@@ -165,9 +161,7 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
 
         return Ok(None)
 
-    def start_anonymization(
-        self, level: AnonymizationLevel
-    ) -> Result[None, DocumentError]:
+    def start_anonymization(self, level: AnonymizationLevel) -> Result[None, DocumentError]:
         """
         Start anonymization phase.
 
@@ -181,9 +175,7 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
         object.__setattr__(self, "anonymization_level", level)
         return Ok(None)
 
-    def complete_anonymization(
-        self, anonymized_text: str
-    ) -> Result[None, DocumentError]:
+    def complete_anonymization(self, anonymized_text: str) -> Result[None, DocumentError]:
         """
         Complete anonymization with result.
 
@@ -238,7 +230,9 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
             "state": str(self.state),
             "extracted_text": self.extracted_text,
             "anonymized_text": self.anonymized_text,
-            "anonymization_level": str(self.anonymization_level) if self.anonymization_level else None,
+            "anonymization_level": str(self.anonymization_level)
+            if self.anonymization_level
+            else None,
             "detection_count": self.detection_count,
             "error_message": self.error_message,
             "created_at": self.created_at.isoformat(),
