@@ -3,7 +3,7 @@
 **100% local document anonymization for sensitive legal and personal documents.**
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ContextSafe detects and replaces Personally Identifiable Information (PII) in documents with consistent, project-wide aliases. It runs entirely on your machine -- no cloud services, no API keys, no data leaves your infrastructure.
 
@@ -231,6 +231,6 @@ Contributions are welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 
 ## License
 
-This project is licensed under the [GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0-or-later).
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 This means you can freely use, modify, and distribute this software, but any modified version that is accessible over a network must also be made available under the same license.

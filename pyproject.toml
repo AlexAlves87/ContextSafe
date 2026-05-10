@@ -11,7 +11,7 @@ version = "0.1.0"
 description = "Sistema 100% local de anonimizacion inteligente de documentos sensibles"
 authors = ["ContextSafe Team"]
 readme = "README.md"
-license = "AGPL-3.0-or-later"
+license = "Apache-2.0"
 packages = [{ include = "contextsafe", from = "src" }]
 
 [tool.poetry.dependencies]
@@ -85,7 +85,6 @@ pytest = "^7.4.0"
 pytest-asyncio = "^0.21.0"
 pytest-cov = "^4.1.0"
 hypothesis = "^6.82.0"
-icontract-hypothesis = "^1.1.0"
 
 # Type Checking
 mypy = "^1.5.0"

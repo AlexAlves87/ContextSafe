@@ -53,7 +53,7 @@ version = "2.4.1"
 description = "Annotate AST trees with source code positions"
 optional = false
 python-versions = "*"
-groups = ["main", "dev"]
+groups = ["main"]
 files = [
     {file = "asttokens-2.4.1-py2.py3-none-any.whl", hash = "sha256:051ed49c3dcae8913ea7cd08e46a606dba30b79993209636c4875bc1d637bc24"},
     {file = "asttokens-2.4.1.tar.gz", hash = "sha256:b03869718ba9a6eb027e134bfdf69f38a236d681c83c160d510768af11254ba0"},
@@ -1189,7 +1189,7 @@ version = "2.7.3"
 description = "Provide design-by-contract with informative violation messages."
 optional = false
 python-versions = "*"
-groups = ["main", "dev"]
+groups = ["main"]
 files = [
     {file = "icontract-2.7.3-py3-none-any.whl", hash = "sha256:8fb0f93f71211416f214f37c01b8017fdc8c079d70159f49f0ddcc10918c14d0"},
     {file = "icontract-2.7.3.tar.gz", hash = "sha256:df37a43d86d532407bc6b84dea29dd9f7ece794b73211769fa8a33a76b8ed145"},
@@ -1201,24 +1201,6 @@ typing_extensions = "*"
 
 [package.extras]
 dev = ["astor (==0.8.1)", "asyncstdlib (==3.9.1) ; python_version >= \"3.8\"", "black (==23.9.1) ; python_version >= \"3.8\"", "coverage (>=6.5.0,<7)", "deal (>=4,<5) ; python_version >= \"3.8\"", "docutils (>=0.14,<1)", "dpcontracts (==0.6.0)", "mypy (==1.18.2) ; python_version >= \"3.12\"", "mypy (==1.5.1) ; python_version >= \"3.8\" and python_version < \"3.12\"", "numpy (>=1,<2)", "py-cpuinfo (>=5.0.0,<6)", "pydocstyle (>=6.3.0,<7)", "pygments (>=2.2.0,<3)", "pylint (==2.17.5) ; python_version >= \"3.7\" and python_version < \"3.12\"", "pylint (==4.0.2) ; python_version >= \"3.12\"", "tabulate (>=0.8.7,<1)", "tox (>=3.0.0)", "typeguard (>=2,<5)"]
-
-[[package]]
-name = "icontract-hypothesis"
-version = "1.1.7"
-description = "Combine contracts and automatic testing."
-optional = false
-python-versions = "*"
-groups = ["dev"]
-files = [
-    {file = "icontract-hypothesis-1.1.7.tar.gz", hash = "sha256:40f5be35ae5a7d32b7058b579b1eb574367c80709de8bebb52bef685aa01662f"},
-]
-
-[package.dependencies]
-hypothesis = ">=5,<7"
-icontract = ">=2.5.2,<3"
-
-[package.extras]
-dev = ["black (==20.8b1)", "coverage (>=4.5.1,<5)", "deal (==4.4.0)", "docutils (>=0.14,<1)", "dpcontracts (==0.6.0)", "hypothesis[dpcontracts] (>=5,<6)", "mypy (==0.902)", "py-cpuinfo (>=5,<6)", "pydocstyle (>=2.1.1,<3)", "pygments (>=2,<3)", "pylint (==2.3.1)", "tabulate (==0.8.7)"]
 
 [[package]]
 name = "idna"
@@ -5243,4 +5225,4 @@ dev = ["pytest", "setuptools"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "4b74a0faf8361d7677b6fc72cc216d5ac2416871e184a0f110ee11171f1be728"
+content-hash = "21e3ebceafd16c096b3e0912b076cec50f98c77b4bb68aefa5c9bb6a7af4a435"
