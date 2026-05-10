@@ -9,8 +9,10 @@ Traceability:
 
 from __future__ import annotations
 
+import re
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from sqlalchemy.ext.asyncio import (
     AsyncEngine,
@@ -42,6 +44,10 @@ class Database:
         """
         if not database_url:
             raise ValueError("database_url cannot be empty")
+
+        match = re.search(r"sqlite(?:\+\w+)?:///?(.+\.db)", database_url)
+        if match:
+            Path(match.group(1)).parent.mkdir(parents=True, exist_ok=True)
 
         self._engine: AsyncEngine = create_async_engine(
             database_url,
