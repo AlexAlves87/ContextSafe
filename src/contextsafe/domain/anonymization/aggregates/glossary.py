@@ -15,22 +15,19 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 from contextsafe.domain.anonymization.entities.alias_mapping import AliasMapping
 from contextsafe.domain.anonymization.services.normalization import (
-    normalize_pii_value,
     get_lookup_key,
+    normalize_pii_value,
 )
 from contextsafe.domain.shared.errors import (
-    DuplicateAliasError,
     GlossaryError,
-    InconsistentMappingError,
 )
 from contextsafe.domain.shared.types import AggregateRoot, DomainEvent, Err, Ok, Result
 from contextsafe.domain.shared.value_objects import (
     Alias,
-    EntityId,
     PiiCategory,
     PiiCategoryEnum,
     ProjectId,
@@ -52,15 +49,15 @@ class Glossary(AggregateRoot[ProjectId]):
 
     id: ProjectId = field(kw_only=False)
     # Maps normalized_value -> AliasMapping
-    _mappings_by_value: Dict[str, AliasMapping] = field(default_factory=dict)
+    _mappings_by_value: dict[str, AliasMapping] = field(default_factory=dict)
     # Maps alias_value -> normalized_value (for uniqueness check)
-    _values_by_alias: Dict[str, str] = field(default_factory=dict)
+    _values_by_alias: dict[str, str] = field(default_factory=dict)
     # Counter per category for generating sequential aliases
-    _counters: Dict[PiiCategoryEnum, int] = field(default_factory=dict)
+    _counters: dict[PiiCategoryEnum, int] = field(default_factory=dict)
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
     version: int = field(default=1)
-    _pending_events: List[DomainEvent] = field(default_factory=list, repr=False)
+    _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
     @classmethod
     def create(cls, project_id: ProjectId) -> Glossary:
@@ -193,7 +190,7 @@ class Glossary(AggregateRoot[ProjectId]):
         if mapping is None:
             return Err(
                 GlossaryError(
-                    f"No mapping found for term '{original_term}' " f"in category '{category}'"
+                    f"No mapping found for term '{original_term}' in category '{category}'"
                 )
             )
 
@@ -276,11 +273,11 @@ class Glossary(AggregateRoot[ProjectId]):
         return len(self._mappings_by_value)
 
     @property
-    def mappings(self) -> List[AliasMapping]:
+    def mappings(self) -> list[AliasMapping]:
         """Get all mappings."""
         return list(self._mappings_by_value.values())
 
-    def get_mappings_by_category(self, category: PiiCategory) -> List[AliasMapping]:
+    def get_mappings_by_category(self, category: PiiCategory) -> list[AliasMapping]:
         """Get all mappings for a category."""
         return [m for m in self._mappings_by_value.values() if m.category == category]
 

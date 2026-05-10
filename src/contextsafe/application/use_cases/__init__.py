@@ -1,33 +1,34 @@
 """Use cases for ContextSafe."""
+from contextsafe.application.use_cases.apply_glossary_changes import (
+    AliasChange,
+    ApplyGlossaryChanges,
+    ApplyGlossaryChangesRequest,
+    ApplyGlossaryChangesResponse,
+)
 from contextsafe.application.use_cases.create_project import (
     CreateProject,
     CreateProjectRequest,
     CreateProjectResponse,
 )
 from contextsafe.application.use_cases.detect_pii import (
+    DetectedEntity,
     DetectPii,
     DetectPiiRequest,
     DetectPiiResponse,
-    DetectedEntity,
 )
 from contextsafe.application.use_cases.generate_anonymized import (
+    AliasUsed,
+    EntityToAnonymize,
     GenerateAnonymized,
     GenerateAnonymizedRequest,
     GenerateAnonymizedResponse,
-    EntityToAnonymize,
-    AliasUsed,
 )
 from contextsafe.application.use_cases.ingest_document import (
     IngestDocument,
     IngestDocumentRequest,
     IngestDocumentResponse,
 )
-from contextsafe.application.use_cases.apply_glossary_changes import (
-    ApplyGlossaryChanges,
-    ApplyGlossaryChangesRequest,
-    ApplyGlossaryChangesResponse,
-    AliasChange,
-)
+
 
 __all__ = [
     # Ingest Document

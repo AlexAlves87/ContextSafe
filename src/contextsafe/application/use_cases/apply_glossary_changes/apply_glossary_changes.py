@@ -13,14 +13,14 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import Optional
 
 from contextsafe.application.ports import (
     DocumentRepository,
     EventPublisher,
     GlossaryRepository,
 )
-from contextsafe.domain.shared.errors import DomainError, DocumentError, NotFoundError
+from contextsafe.domain.shared.errors import DocumentError, DomainError, NotFoundError
 from contextsafe.domain.shared.events import DocumentAnonymized
 from contextsafe.domain.shared.types import Err, Ok, Result
 from contextsafe.domain.shared.value_objects import DocumentId, PiiCategory, ProjectId
@@ -40,7 +40,7 @@ class ApplyGlossaryChangesRequest:
     """Input for applying glossary changes."""
 
     project_id: str
-    changes: List[AliasChange]
+    changes: list[AliasChange]
     document_id: Optional[str] = None  # If provided, regenerate this document
 
 
@@ -62,7 +62,7 @@ class ApplyGlossaryChangesResponse:
     project_id: str
     changes_applied: int
     changes_failed: int
-    change_results: List[ChangeResult]
+    change_results: list[ChangeResult]
     document_regenerated: bool
     anonymized_text: Optional[str] = None
 
@@ -119,7 +119,7 @@ class ApplyGlossaryChanges:
             return Err(NotFoundError.create("Glossary", request.project_id))
 
         # 3. Apply each change
-        change_results: List[ChangeResult] = []
+        change_results: list[ChangeResult] = []
         changes_applied = 0
         changes_failed = 0
 

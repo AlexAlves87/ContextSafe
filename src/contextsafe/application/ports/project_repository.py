@@ -9,7 +9,7 @@ Traceability:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import Optional
 
 from contextsafe.domain.project_management.aggregates.project import Project
 from contextsafe.domain.shared.errors import RepositoryError
@@ -58,7 +58,7 @@ class ProjectRepository(ABC):
         include_inactive: bool = False,
         limit: int = 100,
         offset: int = 0,
-    ) -> List[Project]:
+    ) -> list[Project]:
         """
         Find projects by owner.
 
@@ -79,7 +79,7 @@ class ProjectRepository(ABC):
         include_inactive: bool = False,
         limit: int = 100,
         offset: int = 0,
-    ) -> List[Project]:
+    ) -> list[Project]:
         """
         Find all projects.
 

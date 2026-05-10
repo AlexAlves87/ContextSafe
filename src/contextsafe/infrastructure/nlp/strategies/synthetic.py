@@ -22,10 +22,8 @@ Example:
 
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
-import os
 import random
 import shutil
 import subprocess
@@ -37,6 +35,7 @@ from contextsafe.infrastructure.nlp.strategies.base import (
     AnonymizationStrategy,
     ReplacementResult,
 )
+
 
 if TYPE_CHECKING:
     from contextsafe.application.ports.ner_service import NerDetection
@@ -55,7 +54,7 @@ logger = logging.getLogger(__name__)
 def _is_wsl() -> bool:
     """Detect if running in WSL (Windows Subsystem for Linux)."""
     try:
-        with open("/proc/version", "r") as f:
+        with open("/proc/version") as f:
             return "microsoft" in f.read().lower()
     except Exception:
         return False
@@ -89,7 +88,7 @@ def generate_invalid_dni() -> str:
     digits = random.randint(10000000, 99999999)
     valid_letter = DNI_LETTERS[digits % 23]
     # Pick any letter EXCEPT the valid one
-    invalid_letters = [l for l in DNI_LETTERS if l != valid_letter]
+    invalid_letters = [ch for ch in DNI_LETTERS if ch != valid_letter]
     invalid_letter = random.choice(invalid_letters)
     return f"{digits}{invalid_letter}"
 
@@ -106,7 +105,7 @@ def generate_invalid_nie() -> str:
     digits = random.randint(1000000, 9999999)
     full_number = int(f"{prefix_map[prefix]}{digits}")
     valid_letter = DNI_LETTERS[full_number % 23]
-    invalid_letters = [l for l in DNI_LETTERS if l != valid_letter]
+    invalid_letters = [ch for ch in DNI_LETTERS if ch != valid_letter]
     invalid_letter = random.choice(invalid_letters)
     return f"{prefix}{digits}{invalid_letter}"
 
@@ -565,15 +564,15 @@ def get_person_name_prompt(original: str) -> str:
     gender = detect_gender(original)
 
     if gender == "female":
-        return f"""Genera un nombre completo FEMENINO español (nombre + dos apellidos).
+        return """Genera un nombre completo FEMENINO español (nombre + dos apellidos).
 Debe sonar natural y plausible: "María Solana Ruiz", "Carmen López García".
 El nombre DEBE ser femenino. Solo escribe el nombre, nada más."""
     elif gender == "male":
-        return f"""Genera un nombre completo MASCULINO español (nombre + dos apellidos).
+        return """Genera un nombre completo MASCULINO español (nombre + dos apellidos).
 Debe sonar natural y plausible: "Carlos Mendive Ortega", "Juan García López".
 El nombre DEBE ser masculino. Solo escribe el nombre, nada más."""
     else:
-        return f"""Genera un nombre completo español (nombre + dos apellidos).
+        return """Genera un nombre completo español (nombre + dos apellidos).
 Debe sonar natural y plausible: "María Solana Ruiz", "Carlos Mendive Ortega".
 Solo escribe el nombre, nada más."""
 
@@ -653,7 +652,7 @@ class SyntheticStrategy(AnonymizationStrategy):
         model: str = "qwen2:1.5b",
         timeout: float = 30.0,
         use_gpu: bool = False,
-        adapter: "InMemoryAnonymizationAdapter | None" = None,
+        adapter: InMemoryAnonymizationAdapter | None = None,
     ):
         """Initialize synthetic strategy."""
         self._ollama_url = ollama_url
@@ -760,6 +759,7 @@ $response.response
                 ["powershell.exe", "-Command", ps_command],
                 capture_output=True,
                 timeout=self._timeout,
+                check=False,
             )
 
             try:
@@ -830,7 +830,7 @@ $response.response
 
     async def generate_replacement(
         self,
-        detection: "NerDetection",
+        detection: NerDetection,
         project_id: str,
     ) -> ReplacementResult:
         """

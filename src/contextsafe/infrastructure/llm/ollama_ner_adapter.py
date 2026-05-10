@@ -119,8 +119,8 @@ class OllamaNerAdapter(NerService):
 
     def _call_via_powershell(self, endpoint: str, payload: dict | None = None) -> str:
         """Call Ollama API via PowerShell (WSL workaround)."""
-        import tempfile
         import os
+        import tempfile
 
         url = f"{self._ollama_host}{endpoint}"
 
@@ -134,7 +134,7 @@ class OllamaNerAdapter(NerService):
 
             # Convert WSL path to Windows path
             win_path = subprocess.run(
-                ["wslpath", "-w", temp_path], capture_output=True, text=True
+                ["wslpath", "-w", temp_path], capture_output=True, text=True, check=False
             ).stdout.strip()
 
             ps_cmd = f"""
@@ -148,6 +148,7 @@ class OllamaNerAdapter(NerService):
                     ["powershell.exe", "-Command", ps_cmd],
                     capture_output=True,
                     timeout=self._timeout,
+                    check=False,
                 )
             finally:
                 os.unlink(temp_path)
@@ -161,6 +162,7 @@ class OllamaNerAdapter(NerService):
                 ["powershell.exe", "-Command", ps_cmd],
                 capture_output=True,
                 timeout=self._timeout,
+                check=False,
             )
 
         if result.returncode != 0:

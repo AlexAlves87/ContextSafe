@@ -9,8 +9,8 @@ Tests Ok, Err, and their methods:
 """
 import pytest
 
-from contextsafe.domain.shared.types import Ok, Err, is_ok, is_err
 from contextsafe.domain.shared.errors import InvalidIdError
+from contextsafe.domain.shared.types import Err, Ok, is_err, is_ok
 
 
 class TestOk:
@@ -219,8 +219,9 @@ class TestResultWithDomainErrors:
 
     def test_ok_with_domain_object(self):
         """Test Ok containing domain object."""
-        from contextsafe.domain.shared.value_objects import DocumentId
         from uuid import uuid4
+
+        from contextsafe.domain.shared.value_objects import DocumentId
 
         uuid_str = str(uuid4())
         result = DocumentId.create(uuid_str)
@@ -242,8 +243,9 @@ class TestResultWithDomainErrors:
 
     def test_chain_domain_operations(self):
         """Test chaining domain operations with Result."""
-        from contextsafe.domain.shared.value_objects import DocumentId, ConfidenceScore
         from uuid import uuid4
+
+        from contextsafe.domain.shared.value_objects import DocumentId
 
         # Chain domain object creations
         uuid_str = str(uuid4())

@@ -12,25 +12,22 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, List, Optional
-from uuid import uuid4
+from typing import Any, Optional
 
 from contextsafe.domain.document_processing.entities.document import Document
 from contextsafe.domain.shared.errors import DocumentError, StateTransitionError
 from contextsafe.domain.shared.types import AggregateRoot, DomainEvent, Err, Ok, Result
 from contextsafe.domain.shared.value_objects import (
-    AnonymizationLevel,
-    DocumentId,
-    DocumentState,
-    DocumentStateEnum,
     ANONYMIZED,
     ANONYMIZING,
     DETECTED,
     DETECTING,
     FAILED,
     INGESTED,
-    INTERMEDIATE,
     PENDING,
+    AnonymizationLevel,
+    DocumentId,
+    DocumentState,
     ProjectId,
 )
 
@@ -58,7 +55,7 @@ class DocumentAggregate(AggregateRoot[DocumentId]):
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
     version: int = field(default=1)
-    _pending_events: List[DomainEvent] = field(default_factory=list, repr=False)
+    _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
     @classmethod
     def create(

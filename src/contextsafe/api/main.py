@@ -15,6 +15,7 @@ from __future__ import annotations
 # Re-export the app from server.py (single source of truth)
 from contextsafe.server import app, create_app
 
+
 __all__ = ["app", "create_app"]
 
 

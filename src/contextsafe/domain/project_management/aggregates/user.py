@@ -10,7 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any, List, Optional
+from typing import Any, Optional
 from uuid import uuid4
 
 from contextsafe.domain.shared.errors import DomainError
@@ -54,7 +54,7 @@ class User(AggregateRoot[EntityId]):
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
     version: int = field(default=1)
-    _pending_events: List[DomainEvent] = field(default_factory=list, repr=False)
+    _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
     @classmethod
     def create(

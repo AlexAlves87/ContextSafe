@@ -18,7 +18,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from typing import List, Optional
+from typing import Optional
 
 from presidio_analyzer import Pattern, PatternRecognizer
 
@@ -188,8 +188,8 @@ class SpanishNameRecognizer(PatternRecognizer):
 
     def __init__(
         self,
-        patterns: Optional[List[Pattern]] = None,
-        context: Optional[List[str]] = None,
+        patterns: Optional[list[Pattern]] = None,
+        context: Optional[list[str]] = None,
         supported_language: str = "es",
         supported_entity: str = "ES_PERSON",
     ):

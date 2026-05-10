@@ -25,9 +25,9 @@ from __future__ import annotations
 
 import random
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timedelta
-from typing import Dict, Optional
+from typing import Optional
 
 
 @dataclass
@@ -69,9 +69,9 @@ class DateShifter:
 
     def __init__(self) -> None:
         # Delta per project: {project_id: timedelta}
-        self._deltas: Dict[str, timedelta] = {}
+        self._deltas: dict[str, timedelta] = {}
         # Cache of original dates to shifted dates per project
-        self._cache: Dict[str, Dict[datetime, datetime]] = {}
+        self._cache: dict[str, dict[datetime, datetime]] = {}
 
     def _get_or_create_delta(
         self,

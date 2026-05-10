@@ -11,18 +11,19 @@ Traceability:
 """
 
 from contextsafe.infrastructure.nlp.merge.anchors import (
-    apply_contextual_anchors,
-    PERSON_ANCHORS,
     LOCATION_ANCHORS,
     ORG_ANCHORS,
-)
-from contextsafe.infrastructure.nlp.merge.voting import (
-    weighted_vote_with_tiebreaker,
-    VotingResult,
-    DETECTOR_WEIGHTS,
-    RISK_PRIORITY,
+    PERSON_ANCHORS,
+    apply_contextual_anchors,
 )
 from contextsafe.infrastructure.nlp.merge.snapping import snap_to_tokens
+from contextsafe.infrastructure.nlp.merge.voting import (
+    DETECTOR_WEIGHTS,
+    RISK_PRIORITY,
+    VotingResult,
+    weighted_vote_with_tiebreaker,
+)
+
 
 __all__ = [
     # Anchors

@@ -6,28 +6,27 @@ Tests:
 - Glossary
 - Project
 """
-import pytest
 from uuid import uuid4
+
+import pytest
 
 from contextsafe.domain.document_processing.aggregates.document_aggregate import (
     DocumentAggregate,
 )
+from contextsafe.domain.shared.errors import DocumentError, StateTransitionError
 from contextsafe.domain.shared.value_objects import (
-    AnonymizationLevel,
-    DocumentState,
     ProjectId,
 )
 from contextsafe.domain.shared.value_objects.anonymization_level import BASIC, INTERMEDIATE
 from contextsafe.domain.shared.value_objects.document_state import (
-    PENDING,
-    INGESTED,
-    DETECTING,
-    DETECTED,
-    ANONYMIZING,
     ANONYMIZED,
+    ANONYMIZING,
+    DETECTED,
+    DETECTING,
     FAILED,
+    INGESTED,
+    PENDING,
 )
-from contextsafe.domain.shared.errors import DocumentError, StateTransitionError
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -38,17 +37,17 @@ from contextsafe.domain.shared.errors import DocumentError, StateTransitionError
 class TestDocumentAggregate:
     """Test DocumentAggregate."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def project_id(self) -> ProjectId:
         """Create a project ID for testing."""
         return ProjectId.create(str(uuid4())).unwrap()
 
-    @pytest.fixture
+    @pytest.fixture()
     def valid_content(self) -> bytes:
         """Create valid document content."""
         return b"This is a test document with some content."
 
-    @pytest.fixture
+    @pytest.fixture()
     def aggregate(self, project_id: ProjectId, valid_content: bytes) -> DocumentAggregate:
         """Create a document aggregate for testing."""
         return DocumentAggregate.create(

@@ -18,7 +18,6 @@ from contextsafe.domain.shared.types import Err, Ok, Result
 from contextsafe.domain.shared.value_objects.pii_category import (
     ALIAS_PATTERNS,
     PiiCategory,
-    PiiCategoryEnum,
 )
 
 

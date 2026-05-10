@@ -31,6 +31,7 @@ from contextsafe.domain.shared.errors.domain_error import (
     ValidationError,
 )
 
+
 __all__ = [
     # Base
     "DomainError",

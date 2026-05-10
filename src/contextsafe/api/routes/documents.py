@@ -28,6 +28,12 @@ from contextsafe.api.schemas.response_wrapper import (
     ApiResponse,
     PaginatedMeta,
 )
+from contextsafe.api.services.document_processor import (
+    process_document_real as _process_document_real,
+)
+from contextsafe.api.services.document_processor import (
+    processing_tasks as _processing_tasks,
+)
 from contextsafe.api.session_manager import session_manager
 
 
@@ -35,11 +41,6 @@ logger = logging.getLogger(__name__)
 
 
 router = APIRouter(prefix="/v1/documents", tags=["documents"])
-
-from contextsafe.api.services.document_processor import (
-    process_document_real as _process_document_real,
-    processing_tasks as _processing_tasks,
-)
 
 
 @router.post(
@@ -546,8 +547,8 @@ async def export_document(
     # ============================================================
     if not skip_pii_check:
         from contextsafe.api.services.pii_validation import (
-            validate_no_critical_pii,
             format_pii_validation_error,
+            validate_no_critical_pii,
         )
 
         pii_matches = validate_no_critical_pii(text_content, strict=True)
@@ -642,7 +643,7 @@ async def review_entity(
     action = body.get("action", "APPROVED").upper()
     new_category = body.get("newCategory")
     new_value = body.get("newValue")
-    review_time_ms = body.get("reviewTimeMs", 0)
+    body.get("reviewTimeMs", 0)
 
     # Validate action
     valid_actions = {"APPROVED", "REJECTED", "CORRECTED"}
@@ -829,7 +830,7 @@ async def batch_review_entities(
     if zone not in zone_thresholds:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Invalid zone. Valid: GREEN, AMBER, RED",
+            detail="Invalid zone. Valid: GREEN, AMBER, RED",
         )
 
     min_conf, max_conf = zone_thresholds[zone]
@@ -971,7 +972,7 @@ async def anonymize_selection(
     if text not in original_text:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Selected text not found in document",
+            detail="Selected text not found in document",
         )
 
     # Get anonymization level from project

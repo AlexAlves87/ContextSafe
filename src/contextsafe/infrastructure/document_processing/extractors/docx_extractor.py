@@ -61,7 +61,7 @@ class DocxExtractor(DocumentExtractor):
                 if core_props.modified:
                     metadata["modified"] = core_props.modified.isoformat()
             except Exception as e:
-                errors.append(f"Error extracting metadata: {str(e)}")
+                errors.append(f"Error extracting metadata: {e!s}")
 
             # Extract headers from first section
             try:
@@ -73,7 +73,7 @@ class DocxExtractor(DocumentExtractor):
                             text_parts.append(f"[ENCABEZADO]\n{header_text}")
                     break  # Only first section's header
             except Exception as e:
-                errors.append(f"Error extracting header: {str(e)}")
+                errors.append(f"Error extracting header: {e!s}")
 
             # Extract paragraphs
             for para in doc.paragraphs:
@@ -93,7 +93,7 @@ class DocxExtractor(DocumentExtractor):
                         table_text = self._table_to_text(table_data)
                         text_parts.append(f"\n[TABLA]\n{table_text}")
                 except Exception as e:
-                    errors.append(f"Error extracting table: {str(e)}")
+                    errors.append(f"Error extracting table: {e!s}")
 
             # Extract footers from first section
             try:
@@ -105,7 +105,7 @@ class DocxExtractor(DocumentExtractor):
                             text_parts.append(f"\n[PIE DE PÁGINA]\n{footer_text}")
                     break
             except Exception as e:
-                errors.append(f"Error extracting footer: {str(e)}")
+                errors.append(f"Error extracting footer: {e!s}")
 
             text = "\n\n".join(text_parts)
 
@@ -113,7 +113,7 @@ class DocxExtractor(DocumentExtractor):
             page_count = max(1, len(text) // 3000 + 1)
 
         except Exception as e:
-            errors.append(f"DOCX extraction error: {str(e)}")
+            errors.append(f"DOCX extraction error: {e!s}")
             text = ""
             page_count = 0
 

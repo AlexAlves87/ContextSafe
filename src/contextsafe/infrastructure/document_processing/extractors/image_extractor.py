@@ -7,7 +7,6 @@ Traceability:
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import BinaryIO
 
 from contextsafe.infrastructure.document_processing.extractors.base import (
@@ -130,7 +129,7 @@ class ImageExtractor(DocumentExtractor):
         - Apply thresholding
         - Remove noise
         """
-        from PIL import Image, ImageFilter, ImageOps
+        from PIL import ImageFilter, ImageOps
 
         # Convert to grayscale
         if image.mode != "L":

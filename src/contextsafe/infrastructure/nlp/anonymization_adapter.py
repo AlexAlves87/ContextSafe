@@ -16,8 +16,9 @@ from __future__ import annotations
 
 import copy
 import re
+from collections.abc import Callable
 from datetime import datetime
-from typing import TYPE_CHECKING, Any, Callable, Optional
+from typing import TYPE_CHECKING, Optional
 
 from contextsafe.application.ports import (
     AnonymizationResult,
@@ -26,12 +27,12 @@ from contextsafe.application.ports import (
     NerDetection,
 )
 from contextsafe.domain.anonymization.services.normalization import (
-    normalize_pii_value,
-    values_match,
     find_matching_value,
 )
 
+
 if TYPE_CHECKING:
+    from contextsafe.application.compute_mode import ComputeMode
     from contextsafe.infrastructure.nlp.strategies.base import AnonymizationStrategy
 
 
@@ -180,7 +181,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
     def _is_wsl() -> bool:
         """Detect if running in WSL (Windows Subsystem for Linux)."""
         try:
-            with open("/proc/version", "r") as f:
+            with open("/proc/version") as f:
                 return "microsoft" in f.read().lower()
         except Exception:
             return False
@@ -196,6 +197,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
                 capture_output=True,
                 text=True,
                 timeout=5,
+                check=False,
             )
             # Parse: "default via 172.27.48.1 dev eth0"
             for part in result.stdout.split():
@@ -339,8 +341,8 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         return gap <= self.MAX_ADJACENT_GAP
 
     def _get_strategy(
-        self, level: str, compute_mode: "ComputeMode | None" = None
-    ) -> "AnonymizationStrategy":
+        self, level: str, compute_mode: ComputeMode | None = None
+    ) -> AnonymizationStrategy:
         """
         Get the appropriate strategy for the anonymization level.
 
@@ -351,12 +353,12 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         Returns:
             The strategy instance for that level
         """
+        from contextsafe.application.compute_mode import ComputeMode
         from contextsafe.infrastructure.nlp.strategies import (
             MaskingStrategy,
             PseudonymStrategy,
             SyntheticStrategy,
         )
-        from contextsafe.application.compute_mode import ComputeMode
 
         if compute_mode is None:
             compute_mode = ComputeMode.CPU
@@ -401,7 +403,7 @@ class InMemoryAnonymizationAdapter(AnonymizationService):
         project_id: str,
         level: str = "INTERMEDIATE",
         progress_callback: Optional[Callable] = None,
-        compute_mode: "ComputeMode | None" = None,
+        compute_mode: ComputeMode | None = None,
     ) -> AnonymizationResult:
         """
         Anonymize text by replacing detected entities.

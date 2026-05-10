@@ -19,6 +19,7 @@ from contextsafe.api.services.ner_registry import (
 from contextsafe.api.session_manager import session_manager
 from contextsafe.api.websocket.progress_handler import progress_handler
 
+
 logger = logging.getLogger(__name__)
 
 # Processing tasks tracking
@@ -174,7 +175,6 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
 
         # Now build entities list using the ACTUAL aliases from anonymization result
         # This ensures Level 3 shows synthetic names, not pseudonyms
-        total_detections = len(detections)
         entities = []
 
         # Build a lookup map from (start, end, value) -> alias from replacements

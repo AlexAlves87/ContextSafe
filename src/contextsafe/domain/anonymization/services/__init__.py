@@ -10,17 +10,18 @@ Exports:
 - get_date_shifter: Get global date shifter instance
 """
 
-from contextsafe.domain.anonymization.services.normalization import (
-    normalize_pii_value,
-    get_lookup_key,
-    values_match,
-    find_matching_value,
-)
 from contextsafe.domain.anonymization.services.date_shifter import (
-    DateShifter,
     DateShiftConfig,
+    DateShifter,
     get_date_shifter,
 )
+from contextsafe.domain.anonymization.services.normalization import (
+    find_matching_value,
+    get_lookup_key,
+    normalize_pii_value,
+    values_match,
+)
+
 
 __all__ = [
     # Normalization

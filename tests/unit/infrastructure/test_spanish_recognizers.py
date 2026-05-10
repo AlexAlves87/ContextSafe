@@ -15,7 +15,7 @@ import pytest
 class TestSpanishDNIRecognizer:
     """Tests for DNI recognition and validation."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishDNIRecognizer
 
@@ -67,7 +67,7 @@ class TestSpanishDNIRecognizer:
 class TestSpanishNIERecognizer:
     """Tests for NIE recognition and validation."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishNIERecognizer
 
@@ -103,7 +103,7 @@ class TestSpanishNIERecognizer:
 class TestSpanishCIFRecognizer:
     """Tests for CIF recognition."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishCIFRecognizer
 
@@ -121,7 +121,7 @@ class TestSpanishCIFRecognizer:
 class TestSpanishNSSRecognizer:
     """Tests for NSS (Social Security Number) recognition."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import SpanishNSSRecognizer
 
@@ -157,7 +157,7 @@ class TestSpanishNSSRecognizer:
 class TestSpanishPhoneRecognizer:
     """Tests for Spanish phone number recognition."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_phone import SpanishPhoneRecognizer
 
@@ -184,7 +184,7 @@ class TestSpanishPhoneRecognizer:
 class TestSpanishIBANRecognizer:
     """Tests for Spanish IBAN recognition."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def recognizer(self):
         from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
 
@@ -231,14 +231,14 @@ class TestRecognizerIntegration:
 
     def test_all_recognizers_can_be_imported(self):
         """All recognizers should be importable."""
+        from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import (
+            SpanishCIFRecognizer,
             SpanishDNIRecognizer,
             SpanishNIERecognizer,
-            SpanishCIFRecognizer,
             SpanishNSSRecognizer,
         )
         from contextsafe.infrastructure.nlp.recognizers.spanish_phone import SpanishPhoneRecognizer
-        from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
 
         recognizers = [
             SpanishDNIRecognizer(),
@@ -255,14 +255,14 @@ class TestRecognizerIntegration:
 
     def test_recognizers_have_spanish_language(self):
         """All recognizers should support Spanish language."""
+        from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
         from contextsafe.infrastructure.nlp.recognizers.spanish_id import (
+            SpanishCIFRecognizer,
             SpanishDNIRecognizer,
             SpanishNIERecognizer,
-            SpanishCIFRecognizer,
             SpanishNSSRecognizer,
         )
         from contextsafe.infrastructure.nlp.recognizers.spanish_phone import SpanishPhoneRecognizer
-        from contextsafe.infrastructure.nlp.recognizers.spanish_iban import SpanishIBANRecognizer
 
         recognizers = [
             SpanishDNIRecognizer(),

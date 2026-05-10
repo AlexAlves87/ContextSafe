@@ -16,13 +16,10 @@ Traceability:
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
 from contextsafe.application.ports import NerDetection
 from contextsafe.domain.shared.value_objects import TextSpan
-
-if TYPE_CHECKING:
-    pass  # spaCy types would go here
 
 
 # Sources that need snapping (BPE tokenization issues)

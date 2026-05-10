@@ -7,7 +7,7 @@ Pytest fixtures and configuration for all test types.
 from __future__ import annotations
 
 import asyncio
-from typing import AsyncGenerator, Generator
+from collections.abc import AsyncGenerator, Generator
 
 import pytest
 
@@ -31,7 +31,7 @@ def event_loop() -> Generator[asyncio.AbstractEventLoop, None, None]:
 # ============================================
 
 
-@pytest.fixture
+@pytest.fixture()
 async def test_db() -> AsyncGenerator[None, None]:
     """
     Create a test database with schema.
@@ -39,7 +39,7 @@ async def test_db() -> AsyncGenerator[None, None]:
     NOTE: Implementation will be added in Phase 4 Step 2.
     """
     # Setup: Create in-memory database
-    yield
+    return
     # Teardown: Clean up
 
 
@@ -48,34 +48,31 @@ async def test_db() -> AsyncGenerator[None, None]:
 # ============================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def mock_ner_service():
     """
     Mock NER service for unit tests.
 
     NOTE: Implementation will be added in Phase 4 Step 3.
     """
-    pass
 
 
-@pytest.fixture
+@pytest.fixture()
 def mock_llm_service():
     """
     Mock LLM service for unit tests.
 
     NOTE: Implementation will be added in Phase 4 Step 3.
     """
-    pass
 
 
-@pytest.fixture
+@pytest.fixture()
 def mock_ocr_service():
     """
     Mock OCR service for unit tests.
 
     NOTE: Implementation will be added in Phase 4 Step 3.
     """
-    pass
 
 
 # ============================================

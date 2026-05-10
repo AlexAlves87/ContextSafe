@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import List, Tuple
 
 
 @dataclass(frozen=True, slots=True)
@@ -27,10 +26,10 @@ class OffsetMapping:
 
     source_text: str
     normalized_text: str
-    char_map: Tuple[int, ...] = field(default_factory=tuple)
+    char_map: tuple[int, ...] = field(default_factory=tuple)
     """char_map[i] = posición en source_text del carácter i del normalized."""
 
-    def to_original_span(self, norm_start: int, norm_end: int) -> Tuple[int, int]:
+    def to_original_span(self, norm_start: int, norm_end: int) -> tuple[int, int]:
         """
         Traduce span del texto normalizado al texto original.
 
@@ -89,7 +88,7 @@ class OffsetMapping:
         return (orig_start, orig_end)
 
     @classmethod
-    def identity(cls, text: str) -> "OffsetMapping":
+    def identity(cls, text: str) -> OffsetMapping:
         """Crear mapping identidad (sin cambios)."""
         return cls(
             source_text=text,

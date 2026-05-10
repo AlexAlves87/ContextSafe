@@ -16,6 +16,7 @@ import re
 import unicodedata
 from typing import Optional
 
+
 # Fuzzy matching for typo handling (FP-6)
 try:
     from thefuzz import fuzz

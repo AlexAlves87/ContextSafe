@@ -14,6 +14,7 @@ from contextsafe.infrastructure.text_processing.ingest_preprocessor import (
 )
 from contextsafe.infrastructure.text_processing.offset_tracker import OffsetTracker
 
+
 __all__ = [
     "DefaultIngestPreprocessor",
     "DefaultDetectionPreprocessor",

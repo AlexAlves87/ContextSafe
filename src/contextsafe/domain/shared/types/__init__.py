@@ -12,6 +12,7 @@ from contextsafe.domain.shared.types.base_entity import Entity, generate_id
 from contextsafe.domain.shared.types.base_event import DomainEvent
 from contextsafe.domain.shared.types.result import Err, Ok, Result, is_err, is_ok
 
+
 __all__ = [
     "Result",
     "Ok",

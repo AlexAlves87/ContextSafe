@@ -5,4 +5,5 @@ from contextsafe.application.use_cases.create_project.create_project import (
     CreateProjectResponse,
 )
 
+
 __all__ = ["CreateProject", "CreateProjectRequest", "CreateProjectResponse"]

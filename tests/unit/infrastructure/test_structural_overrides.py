@@ -9,7 +9,6 @@ Errors addressed:
 - Error 7: MARTORELL classified as ORG instead of LOCATION (judicial header)
 """
 
-import pytest
 
 from contextsafe.application.ports import NerDetection
 from contextsafe.domain.shared.value_objects import (

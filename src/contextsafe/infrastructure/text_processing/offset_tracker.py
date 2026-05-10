@@ -62,7 +62,6 @@ class OffsetTracker:
             end: End position in source (exclusive)
         """
         # No añadimos nada al output
-        pass
 
     def replace(self, start: int, end: int, replacement: str) -> None:
         """
@@ -119,7 +118,6 @@ class OffsetTracker:
         Args:
             pos: Position in source
         """
-        pass
 
     @property
     def current_position(self) -> int:

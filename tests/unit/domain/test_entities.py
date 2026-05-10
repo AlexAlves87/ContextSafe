@@ -8,30 +8,27 @@ Tests:
 - AuditLog
 - BatchJob
 """
-import pytest
-from datetime import datetime
 from uuid import uuid4
 
+import pytest
+
 from contextsafe.domain.document_processing.entities.document import (
-    Document,
     MAX_DOCUMENT_SIZE,
-    VALID_EXTENSIONS,
+    Document,
 )
 from contextsafe.domain.entity_detection.entities.detection_result import DetectionResult
-from contextsafe.domain.shared.value_objects import (
-    ConfidenceScore,
-    DocumentId,
-    PiiCategory,
-    ProjectId,
-    TextSpan,
-)
-from contextsafe.domain.shared.value_objects.pii_category import PERSON_NAME, EMAIL
 from contextsafe.domain.shared.errors import (
     DocumentError,
     DocumentSizeError,
     InvalidExtensionError,
-    DetectionError,
 )
+from contextsafe.domain.shared.value_objects import (
+    ConfidenceScore,
+    DocumentId,
+    ProjectId,
+    TextSpan,
+)
+from contextsafe.domain.shared.value_objects.pii_category import EMAIL, PERSON_NAME
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -42,12 +39,12 @@ from contextsafe.domain.shared.errors import (
 class TestDocument:
     """Test Document entity."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def project_id(self) -> ProjectId:
         """Create a project ID for testing."""
         return ProjectId.create(str(uuid4())).unwrap()
 
-    @pytest.fixture
+    @pytest.fixture()
     def valid_content(self) -> bytes:
         """Create valid document content."""
         return b"This is a test document with some content."
@@ -261,12 +258,12 @@ class TestDocument:
 class TestDetectionResult:
     """Test DetectionResult entity."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def document_id(self) -> DocumentId:
         """Create a document ID for testing."""
         return DocumentId.create(str(uuid4())).unwrap()
 
-    @pytest.fixture
+    @pytest.fixture()
     def text_span(self) -> TextSpan:
         """Create a text span for testing."""
         return TextSpan.create(0, 10, "John Smith").unwrap()

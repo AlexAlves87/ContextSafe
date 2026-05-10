@@ -10,4 +10,5 @@ from contextsafe.domain.anonymization.services.normalization import (
     values_match,
 )
 
+
 __all__ = ["normalize_pii_value", "values_match"]

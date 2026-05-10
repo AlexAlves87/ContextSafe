@@ -19,7 +19,6 @@ from contextsafe.application.ports import NerDetection, NerService
 from contextsafe.domain.shared.value_objects import (
     ConfidenceScore,
     PiiCategory,
-    TextSpan,
 )
 
 

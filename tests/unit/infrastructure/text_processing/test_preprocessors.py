@@ -8,15 +8,15 @@ Traceability:
 import pytest
 
 from contextsafe.infrastructure.text_processing import (
-    DefaultIngestPreprocessor,
     DefaultDetectionPreprocessor,
+    DefaultIngestPreprocessor,
 )
 
 
 class TestDefaultIngestPreprocessor:
     """Tests for Phase 1 preprocessing."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def preprocessor(self):
         return DefaultIngestPreprocessor()
 
@@ -75,7 +75,7 @@ class TestDefaultIngestPreprocessor:
 class TestDefaultDetectionPreprocessor:
     """Tests for Phase 2 preprocessing."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def preprocessor(self):
         return DefaultDetectionPreprocessor()
 

@@ -1,15 +1,13 @@
 """Tests that platform names are not misclassified as PERSON_NAME."""
 
-import pytest
 
+from contextsafe.domain.shared.value_objects.anonymization_level import (
+    ADVANCED,
+    INTERMEDIATE,
+)
+from contextsafe.domain.shared.value_objects.pii_category import PiiCategoryEnum
 from contextsafe.infrastructure.nlp.composite_adapter import (
     PLATFORM_NAMES_BLOCKLIST,
-)
-from contextsafe.domain.shared.value_objects import PiiCategory
-from contextsafe.domain.shared.value_objects.pii_category import PiiCategoryEnum
-from contextsafe.domain.shared.value_objects.anonymization_level import (
-    INTERMEDIATE,
-    ADVANCED,
 )
 
 

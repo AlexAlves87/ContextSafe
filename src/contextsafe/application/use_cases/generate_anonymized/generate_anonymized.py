@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 from contextsafe.application.ports import (
     DocumentRepository,
@@ -25,7 +25,6 @@ from contextsafe.domain.shared.types import Err, Ok, Result
 from contextsafe.domain.shared.value_objects import (
     AnonymizationLevel,
     DocumentId,
-    INTERMEDIATE,
     PiiCategory,
 )
 
@@ -46,7 +45,7 @@ class GenerateAnonymizedRequest:
 
     document_id: str
     anonymization_level: str = "INTERMEDIATE"
-    entities: Optional[List[EntityToAnonymize]] = None
+    entities: Optional[list[EntityToAnonymize]] = None
 
 
 @dataclass(frozen=True, slots=True)
@@ -67,7 +66,7 @@ class GenerateAnonymizedResponse:
     original_length: int
     anonymized_length: int
     entities_replaced: int
-    aliases_used: List[AliasUsed]
+    aliases_used: list[AliasUsed]
     anonymized_text: str
 
 
@@ -151,7 +150,7 @@ class GenerateAnonymized:
 
         # 9. Replace each entity with its alias
         text = aggregate.extracted_text
-        alias_usage: Dict[str, AliasUsed] = {}
+        alias_usage: dict[str, AliasUsed] = {}
 
         for entity in sorted_entities:
             # Parse category

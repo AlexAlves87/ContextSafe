@@ -4,4 +4,5 @@ from contextsafe.domain.project_management.entities.audit_log import (
     AuditLog,
 )
 
+
 __all__ = ["AuditLog", "AuditEventType"]

@@ -4,10 +4,11 @@ from contextsafe.domain.document_processing.entities.batch_job import (
     BatchJobStatus,
 )
 from contextsafe.domain.document_processing.entities.document import (
-    Document,
     MAX_DOCUMENT_SIZE,
     VALID_EXTENSIONS,
+    Document,
 )
+
 
 __all__ = [
     "Document",

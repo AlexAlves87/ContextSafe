@@ -14,6 +14,7 @@ Traceability:
 """
 
 import io
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -27,7 +28,7 @@ def client():
         yield c
 
 
-@pytest.fixture
+@pytest.fixture()
 def project_id(client):
     """Create a test project and return its ID."""
     response = client.post(
@@ -88,7 +89,7 @@ class TestDocumentUpload:
 class TestDocumentProcessing:
     """Tests for document processing functionality."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def uploaded_document(self, client, project_id):
         """Upload a document with PII data for processing tests."""
         content = b"""INFORME CONFIDENCIAL
@@ -126,7 +127,7 @@ Direccion: Calle Mayor 123, Madrid
 class TestDocumentRetrieval:
     """Tests for document retrieval functionality."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def processed_document(self, client, project_id):
         """Upload and process a document."""
         import time
@@ -184,7 +185,7 @@ Telefono: 612345678
 class TestDocumentExport:
     """Tests for document export functionality."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def document_for_export(self, client, project_id):
         """Create a processed document for export tests."""
         import time
@@ -241,7 +242,7 @@ class TestDocumentExport:
 class TestGlossaryExport:
     """Tests for glossary export functionality."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def project_with_glossary(self, client):
         """Create a project with processed documents to generate glossary."""
         import time
@@ -303,7 +304,7 @@ class TestGlossaryExport:
 class TestBatchProcessing:
     """Tests for batch processing functionality."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def multiple_documents(self, client, project_id):
         """Upload multiple documents for batch processing."""
         doc_ids = []

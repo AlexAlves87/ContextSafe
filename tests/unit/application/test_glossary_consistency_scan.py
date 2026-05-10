@@ -2,8 +2,6 @@
 
 import re
 
-import pytest
-
 
 class TestGlossaryConsistencyScan:
     """The glossary consistency scan should find bare names that NER missed."""

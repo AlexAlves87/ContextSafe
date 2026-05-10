@@ -10,19 +10,19 @@ Traceability:
 from __future__ import annotations
 
 import os
-import subprocess
 import re
+import subprocess
 from typing import Any, Literal
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from contextsafe.application.compute_mode import ComputeMode
 from contextsafe.api.services.compute_state import (
     get_current_compute_mode,
     get_effective_compute_mode,
     set_current_compute_mode,
 )
+from contextsafe.application.compute_mode import ComputeMode
 
 
 router = APIRouter(prefix="/v1/system", tags=["system"])
@@ -52,6 +52,7 @@ def detect_nvidia_gpu() -> dict[str, Any]:
             capture_output=True,
             text=True,
             timeout=5,
+            check=False,
         )
         if result.returncode == 0 and result.stdout.strip():
             line = result.stdout.strip().split("\n")[0]
@@ -103,7 +104,7 @@ def detect_cpu() -> dict[str, Any]:
     cpu_name = "Unknown CPU"
     try:
         # Linux: read from /proc/cpuinfo
-        with open("/proc/cpuinfo", "r") as f:
+        with open("/proc/cpuinfo") as f:
             for line in f:
                 if line.startswith("model name"):
                     cpu_name = line.split(":")[1].strip()
@@ -134,7 +135,7 @@ def detect_ram() -> dict[str, Any]:
         try:
             total_kb = 0
             available_kb = 0
-            with open("/proc/meminfo", "r") as f:
+            with open("/proc/meminfo") as f:
                 for line in f:
                     if line.startswith("MemTotal:"):
                         total_kb = int(re.search(r"\d+", line).group())

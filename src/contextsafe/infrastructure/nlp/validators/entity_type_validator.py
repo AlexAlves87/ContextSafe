@@ -28,6 +28,7 @@ from typing import TYPE_CHECKING
 
 import numpy as np
 
+
 if TYPE_CHECKING:
     from numpy.typing import NDArray
 
@@ -230,7 +231,7 @@ class EntityTypeValidator:
 
         except ImportError:
             logger.error(
-                "sentence-transformers not installed. " "Run: pip install sentence-transformers"
+                "sentence-transformers not installed. Run: pip install sentence-transformers"
             )
             return False
         except Exception as e:

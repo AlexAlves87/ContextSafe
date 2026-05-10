@@ -471,17 +471,17 @@ class PresidioNerAdapter(NerService):
     def _add_spanish_recognizers(self) -> None:
         """Add custom Spanish recognizers to the analyzer."""
         from contextsafe.infrastructure.nlp.recognizers import (
+            SpanishAddressRecognizer,
             SpanishCIFRecognizer,
+            SpanishDateRecognizer,
             SpanishDNIRecognizer,
             SpanishIBANRecognizer,
+            SpanishNameRecognizer,
             SpanishNIERecognizer,
             SpanishNSSRecognizer,
-            SpanishPhoneRecognizer,
-            SpanishNameRecognizer,
             SpanishOrgRecognizer,
+            SpanishPhoneRecognizer,
             SpanishPostalCodeRecognizer,
-            SpanishAddressRecognizer,
-            SpanishDateRecognizer,
         )
 
         spanish_recognizers = [

@@ -3,7 +3,6 @@
 TF-005: DNI/IBAN/NSS generated in ADVANCED level must have mathematically
 invalid checksums, so they cannot correspond to real data.
 """
-import pytest
 
 from contextsafe.infrastructure.nlp.strategies.synthetic import (
     DNI_LETTERS,

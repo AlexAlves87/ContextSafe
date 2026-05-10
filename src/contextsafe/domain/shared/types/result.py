@@ -10,8 +10,10 @@ Traceability:
 """
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable, Generic, TypeVar, Union
+from typing import Generic, TypeVar, Union
+
 
 T = TypeVar("T")
 E = TypeVar("E")

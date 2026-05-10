@@ -9,7 +9,7 @@ Traceability:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Callable, List, Type
+from collections.abc import Callable
 
 from contextsafe.domain.shared.types import DomainEvent
 
@@ -34,7 +34,7 @@ class EventPublisher(ABC):
         ...
 
     @abstractmethod
-    async def publish_all(self, events: List[DomainEvent]) -> None:
+    async def publish_all(self, events: list[DomainEvent]) -> None:
         """
         Publish multiple domain events.
 
@@ -46,7 +46,7 @@ class EventPublisher(ABC):
     @abstractmethod
     def subscribe(
         self,
-        event_type: Type[DomainEvent],
+        event_type: type[DomainEvent],
         handler: Callable[[DomainEvent], None],
     ) -> None:
         """
@@ -61,7 +61,7 @@ class EventPublisher(ABC):
     @abstractmethod
     def unsubscribe(
         self,
-        event_type: Type[DomainEvent],
+        event_type: type[DomainEvent],
         handler: Callable[[DomainEvent], None],
     ) -> None:
         """

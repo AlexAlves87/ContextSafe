@@ -20,10 +20,10 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from contextsafe.domain.shared.value_objects import (
-    AnonymizationLevel,
+    ADVANCED,
     BASIC,
     INTERMEDIATE,
-    ADVANCED,
+    AnonymizationLevel,
     ConfidenceScore,
 )
 

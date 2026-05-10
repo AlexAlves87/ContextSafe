@@ -20,16 +20,16 @@ from contextsafe.domain.shared.value_objects import (
     TextSpan,
 )
 from contextsafe.infrastructure.nlp.merge.anchors import (
-    apply_contextual_anchors,
-    PERSON_ANCHORS,
     LOCATION_ANCHORS,
     ORG_ANCHORS,
+    PERSON_ANCHORS,
+    apply_contextual_anchors,
 )
 from contextsafe.infrastructure.nlp.merge.voting import (
-    weighted_vote_with_tiebreaker,
-    get_weighted_score,
     DETECTOR_WEIGHTS,
     TIE_THRESHOLD,
+    get_weighted_score,
+    weighted_vote_with_tiebreaker,
 )
 
 
@@ -316,7 +316,7 @@ class TestGdprRiskTiebreaker:
             create_detection("PERSON_NAME", "Pura", 0, 4, 0.85, "spacy"),
         ]
 
-        result = weighted_vote_with_tiebreaker(detections)
+        weighted_vote_with_tiebreaker(detections)
 
         # With GDPR tiebreaker, PERSON_NAME (100) beats LOCATION (40)
         # This matches the "doña Pura" audit case

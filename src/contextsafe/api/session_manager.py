@@ -5,10 +5,10 @@ Almacén in-memory para documentos, proyectos y glossary.
 Sesión única local sin autenticación.
 """
 
+import uuid
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, Dict, Optional
-import uuid
+from typing import Any, Optional
 
 
 # ============================================================================
@@ -42,19 +42,19 @@ class Session:
 
     id: str
     created_at: datetime
-    documents: Dict[str, DocumentWithTimer] = field(default_factory=dict)
-    projects: Dict[str, Dict] = field(default_factory=dict)
-    glossary: Dict[str, list] = field(default_factory=dict)
+    documents: dict[str, DocumentWithTimer] = field(default_factory=dict)
+    projects: dict[str, dict] = field(default_factory=dict)
+    glossary: dict[str, list] = field(default_factory=dict)
 
     @property
     def docs_count(self) -> int:
         return len(self.documents)
 
     @property
-    def active_documents(self) -> Dict[str, DocumentWithTimer]:
+    def active_documents(self) -> dict[str, DocumentWithTimer]:
         return self.documents
 
-    def get_project_documents(self, project_id: str) -> Dict[str, DocumentWithTimer]:
+    def get_project_documents(self, project_id: str) -> dict[str, DocumentWithTimer]:
         """Documentos de un proyecto específico."""
         return {k: v for k, v in self.documents.items() if v.project_id == project_id}
 
@@ -66,7 +66,7 @@ class SessionManager:
     """Gestor de sesión local en memoria."""
 
     def __init__(self):
-        self._sessions: Dict[str, Session] = {}
+        self._sessions: dict[str, Session] = {}
 
     _local_session_id: str = "local"
 
@@ -174,7 +174,7 @@ class SessionManager:
         return False
 
     # --- Proyectos ---
-    def add_project(self, session_id: str, project_id: str, project_data: Dict) -> bool:
+    def add_project(self, session_id: str, project_id: str, project_data: dict) -> bool:
         """Añade un proyecto a la sesión."""
         session = self.get_session(session_id)
         if not session:
@@ -182,7 +182,7 @@ class SessionManager:
         session.projects[project_id] = project_data
         return True
 
-    def get_project(self, session_id: str, project_id: str) -> Optional[Dict]:
+    def get_project(self, session_id: str, project_id: str) -> Optional[dict]:
         """Obtiene un proyecto de la sesión."""
         session = self.get_session(session_id)
         if not session:
@@ -196,7 +196,7 @@ class SessionManager:
             return []
         return list(session.projects.values())
 
-    def update_project(self, session_id: str, project_id: str, project_data: Dict) -> bool:
+    def update_project(self, session_id: str, project_id: str, project_data: dict) -> bool:
         """Actualiza un proyecto en la sesión."""
         session = self.get_session(session_id)
         if not session or project_id not in session.projects:
@@ -236,7 +236,7 @@ class SessionManager:
         session.glossary[project_id] = entries
         return True
 
-    def add_glossary_entry(self, session_id: str, project_id: str, entry: Dict) -> bool:
+    def add_glossary_entry(self, session_id: str, project_id: str, entry: dict) -> bool:
         """Añade una entrada al glossary de un proyecto."""
         session = self.get_session(session_id)
         if not session:

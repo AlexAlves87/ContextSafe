@@ -10,14 +10,15 @@ Traceability:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
-from typing import Awaitable, Callable, List
 
 from contextsafe.domain.shared.value_objects import (
     ConfidenceScore,
     PiiCategory,
     TextSpan,
 )
+
 
 # Type alias for progress callback: (current_chunk, total_chunks, info) -> None
 ProgressCallback = Callable[[int, int, str], Awaitable[None]]
@@ -42,7 +43,7 @@ class NerDetection:
     confidence: ConfidenceScore
     source: str = "unknown"  # Detector origin: roberta, spacy, regex, presidio
 
-    def with_category(self, new_category: PiiCategory) -> "NerDetection":
+    def with_category(self, new_category: PiiCategory) -> NerDetection:
         """Create a copy with a different category (for anchor forcing)."""
         return NerDetection(
             category=new_category,
@@ -52,7 +53,7 @@ class NerDetection:
             source=self.source,
         )
 
-    def with_span(self, new_span: TextSpan, new_value: str) -> "NerDetection":
+    def with_span(self, new_span: TextSpan, new_value: str) -> NerDetection:
         """Create a copy with updated span and value (for token snapping)."""
         return NerDetection(
             category=self.category,
@@ -78,10 +79,10 @@ class NerService(ABC):
     async def detect_entities(
         self,
         text: str,
-        categories: List[PiiCategory] | None = None,
+        categories: list[PiiCategory] | None = None,
         min_confidence: float = 0.5,
         progress_callback: ProgressCallback | None = None,
-    ) -> List[NerDetection]:
+    ) -> list[NerDetection]:
         """
         Detect PII entities in text.
 

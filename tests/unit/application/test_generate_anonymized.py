@@ -1,7 +1,5 @@
 """Tests for whitespace boundary preservation in anonymization replacement."""
 
-import pytest
-
 
 class TestReplacementWhitespace:
     """Tests that replacement preserves word boundaries."""

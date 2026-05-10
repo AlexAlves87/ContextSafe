@@ -10,7 +10,7 @@ Traceability:
 """
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from uuid import UUID, uuid4
 
 from hypothesis import strategies as st
@@ -123,13 +123,11 @@ def alias_gen(draw) -> Alias:
 def domain_event_gen(draw) -> DomainEvent:
     """Generate base DomainEvent instances."""
     event_id = draw(uuid_gen())
-    occurred_at = datetime.now(timezone.utc)
+    occurred_at = datetime.now(UTC)
 
     # Create a concrete subclass for testing
     class TestDomainEvent(DomainEvent):
         """Test event implementation."""
-
-        pass
 
     return TestDomainEvent(event_id=event_id, occurred_at=occurred_at)
 
@@ -142,8 +140,6 @@ def entity_gen(draw) -> Entity[UUID]:
     # Create a concrete subclass for testing
     class TestEntity(Entity[UUID]):
         """Test entity implementation."""
-
-        pass
 
     return TestEntity(id=entity_id)
 

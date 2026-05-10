@@ -14,21 +14,18 @@ from __future__ import annotations
 import csv
 import io
 import json
-import re
 from datetime import datetime
 from enum import Enum
-from typing import List
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Query, Request, status
 from fastapi.responses import StreamingResponse
 
-from contextsafe.api.schemas import ErrorResponse
 from contextsafe.api.middleware.session import get_session_id
+from contextsafe.api.schemas import ErrorResponse
 from contextsafe.api.services.pii_validation import (
-    CriticalPiiMatch,
-    validate_no_critical_pii,
     format_pii_validation_error,
+    validate_no_critical_pii,
 )
 from contextsafe.api.session_manager import session_manager
 
@@ -56,9 +53,9 @@ def _generate_pdf_content(text: str, title: str) -> bytes:
     try:
         # Try using reportlab for proper PDF with Unicode support
         from reportlab.lib.pagesizes import A4
-        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
         from reportlab.lib.units import cm
-        from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+        from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
         buffer = io.BytesIO()
         doc = SimpleDocTemplate(
@@ -213,12 +210,11 @@ def _generate_docx_content(text: str, title: str) -> bytes:
     try:
         # Try using python-docx for proper DOCX with full formatting
         from docx import Document
-        from docx.shared import Pt
 
         doc = Document()
 
         # Add title
-        heading = doc.add_heading(title, level=1)
+        doc.add_heading(title, level=1)
 
         # Normalize line endings
         text = text.replace("\r\n", "\n").replace("\r", "\n")

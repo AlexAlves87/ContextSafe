@@ -12,6 +12,7 @@ import time
 
 from contextsafe.application.compute_mode import ComputeMode
 
+
 # Runtime compute mode (can be changed without restart)
 _current_compute_mode: ComputeMode = ComputeMode.CPU
 
@@ -58,6 +59,7 @@ def _is_gpu_available() -> bool:
             capture_output=True,
             text=True,
             timeout=5,
+            check=False,
         )
         if result.returncode == 0 and result.stdout.strip():
             available = True

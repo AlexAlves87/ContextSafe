@@ -75,7 +75,7 @@ class TxtExtractor(DocumentExtractor):
                 metadata["detected_encoding"] = encoding
                 metadata["encoding_confidence"] = f"{confidence:.2f}"
         except Exception as e:
-            errors.append(f"chardet error: {str(e)}")
+            errors.append(f"chardet error: {e!s}")
 
         # Try detected encoding first, then fallbacks
         text = None

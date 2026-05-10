@@ -14,7 +14,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, List, Optional, Tuple
+from typing import Optional
 
 
 class DocumentTypeEnum(str, Enum):
@@ -30,7 +30,7 @@ class DocumentTypeEnum(str, Enum):
 
 
 # Patterns for each document type (applied to uppercased header text)
-DOCUMENT_TYPE_PATTERNS: Dict[DocumentTypeEnum, List[str]] = {
+DOCUMENT_TYPE_PATTERNS: dict[DocumentTypeEnum, list[str]] = {
     DocumentTypeEnum.SENTENCIA: [
         r"SENTENCIA",
         r"JUZGADO",
@@ -85,7 +85,7 @@ class DocumentClassification:
 
     document_type: DocumentTypeEnum
     confidence: float  # 0.0-1.0 based on pattern match density
-    matched_patterns: Tuple[str, ...] = field(default_factory=tuple)
+    matched_patterns: tuple[str, ...] = field(default_factory=tuple)
 
     @property
     def is_classified(self) -> bool:
@@ -103,7 +103,7 @@ class DocumentTypeClassifier:
 
     def __init__(self, max_chars: int = 500) -> None:
         self._max_chars = max_chars
-        self._compiled_patterns: Dict[DocumentTypeEnum, List[re.Pattern[str]]] = {
+        self._compiled_patterns: dict[DocumentTypeEnum, list[re.Pattern[str]]] = {
             doc_type: [re.compile(p) for p in patterns]
             for doc_type, patterns in DOCUMENT_TYPE_PATTERNS.items()
         }
@@ -119,7 +119,7 @@ class DocumentTypeClassifier:
             DocumentClassification with type, confidence, and matched patterns.
         """
         header = text[: self._max_chars].upper()
-        scores: Dict[DocumentTypeEnum, List[str]] = {}
+        scores: dict[DocumentTypeEnum, list[str]] = {}
 
         for doc_type, patterns in self._compiled_patterns.items():
             matched = [p.pattern for p in patterns if p.search(header)]
@@ -149,7 +149,7 @@ class DocumentTypeClassifier:
         )
 
     def classify_with_fallback(
-        self, text: str, metadata: Optional[Dict[str, str]] = None
+        self, text: str, metadata: Optional[dict[str, str]] = None
     ) -> DocumentClassification:
         """
         Classify with optional metadata fallback.

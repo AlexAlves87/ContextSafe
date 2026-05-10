@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import FrozenSet
 
 from contextsafe.domain.shared.errors import InvalidLevelError
 from contextsafe.domain.shared.types import Err, Ok, Result
@@ -27,7 +26,7 @@ class AnonymizationLevelEnum(str, Enum):
 
 
 # Categories included in each level
-LEVEL_CATEGORIES: dict[AnonymizationLevelEnum, FrozenSet[PiiCategoryEnum]] = {
+LEVEL_CATEGORIES: dict[AnonymizationLevelEnum, frozenset[PiiCategoryEnum]] = {
     AnonymizationLevelEnum.BASIC: frozenset(
         {
             PiiCategoryEnum.DNI_NIE,
@@ -104,7 +103,7 @@ class AnonymizationLevel:
             return Err(InvalidLevelError.create(value))
 
     @property
-    def categories(self) -> FrozenSet[PiiCategoryEnum]:
+    def categories(self) -> frozenset[PiiCategoryEnum]:
         """Get the PII categories included in this level."""
         return LEVEL_CATEGORIES.get(self.value, frozenset())
 

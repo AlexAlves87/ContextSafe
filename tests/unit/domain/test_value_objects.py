@@ -10,11 +10,20 @@ Tests all value objects in contextsafe.domain.shared.value_objects:
 - AnonymizationLevel
 - DocumentState
 """
-import pytest
 from uuid import uuid4
 
+from contextsafe.domain.shared.errors import (
+    InvalidAliasError,
+    InvalidCategoryError,
+    InvalidIdError,
+    InvalidLevelError,
+    InvalidScoreError,
+    InvalidSpanError,
+    InvalidStateError,
+)
 from contextsafe.domain.shared.value_objects import (
     Alias,
+    AnonymizationLevel,
     ConfidenceScore,
     DocumentId,
     DocumentState,
@@ -22,37 +31,27 @@ from contextsafe.domain.shared.value_objects import (
     PiiCategory,
     ProjectId,
     TextSpan,
-    AnonymizationLevel,
-)
-from contextsafe.domain.shared.value_objects.pii_category import (
-    PERSON_NAME,
-    EMAIL,
-    PiiCategoryEnum,
-)
-from contextsafe.domain.shared.value_objects.document_state import (
-    PENDING,
-    INGESTED,
-    DETECTING,
-    DETECTED,
-    ANONYMIZING,
-    ANONYMIZED,
-    FAILED,
-    DocumentStateEnum,
 )
 from contextsafe.domain.shared.value_objects.anonymization_level import (
+    ADVANCED,
     BASIC,
     INTERMEDIATE,
-    ADVANCED,
     AnonymizationLevelEnum,
 )
-from contextsafe.domain.shared.errors import (
-    InvalidIdError,
-    InvalidScoreError,
-    InvalidSpanError,
-    InvalidAliasError,
-    InvalidCategoryError,
-    InvalidLevelError,
-    InvalidStateError,
+from contextsafe.domain.shared.value_objects.document_state import (
+    ANONYMIZED,
+    ANONYMIZING,
+    DETECTED,
+    DETECTING,
+    FAILED,
+    INGESTED,
+    PENDING,
+    DocumentStateEnum,
+)
+from contextsafe.domain.shared.value_objects.pii_category import (
+    EMAIL,
+    PERSON_NAME,
+    PiiCategoryEnum,
 )
 
 

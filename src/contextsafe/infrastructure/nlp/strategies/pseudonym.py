@@ -18,6 +18,7 @@ from contextsafe.infrastructure.nlp.strategies.base import (
     ReplacementResult,
 )
 
+
 if TYPE_CHECKING:
     from contextsafe.application.ports.ner_service import NerDetection
     from contextsafe.infrastructure.nlp.anonymization_adapter import (
@@ -39,7 +40,7 @@ class PseudonymStrategy(AnonymizationStrategy):
     as a strategy for the Strategy pattern.
     """
 
-    def __init__(self, adapter: "InMemoryAnonymizationAdapter"):
+    def __init__(self, adapter: InMemoryAnonymizationAdapter):
         """
         Initialize with reference to the adapter.
 
@@ -53,7 +54,7 @@ class PseudonymStrategy(AnonymizationStrategy):
 
     async def generate_replacement(
         self,
-        detection: "NerDetection",
+        detection: NerDetection,
         project_id: str,
     ) -> ReplacementResult:
         """

@@ -11,6 +11,7 @@ from contextsafe.domain.shared.events.document_anonymized import DocumentAnonymi
 from contextsafe.domain.shared.events.document_ingested import DocumentIngested
 from contextsafe.domain.shared.events.pii_detected import PiiDetected
 
+
 __all__ = [
     "DocumentIngested",
     "PiiDetected",

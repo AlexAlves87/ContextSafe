@@ -5,7 +5,6 @@ Traceability:
 - Design: docs/plans/2026-02-01-text-preprocessing-design.md
 """
 
-import pytest
 
 from contextsafe.application.ports.text_preprocessor import OffsetMapping
 from contextsafe.infrastructure.text_processing.offset_tracker import (

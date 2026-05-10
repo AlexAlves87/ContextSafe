@@ -14,9 +14,6 @@ Traceability:
 """
 from __future__ import annotations
 
-from uuid import uuid4
-
-import pytest
 from hypothesis import given
 from hypothesis import strategies as st
 
@@ -26,7 +23,6 @@ from contextsafe.domain.shared.types import DomainEvent
 # Import generators from conftest
 from .conftest import (
     domain_event_gen,
-    entity_gen,
     pii_category_gen,
     project_id_gen,
 )

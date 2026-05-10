@@ -17,29 +17,20 @@ from typing import TYPE_CHECKING
 from uuid import uuid4
 
 import pytest
-from hypothesis import assume, given, settings, HealthCheck, strategies as st
+from hypothesis import HealthCheck, assume, given, settings
+from hypothesis import strategies as st
+
 
 if TYPE_CHECKING:
-    from contextsafe.domain.anonymization.entities.anonymized_document import (
-        AnonymizedDocument,
-    )
-    from contextsafe.domain.entity_detection.entities.detection_result import (
-        DetectionResult,
-    )
+    pass
 
 # Import domain types
 try:
-    from contextsafe.domain.shared.value_objects import (
-        Alias,
-        ConfidenceScore,
-        PiiCategory,
-        TextSpan,
-    )
-    from contextsafe.domain.entity_detection.entities.detection_result import (
-        DetectionResult,
-    )
     from contextsafe.domain.anonymization.aggregates.glossary import Glossary
-    from contextsafe.domain.shared.value_objects import ProjectId
+    from contextsafe.domain.shared.value_objects import (
+        PiiCategory,
+        ProjectId,
+    )
 
     IMPORTS_AVAILABLE = True
 except ImportError:
@@ -217,9 +208,7 @@ class TestAnonymizationDeterminism:
         result1 = anonymize(document_text, entities)
         result2 = anonymize(document_text, entities)
 
-        assert result1 == result2, (
-            f"Determinism violated:\n" f"First:  {result1}\n" f"Second: {result2}"
-        )
+        assert result1 == result2, f"Determinism violated:\nFirst:  {result1}\nSecond: {result2}"
 
     @given(
         entity=st.text(min_size=1, max_size=30),
@@ -365,7 +354,7 @@ class TestAliasFormat:
         for entity in entities:
             if not entity.strip():
                 continue
-            alias = glossary.get_or_assign_alias(
+            glossary.get_or_assign_alias(
                 normalized_value=entity.lower(),
                 category=PiiCategory.from_string("PERSON_NAME").unwrap(),
             ).unwrap()
@@ -443,7 +432,7 @@ class TestEdgeCases:
     def test_empty_document_handled(self):
         """Empty documents should not cause errors."""
         project_id = ProjectId(uuid4())
-        glossary = Glossary.create(project_id)
+        Glossary.create(project_id)
 
         # No entities to replace
         result = ""
@@ -661,6 +650,6 @@ class TestAdversarialInputRobustness:
             category=PiiCategory.from_string(category).unwrap(),
         ).unwrap()
 
-        assert alias1 == alias2, (
-            f"Determinism violated for adversarial entity '{entity_text}': " f"{alias1} != {alias2}"
-        )
+        assert (
+            alias1 == alias2
+        ), f"Determinism violated for adversarial entity '{entity_text}': {alias1} != {alias2}"

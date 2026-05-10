@@ -10,7 +10,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Dict, List, Optional
+from typing import Optional
 
 from contextsafe.application.ports import (
     DetectionPreprocessor,
@@ -38,7 +38,7 @@ class DetectPiiRequest:
     """Input for PII detection."""
 
     document_id: str
-    categories: Optional[List[str]] = None
+    categories: Optional[list[str]] = None
     min_confidence: float = 0.5
 
 
@@ -61,9 +61,9 @@ class DetectPiiResponse:
 
     document_id: str
     total_entities: int
-    entities_by_category: Dict[str, int]
+    entities_by_category: dict[str, int]
     low_confidence_count: int
-    entities: List[DetectedEntity]
+    entities: list[DetectedEntity]
 
 
 class DetectPii:
@@ -123,7 +123,7 @@ class DetectPii:
             return Err(result.unwrap_err())
 
         # 5. Parse categories filter
-        categories_filter: Optional[List[PiiCategory]] = None
+        categories_filter: Optional[list[PiiCategory]] = None
         if request.categories:
             categories_filter = []
             for cat_str in request.categories:
@@ -153,7 +153,7 @@ class DetectPii:
             return Err(DetectionError(f"NER detection failed: {e}"))
 
         # 8. Create DetectionResult entities with original spans
-        detection_results: List[DetectionResult] = []
+        detection_results: list[DetectionResult] = []
         for detection in detections:
             # Translate span from normalized text back to original
             orig_start, orig_end = mapping.to_original_span(
@@ -181,9 +181,9 @@ class DetectPii:
         await self._document_repo.save(aggregate)
 
         # 11. Build response
-        entities_by_category: Dict[str, int] = {}
+        entities_by_category: dict[str, int] = {}
         low_confidence_count = 0
-        entities: List[DetectedEntity] = []
+        entities: list[DetectedEntity] = []
 
         for det in detection_results:
             cat_str = str(det.category)

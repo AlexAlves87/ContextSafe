@@ -21,31 +21,32 @@ from __future__ import annotations
 import asyncio
 import logging
 import re
-from typing import Any, List, Pattern
+from re import Pattern
+from typing import Any
 
 from contextsafe.application.ports import NerDetection, NerService, ProgressCallback
 from contextsafe.domain.shared.types import Ok
 from contextsafe.domain.shared.value_objects import (
-    ConfidenceScore,
-    PiiCategory,
-    PERSON_NAME,
-    ORGANIZATION,
     ADDRESS,
-    LOCATION,
-    DNI_NIE,
-    PASSPORT,
-    IBAN,
     BANK_ACCOUNT,
     CREDIT_CARD,
+    DNI_NIE,
+    IBAN,
+    LOCATION,
+    ORGANIZATION,
+    PASSPORT,
+    PERSON_NAME,
+    ConfidenceScore,
+    PiiCategory,
 )
 
 # Intelligent merge components
 from contextsafe.infrastructure.nlp.merge.anchors import apply_contextual_anchors
-from contextsafe.infrastructure.nlp.merge.voting import (
-    weighted_vote_with_tiebreaker,
-    get_weighted_score,
-)
 from contextsafe.infrastructure.nlp.merge.snapping import snap_all_detections
+from contextsafe.infrastructure.nlp.merge.voting import (
+    get_weighted_score,
+    weighted_vote_with_tiebreaker,
+)
 
 # Text normalization (Unicode, OCR robustness)
 from contextsafe.infrastructure.nlp.text_normalizer import TextNormalizer
@@ -55,6 +56,7 @@ from contextsafe.infrastructure.nlp.validators.entity_type_validator import (
     EntityTypeValidator,
     ValidationAction,
 )
+
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +68,7 @@ logger = logging.getLogger(__name__)
 # They represent public references (court cases, laws, etc.)
 # Includes variations found in real CENDOJ documents.
 
-FALSE_POSITIVE_PATTERNS: List[Pattern] = [
+FALSE_POSITIVE_PATTERNS: list[Pattern] = [
     # =========================================================================
     # LEGAL DOCUMENT SECTION TITLES (NOT PII - structure headings)
     # "FUNDAMENTOS DE DERECHO", "HECHOS", "SUPLICO AL JUZGADO", etc.
@@ -395,7 +397,7 @@ GENERIC_TERMS_WHITELIST = {
 # as PII (e.g., DOI numbers are not postal codes, ORCID is not credit card).
 # ============================================================================
 
-CONTEXT_EXCLUSION_PATTERNS: List[Pattern] = [
+CONTEXT_EXCLUSION_PATTERNS: list[Pattern] = [
     # DOI - Digital Object Identifier
     # Format: 10.XXXXX/... - the numeric part is NOT a postal code
     re.compile(r"(?:https?://)?(?:dx\.)?doi\.org/10\.\d+/[^\s]+", re.IGNORECASE),
@@ -463,7 +465,7 @@ STRUCTURAL_CASE_NUMBER_PATTERNS: list[re.Pattern] = [
 # 2. "Audiencia Provincial de" (no number needed)
 JUDICIAL_LOCATION_CONTEXT: list[re.Pattern] = [
     re.compile(
-        r"(?:juzgado|sala)\s+.*?" r"n[ºúu]m?\.?\s*\d+\s+(?:de|DE)\s*$",
+        r"(?:juzgado|sala)\s+.*?n[ºúu]m?\.?\s*\d+\s+(?:de|DE)\s*$",
         re.IGNORECASE | re.DOTALL,
     ),
     re.compile(

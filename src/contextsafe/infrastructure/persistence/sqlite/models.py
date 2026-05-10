@@ -10,7 +10,6 @@ Traceability:
 
 from __future__ import annotations
 
-import json
 from datetime import datetime
 from typing import Any, Optional
 
@@ -20,8 +19,6 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 class Base(DeclarativeBase):
     """SQLAlchemy declarative base for all models."""
-
-    pass
 
 
 class DocumentModel(Base):

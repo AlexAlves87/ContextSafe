@@ -15,6 +15,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+
 if TYPE_CHECKING:
     from contextsafe.application.ports.ner_service import NerDetection
 
@@ -25,7 +26,7 @@ class AnonymizationResult:
 
     original_text: str
     anonymized_text: str
-    replacements: list["EntityReplacement"]
+    replacements: list[EntityReplacement]
     error: str | None = None
 
     @property
@@ -60,7 +61,7 @@ class AnonymizationService(ABC):
     async def anonymize_text(
         self,
         text: str,
-        detections: list["NerDetection"],
+        detections: list[NerDetection],
         project_id: str,
         level: str = "INTERMEDIATE",
     ) -> AnonymizationResult:

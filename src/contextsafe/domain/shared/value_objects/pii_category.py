@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Dict
 
 from contextsafe.domain.shared.errors import InvalidCategoryError
 from contextsafe.domain.shared.types import Err, Ok, Result
@@ -82,7 +81,7 @@ class PiiCategoryEnum(str, Enum):
 
 
 # Alias patterns for each category
-ALIAS_PATTERNS: Dict[PiiCategoryEnum, str] = {
+ALIAS_PATTERNS: dict[PiiCategoryEnum, str] = {
     # Person & Organization
     PiiCategoryEnum.PERSON_NAME: "Persona_{N}",
     PiiCategoryEnum.ORGANIZATION: "Org_{N}",

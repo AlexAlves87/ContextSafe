@@ -7,15 +7,16 @@ Tests:
 - AliasAssigned
 - DocumentAnonymized
 """
-import pytest
 from datetime import datetime
 from uuid import uuid4
 
+import pytest
+
 from contextsafe.domain.shared.events import (
-    DocumentIngested,
-    PiiDetected,
     AliasAssigned,
     DocumentAnonymized,
+    DocumentIngested,
+    PiiDetected,
 )
 
 

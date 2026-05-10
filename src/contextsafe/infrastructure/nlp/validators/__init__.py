@@ -11,4 +11,5 @@ Based on:
 
 from .entity_type_validator import EntityTypeValidator, ValidationResult
 
+
 __all__ = ["EntityTypeValidator", "ValidationResult"]

@@ -24,6 +24,7 @@ from contextsafe.domain.shared.value_objects.pii_category import (
     PiiCategoryEnum,
 )
 
+
 # Zone thresholds
 GREEN_THRESHOLD = 0.85
 AMBER_THRESHOLD = 0.40

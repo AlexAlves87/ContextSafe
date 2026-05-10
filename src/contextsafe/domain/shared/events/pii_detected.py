@@ -10,7 +10,7 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Dict
+from typing import Any
 
 from contextsafe.domain.shared.types import DomainEvent
 
@@ -29,7 +29,7 @@ class PiiDetected(DomainEvent):
     document_id: str = ""
     project_id: str = ""
     total_entities: int = 0
-    entities_by_category: Dict[str, int] = field(default_factory=dict)
+    entities_by_category: dict[str, int] = field(default_factory=dict)
     low_confidence_count: int = 0
     processing_time_ms: int = 0
 
@@ -39,7 +39,7 @@ class PiiDetected(DomainEvent):
         document_id: str,
         project_id: str,
         total_entities: int,
-        entities_by_category: Dict[str, int],
+        entities_by_category: dict[str, int],
         low_confidence_count: int = 0,
         processing_time_ms: int = 0,
         correlation_id: str = "",

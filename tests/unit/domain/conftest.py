@@ -8,14 +8,9 @@ for testing domain layer components.
 from __future__ import annotations
 
 from datetime import datetime
-from typing import TYPE_CHECKING
 from uuid import uuid4
 
 import pytest
-
-if TYPE_CHECKING:
-    from contextsafe.domain.document_processing.entities.document import Document
-    from contextsafe.domain.project_management.aggregates.project import Project
 
 
 # =============================================================================
@@ -23,13 +18,13 @@ if TYPE_CHECKING:
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def random_uuid():
     """Generate a random UUID for testing."""
     return uuid4()
 
 
-@pytest.fixture
+@pytest.fixture()
 def document_id(random_uuid):
     """Generate a document ID."""
     try:
@@ -40,7 +35,7 @@ def document_id(random_uuid):
         return random_uuid
 
 
-@pytest.fixture
+@pytest.fixture()
 def project_id(random_uuid):
     """Generate a project ID."""
     try:
@@ -56,7 +51,7 @@ def project_id(random_uuid):
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def valid_confidence_score():
     """Create a valid confidence score."""
     try:
@@ -67,7 +62,7 @@ def valid_confidence_score():
         return 0.85
 
 
-@pytest.fixture
+@pytest.fixture()
 def low_confidence_score():
     """Create a low confidence score."""
     try:
@@ -78,7 +73,7 @@ def low_confidence_score():
         return 0.3
 
 
-@pytest.fixture
+@pytest.fixture()
 def text_span():
     """Create a sample text span."""
     try:
@@ -89,7 +84,7 @@ def text_span():
         return {"start": 10, "end": 20, "text": "Juan García"}
 
 
-@pytest.fixture
+@pytest.fixture()
 def pii_category():
     """Create a PII category."""
     try:
@@ -100,7 +95,7 @@ def pii_category():
         return "PERSON_NAME"
 
 
-@pytest.fixture
+@pytest.fixture()
 def alias():
     """Create a sample alias."""
     try:
@@ -116,7 +111,7 @@ def alias():
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_document(document_id, project_id):
     """Create a sample document for testing."""
     try:
@@ -139,7 +134,7 @@ def sample_document(document_id, project_id):
         }
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_detection_result(document_id, text_span, pii_category, valid_confidence_score):
     """Create a sample detection result."""
     try:
@@ -169,7 +164,7 @@ def sample_detection_result(document_id, text_span, pii_category, valid_confiden
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def empty_glossary(project_id):
     """Create an empty glossary."""
     try:
@@ -180,7 +175,7 @@ def empty_glossary(project_id):
         return {"project_id": project_id, "entries": {}}
 
 
-@pytest.fixture
+@pytest.fixture()
 def glossary_with_entries(project_id, pii_category):
     """Create a glossary with some entries."""
     try:
@@ -200,7 +195,7 @@ def glossary_with_entries(project_id, pii_category):
         }
 
 
-@pytest.fixture
+@pytest.fixture()
 def sample_project(project_id):
     """Create a sample project."""
     try:
@@ -224,7 +219,7 @@ def sample_project(project_id):
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def document_ingested_event(document_id, project_id):
     """Create a DocumentIngested event."""
     try:
@@ -246,7 +241,7 @@ def document_ingested_event(document_id, project_id):
         }
 
 
-@pytest.fixture
+@pytest.fixture()
 def pii_detected_event(document_id):
     """Create a PiiDetected event."""
     try:
@@ -273,7 +268,7 @@ def pii_detected_event(document_id):
 # =============================================================================
 
 
-@pytest.fixture
+@pytest.fixture()
 def ok_result():
     """Create an Ok result."""
     try:
@@ -284,12 +279,12 @@ def ok_result():
         return {"ok": True, "value": "success"}
 
 
-@pytest.fixture
+@pytest.fixture()
 def err_result():
     """Create an Err result."""
     try:
-        from contextsafe.domain.shared.result import Err
         from contextsafe.domain.shared.errors import ValidationError
+        from contextsafe.domain.shared.result import Err
 
         return Err(error=ValidationError("Invalid input"))
     except ImportError:

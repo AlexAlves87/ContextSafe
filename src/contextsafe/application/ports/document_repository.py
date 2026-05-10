@@ -10,7 +10,7 @@ Traceability:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import Optional
 
 from contextsafe.domain.document_processing.aggregates.document_aggregate import (
     DocumentAggregate,
@@ -62,7 +62,7 @@ class DocumentRepository(ABC):
         project_id: ProjectId,
         limit: int = 100,
         offset: int = 0,
-    ) -> List[DocumentAggregate]:
+    ) -> list[DocumentAggregate]:
         """
         Find all documents for a project.
 

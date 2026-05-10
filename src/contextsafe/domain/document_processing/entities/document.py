@@ -23,9 +23,9 @@ from contextsafe.domain.shared.errors import (
 )
 from contextsafe.domain.shared.types import Entity, Err, Ok, Result
 from contextsafe.domain.shared.value_objects import (
+    PENDING,
     DocumentId,
     DocumentState,
-    PENDING,
     ProjectId,
 )
 

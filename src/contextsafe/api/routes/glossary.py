@@ -11,24 +11,18 @@ Note: Glossary is always scoped to a specific project (BR-002).
 from __future__ import annotations
 
 import re
-from typing import List, Optional
+from datetime import UTC
+from typing import Optional
 from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Request, status
 from pydantic import BaseModel, Field
 
+# Import use case and dependencies
 from contextsafe.api.middleware.session import get_session_id
-from contextsafe.api.schemas import ErrorResponse, GlossaryEntryResponse
+from contextsafe.api.schemas import ErrorResponse
 from contextsafe.api.schemas.response_wrapper import ApiListResponse, ApiResponse, PaginatedMeta
 from contextsafe.api.session_manager import session_manager
-
-# Import use case and dependencies
-from contextsafe.api.dependencies import get_container
-from contextsafe.application.use_cases import (
-    ApplyGlossaryChanges,
-    ApplyGlossaryChangesRequest,
-    AliasChange,
-)
 
 
 router = APIRouter(prefix="/v1/projects", tags=["glossary"])
@@ -53,10 +47,10 @@ class AliasChangeSchema(BaseModel):
 class UpdateGlossaryRequest(BaseModel):
     """Request body for updating glossary aliases."""
 
-    changes: List[AliasChangeSchema] = Field(
+    changes: list[AliasChangeSchema] = Field(
         default=[], description="List of alias changes to apply"
     )
-    deletions: List[str] = Field(
+    deletions: list[str] = Field(
         default=[], description="List of entry IDs to delete (undo anonymization)"
     )
     document_id: Optional[str] = Field(None, description="Document ID to regenerate (optional)")
@@ -80,7 +74,7 @@ class UpdateGlossaryResponse(BaseModel):
     changes_failed: int
     deletions_applied: int = 0
     merged_count: int = 0  # Number of duplicate entries that were merged
-    change_results: List[ChangeResultSchema]
+    change_results: list[ChangeResultSchema]
     document_regenerated: bool
     anonymized_text: Optional[str] = None
 
@@ -179,11 +173,11 @@ async def update_glossary(
 
     try:
         # Apply changes directly to in-memory glossary
-        change_results: List[ChangeResultSchema] = []
+        change_results: list[ChangeResultSchema] = []
         changes_applied = 0
         changes_failed = 0
 
-        from datetime import datetime, timezone
+        from datetime import datetime
 
         # 1. Apply Deletions first
         deletions_applied = 0
@@ -216,7 +210,7 @@ async def update_glossary(
                     history_entry = {
                         "old_alias": old_alias,
                         "new_alias": change.new_alias,
-                        "changed_at": datetime.now(timezone.utc).isoformat(),
+                        "changed_at": datetime.now(UTC).isoformat(),
                         "version": len(entry.get("history", [])) + 2,  # v1 is original
                     }
                     # Track category change in history
@@ -224,7 +218,7 @@ async def update_glossary(
                         history_entry["old_category"] = old_category
                         history_entry["new_category"] = change.new_category
                     entry["history"].append(history_entry)
-                    entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+                    entry["updated_at"] = datetime.now(UTC).isoformat()
                     entry["version"] = len(entry["history"]) + 1
 
                     change_results.append(
@@ -284,10 +278,10 @@ async def update_glossary(
                         "action": "merged_duplicate",
                         "merged_original_text": entry.get("original_text", ""),
                         "merged_occurrences": entry.get("occurrences", 1),
-                        "changed_at": datetime.now(timezone.utc).isoformat(),
+                        "changed_at": datetime.now(UTC).isoformat(),
                     }
                 )
-                first_entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+                first_entry["updated_at"] = datetime.now(UTC).isoformat()
                 first_entry["version"] = len(first_entry.get("history", [])) + 1
 
                 entries_to_remove.add(i)
@@ -363,7 +357,7 @@ async def update_glossary(
         )
     except Exception as e:
         with open("debug_error.log", "a") as f:
-            f.write(f"ERROR: {str(e)}\n")
+            f.write(f"ERROR: {e!s}\n")
             f.write(traceback.format_exc())
         raise e
 
@@ -386,7 +380,7 @@ class OriginalTextCorrectionSchema(BaseModel):
 class CorrectGlossaryRequest(BaseModel):
     """Request body for correcting glossary entries."""
 
-    corrections: List[OriginalTextCorrectionSchema] = Field(
+    corrections: list[OriginalTextCorrectionSchema] = Field(
         ..., description="List of corrections to apply"
     )
     document_id: Optional[str] = Field(None, description="Document ID to regenerate (optional)")
@@ -438,7 +432,7 @@ async def correct_glossary_entries(
     changes_applied = 0
     changes_failed = 0
 
-    from datetime import datetime, timezone
+    from datetime import datetime
 
     for correction in request_body.corrections:
         # Find the entry by ID or by old_original_text
@@ -508,7 +502,7 @@ async def correct_glossary_entries(
                     "action": "original_text_corrected",
                     "old_original_text": old_text,
                     "new_original_text": new_text,
-                    "changed_at": datetime.now(timezone.utc).isoformat(),
+                    "changed_at": datetime.now(UTC).isoformat(),
                     "version": len(entry.get("history", [])) + 2,
                 }
                 # Track alias change if it happened
@@ -518,7 +512,7 @@ async def correct_glossary_entries(
                     history_entry["new_alias"] = new_alias
                     history_entry["action"] = "original_text_and_alias_changed"
                 entry["history"].append(history_entry)
-                entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+                entry["updated_at"] = datetime.now(UTC).isoformat()
                 entry["version"] = len(entry["history"]) + 1
 
                 changes_applied += 1

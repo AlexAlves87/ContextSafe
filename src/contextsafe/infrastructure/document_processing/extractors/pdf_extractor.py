@@ -76,12 +76,12 @@ class PdfExtractor(DocumentExtractor):
                                     tables.append(cleaned_table)
 
                     except Exception as e:
-                        errors.append(f"Error en página {i + 1}: {str(e)}")
+                        errors.append(f"Error en página {i + 1}: {e!s}")
 
             text = "\n\n".join(text_parts)
 
         except Exception as e:
-            errors.append(f"pdfplumber error: {str(e)}")
+            errors.append(f"pdfplumber error: {e!s}")
             text = ""
 
             # Fallback to pypdf2
@@ -89,7 +89,7 @@ class PdfExtractor(DocumentExtractor):
                 file.seek(0)
                 text, page_count, metadata = self._extract_with_pypdf2(file)
             except Exception as e2:
-                errors.append(f"pypdf2 fallback error: {str(e2)}")
+                errors.append(f"pypdf2 fallback error: {e2!s}")
 
         return ExtractionResult(
             text=text,

@@ -12,8 +12,8 @@ Traceability:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Any, Dict, Optional
+from datetime import UTC, datetime
+from typing import Any, Optional
 from uuid import uuid4
 
 from contextsafe.domain.shared.types.base_event import DomainEvent
@@ -60,7 +60,7 @@ class EntityReviewed(DomainEvent):
         new_value: Optional[str] = None,
     ) -> EntityReviewed:
         return cls(
-            occurred_at=datetime.now(timezone.utc),
+            occurred_at=datetime.now(UTC),
             event_id=str(uuid4()),
             document_id=document_id,
             project_id=project_id,
@@ -77,7 +77,7 @@ class EntityReviewed(DomainEvent):
             new_value=new_value,
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         base = super().to_dict()
         base.update(
             {
@@ -123,7 +123,7 @@ class BatchReviewCompleted(DomainEvent):
         user_session_id: str,
     ) -> BatchReviewCompleted:
         return cls(
-            occurred_at=datetime.now(timezone.utc),
+            occurred_at=datetime.now(UTC),
             event_id=str(uuid4()),
             document_id=document_id,
             project_id=project_id,
@@ -131,7 +131,7 @@ class BatchReviewCompleted(DomainEvent):
             user_session_id=user_session_id,
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         base = super().to_dict()
         base.update(
             {
@@ -177,7 +177,7 @@ class ExportAttempted(DomainEvent):
         validation_failures: tuple[str, ...] = (),
     ) -> ExportAttempted:
         return cls(
-            occurred_at=datetime.now(timezone.utc),
+            occurred_at=datetime.now(UTC),
             event_id=str(uuid4()),
             document_id=document_id,
             project_id=project_id,
@@ -190,7 +190,7 @@ class ExportAttempted(DomainEvent):
             validation_failures=validation_failures,
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         base = super().to_dict()
         base.update(
             {

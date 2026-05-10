@@ -16,7 +16,6 @@ Examples detected:
 from __future__ import annotations
 
 import re
-from typing import List, Tuple
 
 from contextsafe.application.ports import NerDetection, NerService
 from contextsafe.domain.shared.value_objects import (
@@ -116,7 +115,7 @@ class LegalTitlesRecognizer(NerService):
             return []
 
         detections: list[NerDetection] = []
-        seen_spans: set[Tuple[int, int]] = set()
+        seen_spans: set[tuple[int, int]] = set()
 
         for pattern, base_confidence in self._patterns:
             if base_confidence < min_confidence:

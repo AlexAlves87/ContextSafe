@@ -12,16 +12,16 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any, List, Optional
+from typing import Any, Optional
 from uuid import uuid4
 
 from contextsafe.domain.shared.errors import BatchError
 from contextsafe.domain.shared.types import Entity, Err, Ok, Result
 from contextsafe.domain.shared.value_objects import (
+    INTERMEDIATE,
     AnonymizationLevel,
     DocumentId,
     EntityId,
-    INTERMEDIATE,
     ProjectId,
 )
 
@@ -51,7 +51,7 @@ class BatchJob(Entity[EntityId]):
 
     id: EntityId = field(kw_only=False)
     project_id: ProjectId = field(kw_only=False)
-    document_ids: List[DocumentId] = field(kw_only=False)
+    document_ids: list[DocumentId] = field(kw_only=False)
     status: BatchJobStatus = BatchJobStatus.PENDING
     anonymization_level: AnonymizationLevel = field(default_factory=lambda: INTERMEDIATE)
     total_documents: int = 0
@@ -69,7 +69,7 @@ class BatchJob(Entity[EntityId]):
     def create(
         cls,
         project_id: ProjectId,
-        document_ids: List[DocumentId],
+        document_ids: list[DocumentId],
         anonymization_level: Optional[AnonymizationLevel] = None,
         metadata: Optional[dict[str, Any]] = None,
     ) -> Result[BatchJob, BatchError]:

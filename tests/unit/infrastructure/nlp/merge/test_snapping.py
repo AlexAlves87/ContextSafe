@@ -5,8 +5,6 @@ to complete spaCy token boundaries.
 """
 from unittest.mock import MagicMock
 
-import pytest
-
 from contextsafe.application.ports import NerDetection
 from contextsafe.domain.shared.value_objects import ConfidenceScore, PiiCategory, TextSpan
 from contextsafe.infrastructure.nlp.merge.snapping import snap_to_tokens

@@ -13,7 +13,6 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-from datetime import datetime
 from typing import Literal, Optional
 from uuid import UUID
 
@@ -163,7 +162,7 @@ class ProgressWebSocketHandler:
 
         if conn_count == 0:
             print(f"[WS-SEND] *** WARNING *** NO CONNECTIONS for document {document_id}!")
-            print(f"[WS-SEND] Looking for prefix: {str(document_id)}")
+            print(f"[WS-SEND] Looking for prefix: {document_id!s}")
 
         logger.info(
             f"[WS] send_progress doc={document_id} stage={stage} progress={progress:.0%} connections={conn_count}"

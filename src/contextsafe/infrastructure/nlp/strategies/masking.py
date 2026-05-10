@@ -18,6 +18,7 @@ from contextsafe.infrastructure.nlp.strategies.base import (
     ReplacementResult,
 )
 
+
 if TYPE_CHECKING:
     from contextsafe.application.ports.ner_service import NerDetection
 
@@ -56,7 +57,7 @@ class MaskingStrategy(AnonymizationStrategy):
 
     async def generate_replacement(
         self,
-        detection: "NerDetection",
+        detection: NerDetection,
         project_id: str,  # Ignored - masking doesn't need project context
     ) -> ReplacementResult:
         """

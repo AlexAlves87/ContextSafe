@@ -19,8 +19,9 @@ Usage:
 from __future__ import annotations
 
 import functools
+from collections.abc import Callable
 from contextvars import ContextVar
-from typing import Any, Callable, ParamSpec, TypeVar
+from typing import Any, ParamSpec, TypeVar
 from uuid import uuid4
 
 import structlog
@@ -190,7 +191,7 @@ class TracingContext:
         self.business_rule_id = business_rule_id
         self._tokens: list[Any] = []
 
-    def __enter__(self) -> "TracingContext":
+    def __enter__(self) -> TracingContext:
         if self.request_id:
             self._tokens.append(("request", CTX_REQUEST_ID.set(self.request_id)))
         if self.use_case_id:
@@ -199,7 +200,7 @@ class TracingContext:
             self._tokens.append(("rule", CTX_BUSINESS_RULE_ID.set(self.business_rule_id)))
         return self
 
-    def __exit__(self, *args: Any) -> None:
+    def __exit__(self, *args: object) -> None:
         for name, token in reversed(self._tokens):
             if name == "request":
                 CTX_REQUEST_ID.reset(token)
@@ -208,8 +209,8 @@ class TracingContext:
             elif name == "rule":
                 CTX_BUSINESS_RULE_ID.reset(token)
 
-    async def __aenter__(self) -> "TracingContext":
+    async def __aenter__(self) -> TracingContext:
         return self.__enter__()
 
-    async def __aexit__(self, *args: Any) -> None:
+    async def __aexit__(self, *args: object) -> None:
         self.__exit__(*args)

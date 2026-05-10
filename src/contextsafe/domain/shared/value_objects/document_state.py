@@ -11,7 +11,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import FrozenSet
 
 from contextsafe.domain.shared.errors import InvalidStateError
 from contextsafe.domain.shared.types import Err, Ok, Result
@@ -30,7 +29,7 @@ class DocumentStateEnum(str, Enum):
 
 
 # Valid state transitions (INV-002)
-VALID_TRANSITIONS: dict[DocumentStateEnum, FrozenSet[DocumentStateEnum]] = {
+VALID_TRANSITIONS: dict[DocumentStateEnum, frozenset[DocumentStateEnum]] = {
     DocumentStateEnum.PENDING: frozenset(
         {
             DocumentStateEnum.INGESTED,

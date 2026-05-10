@@ -17,8 +17,6 @@ from __future__ import annotations
 import re
 from uuid import UUID
 
-import icontract
-import pytest
 from hypothesis import assume, given
 from hypothesis import strategies as st
 

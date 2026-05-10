@@ -8,18 +8,19 @@ Tests the complete document ingestion workflow including:
 - Event publishing
 - Error handling
 """
-import pytest
-from unittest.mock import AsyncMock, MagicMock
-from uuid import uuid4
 from dataclasses import dataclass
+from unittest.mock import AsyncMock
+from uuid import uuid4
+
+import pytest
 
 from contextsafe.application.use_cases.ingest_document import (
     IngestDocument,
     IngestDocumentRequest,
     IngestDocumentResponse,
 )
-from contextsafe.domain.shared.errors import DocumentError, InvalidIdError
-from contextsafe.domain.shared.types import Ok, Err
+from contextsafe.domain.shared.errors import DocumentError
+from contextsafe.domain.shared.types import Err, Ok
 
 
 @dataclass
@@ -30,32 +31,32 @@ class MockTextExtraction:
     format_detected: str
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 class TestIngestDocument:
     """Test IngestDocument use case."""
 
-    @pytest.fixture
+    @pytest.fixture()
     def mock_document_repository(self) -> AsyncMock:
         """Create mock document repository."""
         repo = AsyncMock()
         repo.save = AsyncMock()
         return repo
 
-    @pytest.fixture
+    @pytest.fixture()
     def mock_text_extractor(self) -> AsyncMock:
         """Create mock text extractor."""
         extractor = AsyncMock()
         extractor.extract = AsyncMock()
         return extractor
 
-    @pytest.fixture
+    @pytest.fixture()
     def mock_event_publisher(self) -> AsyncMock:
         """Create mock event publisher."""
         publisher = AsyncMock()
         publisher.publish = AsyncMock()
         return publisher
 
-    @pytest.fixture
+    @pytest.fixture()
     def use_case(
         self,
         mock_document_repository: AsyncMock,
@@ -69,7 +70,7 @@ class TestIngestDocument:
             event_publisher=mock_event_publisher,
         )
 
-    @pytest.fixture
+    @pytest.fixture()
     def valid_request(self) -> IngestDocumentRequest:
         """Create a valid ingestion request."""
         return IngestDocumentRequest(

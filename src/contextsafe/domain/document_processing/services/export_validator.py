@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, List, Optional
+from typing import Optional
 
 from contextsafe.domain.document_processing.services.document_classifier import (
     DocumentTypeEnum,
@@ -90,10 +90,10 @@ class SanityCheckRule:
     rule_id: str
     document_type: DocumentTypeEnum
     severity: ValidationSeverity
-    required_categories: Dict[PiiCategoryEnum, int]  # category → min count
+    required_categories: dict[PiiCategoryEnum, int]  # category → min count
     message_template: str
 
-    def check(self, entity_counts: Dict[PiiCategoryEnum, int]) -> ValidationResult:
+    def check(self, entity_counts: dict[PiiCategoryEnum, int]) -> ValidationResult:
         """
         Validate entity counts against this rule.
 
@@ -126,7 +126,7 @@ class SanityCheckRule:
 
 
 # Pre-defined sanity check rules per document type
-SANITY_CHECK_RULES: List[SanityCheckRule] = [
+SANITY_CHECK_RULES: list[SanityCheckRule] = [
     SanityCheckRule(
         rule_id="SC-001",
         document_type=DocumentTypeEnum.ESCRITURA,
@@ -148,7 +148,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
             PiiCategoryEnum.DATE: 1,
         },
         message_template=(
-            "No se han detectado fechas en esta sentencia. " "Revise manualmente. Faltan: {missing}"
+            "No se han detectado fechas en esta sentencia. Revise manualmente. Faltan: {missing}"
         ),
     ),
     SanityCheckRule(
@@ -158,7 +158,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
         required_categories={
             PiiCategoryEnum.ORGANIZATION: 1,
         },
-        message_template=("Factura sin emisor (Organización) detectado. " "Faltan: {missing}"),
+        message_template=("Factura sin emisor (Organización) detectado. Faltan: {missing}"),
     ),
     SanityCheckRule(
         rule_id="SC-004",
@@ -168,7 +168,7 @@ SANITY_CHECK_RULES: List[SanityCheckRule] = [
             PiiCategoryEnum.PERSON_NAME: 1,
         },
         message_template=(
-            "Una denuncia debería tener al menos una persona " "identificada. Faltan: {missing}"
+            "Una denuncia debería tener al menos una persona identificada. Faltan: {missing}"
         ),
     ),
 ]
@@ -184,7 +184,7 @@ class ExportValidator:
 
     def __init__(
         self,
-        rules: Optional[List[SanityCheckRule]] = None,
+        rules: Optional[list[SanityCheckRule]] = None,
     ) -> None:
         self._rules = rules or SANITY_CHECK_RULES
 
@@ -194,7 +194,7 @@ class ExportValidator:
         total_entities: int,
         reviewed_entities: int,
         pending_amber_red: int,
-        entity_counts: Dict[PiiCategoryEnum, int],
+        entity_counts: dict[PiiCategoryEnum, int],
     ) -> ExportValidation:
         """
         Validate document for export readiness.
@@ -209,7 +209,7 @@ class ExportValidator:
         Returns:
             ExportValidation with overall pass/fail and details.
         """
-        results: List[ValidationResult] = []
+        results: list[ValidationResult] = []
 
         # Safety Latch: All AMBER/RED entities must be reviewed
         latch_passed = pending_amber_red == 0

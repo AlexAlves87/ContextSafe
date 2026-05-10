@@ -12,9 +12,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Any, Generic, List, TypeVar
+from typing import Any, Generic, TypeVar
 
 from contextsafe.domain.shared.types.base_event import DomainEvent
+
 
 IdType = TypeVar("IdType")
 
@@ -37,7 +38,7 @@ class AggregateRoot(Generic[IdType]):
     created_at: datetime = field(default_factory=datetime.utcnow)
     updated_at: datetime = field(default_factory=datetime.utcnow)
     version: int = field(default=1)
-    _pending_events: List[DomainEvent] = field(default_factory=list, repr=False)
+    _pending_events: list[DomainEvent] = field(default_factory=list, repr=False)
 
     def __eq__(self, other: object) -> bool:
         """Aggregates are equal if they have the same ID."""
@@ -62,7 +63,7 @@ class AggregateRoot(Generic[IdType]):
         """
         self._pending_events.append(event)
 
-    def collect_events(self) -> List[DomainEvent]:
+    def collect_events(self) -> list[DomainEvent]:
         """
         Collect and clear pending domain events.
 

@@ -13,6 +13,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
+
 if TYPE_CHECKING:
     from contextsafe.application.ports.ner_service import NerDetection
 
@@ -51,7 +52,7 @@ class AnonymizationStrategy(ABC):
     @abstractmethod
     async def generate_replacement(
         self,
-        detection: "NerDetection",
+        detection: NerDetection,
         project_id: str,
     ) -> ReplacementResult:
         """

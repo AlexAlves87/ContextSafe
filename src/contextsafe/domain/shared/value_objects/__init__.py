@@ -58,6 +58,7 @@ from contextsafe.domain.shared.value_objects.pii_category import (
 from contextsafe.domain.shared.value_objects.project_id import ProjectId
 from contextsafe.domain.shared.value_objects.text_span import TextSpan
 
+
 __all__ = [
     # IDs
     "DocumentId",

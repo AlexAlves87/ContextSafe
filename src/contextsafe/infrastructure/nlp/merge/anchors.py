@@ -15,7 +15,7 @@ Traceability:
 from __future__ import annotations
 
 import re
-from typing import Pattern
+from re import Pattern
 
 from contextsafe.application.ports import NerDetection
 from contextsafe.domain.shared.value_objects import PiiCategory
