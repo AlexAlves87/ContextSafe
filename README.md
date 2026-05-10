@@ -2,8 +2,11 @@
 
 **100% local document anonymization for sensitive legal and personal documents.**
 
+[![CI](https://github.com/AlexAlves87/ContextSafe/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexAlves87/ContextSafe/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](https://mypy-lang.org/)
 
 ContextSafe detects and replaces Personally Identifiable Information (PII) in documents with consistent, project-wide aliases. It runs entirely on your machine -- no cloud services, no API keys, no data leaves your infrastructure.
 
