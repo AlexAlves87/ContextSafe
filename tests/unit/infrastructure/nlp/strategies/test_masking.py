@@ -25,7 +25,7 @@ def _detection(category: str, text: str) -> NerDetection:
     )
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_masking_preserves_word_structure():
     """Default masking splits words and masks each separately."""
     strategy = MaskingStrategy(min_length=4)
@@ -37,7 +37,7 @@ async def test_masking_preserves_word_structure():
     assert result.glossary_entry is None
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_masking_single_block_when_disabled():
     """With preserve_word_structure=False, create single mask block."""
     strategy = MaskingStrategy(preserve_word_structure=False)
@@ -48,7 +48,7 @@ async def test_masking_single_block_when_disabled():
     assert result.replacement == "**********"
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_masking_respects_min_length():
     """Short words are padded to min_length to prevent length inference."""
     strategy = MaskingStrategy(min_length=5)

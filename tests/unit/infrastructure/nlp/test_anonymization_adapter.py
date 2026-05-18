@@ -28,7 +28,7 @@ def _detection(category: str, text: str, start: int, end: int, conf: float) -> N
     )
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_gdpr_priority_survives_overlap():
     """DNI_NIE inside ORGANIZATION span must still be anonymized."""
     adapter = InMemoryAnonymizationAdapter()
@@ -44,7 +44,7 @@ async def test_gdpr_priority_survives_overlap():
     assert "ID_" in result.anonymized_text or "DNI_" in result.anonymized_text
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_longer_span_does_not_override_higher_risk():
     """A longer span with lower GDPR priority must not hide a shorter high-risk span."""
     adapter = InMemoryAnonymizationAdapter()

@@ -4,8 +4,6 @@ TF-001: When RoBERTa, spaCy and regex disagree on the same span,
 the merge must resolve to the correct category based on weights
 and GDPR risk priority.
 """
-import pytest
-
 from contextsafe.application.ports import NerDetection
 from contextsafe.domain.shared.value_objects import ConfidenceScore, PiiCategory, TextSpan
 from contextsafe.infrastructure.nlp.composite_adapter import CompositeNerAdapter

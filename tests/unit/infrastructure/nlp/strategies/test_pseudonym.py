@@ -28,7 +28,7 @@ def _detection(category: str, text: str) -> NerDetection:
     )
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_pseudonym_generates_person_alias():
     """PERSON_NAME should produce Persona_001 style alias."""
     adapter = InMemoryAnonymizationAdapter()
@@ -42,7 +42,7 @@ async def test_pseudonym_generates_person_alias():
     assert result.glossary_entry["original_text"] == "Juan Garcia"
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_pseudonym_is_consistent_within_project():
     """Same original + category + project must yield same alias."""
     adapter = InMemoryAnonymizationAdapter()
@@ -55,7 +55,7 @@ async def test_pseudonym_is_consistent_within_project():
     assert result1.replacement == result2.replacement
 
 
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 async def test_pseudonym_creates_glossary_entries():
     """PseudonymStrategy must declare that it creates glossary entries."""
     adapter = InMemoryAnonymizationAdapter()
