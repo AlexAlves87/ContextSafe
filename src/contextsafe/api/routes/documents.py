@@ -182,7 +182,7 @@ async def get_document(document_id: UUID, request: Request) -> ApiResponse[dict]
             "entityCount": doc.entity_count,
             "expiresInSeconds": None,
             "createdAt": doc.created_at.isoformat(),
-            "textContent": doc.content or "",
+            "textContent": "",
         }
     )
 
