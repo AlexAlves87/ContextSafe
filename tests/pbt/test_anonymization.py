@@ -559,7 +559,7 @@ class TestAdversarialInputRobustness:
             category=PiiCategory.from_string("PERSON_NAME").unwrap(),
         ).unwrap()
         assert alias.value is not None
-        assert text.lower() not in alias.value.lower()
+        assert re.match(r"^Persona_\d+$", alias.value)
 
     @given(text=rtl_text_gen())
     @settings(max_examples=30, deadline=None)
