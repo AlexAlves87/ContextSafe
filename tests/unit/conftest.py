@@ -19,6 +19,9 @@ from contextsafe.domain.shared.value_objects import (
 from contextsafe.domain.shared.value_objects.pii_category import EMAIL, PERSON_NAME
 
 
+pytestmark = pytest.mark.unit
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # VALUE OBJECT FIXTURES
 # ═══════════════════════════════════════════════════════════════════════════════
