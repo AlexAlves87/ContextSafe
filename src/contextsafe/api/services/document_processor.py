@@ -297,10 +297,7 @@ async def process_document_real(document_id: str, project_id: str, session_id: s
     except Exception:
         logger.exception(f"Error processing document {document_id}")
         safe_message = "Processing failed. Please try again."
-        session_manager.update_document(
-            session_id, document_id,
-            state="error", error=safe_message
-        )
+        session_manager.update_document(session_id, document_id, state="error", error=safe_message)
         await progress_handler.send_error(doc_uuid, safe_message)
     finally:
         # Prevent memory leak: remove completed/failed task reference
