@@ -32,13 +32,13 @@ class SpanishPhoneRecognizer(PatternRecognizer):
         # International format with +34
         Pattern(
             "PHONE_INTERNATIONAL",
-            r"\b(\+34[\s\-.]?\d{3}[\s\-.]?\d{3}[\s\-.]?\d{3})\b",
+            r"(?<![+\d])(\+34[\s\-.]?\d{3}[\s\-.]?\d{3}[\s\-.]?\d{3})(?!\d)",
             0.9,
         ),
         # International format with 0034
         Pattern(
             "PHONE_INTERNATIONAL_00",
-            r"\b(0034[\s\-.]?\d{3}[\s\-.]?\d{3}[\s\-.]?\d{3})\b",
+            r"(?<!\d)(0034[\s\-.]?\d{3}[\s\-.]?\d{3}[\s\-.]?\d{3})(?!\d)",
             0.85,
         ),
         # Mobile numbers (6XX, 7XX) with separators
