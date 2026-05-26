@@ -65,7 +65,7 @@ class ErrorHandlerMiddleware(BaseHTTPMiddleware):
                 type_uri="/errors/domain-error",
                 title="Domain Error",
                 status=422,
-                detail=str(exc),
+                detail="A domain validation error occurred.",
                 instance=str(request.url.path),
             )
 
