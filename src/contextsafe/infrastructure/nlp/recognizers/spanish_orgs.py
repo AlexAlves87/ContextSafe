@@ -194,16 +194,12 @@ class SpanishOrgRecognizer(PatternRecognizer):
         if clean.upper().replace(" ", "") in [lf.replace(".", "") for lf in legal_forms_only]:
             return False
 
-        # Reject common Spanish words that are never organization names
         clean_lower = clean.lower()
-        # Check each word in the text
         words = clean_lower.split()
-        for word in words:
-            if word in self.FALSE_POSITIVE_WORDS:
-                return False
-
-        # Reject if it's just a single common word
-        if clean_lower in self.FALSE_POSITIVE_WORDS:
+        false_count = sum(1 for w in words if w in self.FALSE_POSITIVE_WORDS)
+        if false_count > len(words) // 2:
+            return False
+        if len(words) == 1 and words[0] in self.FALSE_POSITIVE_WORDS:
             return False
 
         # Organization names should typically start with uppercase
