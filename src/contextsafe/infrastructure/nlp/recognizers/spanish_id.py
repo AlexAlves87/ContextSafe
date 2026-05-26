@@ -224,6 +224,19 @@ class SpanishCIFRecognizer(PatternRecognizer):
             supported_language=supported_language,
         )
 
+    def validate_result(self, pattern_text: str) -> Optional[bool]:
+        """Validate basic CIF format."""
+        cif = re.sub(r"[\s\-.]", "", pattern_text).upper()
+        if len(cif) != 9:
+            return False
+        letter = cif[0]
+        digits = cif[1:8]
+        if not digits.isdigit():
+            return False
+        if letter not in "ABCDEFGHJNPQRSUVW":
+            return False
+        return True
+
 
 class SpanishNSSRecognizer(PatternRecognizer):
     """
