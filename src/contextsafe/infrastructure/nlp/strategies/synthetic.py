@@ -746,17 +746,17 @@ class SyntheticStrategy(AnonymizationStrategy):
             }
             body_json = json.dumps(body, ensure_ascii=False)
 
-            ps_command = f"""
+            ps_command = """
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$body = @'
-{body_json}
-'@
+$body = $input | Out-String
 $response = Invoke-RestMethod -Uri 'http://localhost:11434/api/generate' -Method Post -Body $body -ContentType 'application/json; charset=utf-8'
 $response.response
 """
 
             result = subprocess.run(
                 ["powershell.exe", "-Command", ps_command],
+                input=body_json.encode("utf-8"),
                 capture_output=True,
                 timeout=self._timeout,
                 check=False,
