@@ -90,18 +90,23 @@ class SpanishNameRecognizer(PatternRecognizer):
     # Build name pattern (first name + optional connector + surname + optional second surname)
     NAME_WORD = r"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+"
     NAME_WORD_UPPER = r"[A-ZÁÉÍÓÚÑ]{2,}"
+    NAME_WORD_WITH_CONNECTOR = (
+        r"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+"
+        r"(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?"
+        r"[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)*"
+    )
 
     PATTERNS = [
         # Pattern 1: D./Dña. + Mixed-case Name (e.g., "D. Juan García López")
         Pattern(
             "NAME_WITH_TITLE_D",
-            r"\b(?:D\.|Dña\.|D\.ª|Dª\.?)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
+            r"\b(?:D\.|Dña\.|D\.ª|Dª\.?)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
             0.95,
         ),
-        # Pattern 2: Don/Doña + Mixed-case Name (e.g., "Don Juan García")
+        # Pattern 2: Don/Doña + Mixed-case Name (e.g., "Don Juan García", "Don Juan de la Cruz")
         Pattern(
             "NAME_WITH_TITLE_DON",
-            r"(?i)\b(?:Don|Doña)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
+            r"(?i)\b(?:Don|Doña)\s+([A-ZÁÉÍÓÚÑ][a-záéíóúñ]+(?:\s+(?:de\s+la\s+|de\s+los\s+|de\s+las\s+|del\s+|de\s+)?[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+){1,3})(?=\s*[,.\n]|\s+con\s|\s+y\s|$)",
             0.95,
         ),
         # Pattern 3: Sr./Sra. + Name (e.g., "Sr. García López")
