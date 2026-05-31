@@ -10,6 +10,7 @@ Traceability:
 
 from __future__ import annotations
 
+import asyncio
 from typing import Any
 
 from contextsafe.application.ports import NerDetection, NerService
@@ -101,7 +102,8 @@ class SpacyNerAdapter(NerService):
         if not text or not text.strip():
             return []
 
-        doc = self._nlp(text)
+        loop = asyncio.get_running_loop()
+        doc = await loop.run_in_executor(None, self._nlp, text)
         detections: list[NerDetection] = []
 
         for ent in doc.ents:
