@@ -12,6 +12,7 @@ Traceability:
 
 from __future__ import annotations
 
+import asyncio
 import re
 from typing import Any
 
@@ -529,10 +530,12 @@ class PresidioNerAdapter(NerService):
             return []
 
         # Analyze text
-        results = self._analyzer.analyze(
-            text=text,
-            language="es",
-            score_threshold=min_confidence,
+        loop = asyncio.get_running_loop()
+        results = await loop.run_in_executor(
+            None,
+            lambda: self._analyzer.analyze(
+                text=text, language="es", score_threshold=min_confidence
+            ),
         )
 
         detections: list[NerDetection] = []
