@@ -281,7 +281,10 @@ class OllamaNerAdapter(NerService):
 
         try:
             # Call LLM
-            prompt = f"Analiza el siguiente texto y detecta todas las entidades PII:\n\n{text}"
+            prompt = (
+                f"Analiza el siguiente texto y detecta todas las entidades PII:\n\n"
+                f"<document>\n{text}\n</document>"
+            )
             response = await self._call_ollama(prompt)
 
             # Parse response
@@ -292,6 +295,9 @@ class OllamaNerAdapter(NerService):
                 # Validate and correct positions
                 validated = self._validate_entity(raw_entity, text)
                 if not validated:
+                    continue
+                # Drop entities where LLM offsets don't match the text
+                if text[validated["start"] : validated["end"]] != validated["text"]:
                     continue
 
                 # Map category
