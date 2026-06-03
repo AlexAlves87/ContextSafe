@@ -16,7 +16,7 @@ import click
 
 
 @click.group()
-@click.version_option(version="0.1.0", prog_name="contextsafe")
+@click.version_option(version="4.0.0", prog_name="contextsafe")
 def cli() -> None:
     """ContextSafe - Document Anonymization CLI."""
 
