@@ -7,7 +7,7 @@ Sesión única local sin autenticación.
 
 import uuid
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any, Optional
 
 
@@ -75,7 +75,7 @@ class SessionManager:
         session = self._sessions.get(self._local_session_id)
         if session:
             return session
-        now = datetime.utcnow()
+        now = datetime.now(UTC)
         session = Session(
             id=self._local_session_id,
             created_at=now,
@@ -108,7 +108,7 @@ class SessionManager:
         if not session:
             return None
 
-        now = datetime.utcnow()
+        now = datetime.now(UTC)
         doc_id = str(uuid.uuid4())
         doc = DocumentWithTimer(
             id=doc_id,
