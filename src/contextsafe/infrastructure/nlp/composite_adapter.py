@@ -38,6 +38,7 @@ from contextsafe.domain.shared.value_objects import (
     PERSON_NAME,
     ConfidenceScore,
     PiiCategory,
+    TextSpan,
 )
 
 # Intelligent merge components
@@ -582,8 +583,11 @@ class CompositeNerAdapter(NerService):
 
         # Apply text normalization (Unicode, OCR robustness)
         # This handles: fullwidth chars, zero-width chars, Cyrillic homoglyphs
+        original_text = text
+        offset_mapping = None
         if self._normalizer:
-            text = self._normalizer.normalize(text)
+            offset_mapping = self._normalizer.normalize_with_mapping(text)
+            text = offset_mapping.normalized_text
             if not text:  # After normalization, text might become empty
                 return []
 
@@ -663,6 +667,21 @@ class CompositeNerAdapter(NerService):
             await progress_callback(95, 100, f"Filtrando {len(all_detections)} detecciones...")
 
         merged = self._merge_detections(all_detections, text)
+
+        if offset_mapping is not None:
+            restored = []
+            for det in merged:
+                orig_start, orig_end = offset_mapping.to_original_span(det.span.start, det.span.end)
+                span_result = TextSpan.create(
+                    start=orig_start,
+                    end=orig_end,
+                    text=original_text[orig_start:orig_end],
+                )
+                if span_result.is_ok():
+                    restored.append(
+                        det.with_span(span_result.value, original_text[orig_start:orig_end])
+                    )
+            merged = restored
 
         if progress_callback:
             await progress_callback(100, 100, f"Detección completa: {len(merged)} entidades")
